@@ -1,0 +1,178 @@
+{
+  "generated_utc": "2026-09-21T22:43:33.698661+00:00",
+  "job_name_prefix": "delhi_ncr_sbas_a27_v1_pilot",
+  "looks": "10x2",
+  "job_count": 7,
+  "credits_per_job": 5,
+  "total_credits": 35,
+  "jobs": [
+    {
+      "pair_id": "20250211_20250223",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223",
+      "reference": [
+        "S1_056011_IW2_20250211T125536_VV_93A3-BURST",
+        "S1_056012_IW2_20250211T125539_VV_93A3-BURST",
+        "S1_056013_IW2_20250211T125542_VV_D918-BURST",
+        "S1_056014_IW2_20250211T125544_VV_D918-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250223T125536_VV_96BF-BURST",
+        "S1_056012_IW2_20250223T125539_VV_96BF-BURST",
+        "S1_056013_IW2_20250223T125541_VV_C3A0-BURST",
+        "S1_056014_IW2_20250223T125544_VV_C3A0-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2025-02-11",
+      "secondary_date": "2025-02-23",
+      "temporal_baseline_days": 12,
+      "perpendicular_baseline_m": 2.0,
+      "burst_count": 4,
+      "rationale": "lowest |B_perp| 12-day pair"
+    },
+    {
+      "pair_id": "20211205_20211229",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20211205_20211229",
+      "reference": [
+        "S1_056011_IW2_20211205T125535_VV_6B05-BURST",
+        "S1_056012_IW2_20211205T125538_VV_6B05-BURST",
+        "S1_056013_IW2_20211205T125540_VV_AACE-BURST",
+        "S1_056014_IW2_20211205T125543_VV_AACE-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20211229T125534_VV_F2C2-BURST",
+        "S1_056012_IW2_20211229T125536_VV_F2C2-BURST",
+        "S1_056013_IW2_20211229T125539_VV_DF14-BURST",
+        "S1_056014_IW2_20211229T125542_VV_DF14-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2021-12-05",
+      "secondary_date": "2021-12-29",
+      "temporal_baseline_days": 24,
+      "perpendicular_baseline_m": 64.0,
+      "burst_count": 4,
+      "rationale": "median |B_perp| 24-day pair"
+    },
+    {
+      "pair_id": "20250331_20250506",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250331_20250506",
+      "reference": [
+        "S1_056011_IW2_20250331T125537_VV_BB04-BURST",
+        "S1_056012_IW2_20250331T125539_VV_BB04-BURST",
+        "S1_056013_IW2_20250331T125542_VV_9A77-BURST",
+        "S1_056014_IW2_20250331T125545_VV_9A77-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250506T125537_VV_DE01-BURST",
+        "S1_056012_IW2_20250506T125539_VV_DE01-BURST",
+        "S1_056013_IW2_20250506T125542_VV_6419-BURST",
+        "S1_056014_IW2_20250506T125545_VV_6419-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2025-03-31",
+      "secondary_date": "2025-05-06",
+      "temporal_baseline_days": 36,
+      "perpendicular_baseline_m": 170.0,
+      "burst_count": 4,
+      "rationale": "p90 |B_perp| 36-day pair (stress test)"
+    },
+    {
+      "pair_id": "20250623_20250705",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250623_20250705",
+      "reference": [
+        "S1_056011_IW2_20250623T125535_VV_4FB8-BURST",
+        "S1_056012_IW2_20250623T125537_VV_4FB8-BURST",
+        "S1_056013_IW2_20250623T125540_VV_B190-BURST",
+        "S1_056014_IW2_20250623T125543_VV_B190-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250705T125534_VV_D4EB-BURST",
+        "S1_056012_IW2_20250705T125537_VV_D4EB-BURST",
+        "S1_056013_IW2_20250705T125539_VV_71CB-BURST",
+        "S1_056014_IW2_20250705T125542_VV_71CB-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2025-06-23",
+      "secondary_date": "2025-07-05",
+      "temporal_baseline_days": 12,
+      "perpendicular_baseline_m": 6.0,
+      "burst_count": 4,
+      "rationale": "monsoon-season pair (Jun-Sep)"
+    },
+    {
+      "pair_id": "20250307_20250319",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250307_20250319",
+      "reference": [
+        "S1_056011_IW2_20250307T125536_VV_B7C9-BURST",
+        "S1_056012_IW2_20250307T125539_VV_B7C9-BURST",
+        "S1_056013_IW2_20250307T125542_VV_22BB-BURST",
+        "S1_056014_IW2_20250307T125544_VV_22BB-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250319T125536_VV_6841-BURST",
+        "S1_056012_IW2_20250319T125539_VV_6841-BURST",
+        "S1_056013_IW2_20250319T125542_VV_4B1C-BURST",
+        "S1_056014_IW2_20250319T125544_VV_4B1C-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2025-03-07",
+      "secondary_date": "2025-03-19",
+      "temporal_baseline_days": 12,
+      "perpendicular_baseline_m": 2.0,
+      "burst_count": 4,
+      "rationale": "dry-season pair (Nov-Mar)"
+    },
+    {
+      "pair_id": "20250530_20250705",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250530_20250705",
+      "reference": [
+        "S1_056011_IW2_20250530T125536_VV_FD27-BURST",
+        "S1_056012_IW2_20250530T125539_VV_FD27-BURST",
+        "S1_056013_IW2_20250530T125541_VV_310D-BURST",
+        "S1_056014_IW2_20250530T125544_VV_310D-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250705T125534_VV_D4EB-BURST",
+        "S1_056012_IW2_20250705T125537_VV_D4EB-BURST",
+        "S1_056013_IW2_20250705T125539_VV_71CB-BURST",
+        "S1_056014_IW2_20250705T125542_VV_71CB-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": true,
+      "reference_date": "2025-05-30",
+      "secondary_date": "2025-07-05",
+      "temporal_baseline_days": 36,
+      "perpendicular_baseline_m": 1.0,
+      "burst_count": 4,
+      "rationale": "late-period 2025 pair (time-series tail)"
+    },
+    {
+      "pair_id": "20250211_20250223",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask",
+      "reference": [
+        "S1_056011_IW2_20250211T125536_VV_93A3-BURST",
+        "S1_056012_IW2_20250211T125539_VV_93A3-BURST",
+        "S1_056013_IW2_20250211T125542_VV_D918-BURST",
+        "S1_056014_IW2_20250211T125544_VV_D918-BURST"
+      ],
+      "secondary": [
+        "S1_056011_IW2_20250223T125536_VV_96BF-BURST",
+        "S1_056012_IW2_20250223T125539_VV_96BF-BURST",
+        "S1_056013_IW2_20250223T125541_VV_C3A0-BURST",
+        "S1_056014_IW2_20250223T125544_VV_C3A0-BURST"
+      ],
+      "looks": "10x2",
+      "apply_water_mask": false,
+      "reference_date": "2025-02-11",
+      "secondary_date": "2025-02-23",
+      "temporal_baseline_days": 12,
+      "perpendicular_baseline_m": 2.0,
+      "burst_count": 4,
+      "rationale": "water-mask control: same pair as #1, apply_water_mask=False"
+    }
+  ]
+}
