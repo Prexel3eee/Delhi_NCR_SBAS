@@ -1,0 +1,120 @@
+{
+  "phase": "C",
+  "generated_utc": "2026-09-21T22:16:42.548246+00:00",
+  "study_period": {
+    "start": "2021-10-01T00:00:00Z",
+    "end": "2025-10-01T00:00:00Z"
+  },
+  "expected": {
+    "path": 27,
+    "direction": "ASCENDING",
+    "polarization": "VV",
+    "subswath": "IW2",
+    "burst_count": 4,
+    "full_burst_ids": [
+      "027_056011_IW2",
+      "027_056012_IW2",
+      "027_056013_IW2",
+      "027_056014_IW2"
+    ]
+  },
+  "per_burst": [
+    {
+      "full_burst_id": "027_056011_IW2",
+      "records": 119,
+      "dates": 119,
+      "first_date": "2021-10-06",
+      "last_date": "2025-09-27",
+      "platforms": "SENTINEL-1A",
+      "cmr_windows_total": 27,
+      "cmr_windows_split": 5,
+      "cmr_unresolved_windows": 1,
+      "cmr_error": null,
+      "asf_records": 0,
+      "asf_error": "ASFSearchError: Results are incomplete due to a search error. See logging for more details. (ASFSearchResults.raise_if_incomplete called)",
+      "asf_agree": false,
+      "only_in_cmr": 119,
+      "only_in_asf": 0
+    },
+    {
+      "full_burst_id": "027_056012_IW2",
+      "records": 120,
+      "dates": 120,
+      "first_date": "2021-10-06",
+      "last_date": "2025-09-27",
+      "platforms": "SENTINEL-1A",
+      "cmr_windows_total": 17,
+      "cmr_windows_split": 0,
+      "cmr_unresolved_windows": 0,
+      "cmr_error": null,
+      "asf_records": 120,
+      "asf_error": null,
+      "asf_agree": true,
+      "only_in_cmr": 0,
+      "only_in_asf": 0
+    },
+    {
+      "full_burst_id": "027_056013_IW2",
+      "records": 120,
+      "dates": 120,
+      "first_date": "2021-10-06",
+      "last_date": "2025-09-27",
+      "platforms": "SENTINEL-1A",
+      "cmr_windows_total": 17,
+      "cmr_windows_split": 0,
+      "cmr_unresolved_windows": 0,
+      "cmr_error": null,
+      "asf_records": 120,
+      "asf_error": null,
+      "asf_agree": true,
+      "only_in_cmr": 0,
+      "only_in_asf": 0
+    },
+    {
+      "full_burst_id": "027_056014_IW2",
+      "records": 120,
+      "dates": 120,
+      "first_date": "2021-10-06",
+      "last_date": "2025-09-27",
+      "platforms": "SENTINEL-1A",
+      "cmr_windows_total": 17,
+      "cmr_windows_split": 0,
+      "cmr_unresolved_windows": 0,
+      "cmr_error": null,
+      "asf_records": 120,
+      "asf_error": null,
+      "asf_agree": true,
+      "only_in_cmr": 0,
+      "only_in_asf": 0
+    }
+  ],
+  "inventory_errors": [],
+  "validation_errors": [],
+  "duplicate_date_burst_records": [],
+  "known_cmr_anomalies": [
+    {
+      "full_burst_id": "027_056011_IW2",
+      "date": "2025-05-18",
+      "failure_mode": "CMR reports CMR-Hits=2 for every window containing this acquisition but serves only the VH granule; the VV granule is counted in hits yet omitted from the response payload.",
+      "observed_vv_granule": "S1_056011_IW2_20250518T125536_VV_6366-BURST",
+      "observation_note": "The VV granule name above was returned by a direct CMR granules.umm_json query during investigation. It was NOT reproducible afterwards: 15 consecutive single-day retries and 5 different query forms (fullBurstID, relativeBurstID+orbit, absoluteBurstID, geo_search, ASFFProduct.stack) all failed to serve it again.",
+      "independent_corroboration": [
+        "The parent SLC S1A_IW_SLC__1SDV_20250518T125513_20250518T125543_059249_075A3B_6366 appears in the historic full-scene reconnaissance network (all 120 dates).",
+        "A live ASF SLC search for 2025-05-18 / path 27 / ascending returns S1A SLC scenes.",
+        "'1SDV' in the SLC name confirms dual-polarization (VV+VH) acquisition.",
+        "Neighbouring 12-day dates 2025-05-06 and 2025-05-30 both return 027_056011_IW2 normally."
+      ],
+      "resolution": "EXCLUDED_FAIL_CLOSED",
+      "recheck_before_production": true
+    }
+  ],
+  "totals": {
+    "records": 479,
+    "unique_dates": 120,
+    "complete_acquisitions": 119,
+    "incomplete_acquisitions": 1,
+    "platforms": [
+      "SENTINEL-1A"
+    ]
+  }
+}
