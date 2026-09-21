@@ -703,22 +703,52 @@ def plot_conncomp(rows: pd.DataFrame, out: Path) -> None:
 
 
 def plot_water_comparison(comparison: dict, out: Path) -> None:
-    comp = comparison.get("comparison", {}).get("coherence")
-    if not comp:
+    """Two panels: coherence (unchanged by masking) and unwrapped-phase validity.
+
+    The decision-relevant effect is the second panel. The water mask does not
+    alter the coherence layer at all; it removes water pixels from phase
+    unwrapping. Plotting only coherence would hide the actual result.
+    """
+    comp = comparison.get("comparison", {})
+    coh = comp.get("coherence") or {}
+    unw = comp.get("unw_phase") or {}
+    if not coh and not unw:
         return
+
     regions = ["water", "land"]
-    masked = [comp.get(f"{r}_masked_median_coherence") or 0 for r in regions]
-    unmasked = [comp.get(f"{r}_unmasked_median_coherence") or 0 for r in regions]
+    figure, axes = plt.subplots(1, 2, figsize=(12, 4.8))
+
+    ax = axes[0]
+    masked = [coh.get(f"{r}_masked_median_coherence") or 0 for r in regions]
+    unmasked = [coh.get(f"{r}_unmasked_median_coherence") or 0 for r in regions]
     x = np.arange(len(regions))
-    figure, axis = plt.subplots(figsize=(7, 4.5))
-    axis.bar(x - 0.2, masked, 0.4, label="water_mask=ON", color="tab:blue")
-    axis.bar(x + 0.2, unmasked, 0.4, label="water_mask=OFF", color="tab:orange")
-    axis.set_xticks(x)
-    axis.set_xticklabels([f"{r} pixels" for r in regions])
-    axis.set_ylabel("Median coherence")
-    axis.set_title(f"Water-mask ON/OFF coherence - {comparison.get('pair_id')}")
-    axis.grid(alpha=0.3, axis="y")
-    axis.legend()
+    ax.bar(x - 0.2, masked, 0.4, label="water_mask=ON", color="tab:blue")
+    ax.bar(x + 0.2, unmasked, 0.4, label="water_mask=OFF", color="tab:orange")
+    ax.set_xticks(x)
+    ax.set_xticklabels([f"{r} pixels" for r in regions])
+    ax.set_ylabel("Median coherence")
+    ax.set_title("Coherence is unaffected by the mask\n(the mask changes unwrapping, not coherence)", fontsize=9)
+    ax.grid(alpha=0.3, axis="y")
+    ax.legend(fontsize=8)
+
+    ax = axes[1]
+    masked = [unw.get(f"{r}_masked_valid_fraction") or 0 for r in regions]
+    unmasked = [unw.get(f"{r}_unmasked_valid_fraction") or 0 for r in regions]
+    ax.bar(x - 0.2, masked, 0.4, label="water_mask=ON", color="tab:blue")
+    ax.bar(x + 0.2, unmasked, 0.4, label="water_mask=OFF", color="tab:orange")
+    ax.set_xticks(x)
+    ax.set_xticklabels([f"{r} pixels" for r in regions])
+    ax.set_ylabel("Fraction with valid unwrapped phase")
+    ax.set_title("Masking removes water from unwrapping\nand leaves land untouched", fontsize=9)
+    ax.set_ylim(0, 1)
+    ax.grid(alpha=0.3, axis="y")
+    ax.legend(fontsize=8)
+
+    figure.suptitle(
+        f"Water-mask ON/OFF — {comparison.get('pair_id')}  "
+        f"(water = {comparison.get('water_fraction', 0) * 100:.2f}% of the product)",
+        fontsize=11,
+    )
     figure.tight_layout()
     figure.savefig(out, dpi=150)
     plt.close(figure)
