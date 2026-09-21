@@ -1,0 +1,22 @@
+phase: pilot
+frozen: '2026-09-21T22:27:19.492658+00:00'
+hyp3:
+  job_type: INSAR_ISCE_MULTI_BURST
+  service: basic
+  looks: 10x2
+  pixel_spacing: 40 m
+  apply_water_mask_default: true
+  note: One pilot pair is repeated with apply_water_mask=False per brief section 15.
+network:
+  max_temporal_baseline_days: 36
+  max_perpendicular_baseline_m: 250
+bursts:
+  count: 4
+  full_burst_ids:
+  - 027_056011_IW2
+  - 027_056012_IW2
+  - 027_056013_IW2
+  - 027_056014_IW2
+submission:
+  requires_approval: true
+  production_submitted: false

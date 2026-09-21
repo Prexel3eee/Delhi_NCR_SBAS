@@ -1,0 +1,216 @@
+{
+  "freeze_version": "v1",
+  "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d",
+  "freeze_id_method": "sha256 over canonical JSON of the 'decision' block (sorted keys, no whitespace)",
+  "created_utc": "2026-09-21T22:32:16.731133+00:00",
+  "project": "delhi_ncr_multiburst_sbas",
+  "status": "FROZEN_PENDING_PILOT_QC",
+  "pi_policy": "immutable snapshot; verify with scripts/verify_freeze.py",
+  "decision": {
+    "freeze_version": "v1",
+    "aoi_sha256": "ddeeae475f696a98fbc18570020e3abc3ae206085f9839912620d780896bbf87",
+    "bursts": [
+      "027_056011_IW2",
+      "027_056012_IW2",
+      "027_056013_IW2",
+      "027_056014_IW2"
+    ],
+    "k": 4,
+    "accepted_acquisitions": 119,
+    "excluded_acquisitions": [
+      "2025-05-18"
+    ],
+    "pairs": 336,
+    "thresholds": {
+      "max_temporal_baseline_days": 36,
+      "max_perpendicular_baseline_m": 250.0
+    },
+    "pilot_looks": "10x2",
+    "critical_artefact_hashes": {
+      "geometry/aoi.geojson": "ddeeae475f696a98fbc18570020e3abc3ae206085f9839912620d780896bbf87",
+      "geometry/aoi.wkt": "8f7e295729116a3b84c43f41617084e75d0907b725b9d25950ace4340f1f9ef4",
+      "geometry/selected_bursts.geojson": "8107416934086209554db2c8fde029e5a3e7bade8709644b9b6c0deb1eeb598b",
+      "manifests/geographic_reference_bursts.csv": "366f06fb61a21179f4c00d0b6e5c4c1eed7702e09e7fbae204ba0a92a24f7543",
+      "manifests/accepted_acquisitions.csv": "b5a9770ee5975a4142a3cc4f65795da89ae54a16e177d07a97d24fe6715b2a20",
+      "manifests/excluded_acquisitions.csv": "489be047f7ea9750f43db6d063e0b5ce5828cc56128ba856c34bb4a818c8c1a2",
+      "manifests/acquisition_burst_matrix.csv": "7eae605f8e56b1e6718ef3b86af2a59ae09eb8ed0739575daaf8c849047439a2",
+      "manifests/sbas_pairs.csv": "1a0c9a5a69dfbf1f3c390e5ed2d5a48748e1ac7dc93738627af810f158b2d3d8",
+      "manifests/pilot_pairs.csv": "2baa23ead92cbcb62c1e16cfc544a1a3f938e60bb0eaf5b9e2d1941992858dcd",
+      "config/pilot.yaml": "5701abc52db58aee7a7126573d4e0185927764937b316a1e3caaab373c9cc325",
+      "qc/network/network_summary.json": "abc7621f9a7ea8d06593a0ac44806a68797e094a2d409d4f3ca34ef80aabc2a3"
+    },
+    "policy": {
+      "recover_2025_05_18": false,
+      "statement": "v1 is frozen at 119 acquisitions / 336 pairs. The 2025-05-18 acquisition is excluded fail-closed and will NOT be re-queried or recovered for v1. Production remains blocked pending pilot QC and explicit owner approval."
+    }
+  },
+  "artefacts": [
+    {
+      "path": "geometry/aoi.geojson",
+      "snapshot": "freeze/v1/geometry/aoi.geojson",
+      "critical": true,
+      "bytes": 716,
+      "sha256": "ddeeae475f696a98fbc18570020e3abc3ae206085f9839912620d780896bbf87"
+    },
+    {
+      "path": "geometry/aoi.wkt",
+      "snapshot": "freeze/v1/geometry/aoi.wkt",
+      "critical": true,
+      "bytes": 107,
+      "sha256": "8f7e295729116a3b84c43f41617084e75d0907b725b9d25950ace4340f1f9ef4"
+    },
+    {
+      "path": "geometry/selected_bursts.geojson",
+      "snapshot": "freeze/v1/geometry/selected_bursts.geojson",
+      "critical": true,
+      "bytes": 5029,
+      "sha256": "8107416934086209554db2c8fde029e5a3e7bade8709644b9b6c0deb1eeb598b"
+    },
+    {
+      "path": "manifests/geographic_reference_bursts.csv",
+      "snapshot": "freeze/v1/manifests/geographic_reference_bursts.csv",
+      "critical": true,
+      "bytes": 1446,
+      "sha256": "366f06fb61a21179f4c00d0b6e5c4c1eed7702e09e7fbae204ba0a92a24f7543"
+    },
+    {
+      "path": "manifests/accepted_acquisitions.csv",
+      "snapshot": "freeze/v1/manifests/accepted_acquisitions.csv",
+      "critical": true,
+      "bytes": 40199,
+      "sha256": "b5a9770ee5975a4142a3cc4f65795da89ae54a16e177d07a97d24fe6715b2a20"
+    },
+    {
+      "path": "manifests/excluded_acquisitions.csv",
+      "snapshot": "freeze/v1/manifests/excluded_acquisitions.csv",
+      "critical": true,
+      "bytes": 313,
+      "sha256": "489be047f7ea9750f43db6d063e0b5ce5828cc56128ba856c34bb4a818c8c1a2"
+    },
+    {
+      "path": "manifests/acquisition_burst_matrix.csv",
+      "snapshot": "freeze/v1/manifests/acquisition_burst_matrix.csv",
+      "critical": true,
+      "bytes": 5553,
+      "sha256": "7eae605f8e56b1e6718ef3b86af2a59ae09eb8ed0739575daaf8c849047439a2"
+    },
+    {
+      "path": "manifests/sbas_pairs.csv",
+      "snapshot": "freeze/v1/manifests/sbas_pairs.csv",
+      "critical": true,
+      "bytes": 212324,
+      "sha256": "1a0c9a5a69dfbf1f3c390e5ed2d5a48748e1ac7dc93738627af810f158b2d3d8"
+    },
+    {
+      "path": "manifests/pilot_pairs.csv",
+      "snapshot": "freeze/v1/manifests/pilot_pairs.csv",
+      "critical": true,
+      "bytes": 769,
+      "sha256": "2baa23ead92cbcb62c1e16cfc544a1a3f938e60bb0eaf5b9e2d1941992858dcd"
+    },
+    {
+      "path": "config/pilot.yaml",
+      "snapshot": "freeze/v1/config/pilot.yaml",
+      "critical": true,
+      "bytes": 527,
+      "sha256": "5701abc52db58aee7a7126573d4e0185927764937b316a1e3caaab373c9cc325"
+    },
+    {
+      "path": "qc/network/network_summary.json",
+      "snapshot": "freeze/v1/qc/network/network_summary.json",
+      "critical": true,
+      "bytes": 2862,
+      "sha256": "abc7621f9a7ea8d06593a0ac44806a68797e094a2d409d4f3ca34ef80aabc2a3"
+    },
+    {
+      "path": "geometry/coverage_report.json",
+      "snapshot": "freeze/v1/geometry/coverage_report.json",
+      "critical": false,
+      "bytes": 6132,
+      "sha256": "d9181b21e007c436f8061f6da41df30f64ac561b8804d77b5471da9874b1b283"
+    },
+    {
+      "path": "manifests/burst_inventory_2021_2025.csv",
+      "snapshot": "freeze/v1/manifests/burst_inventory_2021_2025.csv",
+      "critical": false,
+      "bytes": 177367,
+      "sha256": "fce46791fa7a5b593fbd23f9585e5ca51b5b9e60870aaf7355d6296f60951add"
+    },
+    {
+      "path": "manifests/burst_completeness_matrix.csv",
+      "snapshot": "freeze/v1/manifests/burst_completeness_matrix.csv",
+      "critical": false,
+      "bytes": 3219,
+      "sha256": "8d7e582a4506d2244cb230902262c0c10780865fec6c2dd028a3ae6eef550989"
+    },
+    {
+      "path": "manifests/acquisition_gaps.csv",
+      "snapshot": "freeze/v1/manifests/acquisition_gaps.csv",
+      "critical": false,
+      "bytes": 3227,
+      "sha256": "b51c07400310fbf79033958731c7c9bbabef9d8f42337d0557a8f9e7211e307e"
+    },
+    {
+      "path": "manifests/burst_search_log.csv",
+      "snapshot": "freeze/v1/manifests/burst_search_log.csv",
+      "critical": false,
+      "bytes": 638,
+      "sha256": "5d7f3c48b72c389c315a5098b10333c781ba061cf2268b5e0cfd16101e62c818"
+    },
+    {
+      "path": "qc/inventory/inventory_provenance.json",
+      "snapshot": "freeze/v1/qc/inventory/inventory_provenance.json",
+      "critical": false,
+      "bytes": 3925,
+      "sha256": "73316521ba9d584179522d3d868168c5d77b52e8348da985670840430db10ec9"
+    },
+    {
+      "path": "qc/network/network_edges.csv",
+      "snapshot": "freeze/v1/qc/network/network_edges.csv",
+      "critical": false,
+      "bytes": 10250,
+      "sha256": "758ba6f68cc5da98a3dcebbdb6524e001e6b12ff16839d0227a97a7202632856"
+    },
+    {
+      "path": "qc/network/network_degree.csv",
+      "snapshot": "freeze/v1/qc/network/network_degree.csv",
+      "critical": false,
+      "bytes": 1559,
+      "sha256": "6f6958b2db9e5fce328dbfc6fd5c17f159bf0e3d0fa3b77714300ebd63d96535"
+    },
+    {
+      "path": "qc/network/baseline_table.csv",
+      "snapshot": "freeze/v1/qc/network/baseline_table.csv",
+      "critical": false,
+      "bytes": 6403,
+      "sha256": "10064fe19a92c0dc52f58f7a641ca5b72ef48a5ff846bb4cc76d3c84ff09fe61"
+    },
+    {
+      "path": "qc/cost_estimate.json",
+      "snapshot": "freeze/v1/qc/cost_estimate.json",
+      "critical": false,
+      "bytes": 4006,
+      "sha256": "00ce332b8bf47ef94396baaa584e22383c0f3c131510c83725338cd738020ac9"
+    }
+  ],
+  "summary": {
+    "accepted_acquisitions": 119,
+    "interferogram_pairs": 336,
+    "bursts_per_job_k": 4,
+    "full_burst_ids": [
+      "027_056011_IW2",
+      "027_056012_IW2",
+      "027_056013_IW2",
+      "027_056014_IW2"
+    ],
+    "platforms": [
+      "SENTINEL-1A"
+    ],
+    "first_acquisition": "2021-10-06",
+    "last_acquisition": "2025-09-27",
+    "pilot_jobs": 7,
+    "pilot_credits": 35,
+    "production_credits_10x2": 1680,
+    "production_submitted": false
+  }
+}

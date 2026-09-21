@@ -1,0 +1,8 @@
+pair_id,reference_date,secondary_date,temporal_baseline_days,perpendicular_baseline_max_abs_m,burst_count,apply_water_mask,rationale
+20250211_20250223,2025-02-11,2025-02-23,12,2.0,4,True,lowest |B_perp| 12-day pair
+20211205_20211229,2021-12-05,2021-12-29,24,64.0,4,True,median |B_perp| 24-day pair
+20250331_20250506,2025-03-31,2025-05-06,36,170.0,4,True,p90 |B_perp| 36-day pair (stress test)
+20250623_20250705,2025-06-23,2025-07-05,12,6.0,4,True,monsoon-season pair (Jun-Sep)
+20250307_20250319,2025-03-07,2025-03-19,12,2.0,4,True,dry-season pair (Nov-Mar)
+20250530_20250705,2025-05-30,2025-07-05,36,1.0,4,True,late-period 2025 pair (time-series tail)
+20250211_20250223,2025-02-11,2025-02-23,12,2.0,4,False,"water-mask control: same pair as #1, apply_water_mask=False"

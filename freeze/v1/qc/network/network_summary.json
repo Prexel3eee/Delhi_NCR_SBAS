@@ -1,0 +1,102 @@
+{
+  "nodes_acquisitions": 119,
+  "edges_pairs": 336,
+  "connected_components": 1,
+  "isolated_nodes": [],
+  "bridges": 0,
+  "bridge_edges": [],
+  "articulation_points": 0,
+  "articulation_point_dates": [],
+  "degree": {
+    "min": 3,
+    "mean": 5.6471,
+    "median": 6.0,
+    "max": 6,
+    "distribution": {
+      "3": 2,
+      "4": 4,
+      "5": 28,
+      "6": 85
+    }
+  },
+  "acquisition_gaps": {
+    "distribution": {
+      "12": 115,
+      "24": 3
+    },
+    "max_days": 24,
+    "min_days": 12
+  },
+  "pair_temporal_baseline_days": {
+    "distribution": {
+      "12": 113,
+      "24": 113,
+      "36": 110
+    },
+    "min": 12,
+    "max": 36
+  },
+  "pair_perpendicular_baseline_m": {
+    "min": 1.0,
+    "median": 70.0,
+    "p95": 186.2,
+    "max": 248.0
+  },
+  "acceptance_criteria": {
+    "connected_components_equals_1": true,
+    "no_isolated_nodes": true,
+    "no_bridges": true,
+    "no_articulation_points": true,
+    "min_degree_at_least_3": true,
+    "explained_max_gap": true
+  },
+  "acceptance_passed": true,
+  "phase": "D",
+  "generated_utc": "2026-09-21T22:27:10.584275+00:00",
+  "thresholds": {
+    "max_temporal_baseline_days": 36,
+    "max_perpendicular_baseline_m": 250.0
+  },
+  "burst_order": [
+    "027_056011_IW2",
+    "027_056012_IW2",
+    "027_056013_IW2",
+    "027_056014_IW2"
+  ],
+  "baseline_reference": {
+    "date": "2021-10-06",
+    "per_burst_reference_scene": {
+      "027_056011_IW2": "S1_056011_IW2_20211006T125536_VV_4BD1-BURST",
+      "027_056012_IW2": "S1_056012_IW2_20211006T125539_VV_4BD1-BURST",
+      "027_056013_IW2": "S1_056013_IW2_20211006T125541_VV_3B97-BURST",
+      "027_056014_IW2": "S1_056014_IW2_20211006T125544_VV_3B97-BURST"
+    },
+    "convention": "pair |B_perp| = max over bursts of |perp[secondary] - perp[reference]|, baselines measured against one fixed reference acquisition",
+    "re_basing_guard": "The fixed reference product is injected into every baseline window because asf_search.baseline.stack.check_reference silently substitutes stack[0] when the reference granule is absent, which would offset every pair spanning two windows. temporalBaseline is additionally validated against the true day offset from the reference.",
+    "per_burst_recovered_rows": {
+      "027_056011_IW2": 119,
+      "027_056012_IW2": 120,
+      "027_056013_IW2": 120,
+      "027_056014_IW2": 120
+    },
+    "per_burst_rejected": {
+      "027_056011_IW2": 0,
+      "027_056012_IW2": 0,
+      "027_056013_IW2": 0,
+      "027_056014_IW2": 0
+    }
+  },
+  "pair_construction_diagnostics": {
+    "per_burst_candidate_pairs": {
+      "027_056011_IW2": 336,
+      "027_056012_IW2": 336,
+      "027_056013_IW2": 336,
+      "027_056014_IW2": 336
+    },
+    "common_pair_keys": 336,
+    "union_pair_keys": 336,
+    "pair_keys_dropped_for_missing_burst": 0,
+    "pairs_emitted": 336,
+    "pairs_rejected_at_validation": 0
+  }
+}

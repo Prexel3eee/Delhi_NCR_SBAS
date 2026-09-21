@@ -1,0 +1,220 @@
+{
+  "type": "FeatureCollection",
+  "name": "delhi_ncr_selected_bursts",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "full_burst_id": "027_056011_IW2",
+        "relative_burst_id": 56011,
+        "absolute_burst_id": 131395356,
+        "burst_index": 8,
+        "subswath": "IW2",
+        "relative_orbit": 27,
+        "flight_direction": "ASCENDING",
+        "polarization": "VV",
+        "platform": "SENTINEL-1A",
+        "reference_date": "2025-09-27",
+        "reference_scene_name": "S1_056011_IW2_20250927T125534_VV_01C8-BURST",
+        "role": "selected_geographic_reference_burst"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              76.664826,
+              28.280764
+            ],
+            [
+              77.133436,
+              28.354823
+            ],
+            [
+              77.57621,
+              28.423109
+            ],
+            [
+              77.537119,
+              28.615583
+            ],
+            [
+              77.094372,
+              28.543168
+            ],
+            [
+              76.625776,
+              28.464976
+            ],
+            [
+              76.664826,
+              28.280764
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "full_burst_id": "027_056012_IW2",
+        "relative_burst_id": 56012,
+        "absolute_burst_id": 131395357,
+        "burst_index": 9,
+        "subswath": "IW2",
+        "relative_orbit": 27,
+        "flight_direction": "ASCENDING",
+        "polarization": "VV",
+        "platform": "SENTINEL-1A",
+        "reference_date": "2025-09-27",
+        "reference_scene_name": "S1_056012_IW2_20250927T125536_VV_01C8-BURST",
+        "role": "selected_geographic_reference_burst"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              76.629578,
+              28.447053
+            ],
+            [
+              77.098958,
+              28.521067
+            ],
+            [
+              77.542459,
+              28.589299
+            ],
+            [
+              77.503338,
+              28.78177
+            ],
+            [
+              77.059858,
+              28.709409
+            ],
+            [
+              76.590486,
+              28.631261
+            ],
+            [
+              76.629578,
+              28.447053
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "full_burst_id": "027_056013_IW2",
+        "relative_burst_id": 56013,
+        "absolute_burst_id": 131395358,
+        "burst_index": 0,
+        "subswath": "IW2",
+        "relative_orbit": 27,
+        "flight_direction": "ASCENDING",
+        "polarization": "VV",
+        "platform": "SENTINEL-1A",
+        "reference_date": "2025-09-27",
+        "reference_scene_name": "S1_056013_IW2_20250927T125539_VV_5367-BURST",
+        "role": "selected_geographic_reference_burst"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              76.594292,
+              28.613335
+            ],
+            [
+              77.064386,
+              28.687294
+            ],
+            [
+              77.508563,
+              28.755463
+            ],
+            [
+              77.469411,
+              28.947931
+            ],
+            [
+              77.025249,
+              28.875632
+            ],
+            [
+              76.555158,
+              28.79754
+            ],
+            [
+              76.594292,
+              28.613335
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "full_burst_id": "027_056014_IW2",
+        "relative_burst_id": 56014,
+        "absolute_burst_id": 131395359,
+        "burst_index": 1,
+        "subswath": "IW2",
+        "relative_orbit": 27,
+        "flight_direction": "ASCENDING",
+        "polarization": "VV",
+        "platform": "SENTINEL-1A",
+        "reference_date": "2025-09-27",
+        "reference_scene_name": "S1_056014_IW2_20250927T125542_VV_5367-BURST",
+        "role": "selected_geographic_reference_burst"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              76.558969,
+              28.77961
+            ],
+            [
+              77.029845,
+              28.853524
+            ],
+            [
+              77.474761,
+              28.921641
+            ],
+            [
+              77.435578,
+              29.114106
+            ],
+            [
+              76.990671,
+              29.04186
+            ],
+            [
+              76.51979,
+              28.963812
+            ],
+            [
+              76.558969,
+              28.77961
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}

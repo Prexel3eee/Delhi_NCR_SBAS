@@ -1,0 +1,5 @@
+full_burst_id,records,dates,first_date,last_date,platforms,cmr_windows_total,cmr_windows_split,cmr_unresolved_windows,cmr_error,asf_records,asf_error,asf_agree,only_in_cmr,only_in_asf
+027_056011_IW2,119,119,2021-10-06,2025-09-27,SENTINEL-1A,27,5,1,,0,ASFSearchError: Results are incomplete due to a search error. See logging for more details. (ASFSearchResults.raise_if_incomplete called),False,119,0
+027_056012_IW2,120,120,2021-10-06,2025-09-27,SENTINEL-1A,17,0,0,,120,,True,0,0
+027_056013_IW2,120,120,2021-10-06,2025-09-27,SENTINEL-1A,17,0,0,,120,,True,0,0
+027_056014_IW2,120,120,2021-10-06,2025-09-27,SENTINEL-1A,17,0,0,,120,,True,0,0

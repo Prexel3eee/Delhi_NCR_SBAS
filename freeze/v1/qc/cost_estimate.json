@@ -1,0 +1,122 @@
+{
+  "phase": "E",
+  "generated_utc": "2026-09-21T22:27:19.492350+00:00",
+  "source_pair_manifest": "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/manifests/sbas_pairs.csv",
+  "burst_count_k": 4,
+  "interferogram_count_n": 336,
+  "monthly_basic_allocation_credits": 8000,
+  "credit_table_source": "https://hyp3-docs.asf.alaska.edu/using/credits/",
+  "scenarios": {
+    "20x4": {
+      "looks": "20x4",
+      "pixel_spacing": "80 m",
+      "credits_per_job": 1,
+      "total_credits": 336,
+      "pct_monthly_allocation": 4.2
+    },
+    "10x2": {
+      "looks": "10x2",
+      "pixel_spacing": "40 m",
+      "credits_per_job": 5,
+      "total_credits": 1680,
+      "pct_monthly_allocation": 21.0
+    },
+    "5x1": {
+      "looks": "5x1",
+      "pixel_spacing": "20 m",
+      "credits_per_job": 15,
+      "total_credits": 5040,
+      "pct_monthly_allocation": 63.0
+    }
+  },
+  "primary_pilot_config": {
+    "looks": "10x2",
+    "pixel_spacing": "40 m",
+    "credits_per_job": 5,
+    "rationale": "Brief section 14: 40 m pixels are the recommended middle ground for urban subsidence. Retained as primary; 20x4 is not adopted merely to save credits unless the pilot shows 80 m pixels are adequate."
+  },
+  "pilot": {
+    "jobs": [
+      {
+        "pair_id": "20250211_20250223",
+        "reference_date": "2025-02-11",
+        "secondary_date": "2025-02-23",
+        "temporal_baseline_days": 12,
+        "perpendicular_baseline_max_abs_m": 2.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "lowest |B_perp| 12-day pair"
+      },
+      {
+        "pair_id": "20211205_20211229",
+        "reference_date": "2021-12-05",
+        "secondary_date": "2021-12-29",
+        "temporal_baseline_days": 24,
+        "perpendicular_baseline_max_abs_m": 64.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "median |B_perp| 24-day pair"
+      },
+      {
+        "pair_id": "20250331_20250506",
+        "reference_date": "2025-03-31",
+        "secondary_date": "2025-05-06",
+        "temporal_baseline_days": 36,
+        "perpendicular_baseline_max_abs_m": 170.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "p90 |B_perp| 36-day pair (stress test)"
+      },
+      {
+        "pair_id": "20250623_20250705",
+        "reference_date": "2025-06-23",
+        "secondary_date": "2025-07-05",
+        "temporal_baseline_days": 12,
+        "perpendicular_baseline_max_abs_m": 6.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "monsoon-season pair (Jun-Sep)"
+      },
+      {
+        "pair_id": "20250307_20250319",
+        "reference_date": "2025-03-07",
+        "secondary_date": "2025-03-19",
+        "temporal_baseline_days": 12,
+        "perpendicular_baseline_max_abs_m": 2.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "dry-season pair (Nov-Mar)"
+      },
+      {
+        "pair_id": "20250530_20250705",
+        "reference_date": "2025-05-30",
+        "secondary_date": "2025-07-05",
+        "temporal_baseline_days": 36,
+        "perpendicular_baseline_max_abs_m": 1.0,
+        "burst_count": 4,
+        "apply_water_mask": true,
+        "rationale": "late-period 2025 pair (time-series tail)"
+      },
+      {
+        "pair_id": "20250211_20250223",
+        "reference_date": "2025-02-11",
+        "secondary_date": "2025-02-23",
+        "temporal_baseline_days": 12,
+        "perpendicular_baseline_max_abs_m": 2.0,
+        "burst_count": 4,
+        "apply_water_mask": false,
+        "rationale": "water-mask control: same pair as #1, apply_water_mask=False"
+      }
+    ],
+    "job_count": 7,
+    "credits_per_job": 5,
+    "total_credits": 35,
+    "pct_monthly_allocation": 0.4375
+  },
+  "production_submitted": false,
+  "notes": [
+    "No HyP3 job has been submitted by this script.",
+    "Re-check the live credit table immediately before any large submission.",
+    "Production remains blocked on pilot QC and explicit user approval."
+  ]
+}

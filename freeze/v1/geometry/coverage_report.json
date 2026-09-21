@@ -1,0 +1,287 @@
+{
+  "phase": "B",
+  "reference_date": "2025-09-27",
+  "constraints": {
+    "relative_orbit": 27,
+    "flight_direction": "ASCENDING",
+    "polarization": "VV",
+    "beam_mode": "IW"
+  },
+  "aoi": {
+    "wkt": "POLYGON((76.7853 28.4375,77.1951 28.3839,77.2562 28.6599,77.2838 28.8193,76.8905 28.8726,76.7853 28.4375))",
+    "area_deg2": 0.181017
+  },
+  "candidate_bursts_intersecting_aoi": [
+    {
+      "full_burst_id": "027_056010_IW2",
+      "relative_burst_id": 56010,
+      "subswath": "IW2",
+      "burst_index": 7,
+      "aoi_coverage_fraction": 0.000151
+    },
+    {
+      "full_burst_id": "027_056011_IW2",
+      "relative_burst_id": 56011,
+      "subswath": "IW2",
+      "burst_index": 8,
+      "aoi_coverage_fraction": 0.278005
+    },
+    {
+      "full_burst_id": "027_056012_IW2",
+      "relative_burst_id": 56012,
+      "subswath": "IW2",
+      "burst_index": 9,
+      "aoi_coverage_fraction": 0.465161
+    },
+    {
+      "full_burst_id": "027_056013_IW2",
+      "relative_burst_id": 56013,
+      "subswath": "IW2",
+      "burst_index": 0,
+      "aoi_coverage_fraction": 0.360403
+    },
+    {
+      "full_burst_id": "027_056014_IW2",
+      "relative_burst_id": 56014,
+      "subswath": "IW2",
+      "burst_index": 1,
+      "aoi_coverage_fraction": 0.016999
+    }
+  ],
+  "selected": {
+    "k": 4,
+    "full_burst_ids": [
+      "027_056011_IW2",
+      "027_056012_IW2",
+      "027_056013_IW2",
+      "027_056014_IW2"
+    ],
+    "aoi_coverage_fraction": 1.0000000000000002,
+    "uncovered_fraction": 0.0,
+    "union_area_ratio": 3.5825
+  },
+  "rejected_smaller_collections": [
+    {
+      "k": 1,
+      "full_burst_ids": [
+        "027_056010_IW2"
+      ],
+      "uncovered_fraction": 0.9998493298333844,
+      "uncovered_bounds": [
+        76.7853,
+        28.38562,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 1,
+      "full_burst_ids": [
+        "027_056011_IW2"
+      ],
+      "uncovered_fraction": 0.7219953587239091,
+      "uncovered_bounds": [
+        76.79893,
+        28.49387,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 1,
+      "full_burst_ids": [
+        "027_056012_IW2"
+      ],
+      "uncovered_fraction": 0.5348386398850097,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 1,
+      "full_burst_ids": [
+        "027_056013_IW2"
+      ],
+      "uncovered_fraction": 0.6395966749928158,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.26631,
+        28.8726
+      ]
+    },
+    {
+      "k": 1,
+      "full_burst_ids": [
+        "027_056014_IW2"
+      ],
+      "uncovered_fraction": 0.983000637214324,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.2838,
+        28.85363
+      ]
+    },
+    {
+      "k": 2,
+      "full_burst_ids": [
+        "027_056010_IW2",
+        "027_056011_IW2"
+      ],
+      "uncovered_fraction": 0.7219953587239091,
+      "uncovered_bounds": [
+        76.79893,
+        28.49387,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 2,
+      "full_burst_ids": [
+        "027_056011_IW2",
+        "027_056012_IW2"
+      ],
+      "uncovered_fraction": 0.310094233553937,
+      "uncovered_bounds": [
+        76.84228,
+        28.67318,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 2,
+      "full_burst_ids": [
+        "027_056012_IW2",
+        "027_056013_IW2"
+      ],
+      "uncovered_fraction": 0.22843456778309368,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.22993,
+        28.8726
+      ]
+    },
+    {
+      "k": 2,
+      "full_burst_ids": [
+        "027_056013_IW2",
+        "027_056014_IW2"
+      ],
+      "uncovered_fraction": 0.6359065135407949,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.26631,
+        28.71828
+      ]
+    },
+    {
+      "k": 3,
+      "full_burst_ids": [
+        "027_056010_IW2",
+        "027_056011_IW2",
+        "027_056012_IW2"
+      ],
+      "uncovered_fraction": 0.310094233553937,
+      "uncovered_bounds": [
+        76.84228,
+        28.67318,
+        77.2838,
+        28.8726
+      ]
+    },
+    {
+      "k": 3,
+      "full_burst_ids": [
+        "027_056011_IW2",
+        "027_056012_IW2",
+        "027_056013_IW2"
+      ],
+      "uncovered_fraction": 0.003690161452020936,
+      "uncovered_bounds": [
+        76.88563,
+        28.85244,
+        76.95466,
+        28.8726
+      ]
+    },
+    {
+      "k": 3,
+      "full_burst_ids": [
+        "027_056012_IW2",
+        "027_056013_IW2",
+        "027_056014_IW2"
+      ],
+      "uncovered_fraction": 0.22474440633107273,
+      "uncovered_bounds": [
+        76.7853,
+        28.3839,
+        77.22993,
+        28.54122
+      ]
+    }
+  ],
+  "validation": {
+    "checks": [
+      {
+        "check": "burst_count_1_to_15",
+        "passed": true,
+        "detail": "K=4"
+      },
+      {
+        "check": "contiguous_gap_free",
+        "passed": true,
+        "detail": "relative burst IDs [56011, 56012, 56013, 56014]"
+      },
+      {
+        "check": "single_relative_orbit",
+        "passed": true,
+        "detail": "paths=[27]"
+      },
+      {
+        "check": "single_flight_direction",
+        "passed": true,
+        "detail": "directions=['ASCENDING']"
+      },
+      {
+        "check": "single_polarization",
+        "passed": true,
+        "detail": "polarizations=['VV']"
+      },
+      {
+        "check": "single_or_adjacent_subswath",
+        "passed": true,
+        "detail": "subswaths=['IW2'] (single sub-swath: no cross-sub-swath offset rule invoked)"
+      },
+      {
+        "check": "acquisition_within_2_minutes",
+        "passed": true,
+        "detail": "spread=8.0s (limit 120s)"
+      },
+      {
+        "check": "no_antimeridian_crossing",
+        "passed": true,
+        "detail": "lon range 76.520..77.576"
+      },
+      {
+        "check": "aoi_fully_contained",
+        "passed": true,
+        "detail": "coverage=1.000000"
+      },
+      {
+        "check": "no_lateral_jog",
+        "passed": true,
+        "detail": "burst lon-width spread=0.00454 deg"
+      }
+    ],
+    "passed": true
+  },
+  "accepted": true
+}

@@ -1,0 +1,2 @@
+date,burst_count,missing_bursts,exclusion_reason
+2025-05-18,3,027_056011_IW2,"CMR_SERVING_ANOMALY: CMR reports CMR-Hits=2 for every window containing this acquisition but serves only the VH granule; the VV granule is counted in hits yet omitted from the response payload. (documented, recheck before production)"
