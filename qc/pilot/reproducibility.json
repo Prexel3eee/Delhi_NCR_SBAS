@@ -1,0 +1,422 @@
+{
+  "generated_utc": "2026-09-21T23:21:04.062576+00:00",
+  "origin": "INC-001: the pilot was accidentally submitted twice; both copies were preserved and are compared here as a determinism test.",
+  "configurations_compared": 7,
+  "all_identical": true,
+  "results": [
+    {
+      "pair_id": "20211205_20211229",
+      "apply_water_mask": true,
+      "job_ids": [
+        "26b9dc5c-47e4-490e-8b7a-5b3d09d27042",
+        "c174a55e-0767-48da-9575-a257aa6835f5"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        124425800,
+        124425797
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250211_20250223",
+      "apply_water_mask": false,
+      "job_ids": [
+        "0a5ef1f4-26ae-4d12-adb6-42bb425bf7b7",
+        "190ec226-e6f0-43e5-a004-8e071b69b90d"
+      ],
+      "layers_compared": 6,
+      "layers_identical": 6,
+      "layers_differing": [],
+      "zip_bytes": [
+        123220084,
+        123220087
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250211_20250223",
+      "apply_water_mask": true,
+      "job_ids": [
+        "3e3c4152-e9d9-4efe-bc1e-bbb52ffd6757",
+        "3ffe8aff-f18a-4e41-8c40-5179cf7f5da9"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        123141685,
+        123141684
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250307_20250319",
+      "apply_water_mask": true,
+      "job_ids": [
+        "5a0feb7b-e21f-4e3b-92a0-bfed53ad6ed2",
+        "eee2b6f0-ba17-49c3-bd53-fc6a3e4aca5d"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        124221560,
+        124221559
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250331_20250506",
+      "apply_water_mask": true,
+      "job_ids": [
+        "ca5ae26f-85e0-426c-9863-f032444cc153",
+        "3ed54350-55d3-4bca-bdc5-21f0f2d0d352"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        121890557,
+        121890555
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250530_20250705",
+      "apply_water_mask": true,
+      "job_ids": [
+        "0a643f7b-ddbf-4028-98c7-68b4519ade69",
+        "e18ab999-96b3-43ee-bfa8-523e090c27f9"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        122153144,
+        122153144
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    },
+    {
+      "pair_id": "20250623_20250705",
+      "apply_water_mask": true,
+      "job_ids": [
+        "1e7e5115-ef8a-4eb5-8157-4d49ee64c651",
+        "e5f2b5bc-78cf-4df6-895d-e0e2b9442f29"
+      ],
+      "layers_compared": 7,
+      "layers_identical": 7,
+      "layers_differing": [],
+      "zip_bytes": [
+        121665026,
+        121665025
+      ],
+      "layer_detail": {
+        "conncomp.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "corr.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "dem.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_phi.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "lv_theta.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "unw_phase.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        },
+        "water_mask.tif": {
+          "shape_equal": true,
+          "crs_equal": true,
+          "transform_equal": true,
+          "array_equal": true
+        }
+      },
+      "all_layers_identical": true
+    }
+  ]
+}

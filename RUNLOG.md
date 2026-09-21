@@ -452,26 +452,165 @@ download should follow promptly once the jobs finish.
 
 ---
 
+## 2026-09-22 — Phase F/G: pilot retrieval, QC and acceptance
+
+**Retrieval.** Polled to terminal state and downloaded immediately (HyP3 Basic retains
+products for only 14 days). All 14 jobs `SUCCEEDED`; all 14 products downloaded.
+
+```text
+zip total        1721.4 MB   (mean 123.0 MB/product, max 124.4 MB)
+extracted total  1775.3 MB   (mean 126.8 MB/product, ratio x1.031)
+files/product    14 (water mask ON) / 13 (water mask OFF - multi-burst omits it)
+layout           data/hyp3_zips/<job_name>__<job_id8>/
+                 data/hyp3_extracted/<job_name>__<job_id8>/
+```
+
+Both duplicate copies were preserved as instructed; job-id-keyed directories mean
+duplicate names cannot collide.
+
+**Ledger reconciliation** (append-only ledger vs remote truth, report-only — the ledger is
+never rewritten by reconciliation):
+
+```text
+ledger rows 14 | ledger distinct job_ids 14 | remote jobs 14
+in ledger not remote 0 | in remote not ledger 0 | duplicate job names 7
+credit cost per job (HyP3-reported) {5: 14} | credits charged 70
+```
+
+The `credit_cost` field comes from HyP3 itself and independently confirms the K=4 @ 10x2
+cost model of **5 credits/job** that was derived from the published credit table.
+
+**QC on the 7 unique scientific configurations.**
+
+```text
+CRS EPSG:32643 (UTM 43N) | pixel 40 m  -> confirms looks=10x2
+AOI fully inside every product: True for all 7
+valid data over the AOI: 1.000 for all 7
+median coherence:  0.82, 0.82, 0.79, 0.72 (winter/spring)
+                   0.51 (12 d monsoon), 0.42, 0.41 (36 d dry->pre-monsoon)
+connected components in AOI: 1-8; largest covers 60-99% of the AOI
+```
+
+The two 36-day pairs are the weakest, as expected: fewer components coalesce, largest
+component drops to 69% / 60%, and median coherence falls to ~0.41. Those are the stress
+cases the pilot was designed to expose.
+
+**Reproducibility (INC-001 turned into evidence).** Every duplicated pair was compared
+layer by layer: **all 7 configurations bit-identical** (7/7 layers for masked, 6/6 for the
+control). HyP3 multi-burst processing is deterministic, so an accidental duplicate
+submission became a genuine determinism test.
+
+**Water-mask ON/OFF around the Yamuna.**
+
+| region | valid unwrapped fraction, mask ON | mask OFF |
+|---|---|---|
+| water | **0.000** | 0.743 |
+| land | 0.605 | 0.605 |
+
+Water fraction of the raster is 0.909% (1.85% inside the AOI, since the Yamuna crosses
+it). Masking removes water from phase unwrapping completely and leaves land validity
+unchanged, so **`apply_water_mask = True` is recommended for production**.
+
+> **Defect found: water-mask polarity was inverted.** I had assumed `1 = water`. ASF's
+> documentation states the opposite for product packages
+> (<https://hyp3-docs.asf.alaska.edu/water_masking/>): *"Water pixels are assigned a value
+> of 0, and all remaining pixels are assigned a value of 1 ... the pixel values are
+> opposite to the reference water mask."* The first QC pass therefore reported a 99.09%
+> water fraction for Delhi. Corrected, and now verified two ways: against the docs, and
+> self-consistently from the data (the region HyP3 actually excludes from unwrapping is
+> exactly the 0.909% `0`-valued region).
+
+**Burst-merge seam check (multi-burst specific).** Per-azimuth-row medians are compared to
+a local rolling median and scored with a robust MAD z-score, gated on both the z-score and
+an absolute effect size, with a margin excluding rows near the mosaic boundary. Result: no
+catastrophic seam. Largest single-row coherence deviation ~0.10 with <=1.7% of rows
+flagged. The detector cannot separate a burst seam from a genuine east-west scene feature
+(river, road, land-use boundary), so this is supporting evidence, not proof.
+
+**Storage projection** (from measured products, not assumptions):
+
+```text
+measured     zip mean 123.0 MB, extracted mean 126.8 MB
+336 pairs    zip 41.31 GB, extracted 42.61 GB, MintPy working ~63.9 GB
+             GRAND TOTAL 147.83 GB against 551 GB free
+pilot actual 1.72 GB zip + 1.78 GB extracted (+656 MB clipped/staged)
+```
+
+**MintPy preparation and ingestion test.**
+
+```text
+products        6 water-mask=ON configurations (the control lacks the mask layer)
+common overlap  EPSG:32643, [647640, 3129000, 765360, 3225440]
+target grid     2943 x 2311 px @ 40 m - ONE grid for every layer of every pair
+prep_hyp3.py    exit 0, 42 .rsc metadata files
+load_data       exit 0 -> inputs/ifgramStack.h5
+                6 interferograms over 11 acquisition dates
+```
+
+This is a loadability test, not an inversion: the pilot pairs are not a connected time
+series (the 2021 pair is isolated from the 2025 pairs), so a full SBAS inversion is
+neither expected nor meaningful here. Connectivity is a property of the full 336-pair
+stack in Phase H.
+
+> **Defects found and fixed during MintPy preparation.**
+> 1. **AOI/CRS mismatch.** The frozen AOI is lon/lat (EPSG:4326) while HyP3 products are
+>    UTM 43N. Masking with unreprojected coordinates produced an all-False mask, which
+>    silently looked like "zero valid pixels" rather than an error. Both scripts now
+>    reproject the AOI.
+> 2. **Products are NOT on byte-identical grids.** Different pairs geocode to different
+>    extents/origins, so the naive "assert the same transform and read the same window"
+>    approach failed. Confirms brief section 42.5. All layers are now read boundlessly
+>    onto one shared target grid derived from the common overlap.
+> 3. **Renaming broke MintPy's date parsing.** MintPy parses the product name (encoding
+>    both acquisition dates) from the filename. Clipped files must therefore keep the
+>    original HyP3 stem plus a `_clipped` suffix, and `<product_name>.txt` must sit beside
+>    them; otherwise `prep_hyp3` raises "Failed to parse product name from filename".
+> 4. **`Job.succeeded` / `Job.failed` are methods, not properties** in `hyp3_sdk`, so
+>    `if job.succeeded:` is always truthy (a bound method object). The first downloader
+>    tried to download RUNNING jobs and logged spurious failures. All state checks now
+>    compare `status_code`. Pinned by `tests/test_pilot_retrieval.py`.
+> 5. **Edge-versus-interior validity is not informative for a merged multi-burst mosaic**
+>    (the bounding box includes large nodata corners); it is reported for completeness
+>    only, and the seam check is the meaningful multi-burst test.
+> 6. **Land-relative unwrapped-phase validity.** Gating on the plain AOI fraction
+>    penalised the water mask for working correctly (1.85% of AOI pixels are water).
+>    The gate now measures AOI land pixels.
+
+**Pilot acceptance: 18/18 gates PASSED.** See `qc/pilot/PILOT_ACCEPTANCE_REPORT.md`.
+
+```text
+all 14 jobs succeeded and downloaded        ledger reconciles both ways
+credit cost matches the estimate            all 7 configurations QC'd
+AOI fully inside every product              geometry consistent (1 CRS, 40 m)
+valid data covers the AOI                   coherence usable (median >= 0.30)
+unwrapped phase usable over land            connected components sensible
+no catastrophic burst-merge seam            duplicate copies reproducible
+water mask excludes water                   water mask preserves land
+water-mask polarity verified vs ASF docs    MintPy preparation succeeded
+MintPy ingestion succeeded                  storage sufficient for production
+```
+
+**Production remains BLOCKED.** No production job has been submitted; 7930 credits remain
+and production at 10x2 needs 1680.
+
+---
+
 ## Current status
 
 ```text
 Phase B  burst geometry frozen                 COMPLETE (K=4, AOI 100 % covered)
 Phase C  historical stack verified             COMPLETE (119 homogeneous acquisitions)
 Phase D  SBAS network audited                  COMPLETE (336 pairs, all criteria pass)
-Phase E  cost estimated, pilot defined         COMPLETE (1680 credits at 10x2; pilot 35)
-         v1 frozen, tests + MintPy env ready   COMPLETE (freeze_id cf2bdbfd…)
-Phase F  pilot submitted                       COMPLETE (14 jobs RUNNING; 70 credits)
-Phase G  production submission                 BLOCKED (pilot QC + explicit approval)
-Phase H  MintPy ingestion / inversion          NOT STARTED (env ready, no products yet)
+Phase E  cost estimated, pilot defined         COMPLETE (1680 credits at 10x2)
+         v1 frozen, tests + MintPy env ready   COMPLETE (freeze_id cf2bdbfd...)
+Phase F  pilot submitted + retrieved           COMPLETE (14/14 SUCCEEDED, 70 credits)
+Phase G  pilot QC and acceptance               COMPLETE (18/18 gates PASSED)
+Phase H  production submission                 BLOCKED ON EXPLICIT OWNER APPROVAL
+Phase I  MintPy ingestion / inversion          NOT STARTED (pilot ingestion proven)
 ```
 
-**Next actions**
+**Awaiting approval** for the 336-pair production run at 10x2: 1680 credits (21 % of the
+monthly allocation) and ~148 GB of projected storage.
 
-1. Wait for the pilot jobs to finish, then download and extract products (14-day retention).
-2. Run pilot QC (AOI coverage, coherence, unwrapped phase, connected components,
-   water-mask on/off comparison at the Yamuna).
-3. Estimate on-disk size from real pilot products.
-4. Seek explicit approval for the 1680-credit production run at 10x2.
-5. Rotate the Earthdata credentials at leisure.
 
 

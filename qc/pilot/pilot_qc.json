@@ -1,0 +1,1191 @@
+{
+  "generated_utc": "2026-09-21T23:21:04.062576+00:00",
+  "phase": "G",
+  "scope": "pilot only - production not submitted",
+  "products_evaluated": 14,
+  "unique_configurations": 7,
+  "coherence_thresholds": [
+    0.2,
+    0.3,
+    0.5
+  ],
+  "configurations": [
+    {
+      "config_key": "20211205_20211229",
+      "pair_id": "20211205_20211229",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20211205_20211229",
+      "job_id": "26b9dc5c-47e4-490e-8b7a-5b3d09d27042",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "26b9dc5c-47e4-490e-8b7a-5b3d09d27042",
+        "c174a55e-0767-48da-9575-a257aa6835f5"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20211205_20211229__26b9dc5c",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 124425800,
+      "extracted_bytes": 128304214,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2951,
+        "height": 2414,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647360.0,
+          3129000.0,
+          765400.0,
+          3225560.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172171,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172171,
+        "min": 0.1471,
+        "p25": 0.4558,
+        "median": 0.7188,
+        "p75": 0.8927,
+        "max": 0.9978,
+        "mean": 0.6704,
+        "std": 0.2395,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.997901,
+        "0.3": 0.909564,
+        "0.5": 0.709701
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          79,
+          2397
+        ],
+        "data_extent_cols": [
+          36,
+          2622
+        ],
+        "edge_valid_fraction": 0.00529,
+        "interior_valid_fraction": 0.726332,
+        "edge_minus_interior_valid": -0.721042,
+        "edge_median": 0.7634,
+        "interior_median": 0.5846,
+        "edge_minus_interior_median": 0.1788
+      },
+      "unw_phase": {
+        "valid_pixels": 1203775,
+        "valid_fraction": 0.168981,
+        "min": -9.5567,
+        "p25": -2.5079,
+        "median": -1.2767,
+        "p75": -0.2807,
+        "max": 9.6327,
+        "mean": -1.3351,
+        "std": 1.4609,
+        "valid_fraction_of_aoi": 0.981474,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          80,
+          2396
+        ],
+        "data_extent_cols": [
+          38,
+          2620
+        ],
+        "edge_valid_fraction": 0.004826,
+        "interior_valid_fraction": 0.717882,
+        "edge_minus_interior_valid": -0.713056,
+        "edge_median": -1.1108,
+        "interior_median": -1.0947,
+        "edge_minus_interior_median": -0.0161
+      },
+      "land_pixels_in_aoi": 1203775,
+      "water_pixels_in_aoi": 22722,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 1,
+        "largest_component_pixels": 1170355,
+        "largest_component_fraction_of_aoi": 0.954226,
+        "valid_fraction_of_aoi": 0.954226
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2259,
+        "robust_scale": 0.014301,
+        "max_abs_residual": 0.0923,
+        "max_abs_z": 6.45,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 1,
+        "flagged_row_indices": [
+          2367
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2257,
+        "robust_scale": 0.043042,
+        "max_abs_residual": 0.3355,
+        "max_abs_z": 7.8,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 6,
+        "flagged_row_indices": [
+          114,
+          145,
+          146,
+          147,
+          148,
+          149
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035953
+    },
+    {
+      "config_key": "20250211_20250223_nomask",
+      "pair_id": "20250211_20250223",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask",
+      "job_id": "0a5ef1f4-26ae-4d12-adb6-42bb425bf7b7",
+      "apply_water_mask": false,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "0a5ef1f4-26ae-4d12-adb6-42bb425bf7b7",
+        "190ec226-e6f0-43e5-a004-8e071b69b90d"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask__0a5ef1f4",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 123220084,
+      "extracted_bytes": 126918847,
+      "extracted_files": 13,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2949,
+        "height": 2414,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647440.0,
+          3128960.0,
+          765400.0,
+          3225520.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172288,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172288,
+        "min": 0.1478,
+        "p25": 0.5874,
+        "median": 0.8169,
+        "p75": 0.9267,
+        "max": 0.9987,
+        "mean": 0.7409,
+        "std": 0.2201,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.99857,
+        "0.3": 0.948288,
+        "0.5": 0.817279
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          77,
+          2396
+        ],
+        "data_extent_cols": [
+          32,
+          2620
+        ],
+        "edge_valid_fraction": 0.00496,
+        "interior_valid_fraction": 0.726173,
+        "edge_minus_interior_valid": -0.721213,
+        "edge_median": 0.7518,
+        "interior_median": 0.7167,
+        "edge_minus_interior_median": 0.0351
+      },
+      "unw_phase": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172288,
+        "min": -4.1964,
+        "p25": 3.1347,
+        "median": 4.7312,
+        "p75": 5.9461,
+        "max": 12.9925,
+        "mean": 4.4779,
+        "std": 1.9353,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          79,
+          2394
+        ],
+        "data_extent_cols": [
+          35,
+          2618
+        ],
+        "edge_valid_fraction": 0.006217,
+        "interior_valid_fraction": 0.726799,
+        "edge_minus_interior_valid": -0.720582,
+        "edge_median": 4.9817,
+        "interior_median": 5.3873,
+        "edge_minus_interior_median": -0.4056
+      },
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 2,
+        "largest_component_pixels": 1210344,
+        "largest_component_fraction_of_aoi": 0.98683,
+        "valid_fraction_of_aoi": 0.986833
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2260,
+        "robust_scale": 0.012772,
+        "max_abs_residual": 0.1015,
+        "max_abs_z": 7.95,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 4,
+        "flagged_row_indices": [
+          2176,
+          2340,
+          2356,
+          2357
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2256,
+        "robust_scale": 0.027299,
+        "max_abs_residual": 0.3302,
+        "max_abs_z": 12.1,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 22,
+        "flagged_row_indices": [
+          214,
+          298,
+          324,
+          2179,
+          2204,
+          2248,
+          2281,
+          2292,
+          2324,
+          2325,
+          2330,
+          2331,
+          2332,
+          2347,
+          2348,
+          2350,
+          2351,
+          2353,
+          2354,
+          2358
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035551
+    },
+    {
+      "config_key": "20250211_20250223",
+      "pair_id": "20250211_20250223",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223",
+      "job_id": "3e3c4152-e9d9-4efe-bc1e-bbb52ffd6757",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "3e3c4152-e9d9-4efe-bc1e-bbb52ffd6757",
+        "3ffe8aff-f18a-4e41-8c40-5179cf7f5da9"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250211_20250223__3e3c4152",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 123141685,
+      "extracted_bytes": 126871438,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2949,
+        "height": 2414,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647440.0,
+          3128960.0,
+          765400.0,
+          3225520.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172288,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172288,
+        "min": 0.1478,
+        "p25": 0.5874,
+        "median": 0.8169,
+        "p75": 0.9267,
+        "max": 0.9987,
+        "mean": 0.7409,
+        "std": 0.2201,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.99857,
+        "0.3": 0.948288,
+        "0.5": 0.817279
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          77,
+          2396
+        ],
+        "data_extent_cols": [
+          32,
+          2620
+        ],
+        "edge_valid_fraction": 0.00496,
+        "interior_valid_fraction": 0.726173,
+        "edge_minus_interior_valid": -0.721213,
+        "edge_median": 0.7518,
+        "interior_median": 0.7167,
+        "edge_minus_interior_median": 0.0351
+      },
+      "unw_phase": {
+        "valid_pixels": 1203802,
+        "valid_fraction": 0.1691,
+        "min": -4.1964,
+        "p25": 3.1127,
+        "median": 4.7136,
+        "p75": 5.9415,
+        "max": 12.9925,
+        "mean": 4.4636,
+        "std": 1.9405,
+        "valid_fraction_of_aoi": 0.981496,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          79,
+          2394
+        ],
+        "data_extent_cols": [
+          35,
+          2618
+        ],
+        "edge_valid_fraction": 0.006217,
+        "interior_valid_fraction": 0.71869,
+        "edge_minus_interior_valid": -0.712473,
+        "edge_median": 4.9817,
+        "interior_median": 5.3927,
+        "edge_minus_interior_median": -0.411
+      },
+      "land_pixels_in_aoi": 1203802,
+      "water_pixels_in_aoi": 22695,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 3,
+        "largest_component_pixels": 1207316,
+        "largest_component_fraction_of_aoi": 0.984361,
+        "valid_fraction_of_aoi": 0.98446
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2260,
+        "robust_scale": 0.012772,
+        "max_abs_residual": 0.1015,
+        "max_abs_z": 7.95,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 4,
+        "flagged_row_indices": [
+          2176,
+          2340,
+          2356,
+          2357
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2256,
+        "robust_scale": 0.028332,
+        "max_abs_residual": 0.3302,
+        "max_abs_z": 11.66,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 15,
+        "flagged_row_indices": [
+          2179,
+          2204,
+          2248,
+          2292,
+          2330,
+          2331,
+          2347,
+          2348,
+          2350,
+          2351,
+          2353,
+          2354,
+          2358,
+          2360,
+          2361
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035551
+    },
+    {
+      "config_key": "20250307_20250319",
+      "pair_id": "20250307_20250319",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250307_20250319",
+      "job_id": "5a0feb7b-e21f-4e3b-92a0-bfed53ad6ed2",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "5a0feb7b-e21f-4e3b-92a0-bfed53ad6ed2",
+        "eee2b6f0-ba17-49c3-bd53-fc6a3e4aca5d"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250307_20250319__5a0feb7b",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 124221560,
+      "extracted_bytes": 128077125,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2950,
+        "height": 2414,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647360.0,
+          3128880.0,
+          765360.0,
+          3225440.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172229,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172229,
+        "min": 0.1451,
+        "p25": 0.5472,
+        "median": 0.7925,
+        "p75": 0.9174,
+        "max": 0.9991,
+        "mean": 0.7194,
+        "std": 0.2289,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.998298,
+        "0.3": 0.93301,
+        "0.5": 0.785967
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          77,
+          2395
+        ],
+        "data_extent_cols": [
+          32,
+          2621
+        ],
+        "edge_valid_fraction": 0.004552,
+        "interior_valid_fraction": 0.725883,
+        "edge_minus_interior_valid": -0.721331,
+        "edge_median": 0.7519,
+        "interior_median": 0.6369,
+        "edge_minus_interior_median": 0.115
+      },
+      "unw_phase": {
+        "valid_pixels": 1203830,
+        "valid_fraction": 0.169046,
+        "min": -8.9043,
+        "p25": 0.066,
+        "median": 1.2109,
+        "p75": 2.1582,
+        "max": 10.9469,
+        "mean": 1.1675,
+        "std": 1.7191,
+        "valid_fraction_of_aoi": 0.981519,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          79,
+          2393
+        ],
+        "data_extent_cols": [
+          35,
+          2618
+        ],
+        "edge_valid_fraction": 0.006177,
+        "interior_valid_fraction": 0.718666,
+        "edge_minus_interior_valid": -0.712489,
+        "edge_median": 0.5908,
+        "interior_median": 1.0782,
+        "edge_minus_interior_median": -0.4874
+      },
+      "land_pixels_in_aoi": 1203830,
+      "water_pixels_in_aoi": 22667,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 2,
+        "largest_component_pixels": 1189391,
+        "largest_component_fraction_of_aoi": 0.969746,
+        "valid_fraction_of_aoi": 0.970113
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2259,
+        "robust_scale": 0.014469,
+        "max_abs_residual": 0.0943,
+        "max_abs_z": 6.52,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 1,
+        "flagged_row_indices": [
+          114
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2255,
+        "robust_scale": 0.044695,
+        "max_abs_residual": 0.2815,
+        "max_abs_z": 6.3,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 1,
+        "flagged_row_indices": [
+          2317
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.03529
+    },
+    {
+      "config_key": "20250331_20250506",
+      "pair_id": "20250331_20250506",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250331_20250506",
+      "job_id": "ca5ae26f-85e0-426c-9863-f032444cc153",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "ca5ae26f-85e0-426c-9863-f032444cc153",
+        "3ed54350-55d3-4bca-bdc5-21f0f2d0d352"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250331_20250506__ca5ae26f",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 121890557,
+      "extracted_bytes": 125811503,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2972,
+        "height": 2421,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647280.0,
+          3128800.0,
+          766160.0,
+          3225640.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.17046,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.17046,
+        "min": 0.1395,
+        "p25": 0.301,
+        "median": 0.4242,
+        "p75": 0.6927,
+        "max": 0.997,
+        "mean": 0.4982,
+        "std": 0.2258,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.994417,
+        "0.3": 0.753288,
+        "0.5": 0.420334
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          86,
+          2401
+        ],
+        "data_extent_cols": [
+          41,
+          2622
+        ],
+        "edge_valid_fraction": 0.005074,
+        "interior_valid_fraction": 0.726482,
+        "edge_minus_interior_valid": -0.721408,
+        "edge_median": 0.5341,
+        "interior_median": 0.3457,
+        "edge_minus_interior_median": 0.1884
+      },
+      "unw_phase": {
+        "valid_pixels": 1203812,
+        "valid_fraction": 0.167307,
+        "min": -12.0634,
+        "p25": 3.3976,
+        "median": 5.2344,
+        "p75": 6.8089,
+        "max": 19.7903,
+        "mean": 5.0867,
+        "std": 2.4756,
+        "valid_fraction_of_aoi": 0.981504,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          87,
+          2399
+        ],
+        "data_extent_cols": [
+          43,
+          2620
+        ],
+        "edge_valid_fraction": 0.005368,
+        "interior_valid_fraction": 0.71817,
+        "edge_minus_interior_valid": -0.712802,
+        "edge_median": 2.1623,
+        "interior_median": 3.2051,
+        "edge_minus_interior_median": -1.0428
+      },
+      "land_pixels_in_aoi": 1203812,
+      "water_pixels_in_aoi": 22685,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 6,
+        "largest_component_pixels": 848682,
+        "largest_component_fraction_of_aoi": 0.691956,
+        "valid_fraction_of_aoi": 0.703172
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2256,
+        "robust_scale": 0.006307,
+        "max_abs_residual": 0.0457,
+        "max_abs_z": 7.24,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 0,
+        "flagged_row_indices": [],
+        "verdict": "no seam detected"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2253,
+        "robust_scale": 0.067483,
+        "max_abs_residual": 0.5835,
+        "max_abs_z": 8.65,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 35,
+        "flagged_row_indices": [
+          119,
+          130,
+          132,
+          149,
+          151,
+          154,
+          196,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          241,
+          242,
+          293,
+          303,
+          306
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035659
+    },
+    {
+      "config_key": "20250530_20250705",
+      "pair_id": "20250530_20250705",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250530_20250705",
+      "job_id": "0a643f7b-ddbf-4028-98c7-68b4519ade69",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "0a643f7b-ddbf-4028-98c7-68b4519ade69",
+        "e18ab999-96b3-43ee-bfa8-523e090c27f9"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250530_20250705__0a643f7b",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 122153144,
+      "extracted_bytes": 126125750,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2950,
+        "height": 2414,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647640.0,
+          3128880.0,
+          765640.0,
+          3225440.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172229,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172229,
+        "min": 0.1476,
+        "p25": 0.2964,
+        "median": 0.4075,
+        "p75": 0.7361,
+        "max": 0.9961,
+        "mean": 0.5073,
+        "std": 0.2438,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.994893,
+        "0.3": 0.737222,
+        "0.5": 0.41599
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          77,
+          2394
+        ],
+        "data_extent_cols": [
+          33,
+          2620
+        ],
+        "edge_valid_fraction": 0.006373,
+        "interior_valid_fraction": 0.726704,
+        "edge_minus_interior_valid": -0.720331,
+        "edge_median": 0.5525,
+        "interior_median": 0.333,
+        "edge_minus_interior_median": 0.2195
+      },
+      "unw_phase": {
+        "valid_pixels": 1203772,
+        "valid_fraction": 0.169038,
+        "min": -16.6967,
+        "p25": -2.1943,
+        "median": -0.4272,
+        "p75": 2.4449,
+        "max": 22.0065,
+        "mean": 0.4818,
+        "std": 4.0843,
+        "valid_fraction_of_aoi": 0.981472,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          79,
+          2394
+        ],
+        "data_extent_cols": [
+          35,
+          2619
+        ],
+        "edge_valid_fraction": 0.004948,
+        "interior_valid_fraction": 0.718013,
+        "edge_minus_interior_valid": -0.713065,
+        "edge_median": 6.3903,
+        "interior_median": 2.2791,
+        "edge_minus_interior_median": 4.1112
+      },
+      "land_pixels_in_aoi": 1203772,
+      "water_pixels_in_aoi": 22725,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 8,
+        "largest_component_pixels": 736006,
+        "largest_component_fraction_of_aoi": 0.600088,
+        "valid_fraction_of_aoi": 0.639067
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2258,
+        "robust_scale": 0.005106,
+        "max_abs_residual": 0.0789,
+        "max_abs_z": 15.45,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 14,
+        "flagged_row_indices": [
+          1244,
+          1245,
+          1246,
+          1247,
+          1303,
+          1304,
+          1308,
+          1309,
+          1310,
+          1320,
+          1322,
+          1323,
+          1324,
+          1325
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2256,
+        "robust_scale": 0.093699,
+        "max_abs_residual": 1.4095,
+        "max_abs_z": 15.04,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 39,
+        "flagged_row_indices": [
+          110,
+          111,
+          112,
+          113,
+          115,
+          116,
+          117,
+          118,
+          119,
+          140,
+          146,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          184
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035286
+    },
+    {
+      "config_key": "20250623_20250705",
+      "pair_id": "20250623_20250705",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250623_20250705",
+      "job_id": "1e7e5115-ef8a-4eb5-8157-4d49ee64c651",
+      "apply_water_mask": true,
+      "status": "SUCCEEDED",
+      "copies": 2,
+      "job_ids": [
+        "1e7e5115-ef8a-4eb5-8157-4d49ee64c651",
+        "e5f2b5bc-78cf-4df6-895d-e0e2b9442f29"
+      ],
+      "product_dir": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250623_20250705__1e7e5115",
+      "layers_found": [
+        "conncomp.tif",
+        "corr.tif",
+        "dem.tif",
+        "lv_phi.tif",
+        "lv_theta.tif",
+        "unw_phase.tif",
+        "water_mask.tif"
+      ],
+      "layers_missing": [],
+      "zip_bytes": 121665026,
+      "extracted_bytes": 125559124,
+      "extracted_files": 14,
+      "raster": {
+        "crs": "EPSG:32643",
+        "width": 2950,
+        "height": 2413,
+        "count": 1,
+        "dtype": "float32",
+        "res": [
+          40.0,
+          40.0
+        ],
+        "bounds": [
+          647640.0,
+          3128920.0,
+          765640.0,
+          3225440.0
+        ],
+        "nodata": 0.0
+      },
+      "aoi_pixels": 1226497,
+      "aoi_fully_inside_product": true,
+      "aoi_coverage_of_product": 0.172301,
+      "coherence": {
+        "valid_pixels": 1226497,
+        "valid_fraction": 0.172301,
+        "min": 0.1482,
+        "p25": 0.3281,
+        "median": 0.5075,
+        "p75": 0.7772,
+        "max": 0.9967,
+        "mean": 0.5519,
+        "std": 0.2397,
+        "valid_fraction_of_aoi": 1.0
+      },
+      "coherence_fraction_above": {
+        "0.2": 0.996331,
+        "0.3": 0.818245,
+        "0.5": 0.50761
+      },
+      "coherence_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          76,
+          2395
+        ],
+        "data_extent_cols": [
+          33,
+          2621
+        ],
+        "edge_valid_fraction": 0.004838,
+        "interior_valid_fraction": 0.726084,
+        "edge_minus_interior_valid": -0.721246,
+        "edge_median": 0.6236,
+        "interior_median": 0.379,
+        "edge_minus_interior_median": 0.2446
+      },
+      "unw_phase": {
+        "valid_pixels": 1203808,
+        "valid_fraction": 0.169113,
+        "min": -47.8734,
+        "p25": -2.145,
+        "median": 2.006,
+        "p75": 4.696,
+        "max": 17.8974,
+        "mean": -0.2522,
+        "std": 8.3227,
+        "valid_fraction_of_aoi": 0.981501,
+        "valid_fraction_of_aoi_land": 1.0
+      },
+      "unw_phase_edge": {
+        "available": true,
+        "band_px": 5,
+        "data_extent_rows": [
+          78,
+          2393
+        ],
+        "data_extent_cols": [
+          35,
+          2618
+        ],
+        "edge_valid_fraction": 0.005746,
+        "interior_valid_fraction": 0.718584,
+        "edge_minus_interior_valid": -0.712838,
+        "edge_median": 2.4184,
+        "interior_median": 2.9534,
+        "edge_minus_interior_median": -0.535
+      },
+      "land_pixels_in_aoi": 1203808,
+      "water_pixels_in_aoi": 22689,
+      "conncomp": {
+        "available": true,
+        "components_in_aoi": 1,
+        "largest_component_pixels": 1006749,
+        "largest_component_fraction_of_aoi": 0.820833,
+        "valid_fraction_of_aoi": 0.820833
+      },
+      "coherence_seam_check": {
+        "available": true,
+        "rows_evaluated": 2260,
+        "robust_scale": 0.008735,
+        "max_abs_residual": 0.1004,
+        "max_abs_z": 11.49,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 31,
+        "flagged_row_indices": [
+          1240,
+          1243,
+          1244,
+          1300,
+          1301,
+          1302,
+          1303,
+          1315,
+          1316,
+          1317,
+          1318,
+          1319,
+          1320,
+          1321,
+          1322,
+          1323,
+          1339,
+          1340,
+          1341,
+          1748
+        ],
+        "verdict": "possible burst seam"
+      },
+      "unw_phase_seam_check": {
+        "available": true,
+        "rows_evaluated": 2256,
+        "robust_scale": 0.125727,
+        "max_abs_residual": 2.982,
+        "max_abs_z": 23.72,
+        "min_effect_threshold": 0.05,
+        "flagged_rows": 36,
+        "flagged_row_indices": [
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          134
+        ],
+        "verdict": "possible burst seam"
+      },
+      "nodata_fraction_full_raster": 0.035829
+    }
+  ]
+}

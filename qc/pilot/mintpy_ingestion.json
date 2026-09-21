@@ -1,0 +1,175 @@
+{
+  "generated_utc": "2026-09-21T23:20:12.342376+00:00",
+  "phase": "G",
+  "scope": "pilot ingestion test only - no inversion attempted",
+  "rationale": "the pilot pairs are not a connected time series, so a full SBAS inversion is neither expected nor meaningful at this stage",
+  "products_ingested": 6,
+  "pair_ids": [
+    "20211205_20211229",
+    "20250211_20250223",
+    "20250307_20250319",
+    "20250331_20250506",
+    "20250530_20250705",
+    "20250623_20250705"
+  ],
+  "common_overlap": {
+    "common_overlap_bounds": [
+      647640.0,
+      3129000.0,
+      765360.0,
+      3225440.0
+    ],
+    "target_grid": {
+      "crs": "EPSG:32643",
+      "transform": [
+        40.0,
+        0.0,
+        647640.0,
+        0.0,
+        -40.0,
+        3225440.0
+      ],
+      "width": 2943,
+      "height": 2411,
+      "res": [
+        40.0,
+        40.0
+      ],
+      "bounds": [
+        647640.0,
+        3129000.0,
+        765360.0,
+        3225440.0
+      ],
+      "aoi_pixels": 1226497
+    },
+    "aoi_fully_inside_common_overlap": true,
+    "aoi_bounds_in_target_crs": [
+      674836.713,
+      3141689.387,
+      722859.551,
+      3195340.045
+    ],
+    "aoi_source_crs": "EPSG:4326",
+    "grid_alignment_notes": [],
+    "note": "products are not byte-identical grids; all layers are read onto one shared target grid derived from the common overlap",
+    "crs": "EPSG:32643",
+    "products": 6,
+    "per_product_bounds": [
+      [
+        647360.0,
+        3129000.0,
+        765400.0,
+        3225560.0
+      ],
+      [
+        647440.0,
+        3128960.0,
+        765400.0,
+        3225520.0
+      ],
+      [
+        647360.0,
+        3128880.0,
+        765360.0,
+        3225440.0
+      ],
+      [
+        647280.0,
+        3128800.0,
+        766160.0,
+        3225640.0
+      ],
+      [
+        647640.0,
+        3128880.0,
+        765640.0,
+        3225440.0
+      ],
+      [
+        647640.0,
+        3128920.0,
+        765640.0,
+        3225440.0
+      ]
+    ],
+    "generated_utc": "2026-09-21T23:20:12.342376+00:00"
+  },
+  "prep_hyp3": {
+    "exit_code": 0,
+    "rsc_files_created": 42,
+    "ok": true,
+    "note": "non-fatal if it fails; the MintPy hyp3 loader reads GeoTIFF metadata directly"
+  },
+  "load_data": {
+    "exit_code": 0,
+    "ok": true
+  },
+  "loaded": {
+    "work_dir": "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work",
+    "exists": true,
+    "files": [
+      "geometryGeo.h5",
+      "ifgramStack.h5",
+      "mintpy_pilot.txt",
+      "mintpy_pilot.txt",
+      "smallbaselineApp.cfg",
+      "smallbaselineApp.cfg",
+      "smallbaselineApp.cfg"
+    ],
+    "file_count": 7,
+    "ifgram_stack": "inputs/ifgramStack.h5",
+    "ifgram_stack_keys": [
+      "bperp",
+      "coherence",
+      "connectComponent",
+      "date",
+      "dropIfgram",
+      "unwrapPhase"
+    ],
+    "n_interferograms": 6,
+    "acquisition_dates": [
+      "20211205",
+      "20211229",
+      "20250211",
+      "20250223",
+      "20250307",
+      "20250319",
+      "20250331",
+      "20250506",
+      "20250530",
+      "20250623",
+      "20250705"
+    ],
+    "bperp_shape": [
+      6
+    ]
+  },
+  "log_tail": [
+    "--------------------------------------------------",
+    "searching ionosphere pairs info",
+    "input data files:",
+    "WARNING: No data files found for the required dataset: ['unwrapPhase']! Skip loading for ionosphere stack.",
+    "--------------------------------------------------",
+    "searching offset pairs info",
+    "input data files:",
+    "WARNING: No data files found for the required dataset: ['rangeOffset', 'azimuthOffset']! Skip loading for offset stack.",
+    "time used: 00 mins 1.1 secs.",
+    "",
+    "No lookup table (longitude or rangeCoord) found in files.",
+    "Input data seems to be geocoded. Lookup file not needed.",
+    "Loaded dataset are processed by InSAR software: hyp3",
+    "Loaded dataset are in GEO coordinates",
+    "Interferogram Stack: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/ifgramStack.h5",
+    "Geometry      File : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/geometryGeo.h5",
+    "Lookup Table  File : None",
+    "--------------------------------------------------",
+    "updating metadata based on custom template file mintpy_pilot.txt for file: ifgramStack.h5",
+    "Go back to directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS",
+    "",
+    "################################################",
+    "   Normal end of smallbaselineApp processing!",
+    "################################################",
+    "Time used: 00 mins 1.1 secs"
+  ]
+}

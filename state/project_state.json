@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-21T22:55:00Z",
-  "phase": "PILOT_SUBMITTED_RUNNING",
-  "next_phase": "PILOT_DOWNLOAD_AND_QC",
+  "updated_utc": "2026-09-22T05:30:00Z",
+  "phase": "PILOT_ACCEPTED_AWAITING_PRODUCTION_APPROVAL",
+  "next_phase": "PRODUCTION_SUBMISSION_PENDING_APPROVAL",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -102,19 +102,18 @@
   "pilot": {
     "looks": "10x2",
     "pixel_spacing_m": 40,
-    "distinct_jobs_intended": 7,
-    "jobs_actually_submitted": 14,
-    "duplicate_jobs": 7,
-    "credits_intended": 35,
+    "jobs_submitted": 14,
+    "unique_configurations": 7,
+    "duplicate_copies": 7,
+    "jobs_succeeded": 14,
+    "products_downloaded": 14,
     "credits_spent": 70,
-    "status": "RUNNING",
-    "all_jobs_running": true,
-    "includes_water_mask_control": true,
-    "job_name_prefix": "delhi_ncr_sbas_a27_v1_pilot",
-    "ledger": "manifests/hyp3_jobs.csv",
-    "reconciled_from_remote": true,
-    "duplicates_cancellable": false,
-    "duplicates_impact": "Redundant, identical pairs. No scientific impact; wasted 35 credits because the HyP3 SDK exposes no job-cancel/delete call."
+    "status": "ACCEPTED",
+    "acceptance_gates_passed": 18,
+    "acceptance_gates_total": 18,
+    "report": "qc/pilot/PILOT_ACCEPTANCE_REPORT.md",
+    "duplicates_preserved": true,
+    "reproducibility": "all 7 configurations bit-identical across duplicate copies"
   },
   "cost_estimate": {
     "interferogram_count": 336,
@@ -132,20 +131,18 @@
     "product download"
   ],
   "pilot_submitted": true,
-  "pilot_passed": false,
+  "pilot_passed": true,
   "production_approved": false,
   "production_submitted": false,
   "mintpy_complete": false,
   "production_blocked_on": [
-    "pilot products downloaded and QC passed",
-    "disk-space estimate from real pilot products",
-    "explicit owner approval for the 1680-credit production run at 10x2"
+    "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Pilot products are retained by HyP3 Basic for 14 days: download promptly.",
-    "Rotate the Earthdata credentials when convenient (~/.netrc).",
-    "Run python scripts/verify_freeze.py before any production submission.",
-    "Confirm the live HyP3 credit table immediately before production."
+    "Await explicit owner approval before submitting the 336-pair production run.",
+    "Re-run python scripts/verify_freeze.py immediately before production.",
+    "Confirm the live HyP3 credit table immediately before production.",
+    "Rotate the Earthdata credentials when convenient (~/.netrc)."
   ],
   "v1_freeze": {
     "frozen": true,
@@ -206,5 +203,51 @@
       "verified": "A third --submit run submitted 0 jobs and credits remained at 7930.",
       "production_risk_mitigated": "At production scale (336 jobs) the same bug would have wasted 1680 credits."
     }
-  ]
+  ],
+  "pilot_metrics": {
+    "crs": "EPSG:32643",
+    "pixel_size_m": 40,
+    "aoi_fully_inside_all_products": true,
+    "valid_fraction_of_aoi": 1.0,
+    "median_coherence_range": [
+      0.4075,
+      0.8169
+    ],
+    "components_in_aoi_range": [
+      1,
+      8
+    ],
+    "largest_component_fraction_range": [
+      0.600088,
+      0.98683
+    ],
+    "burst_merge_seam": "no catastrophic seam detected",
+    "water_fraction_of_raster": 0.009094,
+    "water_fraction_of_aoi": 0.0185,
+    "water_mask_recommendation": "apply_water_mask = True",
+    "mintpy_prep_hyp3_exit": 0,
+    "mintpy_rsc_files": 42,
+    "mintpy_load_data_exit": 0,
+    "mintpy_interferograms_loaded": 6,
+    "mintpy_acquisition_dates_loaded": 11
+  },
+  "storage": {
+    "pilot_zip_bytes": 1721402410,
+    "pilot_extracted_bytes": 1775260000,
+    "projected_336_pairs": {
+      "zip_gb": 41.31,
+      "extracted_gb": 42.61,
+      "mintpy_working_gb": 63.9,
+      "grand_total_gb": 147.83
+    },
+    "free_disk_gb": 551,
+    "sufficient": true
+  },
+  "recommended_production_options": {
+    "looks": "10x2",
+    "pixel_spacing_m": 40,
+    "apply_water_mask": true,
+    "pairs": 336,
+    "credits": 1680
+  }
 }

@@ -1,0 +1,219 @@
+{
+  "generated_utc": "2026-09-21T23:21:04.320244+00:00",
+  "phase": "G",
+  "scope": "pilot only",
+  "verdict": "PILOT ACCEPTED",
+  "gates_passed": 18,
+  "gates_total": 18,
+  "gates": [
+    {
+      "gate": "all_pilot_jobs_reached_terminial_and_succeeded",
+      "passed": true,
+      "observed": "14/14 downloaded",
+      "expected": "14/14 SUCCEEDED and downloaded",
+      "source": "manifests/product_inventory.csv"
+    },
+    {
+      "gate": "ledger_reconciles_with_remote_truth",
+      "passed": true,
+      "observed": "ledger=14 remote=14 only_ledger=0 only_remote=0",
+      "expected": "bidirectional coverage, 0 orphans",
+      "source": "qc/pilot/ledger_reconciliation.json"
+    },
+    {
+      "gate": "credit_cost_matches_the_estimate",
+      "passed": true,
+      "observed": "{'5': 14} total=70",
+      "expected": "5 credits/job (K=4 @ 10x2), 70 total",
+      "source": "HyP3 job metadata (credit_cost)"
+    },
+    {
+      "gate": "qc_covered_all_unique_configurations",
+      "passed": true,
+      "observed": 7,
+      "expected": "7 unique scientific configurations",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "aoi_fully_inside_every_product",
+      "passed": true,
+      "observed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": "True for all",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "product_geometry_consistent",
+      "passed": true,
+      "observed": {
+        "crs": [
+          "EPSG:32643"
+        ],
+        "pixel_size_m": [
+          "40.0"
+        ]
+      },
+      "expected": "one CRS, 40 m pixel spacing (10x2)",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "valid_data_covers_the_aoi",
+      "passed": true,
+      "observed": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected": ">= 0.99 of AOI pixels carry valid data",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "coherence_usable_across_all_configs",
+      "passed": true,
+      "observed": {
+        "min": 0.4075,
+        "values": [
+          0.7188,
+          0.8169,
+          0.8169,
+          0.7925,
+          0.4242,
+          0.4075,
+          0.5075
+        ]
+      },
+      "expected": "median coherence >= 0.30 for every configuration",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "unwrapped_phase_usable_over_land",
+      "passed": true,
+      "observed": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected": ">= 0.99 of AOI *land* pixels unwrapped (water excluded by design)",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "connected_components_sensible",
+      "passed": true,
+      "observed": {
+        "largest_component_fraction_min": 0.600088,
+        "components": [
+          1,
+          2,
+          3,
+          2,
+          6,
+          8,
+          1
+        ]
+      },
+      "expected": "largest component >= 0.50 of the AOI in every configuration",
+      "source": "qc/pilot/pilot_qc.json"
+    },
+    {
+      "gate": "no_catastrophic_burst_merge_seam",
+      "passed": true,
+      "observed": {
+        "max_coherence_residual": 0.1015,
+        "max_flagged_rows": 31
+      },
+      "expected": "coherence residual < 0.25 and < 5% of rows flagged",
+      "source": "qc/pilot/pilot_qc.json (seam check)"
+    },
+    {
+      "gate": "duplicate_copies_are_reproducible",
+      "passed": true,
+      "observed": "7 configurations compared, all_identical=True",
+      "expected": "every layer bit-identical between duplicate submissions",
+      "source": "qc/pilot/reproducibility.json"
+    },
+    {
+      "gate": "water_mask_excludes_water_from_unwrapping",
+      "passed": true,
+      "observed": {
+        "water_masked_valid": 0.0,
+        "water_unmasked_valid": 0.743416
+      },
+      "expected": "water pixels have 0 valid unwrapped phase when masked, > 0.5 when not",
+      "source": "qc/pilot/water_mask_comparison.json"
+    },
+    {
+      "gate": "water_mask_does_not_remove_land",
+      "passed": true,
+      "observed": {
+        "land_masked_valid": 0.604778,
+        "land_unmasked_valid": 0.604778
+      },
+      "expected": "land valid fraction unchanged by masking",
+      "source": "qc/pilot/water_mask_comparison.json"
+    },
+    {
+      "gate": "water_mask_polarity_verified_against_asf_docs",
+      "passed": true,
+      "observed": "0 = water, 1 = land (HyP3 product convention; opposite of ASF reference tiles)",
+      "expected": "0 = water, 1 = land per https://hyp3-docs.asf.alaska.edu/water_masking/",
+      "source": "qc/pilot/water_mask_comparison.json"
+    },
+    {
+      "gate": "mintpy_preparation_succeeded",
+      "passed": true,
+      "observed": "prep_hyp3 exit=0 rsc=42",
+      "expected": "prep_hyp3 exit 0 with .rsc metadata written",
+      "source": "mintpy/ingestion_report.json"
+    },
+    {
+      "gate": "mintpy_ingestion_succeeded",
+      "passed": true,
+      "observed": {
+        "exit": 0,
+        "interferograms": 6,
+        "dates": 11
+      },
+      "expected": "load_data exit 0 with 6 interferograms loaded",
+      "source": "mintpy/ingestion_report.json"
+    },
+    {
+      "gate": "storage_sufficient_for_production",
+      "passed": true,
+      "observed": {
+        "projected_grand_total_gb": 147.83,
+        "free_disk_gb": 555
+      },
+      "expected": "projected total < 60% of 555 GB free",
+      "source": "qc/pilot/storage_estimate.json"
+    }
+  ],
+  "production": {
+    "submitted": false,
+    "blocked": true,
+    "blocked_on": "explicit owner approval",
+    "pairs": 336,
+    "credits_at_10x2": 1680,
+    "storage_projected_gb": 147.83
+  },
+  "recommended_production_options": {
+    "looks": "10x2",
+    "pixel_spacing_m": 40,
+    "apply_water_mask": true,
+    "water_mask_rationale": "masking removes water pixels from unwrapping entirely (0 valid unwrapped phase over water) while leaving land untouched (identical land valid fraction with and without the mask)"
+  }
+}

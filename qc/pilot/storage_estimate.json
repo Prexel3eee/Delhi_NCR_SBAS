@@ -1,0 +1,26 @@
+{
+  "measured": {
+    "configurations": 7,
+    "zip_mean_bytes": 122959694.14285715,
+    "zip_max_bytes": 124425800.0,
+    "extracted_mean_bytes": 126809714.57142857,
+    "extracted_max_bytes": 128304214.0,
+    "extracted_to_zip_ratio": 1.031
+  },
+  "projection_336_pairs": {
+    "zip_total_gb": 41.31,
+    "zip_total_worst_case_gb": 41.81,
+    "extracted_total_gb": 42.61,
+    "extracted_total_worst_case_gb": 43.11,
+    "mintpy_working_gb": 63.91,
+    "grand_total_gb": 147.83
+  },
+  "pilot_actual": {
+    "zip_total_bytes": 1721435707,
+    "extracted_total_bytes": 1775336003
+  },
+  "assumptions": {
+    "mintpy_multiplier": 1.5,
+    "note": "production projection uses the mean across the 7 unique configurations; worst case uses the largest observed product."
+  }
+}

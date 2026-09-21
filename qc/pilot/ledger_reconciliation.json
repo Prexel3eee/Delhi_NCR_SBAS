@@ -1,0 +1,116 @@
+{
+  "generated_utc": "2026-09-21T23:15:19.155992+00:00",
+  "ledger_path": "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/manifests/hyp3_jobs.csv",
+  "ledger_rows": 14,
+  "ledger_distinct_job_ids": 14,
+  "remote_jobs": 14,
+  "in_ledger_not_remote": [],
+  "in_remote_not_ledger": [],
+  "status_by_ledger": {
+    "PENDING": 14
+  },
+  "status_by_remote": {
+    "SUCCEEDED": 14
+  },
+  "status_mismatches": [
+    {
+      "job_id": "26b9dc5c-47e4-490e-8b7a-5b3d09d27042",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20211205_20211229",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "c174a55e-0767-48da-9575-a257aa6835f5",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20211205_20211229",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "3e3c4152-e9d9-4efe-bc1e-bbb52ffd6757",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "3ffe8aff-f18a-4e41-8c40-5179cf7f5da9",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "0a5ef1f4-26ae-4d12-adb6-42bb425bf7b7",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "190ec226-e6f0-43e5-a004-8e071b69b90d",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "5a0feb7b-e21f-4e3b-92a0-bfed53ad6ed2",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250307_20250319",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "eee2b6f0-ba17-49c3-bd53-fc6a3e4aca5d",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250307_20250319",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "ca5ae26f-85e0-426c-9863-f032444cc153",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250331_20250506",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "3ed54350-55d3-4bca-bdc5-21f0f2d0d352",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250331_20250506",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "0a643f7b-ddbf-4028-98c7-68b4519ade69",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250530_20250705",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "e18ab999-96b3-43ee-bfa8-523e090c27f9",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250530_20250705",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "1e7e5115-ef8a-4eb5-8157-4d49ee64c651",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250623_20250705",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    },
+    {
+      "job_id": "e5f2b5bc-78cf-4df6-895d-e0e2b9442f29",
+      "job_name": "delhi_ncr_sbas_a27_v1_pilot_20250623_20250705",
+      "ledger_status": "PENDING",
+      "remote_status": "SUCCEEDED"
+    }
+  ],
+  "duplicate_names": {
+    "delhi_ncr_sbas_a27_v1_pilot_20211205_20211229": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250211_20250223_nomask": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250307_20250319": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250331_20250506": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250530_20250705": 2,
+    "delhi_ncr_sbas_a27_v1_pilot_20250623_20250705": 2
+  },
+  "credit_cost_observed": {
+    "5": 14
+  },
+  "credit_cost_total": 70,
+  "ledger_covers_remote": true,
+  "remote_covers_ledger": true
+}

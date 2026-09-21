@@ -1,0 +1,38 @@
+{
+  "available": true,
+  "pair_id": "20250211_20250223",
+  "water_mask_layer": "data/hyp3_extracted/delhi_ncr_sbas_a27_v1_pilot_20250211_20250223__3e3c4152/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20250211_20250223_VV_INT40_7583/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20250211_20250223_VV_INT40_7583_water_mask.tif",
+  "water_pixels": 64739,
+  "land_pixels": 7054147,
+  "water_fraction": 0.009094,
+  "water_mask_convention": "0 = water, 1 = land (HyP3 product convention; opposite of ASF reference tiles)",
+  "water_mask_source": "https://hyp3-docs.asf.alaska.edu/water_masking/",
+  "comparison": {
+    "coherence": {
+      "water_masked_valid_fraction": 0.74408,
+      "water_unmasked_valid_fraction": 0.74408,
+      "water_masked_median_coherence": 0.7563,
+      "water_unmasked_median_coherence": 0.7563,
+      "land_masked_valid_fraction": 0.606486,
+      "land_unmasked_valid_fraction": 0.606486,
+      "land_masked_median_coherence": 0.7161,
+      "land_unmasked_median_coherence": 0.7161
+    },
+    "unw_phase": {
+      "water_masked_valid_fraction": 0.0,
+      "water_unmasked_valid_fraction": 0.743416,
+      "land_masked_valid_fraction": 0.604778,
+      "land_unmasked_valid_fraction": 0.604778
+    },
+    "conncomp": {
+      "water_masked_valid_fraction": 0.659556,
+      "water_unmasked_valid_fraction": 0.724973,
+      "water_masked_components": 1,
+      "water_unmasked_components": 1,
+      "land_masked_valid_fraction": 0.588693,
+      "land_unmasked_valid_fraction": 0.588787,
+      "land_masked_components": 20,
+      "land_unmasked_components": 20
+    }
+  }
+}
