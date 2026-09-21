@@ -1,0 +1,14 @@
+# credentials - never commit
+.netrc
+.env
+*.token
+
+# large/generated data
+data/*
+!data/**/.gitkeep
+*.zip
+*.tif
+
+# python
+__pycache__/
+*.pyc

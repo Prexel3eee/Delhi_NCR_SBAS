@@ -1,0 +1,17 @@
+name: delhi-hyp3-sbas
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - asf_search>=7.0.0
+  - hyp3_sdk>=7.7.0
+  - mintpy>=1.6.3
+  - pandas
+  - networkx
+  - shapely
+  - geopandas
+  - rasterio
+  - gdal
+  - matplotlib
+  - jupyter
+  - ipympl

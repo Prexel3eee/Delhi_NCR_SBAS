@@ -1,0 +1,30 @@
+project:
+  name: delhi_ncr_multiburst_sbas
+  method: SBAS-InSAR
+  processor: HyP3 INSAR_ISCE_MULTI_BURST + MintPy
+
+aoi:
+  wkt: "POLYGON((76.7853 28.4375,77.1951 28.3839,77.2562 28.6599,77.2838 28.8193,76.8905 28.8726,76.7853 28.4375))"
+
+search:
+  start: "2021-10-01T00:00:00Z"
+  end: "2025-10-01T23:59:59Z"
+  beam_mode: "IW"
+  polarization: "VV"
+  flight_direction: "ASCENDING"
+  relative_orbit: 27
+
+sbas:
+  temporal_baseline_days_initial: 36
+  perpendicular_baseline_magnitude_initial: 250
+
+hyp3:
+  job_type: "INSAR_ISCE_MULTI_BURST"
+  service: "basic"
+  pilot_looks: "10x2"
+  pilot_apply_water_mask: true
+
+gates:
+  require_pilot_before_production: true
+  require_credit_estimate_before_submission: true
+  require_disk_estimate_before_production: true

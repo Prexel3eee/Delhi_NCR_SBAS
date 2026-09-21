@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Delhi-NCR SBAS AOI"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.7853,
+              28.4375
+            ],
+            [
+              77.1951,
+              28.3839
+            ],
+            [
+              77.2562,
+              28.6599
+            ],
+            [
+              77.2838,
+              28.8193
+            ],
+            [
+              76.8905,
+              28.8726
+            ],
+            [
+              76.7853,
+              28.4375
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
