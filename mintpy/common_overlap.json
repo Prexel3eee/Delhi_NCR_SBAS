@@ -1,0 +1,83 @@
+{
+  "common_overlap_bounds": [
+    647640.0,
+    3129000.0,
+    765360.0,
+    3225440.0
+  ],
+  "target_grid": {
+    "crs": "EPSG:32643",
+    "transform": [
+      40.0,
+      0.0,
+      647640.0,
+      0.0,
+      -40.0,
+      3225440.0
+    ],
+    "width": 2943,
+    "height": 2411,
+    "res": [
+      40.0,
+      40.0
+    ],
+    "bounds": [
+      647640.0,
+      3129000.0,
+      765360.0,
+      3225440.0
+    ],
+    "aoi_pixels": 1226497
+  },
+  "aoi_fully_inside_common_overlap": true,
+  "aoi_bounds_in_target_crs": [
+    674836.713,
+    3141689.387,
+    722859.551,
+    3195340.045
+  ],
+  "aoi_source_crs": "EPSG:4326",
+  "grid_alignment_notes": [],
+  "note": "products are not byte-identical grids; all layers are read onto one shared target grid derived from the common overlap",
+  "crs": "EPSG:32643",
+  "products": 6,
+  "per_product_bounds": [
+    [
+      647360.0,
+      3129000.0,
+      765400.0,
+      3225560.0
+    ],
+    [
+      647440.0,
+      3128960.0,
+      765400.0,
+      3225520.0
+    ],
+    [
+      647360.0,
+      3128880.0,
+      765360.0,
+      3225440.0
+    ],
+    [
+      647280.0,
+      3128800.0,
+      766160.0,
+      3225640.0
+    ],
+    [
+      647640.0,
+      3128880.0,
+      765640.0,
+      3225440.0
+    ],
+    [
+      647640.0,
+      3128920.0,
+      765640.0,
+      3225440.0
+    ]
+  ],
+  "generated_utc": "2026-09-21T23:20:12.342376+00:00"
+}
