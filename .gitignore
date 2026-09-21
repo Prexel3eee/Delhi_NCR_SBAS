@@ -12,3 +12,11 @@ data/*
 # python
 __pycache__/
 *.pyc
+
+# macOS
+.DS_Store
+
+# derived MintPy rasters and HDF5 (regenerable from data/)
+mintpy/pilot_clipped/
+mintpy/pilot_work/
+mintpy/**/*.h5
