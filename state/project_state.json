@@ -1,0 +1,210 @@
+{
+  "project": "delhi_ncr_multiburst_sbas",
+  "method": "SBAS-InSAR",
+  "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
+  "updated_utc": "2026-09-21T22:55:00Z",
+  "phase": "PILOT_SUBMITTED_RUNNING",
+  "next_phase": "PILOT_DOWNLOAD_AND_QC",
+  "aoi_locked": true,
+  "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
+  "relative_orbit": 27,
+  "direction": "ASCENDING",
+  "polarization": "VV",
+  "beam_mode": "IW",
+  "subswath": "IW2",
+  "study_period": {
+    "requested_start": "2021-10-01",
+    "requested_end": "2025-10-01",
+    "observed_start": "2021-10-06",
+    "observed_end": "2025-09-27"
+  },
+  "burst_selection_frozen": true,
+  "burst_selection": {
+    "k": 4,
+    "full_burst_ids": [
+      "027_056011_IW2",
+      "027_056012_IW2",
+      "027_056013_IW2",
+      "027_056014_IW2"
+    ],
+    "relative_burst_ids": [
+      56011,
+      56012,
+      56013,
+      56014
+    ],
+    "aoi_coverage_fraction": 1.0,
+    "union_to_aoi_area_ratio": 3.583,
+    "rejected_prior_selection": {
+      "k": 3,
+      "full_burst_ids": [
+        "027_056011_IW2",
+        "027_056012_IW2",
+        "027_056013_IW2"
+      ],
+      "reason": "AOI not fully contained: 0.3690 % uncovered at 76.8856-76.9547 E, 28.8524-28.8726 N",
+      "resolution": "REJECTED - AOI not shrunk to preserve K=3"
+    }
+  },
+  "acquisition_inventory": {
+    "platforms": [
+      "SENTINEL-1A"
+    ],
+    "platform_homogeneous": true,
+    "union_dates": 120,
+    "complete_4_burst_acquisitions": 119,
+    "excluded_acquisitions": 1,
+    "excluded_detail": [
+      {
+        "date": "2025-05-18",
+        "missing_burst": "027_056011_IW2",
+        "reason": "CMR serving anomaly - CMR-Hits=2 but only the VH granule is served",
+        "resolution": "EXCLUDED_FAIL_CLOSED",
+        "recheck_before_production": true
+      }
+    ],
+    "accepted_gap_distribution_days": {
+      "12": 115,
+      "24": 3
+    }
+  },
+  "network_frozen": true,
+  "network": {
+    "max_temporal_baseline_days": 36,
+    "max_perpendicular_baseline_magnitude_m": 250.0,
+    "nodes_acquisitions": 119,
+    "edges_pairs": 336,
+    "connected_components": 1,
+    "isolated_nodes": 0,
+    "bridges": 0,
+    "articulation_points": 0,
+    "degree": {
+      "min": 3,
+      "mean": 5.6471,
+      "median": 6.0,
+      "max": 6
+    },
+    "pair_temporal_baseline_days": {
+      "12": 113,
+      "24": 113,
+      "36": 110
+    },
+    "pair_perpendicular_baseline_m": {
+      "min": 1.0,
+      "median": 70.0,
+      "p95": 186.2,
+      "max": 248.0
+    },
+    "acceptance_passed": true,
+    "join_method": "identity (pair key intersection across all bursts); not positional zip"
+  },
+  "pilot_defined": true,
+  "pilot": {
+    "looks": "10x2",
+    "pixel_spacing_m": 40,
+    "distinct_jobs_intended": 7,
+    "jobs_actually_submitted": 14,
+    "duplicate_jobs": 7,
+    "credits_intended": 35,
+    "credits_spent": 70,
+    "status": "RUNNING",
+    "all_jobs_running": true,
+    "includes_water_mask_control": true,
+    "job_name_prefix": "delhi_ncr_sbas_a27_v1_pilot",
+    "ledger": "manifests/hyp3_jobs.csv",
+    "reconciled_from_remote": true,
+    "duplicates_cancellable": false,
+    "duplicates_impact": "Redundant, identical pairs. No scientific impact; wasted 35 credits because the HyP3 SDK exposes no job-cancel/delete call."
+  },
+  "cost_estimate": {
+    "interferogram_count": 336,
+    "credits_per_job_at_10x2": 5,
+    "production_credits_10x2": 1680,
+    "production_credits_20x4": 336,
+    "production_credits_5x1": 5040,
+    "monthly_basic_allocation": 8000,
+    "primary_config": "10x2 / 40 m",
+    "note": "K=4 moves the 10x2 tier from 1 to 5 credits/job; 20x4 remains 1 credit/job"
+  },
+  "credentials_configured": true,
+  "credentials_required_for": [
+    "pilot submission",
+    "product download"
+  ],
+  "pilot_submitted": true,
+  "pilot_passed": false,
+  "production_approved": false,
+  "production_submitted": false,
+  "mintpy_complete": false,
+  "production_blocked_on": [
+    "pilot products downloaded and QC passed",
+    "disk-space estimate from real pilot products",
+    "explicit owner approval for the 1680-credit production run at 10x2"
+  ],
+  "open_items": [
+    "Pilot products are retained by HyP3 Basic for 14 days: download promptly.",
+    "Rotate the Earthdata credentials when convenient (~/.netrc).",
+    "Run python scripts/verify_freeze.py before any production submission.",
+    "Confirm the live HyP3 credit table immediately before production."
+  ],
+  "v1_freeze": {
+    "frozen": true,
+    "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d",
+    "snapshot": "freeze/v1/",
+    "artefacts": 21,
+    "critical_artefacts": 11,
+    "verify_with": "python scripts/verify_freeze.py",
+    "recover_2025_05_18": false,
+    "policy": "v1 accepts 119 acquisitions / 336 pairs; 2025-05-18 is permanently excluded and will not be re-queried for v1."
+  },
+  "regression_tests": {
+    "path": "tests/test_asf_client_regressions.py",
+    "count": 13,
+    "covers": [
+      "mode1: asf_search raises ASFSearchError on valid windows",
+      "mode2: CMR POLARIZATION attribute filter silently omits a granule",
+      "mode3: stack() truncation and silent baseline reference substitution"
+    ]
+  },
+  "environments": {
+    "search_submission": {
+      "name": "delhi-hyp3",
+      "python": "3.12.14",
+      "asf_search": "14.0.0",
+      "hyp3_sdk": "7.7.8"
+    },
+    "analysis": {
+      "name": "delhi-mintpy",
+      "python": "3.11.16",
+      "mintpy": "1.6.4",
+      "gdal": "3.12.3"
+    }
+  },
+  "credentials": {
+    "method": "~/.netrc (mode 600)",
+    "path": "~/.netrc",
+    "earthdata_user": "vishu_sar_1709",
+    "note": "Owner intends to rotate these credentials later.",
+    "secrets_in_repo": false
+  },
+  "credits": {
+    "monthly_allocation": 8000,
+    "remaining": 7930,
+    "pilot_spent": 70,
+    "production_estimated_10x2": 1680,
+    "sufficient_for_production": true
+  },
+  "incident_log": [
+    {
+      "id": "INC-001",
+      "severity": "medium",
+      "summary": "Idempotency check used a prefix with an exact-match API, causing 7 duplicate pilot jobs and 35 wasted credits.",
+      "root_cause": "hyp3_sdk HyP3.find_jobs(name=...) performs an exact name match. The check passed 'delhi_ncr_sbas_a27_v1_pilot', which matched 0 jobs even after 7 were submitted.",
+      "evidence": "find_jobs(name='delhi_ncr_sbas_a27_v1_pilot') -> 0 matches; find_jobs(name='delhi_ncr_sbas_a27_v1_pilot_20250211_20250223') -> 2 matches",
+      "fix": "List multi-burst jobs and match exact names locally; never pass name= to find_jobs.",
+      "tests_added": "tests/test_pilot_idempotency.py (8 tests, incl. a guard that find_existing never passes name=)",
+      "verified": "A third --submit run submitted 0 jobs and credits remained at 7930.",
+      "production_risk_mitigated": "At production scale (336 jobs) the same bug would have wasted 1680 credits."
+    }
+  ]
+}
