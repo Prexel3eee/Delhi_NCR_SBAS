@@ -1,0 +1,53 @@
+## Delhi-NCR DESCENDING validation stack - RAW baseline diagnostic inversion
+##
+## Purpose: an independent, deliberately UNCORRECTED baseline over all 219
+## descending interferograms, so that the ascending result can be tested by an
+## independent observing geometry. Nothing is removed and nothing is corrected.
+##
+## This is NOT a redesign of the submitted network. The network was frozen in
+## freeze/descending_network_v1; only processing settings appear here.
+##
+## Corrections deliberately disabled, mirroring the ascending baseline:
+##   unwrap error   no      (not tested on descending in this phase)
+##   troposphere    no      (only the RAW baseline is required here)
+##   deramp         no      (broad gradients may be genuine signal)
+##   DEM residual   no
+##   residual RMS deramp no (keep the residual diagnostic un-deramped too)
+##
+## The network is NOT modified. keepMinSpanTree is forced off because MintPy
+## defaults it to YES and would silently drop interferograms that are not in the
+## minimum spanning tree. All 219 pairs must survive to the inversion.
+
+## ---- network: keep every pair --------------------------------------------
+mintpy.network.keepMinSpanTree  = no
+mintpy.network.coherenceBased   = no
+mintpy.network.areaRatioBased   = no
+mintpy.network.minCoherence     = 0.0
+mintpy.network.minAreaRatio     = 0.0
+
+## ---- reference ------------------------------------------------------------
+## Left to MintPy's minimum-coherence rule here; the ACTUAL pixel it selects is
+## read back from timeseries.h5 and recorded. An independent descending
+## reference is then chosen by scripts/50_descending_reference.py, which also
+## quantifies the reference sensitivity. Neither the ascending reference nor the
+## ascending intended reference is reused.
+mintpy.reference.minCoherence   = 0.85
+
+## ---- corrections: ALL OFF -------------------------------------------------
+mintpy.troposphericDelay.method        = no
+mintpy.deramp                          = no
+mintpy.topographicResidual             = no
+mintpy.residualRMS.deramp              = no
+
+## ---- inversion ------------------------------------------------------------
+mintpy.networkInversion.weightFunc      = var
+mintpy.networkInversion.minRedundancy   = 1
+mintpy.networkInversion.maskDataset     = no
+mintpy.networkInversion.minNormVelocity = yes
+
+## ---- residual diagnostics -------------------------------------------------
+mintpy.residualRMS.maskFile     = no
+mintpy.plot                     = no
+
+## ---- Phase II-B branch D2: unwrap-corrected (bridging + phase_closure) ----
+mintpy.unwrapError.method = bridging+phase_closure

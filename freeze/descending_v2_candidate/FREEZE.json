@@ -1,0 +1,128 @@
+{
+  "freeze_version": "descending_v2_candidate",
+  "label": "DESCENDING_PRODUCT_V2_CANDIDATE",
+  "freeze_id": "ba99df90a6f15b3aaaf90fe3042511ddef3e0f9864f03aab122a541b5d3d6d13",
+  "created_utc": "2026-09-22T17:45:22.587484+00:00",
+  "status": "CANDIDATE FOR REVALIDATION - not authoritative, does not replace DESCENDING_RAW_V1",
+  "processing": {
+    "unwrapError.method": "bridging+phase_closure",
+    "troposphericDelay.method": "no",
+    "topographicResidual": "no",
+    "deramp": "no",
+    "network_curation": "none",
+    "networkInversion.weightFunc": "var",
+    "reference": "MintPy auto-selected"
+  },
+  "reference_yx": [
+    394,
+    2149
+  ],
+  "acquisitions": 91,
+  "pairs": 219,
+  "reconciliation": {
+    "distinct_inventory_dates": 92,
+    "accepted_acquisitions": 92,
+    "loaded_by_mintpy": 91,
+    "used_in_inversion": 91,
+    "era5_hour01_dates": 91,
+    "pairs_manifest": 219,
+    "pairs_in_stack": 219,
+    "pair_sets_identical": true,
+    "every_acquisition_accounted_once": true,
+    "excluded_detail": [
+      {
+        "date": "2024-04-13",
+        "reason_if_excluded": "DROPPED: unconnectable within |B_perp| <= 250 m to any neighbour"
+      }
+    ],
+    "explanation": "92 accepted; 1 unconnectable (2024-04-13); 91 inverted. The 92 and 91 are consistent."
+  },
+  "supersedes_nothing": "DESCENDING_RAW_V1 remains frozen and unmodified",
+  "artefacts": [
+    {
+      "path": "mintpy/descending_d2_unwrap_work/velocity.h5",
+      "sha256": "cc0d4fec7eced0498b392125e31e789e1ea1f19a10ed596897ef1c4ea87c9a17",
+      "bytes": 139450960,
+      "mtime_ns": 1790097475032566468,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/timeseries.h5",
+      "sha256": "8dd7e18d711e31ce29923a44f764d5117cebb47e1142728262409b7c552886f1",
+      "bytes": 2592578344,
+      "mtime_ns": 1790097470602867286,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/temporalCoherence.h5",
+      "sha256": "9a8ffa318916e7ed711f3eaa92d8337c55196aa96b7db9157d742ebd7efdd8a0",
+      "bytes": 27899872,
+      "mtime_ns": 1790097470668663786,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/maskTempCoh.h5",
+      "sha256": "2e1bace51ab0accbd9e02402020bbd033752a686c911a797d8446b1469287545",
+      "bytes": 6954064,
+      "mtime_ns": 1790097470901665481,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/maskConnComp.h5",
+      "sha256": "89147ec067e878de0f0bdaee80364ed090ab7baea99158feaf342dafe1af5381",
+      "bytes": 6946848,
+      "mtime_ns": 1790086889165996000,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/avgSpatialCoh.h5",
+      "sha256": "350985053a5e64c534434a8860b566792301320413b381e3f788464a202fa7cd",
+      "bytes": 27898968,
+      "mtime_ns": 1790086889165952000,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "mintpy/descending_d2_unwrap_work/numInvIfgram.h5",
+      "sha256": "595549341d15cf17edd6e365a8af50b6d67e4c63396489e74acff17436432ecc",
+      "bytes": 27899792,
+      "mtime_ns": 1790097470669398913,
+      "note": "hashed in place (the products total several GB)"
+    },
+    {
+      "path": "manifests/descending/sbas_pairs.csv",
+      "sha256": "ae71e18dddbae3c8b373db76a25a0e5ef41a57a009ccd47aa07e36d2e6233ed0",
+      "bytes": 100048,
+      "copied": true
+    },
+    {
+      "path": "manifests/descending/accepted_acquisitions.csv",
+      "sha256": "c63a6e4dd163568373c9a2a73661e56d4bed3e1b025d0745ae92501d58a4b819",
+      "bytes": 1017,
+      "copied": true
+    },
+    {
+      "path": "manifests/descending/excluded_acquisitions.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "copied": true
+    },
+    {
+      "path": "qc/sci/phase2c/acquisition_accounting.csv",
+      "sha256": "485b2fc33ebb81070db54f92f02e3e6c101f7c45f4eb8463784c2de61ec00da0",
+      "bytes": 5916,
+      "copied": true
+    },
+    {
+      "path": "qc/sci/phase2b/branch_comparison.csv",
+      "sha256": "c84a5eb09102e59d27b17d3b200d1e338ed41dfffe8fd6b7e5ae9fea46605ba5",
+      "bytes": 2511,
+      "copied": true
+    },
+    {
+      "path": "config/mintpy_descending_d2.txt",
+      "sha256": "425e93ba2a3b427fcd30ca7221563a7d56b5002876a72849a6fbea78c6803fdb",
+      "bytes": 2618,
+      "copied": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "distinct_inventory_dates": 92,
+  "accepted_acquisitions": 92,
+  "loaded_by_mintpy": 91,
+  "used_in_inversion": 91,
+  "era5_hour01_dates": 91,
+  "pairs_manifest": 219,
+  "pairs_in_stack": 219,
+  "pair_sets_identical": true,
+  "every_acquisition_accounted_once": true,
+  "excluded_detail": [
+    {
+      "date": "2024-04-13",
+      "reason_if_excluded": "DROPPED: unconnectable within |B_perp| <= 250 m to any neighbour"
+    }
+  ],
+  "explanation": "92 accepted; 1 unconnectable (2024-04-13); 91 inverted. The 92 and 91 are consistent."
+}
