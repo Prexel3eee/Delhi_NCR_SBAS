@@ -63,6 +63,13 @@ Shallow substrate tests used SoilGrids 2.0 clay and sand fractions at 0-5 cm and
 
 Uncertainty was partitioned rather than collapsed. We report formal fit uncertainty (ascending median 0.866 mm yr-1), reference-systematic range (4.78 mm yr-1, affecting the absolute zero but not within-map contrasts), correction-branch sensitivity (0.521-1.036 mm yr-1), cross-geometry structure (global Pearson r = 0.175 before and 0.363 after descending correction), and temporal non-stationarity (split-half differences 10.44-20.24 mm yr-1). These are statistical, systematic, sensitivity, and structural quantities without a justified joint probability model and were never summed. `NO EVIDENCE` denotes a completed test that did not support its prespecified prediction; `NOT ADEQUATELY TESTED` denotes an unsuitable proxy or incomplete measurement; and `NOT TESTABLE` denotes absence of a suitable retained dataset. None means that a physical mechanism was disproved."""
 
+SUPPLEMENT_CALLOUTS = (
+    "Operational paths, masks, registries, and parameter records are given in "
+    "Supplementary Section S1, Supplementary Section S2, Supplementary Section S3, "
+    "Supplementary Section S4, Supplementary Section S5, Supplementary Section S6, "
+    "Supplementary Section S7, Supplementary Section S8, and Supplementary Section S9."
+)
+
 DISCUSSION = """### 4.1 What H001/H004 reproduction establishes
 
 The most defensible positive result is deliberately narrow: H001 and H004 retain localized, same-sign relative LOS structure and comparable observation-period mean rates in separately assembled ascending and descending products. Independence matters here. The descending inventory, four-burst intersection, network, reference pixel, inversion, and correction decision were not inherited from the ascending branch, and no interferogram was selected because it intersected a zone. Agreement is therefore not a repeated calculation over the same observations. It is evidence that these two frozen polygons contain a spatial and mean-rate signal that is not unique to the original ascending processing chain. This supports their status as deformation features worth continued investigation. <!-- Claims: C001 C002 C020 -->
@@ -274,6 +281,144 @@ The mechanism results preserve the exact evidence states assigned in the frozen 
     )
 
 
+def _supplement(root: Path, evidence: FrozenEvidence) -> str:
+    captions = (root / "manuscript" / "FIGURE_CAPTIONS.md").read_text().strip()
+    availability = (root / "manuscript" / "DATA_CODE_AVAILABILITY.md").read_text().strip()
+    sections = [
+        """# Supplementary material
+
+This supplement records the operational implementation behind the evidence-bound main article. Paths are relative to the repository root. The frozen ascending and descending products are not modified by manuscript generation.""",
+        """## S1. Study area and reference frame
+
+The scientific AOI is stored at `geometry/aoi.geojson`, projected to EPSG:32643, and covers 1,962.4 km2. The analysis mask excludes water and uses the exact AOI rasterization recorded in `qc/sci/aoi_mask_provenance.json`; no hand-edited mask was introduced during writing. Ascending products use a 2,407 x 2,939 approximately 40 m grid and descending products a 2,412 x 2,853 grid before alignment.
+
+The authoritative ascending product is relative to MintPy's auto-selected pixel `(y=1384, x=1451)`, not the intended scientific reference `(1378,1426)`. The separation is 1,028.4 m and the measured zero-level offset is 0.1362 mm yr-1. This is recorded in `provenance/errata/INC-007.json`. Spatial gradients and polygon-to-background contrasts are invariant to the constant offset. Cross-geometry comparisons were separately aligned to a stable common control as described in S6; this does not create an absolute datum.""",
+        """## S2. Ascending network
+
+The ascending stack uses relative orbit 27, IW2, VV, and burst IDs `027_056011_IW2` through `027_056014_IW2`. Candidate dates and pairs were intersected by acquisition and pair identity across all four bursts. The accepted 119 acquisitions span 2021-10-06 to 2025-09-27. Pair thresholds were maximum temporal baseline 36 days and maximum absolute perpendicular baseline 250 m. The resulting 336-edge graph has one connected component, no isolated nodes, no bridges, no articulation points, and minimum degree three. Baseline and graph records are `qc/network/baseline_table.csv`, `qc/network/network_edges.csv`, and `qc/network/network_summary.json`.
+
+Every accepted pair was processed; no interferogram was removed after viewing the velocity field. HyP3 remote state, local products, and the 336-row manifest were reconciled before inversion. Retrieval and content audits are retained in `qc/production/`, with hash-pinned inputs in `freeze/mintpy_input_v1/` and the authoritative output in `freeze/product_v1/`.""",
+        """## S3. Descending network
+
+The independent stack uses relative orbit 136, IW1, VV, and burst IDs `136_290874_IW1` through `136_290877_IW1`. The inventory window was 2021-10-01 to 2025-10-01. Ninety-one common accepted acquisitions span 2021-10-02 to 2025-09-23; one otherwise present date, 2024-04-13, was dropped as unconnectable. The standard 36-day and 250 m rules generated the network core. Two record gaps of 108 and 48 days required the minimal flagged longer-baseline additions used in the final 219-pair graph. The graph has one component, no bridges, minimum degree two, and one articulation date, 2022-11-26. Full records are in `qc/descending/network_audit.json`, `qc/descending/network_edges.csv`, and `qc/descending/descending_qc.json`.
+
+The construction was fail-closed: a date was accepted only if all four bursts were present, a pair only if the identity key occurred in every burst, positional zipping was forbidden, no ascending artefact was read, and no hotspot geometry was used for pair selection. The descending footprint does not cover the AOI's western strip, so all comparisons use S6's common domain.""",
+        """## S4. Processing and correction branches
+
+Both geometries used HyP3 `INSAR_ISCE_MULTI_BURST`, 10 x 2 looks, water masking, and approximately 40 m output spacing. MintPy 1.6.4 inversion used `weightFunc = var`, `minNormVelocity = yes`, and `keepMinSpanTree = no`; the last setting prevents the software default from silently reducing the accepted network. Valid inversion support is `velocityStd > 0`, not array finiteness, because MintPy may represent non-inverted pixels with finite zero fills.
+
+Ascending branch configurations are `config/mintpy_baseline_raw.txt`, `config/mintpy_era5.txt`, `config/mintpy_dem_residual.txt`, and `config/mintpy_bridge_pc.txt`. RAW-336 retained all 336 pairs with unwrap correction, tropospheric correction, DEM-residual correction, and deramping off. ERA5 and ERA5-plus-DEM branches improved only one of four targeted diagnostics; ascending unwrap correction worsened residual fit. The frozen authoritative branch therefore remained RAW-336.
+
+Descending D0 used `config/mintpy_descending_baseline.txt`. D2 changed only the unwrap treatment to bridging plus phase closure and improved seven of seven prespecified reliability diagnostics. D2, located at `mintpy/descending_d2_unwrap_work/` and frozen as `descending_v2_candidate`, is the comparison branch. This geometry-specific choice does not alter the ascending freeze.""",
+        """## S5. Hotspot definition and freeze
+
+Phase-I connected components were detected in RAW-336 where absolute relative LOS velocity was at least 10 mm yr-1, temporal coherence at least 0.80, and connected area at least 0.4 km2. Eight-neighbour connectivity was used. The implementation is `scripts/32_hotspots.py`; statistics are `qc/sci/phase1/hotspots.csv` and `hotspots.json`, and corrected polygons are `qc/sci/phase1/hotspots_corrected.geojson`. The original GeoJSON is retained only as an incident artefact (INC-008).
+
+Sensitivity was recorded over rate thresholds 5, 7.5, 10, 15, 20, and 25 mm yr-1 and alternate coherence cutoffs in `qc/sci/phase1/hotspot_threshold_sensitivity.csv`. The primary five zones were not reselected. Their 22.6 km2 combined area is the operating extent under this rule. The 6.66 km2 supported-zone area is computed only as frozen H001 plus H004 polygon area and is guarded against recurrence of INC-009.""",
+        """## S6. Common-domain alignment and comparison
+
+The common mask is ascending valid coverage AND descending valid coverage AND the scientific AOI, with no common coherence threshold. Its authoritative record is `qc/sci/phase2/common_domain.json` and its raster mask `qc/sci/phase2/common_domain_mask.npz`. The domain contains 854,004 pixels, spans 1,366.406 km2, and represents 69.63% of the AOI. It contains all H001, H004, and H005 pixels and all but one pixel each from H002 and H003.
+
+Each native product retains its own reference. For direct comparison, both were re-referenced to the median of the same 3,692 stable-control pixels, defined by common validity, high coherence, and absolute velocity within 3 mm yr-1. The offsets were +0.3546 mm yr-1 ascending and -0.0992 mm yr-1 descending. Comparisons include common-domain field correlation, polygon means, component overlap, centroid separation, magnitude ratio, matched-coherence-band contrast, and split-period behavior. Native-record and common-period summaries remain distinct, and acquisition dates were never interpolated to force identity.""",
+        """## S7. Groundwater protocol
+
+The protocol identifier is `groundwater_protocol_v1`; it was frozen before correlations were computed. Source and screening records are `qc/sci/phase3/nwdp_telemetry_station_registry.csv`, `groundwater_station_registry_final.csv`, `groundwater_station_qc.csv`, and `dwlr_audit.json`. From 187 candidate NWDP telemetry stations, 111 passed quality screening. Every eligible station within 5 km of a tested polygon was included. Six-hourly values were converted to daily medians only when at least two valid observations were present; missing days were not interpolated. Station-median anomalies were composited by date, with positive anomaly denoting deeper water.
+
+The prespecified forward lag grid was 0, +30, +60, and +90 days. Negative lags -30, -60, and -90 days were falsification tests in which LOS response would precede the proposed forcing. Spearman association was evaluated with 5,000 circular block permutations using 90-day blocks. Benjamini-Hochberg FDR q = 0.05 was applied across the 16 forward-lag zone tests. H005 was never included. Results are in `qc/sci/phase3/groundwater_lag_results.csv` and `groundwater_control_comparison.csv`.""",
+        """## S8. Geology and urban evidence
+
+SoilGrids 2.0 clay and sand fractions at 0-5 cm and 100-200 cm were sampled by windowed access on the native 250 m grid. Zone and AOI-minus-zones polygons were rasterized on that source grid; no SoilGrids layer was resampled to the InSAR grid. Outputs are `qc/sci/phase3/geology_hotspot_summary.csv` and the dataset registry. These are shallow texture variables only. Formation, age, deep lithology, aquifer boundaries, and compacting interval were unavailable, which fixes deep susceptibility at `NOT ADEQUATELY TESTED`.
+
+Urban comparison used ESA WorldCover 2021 built class on its 10 m grid and JRC GHSL GHS-BUILT-S E2020 and E2025 near 93 m on their source grids. Outputs are `qc/sci/phase3/urban_hotspot_summary.csv` and `urban_analysis.json`. The E2025 GHSL layer is projected rather than an observation. No dataset supplied structure height, foundation, load, exact construction date, tunneling, excavation, or dewatering; construction loading is therefore `NOT TESTABLE`.""",
+        """## S9. Uncertainty and evidence states
+
+The frozen uncertainty registry is `qc/sci/phase4/uncertainty_table.json`. It separates formal fit uncertainty, reference-systematic uncertainty, correction-branch sensitivity, cross-geometry structure, temporal non-stationarity, and data-domain limitations. These terms are not summed. Their units, statistical meanings, and dependence structures differ, and no generative model converts them into a justified combined interval.
+
+Evidence states are fixed in `qc/sci/phase4/final_evidence_matrix.csv`. `NO EVIDENCE` means a suitable prespecified test did not support its prediction. `NOT ADEQUATELY TESTED` means the available measurement did not observe the relevant physical domain. `NOT TESTABLE` means no suitable retained dataset was available. The longer measurement-artefact state records that matched-band contrasts oppose artefact as the sole explanation for H001/H004 while measurement limitations remain.""",
+        """## S10. Supplementary tables
+
+### Table S1. Frozen hotspot outcomes
+
+""" + _hotspot_table(evidence) + """
+
+The table reports polygon means over the retained common-domain definition. Detailed classifications, coherence values, rate ratios, time-history states, and final interpretations are in `qc/sci/phase4/final_hotspot_table.csv`.
+
+### Table S2. Reproducibility registry
+
+| Component | Authoritative record | Protection |
+|---|---|---|
+| Ascending input network | `freeze/mintpy_input_v1/FREEZE.json` | hash verification |
+| Ascending output | `freeze/product_v1/FREEZE.json` | hash verification; append-only errata |
+| Descending network | `qc/descending/network_audit.json` | identity intersection and graph gates |
+| Common comparison domain | `qc/sci/phase2/common_domain.json` | fixed mask and stable-control definition |
+| Groundwater test | `config/groundwater_protocol_v1.json` | fixed lag/permutation/FDR rules |
+| Final classifications | `qc/sci/phase4/final_hotspot_table.csv` | numerical audit against manuscript |
+| Evidence states | `qc/sci/phase4/final_evidence_matrix.csv` | verbatim-state audit |""",
+        """## S11. Scientific incidents
+
+The incidents are retained because they changed the reliability of the workflow, even when final scientific classifications did not change.
+
+### INC-001
+
+- **Problem:** HyP3 `find_jobs(name=...)` performs an exact-name match; a prefix-based idempotency guard therefore found nothing.
+- **Consequence:** Seven duplicate pilot jobs were submitted, consuming 35 avoidable credits; the same defect could have duplicated production.
+- **Detection:** The credit delta and remote exact-name count disagreed with the intended seven-job set.
+- **Correction:** Remote jobs are listed by type and reconciled locally against exact manifest names; all duplicate pilot products were retained transparently.
+- **Regression protection:** `tests/test_pilot_idempotency.py` prevents prefix queries and verifies no repeat submission.
+
+### INC-002
+
+- **Problem:** A transient ASF DNS outage terminated the initial retrieval at 47 of 336 products.
+- **Consequence:** A non-resumable workflow could have left an incomplete ascending corpus.
+- **Detection:** Retrieved-product counts failed reconciliation against the frozen 336-pair manifest.
+- **Correction:** Connection and listing gained capped backoff, typed network failure, resumable downloads, and a single batched job listing; all 336 products were recovered.
+- **Regression protection:** `tests/test_production_retrieval.py` requires complete remote-ledger-local reconciliation.
+
+### INC-005
+
+- **Problem:** The first RAW-versus-ERA5 comparison read the wrong velocity dataset because the MintPy file pointer did not resolve to the corrected velocity product.
+- **Consequence:** It produced a spurious 15.49 mm yr-1 difference and would have favored an unsupported correction branch.
+- **Detection:** The magnitude was inconsistent with the atmospheric product and triggered a file-path audit.
+- **Correction:** The corrected comparison is 0.52 mm yr-1 RMS; ERA5 and ERA5-plus-DEM remained non-beneficial and disabled in RAW-336.
+- **Regression protection:** `tests/test_correction_validation.py` pins both corrected values and branch settings.
+
+### INC-006
+
+- **Problem:** A GNSS co-location comparison used unequal time windows and appeared to disagree by approximately 27 mm yr-1.
+- **Consequence:** The artefactual difference could have been interpreted as a large InSAR bias.
+- **Detection:** Station end epochs were audited and found to differ substantially.
+- **Correction:** Comparison on 745 shared epochs reduced the station difference to 0.767 mm yr-1; GNSS remained unsuitable because of coverage, not measurement disagreement.
+- **Regression protection:** `tests/test_correction_validation.py` requires maximal shared-window comparison and header-resolved vertical components.
+
+### INC-007
+
+- **Problem:** RAW-336 allowed MintPy to auto-select `(1384,1451)` rather than using the intended `(1378,1426)` reference.
+- **Consequence:** The relative zero differs by 0.1362 mm yr-1; spatial contrasts and all zone geometry remain unchanged.
+- **Detection:** The only pixel identically zero on all 119 dates was located and checked against the decision record.
+- **Correction:** The discrepancy is an append-only erratum; all manuscript values are labeled relative and cross-geometry comparisons use the shared stable-control alignment.
+- **Regression protection:** `provenance/errata/INC-007.json` pins coordinates, hashes, measured offset, and reporting requirements; future revisions must set every branch reference explicitly.
+
+### INC-008
+
+- **Problem:** `hotspots.geojson` stored single-pixel fragments and detection-order IDs because polygon extraction stopped after its first returned shape.
+- **Consequence:** Earlier polygon containment and overlap checks were vacuous, although the frozen CSV statistics were unaffected.
+- **Detection:** Implausible polygon pixel counts prompted an audit against the zone raster and CSV areas.
+- **Correction:** `qc/sci/phase1/hotspots_corrected.geojson` reproduces every frozen zone area; all descending containment checks were rerun and every zone remained covered.
+- **Regression protection:** `scripts/51_fix_hotspot_polygons.py` verifies polygon-versus-pixel area and identifier mapping.
+
+### INC-009
+
+- **Problem:** Three reports repeated 3.17 km2 as the independently supported area without a derivation.
+- **Consequence:** The published summary disagreed with the frozen H001 plus H004 geometry by a factor of approximately 2.1.
+- **Detection:** The Phase-V numerical consistency gate traced every area-like value and found no source for 3.17.
+- **Correction:** The value is 6.66 km2, derived from 5.5904 plus 1.0720 km2 and rounded; no classification or mechanism conclusion changes.
+- **Regression protection:** `scripts/75_phase5b_audit.py` asserts equality to the frozen zone-area sum and fails untraceable area values.""",
+        "## S12. Figure captions\n\n" + captions,
+        "## S13. Data and code availability\n\n" + availability,
+    ]
+    return "\n\n".join(sections) + "\n"
+
+
 def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
     evidence = load_frozen_evidence(root)
     manuscript = "\n".join(
@@ -291,6 +436,8 @@ def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
             "## 2. Data and methods",
             "",
             METHODS,
+            "",
+            SUPPLEMENT_CALLOUTS,
             "",
             "## 3. Results",
             "",
@@ -310,7 +457,7 @@ def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
             "",
         ]
     )
-    supplement = "# Supplementary material\n"
+    supplement = _supplement(root, evidence)
     return {"manuscript": manuscript, "supplement": supplement}
 
 

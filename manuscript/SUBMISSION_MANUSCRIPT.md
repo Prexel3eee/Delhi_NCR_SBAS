@@ -52,6 +52,8 @@ Shallow substrate tests used SoilGrids 2.0 clay and sand fractions at 0-5 cm and
 
 Uncertainty was partitioned rather than collapsed. We report formal fit uncertainty (ascending median 0.866 mm yr-1), reference-systematic range (4.78 mm yr-1, affecting the absolute zero but not within-map contrasts), correction-branch sensitivity (0.521-1.036 mm yr-1), cross-geometry structure (global Pearson r = 0.175 before and 0.363 after descending correction), and temporal non-stationarity (split-half differences 10.44-20.24 mm yr-1). These are statistical, systematic, sensitivity, and structural quantities without a justified joint probability model and were never summed. `NO EVIDENCE` denotes a completed test that did not support its prespecified prediction; `NOT ADEQUATELY TESTED` denotes an unsuitable proxy or incomplete measurement; and `NOT TESTABLE` denotes absence of a suitable retained dataset. None means that a physical mechanism was disproved.
 
+Operational paths, masks, registries, and parameter records are given in Supplementary Section S1, Supplementary Section S2, Supplementary Section S3, Supplementary Section S4, Supplementary Section S5, Supplementary Section S6, Supplementary Section S7, Supplementary Section S8, and Supplementary Section S9.
+
 ## 3. Results
 
 ### 3.1 Ascending field and frozen detections

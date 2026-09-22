@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import csv
+import re
 import sys
 from pathlib import Path
 
@@ -221,3 +222,55 @@ def test_conclusion_is_supported_and_avoids_overclaiming(submission, project_roo
         "validated vertical displacement",
     ):
         assert prohibited not in manuscript.lower()
+
+
+def test_supplement_has_complete_reproducibility_architecture(submission, project_root):
+    supplement = submission.build_submission(project_root)["supplement"]
+    required_sections = [
+        "## S1. Study area and reference frame",
+        "## S2. Ascending network",
+        "## S3. Descending network",
+        "## S4. Processing and correction branches",
+        "## S5. Hotspot definition and freeze",
+        "## S6. Common-domain alignment and comparison",
+        "## S7. Groundwater protocol",
+        "## S8. Geology and urban evidence",
+        "## S9. Uncertainty and evidence states",
+        "## S10. Supplementary tables",
+        "## S11. Scientific incidents",
+        "## S12. Figure captions",
+        "## S13. Data and code availability",
+    ]
+    assert all(section in supplement for section in required_sections)
+    for incident in ("INC-001", "INC-002", "INC-005", "INC-006", "INC-007", "INC-008", "INC-009"):
+        card = supplement.split(f"### {incident}", 1)[1].split("### ", 1)[0]
+        for field in ("Problem:", "Consequence:", "Detection:", "Correction:", "Regression protection:"):
+            assert field in card
+
+
+def test_supplementary_callouts_resolve(submission, project_root):
+    texts = submission.build_submission(project_root)
+    callouts = set(re.findall(r"Supplementary Section (S\d+)", texts["manuscript"]))
+    assert callouts == {f"S{number}" for number in range(1, 10)}
+    headings = set(re.findall(r"^## (S\d+)\.", texts["supplement"], flags=re.MULTILINE))
+    assert callouts <= headings
+
+
+def test_author_input_boundary_contains_no_guessed_identity(project_root):
+    text = (project_root / "manuscript" / "AUTHOR_INPUT_REQUIRED.md").read_text()
+    placeholder = "Not supplied; must be confirmed by the human authors before submission."
+    fields = [
+        "Author names and order",
+        "Affiliations",
+        "Corresponding author and email",
+        "CRediT roles",
+        "Funding",
+        "Acknowledgements",
+        "Conflicts of interest",
+        "Ethics requirement",
+        "Selected journal",
+        "Journal-specific AI disclosure",
+    ]
+    assert all(f"**{field}:** {placeholder}" in text for field in fields)
+    assert text.count(placeholder) == len(fields)
+    assert "@" not in text
