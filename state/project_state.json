@@ -201,6 +201,16 @@
       "tests_added": "tests/test_pilot_idempotency.py (8 tests, incl. a guard that find_existing never passes name=)",
       "verified": "A third --submit run submitted 0 jobs and credits remained at 7930.",
       "production_risk_mitigated": "At production scale (336 jobs) the same bug would have wasted 1680 credits."
+    },
+    {
+      "id": "INC-002",
+      "severity": "low",
+      "summary": "First production retrieval run was killed by a transient ASF DNS outage after 47/336 products.",
+      "root_cause": "Connection and job listing were not retried, and hyp3.refresh(Batch) issued one HTTP request per job (336 per cycle), maximising exposure to a network blip.",
+      "impact": "No permanent loss: the 47 downloaded products and their hashed inventory were intact, and retrieval is resumable.",
+      "fix": "connect_hyp3/fetch_jobs retry with capped linear backoff and raise a typed NetworkUnavailable; the batch is listed in a single find_jobs(job_type=...) call; the initial connection waits for the API; the loop rebuilds the session.",
+      "tests_added": "tests/test_production_retrieval.py (9 offline tests)",
+      "verified": "After connectivity returned, all 336 jobs were SUCCEEDED and the ledger reconciled with 0 orphans in either direction."
     }
   ],
   "pilot_metrics": {
@@ -270,6 +280,5 @@
     "retrieval_status": "in_progress",
     "products_downloaded": 72,
     "products_remaining": 264
-  },
-  "incidents": []
+  }
 }
