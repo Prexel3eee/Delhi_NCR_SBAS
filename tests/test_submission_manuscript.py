@@ -21,6 +21,10 @@ CLAIM_COLUMNS = [
     "claim_id", "claim", "claim_type", "evidence_kind", "evidence_locator",
     "citation_key", "allowed_strength", "manuscript_section",
 ]
+FIGURE_REGISTRY_COLUMNS = [
+    "submission_id", "source_figure", "placement", "scientific_question",
+    "claim_ids", "source_paths", "limitations", "caption_file",
+]
 
 
 def load_submission_module():
@@ -274,3 +278,33 @@ def test_author_input_boundary_contains_no_guessed_identity(project_root):
     assert all(f"**{field}:** {placeholder}" in text for field in fields)
     assert text.count(placeholder) == len(fields)
     assert "@" not in text
+
+
+def test_figure_registry_links_provenance_and_claims(project_root):
+    columns, rows = _read_csv(project_root / "manuscript" / "FIGURE_CLAIM_REGISTRY.csv")
+    assert columns == FIGURE_REGISTRY_COLUMNS
+    assert len(rows) == 12
+    provenance = __import__("json").loads(
+        (project_root / "manuscript" / "FIGURE_PROVENANCE.json").read_text()
+    )
+    figures = {figure["figure_id"]: figure for figure in provenance["figures"]}
+    _, claim_rows = _read_csv(project_root / "manuscript" / "CLAIM_EVIDENCE_LEDGER.csv")
+    claim_ids = {row["claim_id"] for row in claim_rows}
+    main_rows = [row for row in rows if row["placement"] == "main"]
+    assert 6 <= len(main_rows) <= 8
+    assert len(main_rows) == 8
+    assert {row["source_figure"] for row in rows} == set(figures)
+    for row in rows:
+        assert set(row["claim_ids"].split(";")) <= claim_ids
+        provenance_outputs = {item["path"] for item in figures[row["source_figure"]]["outputs"]}
+        assert set(row["source_paths"].split(";")) == provenance_outputs
+        assert row["limitations"]
+        assert row["caption_file"] == "manuscript/FIGURE_CAPTIONS.md"
+
+
+def test_main_figure_callouts_follow_submission_registry(submission, project_root):
+    _, rows = _read_csv(project_root / "manuscript" / "FIGURE_CLAIM_REGISTRY.csv")
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    main_ids = [row["submission_id"] for row in rows if row["placement"] == "main"]
+    assert all(f"(Figure {figure_id})" in manuscript for figure_id in main_ids)
+    assert all(manuscript.count(f"(Figure {figure_id})") == 1 for figure_id in main_ids)
