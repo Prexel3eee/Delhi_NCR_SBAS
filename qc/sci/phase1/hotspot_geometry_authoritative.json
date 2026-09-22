@@ -1,0 +1,239 @@
+{
+  "extract_version": "phase1_geometry_authoritative_v1",
+  "generated_utc": "2026-09-22T20:40:46.620592+00:00",
+  "sources": {
+    "polygons": "qc/sci/phase1/hotspots_corrected.geojson",
+    "velocity": "products/product_v1/los_velocity_mm_per_yr.tif",
+    "coherence": "products/product_v1/temporal_coherence.tif",
+    "note": "hotspots_corrected.geojson is the INC-008 corrected geometry"
+  },
+  "crs_polygon_and_raster": "EPSG:32643",
+  "crs_reported": "EPSG:4326 (WGS84)",
+  "hotspots": [
+    {
+      "hotspot_id": "H001",
+      "n_polygon_parts": 21,
+      "centroid_lon": 77.08146426350751,
+      "centroid_lat": 28.52099000667305,
+      "centroid_utm": {
+        "e": 703686.628506012,
+        "n": 3156684.384659422
+      },
+      "peak_deformation_lon": 77.07180572874678,
+      "peak_deformation_lat": 28.521639539069675,
+      "peak_deformation": {
+        "los_velocity_mm_per_yr": -87.38744354248047,
+        "lon": 77.07180572874678,
+        "lat": 28.521639539069675,
+        "utm_e": 702740.0,
+        "utm_n": 3156740.0,
+        "row": 48,
+        "col": 22,
+        "temporal_coherence": null
+      },
+      "polygon_bounds_utm": {
+        "minx": 701879.9999999994,
+        "miny": 3154960.0,
+        "maxx": 705200.0000000006,
+        "maxy": 3158640.0000000005
+      },
+      "polygon_bounds_lonlat": {
+        "min_lon": 77.06270947509914,
+        "min_lat": 28.505716333612614,
+        "max_lon": 77.09727020503091,
+        "max_lat": 28.538392903929513
+      },
+      "area_km2": 5.5904,
+      "n_valid_pixels": 3494,
+      "median_los_velocity_mm_per_yr": -30.94971466064453,
+      "mean_los_velocity_mm_per_yr": -36.36029815673828,
+      "peak_los_velocity_mm_per_yr": -87.38744354248047,
+      "p25_los_velocity_mm_per_yr": -54.0224609375,
+      "p75_los_velocity_mm_per_yr": -17.901630401611328,
+      "median_temporal_coherence": null,
+      "frozen_phase1_area_km2": 5.5904,
+      "frozen_phase1_median_los": -30.95,
+      "frozen_phase1_peak_abs_los": -87.387
+    },
+    {
+      "hotspot_id": "H002",
+      "n_polygon_parts": 134,
+      "centroid_lon": 77.07367363389265,
+      "centroid_lat": 28.815040624627308,
+      "centroid_utm": {
+        "e": 702358.0039920119,
+        "n": 3189259.4610778536
+      },
+      "peak_deformation_lon": 77.09385236557883,
+      "peak_deformation_lat": 28.829170563814174,
+      "peak_deformation": {
+        "los_velocity_mm_per_yr": -31.54180145263672,
+        "lon": 77.09385236557883,
+        "lat": 28.829170563814174,
+        "utm_e": 704300.0,
+        "utm_n": 3190860.0,
+        "row": 51,
+        "col": 165,
+        "temporal_coherence": null
+      },
+      "polygon_bounds_utm": {
+        "minx": 697719.9999999998,
+        "miny": 3185159.999999999,
+        "maxx": 706640.0000000005,
+        "maxy": 3192920.0
+      },
+      "polygon_bounds_lonlat": {
+        "min_lon": 77.0254549227308,
+        "min_lat": 28.778782888473277,
+        "max_lon": 77.11819782295899,
+        "max_lat": 28.847377513359447
+      },
+      "area_km2": 12.8256,
+      "n_valid_pixels": 8016,
+      "median_los_velocity_mm_per_yr": -13.585676193237305,
+      "mean_los_velocity_mm_per_yr": -14.19126033782959,
+      "peak_los_velocity_mm_per_yr": -31.54180145263672,
+      "p25_los_velocity_mm_per_yr": -15.82310676574707,
+      "p75_los_velocity_mm_per_yr": -11.840315818786621,
+      "median_temporal_coherence": null,
+      "frozen_phase1_area_km2": 12.8256,
+      "frozen_phase1_median_los": -13.586,
+      "frozen_phase1_peak_abs_los": -31.542
+    },
+    {
+      "hotspot_id": "H003",
+      "n_polygon_parts": 38,
+      "centroid_lon": 77.08122414283308,
+      "centroid_lat": 28.8031415438911,
+      "centroid_utm": {
+        "e": 703118.0837473376,
+        "n": 3187953.598296664
+      },
+      "peak_deformation_lon": 77.07919022941887,
+      "peak_deformation_lat": 28.792583480023485,
+      "peak_deformation": {
+        "los_velocity_mm_per_yr": -29.805118560791016,
+        "lon": 77.07919022941887,
+        "lat": 28.792583480023485,
+        "utm_e": 702940.0,
+        "utm_n": 3186780.0,
+        "row": 69,
+        "col": 30,
+        "temporal_coherence": null
+      },
+      "polygon_bounds_utm": {
+        "minx": 701720.0000000001,
+        "miny": 3186639.9999999995,
+        "maxx": 704760.000000001,
+        "maxy": 3189559.9999999995
+      },
+      "polygon_bounds_lonlat": {
+        "min_lon": 77.06667271333637,
+        "min_lat": 28.79151248089856,
+        "max_lon": 77.09832904103122,
+        "max_lat": 28.81737116366442
+      },
+      "area_km2": 2.2544,
+      "n_valid_pixels": 1409,
+      "median_los_velocity_mm_per_yr": -12.867033004760742,
+      "mean_los_velocity_mm_per_yr": -13.469947814941406,
+      "peak_los_velocity_mm_per_yr": -29.805118560791016,
+      "p25_los_velocity_mm_per_yr": -14.873907089233398,
+      "p75_los_velocity_mm_per_yr": -11.364861488342285,
+      "median_temporal_coherence": null,
+      "frozen_phase1_area_km2": 2.2544,
+      "frozen_phase1_median_los": -12.867,
+      "frozen_phase1_peak_abs_los": -29.805
+    },
+    {
+      "hotspot_id": "H004",
+      "n_polygon_parts": 8,
+      "centroid_lon": 77.05559575179767,
+      "centroid_lat": 28.533078145783197,
+      "centroid_utm": {
+        "e": 701131.6417910446,
+        "n": 3157980.3582089525
+      },
+      "peak_deformation_lon": 77.0536241184068,
+      "peak_deformation_lat": 28.53238287742101,
+      "peak_deformation": {
+        "los_velocity_mm_per_yr": -23.651229858398438,
+        "lon": 77.0536241184068,
+        "lat": 28.53238287742101,
+        "utm_e": 700940.0,
+        "utm_n": 3157900.0,
+        "row": 17,
+        "col": 16,
+        "temporal_coherence": null
+      },
+      "polygon_bounds_utm": {
+        "minx": 700319.9999999998,
+        "miny": 3157479.9999999995,
+        "maxx": 702040.0000000006,
+        "maxy": 3158600.0
+      },
+      "polygon_bounds_lonlat": {
+        "min_lon": 77.04721774515758,
+        "min_lat": 28.528689782721514,
+        "max_lon": 77.06498338976365,
+        "max_lat": 28.538526950110295
+      },
+      "area_km2": 1.072,
+      "n_valid_pixels": 670,
+      "median_los_velocity_mm_per_yr": -14.309690475463867,
+      "mean_los_velocity_mm_per_yr": -14.918410301208496,
+      "peak_los_velocity_mm_per_yr": -23.651229858398438,
+      "p25_los_velocity_mm_per_yr": -17.360088348388672,
+      "p75_los_velocity_mm_per_yr": -12.08593463897705,
+      "median_temporal_coherence": null,
+      "frozen_phase1_area_km2": 1.072,
+      "frozen_phase1_median_los": -14.31,
+      "frozen_phase1_peak_abs_los": -23.651
+    },
+    {
+      "hotspot_id": "H005",
+      "n_polygon_parts": 12,
+      "centroid_lon": 77.17372240333073,
+      "centroid_lat": 28.824705799796483,
+      "centroid_utm": {
+        "e": 712104.0613026822,
+        "n": 3190505.21072797
+      },
+      "peak_deformation_lon": 77.17461923260836,
+      "peak_deformation_lat": 28.830418855333754,
+      "peak_deformation": {
+        "los_velocity_mm_per_yr": -26.130006790161133,
+        "lon": 77.17461923260836,
+        "lat": 28.830418855333754,
+        "utm_e": 712180.0,
+        "utm_n": 3191140.0,
+        "row": 2,
+        "col": 20,
+        "temporal_coherence": null
+      },
+      "polygon_bounds_utm": {
+        "minx": 711360.0000000002,
+        "miny": 3189839.999999999,
+        "maxx": 712840.0000000009,
+        "maxy": 3191200.0000000005
+      },
+      "polygon_bounds_lonlat": {
+        "min_lon": 77.16597725247597,
+        "min_lat": 28.818828378577592,
+        "max_lon": 77.1813907838786,
+        "max_lat": 28.83085085790335
+      },
+      "area_km2": 0.8352,
+      "n_valid_pixels": 522,
+      "median_los_velocity_mm_per_yr": -14.209394454956055,
+      "mean_los_velocity_mm_per_yr": -14.8333740234375,
+      "peak_los_velocity_mm_per_yr": -26.130006790161133,
+      "p25_los_velocity_mm_per_yr": -17.0814151763916,
+      "p75_los_velocity_mm_per_yr": -12.172624588012695,
+      "median_temporal_coherence": null,
+      "frozen_phase1_area_km2": 0.8352,
+      "frozen_phase1_median_los": -14.209,
+      "frozen_phase1_peak_abs_los": -26.13
+    }
+  ]
+}
