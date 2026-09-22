@@ -1,0 +1,103 @@
+{
+  "generated_utc": "2026-09-22T14:54:10.546309+00:00",
+  "method": "quadratic de-trend, normalised amplitude, then correlation of the residuals; amplitudes are not required to match because the LOS projections differ",
+  "phase1_groups": {
+    "northern": [
+      "H002",
+      "H003",
+      "H005"
+    ],
+    "southern": [
+      "H001",
+      "H004"
+    ]
+  },
+  "pairs": [
+    {
+      "pair": "H001_vs_H002",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.4629,
+      "descending_correlation": 0.958
+    },
+    {
+      "pair": "H001_vs_H003",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.4227,
+      "descending_correlation": 0.9509
+    },
+    {
+      "pair": "H001_vs_H004",
+      "same_phase1_group": true,
+      "ascending_correlation": 0.8222,
+      "descending_correlation": 0.9919
+    },
+    {
+      "pair": "H001_vs_H005",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.4274,
+      "descending_correlation": 0.945
+    },
+    {
+      "pair": "H002_vs_H003",
+      "same_phase1_group": true,
+      "ascending_correlation": 0.9866,
+      "descending_correlation": 0.998
+    },
+    {
+      "pair": "H002_vs_H004",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.3446,
+      "descending_correlation": 0.9766
+    },
+    {
+      "pair": "H002_vs_H005",
+      "same_phase1_group": true,
+      "ascending_correlation": 0.8373,
+      "descending_correlation": 0.988
+    },
+    {
+      "pair": "H003_vs_H004",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.3361,
+      "descending_correlation": 0.972
+    },
+    {
+      "pair": "H003_vs_H005",
+      "same_phase1_group": true,
+      "ascending_correlation": 0.8232,
+      "descending_correlation": 0.9908
+    },
+    {
+      "pair": "H004_vs_H005",
+      "same_phase1_group": false,
+      "ascending_correlation": -0.3795,
+      "descending_correlation": 0.9657
+    }
+  ],
+  "within_group": {
+    "ascending": {
+      "n": 4,
+      "median": 0.8303
+    },
+    "descending": {
+      "n": 4,
+      "median": 0.9914
+    }
+  },
+  "between_group": {
+    "ascending": {
+      "n": 6,
+      "median": -0.4011
+    },
+    "descending": {
+      "n": 6,
+      "median": 0.9619
+    }
+  },
+  "within_minus_between_descending": 0.0295,
+  "within_minus_between_ascending": 1.2314,
+  "grouping_survives_in_descending": false,
+  "common_mode_dominated_descending": true,
+  "note": "a high within-group correlation alone is NOT evidence: if every pair correlates at ~+0.96 the series share a common-mode signal and the north/south structure is not reproduced. The Phase-I signature was a NEGATIVE between-group correlation.",
+  "caveat": "Correlations are computed on each track's own full record; the two tracks have different acquisition calendars, so the comparison is of grouping STRUCTURE, not of simultaneous values."
+}

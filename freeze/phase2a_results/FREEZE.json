@@ -1,0 +1,103 @@
+{
+  "freeze_version": "phase2a_results_v1",
+  "freeze_id": "09017dc3895f4c66ad68004934a634bf3ff22efe4a26ab2a2f5690b12b266126",
+  "created_utc": "2026-09-22T14:55:23.402165+00:00",
+  "descending_network_freeze": "freeze/descending_network_v1 (8f9eee9a...)",
+  "credits_consumed": 1095,
+  "pairs": 219,
+  "acquisitions": 91,
+  "headline": "descending does NOT reproduce the ascending spatial pattern (r=+0.175); the coherence-velocity relationship DOES reproduce (r=+0.831); 4 of 5 hotspots NOT_RESOLVED, 1 PARTIALLY_SUPPORTED",
+  "not_done": [
+    "no causal attribution",
+    "no volumetric inference",
+    "no baseline-matched descending inversion",
+    "no descending tropospheric/unwrap correction"
+  ],
+  "artefacts": [
+    {
+      "path": "qc/sci/PHASE_IIA_GEODETIC_VALIDATION_REPORT.md",
+      "sha256": "47746d6e839458a972991646c365acbe63281112f0e2fe1c7d1dac1e1162f079",
+      "bytes": 17884
+    },
+    {
+      "path": "qc/sci/phase2/cross_validation.json",
+      "sha256": "1259f459b3da29b5a0249e4610ee17c7962da222df7cb409358ceb9e57620320",
+      "bytes": 9890
+    },
+    {
+      "path": "qc/sci/phase2/common_domain.json",
+      "sha256": "18e84b5ac5fd8950c9f36d79bb7762233ece91d5dbc51e4041f0ef7d22bb47c7",
+      "bytes": 3808
+    },
+    {
+      "path": "qc/sci/phase2/decomposition.json",
+      "sha256": "9bb95e39d7ae2ddbb6861ea0a1091496dcefc83f940cce04f99b1e8c8e160009",
+      "bytes": 12596
+    },
+    {
+      "path": "qc/sci/phase2/north_south_sensitivity.csv",
+      "sha256": "17bd4ba1bacd0901a36a8341f73a3d5cfa195556596fe3a9f8239cd4d80512b7",
+      "bytes": 1040
+    },
+    {
+      "path": "qc/sci/phase2/hotspot_validation.csv",
+      "sha256": "f4b59e251e05a040a387f9f01362f9073cc6320521d24b012fcdc9b49a577644",
+      "bytes": 622
+    },
+    {
+      "path": "qc/sci/phase2/coherence_velocity_3form.json",
+      "sha256": "eda2f625591ebe6a167ccc073b2f9ce366140ef6533a65e46e66913b4e4d5620",
+      "bytes": 5536
+    },
+    {
+      "path": "qc/sci/phase2/temporal_groups.json",
+      "sha256": "91c616b0c23e02903e734c2bbec7c26f856d09f23846a7ce2702c093f7a9c21e",
+      "bytes": 2862
+    },
+    {
+      "path": "qc/sci/phase2/descending_reference.json",
+      "sha256": "6b18bfcb21099e44accbc882373172afd4cf1c8d0d044ab659566eeab13560a4",
+      "bytes": 2396
+    },
+    {
+      "path": "qc/sci/phase2/hotspot_containment_verified.json",
+      "sha256": "83bbe3bbbb8070fe40b68e6ab373acfbeec4a666491d8cc57fd31bdfbaa82410",
+      "bytes": 2053
+    },
+    {
+      "path": "qc/descending/network_audit.json",
+      "sha256": "45507e77e340953d794ceb6d626a19d2c16f285bb90f31052da7ab7ebe3c71b2",
+      "bytes": 3128
+    },
+    {
+      "path": "qc/descending/descending_qc.json",
+      "sha256": "9cbafb76063edb797ded9774b5583f71b3c6ea659e39c0c57c597af08a4f2a20",
+      "bytes": 7367
+    },
+    {
+      "path": "qc/descending/critical_edge_sensitivity.csv",
+      "sha256": "c3644d2fed25f37241716ed4364527cb9f3d1423593e0ce9863231c0e9d6c18b",
+      "bytes": 2394
+    },
+    {
+      "path": "qc/descending/gate1_retrieval.json",
+      "sha256": "ec44c3f5896275f15770e9a9ecf8a6d81bc4e20891c1f813884007fe4fc5c4eb",
+      "bytes": 127
+    },
+    {
+      "path": "qc/descending/gate2_ingestion.json",
+      "sha256": "5b68b9eb5145413b6c904c5da936eaaa586d46acf92606eb9fa4f215e3b92c9b",
+      "bytes": 123
+    },
+    {
+      "path": "provenance/errata/INC-007.json",
+      "sha256": "a355780c7660662b6be1d1057029e6d50a466e896811babfd75391c9aa38bae8",
+      "bytes": 4571
+    },
+    {
+      "path": "provenance/errata/INC-008.json",
+      "sha256": "83bbe3bbbb8070fe40b68e6ab373acfbeec4a666491d8cc57fd31bdfbaa82410",
+      "bytes": 2053
+    }
+  ]
+}

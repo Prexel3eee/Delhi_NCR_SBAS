@@ -59,7 +59,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUT_GEOMETRY = PROJECT_ROOT / "geometry" / "descending"
 OUT_MANIFESTS = PROJECT_ROOT / "manifests" / "descending"
 AOI_PATH = PROJECT_ROOT / "geometry" / "aoi.geojson"
-HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots.geojson"
+HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots_corrected.geojson"
 
 MAX_BURSTS = 15
 MAX_BURST_TIME_SPREAD_SECONDS = 120

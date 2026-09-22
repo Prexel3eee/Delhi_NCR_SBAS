@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import stat
 import sys
 import zipfile
 from datetime import datetime, timezone
@@ -48,7 +49,7 @@ FREEZE_DIR = PROJECT_ROOT / "freeze" / "descending_network_v1"
 WORK = PROJECT_ROOT / "mintpy" / "descending_work"
 EXTRACT_DIR = PROJECT_ROOT / "data" / "descending_extracted"
 AOI_PATH = PROJECT_ROOT / "geometry" / "aoi.geojson"
-HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots.geojson"
+HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots_corrected.geojson"
 
 EXPECTED_PAIRS = 219
 EXPECTED_DATES = 91

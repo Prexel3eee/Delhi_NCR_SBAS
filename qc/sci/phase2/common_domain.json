@@ -1,0 +1,132 @@
+{
+  "generated_utc": "2026-09-22T14:51:58.658677+00:00",
+  "domain_definition": "ascending valid coverage AND descending valid coverage AND scientific AOI; no coherence threshold is applied to the domain because the two stacks have structurally different coherence distributions",
+  "coherence_distributions": {
+    "ascending_p50": 0.8583,
+    "ascending_p90": 0.9793,
+    "descending_p50": 0.467,
+    "descending_p90": 0.5441
+  },
+  "common_domain": {
+    "aoi_pixels": 1226497,
+    "ascending_valid_quality_pixels": 1198401,
+    "descending_valid_quality_pixels": 854698,
+    "common_pixels": 854004,
+    "overlap_area_km2": 1366.406,
+    "overlap_fraction_of_aoi": 0.696295,
+    "aoi_lost_to_descending": 371799,
+    "aoi_lost_fraction": 0.303139,
+    "hotspots": [
+      {
+        "hotspot_id": "H001",
+        "pixels": 3494,
+        "pixels_in_common_domain": 3494,
+        "fraction": 1.0,
+        "fully_covered": true
+      },
+      {
+        "hotspot_id": "H002",
+        "pixels": 8016,
+        "pixels_in_common_domain": 8015,
+        "fraction": 0.999875,
+        "fully_covered": true
+      },
+      {
+        "hotspot_id": "H003",
+        "pixels": 1409,
+        "pixels_in_common_domain": 1408,
+        "fraction": 0.99929,
+        "fully_covered": true
+      },
+      {
+        "hotspot_id": "H004",
+        "pixels": 670,
+        "pixels_in_common_domain": 670,
+        "fraction": 1.0,
+        "fully_covered": true
+      },
+      {
+        "hotspot_id": "H005",
+        "pixels": 522,
+        "pixels_in_common_domain": 522,
+        "fraction": 1.0,
+        "fully_covered": true
+      }
+    ],
+    "requirement": "every ascending-vs-descending spatial comparison must use this domain; the full ascending AOI must not be used",
+    "mask_file": "qc/sci/phase2/common_domain_mask.npz"
+  },
+  "temporal": {
+    "ascending": {
+      "first": "2021-10-06",
+      "last": "2025-09-27",
+      "span_years": 3.9754,
+      "n_acquisitions": 119,
+      "median_revisit_days": 12.0,
+      "largest_gap_days": 24,
+      "gaps_over_36d": 0,
+      "monthly_sampling": {
+        "1": 10,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 9,
+        "6": 9,
+        "7": 10,
+        "8": 10,
+        "9": 10,
+        "10": 11,
+        "11": 10,
+        "12": 10
+      }
+    },
+    "descending": {
+      "first": "2021-10-02",
+      "last": "2025-09-23",
+      "span_years": 3.9754,
+      "n_acquisitions": 91,
+      "median_revisit_days": 12.0,
+      "largest_gap_days": 108,
+      "gaps_over_36d": 2,
+      "monthly_sampling": {
+        "1": 10,
+        "2": 6,
+        "3": 9,
+        "4": 6,
+        "5": 10,
+        "6": 7,
+        "7": 9,
+        "8": 8,
+        "9": 6,
+        "10": 6,
+        "11": 7,
+        "12": 7
+      }
+    },
+    "overlap_interval": [
+      "2021-10-06",
+      "2025-09-23"
+    ],
+    "exactly_shared_dates": 0,
+    "shared_date_list": [],
+    "note": "Two comparisons are reported downstream: (A) native record, each product over its own full span; (B) common period, both restricted to the shared interval. Dates are never resampled to force identity."
+  },
+  "reference_alignment": {
+    "ascending_reference_yx": [
+      1384,
+      1451
+    ],
+    "descending_reference_yx": [
+      394,
+      2149
+    ],
+    "ascending_authoritative_reference_note": "see provenance/errata/INC-007.json",
+    "stable_control_pixels": 3692,
+    "ascending_stable_coherence_p75": 0.94202,
+    "descending_stable_coherence_p75": 0.50918,
+    "stable_max_abs_velocity_mm_per_yr": 3.0,
+    "ascending_rereference_offset_mm_per_yr": 0.3546,
+    "descending_rereference_offset_mm_per_yr": -0.0992,
+    "convention": "both stacks re-referenced to the median velocity of the common stable control, so cross-track differences are between identically defined zero levels"
+  }
+}

@@ -1,0 +1,6 @@
+hotspot_id,n_pixels,ascending_los_mm_per_yr,descending_los_mm_per_yr,ascending_los_uncertainty_mm_per_yr,descending_los_uncertainty_mm_per_yr,vertical_mm_per_yr,vertical_uncertainty_mm_per_yr,east_west_mm_per_yr,east_west_uncertainty_mm_per_yr,vertical_cov_with_ew,vertical_amplification,ew_amplification,vertical_significant_at_2sigma,ew_significant_at_2sigma
+H001,3494,-30.95,-84.728,0.9594,4.944,-74.068,3.32,42.684,4.188,-12.9416,1.2428,1.7199,True,True
+H002,8015,-13.585,-30.488,1.2768,5.7709,-28.074,3.892,13.178,4.918,-17.438,1.2428,1.7199,True,True
+H003,1408,-12.866,-21.89,1.2506,5.7956,-21.964,3.905,6.69,4.933,-17.629,1.2428,1.7199,True,False
+H004,670,-14.31,-44.181,0.7268,5.4788,-37.56,3.652,23.886,4.589,-16.2042,1.2428,1.7199,True,True
+H005,522,-14.209,-35.514,1.4038,5.1079,-31.764,3.479,16.789,4.416,-13.3025,1.2428,1.7199,True,True

@@ -1,0 +1,18 @@
+{
+  "ascending_reference_yx": [
+    1384,
+    1451
+  ],
+  "descending_reference_yx": [
+    394,
+    2149
+  ],
+  "ascending_authoritative_reference_note": "see provenance/errata/INC-007.json",
+  "stable_control_pixels": 3692,
+  "ascending_stable_coherence_p75": 0.94202,
+  "descending_stable_coherence_p75": 0.50918,
+  "stable_max_abs_velocity_mm_per_yr": 3.0,
+  "ascending_rereference_offset_mm_per_yr": 0.3546,
+  "descending_rereference_offset_mm_per_yr": -0.0992,
+  "convention": "both stacks re-referenced to the median velocity of the common stable control, so cross-track differences are between identically defined zero levels"
+}

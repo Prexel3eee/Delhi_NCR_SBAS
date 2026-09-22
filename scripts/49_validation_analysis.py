@@ -53,7 +53,7 @@ DESC_SUB_WORK = PROJECT_ROOT / "mintpy" / "descending_basematched_work"
 ASC_GEOM = PROJECT_ROOT / "mintpy" / "production_work" / "inputs" / "geometryGeo.h5"
 DESC_GEOM = DESC_WORK / "inputs" / "geometryGeo.h5"
 OUT = PROJECT_ROOT / "qc" / "sci" / "phase2"
-HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots.geojson"
+HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots_corrected.geojson"
 
 COHERENCE_MIN = 0.80
 THRESHOLD_MM = 10.0
@@ -238,7 +238,7 @@ def main() -> int:
         with h5py.File(work / "velocity.h5", "r") as handle:
             v = handle["velocity"][:].astype("float64") * 1000.0
         ifg_coh = np.asarray(ifg_coh)
-        dt = np.array([(pd.Timestamp(b) - pd.Timestamp(a)).days for a, b in ifg_dates])
+        dt = np.array([(pd.Timestamp(str(b)) - pd.Timestamp(str(a))).days for a, b in ifg_dates])
         for dt_class in sorted(set(dt.tolist())):
             idx = np.where(dt == dt_class)[0]
             # per-pair median coherence over the common domain's ascending grid
@@ -320,9 +320,9 @@ def main() -> int:
         span = float(np.percentile(y, 97.5) - np.percentile(y, 2.5))
         return y / span if span else y
 
-    asc_t = np.array([pd.Timestamp(d).year + (pd.Timestamp(d).dayofyear - 1) / 365.25
+    asc_t = np.array([pd.Timestamp(str(d)).year + (pd.Timestamp(str(d)).dayofyear - 1) / 365.25
                       for d in asc_series["dates"]])
-    desc_t = np.array([pd.Timestamp(d).year + (pd.Timestamp(d).dayofyear - 1) / 365.25
+    desc_t = np.array([pd.Timestamp(str(d)).year + (pd.Timestamp(str(d)).dayofyear - 1) / 365.25
                        for d in desc_series["dates"]])
 
     def residual(curve, t):
@@ -375,9 +375,25 @@ def main() -> int:
                          "descending": summarise(within_desc)},
         "between_group": {"ascending": summarise(between_asc),
                           "descending": summarise(between_desc)},
+        # A grouping only "survives" if there is a real CONTRAST. In descending
+        # every pair correlates at ~+0.96, which is common-mode domination, not a
+        # reproduced north/south structure: within barely exceeds between.
+        "within_minus_between_descending": round(
+            float(np.median(within_desc) - np.median(between_desc)), 4)
+            if (within_desc and between_desc) else None,
+        "within_minus_between_ascending": round(
+            float(np.median(within_asc) - np.median(between_asc)), 4)
+            if (within_asc and between_asc) else None,
         "grouping_survives_in_descending": bool(
             within_desc and between_desc
-            and np.median(within_desc) > np.median(between_desc)),
+            and (np.median(within_desc) - np.median(between_desc)) >= 0.30
+            and np.median(between_desc) < 0.0),
+        "common_mode_dominated_descending": bool(
+            between_desc and np.median(between_desc) > 0.5),
+        "note": "a high within-group correlation alone is NOT evidence: if every pair "
+                "correlates at ~+0.96 the series share a common-mode signal and the "
+                "north/south structure is not reproduced. The Phase-I signature was a "
+                "NEGATIVE between-group correlation.",
         "caveat": "Correlations are computed on each track's own full record; the two "
                   "tracks have different acquisition calendars, so the comparison is of "
                   "grouping STRUCTURE, not of simultaneous values.",

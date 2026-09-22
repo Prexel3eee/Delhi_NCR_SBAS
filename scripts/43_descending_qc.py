@@ -87,7 +87,10 @@ def main() -> int:
                               meta["X_STEP"], -meta["Y_STEP"]), invert=True)
 
     vel_mm = velocity * 1000.0
-    base = aoi_mask & land & np.isfinite(velocity)
+    # MintPy fills the non-inverted region with zeros, so `isfinite` would
+    # report full coverage for a partly-inverted product. The honest test is a
+    # non-zero formal uncertainty.
+    base = aoi_mask & land & np.isfinite(velocity) & (velocity_std > 0)
     print("=" * 88)
     print("PHASE II-A - DESCENDING PRODUCT QC")
     print("=" * 88)
@@ -156,12 +159,25 @@ def main() -> int:
             "added_pair_role": row.added_pair_role,
             "coherence_median": round(float(np.median(values)), 4) if values.size else None,
             "coherence_p25": round(float(np.percentile(values, 25)), 4) if values.size else None,
-            "residual_median_rad": round(float(np.median(residue[index][base])), 4),
+            "residual_median_rad": round(float(np.median(residue[base])), 4),
+            "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank"
         })
     edges = pd.DataFrame(edge_rows)
     edges.to_csv(OUT / "critical_edge_sensitivity.csv", index=False)
 
-    stack_coh_median = float(np.median(ifg_coherence[:, base], axis=1).mean())
+    ifg_coh = np.asarray(ifg_coherence)
+    pair_med_all = np.array([float(np.nanmedian(ifg_coh[i]))
+                             for i in range(ifg_coh.shape[0])])
+    order = np.argsort(np.argsort(pair_med_all))          # 0 = worst
+    rank_of = {int(i): int(order[i]) + 1 for i in range(len(pair_med_all))}
+    for row, entry in zip(added.itertuples(), edge_rows):
+        want = (row.reference_date.replace("-", ""), row.secondary_date.replace("-", ""))
+        idx = next((i for i, (a, b) in enumerate(ifg_dates)
+                    if (a.replace("-", ""), b.replace("-", "")) == want), None)
+        if idx is not None:
+            entry["coherence_rank_of_219"] = rank_of[idx]
+            entry["coherence_percentile"] = round(100.0 * rank_of[idx] / len(pair_med_all), 1)
+    stack_coh_median = float(np.median(pair_med_all))
     print(f"\n  CRITICAL-EDGE SENSITIVITY ({len(edges)} pairs beyond the base rule):")
     print(f"    stack-wide median pair coherence: {stack_coh_median:.4f}")
     print(f"    {'reference':>10s} {'secondary':>10s} {'dt':>4s} {'role':>20s} "

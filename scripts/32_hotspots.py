@@ -53,7 +53,8 @@ from pyproj import Transformer
 from rasterio.transform import Affine, from_origin
 from rasterio.warp import transform_geom
 from scipy import ndimage
-from shapely.geometry import shape, mapping
+from shapely.geometry import shape as shp_shape, mapping
+from shapely.ops import unary_union
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW_WORK = PROJECT_ROOT / "mintpy" / "baseline_raw_work"
@@ -135,6 +136,7 @@ def main() -> int:
 
     black = np.zeros((length, width), dtype="float64")
     records, geometries = [], []
+    component_pieces: dict[int, list] = {}
     for label in keep:
         component = labels == label
         rows, cols = np.where(component)
@@ -188,23 +190,18 @@ def main() -> int:
         }
         records.append(record)
 
+        # INC-008: rasterio.features.shapes can return SEVERAL polygons for one
+        # connected component. Breaking after the first wrote a single-pixel
+        # fragment; the pieces must be unioned into one geometry. The feature id
+        # is also only correct AFTER the significance renumbering below, so the
+        # geometries are emitted afterwards rather than inside this loop.
         black[:] = 0.0
         black[component] = 1.0
-        for geom, value in rasterio.features.shapes(black.astype("uint8"),
-                                                    mask=component, transform=transform):
-            if value == 1:
-                geometries.append({
-                    "type": "Feature",
-                    "properties": {
-                        "hotspot_id": record["hotspot_id"],
-                        "los_velocity_median_mm_per_yr": record["los_velocity_median_mm_per_yr"],
-                        "area_km2": record["area_km2"],
-                        "temporal_coherence_median": record["temporal_coherence_median"],
-                    },
-                    "geometry": transform_geom(f"EPSG:{int(meta['EPSG'])}",
-                                               "EPSG:4326", geom),
-                })
-                break
+        component_pieces[int(label)] = [
+            shp_shape(geom) for geom, value
+            in rasterio.features.shapes(black.astype("uint8"), mask=component,
+                                        transform=transform)
+            if value == 1]
 
     frame = pd.DataFrame(records)
     frame["significance"] = (frame["los_velocity_median_mm_per_yr"].abs()
@@ -212,6 +209,29 @@ def main() -> int:
     frame = frame.sort_values("significance", ascending=False).reset_index(drop=True)
     # Renumber so the ranking is readable: H001 is the strongest, not the first found.
     frame["hotspot_id"] = [f"H{i + 1:03d}" for i in range(len(frame))]
+
+    # INC-008: emit the polygons HERE, after renumbering, so the feature ids match
+    # the ranked ids in hotspots.csv, and union every piece of each component
+    # rather than keeping only the first.
+    label_of_id = {record["hotspot_id"]: record["label"] for record in records}
+    geometries = []
+    for _, row in frame.iterrows():
+        pieces = component_pieces.get(label_of_id.get(row["hotspot_id"]), [])
+        if not pieces:
+            continue
+        merged = unary_union(pieces)
+        geometries.append({
+            "type": "Feature",
+            "properties": {
+                "hotspot_id": row["hotspot_id"],
+                "area_km2": float(row["area_km2"]),
+                "los_velocity_median_mm_per_yr": float(
+                    row["los_velocity_median_mm_per_yr"]),
+                "temporal_coherence_median": float(row["temporal_coherence_median"]),
+            },
+            "geometry": transform_geom(f"EPSG:{int(meta['EPSG'])}", "EPSG:4326",
+                                       merged.__geo_interface__),
+        })
     frame.to_csv(OUT_QC / "hotspots.csv", index=False)
 
     # ---- threshold sensitivity -------------------------------------------

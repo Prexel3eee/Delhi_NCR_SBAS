@@ -1,0 +1,9 @@
+{
+  "ascending_dates": 119,
+  "descending_dates": 91,
+  "shared_exact_dates": 0,
+  "shared_date_list": [],
+  "nearest_date_pairs_within_1d": [],
+  "n_nearest_date_pairs": 0,
+  "note": "The two tracks were acquired on different relative orbits and their acquisition calendars only partially overlap, so temporal comparison is restricted to the shared dates."
+}

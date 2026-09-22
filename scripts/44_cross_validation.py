@@ -169,6 +169,7 @@ def main() -> int:
     print(f"     descending grid {int(desc_meta['LENGTH'])}x{int(desc_meta['WIDTH'])} at "
           f"{desc_meta['X_FIRST']:.0f},{desc_meta['Y_FIRST']:.0f}")
     desc_v_on_asc = resample_to_asc(desc_v)
+    desc_vs_a = resample_to_asc(desc_vs)
     desc_coh_on_asc = resample_to_asc(desc_coh)
     desc_inc_on_asc = resample_to_asc(desc_inc)
 
@@ -180,8 +181,13 @@ def main() -> int:
         invert=True)
 
     asc_mm, desc_mm = asc_v * 1000.0, desc_v_on_asc * 1000.0
-    common = (aoi_mask & np.isfinite(asc_mm) & np.isfinite(desc_mm))
-    both_q = common & (asc_coh >= MIN_COHERENCE) & (desc_coh_on_asc >= MIN_COHERENCE)
+    common = (aoi_mask & np.isfinite(asc_mm) & np.isfinite(desc_mm)
+              & (asc_vs * 1000 > 0) & (desc_vs_a > 0))
+    # Per-stack coherence tertiles: one shared absolute cut would exclude every
+    # pixel of the lower-coherence stack.
+    asc_coh_p67 = float(np.nanpercentile(asc_coh[common], 67))
+    desc_coh_p67 = float(np.nanpercentile(desc_coh_on_asc[common], 67))
+    both_q = common & (asc_coh >= asc_coh_p67) & (desc_coh_on_asc >= desc_coh_p67)
     print(f"     AOI pixels                     {int(aoi_mask.sum()):,}")
     print(f"     covered by BOTH tracks         {int(common.sum()):,} "
           f"({common.sum() / max(1, aoi_mask.sum()) * 100:.2f}% of AOI)")
@@ -193,7 +199,7 @@ def main() -> int:
 
     # ---- 3. hotspot cross-validation --------------------------------------
     hotspots = pd.read_csv(PHASE1 / "hotspots.csv")
-    features = json.loads((PHASE1 / "hotspots.geojson").read_text())["features"]
+    features = json.loads((PHASE1 / "hotspots_corrected.geojson").read_text())["features"]
 
     def detect(velocity_mm, coherence, mask):
         eligible = mask & np.isfinite(velocity_mm) & (coherence >= MIN_COHERENCE)
@@ -330,9 +336,9 @@ def main() -> int:
     print(f"     {'coh band':>10s} {'asc n':>9s} {'asc med':>9s} {'desc n':>9s} {'desc med':>9s}")
     for _, r in cohort.iterrows():
         print(f"     {r['coherence_low']:.2f}-{r['coherence_high']:.2f} "
-              f"{r['ascending_n']:9d} "
+              f"{r['ascending_n']:9.0f} "
               f"{(r['ascending_median_mm_per_yr'] if r['ascending_median_mm_per_yr'] is not None else float('nan')):9.2f} "
-              f"{r['descending_n']:9d} "
+              f"{r['descending_n']:9.0f} "
               f"{(r['descending_median_mm_per_yr'] if r['descending_median_mm_per_yr'] is not None else float('nan')):9.2f}")
     print(f"     correlation of the two coherence-velocity curves: "
           f"{rel_corr if rel_corr is not None else float('nan'):+.3f}")
@@ -349,7 +355,7 @@ def main() -> int:
     for a_day in sorted(asc_set):
         best = None
         for d_day in desc_set:
-            delta = abs((pd.Timestamp(a_day) - pd.Timestamp(d_day)).days)
+            delta = abs((pd.Timestamp(str(a_day)) - pd.Timestamp(str(d_day))).days)
             if best is None or delta < best[0]:
                 best = (delta, d_day)
         if best and best[0] <= tolerance_days:

@@ -1,0 +1,71 @@
+{
+  "generated_utc": "2026-09-22T14:51:07.877669+00:00",
+  "flight_direction": "DESCENDING",
+  "relative_orbit": 136,
+  "subswath": "IW1",
+  "mintpy_auto_reference_yx": [
+    394,
+    2149
+  ],
+  "selected_reference": {
+    "center_y": 625,
+    "center_x": 2325,
+    "block_pixels": 50,
+    "median_coherence": 0.3429035544395447,
+    "median_velocity_mm_per_yr": -0.05919247087149415,
+    "median_velocity_std_mm_per_yr": 1.3712872751057148
+  },
+  "criteria": {
+    "persistent_support_min": 0.95,
+    "coherence_used_for_ranking_only": true,
+    "uncertainty_max_quantile": "q25",
+    "uncertainty_threshold_mm_per_yr": 3.25432,
+    "min_edge_distance_km": 2.0,
+    "max_abs_velocity_mm_per_yr": 2.0,
+    "velocity_used_as_a_selection_criterion": false,
+    "circularity_note": "Velocity is deliberately excluded from selection; using it would bias the reference toward the answer, which is the circularity identified in the Phase-I reference work."
+  },
+  "candidates_evaluated": 809,
+  "candidates_passing_hard_gates": 66,
+  "candidates_passing_anomaly_gate": 5,
+  "standards": {
+    "hard_gates": [
+      "persistent_support",
+      "edge_distance",
+      "no_water",
+      "uncertainty_q25"
+    ],
+    "anomaly_gate_applied": true,
+    "coherence_used_as_a_ranking_key": false,
+    "velocity_used_as": "filter only",
+    "pool_size": 5
+  },
+  "selected_candidates": [
+    {
+      "center_y": 625,
+      "center_x": 2325,
+      "median_coherence": 0.3429035544395447,
+      "median_velocity_mm_per_yr": -0.05919247087149415
+    },
+    {
+      "center_y": 675,
+      "center_x": 2125,
+      "median_coherence": 0.31948259472846985,
+      "median_velocity_mm_per_yr": 0.05932903695793357
+    },
+    {
+      "center_y": 825,
+      "center_x": 2575,
+      "median_coherence": 0.2710525244474411,
+      "median_velocity_mm_per_yr": 0.09305126877734438
+    }
+  ],
+  "reference_sensitivity": {
+    "n_candidates": 3,
+    "spread_mm_per_yr": 0.1522,
+    "sd_mm_per_yr": 0.08,
+    "note": "spread of the reference-candidate velocities; a change of reference shifts every pixel by one constant and does not affect gradients"
+  },
+  "mintpy_offset_mm_per_yr": -0.0592,
+  "convention": "velocities in the descending product are relative to the MintPy auto-selected pixel until explicitly re-referenced; script 47 re-references both tracks to a common stable control before any cross-track comparison."
+}

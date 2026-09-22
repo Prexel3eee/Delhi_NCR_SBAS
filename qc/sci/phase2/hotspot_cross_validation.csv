@@ -1,0 +1,6 @@
+hotspot_id,ascending_area_km2,pixels_covered_by_descending,descending_coverage_fraction,pixels_both_coherent,ascending_velocity_median_mm_per_yr,descending_velocity_median_mm_per_yr,ascending_coherence_median,descending_coherence_median,descending_component_detected,descending_component_overlap_fraction,iou_with_descending_component,centroid_separation_km,sign_ascending,sign_descending,same_sign,consistent_with_pure_vertical,classification,reason
+H001,5.5904,3494,1.0,0,-30.95,-84.728,0.9255,0.5011,False,0.0,0.0,,negative,negative,True,True,PARTIALLY_SUPPORTED,same sign in an independent geometry but the descending component is not detected at 274% of the ascending magnitude
+H002,12.8256,8016,1.0,0,-13.586,-30.483,0.8634,0.4727,False,0.0,0.0,,negative,negative,True,True,NOT_RESOLVED,descending coherence is too low to test this hotspot (0.473)
+H003,2.2544,1409,1.0,0,-12.867,-21.885,0.8604,0.4689,False,0.0,0.0,,negative,negative,True,True,NOT_RESOLVED,descending coherence is too low to test this hotspot (0.469)
+H004,1.072,670,1.0,0,-14.31,-44.181,0.963,0.4902,False,0.0,0.0,,negative,negative,True,True,NOT_RESOLVED,descending coherence is too low to test this hotspot (0.490)
+H005,0.8352,522,1.0,0,-14.209,-35.514,0.8653,0.4945,False,0.0,0.0,,negative,negative,True,True,NOT_RESOLVED,descending coherence is too low to test this hotspot (0.494)

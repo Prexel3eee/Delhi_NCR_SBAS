@@ -1,0 +1,232 @@
+{
+  "generated_utc": "2026-09-22T10:28:58.491215+00:00",
+  "reference_date": "2025-09-23",
+  "flight_direction": "DESCENDING",
+  "relative_orbit": 136,
+  "subswath": "IW1",
+  "k": 4,
+  "full_burst_ids": [
+    "136_290874_IW1",
+    "136_290875_IW1",
+    "136_290876_IW1",
+    "136_290877_IW1"
+  ],
+  "relative_burst_ids": [
+    290874,
+    290875,
+    290876,
+    290877
+  ],
+  "aoi_coverage_fraction": 0.719693,
+  "aoi_fully_contained": false,
+  "uncovered_fraction": 0.280307,
+  "uncovered_bounds_lonlat": [
+    76.7853,
+    28.42186,
+    76.99496,
+    28.8726
+  ],
+  "union_to_aoi_area_ratio": 3.4735,
+  "hotspots_contained": {
+    "H001": true,
+    "H002": true,
+    "H003": true,
+    "H004": true,
+    "H005": true
+  },
+  "hotspot_coverage_fraction": {
+    "H001": 1.0,
+    "H002": 1.0,
+    "H003": 1.0,
+    "H004": 1.0,
+    "H005": 1.0
+  },
+  "rule_checks": [
+    {
+      "check": "burst_count_1_to_15",
+      "passed": true,
+      "detail": "K=4"
+    },
+    {
+      "check": "contiguous_gap_free",
+      "passed": true,
+      "detail": "relative burst IDs [290874, 290875, 290876, 290877]"
+    },
+    {
+      "check": "single_relative_orbit",
+      "passed": true,
+      "detail": "paths=[136]"
+    },
+    {
+      "check": "single_flight_direction",
+      "passed": true,
+      "detail": "directions=['DESCENDING']"
+    },
+    {
+      "check": "single_polarization",
+      "passed": true,
+      "detail": "polarizations=['VV']"
+    },
+    {
+      "check": "single_subswath",
+      "passed": true,
+      "detail": "subswaths=['IW1'] (mixed sub-swaths are not a valid along-track run)"
+    },
+    {
+      "check": "acquisition_within_2_minutes",
+      "passed": true,
+      "detail": "spread=8.0s (limit 120s)"
+    },
+    {
+      "check": "no_antimeridian_crossing",
+      "passed": true,
+      "detail": "lon range 76.887..77.904"
+    },
+    {
+      "check": "no_lateral_jog",
+      "passed": true,
+      "detail": "burst lon-width spread=0.00414 deg"
+    },
+    {
+      "check": "aoi_fully_contained",
+      "passed": false,
+      "detail": "coverage=0.719693; descending path 136 cannot cover the AOI's western strip and no configuration of this orbit can"
+    },
+    {
+      "check": "all_phase1_hotspots_contained",
+      "passed": true,
+      "detail": "5/5 hotspot polygons fully inside: {'H001': True, 'H002': True, 'H003': True, 'H004': True, 'H005': True}"
+    }
+  ],
+  "hard_rules_passed": true,
+  "structural_limitation": "Descending path 136 is the only descending IW track intersecting the AOI, and its swath edge leaves 28.03% of the AOI (the western strip, longitude below about 76.995 E) uncovered. No configuration of this orbit can cover it. All five Phase-I hotspot polygons are 100% inside the selected footprint, so all five remain validatable.",
+  "candidate_runs": [
+    {
+      "k": 4,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.719693,
+      "all_hotspots_contained": true
+    },
+    {
+      "k": 3,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.71939,
+      "all_hotspots_contained": true
+    },
+    {
+      "k": 3,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.592381,
+      "all_hotspots_contained": true
+    },
+    {
+      "k": 2,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.592078,
+      "all_hotspots_contained": true
+    },
+    {
+      "k": 2,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.46241,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 4,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.344297,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.335098,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 2,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.316917,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.316614,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 3,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.315916,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 3,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.306216,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 2,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.277835,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.186639,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 2,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.181831,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 2,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.177132,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.148751,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.143751,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.052003,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW2",
+      "aoi_coverage_fraction": 0.043565,
+      "all_hotspots_contained": false
+    },
+    {
+      "k": 1,
+      "subswath": "IW1",
+      "aoi_coverage_fraction": 0.042278,
+      "all_hotspots_contained": false
+    }
+  ],
+  "ascending_comparison": {
+    "ascending_orbit": 27,
+    "ascending_subswath": "IW2",
+    "ascending_k": 4,
+    "ascending_aoi_coverage_fraction": 1.0,
+    "note": "Independent collections: no shared burst, pair, or mask."
+  }
+}

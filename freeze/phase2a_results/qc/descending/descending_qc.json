@@ -1,0 +1,192 @@
+{
+  "generated_utc": "2026-09-22T14:52:54.627802+00:00",
+  "source": {
+    "flight_direction": "DESCENDING",
+    "relative_orbit": 136,
+    "subswath": "IW1",
+    "work_dir": "mintpy/descending_work",
+    "reference_yx": [
+      394,
+      2149
+    ],
+    "velocity_reference": "processing reference pixel of the descending product; NOT the same pixel as ascending"
+  },
+  "coverage": {
+    "aoi_pixels": 1226497,
+    "valid_pixels": 854698,
+    "valid_fraction_of_aoi": 0.69686,
+    "structural_limitation": "descending path 136 leaves ~28% of the AOI (western strip) uncovered"
+  },
+  "coherence": {
+    "percentiles": {
+      "p5": 0.257,
+      "p25": 0.4097,
+      "p50": 0.467,
+      "p75": 0.5092,
+      "p95": 0.5644
+    },
+    "fraction_above": {
+      "0.5": 0.30153,
+      "0.7": 2e-05,
+      "0.8": 0.0,
+      "0.9": 0.0
+    }
+  },
+  "velocity_mm_per_yr": {
+    "percentiles": {
+      "p1": -114.452,
+      "p5": -85.607,
+      "p25": -52.694,
+      "p50": -34.181,
+      "p75": -15.686,
+      "p95": 10.865,
+      "p99": 27.416
+    },
+    "median": -34.181,
+    "formal_std_median": 5.6518
+  },
+  "critical_edges": [
+    {
+      "reference_date": "2022-03-31",
+      "secondary_date": "2022-05-30",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": 43.75,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.6034,
+      "coherence_p25": 0.3418,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 30,
+      "coherence_percentile": 13.7
+    },
+    {
+      "reference_date": "2022-07-29",
+      "secondary_date": "2022-11-26",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": 212.0,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.4649,
+      "coherence_p25": 0.3054,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 1,
+      "coherence_percentile": 0.5
+    },
+    {
+      "reference_date": "2022-08-10",
+      "secondary_date": "2022-11-26",
+      "temporal_baseline_days": 108,
+      "perpendicular_baseline_m": 213.0,
+      "added_pair_role": "connect_components",
+      "coherence_median": 0.4999,
+      "coherence_p25": 0.3106,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 4,
+      "coherence_percentile": 1.8
+    },
+    {
+      "reference_date": "2022-11-26",
+      "secondary_date": "2023-01-25",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": -152.75,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.6736,
+      "coherence_p25": 0.3745,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 69,
+      "coherence_percentile": 31.5
+    },
+    {
+      "reference_date": "2023-01-01",
+      "secondary_date": "2023-05-01",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": 50.5,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.574,
+      "coherence_p25": 0.3327,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 47,
+      "coherence_percentile": 21.5
+    },
+    {
+      "reference_date": "2023-08-29",
+      "secondary_date": "2023-12-27",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": -46.0,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.5167,
+      "coherence_p25": 0.3156,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 8,
+      "coherence_percentile": 3.7
+    },
+    {
+      "reference_date": "2024-01-08",
+      "secondary_date": "2024-03-08",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": -74.25,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.7512,
+      "coherence_p25": 0.4242,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 79,
+      "coherence_percentile": 36.1
+    },
+    {
+      "reference_date": "2024-04-01",
+      "secondary_date": "2024-05-19",
+      "temporal_baseline_days": 48,
+      "perpendicular_baseline_m": 190.75,
+      "added_pair_role": "reduce_articulation",
+      "coherence_median": 0.6586,
+      "coherence_p25": 0.3936,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 68,
+      "coherence_percentile": 31.1
+    },
+    {
+      "reference_date": "2024-05-19",
+      "secondary_date": "2024-09-16",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": -122.5,
+      "added_pair_role": "remove_bridge",
+      "coherence_median": 0.4769,
+      "coherence_p25": 0.3078,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 2,
+      "coherence_percentile": 0.9
+    },
+    {
+      "reference_date": "2024-05-31",
+      "secondary_date": "2024-07-18",
+      "temporal_baseline_days": 48,
+      "perpendicular_baseline_m": -49.25,
+      "added_pair_role": "connect_components",
+      "coherence_median": 0.638,
+      "coherence_p25": 0.3406,
+      "residual_median_rad": 0.6329,
+      "note": "residue is the per-pixel median residual from velocity.h5, reported as a stack context value; per-PAIR residual ranking is provided by the coherence rank",
+      "coherence_rank_of_219": 31,
+      "coherence_percentile": 14.2
+    }
+  ],
+  "critical_edge_summary": {
+    "n_added_pairs": 10,
+    "stack_median_pair_coherence": 0.2767,
+    "n_added_pairs_below_0.30_coherence": 0,
+    "articulation_points": 1,
+    "interpretation": "The added pairs are the only links that make the descending network a single connected graph. Their coherence and residuals are reported individually so their influence on any ascending-vs-descending disagreement can be traced."
+  },
+  "reference_sensitivity": {
+    "candidate_block_velocity_spread_mm_per_yr": null,
+    "documented_systematic_mm_per_yr": 4.78,
+    "note": "same reasoning as the ascending product: a change of reference shifts every velocity by one constant and does not affect gradients"
+  }
+}

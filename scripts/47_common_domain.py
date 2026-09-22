@@ -54,7 +54,7 @@ ASC_GEOM = PROJECT_ROOT / "mintpy" / "production_work" / "inputs" / "geometryGeo
 DESC_WORK = PROJECT_ROOT / "mintpy" / "descending_work"
 DESC_GEOM = DESC_WORK / "inputs" / "geometryGeo.h5"
 AOI_PATH = PROJECT_ROOT / "geometry" / "aoi.geojson"
-HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots.geojson"
+HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots_corrected.geojson"
 OUT = PROJECT_ROOT / "qc" / "sci" / "phase2"
 
 COHERENCE_MIN = 0.80
@@ -148,14 +148,25 @@ def main() -> int:
         desc_land = handle["waterMask"][:].astype("float64")
     desc_land_a = resample(desc_land) > 0.5
 
-    asc_ok = aoi_mask & asc_land & np.isfinite(asc_v) & (asc_coh >= COHERENCE_MIN)
-    desc_ok = (aoi_mask & desc_land_a & np.isfinite(desc_v_a)
-               & (desc_coh_a >= COHERENCE_MIN))
+    # The domain is defined by VALIDITY, not by a coherence threshold. The two
+    # stacks have structurally different coherence distributions - ascending was
+    # built on a 36-day rule, descending on a robust network that includes 108-
+    # and 120-day pairs - so a single coherence cut would either empty the domain
+    # (descending never reaches the ascending level) or admit unusable ascending
+    # pixels. Coherence is handled by stratification in the analysis instead.
+    # VALIDITY is `velocityStd > 0`, not `isfinite(velocity)`: MintPy FILLS the
+    # region it did not invert with zeros, so a finite check would report full
+    # coverage for a product that is only partly inverted. The time series and
+    # velocity are finite everywhere; only the inverted pixels have a non-zero
+    # formal uncertainty.
+    asc_ok = aoi_mask & asc_land & np.isfinite(asc_v) & (asc_vs > 0)
+    desc_ok = aoi_mask & desc_land_a & np.isfinite(desc_v_a) & (desc_vs_a > 0)
     domain = asc_ok & desc_ok
 
     # ---- 6. common domain -------------------------------------------------
     aoi_px = int(aoi_mask.sum())
     print(f"\n  6. ASC_DESC_COMMON_VALID_DOMAIN")
+    print(f"     (validity = formal uncertainty > 0, i.e. actually inverted)")
     print(f"     AOI pixels                       {aoi_px:,}")
     print(f"     ascending  valid+quality         {int(asc_ok.sum()):,}")
     print(f"     descending valid+quality         {int(desc_ok.sum()):,}")
@@ -208,8 +219,12 @@ def main() -> int:
     # ---- 11. reference alignment -----------------------------------------
     # Re-reference BOTH stacks to a stable control selected from the COMMON
     # domain, so the two zero levels mean the same thing.
-    stable = (domain & (asc_coh >= STABLE_COHERENCE)
-              & (desc_coh_a >= STABLE_COHERENCE)
+    # Per-stack coherence percentiles: requiring an absolute level would again
+    # exclude every pixel from the lower-coherence stack.
+    asc_coh_p75 = float(np.nanpercentile(asc_coh[domain], 75))
+    desc_coh_p75 = float(np.nanpercentile(desc_coh_a[domain], 75))
+    stable = (domain
+              & (asc_coh >= asc_coh_p75) & (desc_coh_a >= desc_coh_p75)
               & (np.abs(asc_v * 1000) <= STABLE_MAX_ABS_VELOCITY)
               & (np.abs(desc_v_a * 1000) <= STABLE_MAX_ABS_VELOCITY))
     asc_offset = float(np.median(asc_v[stable]) * 1000) if stable.sum() else 0.0
@@ -218,6 +233,8 @@ def main() -> int:
     desc_v_ref = desc_v_a * 1000 - desc_offset
 
     print(f"\n  11. reference alignment")
+    print(f"     per-stack stable-control coherence thresholds: "
+          f"ascending p75 {asc_coh_p75:.4f}, descending p75 {desc_coh_p75:.4f}")
     print(f"     stable control pixels (common domain): {int(stable.sum()):,}")
     print(f"     ascending  reference pixel {asc_ref}, velocity there "
           f"{float(asc_v[asc_ref]) * 1000:+.4f} mm/yr")
@@ -229,7 +246,16 @@ def main() -> int:
 
     payload = {
         "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "coherence_min": COHERENCE_MIN,
+        "domain_definition": "ascending valid coverage AND descending valid coverage "
+                             "AND scientific AOI; no coherence threshold is applied to "
+                             "the domain because the two stacks have structurally "
+                             "different coherence distributions",
+        "coherence_distributions": {
+            "ascending_p50": round(float(np.nanpercentile(asc_coh[domain], 50)), 4),
+            "ascending_p90": round(float(np.nanpercentile(asc_coh[domain], 90)), 4),
+            "descending_p50": round(float(np.nanpercentile(desc_coh_a[domain], 50)), 4),
+            "descending_p90": round(float(np.nanpercentile(desc_coh_a[domain], 90)), 4),
+        },
         "common_domain": {
             "aoi_pixels": aoi_px,
             "ascending_valid_quality_pixels": int(asc_ok.sum()),
@@ -261,7 +287,8 @@ def main() -> int:
             "ascending_authoritative_reference_note":
                 "see provenance/errata/INC-007.json",
             "stable_control_pixels": int(stable.sum()),
-            "stable_coherence_min": STABLE_COHERENCE,
+            "ascending_stable_coherence_p75": round(asc_coh_p75, 5),
+            "descending_stable_coherence_p75": round(desc_coh_p75, 5),
             "stable_max_abs_velocity_mm_per_yr": STABLE_MAX_ABS_VELOCITY,
             "ascending_rereference_offset_mm_per_yr": round(asc_offset, 4),
             "descending_rereference_offset_mm_per_yr": round(desc_offset, 4),

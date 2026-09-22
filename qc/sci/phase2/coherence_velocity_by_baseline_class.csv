@@ -1,0 +1,11 @@
+form,temporal_baseline_days,n_pairs,median_pair_coherence
+ascending_full,12,113,0.7761
+ascending_full,24,113,0.6605
+ascending_full,36,110,0.5826
+descending_full,12,69,0.3342
+descending_full,24,75,0.2772
+descending_full,36,65,0.2692
+descending_full,48,2,0.2659
+descending_full,60,3,0.2684
+descending_full,108,1,0.2594
+descending_full,120,4,0.2596

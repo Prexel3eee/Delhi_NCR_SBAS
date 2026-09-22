@@ -1,0 +1,113 @@
+{
+  "freeze_version": "descending_network_v1",
+  "freeze_id": "8f9eee9a6bdead7a6c8a80e45a32c8dfd7fd0c7b005fadadb342c486e827e93c",
+  "created_utc": "2026-09-22T14:02:21.531362+00:00",
+  "flight_direction": "DESCENDING",
+  "relative_orbit": 136,
+  "subswath": "IW1",
+  "k": 4,
+  "full_burst_ids": [
+    "136_290874_IW1",
+    "136_290875_IW1",
+    "136_290876_IW1",
+    "136_290877_IW1"
+  ],
+  "acquisitions": 92,
+  "pairs": 219,
+  "submitted_jobs": 219,
+  "network_audit": {
+    "pairs": 219,
+    "bridge_pairs": 10,
+    "rules": {
+      "max_temporal_days": 36,
+      "max_perp_m": 250.0,
+      "join_method": "identity intersection across all bursts"
+    },
+    "temporal_baseline_days": {
+      "min": 12,
+      "median": 24.0,
+      "max": 120,
+      "counts": {
+        "12": 69,
+        "24": 75,
+        "36": 65,
+        "48": 2,
+        "60": 3,
+        "108": 1,
+        "120": 4
+      }
+    },
+    "perpendicular_baseline_m": {
+      "min": -224.5,
+      "median": -8.5,
+      "max": 237.75,
+      "max_abs": 241.0
+    },
+    "connected_components": [
+      91
+    ],
+    "n_components": 1,
+    "isolated_nodes": 0,
+    "min_degree": 2,
+    "max_degree": 6,
+    "median_degree": 5.0,
+    "bridges": [],
+    "n_bridges": 0,
+    "articulation_points": [
+      "2022-11-26"
+    ],
+    "n_articulation_points": 1
+  },
+  "acceptance_passed": true,
+  "aoi_coverage_fraction": 0.719693,
+  "hotspots_contained": {
+    "H001": true,
+    "H002": true,
+    "H003": true,
+    "H004": true,
+    "H005": true
+  },
+  "statement": "Independent descending validation product. Not a replacement for ascending product_v1. Submitted network must not be redesigned.",
+  "artefacts": [
+    {
+      "path": "manifests/descending/geographic_reference_bursts.csv",
+      "sha256": "fb93877bf0dc6ab94a7eb29848ce0b9ff3dd9dd7e32af02f107e269e46453b9c",
+      "bytes": 1300
+    },
+    {
+      "path": "manifests/descending/accepted_acquisitions.csv",
+      "sha256": "c63a6e4dd163568373c9a2a73661e56d4bed3e1b025d0745ae92501d58a4b819",
+      "bytes": 1017
+    },
+    {
+      "path": "manifests/descending/excluded_acquisitions.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "manifests/descending/sbas_pairs.csv",
+      "sha256": "ae71e18dddbae3c8b373db76a25a0e5ef41a57a009ccd47aa07e36d2e6233ed0",
+      "bytes": 100048
+    },
+    {
+      "path": "manifests/descending/descending_jobs.csv",
+      "sha256": "ac2f0a49cccc693d9a8a521f4fb1248810122d0d426f107c985f45296e48cf4b",
+      "bytes": 46878
+    },
+    {
+      "path": "qc/descending/network_audit.json",
+      "sha256": "45507e77e340953d794ceb6d626a19d2c16f285bb90f31052da7ab7ebe3c71b2",
+      "bytes": 3128
+    },
+    {
+      "path": "geometry/descending/coverage_report.json",
+      "sha256": "762c4c96561b4e6909b96cae2ab10a7413ecd7b8146e0c0daab2f6f757f76721",
+      "bytes": 5643
+    },
+    {
+      "path": "geometry/descending/selected_bursts.geojson",
+      "sha256": "bb426265b6496823bbb56a9951fcb3825047bfd5ed476becc716507c67329002",
+      "bytes": 4751
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "generated_utc": "2026-09-22T14:54:07.790389+00:00",
+  "coherence_min_for_detection": 0.8,
+  "forms": {
+    "ascending_full": [
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.5,
+        "coherence_high": 0.55,
+        "n_pixels": 28866,
+        "median_mm_per_yr": -14.034,
+        "p05_mm_per_yr": -34.137,
+        "fraction_below_minus10": 0.61928
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.55,
+        "coherence_high": 0.6,
+        "n_pixels": 28984,
+        "median_mm_per_yr": -10.346,
+        "p05_mm_per_yr": -29.229,
+        "fraction_below_minus10": 0.51118
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.6,
+        "coherence_high": 0.65,
+        "n_pixels": 33155,
+        "median_mm_per_yr": -7.082,
+        "p05_mm_per_yr": -25.223,
+        "fraction_below_minus10": 0.4003
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.65,
+        "coherence_high": 0.7,
+        "n_pixels": 39081,
+        "median_mm_per_yr": -4.925,
+        "p05_mm_per_yr": -22.295,
+        "fraction_below_minus10": 0.31123
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.7,
+        "coherence_high": 0.75,
+        "n_pixels": 46096,
+        "median_mm_per_yr": -3.806,
+        "p05_mm_per_yr": -19.687,
+        "fraction_below_minus10": 0.25043
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.75,
+        "coherence_high": 0.8,
+        "n_pixels": 56432,
+        "median_mm_per_yr": -3.09,
+        "p05_mm_per_yr": -17.349,
+        "fraction_below_minus10": 0.19634
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.8,
+        "coherence_high": 0.85,
+        "n_pixels": 69797,
+        "median_mm_per_yr": -2.507,
+        "p05_mm_per_yr": -15.122,
+        "fraction_below_minus10": 0.14585
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.85,
+        "coherence_high": 0.9,
+        "n_pixels": 95373,
+        "median_mm_per_yr": -1.704,
+        "p05_mm_per_yr": -12.806,
+        "fraction_below_minus10": 0.09963
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.9,
+        "coherence_high": 0.95,
+        "n_pixels": 163571,
+        "median_mm_per_yr": -0.365,
+        "p05_mm_per_yr": -7.329,
+        "fraction_below_minus10": 0.02312
+      },
+      {
+        "form": "ascending_full",
+        "coherence_low": 0.95,
+        "coherence_high": 1.0,
+        "n_pixels": 181398,
+        "median_mm_per_yr": -0.286,
+        "p05_mm_per_yr": -4.341,
+        "fraction_below_minus10": 0.00816
+      }
+    ],
+    "descending_full": [
+      {
+        "form": "descending_full",
+        "coherence_low": 0.5,
+        "coherence_high": 0.55,
+        "n_pixels": 186688,
+        "median_mm_per_yr": -28.414,
+        "p05_mm_per_yr": -89.761,
+        "fraction_below_minus10": 0.72899
+      },
+      {
+        "form": "descending_full",
+        "coherence_low": 0.55,
+        "coherence_high": 0.6,
+        "n_pixels": 61521,
+        "median_mm_per_yr": -26.409,
+        "p05_mm_per_yr": -91.318,
+        "fraction_below_minus10": 0.69267
+      },
+      {
+        "form": "descending_full",
+        "coherence_low": 0.6,
+        "coherence_high": 0.65,
+        "n_pixels": 8670,
+        "median_mm_per_yr": -24.559,
+        "p05_mm_per_yr": -92.246,
+        "fraction_below_minus10": 0.65582
+      },
+      {
+        "form": "descending_full",
+        "coherence_low": 0.65,
+        "coherence_high": 0.7,
+        "n_pixels": 504,
+        "median_mm_per_yr": -24.249,
+        "p05_mm_per_yr": -97.679,
+        "fraction_below_minus10": 0.62103
+      }
+    ]
+  },
+  "forms_available": [
+    "ascending_full",
+    "descending_full"
+  ],
+  "descending_basematched_available": false,
+  "spearman_rank_coherence_vs_velocity": {
+    "ascending_full": 1.0,
+    "descending_full": 1.0
+  },
+  "temporal_baseline_stratification": [
+    {
+      "form": "ascending_full",
+      "temporal_baseline_days": 12,
+      "n_pairs": 113,
+      "median_pair_coherence": 0.7761
+    },
+    {
+      "form": "ascending_full",
+      "temporal_baseline_days": 24,
+      "n_pairs": 113,
+      "median_pair_coherence": 0.6605
+    },
+    {
+      "form": "ascending_full",
+      "temporal_baseline_days": 36,
+      "n_pairs": 110,
+      "median_pair_coherence": 0.5826
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 12,
+      "n_pairs": 69,
+      "median_pair_coherence": 0.3342
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 24,
+      "n_pairs": 75,
+      "median_pair_coherence": 0.2772
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 36,
+      "n_pairs": 65,
+      "median_pair_coherence": 0.2692
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 48,
+      "n_pairs": 2,
+      "median_pair_coherence": 0.2659
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 60,
+      "n_pairs": 3,
+      "median_pair_coherence": 0.2684
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 108,
+      "n_pairs": 1,
+      "median_pair_coherence": 0.2594
+    },
+    {
+      "form": "descending_full",
+      "temporal_baseline_days": 120,
+      "n_pairs": 4,
+      "median_pair_coherence": 0.2596
+    }
+  ],
+  "note": "Temporal-baseline classes are never pooled: a 12-day and a 120-day interferogram carry different coherence for reasons unrelated to deformation."
+}

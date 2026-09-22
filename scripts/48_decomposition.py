@@ -63,7 +63,7 @@ ASC_GEOM = PROJECT_ROOT / "mintpy" / "production_work" / "inputs" / "geometryGeo
 DESC_WORK = PROJECT_ROOT / "mintpy" / "descending_work"
 DESC_GEOM = DESC_WORK / "inputs" / "geometryGeo.h5"
 OUT = PROJECT_ROOT / "qc" / "sci" / "phase2"
-HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots.geojson"
+HOTSPOTS = PROJECT_ROOT / "qc" / "sci" / "phase1" / "hotspots_corrected.geojson"
 
 #: Bounded family of plausible north-south rates for the sensitivity test.
 NS_FAMILY_MM_PER_YR = [-5.0, -2.0, 0.0, 2.0, 5.0]

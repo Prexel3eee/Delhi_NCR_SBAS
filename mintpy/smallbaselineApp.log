@@ -1,50 +1,50 @@
 # MintPy load_data ingestion test
-# command: smallbaselineApp.py --dir /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work --dostep load_data /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_production.txt
+# command: smallbaselineApp.py --dir /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work --dostep load_data /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_descending.txt
 # exit: 0
 
 MintPy version .0.4, date 2026-09-17
---RUN-at-2026-09-22 09:22:36.757694--
+--RUN-at-2026-09-22 19:46:48.517985--
 Current directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS
 Run routine processing with smallbaselineApp.py on steps: ['load_data']
 Remaining steps: ['modify_network', 'reference_point', 'quick_overview', 'correct_unwrap_error', 'invert_network', 'correct_LOD', 'correct_SET', 'correct_ionosphere', 'correct_troposphere', 'deramp', 'correct_topography', 'residual_RMS', 'reference_date', 'velocity', 'geocode', 'google_earth', 'hdfeos5']
 --------------------------------------------------
-Project name: mintpy_production
-Go to work directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work
+Project name: mintpy_descending
+Go to work directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work
 copy default template file /opt/homebrew/Caskroom/miniforge/base/envs/delhi-mintpy/lib/python3.11/site-packages/mintpy/defaults/smallbaselineApp.cfg to work directory
-read custom template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_production.txt
+read custom template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_descending.txt
 update default template based on input custom template
     mintpy.load.processor: auto --> hyp3
-    mintpy.load.unwFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_unw_phase_clipped.tif
-    mintpy.load.corFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_corr_clipped.tif
-    mintpy.load.connCompFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_conncomp_clipped.tif
-    mintpy.load.demFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_dem_clipped.tif
-    mintpy.load.incAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_lv_theta_clipped.tif
-    mintpy.load.azAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_lv_phi_clipped.tif
-    mintpy.load.waterMaskFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_water_mask_clipped.tif
+    mintpy.load.unwFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_unw_phase_clipped.tif
+    mintpy.load.corFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_corr_clipped.tif
+    mintpy.load.connCompFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_conncomp_clipped.tif
+    mintpy.load.demFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_dem_clipped.tif
+    mintpy.load.incAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_lv_theta_clipped.tif
+    mintpy.load.azAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_lv_phi_clipped.tif
+    mintpy.load.waterMaskFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_water_mask_clipped.tif
     mintpy.network.coherenceBased: auto --> no
     mintpy.troposphericDelay.method: auto --> no
     mintpy.plot: auto --> no
-copy mintpy_production.txt to inputs   directory for backup.
+copy mintpy_descending.txt to inputs   directory for backup.
 copy smallbaselineApp.cfg  to inputs   directory for backup.
-copy mintpy_production.txt to pic      directory for backup.
+copy mintpy_descending.txt to pic      directory for backup.
 copy smallbaselineApp.cfg  to pic      directory for backup.
-read default template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/smallbaselineApp.cfg
+read default template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/smallbaselineApp.cfg
 
 
 ******************** step - load_data ********************
 
-load_data.py --template /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/smallbaselineApp.cfg /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_production.txt --project mintpy_production
+load_data.py --template /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/smallbaselineApp.cfg /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_descending.txt --project mintpy_descending
 processor : hyp3
-SAR platform/sensor : unknown from project name "mintpy_production"
+SAR platform/sensor : unknown from project name "mintpy_descending"
 --------------------------------------------------
 prepare metadata files for hyp3 products
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_unw_phase_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_corr_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_conncomp_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_dem_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_lv_theta_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_lv_phi_clipped.tif"
-prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_water_mask_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_unw_phase_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_corr_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_conncomp_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_dem_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_lv_theta_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_lv_phi_clipped.tif"
+prep_hyp3.py "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_water_mask_clipped.tif"
 --------------------------------------------------
 updateMode : True
 compression: default
@@ -53,1053 +53,702 @@ multilook method : nearest
 --------------------------------------------------
 searching geometry files info
 input data files:
-height          : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211006_20211018_VV_INT40_0EC4_dem_clipped.tif
-incidenceAngle  : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211006_20211018_VV_INT40_0EC4_lv_theta_clipped.tif
-azimuthAngle    : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211006_20211018_VV_INT40_0EC4_lv_phi_clipped.tif
-waterMask       : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211006_20211018_VV_INT40_0EC4_water_mask_clipped.tif
+height          : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/S1_136_290874s1n04-000000s2n00-000000s3n00_IW_20211002_20211014_VV_INT40_C9EC_dem_clipped.tif
+incidenceAngle  : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/S1_136_290874s1n04-000000s2n00-000000s3n00_IW_20211002_20211014_VV_INT40_C9EC_lv_theta_clipped.tif
+azimuthAngle    : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/S1_136_290874s1n04-000000s2n00-000000s3n00_IW_20211002_20211014_VV_INT40_C9EC_lv_phi_clipped.tif
+waterMask       : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/S1_136_290874s1n04-000000s2n00-000000s3n00_IW_20211002_20211014_VV_INT40_C9EC_water_mask_clipped.tif
 --------------------------------------------------
-create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/geometryGeo.h5 with w mode
-create dataset /height             of <class 'numpy.float32'>   in size of (2407, 2939) with compression = lzf
-create dataset /incidenceAngle     of <class 'numpy.float32'>   in size of (2407, 2939) with compression = lzf
+create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/geometryGeo.h5 with w mode
+create dataset /height             of <class 'numpy.float32'>   in size of (2412, 2853) with compression = lzf
+create dataset /incidenceAngle     of <class 'numpy.float32'>   in size of (2412, 2853) with compression = lzf
     convert incidenceAngle  from Gamma (from horizontal in radian)  to MintPy (from vertical in degree) convention.
-create dataset /azimuthAngle       of <class 'numpy.float32'>   in size of (2407, 2939) with compression = lzf
+create dataset /azimuthAngle       of <class 'numpy.float32'>   in size of (2412, 2853) with compression = lzf
     convert azimuthAngle    from Gamma (from east in radian)  to MintPy (from north in degree) convention.
-create dataset /waterMask          of <class 'numpy.bool'>      in size of (2407, 2939) with compression = lzf
+create dataset /waterMask          of <class 'numpy.bool'>      in size of (2412, 2853) with compression = lzf
 prepare slantRangeDistance ...
-    geocoded input, use incidenceAngle from file: S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211006_20211018_VV_INT40_0EC4_lv_theta_clipped.tif
+    geocoded input, use incidenceAngle from file: S1_136_290874s1n04-000000s2n00-000000s3n00_IW_20211002_20211014_VV_INT40_C9EC_lv_theta_clipped.tif
     convert incidence angle from Gamma to MintPy convention.
-create dataset /slantRangeDistance of <class 'numpy.float32'>   in size of (2407, 2939) with compression = lzf
-Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/geometryGeo.h5
+create dataset /slantRangeDistance of <class 'numpy.float32'>   in size of (2412, 2853) with compression = lzf
+Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/geometryGeo.h5
 --------------------------------------------------
 searching interferogram pairs info
 input data files:
-unwrapPhase     : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_unw_phase_clipped.tif
-coherence       : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_corr_clipped.tif
-connectComponent: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_clipped/*_conncomp_clipped.tif
-number of unwrapPhase     : 336
-number of coherence       : 336
-number of connectComponent: 336
+unwrapPhase     : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_unw_phase_clipped.tif
+coherence       : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_corr_clipped.tif
+connectComponent: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_clipped/*_conncomp_clipped.tif
+number of unwrapPhase     : 219
+number of coherence       : 219
+number of connectComponent: 219
 --------------------------------------------------
-create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/ifgramStack.h5 with w mode
-create dataset /unwrapPhase      of <class 'numpy.float32'>   in size of (336, 2407, 2939) with compression = None
+create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/ifgramStack.h5 with w mode
+create dataset /unwrapPhase      of <class 'numpy.float32'>   in size of (219, 2412, 2853) with compression = None
 
 [>                                                 ]
 [>                                                 ]
 [>                                                 ]
-[>                                                 ]
-[>                                                 ]
-[>                        2%                       ] 20211018_20211123    0s /    20s
-[>                        2%                       ] 20211030_20211111    0s /    23s
-[>                        2%                       ] 20211030_20211123    0s /    27s
-[=>                       3%                       ] 20211030_20211205    0s /    20s
-[=>                       3%                       ] 20211111_20211123    0s /    22s
-[=>                       3%                       ] 20211111_20211205    0s /    24s
-[=>                       4%                       ] 20211111_20211217    0s /    20s
-[=>                       4%                       ] 20211123_20211205    0s /    21s
-[=>                       4%                       ] 20211123_20211217    0s /    23s
-[=>                       4%                       ] 20211123_20211229    1s /    25s
-[=>                       5%                       ] 20211205_20211217    1s /    21s
-[=>                       5%                       ] 20211205_20211229    1s /    22s
-[=>                       5%                       ] 20211205_20220110    1s /    23s
-[==>                      6%                       ] 20211217_20211229    1s /    20s
-[==>                      6%                       ] 20211217_20220110    1s /    22s
-[==>                      6%                       ] 20211217_20220122    1s /    23s
-[===>                     7%                       ] 20211229_20220110    1s /    20s
-[===>                     7%                       ] 20211229_20220122    1s /    21s
-[===>                     7%                       ] 20211229_20220203    1s /    22s
-[===>                     7%                       ] 20220110_20220122    1s /    23s
-[===>                     8%                       ] 20220110_20220203    1s /    20s
-[===>                     8%                       ] 20220110_20220215    1s /    21s
-[===>                     8%                       ] 20220122_20220203    1s /    22s
-[===>                     9%                       ] 20220122_20220215    2s /    20s
-[===>                     9%                       ] 20220122_20220227    2s /    20s
-[===>                     9%                       ] 20220203_20220215    2s /    21s
-[====>                   10%                       ] 20220203_20220227    2s /    19s
-[====>                   10%                       ] 20220203_20220311    2s /    20s
-[====>                   10%                       ] 20220215_20220227    2s /    20s
-[====>                   10%                       ] 20220215_20220311    2s /    21s
-[=====>                  11%                       ] 20220215_20220323    2s /    19s
-[=====>                  11%                       ] 20220227_20220311    2s /    20s
-[=====>                  11%                       ] 20220227_20220323    2s /    20s
-[=====>                  12%                       ] 20220227_20220404    2s /    19s
-[=====>                  12%                       ] 20220311_20220323    2s /    20s
-[=====>                  12%                       ] 20220311_20220404    2s /    20s
-[=====>                  12%                       ] 20220311_20220416    2s /    21s
-[=====>                  13%                       ] 20220323_20220404    2s /    19s
-[=====>                  13%                       ] 20220323_20220416    2s /    20s
-[=====>                  13%                       ] 20220323_20220428    3s /    20s
-[======>                 14%                       ] 20220404_20220416    3s /    19s
-[======>                 14%                       ] 20220404_20220428    3s /    19s
-[======>                 14%                       ] 20220404_20220510    3s /    20s
-[=======>                15%                       ] 20220416_20220428    3s /    18s
-[=======>                15%                       ] 20220416_20220510    3s /    19s
-[=======>                15%                       ] 20220416_20220522    3s /    19s
-[=======>                15%                       ] 20220428_20220510    3s /    20s
-[=======>                16%                       ] 20220428_20220522    3s /    19s
-[=======>                16%                       ] 20220428_20220603    3s /    19s
-[=======>                16%                       ] 20220510_20220522    3s /    19s
-[=======>                17%                       ] 20220510_20220603    3s /    18s
-[=======>                17%                       ] 20220510_20220615    3s /    19s
-[=======>                17%                       ] 20220522_20220603    3s /    19s
-[========>               18%                       ] 20220522_20220615    4s /    18s
-[========>               18%                       ] 20220522_20220627    4s /    18s
-[========>               18%                       ] 20220603_20220615    4s /    19s
-[========>               18%                       ] 20220603_20220627    4s /    19s
-[=========>              19%                       ] 20220603_20220709    4s /    18s
-[=========>              19%                       ] 20220615_20220627    4s /    18s
-[=========>              19%                       ] 20220615_20220709    4s /    18s
-[=========>              20%                       ] 20220615_20220721    4s /    18s
-[=========>              20%                       ] 20220627_20220709    4s /    18s
-[=========>              20%                       ] 20220627_20220721    4s /    18s
-[=========>              21%                       ] 20220627_20220802    4s /    17s
-[=========>              21%                       ] 20220709_20220721    4s /    17s
-[=========>              21%                       ] 20220709_20220802    4s /    18s
-[=========>              21%                       ] 20220709_20220814    4s /    18s
-[==========>             22%                       ] 20220721_20220802    4s /    17s
-[==========>             22%                       ] 20220721_20220814    5s /    17s
-[==========>             22%                       ] 20220721_20220826    5s /    18s
-[===========>            23%                       ] 20220802_20220814    5s /    17s
-[===========>            23%                       ] 20220802_20220826    5s /    17s
-[===========>            23%                       ] 20220802_20220907    5s /    17s
-[===========>            24%                       ] 20220814_20220826    5s /    16s
-[===========>            24%                       ] 20220814_20220907    5s /    17s
-[===========>            24%                       ] 20220814_20220919    5s /    17s
-[===========>            24%                       ] 20220826_20220907    5s /    17s
-[===========>            25%                       ] 20220826_20220919    5s /    16s
-[===========>            25%                       ] 20220826_20221001    5s /    17s
-[===========>            25%                       ] 20220907_20220919    5s /    17s
-[============>           26%                       ] 20220907_20221001    5s /    16s
-[============>           26%                       ] 20220919_20221001    5s /    16s
-[============>           26%                       ] 20220919_20221013    5s /    16s
-[============>           26%                       ] 20220919_20221025    6s /    17s
-[=============>          27%                       ] 20221001_20221013    6s /    17s
-[=============>          27%                       ] 20221001_20221025    6s /    17s
-[=============>          27%                       ] 20221001_20221106    6s /    18s
-[=============>          28%                       ] 20221013_20221025    6s /    17s
-[=============>          28%                       ] 20221013_20221106    6s /    17s
-[=============>          28%                       ] 20221013_20221118    6s /    17s
-[=============>          29%                       ] 20221025_20221106    6s /    17s
-[=============>          29%                       ] 20221025_20221118    7s /    17s
-[=============>          29%                       ] 20221025_20221130    7s /    17s
-[=============>          29%                       ] 20221106_20221118    7s /    17s
-[==============>         30%                       ] 20221106_20221130    7s /    16s
-[==============>         30%                       ] 20221106_20221212    7s /    17s
-[==============>         30%                       ] 20221118_20221130    7s /    17s
-[===============>        31%                       ] 20221118_20221212    7s /    16s
-[===============>        31%                       ] 20221118_20221224    7s /    16s
-[===============>        31%                       ] 20221130_20221212    7s /    16s
-[===============>        32%                       ] 20221130_20221224    7s /    16s
-[===============>        32%                       ] 20221130_20230105    7s /    16s
-[===============>        32%                       ] 20221212_20221224    7s /    16s
-[===============>        32%                       ] 20221212_20230105    7s /    16s
-[===============>        33%                       ] 20221212_20230117    7s /    16s
-[===============>        33%                       ] 20221224_20230105    7s /    16s
-[===============>        33%                       ] 20221224_20230117    8s /    16s
-[================>       34%                       ] 20221224_20230129    8s /    15s
-[================>       34%                       ] 20230105_20230117    8s /    15s
-[================>       34%                       ] 20230105_20230129    8s /    15s
-[=================>      35%                       ] 20230105_20230210    8s /    15s
-[=================>      35%                       ] 20230117_20230210    8s /    15s
-[=================>      35%                       ] 20230117_20230222    8s /    15s
-[=================>      35%                       ] 20230129_20230210    8s /    15s
-[=================>      36%                       ] 20230129_20230222    8s /    15s
-[=================>      36%                       ] 20230129_20230306    8s /    15s
-[=================>      36%                       ] 20230210_20230222    8s /    15s
-[=================>      37%                       ] 20230210_20230306    8s /    14s
-[=================>      37%                       ] 20230210_20230318    8s /    15s
-[=================>      37%                       ] 20230222_20230306    8s /    15s
-[==================>     38%                       ] 20230222_20230318    8s /    14s
-[==================>     38%                       ] 20230222_20230330    9s /    14s
-[==================>     38%                       ] 20230306_20230318    9s /    14s
-[==================>     38%                       ] 20230306_20230330    9s /    14s
-[===================>    39%                       ] 20230306_20230411    9s /    14s
-[===================>    39%                       ] 20230318_20230330    9s /    14s
-[===================>    39%                       ] 20230318_20230411    9s /    14s
-[===================>    40%                       ] 20230318_20230423    9s /    14s
-[===================>    40%                       ] 20230330_20230411    9s /    14s
-[===================>    40%                       ] 20230330_20230423    9s /    14s
-[===================>    40%                       ] 20230330_20230505    9s /    14s
-[===================>    41%                       ] 20230411_20230423    9s /    13s
-[===================>    41%                       ] 20230411_20230505    9s /    14s
-[===================>    41%                       ] 20230411_20230517    9s /    14s
-[====================>   42%                       ] 20230423_20230505    9s /    13s
-[====================>   42%                       ] 20230423_20230517    9s /    13s
-[====================>   42%                       ] 20230423_20230529   10s /    13s
-[=====================>  43%                       ] 20230505_20230517   10s /    13s
-[=====================>  43%                       ] 20230505_20230529   10s /    13s
-[=====================>  43%                       ] 20230505_20230610   10s /    13s
-[=====================>  43%                       ] 20230517_20230529   10s /    13s
-[=====================>  44%                       ] 20230517_20230610   10s /    13s
-[=====================>  44%                       ] 20230517_20230622   10s /    13s
-[=====================>  44%                       ] 20230529_20230610   10s /    13s
-[=====================>  45%                       ] 20230529_20230622   10s /    12s
-[=====================>  45%                       ] 20230529_20230704   10s /    12s
-[=====================>  45%                       ] 20230610_20230622   10s /    13s
-[======================> 46%                       ] 20230610_20230704   10s /    12s
-[======================> 46%                       ] 20230610_20230716   10s /    12s
-[======================> 46%                       ] 20230622_20230704   10s /    12s
-[======================> 46%                       ] 20230622_20230716   10s /    12s
-[======================= 47%                       ] 20230622_20230728   10s /    12s
-[======================= 47%                       ] 20230704_20230716   11s /    12s
-[======================= 47%                       ] 20230704_20230728   11s /    12s
-[======================= 48%                       ] 20230704_20230809   11s /    12s
-[======================= 48%                       ] 20230716_20230728   11s /    12s
-[======================= 48%                       ] 20230716_20230821   11s /    12s
-[======================= 49%                       ] 20230728_20230821   11s /    11s
-[======================= 49%                       ] 20230728_20230902   11s /    11s
-[======================= 49%                       ] 20230809_20230821   11s /    11s
-[======================= 49%                       ] 20230809_20230902   11s /    12s
-[======================= 50%                       ] 20230809_20230914   11s /    11s
-[======================= 50%                       ] 20230821_20230902   11s /    11s
-[======================= 50%                       ] 20230821_20230914   11s /    11s
-[======================= 51%                       ] 20230821_20230926   11s /    11s
-[======================= 51%                       ] 20230902_20230914   11s /    11s
-[======================= 51%                       ] 20230902_20230926   11s /    11s
-[======================= 51%                       ] 20230902_20231008   12s /    11s
-[======================= 52%                       ] 20230914_20230926   12s /    11s
-[======================= 52%                       ] 20230914_20231008   12s /    11s
-[======================= 52%                       ] 20230914_20231020   12s /    11s
-[======================= 53%                       ] 20230926_20231008   12s /    10s
-[======================= 53%                       ] 20230926_20231020   12s /    10s
-[======================= 53%                       ] 20230926_20231101   12s /    11s
-[======================= 54%                       ] 20231008_20231020   12s /    10s
-[======================= 54%                       ] 20231008_20231101   12s /    10s
-[======================= 54%                       ] 20231008_20231113   12s /    10s
-[======================= 54%                       ] 20231020_20231101   12s /    10s
-[======================= 55%                       ] 20231020_20231113   12s /    10s
-[======================= 55%                       ] 20231101_20231113   12s /    10s
-[======================= 55%                       ] 20231101_20231125   12s /    10s
-[======================= 56%                       ] 20231101_20231207   12s /    10s
-[======================= 56%                       ] 20231113_20231125   13s /    10s
-[======================= 56%                       ] 20231113_20231207   13s /    10s
-[======================= 57%                       ] 20231113_20231219   13s /     9s
-[======================= 57%                       ] 20231125_20231207   13s /     9s
-[======================= 57%                       ] 20231125_20231219   13s /    10s
-[======================= 57%                       ] 20231125_20231231   13s /    10s
-[======================= 58% >                     ] 20231207_20231219   13s /     9s
-[======================= 58% >                     ] 20231207_20231231   13s /     9s
-[======================= 58% >                     ] 20231207_20240112   13s /     9s
-[======================= 59% =>                    ] 20231219_20231231   13s /     9s
-[======================= 59% =>                    ] 20231219_20240112   13s /     9s
-[======================= 59% =>                    ] 20231219_20240124   13s /     9s
-[======================= 60% =>                    ] 20231231_20240112   13s /     9s
-[======================= 60% =>                    ] 20231231_20240124   13s /     9s
-[======================= 60% =>                    ] 20231231_20240205   13s /     9s
-[======================= 60% =>                    ] 20240112_20240124   14s /     9s
-[======================= 61% =>                    ] 20240112_20240205   14s /     9s
-[======================= 61% =>                    ] 20240112_20240217   14s /     9s
-[======================= 61% =>                    ] 20240124_20240205   14s /     9s
-[======================= 62% ==>                   ] 20240124_20240217   14s /     8s
-[======================= 62% ==>                   ] 20240124_20240229   14s /     8s
-[======================= 62% ==>                   ] 20240205_20240217   14s /     8s
-[======================= 62% ==>                   ] 20240205_20240229   14s /     8s
-[======================= 63% ===>                  ] 20240205_20240312   14s /     8s
-[======================= 63% ===>                  ] 20240217_20240229   14s /     8s
-[======================= 63% ===>                  ] 20240217_20240312   14s /     8s
-[======================= 64% ===>                  ] 20240217_20240324   14s /     8s
-[======================= 64% ===>                  ] 20240229_20240312   14s /     8s
-[======================= 64% ===>                  ] 20240229_20240324   14s /     8s
-[======================= 65% ===>                  ] 20240229_20240405   14s /     8s
-[======================= 65% ===>                  ] 20240312_20240324   15s /     8s
-[======================= 65% ===>                  ] 20240312_20240405   15s /     8s
-[======================= 65% ===>                  ] 20240312_20240417   15s /     8s
-[======================= 66% ====>                 ] 20240324_20240405   15s /     7s
-[======================= 66% ====>                 ] 20240324_20240417   15s /     7s
-[======================= 66% ====>                 ] 20240324_20240429   15s /     7s
-[======================= 67% =====>                ] 20240405_20240417   15s /     7s
-[======================= 67% =====>                ] 20240405_20240429   15s /     7s
-[======================= 67% =====>                ] 20240405_20240511   15s /     7s
-[======================= 68% =====>                ] 20240417_20240429   15s /     7s
-[======================= 68% =====>                ] 20240417_20240511   15s /     7s
-[======================= 68% =====>                ] 20240417_20240523   15s /     7s
-[======================= 68% =====>                ] 20240429_20240511   15s /     7s
-[======================= 69% =====>                ] 20240429_20240523   15s /     7s
-[======================= 69% =====>                ] 20240429_20240604   15s /     7s
-[======================= 69% =====>                ] 20240511_20240523   16s /     7s
-[======================= 70% ======>               ] 20240511_20240604   16s /     6s
-[======================= 70% ======>               ] 20240511_20240616   16s /     6s
-[======================= 70% ======>               ] 20240523_20240604   16s /     6s
-[======================= 71% =======>              ] 20240523_20240616   16s /     6s
-[======================= 71% =======>              ] 20240604_20240616   16s /     6s
-[======================= 71% =======>              ] 20240604_20240710   16s /     6s
-[======================= 71% =======>              ] 20240616_20240710   16s /     6s
-[======================= 72% =======>              ] 20240616_20240722   16s /     6s
-[======================= 72% =======>              ] 20240710_20240722   16s /     6s
-[======================= 72% =======>              ] 20240710_20240803   16s /     6s
-[======================= 73% =======>              ] 20240710_20240815   16s /     6s
-[======================= 73% =======>              ] 20240722_20240803   16s /     6s
-[======================= 73% =======>              ] 20240722_20240815   16s /     6s
-[======================= 74% ========>             ] 20240803_20240815   16s /     5s
-[======================= 74% ========>             ] 20240803_20240827   17s /     5s
-[======================= 74% ========>             ] 20240803_20240908   17s /     6s
-[======================= 74% ========>             ] 20240815_20240827   17s /     6s
-[======================= 75% =========>            ] 20240815_20240908   17s /     5s
-[======================= 75% =========>            ] 20240815_20240920   17s /     5s
-[======================= 75% =========>            ] 20240827_20240908   17s /     5s
-[======================= 76% =========>            ] 20240827_20240920   17s /     5s
-[======================= 76% =========>            ] 20240827_20241002   17s /     5s
-[======================= 76% =========>            ] 20240908_20240920   17s /     5s
-[======================= 76% =========>            ] 20240908_20241002   17s /     5s
-[======================= 77% =========>            ] 20240908_20241014   17s /     5s
-[======================= 77% =========>            ] 20240920_20241002   17s /     5s
-[======================= 77% =========>            ] 20240920_20241014   17s /     5s
-[======================= 78% ==========>           ] 20240920_20241026   17s /     5s
-[======================= 78% ==========>           ] 20241002_20241014   17s /     5s
-[======================= 78% ==========>           ] 20241002_20241026   18s /     5s
-[======================= 79% ===========>          ] 20241002_20241107   18s /     4s
-[======================= 79% ===========>          ] 20241014_20241026   18s /     4s
-[======================= 79% ===========>          ] 20241014_20241107   18s /     4s
-[======================= 79% ===========>          ] 20241014_20241119   18s /     4s
-[======================= 80% ===========>          ] 20241026_20241107   18s /     4s
-[======================= 80% ===========>          ] 20241026_20241119   18s /     4s
-[======================= 80% ===========>          ] 20241107_20241119   18s /     4s
-[======================= 81% ===========>          ] 20241107_20241213   18s /     4s
-[======================= 81% ===========>          ] 20241119_20241213   18s /     4s
-[======================= 81% ===========>          ] 20241119_20241225   18s /     4s
-[======================= 82% ============>         ] 20241213_20241225   18s /     4s
-[======================= 82% ============>         ] 20241213_20250106   18s /     4s
-[======================= 82% ============>         ] 20241213_20250118   18s /     4s
-[======================= 82% ============>         ] 20241225_20250106   18s /     4s
-[======================= 83% =============>        ] 20241225_20250118   19s /     3s
-[======================= 83% =============>        ] 20241225_20250130   19s /     3s
-[======================= 83% =============>        ] 20250106_20250118   19s /     3s
-[======================= 84% =============>        ] 20250106_20250130   19s /     3s
-[======================= 84% =============>        ] 20250106_20250211   19s /     3s
-[======================= 84% =============>        ] 20250118_20250130   19s /     3s
-[======================= 85% =============>        ] 20250118_20250211   19s /     3s
-[======================= 85% =============>        ] 20250118_20250223   19s /     3s
-[======================= 85% =============>        ] 20250130_20250211   19s /     3s
-[======================= 85% =============>        ] 20250130_20250223   19s /     3s
-[======================= 86% ==============>       ] 20250130_20250307   19s /     3s
-[======================= 86% ==============>       ] 20250211_20250223   19s /     3s
-[======================= 86% ==============>       ] 20250211_20250307   19s /     3s
-[======================= 87% ===============>      ] 20250211_20250319   19s /     2s
-[======================= 87% ===============>      ] 20250223_20250307   19s /     2s
-[======================= 87% ===============>      ] 20250223_20250319   20s /     2s
-[======================= 88% ===============>      ] 20250223_20250331   20s /     2s
-[======================= 88% ===============>      ] 20250307_20250319   20s /     2s
-[======================= 88% ===============>      ] 20250307_20250331   20s /     2s
-[======================= 88% ===============>      ] 20250307_20250412   20s /     2s
-[======================= 89% ===============>      ] 20250319_20250331   20s /     2s
-[======================= 89% ===============>      ] 20250319_20250412   20s /     2s
-[======================= 89% ===============>      ] 20250319_20250424   20s /     2s
-[======================= 90% ================>     ] 20250331_20250412   20s /     2s
-[======================= 90% ================>     ] 20250331_20250424   20s /     2s
-[======================= 90% ================>     ] 20250331_20250506   20s /     2s
-[======================= 90% ================>     ] 20250412_20250424   20s /     2s
-[======================= 91% =================>    ] 20250412_20250506   20s /     2s
-[======================= 91% =================>    ] 20250424_20250506   20s /     2s
-[======================= 91% =================>    ] 20250424_20250530   21s /     2s
-[======================= 92% =================>    ] 20250506_20250530   21s /     1s
-[======================= 92% =================>    ] 20250506_20250611   21s /     1s
-[======================= 92% =================>    ] 20250530_20250611   21s /     1s
-[======================= 93% =================>    ] 20250530_20250623   21s /     1s
-[======================= 93% =================>    ] 20250530_20250705   21s /     1s
-[======================= 93% =================>    ] 20250611_20250623   21s /     1s
-[======================= 93% =================>    ] 20250611_20250705   21s /     1s
-[======================= 94% ==================>   ] 20250611_20250717   21s /     1s
-[======================= 94% ==================>   ] 20250623_20250705   21s /     1s
-[======================= 94% ==================>   ] 20250623_20250717   21s /     1s
-[======================= 95% ===================>  ] 20250623_20250729   21s /     1s
-[======================= 95% ===================>  ] 20250705_20250717   21s /     1s
-[======================= 95% ===================>  ] 20250705_20250729   21s /     1s
-[======================= 96% ===================>  ] 20250705_20250810   21s /     0s
-[======================= 96% ===================>  ] 20250717_20250729   21s /     0s
-[======================= 96% ===================>  ] 20250717_20250810   22s /     0s
-[======================= 96% ===================>  ] 20250717_20250822   22s /     0s
-[======================= 97% ===================>  ] 20250729_20250810   22s /     0s
-[======================= 97% ===================>  ] 20250729_20250822   22s /     0s
-[======================= 97% ===================>  ] 20250729_20250903   22s /     0s
-[======================= 98% ====================> ] 20250810_20250822   22s /     0s
-[======================= 98% ====================> ] 20250810_20250903   22s /     0s
-[======================= 98% ====================> ] 20250810_20250915   22s /     0s
-[==================================================] 20250822_20250903
-[==================================================] 20250822_20250915
-[==================================================] 20250822_20250927
-[==================================================] 20250903_20250915
-[==================================================] 20250903_20250927
-[==================================================] 20250915_20250927 
-create dataset /coherence        of <class 'numpy.float32'>   in size of (336, 2407, 2939) with compression = None
+[>                        2%                       ] 20211014_20211026    0s /     8s
+[>                        2%                       ] 20211014_20211107    0s /    11s
+[=>                       3%                       ] 20211014_20211119    0s /     9s
+[=>                       3%                       ] 20211026_20211107    0s /    11s
+[=>                       4%                       ] 20211026_20211119    0s /     9s
+[=>                       4%                       ] 20211026_20211201    0s /    11s
+[=>                       5%                       ] 20211107_20211119    0s /     9s
+[=>                       5%                       ] 20211107_20211201    0s /    10s
+[=>                       5%                       ] 20211107_20211213    0s /    12s
+[==>                      6%                       ] 20211119_20211201    0s /    10s
+[==>                      6%                       ] 20211119_20211213    0s /    11s
+[===>                     7%                       ] 20211201_20211213    0s /    10s
+[===>                     7%                       ] 20211201_20220106    0s /    11s
+[===>                     8%                       ] 20211213_20220106    0s /    10s
+[===>                     8%                       ] 20211213_20220118    0s /    11s
+[===>                     9%                       ] 20220106_20220118    1s /    10s
+[===>                     9%                       ] 20220106_20220130    1s /    10s
+[====>                   10%                       ] 20220106_20220211    1s /    10s
+[====>                   10%                       ] 20220118_20220130    1s /    10s
+[=====>                  11%                       ] 20220118_20220211    1s /     9s
+[=====>                  11%                       ] 20220118_20220223    1s /    10s
+[=====>                  11%                       ] 20220130_20220211    1s /    10s
+[=====>                  12%                       ] 20220130_20220223    1s /    10s
+[=====>                  12%                       ] 20220130_20220307    1s /    10s
+[=====>                  13%                       ] 20220211_20220223    1s /    10s
+[=====>                  13%                       ] 20220211_20220307    1s /    10s
+[======>                 14%                       ] 20220211_20220319    1s /     9s
+[======>                 14%                       ] 20220223_20220307    1s /    10s
+[=======>                15%                       ] 20220223_20220319    1s /     9s
+[=======>                15%                       ] 20220223_20220331    1s /    10s
+[=======>                16%                       ] 20220307_20220319    1s /     9s
+[=======>                16%                       ] 20220307_20220331    1s /     9s
+[=======>                16%                       ] 20220307_20220412    1s /    10s
+[=======>                17%                       ] 20220319_20220331    2s /     9s
+[=======>                17%                       ] 20220319_20220412    2s /    10s
+[========>               18%                       ] 20220331_20220412    2s /     9s
+[========>               18%                       ] 20220331_20220530    2s /     9s
+[=========>              19%                       ] 20220412_20220518    2s /     9s
+[=========>              19%                       ] 20220518_20220530    2s /     9s
+[=========>              20%                       ] 20220518_20220611    2s /     9s
+[=========>              20%                       ] 20220518_20220623    2s /     9s
+[=========>              21%                       ] 20220530_20220611    2s /     9s
+[=========>              21%                       ] 20220530_20220623    2s /     9s
+[=========>              21%                       ] 20220530_20220705    2s /     9s
+[==========>             22%                       ] 20220611_20220623    2s /     9s
+[==========>             22%                       ] 20220611_20220705    2s /     9s
+[===========>            23%                       ] 20220611_20220717    2s /     9s
+[===========>            23%                       ] 20220623_20220705    2s /     9s
+[===========>            24%                       ] 20220623_20220717    2s /     9s
+[===========>            24%                       ] 20220623_20220729    2s /     9s
+[===========>            25%                       ] 20220705_20220717    2s /     8s
+[===========>            25%                       ] 20220705_20220729    3s /     9s
+[============>           26%                       ] 20220705_20220810    3s /     8s
+[============>           26%                       ] 20220717_20220729    3s /     8s
+[============>           26%                       ] 20220717_20220810    3s /     9s
+[=============>          27%                       ] 20220729_20220810    3s /     8s
+[=============>          27%                       ] 20220729_20221126    3s /     8s
+[=============>          28%                       ] 20220810_20221126    3s /     8s
+[=============>          28%                       ] 20221126_20230101    3s /     8s
+[=============>          29%                       ] 20221126_20230125    3s /     8s
+[=============>          29%                       ] 20221220_20230101    3s /     8s
+[==============>         30%                       ] 20221220_20230125    3s /     8s
+[==============>         30%                       ] 20230101_20230125    3s /     8s
+[===============>        31%                       ] 20230101_20230501    3s /     8s
+[===============>        31%                       ] 20230125_20230218    3s /     8s
+[===============>        32%                       ] 20230218_20230314    3s /     8s
+[===============>        32%                       ] 20230314_20230407    3s /     8s
+[===============>        32%                       ] 20230407_20230501    3s /     8s
+[===============>        33%                       ] 20230407_20230513    3s /     7s
+[===============>        33%                       ] 20230501_20230513    3s /     8s
+[================>       34%                       ] 20230501_20230525    4s /     7s
+[================>       34%                       ] 20230501_20230606    4s /     7s
+[=================>      35%                       ] 20230513_20230525    4s /     7s
+[=================>      35%                       ] 20230513_20230606    4s /     7s
+[=================>      36%                       ] 20230513_20230618    4s /     7s
+[=================>      36%                       ] 20230525_20230606    4s /     7s
+[=================>      37%                       ] 20230525_20230618    4s /     7s
+[=================>      37%                       ] 20230525_20230630    4s /     7s
+[=================>      37%                       ] 20230606_20230618    4s /     7s
+[==================>     38%                       ] 20230606_20230630    4s /     7s
+[==================>     38%                       ] 20230606_20230712    4s /     7s
+[===================>    39%                       ] 20230618_20230630    4s /     7s
+[===================>    39%                       ] 20230618_20230712    4s /     7s
+[===================>    40%                       ] 20230618_20230724    4s /     7s
+[===================>    40%                       ] 20230630_20230712    4s /     7s
+[===================>    41%                       ] 20230630_20230724    4s /     6s
+[===================>    41%                       ] 20230712_20230724    4s /     7s
+[====================>   42%                       ] 20230712_20230805    4s /     6s
+[====================>   42%                       ] 20230712_20230817    5s /     6s
+[====================>   42%                       ] 20230724_20230805    5s /     7s
+[=====================>  43%                       ] 20230724_20230817    5s /     6s
+[=====================>  43%                       ] 20230724_20230829    5s /     6s
+[=====================>  44%                       ] 20230805_20230817    5s /     6s
+[=====================>  44%                       ] 20230805_20230829    5s /     6s
+[=====================>  45%                       ] 20230817_20230829    5s /     6s
+[=====================>  45%                       ] 20230817_20230922    5s /     6s
+[======================> 46%                       ] 20230829_20230922    5s /     6s
+[======================> 46%                       ] 20230829_20231227    5s /     6s
+[======================= 47%                       ] 20230922_20231016    5s /     6s
+[======================= 47%                       ] 20231016_20231109    5s /     6s
+[======================= 47%                       ] 20231109_20231203    5s /     6s
+[======================= 48%                       ] 20231203_20231227    5s /     6s
+[======================= 48%                       ] 20231203_20240108    5s /     6s
+[======================= 49%                       ] 20231227_20240108    5s /     6s
+[======================= 49%                       ] 20231227_20240120    5s /     6s
+[======================= 50%                       ] 20240108_20240120    5s /     5s
+[======================= 50%                       ] 20240108_20240308    5s /     5s
+[======================= 51%                       ] 20240120_20240225    6s /     5s
+[======================= 51%                       ] 20240225_20240308    6s /     5s
+[======================= 52%                       ] 20240225_20240320    6s /     5s
+[======================= 52%                       ] 20240225_20240401    6s /     5s
+[======================= 53%                       ] 20240308_20240320    6s /     5s
+[======================= 53%                       ] 20240308_20240401    6s /     5s
+[======================= 53%                       ] 20240320_20240401    6s /     5s
+[======================= 54%                       ] 20240320_20240425    6s /     5s
+[======================= 54%                       ] 20240401_20240425    6s /     5s
+[======================= 55%                       ] 20240401_20240519    6s /     5s
+[======================= 55%                       ] 20240425_20240519    6s /     5s
+[======================= 56%                       ] 20240425_20240531    6s /     5s
+[======================= 56%                       ] 20240519_20240531    6s /     5s
+[======================= 57%                       ] 20240519_20240916    6s /     5s
+[======================= 57%                       ] 20240531_20240718    6s /     5s
+[======================= 58% >                     ] 20240718_20240823    6s /     4s
+[======================= 58% >                     ] 20240823_20240904    6s /     4s
+[======================= 58% >                     ] 20240823_20240916    6s /     5s
+[======================= 59% =>                    ] 20240823_20240928    7s /     4s
+[======================= 59% =>                    ] 20240904_20240916    7s /     4s
+[======================= 60% =>                    ] 20240904_20240928    7s /     4s
+[======================= 60% =>                    ] 20240904_20241010    7s /     4s
+[======================= 61% =>                    ] 20240916_20241010    7s /     4s
+[======================= 61% =>                    ] 20240916_20241022    7s /     4s
+[======================= 62% ==>                   ] 20240928_20241022    7s /     4s
+[======================= 62% ==>                   ] 20241010_20241022    7s /     4s
+[======================= 63% ===>                  ] 20241010_20241103    7s /     4s
+[======================= 63% ===>                  ] 20241010_20241115    7s /     4s
+[======================= 63% ===>                  ] 20241022_20241103    7s /     4s
+[======================= 64% ===>                  ] 20241022_20241115    7s /     4s
+[======================= 64% ===>                  ] 20241022_20241127    7s /     4s
+[======================= 65% ===>                  ] 20241103_20241115    7s /     4s
+[======================= 65% ===>                  ] 20241103_20241127    7s /     4s
+[======================= 66% ====>                 ] 20241103_20241209    7s /     4s
+[======================= 66% ====>                 ] 20241115_20241127    7s /     4s
+[======================= 67% =====>                ] 20241115_20241209    7s /     3s
+[======================= 67% =====>                ] 20241115_20241221    8s /     3s
+[======================= 68% =====>                ] 20241127_20241209    8s /     3s
+[======================= 68% =====>                ] 20241127_20241221    8s /     3s
+[======================= 68% =====>                ] 20241127_20250102    8s /     3s
+[======================= 69% =====>                ] 20241209_20241221    8s /     3s
+[======================= 69% =====>                ] 20241209_20250102    8s /     3s
+[======================= 70% ======>               ] 20241209_20250114    8s /     3s
+[======================= 70% ======>               ] 20241221_20250102    8s /     3s
+[======================= 71% =======>              ] 20241221_20250114    8s /     3s
+[======================= 71% =======>              ] 20241221_20250126    8s /     3s
+[======================= 72% =======>              ] 20250102_20250114    8s /     3s
+[======================= 72% =======>              ] 20250102_20250126    8s /     3s
+[======================= 73% =======>              ] 20250102_20250207    8s /     3s
+[======================= 73% =======>              ] 20250114_20250126    8s /     3s
+[======================= 74% ========>             ] 20250114_20250207    8s /     3s
+[======================= 74% ========>             ] 20250114_20250219    8s /     3s
+[======================= 74% ========>             ] 20250126_20250207    8s /     3s
+[======================= 75% =========>            ] 20250126_20250219    8s /     2s
+[======================= 75% =========>            ] 20250126_20250303    8s /     2s
+[======================= 76% =========>            ] 20250207_20250219    9s /     2s
+[======================= 76% =========>            ] 20250207_20250303    9s /     2s
+[======================= 77% =========>            ] 20250207_20250315    9s /     2s
+[======================= 77% =========>            ] 20250219_20250303    9s /     2s
+[======================= 78% ==========>           ] 20250219_20250315    9s /     2s
+[======================= 78% ==========>           ] 20250219_20250327    9s /     2s
+[======================= 79% ===========>          ] 20250303_20250315    9s /     2s
+[======================= 79% ===========>          ] 20250303_20250327    9s /     2s
+[======================= 79% ===========>          ] 20250303_20250408    9s /     2s
+[======================= 80% ===========>          ] 20250315_20250327    9s /     2s
+[======================= 80% ===========>          ] 20250315_20250408    9s /     2s
+[======================= 81% ===========>          ] 20250315_20250420    9s /     2s
+[======================= 81% ===========>          ] 20250327_20250408    9s /     2s
+[======================= 82% ============>         ] 20250327_20250420    9s /     2s
+[======================= 82% ============>         ] 20250327_20250502    9s /     2s
+[======================= 83% =============>        ] 20250408_20250420    9s /     2s
+[======================= 83% =============>        ] 20250408_20250502    9s /     2s
+[======================= 84% =============>        ] 20250408_20250514   10s /     1s
+[======================= 84% =============>        ] 20250420_20250502   10s /     1s
+[======================= 84% =============>        ] 20250420_20250514   10s /     1s
+[======================= 85% =============>        ] 20250420_20250526   10s /     1s
+[======================= 85% =============>        ] 20250502_20250514   10s /     1s
+[======================= 86% ==============>       ] 20250502_20250526   10s /     1s
+[======================= 86% ==============>       ] 20250502_20250607   10s /     1s
+[======================= 87% ===============>      ] 20250514_20250526   10s /     1s
+[======================= 87% ===============>      ] 20250514_20250607   10s /     1s
+[======================= 88% ===============>      ] 20250514_20250619   10s /     1s
+[======================= 88% ===============>      ] 20250526_20250607   10s /     1s
+[======================= 89% ===============>      ] 20250526_20250619   10s /     1s
+[======================= 89% ===============>      ] 20250526_20250701   10s /     1s
+[======================= 89% ===============>      ] 20250607_20250619   10s /     1s
+[======================= 90% ================>     ] 20250607_20250701   10s /     1s
+[======================= 90% ================>     ] 20250607_20250713   10s /     1s
+[======================= 91% =================>    ] 20250619_20250701   10s /     1s
+[======================= 91% =================>    ] 20250619_20250713   11s /     1s
+[======================= 92% =================>    ] 20250619_20250725   11s /     0s
+[======================= 92% =================>    ] 20250701_20250713   11s /     0s
+[======================= 93% =================>    ] 20250701_20250725   11s /     0s
+[======================= 93% =================>    ] 20250701_20250806   11s /     0s
+[======================= 94% ==================>   ] 20250713_20250725   11s /     0s
+[======================= 94% ==================>   ] 20250713_20250806   11s /     0s
+[======================= 95% ===================>  ] 20250713_20250818   11s /     0s
+[======================= 95% ===================>  ] 20250725_20250806   11s /     0s
+[======================= 95% ===================>  ] 20250725_20250818   11s /     0s
+[======================= 96% ===================>  ] 20250725_20250830   11s /     0s
+[======================= 96% ===================>  ] 20250806_20250818   11s /     0s
+[======================= 97% ===================>  ] 20250806_20250830   11s /     0s
+[======================= 97% ===================>  ] 20250806_20250911   11s /     0s
+[======================= 98% ====================> ] 20250818_20250830   11s /     0s
+[======================= 98% ====================> ] 20250818_20250911   11s /     0s
+[==================================================] 20250818_20250923
+[==================================================] 20250830_20250911
+[==================================================] 20250830_20250923
+[==================================================] 20250911_20250923 
+create dataset /coherence        of <class 'numpy.float32'>   in size of (219, 2412, 2853) with compression = None
 
 [>                                                 ]
 [>                                                 ]
 [>                                                 ]
-[>                                                 ]
-[>                                                 ]
-[>                        2%                       ] 20211018_20211123    0s /    17s
-[>                        2%                       ] 20211030_20211111    0s /    20s
-[>                        2%                       ] 20211030_20211123    0s /    23s
-[=>                       3%                       ] 20211030_20211205    0s /    17s
-[=>                       3%                       ] 20211111_20211123    0s /    19s
-[=>                       3%                       ] 20211111_20211205    0s /    21s
-[=>                       4%                       ] 20211111_20211217    0s /    17s
-[=>                       4%                       ] 20211123_20211205    0s /    19s
-[=>                       4%                       ] 20211123_20211217    0s /    21s
-[=>                       4%                       ] 20211123_20211229    0s /    22s
-[=>                       5%                       ] 20211205_20211217    1s /    19s
-[=>                       5%                       ] 20211205_20211229    1s /    20s
-[=>                       5%                       ] 20211205_20220110    1s /    21s
-[==>                      6%                       ] 20211217_20211229    1s /    18s
-[==>                      6%                       ] 20211217_20220110    1s /    19s
-[==>                      6%                       ] 20211217_20220122    1s /    20s
-[===>                     7%                       ] 20211229_20220110    1s /    18s
-[===>                     7%                       ] 20211229_20220122    1s /    19s
-[===>                     7%                       ] 20211229_20220203    1s /    20s
-[===>                     7%                       ] 20220110_20220122    1s /    21s
-[===>                     8%                       ] 20220110_20220203    1s /    19s
-[===>                     8%                       ] 20220110_20220215    1s /    19s
-[===>                     8%                       ] 20220122_20220203    1s /    20s
-[===>                     9%                       ] 20220122_20220215    1s /    18s
-[===>                     9%                       ] 20220122_20220227    1s /    19s
-[===>                     9%                       ] 20220203_20220215    1s /    20s
-[====>                   10%                       ] 20220203_20220227    2s /    18s
-[====>                   10%                       ] 20220203_20220311    2s /    19s
-[====>                   10%                       ] 20220215_20220227    2s /    19s
-[====>                   10%                       ] 20220215_20220311    2s /    20s
-[=====>                  11%                       ] 20220215_20220323    2s /    18s
-[=====>                  11%                       ] 20220227_20220311    2s /    19s
-[=====>                  11%                       ] 20220227_20220323    2s /    19s
-[=====>                  12%                       ] 20220227_20220404    2s /    18s
-[=====>                  12%                       ] 20220311_20220323    2s /    18s
-[=====>                  12%                       ] 20220311_20220404    2s /    19s
-[=====>                  12%                       ] 20220311_20220416    2s /    19s
-[=====>                  13%                       ] 20220323_20220404    2s /    18s
-[=====>                  13%                       ] 20220323_20220416    2s /    19s
-[=====>                  13%                       ] 20220323_20220428    2s /    19s
-[======>                 14%                       ] 20220404_20220416    3s /    22s
-[======>                 14%                       ] 20220404_20220428    3s /    23s
-[======>                 14%                       ] 20220404_20220510    3s /    23s
-[=======>                15%                       ] 20220416_20220428    3s /    22s
-[=======>                15%                       ] 20220416_20220510    4s /    22s
-[=======>                15%                       ] 20220416_20220522    4s /    23s
-[=======>                15%                       ] 20220428_20220510    4s /    23s
-[=======>                16%                       ] 20220428_20220522    4s /    22s
-[=======>                16%                       ] 20220428_20220603    4s /    22s
-[=======>                16%                       ] 20220510_20220522    4s /    22s
-[=======>                17%                       ] 20220510_20220603    4s /    21s
-[=======>                17%                       ] 20220510_20220615    4s /    21s
-[=======>                17%                       ] 20220522_20220603    4s /    22s
-[========>               18%                       ] 20220522_20220615    4s /    20s
-[========>               18%                       ] 20220522_20220627    4s /    21s
-[========>               18%                       ] 20220603_20220615    4s /    21s
-[========>               18%                       ] 20220603_20220627    4s /    21s
-[=========>              19%                       ] 20220603_20220709    4s /    20s
-[=========>              19%                       ] 20220615_20220627    4s /    21s
-[=========>              19%                       ] 20220615_20220709    4s /    21s
-[=========>              20%                       ] 20220615_20220721    5s /    20s
-[=========>              20%                       ] 20220627_20220709    5s /    20s
-[=========>              20%                       ] 20220627_20220721    5s /    20s
-[=========>              21%                       ] 20220627_20220802    5s /    19s
-[=========>              21%                       ] 20220709_20220721    5s /    20s
-[=========>              21%                       ] 20220709_20220802    5s /    20s
-[=========>              21%                       ] 20220709_20220814    5s /    20s
-[==========>             22%                       ] 20220721_20220802    5s /    19s
-[==========>             22%                       ] 20220721_20220814    5s /    19s
-[==========>             22%                       ] 20220721_20220826    5s /    20s
-[===========>            23%                       ] 20220802_20220814    5s /    19s
-[===========>            23%                       ] 20220802_20220826    5s /    19s
-[===========>            23%                       ] 20220802_20220907    5s /    19s
-[===========>            24%                       ] 20220814_20220826    5s /    18s
-[===========>            24%                       ] 20220814_20220907    6s /    19s
-[===========>            24%                       ] 20220814_20220919    6s /    19s
-[===========>            24%                       ] 20220826_20220907    6s /    19s
-[===========>            25%                       ] 20220826_20220919    6s /    18s
-[===========>            25%                       ] 20220826_20221001    6s /    18s
-[===========>            25%                       ] 20220907_20220919    6s /    18s
-[============>           26%                       ] 20220907_20221001    6s /    18s
-[============>           26%                       ] 20220919_20221001    6s /    18s
-[============>           26%                       ] 20220919_20221013    6s /    18s
-[============>           26%                       ] 20220919_20221025    6s /    18s
-[=============>          27%                       ] 20221001_20221013    6s /    18s
-[=============>          27%                       ] 20221001_20221025    6s /    18s
-[=============>          27%                       ] 20221001_20221106    6s /    18s
-[=============>          28%                       ] 20221013_20221025    6s /    17s
-[=============>          28%                       ] 20221013_20221106    6s /    17s
-[=============>          28%                       ] 20221013_20221118    6s /    17s
-[=============>          29%                       ] 20221025_20221106    7s /    17s
-[=============>          29%                       ] 20221025_20221118    7s /    17s
-[=============>          29%                       ] 20221025_20221130    7s /    17s
-[=============>          29%                       ] 20221106_20221118    7s /    17s
-[==============>         30%                       ] 20221106_20221130    7s /    17s
-[==============>         30%                       ] 20221106_20221212    7s /    17s
-[==============>         30%                       ] 20221118_20221130    7s /    17s
-[===============>        31%                       ] 20221118_20221212    7s /    16s
-[===============>        31%                       ] 20221118_20221224    7s /    16s
-[===============>        31%                       ] 20221130_20221212    7s /    17s
-[===============>        32%                       ] 20221130_20221224    7s /    16s
-[===============>        32%                       ] 20221130_20230105    7s /    16s
-[===============>        32%                       ] 20221212_20221224    7s /    16s
-[===============>        32%                       ] 20221212_20230105    7s /    16s
-[===============>        33%                       ] 20221212_20230117    7s /    16s
-[===============>        33%                       ] 20221224_20230105    8s /    16s
-[===============>        33%                       ] 20221224_20230117    8s /    16s
-[================>       34%                       ] 20221224_20230129    8s /    15s
-[================>       34%                       ] 20230105_20230117    8s /    15s
-[================>       34%                       ] 20230105_20230129    8s /    16s
-[=================>      35%                       ] 20230105_20230210    8s /    15s
-[=================>      35%                       ] 20230117_20230210    8s /    15s
-[=================>      35%                       ] 20230117_20230222    8s /    15s
-[=================>      35%                       ] 20230129_20230210    8s /    15s
-[=================>      36%                       ] 20230129_20230222    8s /    15s
-[=================>      36%                       ] 20230129_20230306    8s /    15s
-[=================>      36%                       ] 20230210_20230222    8s /    15s
-[=================>      37%                       ] 20230210_20230306    8s /    14s
-[=================>      37%                       ] 20230210_20230318    8s /    15s
-[=================>      37%                       ] 20230222_20230306    8s /    15s
-[==================>     38%                       ] 20230222_20230318    9s /    14s
-[==================>     38%                       ] 20230222_20230330    9s /    14s
-[==================>     38%                       ] 20230306_20230318    9s /    14s
-[==================>     38%                       ] 20230306_20230330    9s /    15s
-[===================>    39%                       ] 20230306_20230411    9s /    14s
-[===================>    39%                       ] 20230318_20230330    9s /    14s
-[===================>    39%                       ] 20230318_20230411    9s /    14s
-[===================>    40%                       ] 20230318_20230423    9s /    14s
-[===================>    40%                       ] 20230330_20230411    9s /    14s
-[===================>    40%                       ] 20230330_20230423    9s /    14s
-[===================>    40%                       ] 20230330_20230505    9s /    14s
-[===================>    41%                       ] 20230411_20230423    9s /    13s
-[===================>    41%                       ] 20230411_20230505    9s /    14s
-[===================>    41%                       ] 20230411_20230517    9s /    14s
-[====================>   42%                       ] 20230423_20230505    9s /    13s
-[====================>   42%                       ] 20230423_20230517    9s /    13s
-[====================>   42%                       ] 20230423_20230529   10s /    13s
-[=====================>  43%                       ] 20230505_20230517   10s /    13s
-[=====================>  43%                       ] 20230505_20230529   10s /    13s
-[=====================>  43%                       ] 20230505_20230610   10s /    13s
-[=====================>  43%                       ] 20230517_20230529   10s /    13s
-[=====================>  44%                       ] 20230517_20230610   10s /    13s
-[=====================>  44%                       ] 20230517_20230622   10s /    13s
-[=====================>  44%                       ] 20230529_20230610   10s /    13s
-[=====================>  45%                       ] 20230529_20230622   10s /    12s
-[=====================>  45%                       ] 20230529_20230704   10s /    13s
-[=====================>  45%                       ] 20230610_20230622   10s /    13s
-[======================> 46%                       ] 20230610_20230704   10s /    12s
-[======================> 46%                       ] 20230610_20230716   10s /    12s
-[======================> 46%                       ] 20230622_20230704   10s /    12s
-[======================> 46%                       ] 20230622_20230716   10s /    12s
-[======================= 47%                       ] 20230622_20230728   11s /    12s
-[======================= 47%                       ] 20230704_20230716   11s /    12s
-[======================= 47%                       ] 20230704_20230728   11s /    12s
-[======================= 48%                       ] 20230704_20230809   11s /    12s
-[======================= 48%                       ] 20230716_20230728   11s /    12s
-[======================= 48%                       ] 20230716_20230821   11s /    12s
-[======================= 49%                       ] 20230728_20230821   11s /    11s
-[======================= 49%                       ] 20230728_20230902   11s /    11s
-[======================= 49%                       ] 20230809_20230821   11s /    12s
-[======================= 49%                       ] 20230809_20230902   11s /    12s
-[======================= 50%                       ] 20230809_20230914   11s /    11s
-[======================= 50%                       ] 20230821_20230902   11s /    11s
-[======================= 50%                       ] 20230821_20230914   11s /    11s
-[======================= 51%                       ] 20230821_20230926   11s /    11s
-[======================= 51%                       ] 20230902_20230914   11s /    11s
-[======================= 51%                       ] 20230902_20230926   12s /    11s
-[======================= 51%                       ] 20230902_20231008   12s /    11s
-[======================= 52%                       ] 20230914_20230926   12s /    11s
-[======================= 52%                       ] 20230914_20231008   12s /    11s
-[======================= 52%                       ] 20230914_20231020   12s /    11s
-[======================= 53%                       ] 20230926_20231008   12s /    10s
-[======================= 53%                       ] 20230926_20231020   12s /    11s
-[======================= 53%                       ] 20230926_20231101   12s /    11s
-[======================= 54%                       ] 20231008_20231020   12s /    10s
-[======================= 54%                       ] 20231008_20231101   12s /    10s
-[======================= 54%                       ] 20231008_20231113   12s /    10s
-[======================= 54%                       ] 20231020_20231101   12s /    10s
-[======================= 55%                       ] 20231020_20231113   12s /    10s
-[======================= 55%                       ] 20231101_20231113   12s /    10s
-[======================= 55%                       ] 20231101_20231125   12s /    10s
-[======================= 56%                       ] 20231101_20231207   13s /    10s
-[======================= 56%                       ] 20231113_20231125   13s /    10s
-[======================= 56%                       ] 20231113_20231207   15s /    11s
-[======================= 57%                       ] 20231113_20231219   15s /    11s
-[======================= 57%                       ] 20231125_20231207   15s /    11s
-[======================= 57%                       ] 20231125_20231219   15s /    11s
-[======================= 57%                       ] 20231125_20231231   15s /    11s
-[======================= 58% >                     ] 20231207_20231219   15s /    11s
-[======================= 58% >                     ] 20231207_20231231   15s /    11s
-[======================= 58% >                     ] 20231207_20240112   15s /    11s
-[======================= 59% =>                    ] 20231219_20231231   15s /    10s
-[======================= 59% =>                    ] 20231219_20240112   15s /    10s
-[======================= 59% =>                    ] 20231219_20240124   15s /    11s
-[======================= 60% =>                    ] 20231231_20240112   15s /    10s
-[======================= 60% =>                    ] 20231231_20240124   16s /    10s
-[======================= 60% =>                    ] 20231231_20240205   16s /    10s
-[======================= 60% =>                    ] 20240112_20240124   16s /    10s
-[======================= 61% =>                    ] 20240112_20240205   16s /    10s
-[======================= 61% =>                    ] 20240112_20240217   16s /    10s
-[======================= 61% =>                    ] 20240124_20240205   16s /    10s
-[======================= 62% ==>                   ] 20240124_20240217   16s /    10s
-[======================= 62% ==>                   ] 20240124_20240229   16s /    10s
-[======================= 62% ==>                   ] 20240205_20240217   16s /    10s
-[======================= 62% ==>                   ] 20240205_20240229   16s /    10s
-[======================= 63% ===>                  ] 20240205_20240312   16s /     9s
-[======================= 63% ===>                  ] 20240217_20240229   16s /     9s
-[======================= 63% ===>                  ] 20240217_20240312   16s /     9s
-[======================= 64% ===>                  ] 20240217_20240324   16s /     9s
-[======================= 64% ===>                  ] 20240229_20240312   16s /     9s
-[======================= 64% ===>                  ] 20240229_20240324   16s /     9s
-[======================= 65% ===>                  ] 20240229_20240405   17s /     9s
-[======================= 65% ===>                  ] 20240312_20240324   17s /     9s
-[======================= 65% ===>                  ] 20240312_20240405   17s /     9s
-[======================= 65% ===>                  ] 20240312_20240417   17s /     9s
-[======================= 66% ====>                 ] 20240324_20240405   17s /     8s
-[======================= 66% ====>                 ] 20240324_20240417   17s /     8s
-[======================= 66% ====>                 ] 20240324_20240429   17s /     8s
-[======================= 67% =====>                ] 20240405_20240417   17s /     8s
-[======================= 67% =====>                ] 20240405_20240429   17s /     8s
-[======================= 67% =====>                ] 20240405_20240511   17s /     8s
-[======================= 68% =====>                ] 20240417_20240429   17s /     8s
-[======================= 68% =====>                ] 20240417_20240511   17s /     8s
-[======================= 68% =====>                ] 20240417_20240523   17s /     8s
-[======================= 68% =====>                ] 20240429_20240511   17s /     8s
-[======================= 69% =====>                ] 20240429_20240523   17s /     8s
-[======================= 69% =====>                ] 20240429_20240604   18s /     8s
-[======================= 69% =====>                ] 20240511_20240523   18s /     8s
-[======================= 70% ======>               ] 20240511_20240604   18s /     7s
-[======================= 70% ======>               ] 20240511_20240616   18s /     7s
-[======================= 70% ======>               ] 20240523_20240604   18s /     7s
-[======================= 71% =======>              ] 20240523_20240616   18s /     7s
-[======================= 71% =======>              ] 20240604_20240616   18s /     7s
-[======================= 71% =======>              ] 20240604_20240710   18s /     7s
-[======================= 71% =======>              ] 20240616_20240710   18s /     7s
-[======================= 72% =======>              ] 20240616_20240722   18s /     7s
-[======================= 72% =======>              ] 20240710_20240722   18s /     7s
-[======================= 72% =======>              ] 20240710_20240803   18s /     7s
-[======================= 73% =======>              ] 20240710_20240815   18s /     6s
-[======================= 73% =======>              ] 20240722_20240803   18s /     6s
-[======================= 73% =======>              ] 20240722_20240815   18s /     7s
-[======================= 74% ========>             ] 20240803_20240815   19s /     6s
-[======================= 74% ========>             ] 20240803_20240827   19s /     6s
-[======================= 74% ========>             ] 20240803_20240908   19s /     6s
-[======================= 74% ========>             ] 20240815_20240827   19s /     6s
-[======================= 75% =========>            ] 20240815_20240908   19s /     6s
-[======================= 75% =========>            ] 20240815_20240920   19s /     6s
-[======================= 75% =========>            ] 20240827_20240908   19s /     6s
-[======================= 76% =========>            ] 20240827_20240920   19s /     6s
-[======================= 76% =========>            ] 20240827_20241002   19s /     6s
-[======================= 76% =========>            ] 20240908_20240920   19s /     6s
-[======================= 76% =========>            ] 20240908_20241002   19s /     6s
-[======================= 77% =========>            ] 20240908_20241014   19s /     5s
-[======================= 77% =========>            ] 20240920_20241002   19s /     5s
-[======================= 77% =========>            ] 20240920_20241014   19s /     5s
-[======================= 78% ==========>           ] 20240920_20241026   19s /     5s
-[======================= 78% ==========>           ] 20241002_20241014   19s /     5s
-[======================= 78% ==========>           ] 20241002_20241026   20s /     5s
-[======================= 79% ===========>          ] 20241002_20241107   20s /     5s
-[======================= 79% ===========>          ] 20241014_20241026   20s /     5s
-[======================= 79% ===========>          ] 20241014_20241107   20s /     5s
-[======================= 79% ===========>          ] 20241014_20241119   20s /     5s
-[======================= 80% ===========>          ] 20241026_20241107   20s /     5s
-[======================= 80% ===========>          ] 20241026_20241119   20s /     5s
-[======================= 80% ===========>          ] 20241107_20241119   20s /     5s
-[======================= 81% ===========>          ] 20241107_20241213   20s /     4s
-[======================= 81% ===========>          ] 20241119_20241213   20s /     4s
-[======================= 81% ===========>          ] 20241119_20241225   20s /     4s
-[======================= 82% ============>         ] 20241213_20241225   20s /     4s
-[======================= 82% ============>         ] 20241213_20250106   20s /     4s
-[======================= 82% ============>         ] 20241213_20250118   20s /     4s
-[======================= 82% ============>         ] 20241225_20250106   20s /     4s
-[======================= 83% =============>        ] 20241225_20250118   21s /     4s
-[======================= 83% =============>        ] 20241225_20250130   21s /     4s
-[======================= 83% =============>        ] 20250106_20250118   21s /     4s
-[======================= 84% =============>        ] 20250106_20250130   21s /     4s
-[======================= 84% =============>        ] 20250106_20250211   21s /     4s
-[======================= 84% =============>        ] 20250118_20250130   21s /     4s
-[======================= 85% =============>        ] 20250118_20250211   21s /     3s
-[======================= 85% =============>        ] 20250118_20250223   21s /     3s
-[======================= 85% =============>        ] 20250130_20250211   21s /     3s
-[======================= 85% =============>        ] 20250130_20250223   21s /     3s
-[======================= 86% ==============>       ] 20250130_20250307   21s /     3s
-[======================= 86% ==============>       ] 20250211_20250223   21s /     3s
-[======================= 86% ==============>       ] 20250211_20250307   21s /     3s
-[======================= 87% ===============>      ] 20250211_20250319   21s /     3s
-[======================= 87% ===============>      ] 20250223_20250307   21s /     3s
-[======================= 87% ===============>      ] 20250223_20250319   22s /     3s
-[======================= 88% ===============>      ] 20250223_20250331   22s /     3s
-[======================= 88% ===============>      ] 20250307_20250319   22s /     3s
-[======================= 88% ===============>      ] 20250307_20250331   22s /     3s
-[======================= 88% ===============>      ] 20250307_20250412   22s /     3s
-[======================= 89% ===============>      ] 20250319_20250331   22s /     2s
-[======================= 89% ===============>      ] 20250319_20250412   22s /     2s
-[======================= 89% ===============>      ] 20250319_20250424   22s /     2s
-[======================= 90% ================>     ] 20250331_20250412   22s /     2s
-[======================= 90% ================>     ] 20250331_20250424   22s /     2s
-[======================= 90% ================>     ] 20250331_20250506   22s /     2s
-[======================= 90% ================>     ] 20250412_20250424   22s /     2s
-[======================= 91% =================>    ] 20250412_20250506   22s /     2s
-[======================= 91% =================>    ] 20250424_20250506   22s /     2s
-[======================= 91% =================>    ] 20250424_20250530   22s /     2s
-[======================= 92% =================>    ] 20250506_20250530   23s /     2s
-[======================= 92% =================>    ] 20250506_20250611   23s /     2s
-[======================= 92% =================>    ] 20250530_20250611   23s /     2s
-[======================= 93% =================>    ] 20250530_20250623   23s /     1s
-[======================= 93% =================>    ] 20250530_20250705   23s /     1s
-[======================= 93% =================>    ] 20250611_20250623   23s /     1s
-[======================= 93% =================>    ] 20250611_20250705   23s /     1s
-[======================= 94% ==================>   ] 20250611_20250717   23s /     1s
-[======================= 94% ==================>   ] 20250623_20250705   23s /     1s
-[======================= 94% ==================>   ] 20250623_20250717   23s /     1s
-[======================= 95% ===================>  ] 20250623_20250729   23s /     1s
-[======================= 95% ===================>  ] 20250705_20250717   23s /     1s
-[======================= 95% ===================>  ] 20250705_20250729   23s /     1s
-[======================= 96% ===================>  ] 20250705_20250810   23s /     0s
-[======================= 96% ===================>  ] 20250717_20250729   23s /     0s
-[======================= 96% ===================>  ] 20250717_20250810   24s /     1s
-[======================= 96% ===================>  ] 20250717_20250822   24s /     1s
-[======================= 97% ===================>  ] 20250729_20250810   24s /     0s
-[======================= 97% ===================>  ] 20250729_20250822   24s /     0s
-[======================= 97% ===================>  ] 20250729_20250903   24s /     0s
-[======================= 98% ====================> ] 20250810_20250822   24s /     0s
-[======================= 98% ====================> ] 20250810_20250903   24s /     0s
-[======================= 98% ====================> ] 20250810_20250915   24s /     0s
-[==================================================] 20250822_20250903
-[==================================================] 20250822_20250915
-[==================================================] 20250822_20250927
-[==================================================] 20250903_20250915
-[==================================================] 20250903_20250927
-[==================================================] 20250915_20250927 
-create dataset /connectComponent of <class 'numpy.int16'>     in size of (336, 2407, 2939) with compression = lzf
+[>                        2%                       ] 20211014_20211026    0s /     8s
+[>                        2%                       ] 20211014_20211107    0s /    11s
+[=>                       3%                       ] 20211014_20211119    0s /     9s
+[=>                       3%                       ] 20211026_20211107    0s /    11s
+[=>                       4%                       ] 20211026_20211119    0s /     9s
+[=>                       4%                       ] 20211026_20211201    0s /    11s
+[=>                       5%                       ] 20211107_20211119    0s /    10s
+[=>                       5%                       ] 20211107_20211201    0s /    11s
+[=>                       5%                       ] 20211107_20211213    0s /    12s
+[==>                      6%                       ] 20211119_20211201    0s /    10s
+[==>                      6%                       ] 20211119_20211213    0s /    11s
+[===>                     7%                       ] 20211201_20211213    0s /    10s
+[===>                     7%                       ] 20211201_20220106    0s /    11s
+[===>                     8%                       ] 20211213_20220106    0s /    10s
+[===>                     8%                       ] 20211213_20220118    0s /    11s
+[===>                     9%                       ] 20220106_20220118    1s /    10s
+[===>                     9%                       ] 20220106_20220130    1s /    11s
+[====>                   10%                       ] 20220106_20220211    1s /    10s
+[====>                   10%                       ] 20220118_20220130    1s /    10s
+[=====>                  11%                       ] 20220118_20220211    1s /    10s
+[=====>                  11%                       ] 20220118_20220223    1s /    10s
+[=====>                  11%                       ] 20220130_20220211    1s /    11s
+[=====>                  12%                       ] 20220130_20220223    1s /    10s
+[=====>                  12%                       ] 20220130_20220307    1s /    11s
+[=====>                  13%                       ] 20220211_20220223    1s /    10s
+[=====>                  13%                       ] 20220211_20220307    1s /    10s
+[======>                 14%                       ] 20220211_20220319    1s /    10s
+[======>                 14%                       ] 20220223_20220307    1s /    10s
+[=======>                15%                       ] 20220223_20220319    1s /    10s
+[=======>                15%                       ] 20220223_20220331    1s /    10s
+[=======>                16%                       ] 20220307_20220319    1s /    10s
+[=======>                16%                       ] 20220307_20220331    1s /    10s
+[=======>                16%                       ] 20220307_20220412    2s /    10s
+[=======>                17%                       ] 20220319_20220331    2s /    10s
+[=======>                17%                       ] 20220319_20220412    2s /    10s
+[========>               18%                       ] 20220331_20220412    2s /    10s
+[========>               18%                       ] 20220331_20220530    2s /    10s
+[=========>              19%                       ] 20220412_20220518    2s /     9s
+[=========>              19%                       ] 20220518_20220530    2s /    10s
+[=========>              20%                       ] 20220518_20220611    2s /     9s
+[=========>              20%                       ] 20220518_20220623    2s /    10s
+[=========>              21%                       ] 20220530_20220611    2s /     9s
+[=========>              21%                       ] 20220530_20220623    2s /     9s
+[=========>              21%                       ] 20220530_20220705    2s /    10s
+[==========>             22%                       ] 20220611_20220623    2s /     9s
+[==========>             22%                       ] 20220611_20220705    2s /     9s
+[===========>            23%                       ] 20220611_20220717    2s /     9s
+[===========>            23%                       ] 20220623_20220705    2s /     9s
+[===========>            24%                       ] 20220623_20220717    2s /     9s
+[===========>            24%                       ] 20220623_20220729    3s /     9s
+[===========>            25%                       ] 20220705_20220717    3s /     9s
+[===========>            25%                       ] 20220705_20220729    3s /     9s
+[============>           26%                       ] 20220705_20220810    3s /     9s
+[============>           26%                       ] 20220717_20220729    3s /     9s
+[============>           26%                       ] 20220717_20220810    3s /     9s
+[=============>          27%                       ] 20220729_20220810    3s /     9s
+[=============>          27%                       ] 20220729_20221126    3s /     9s
+[=============>          28%                       ] 20220810_20221126    3s /     8s
+[=============>          28%                       ] 20221126_20230101    3s /     9s
+[=============>          29%                       ] 20221126_20230125    3s /     8s
+[=============>          29%                       ] 20221220_20230101    3s /     8s
+[==============>         30%                       ] 20221220_20230125    3s /     8s
+[==============>         30%                       ] 20230101_20230125    3s /     8s
+[===============>        31%                       ] 20230101_20230501    3s /     8s
+[===============>        31%                       ] 20230125_20230218    3s /     8s
+[===============>        32%                       ] 20230218_20230314    3s /     8s
+[===============>        32%                       ] 20230314_20230407    4s /     8s
+[===============>        32%                       ] 20230407_20230501    4s /     8s
+[===============>        33%                       ] 20230407_20230513    4s /     8s
+[===============>        33%                       ] 20230501_20230513    4s /     8s
+[================>       34%                       ] 20230501_20230525    4s /     8s
+[================>       34%                       ] 20230501_20230606    4s /     8s
+[=================>      35%                       ] 20230513_20230525    4s /     8s
+[=================>      35%                       ] 20230513_20230606    4s /     8s
+[=================>      36%                       ] 20230513_20230618    4s /     7s
+[=================>      36%                       ] 20230525_20230606    5s /     9s
+[=================>      37%                       ] 20230525_20230618    5s /     9s
+[=================>      37%                       ] 20230525_20230630    5s /     9s
+[=================>      37%                       ] 20230606_20230618    5s /     9s
+[==================>     38%                       ] 20230606_20230630    5s /     9s
+[==================>     38%                       ] 20230606_20230712    5s /     9s
+[===================>    39%                       ] 20230618_20230630    5s /     8s
+[===================>    39%                       ] 20230618_20230712    5s /     8s
+[===================>    40%                       ] 20230618_20230724    5s /     8s
+[===================>    40%                       ] 20230630_20230712    5s /     8s
+[===================>    41%                       ] 20230630_20230724    5s /     8s
+[===================>    41%                       ] 20230712_20230724    5s /     8s
+[====================>   42%                       ] 20230712_20230805    5s /     8s
+[====================>   42%                       ] 20230712_20230817    6s /     8s
+[====================>   42%                       ] 20230724_20230805    6s /     8s
+[=====================>  43%                       ] 20230724_20230817    6s /     8s
+[=====================>  43%                       ] 20230724_20230829    6s /     8s
+[=====================>  44%                       ] 20230805_20230817    6s /     7s
+[=====================>  44%                       ] 20230805_20230829    6s /     8s
+[=====================>  45%                       ] 20230817_20230829    6s /     7s
+[=====================>  45%                       ] 20230817_20230922    6s /     7s
+[======================> 46%                       ] 20230829_20230922    6s /     7s
+[======================> 46%                       ] 20230829_20231227    6s /     7s
+[======================= 47%                       ] 20230922_20231016    6s /     7s
+[======================= 47%                       ] 20231016_20231109    6s /     7s
+[======================= 47%                       ] 20231109_20231203    6s /     7s
+[======================= 48%                       ] 20231203_20231227    6s /     7s
+[======================= 48%                       ] 20231203_20240108    6s /     7s
+[======================= 49%                       ] 20231227_20240108    6s /     7s
+[======================= 49%                       ] 20231227_20240120    6s /     7s
+[======================= 50%                       ] 20240108_20240120    6s /     6s
+[======================= 50%                       ] 20240108_20240308    7s /     7s
+[======================= 51%                       ] 20240120_20240225    7s /     6s
+[======================= 51%                       ] 20240225_20240308    7s /     6s
+[======================= 52%                       ] 20240225_20240320    7s /     6s
+[======================= 52%                       ] 20240225_20240401    7s /     6s
+[======================= 53%                       ] 20240308_20240320    7s /     6s
+[======================= 53%                       ] 20240308_20240401    7s /     6s
+[======================= 53%                       ] 20240320_20240401    7s /     6s
+[======================= 54%                       ] 20240320_20240425    7s /     6s
+[======================= 54%                       ] 20240401_20240425    7s /     6s
+[======================= 55%                       ] 20240401_20240519    7s /     6s
+[======================= 55%                       ] 20240425_20240519    7s /     6s
+[======================= 56%                       ] 20240425_20240531    7s /     6s
+[======================= 56%                       ] 20240519_20240531    7s /     6s
+[======================= 57%                       ] 20240519_20240916    7s /     5s
+[======================= 57%                       ] 20240531_20240718    7s /     5s
+[======================= 58% >                     ] 20240718_20240823    7s /     5s
+[======================= 58% >                     ] 20240823_20240904    7s /     5s
+[======================= 58% >                     ] 20240823_20240916    8s /     5s
+[======================= 59% =>                    ] 20240823_20240928    8s /     5s
+[======================= 59% =>                    ] 20240904_20240916    8s /     5s
+[======================= 60% =>                    ] 20240904_20240928    8s /     5s
+[======================= 60% =>                    ] 20240904_20241010    8s /     5s
+[======================= 61% =>                    ] 20240916_20241010    8s /     5s
+[======================= 61% =>                    ] 20240916_20241022    8s /     5s
+[======================= 62% ==>                   ] 20240928_20241022    8s /     5s
+[======================= 62% ==>                   ] 20241010_20241022    8s /     5s
+[======================= 63% ===>                  ] 20241010_20241103    8s /     5s
+[======================= 63% ===>                  ] 20241010_20241115    8s /     5s
+[======================= 63% ===>                  ] 20241022_20241103    8s /     5s
+[======================= 64% ===>                  ] 20241022_20241115    8s /     4s
+[======================= 64% ===>                  ] 20241022_20241127    8s /     4s
+[======================= 65% ===>                  ] 20241103_20241115    8s /     4s
+[======================= 65% ===>                  ] 20241103_20241127    8s /     4s
+[======================= 66% ====>                 ] 20241103_20241209    8s /     4s
+[======================= 66% ====>                 ] 20241115_20241127    9s /     4s
+[======================= 67% =====>                ] 20241115_20241209    9s /     4s
+[======================= 67% =====>                ] 20241115_20241221    9s /     4s
+[======================= 68% =====>                ] 20241127_20241209    9s /     4s
+[======================= 68% =====>                ] 20241127_20241221    9s /     4s
+[======================= 68% =====>                ] 20241127_20250102    9s /     4s
+[======================= 69% =====>                ] 20241209_20241221    9s /     4s
+[======================= 69% =====>                ] 20241209_20250102    9s /     4s
+[======================= 70% ======>               ] 20241209_20250114    9s /     4s
+[======================= 70% ======>               ] 20241221_20250102    9s /     4s
+[======================= 71% =======>              ] 20241221_20250114    9s /     3s
+[======================= 71% =======>              ] 20241221_20250126    9s /     3s
+[======================= 72% =======>              ] 20250102_20250114    9s /     3s
+[======================= 72% =======>              ] 20250102_20250126    9s /     3s
+[======================= 73% =======>              ] 20250102_20250207    9s /     3s
+[======================= 73% =======>              ] 20250114_20250126    9s /     3s
+[======================= 74% ========>             ] 20250114_20250207    9s /     3s
+[======================= 74% ========>             ] 20250114_20250219    9s /     3s
+[======================= 74% ========>             ] 20250126_20250207    9s /     3s
+[======================= 75% =========>            ] 20250126_20250219   10s /     3s
+[======================= 75% =========>            ] 20250126_20250303   10s /     3s
+[======================= 76% =========>            ] 20250207_20250219   10s /     3s
+[======================= 76% =========>            ] 20250207_20250303   10s /     3s
+[======================= 77% =========>            ] 20250207_20250315   10s /     3s
+[======================= 77% =========>            ] 20250219_20250303   10s /     3s
+[======================= 78% ==========>           ] 20250219_20250315   10s /     2s
+[======================= 78% ==========>           ] 20250219_20250327   10s /     2s
+[======================= 79% ===========>          ] 20250303_20250315   10s /     2s
+[======================= 79% ===========>          ] 20250303_20250327   10s /     2s
+[======================= 79% ===========>          ] 20250303_20250408   10s /     2s
+[======================= 80% ===========>          ] 20250315_20250327   10s /     2s
+[======================= 80% ===========>          ] 20250315_20250408   10s /     2s
+[======================= 81% ===========>          ] 20250315_20250420   10s /     2s
+[======================= 81% ===========>          ] 20250327_20250408   10s /     2s
+[======================= 82% ============>         ] 20250327_20250420   10s /     2s
+[======================= 82% ============>         ] 20250327_20250502   10s /     2s
+[======================= 83% =============>        ] 20250408_20250420   10s /     2s
+[======================= 83% =============>        ] 20250408_20250502   11s /     2s
+[======================= 84% =============>        ] 20250408_20250514   11s /     2s
+[======================= 84% =============>        ] 20250420_20250502   11s /     2s
+[======================= 84% =============>        ] 20250420_20250514   11s /     2s
+[======================= 85% =============>        ] 20250420_20250526   11s /     1s
+[======================= 85% =============>        ] 20250502_20250514   11s /     1s
+[======================= 86% ==============>       ] 20250502_20250526   11s /     1s
+[======================= 86% ==============>       ] 20250502_20250607   11s /     1s
+[======================= 87% ===============>      ] 20250514_20250526   11s /     1s
+[======================= 87% ===============>      ] 20250514_20250607   11s /     1s
+[======================= 88% ===============>      ] 20250514_20250619   11s /     1s
+[======================= 88% ===============>      ] 20250526_20250607   11s /     1s
+[======================= 89% ===============>      ] 20250526_20250619   11s /     1s
+[======================= 89% ===============>      ] 20250526_20250701   11s /     1s
+[======================= 89% ===============>      ] 20250607_20250619   11s /     1s
+[======================= 90% ================>     ] 20250607_20250701   11s /     1s
+[======================= 90% ================>     ] 20250607_20250713   11s /     1s
+[======================= 91% =================>    ] 20250619_20250701   11s /     1s
+[======================= 91% =================>    ] 20250619_20250713   12s /     1s
+[======================= 92% =================>    ] 20250619_20250725   12s /     1s
+[======================= 92% =================>    ] 20250701_20250713   12s /     1s
+[======================= 93% =================>    ] 20250701_20250725   12s /     0s
+[======================= 93% =================>    ] 20250701_20250806   12s /     0s
+[======================= 94% ==================>   ] 20250713_20250725   12s /     0s
+[======================= 94% ==================>   ] 20250713_20250806   13s /     0s
+[======================= 95% ===================>  ] 20250713_20250818   13s /     0s
+[======================= 95% ===================>  ] 20250725_20250806   13s /     0s
+[======================= 95% ===================>  ] 20250725_20250818   13s /     0s
+[======================= 96% ===================>  ] 20250725_20250830   13s /     0s
+[======================= 96% ===================>  ] 20250806_20250818   13s /     0s
+[======================= 97% ===================>  ] 20250806_20250830   13s /     0s
+[======================= 97% ===================>  ] 20250806_20250911   13s /     0s
+[======================= 98% ====================> ] 20250818_20250830   13s /     0s
+[======================= 98% ====================> ] 20250818_20250911   13s /     0s
+[==================================================] 20250818_20250923
+[==================================================] 20250830_20250911
+[==================================================] 20250830_20250923
+[==================================================] 20250911_20250923 
+create dataset /connectComponent of <class 'numpy.int16'>     in size of (219, 2412, 2853) with compression = lzf
 
 [>                                                 ]
 [>                                                 ]
 [>                                                 ]
-[>                                                 ]
-[>                                                 ]
-[>                        2%                       ] 20211018_20211123    0s /    25s
-[>                        2%                       ] 20211030_20211111    0s /    31s
-[>                        2%                       ] 20211030_20211123    0s /    37s
-[=>                       3%                       ] 20211030_20211205    0s /    29s
-[=>                       3%                       ] 20211111_20211123    1s /    33s
-[=>                       3%                       ] 20211111_20211205    1s /    37s
-[=>                       4%                       ] 20211111_20211217    1s /    31s
-[=>                       4%                       ] 20211123_20211205    1s /    32s
-[=>                       4%                       ] 20211123_20211217    1s /    35s
-[=>                       4%                       ] 20211123_20211229    1s /    37s
-[=>                       5%                       ] 20211205_20211217    1s /    32s
-[=>                       5%                       ] 20211205_20211229    1s /    34s
-[=>                       5%                       ] 20211205_20220110    1s /    36s
-[==>                      6%                       ] 20211217_20211229    2s /    31s
-[==>                      6%                       ] 20211217_20220110    2s /    33s
-[==>                      6%                       ] 20211217_20220122    2s /    35s
-[===>                     7%                       ] 20211229_20220110    2s /    31s
-[===>                     7%                       ] 20211229_20220122    2s /    33s
-[===>                     7%                       ] 20211229_20220203    2s /    34s
-[===>                     7%                       ] 20220110_20220122    2s /    35s
-[===>                     8%                       ] 20220110_20220203    2s /    32s
-[===>                     8%                       ] 20220110_20220215    2s /    33s
-[===>                     8%                       ] 20220122_20220203    3s /    35s
-[===>                     9%                       ] 20220122_20220215    3s /    32s
-[===>                     9%                       ] 20220122_20220227    3s /    33s
-[===>                     9%                       ] 20220203_20220215    3s /    34s
-[====>                   10%                       ] 20220203_20220227    3s /    31s
-[====>                   10%                       ] 20220203_20220311    3s /    32s
-[====>                   10%                       ] 20220215_20220227    3s /    34s
-[====>                   10%                       ] 20220215_20220311    3s /    34s
-[=====>                  11%                       ] 20220215_20220323    3s /    32s
-[=====>                  11%                       ] 20220227_20220311    4s /    32s
-[=====>                  11%                       ] 20220227_20220323    4s /    33s
-[=====>                  12%                       ] 20220227_20220404    4s /    31s
-[=====>                  12%                       ] 20220311_20220323    4s /    32s
-[=====>                  12%                       ] 20220311_20220404    4s /    33s
-[=====>                  12%                       ] 20220311_20220416    4s /    34s
-[=====>                  13%                       ] 20220323_20220404    4s /    32s
-[=====>                  13%                       ] 20220323_20220416    4s /    33s
-[=====>                  13%                       ] 20220323_20220428    5s /    34s
-[======>                 14%                       ] 20220404_20220416    5s /    31s
-[======>                 14%                       ] 20220404_20220428    5s /    32s
-[======>                 14%                       ] 20220404_20220510    5s /    32s
-[=======>                15%                       ] 20220416_20220428    5s /    31s
-[=======>                15%                       ] 20220416_20220510    5s /    31s
-[=======>                15%                       ] 20220416_20220522    5s /    32s
-[=======>                15%                       ] 20220428_20220510    5s /    33s
-[=======>                16%                       ] 20220428_20220522    5s /    31s
-[=======>                16%                       ] 20220428_20220603    6s /    31s
-[=======>                16%                       ] 20220510_20220522    6s /    32s
-[=======>                17%                       ] 20220510_20220603    6s /    30s
-[=======>                17%                       ] 20220510_20220615    6s /    31s
-[=======>                17%                       ] 20220522_20220603    6s /    31s
-[========>               18%                       ] 20220522_20220615    6s /    30s
-[========>               18%                       ] 20220522_20220627    6s /    30s
-[========>               18%                       ] 20220603_20220615    6s /    31s
-[========>               18%                       ] 20220603_20220627    6s /    31s
-[=========>              19%                       ] 20220603_20220709    7s /    30s
-[=========>              19%                       ] 20220615_20220627    7s /    30s
-[=========>              19%                       ] 20220615_20220709    7s /    31s
-[=========>              20%                       ] 20220615_20220721    7s /    30s
-[=========>              20%                       ] 20220627_20220709    7s /    30s
-[=========>              20%                       ] 20220627_20220721    7s /    30s
-[=========>              21%                       ] 20220627_20220802    7s /    29s
-[=========>              21%                       ] 20220709_20220721    7s /    29s
-[=========>              21%                       ] 20220709_20220802    8s /    30s
-[=========>              21%                       ] 20220709_20220814    8s /    30s
-[==========>             22%                       ] 20220721_20220802    8s /    29s
-[==========>             22%                       ] 20220721_20220814    8s /    29s
-[==========>             22%                       ] 20220721_20220826    8s /    30s
-[===========>            23%                       ] 20220802_20220814    8s /    28s
-[===========>            23%                       ] 20220802_20220826    8s /    29s
-[===========>            23%                       ] 20220802_20220907    8s /    29s
-[===========>            24%                       ] 20220814_20220826    8s /    28s
-[===========>            24%                       ] 20220814_20220907    9s /    28s
-[===========>            24%                       ] 20220814_20220919    9s /    29s
-[===========>            24%                       ] 20220826_20220907    9s /    29s
-[===========>            25%                       ] 20220826_20220919    9s /    28s
-[===========>            25%                       ] 20220826_20221001    9s /    28s
-[===========>            25%                       ] 20220907_20220919    9s /    29s
-[============>           26%                       ] 20220907_20221001    9s /    27s
-[============>           26%                       ] 20220919_20221001    9s /    28s
-[============>           26%                       ] 20220919_20221013   10s /    28s
-[============>           26%                       ] 20220919_20221025   10s /    29s
-[=============>          27%                       ] 20221001_20221013   10s /    27s
-[=============>          27%                       ] 20221001_20221025   10s /    28s
-[=============>          27%                       ] 20221001_20221106   10s /    28s
-[=============>          28%                       ] 20221013_20221025   10s /    27s
-[=============>          28%                       ] 20221013_20221106   10s /    27s
-[=============>          28%                       ] 20221013_20221118   10s /    27s
-[=============>          29%                       ] 20221025_20221106   10s /    26s
-[=============>          29%                       ] 20221025_20221118   11s /    27s
-[=============>          29%                       ] 20221025_20221130   11s /    27s
-[=============>          29%                       ] 20221106_20221118   11s /    27s
-[==============>         30%                       ] 20221106_20221130   11s /    26s
-[==============>         30%                       ] 20221106_20221212   11s /    27s
-[==============>         30%                       ] 20221118_20221130   11s /    27s
-[===============>        31%                       ] 20221118_20221212   11s /    26s
-[===============>        31%                       ] 20221118_20221224   11s /    26s
-[===============>        31%                       ] 20221130_20221212   12s /    26s
-[===============>        32%                       ] 20221130_20221224   12s /    25s
-[===============>        32%                       ] 20221130_20230105   12s /    26s
-[===============>        32%                       ] 20221212_20221224   12s /    26s
-[===============>        32%                       ] 20221212_20230105   12s /    26s
-[===============>        33%                       ] 20221212_20230117   12s /    25s
-[===============>        33%                       ] 20221224_20230105   12s /    25s
-[===============>        33%                       ] 20221224_20230117   12s /    26s
-[================>       34%                       ] 20221224_20230129   12s /    25s
-[================>       34%                       ] 20230105_20230117   13s /    25s
-[================>       34%                       ] 20230105_20230129   13s /    25s
-[=================>      35%                       ] 20230105_20230210   13s /    24s
-[=================>      35%                       ] 20230117_20230210   13s /    24s
-[=================>      35%                       ] 20230117_20230222   13s /    25s
-[=================>      35%                       ] 20230129_20230210   13s /    25s
-[=================>      36%                       ] 20230129_20230222   13s /    24s
-[=================>      36%                       ] 20230129_20230306   13s /    24s
-[=================>      36%                       ] 20230210_20230222   14s /    24s
-[=================>      37%                       ] 20230210_20230306   14s /    23s
-[=================>      37%                       ] 20230210_20230318   14s /    24s
-[=================>      37%                       ] 20230222_20230306   14s /    24s
-[==================>     38%                       ] 20230222_20230318   14s /    23s
-[==================>     38%                       ] 20230222_20230330   14s /    23s
-[==================>     38%                       ] 20230306_20230318   14s /    23s
-[==================>     38%                       ] 20230306_20230330   14s /    24s
-[===================>    39%                       ] 20230306_20230411   14s /    23s
-[===================>    39%                       ] 20230318_20230330   15s /    23s
-[===================>    39%                       ] 20230318_20230411   15s /    23s
-[===================>    40%                       ] 20230318_20230423   15s /    22s
-[===================>    40%                       ] 20230330_20230411   15s /    23s
-[===================>    40%                       ] 20230330_20230423   15s /    23s
-[===================>    40%                       ] 20230330_20230505   15s /    23s
-[===================>    41%                       ] 20230411_20230423   15s /    22s
-[===================>    41%                       ] 20230411_20230505   15s /    22s
-[===================>    41%                       ] 20230411_20230517   15s /    22s
-[====================>   42%                       ] 20230423_20230505   16s /    22s
-[====================>   42%                       ] 20230423_20230517   16s /    22s
-[====================>   42%                       ] 20230423_20230529   16s /    22s
-[=====================>  43%                       ] 20230505_20230517   16s /    21s
-[=====================>  43%                       ] 20230505_20230529   16s /    21s
-[=====================>  43%                       ] 20230505_20230610   16s /    22s
-[=====================>  43%                       ] 20230517_20230529   16s /    22s
-[=====================>  44%                       ] 20230517_20230610   16s /    21s
-[=====================>  44%                       ] 20230517_20230622   16s /    21s
-[=====================>  44%                       ] 20230529_20230610   17s /    21s
-[=====================>  45%                       ] 20230529_20230622   17s /    21s
-[=====================>  45%                       ] 20230529_20230704   17s /    21s
-[=====================>  45%                       ] 20230610_20230622   17s /    21s
-[======================> 46%                       ] 20230610_20230704   17s /    20s
-[======================> 46%                       ] 20230610_20230716   17s /    20s
-[======================> 46%                       ] 20230622_20230704   17s /    21s
-[======================> 46%                       ] 20230622_20230716   17s /    21s
-[======================= 47%                       ] 20230622_20230728   19s /    22s
-[======================= 47%                       ] 20230704_20230716   19s /    22s
-[======================= 47%                       ] 20230704_20230728   20s /    22s
-[======================= 48%                       ] 20230704_20230809   20s /    21s
-[======================= 48%                       ] 20230716_20230728   20s /    21s
-[======================= 48%                       ] 20230716_20230821   20s /    22s
-[======================= 49%                       ] 20230728_20230821   20s /    21s
-[======================= 49%                       ] 20230728_20230902   20s /    21s
-[======================= 49%                       ] 20230809_20230821   20s /    21s
-[======================= 49%                       ] 20230809_20230902   20s /    21s
-[======================= 50%                       ] 20230809_20230914   20s /    20s
-[======================= 50%                       ] 20230821_20230902   21s /    21s
-[======================= 50%                       ] 20230821_20230914   21s /    21s
-[======================= 51%                       ] 20230821_20230926   21s /    20s
-[======================= 51%                       ] 20230902_20230914   21s /    20s
-[======================= 51%                       ] 20230902_20230926   21s /    20s
-[======================= 51%                       ] 20230902_20231008   21s /    20s
-[======================= 52%                       ] 20230914_20230926   21s /    20s
-[======================= 52%                       ] 20230914_20231008   21s /    20s
-[======================= 52%                       ] 20230914_20231020   22s /    20s
-[======================= 53%                       ] 20230926_20231008   22s /    19s
-[======================= 53%                       ] 20230926_20231020   22s /    19s
-[======================= 53%                       ] 20230926_20231101   22s /    19s
-[======================= 54%                       ] 20231008_20231020   22s /    19s
-[======================= 54%                       ] 20231008_20231101   22s /    19s
-[======================= 54%                       ] 20231008_20231113   22s /    19s
-[======================= 54%                       ] 20231020_20231101   22s /    19s
-[======================= 55%                       ] 20231020_20231113   22s /    18s
-[======================= 55%                       ] 20231101_20231113   23s /    18s
-[======================= 55%                       ] 20231101_20231125   23s /    19s
-[======================= 56%                       ] 20231101_20231207   23s /    18s
-[======================= 56%                       ] 20231113_20231125   23s /    18s
-[======================= 56%                       ] 20231113_20231207   23s /    18s
-[======================= 57%                       ] 20231113_20231219   23s /    17s
-[======================= 57%                       ] 20231125_20231207   23s /    17s
-[======================= 57%                       ] 20231125_20231219   23s /    18s
-[======================= 57%                       ] 20231125_20231231   24s /    18s
-[======================= 58% >                     ] 20231207_20231219   24s /    17s
-[======================= 58% >                     ] 20231207_20231231   24s /    17s
-[======================= 58% >                     ] 20231207_20240112   24s /    17s
-[======================= 59% =>                    ] 20231219_20231231   24s /    17s
-[======================= 59% =>                    ] 20231219_20240112   24s /    17s
-[======================= 59% =>                    ] 20231219_20240124   24s /    17s
-[======================= 60% =>                    ] 20231231_20240112   24s /    16s
-[======================= 60% =>                    ] 20231231_20240124   24s /    16s
-[======================= 60% =>                    ] 20231231_20240205   25s /    16s
-[======================= 60% =>                    ] 20240112_20240124   25s /    16s
-[======================= 61% =>                    ] 20240112_20240205   25s /    16s
-[======================= 61% =>                    ] 20240112_20240217   25s /    16s
-[======================= 61% =>                    ] 20240124_20240205   25s /    16s
-[======================= 62% ==>                   ] 20240124_20240217   25s /    15s
-[======================= 62% ==>                   ] 20240124_20240229   25s /    15s
-[======================= 62% ==>                   ] 20240205_20240217   25s /    15s
-[======================= 62% ==>                   ] 20240205_20240229   25s /    15s
-[======================= 63% ===>                  ] 20240205_20240312   25s /    15s
-[======================= 63% ===>                  ] 20240217_20240229   26s /    15s
-[======================= 63% ===>                  ] 20240217_20240312   26s /    15s
-[======================= 64% ===>                  ] 20240217_20240324   26s /    14s
-[======================= 64% ===>                  ] 20240229_20240312   26s /    14s
-[======================= 64% ===>                  ] 20240229_20240324   26s /    14s
-[======================= 65% ===>                  ] 20240229_20240405   26s /    14s
-[======================= 65% ===>                  ] 20240312_20240324   26s /    14s
-[======================= 65% ===>                  ] 20240312_20240405   26s /    14s
-[======================= 65% ===>                  ] 20240312_20240417   27s /    14s
-[======================= 66% ====>                 ] 20240324_20240405   27s /    14s
-[======================= 66% ====>                 ] 20240324_20240417   27s /    14s
-[======================= 66% ====>                 ] 20240324_20240429   27s /    14s
-[======================= 67% =====>                ] 20240405_20240417   27s /    13s
-[======================= 67% =====>                ] 20240405_20240429   27s /    13s
-[======================= 67% =====>                ] 20240405_20240511   27s /    13s
-[======================= 68% =====>                ] 20240417_20240429   27s /    13s
-[======================= 68% =====>                ] 20240417_20240511   27s /    13s
-[======================= 68% =====>                ] 20240417_20240523   28s /    13s
-[======================= 68% =====>                ] 20240429_20240511   28s /    13s
-[======================= 69% =====>                ] 20240429_20240523   28s /    12s
-[======================= 69% =====>                ] 20240429_20240604   28s /    12s
-[======================= 69% =====>                ] 20240511_20240523   28s /    12s
-[======================= 70% ======>               ] 20240511_20240604   28s /    12s
-[======================= 70% ======>               ] 20240511_20240616   28s /    12s
-[======================= 70% ======>               ] 20240523_20240604   28s /    12s
-[======================= 71% =======>              ] 20240523_20240616   28s /    11s
-[======================= 71% =======>              ] 20240604_20240616   29s /    11s
-[======================= 71% =======>              ] 20240604_20240710   29s /    11s
-[======================= 71% =======>              ] 20240616_20240710   29s /    11s
-[======================= 72% =======>              ] 20240616_20240722   29s /    11s
-[======================= 72% =======>              ] 20240710_20240722   29s /    11s
-[======================= 72% =======>              ] 20240710_20240803   29s /    11s
-[======================= 73% =======>              ] 20240710_20240815   29s /    11s
-[======================= 73% =======>              ] 20240722_20240803   29s /    11s
-[======================= 73% =======>              ] 20240722_20240815   29s /    11s
-[======================= 74% ========>             ] 20240803_20240815   30s /    10s
-[======================= 74% ========>             ] 20240803_20240827   30s /    10s
-[======================= 74% ========>             ] 20240803_20240908   30s /    10s
-[======================= 74% ========>             ] 20240815_20240827   30s /    10s
-[======================= 75% =========>            ] 20240815_20240908   30s /    10s
-[======================= 75% =========>            ] 20240815_20240920   30s /    10s
-[======================= 75% =========>            ] 20240827_20240908   30s /    10s
-[======================= 76% =========>            ] 20240827_20240920   31s /     9s
-[======================= 76% =========>            ] 20240827_20241002   31s /     9s
-[======================= 76% =========>            ] 20240908_20240920   31s /     9s
-[======================= 76% =========>            ] 20240908_20241002   31s /     9s
-[======================= 77% =========>            ] 20240908_20241014   31s /     9s
-[======================= 77% =========>            ] 20240920_20241002   31s /     9s
-[======================= 77% =========>            ] 20240920_20241014   31s /     9s
-[======================= 78% ==========>           ] 20240920_20241026   31s /     8s
-[======================= 78% ==========>           ] 20241002_20241014   31s /     8s
-[======================= 78% ==========>           ] 20241002_20241026   32s /     9s
-[======================= 79% ===========>          ] 20241002_20241107   32s /     8s
-[======================= 79% ===========>          ] 20241014_20241026   32s /     8s
-[======================= 79% ===========>          ] 20241014_20241107   32s /     8s
-[======================= 79% ===========>          ] 20241014_20241119   32s /     8s
-[======================= 80% ===========>          ] 20241026_20241107   32s /     8s
-[======================= 80% ===========>          ] 20241026_20241119   32s /     8s
-[======================= 80% ===========>          ] 20241107_20241119   32s /     8s
-[======================= 81% ===========>          ] 20241107_20241213   32s /     7s
-[======================= 81% ===========>          ] 20241119_20241213   33s /     7s
-[======================= 81% ===========>          ] 20241119_20241225   33s /     7s
-[======================= 82% ============>         ] 20241213_20241225   33s /     7s
-[======================= 82% ============>         ] 20241213_20250106   33s /     7s
-[======================= 82% ============>         ] 20241213_20250118   33s /     7s
-[======================= 82% ============>         ] 20241225_20250106   33s /     7s
-[======================= 83% =============>        ] 20241225_20250118   33s /     6s
-[======================= 83% =============>        ] 20241225_20250130   33s /     6s
-[======================= 83% =============>        ] 20250106_20250118   34s /     6s
-[======================= 84% =============>        ] 20250106_20250130   34s /     6s
-[======================= 84% =============>        ] 20250106_20250211   34s /     6s
-[======================= 84% =============>        ] 20250118_20250130   34s /     6s
-[======================= 85% =============>        ] 20250118_20250211   34s /     6s
-[======================= 85% =============>        ] 20250118_20250223   34s /     6s
-[======================= 85% =============>        ] 20250130_20250211   34s /     6s
-[======================= 85% =============>        ] 20250130_20250223   34s /     6s
-[======================= 86% ==============>       ] 20250130_20250307   34s /     5s
-[======================= 86% ==============>       ] 20250211_20250223   35s /     5s
-[======================= 86% ==============>       ] 20250211_20250307   35s /     5s
-[======================= 87% ===============>      ] 20250211_20250319   35s /     5s
-[======================= 87% ===============>      ] 20250223_20250307   35s /     5s
-[======================= 87% ===============>      ] 20250223_20250319   35s /     5s
-[======================= 88% ===============>      ] 20250223_20250331   35s /     4s
-[======================= 88% ===============>      ] 20250307_20250319   35s /     4s
-[======================= 88% ===============>      ] 20250307_20250331   35s /     4s
-[======================= 88% ===============>      ] 20250307_20250412   36s /     4s
-[======================= 89% ===============>      ] 20250319_20250331   36s /     4s
-[======================= 89% ===============>      ] 20250319_20250412   36s /     4s
-[======================= 89% ===============>      ] 20250319_20250424   36s /     4s
-[======================= 90% ================>     ] 20250331_20250412   36s /     4s
-[======================= 90% ================>     ] 20250331_20250424   36s /     4s
-[======================= 90% ================>     ] 20250331_20250506   36s /     4s
-[======================= 90% ================>     ] 20250412_20250424   36s /     4s
-[======================= 91% =================>    ] 20250412_20250506   36s /     3s
-[======================= 91% =================>    ] 20250424_20250506   37s /     3s
-[======================= 91% =================>    ] 20250424_20250530   37s /     3s
-[======================= 92% =================>    ] 20250506_20250530   37s /     3s
-[======================= 92% =================>    ] 20250506_20250611   37s /     3s
-[======================= 92% =================>    ] 20250530_20250611   37s /     3s
-[======================= 93% =================>    ] 20250530_20250623   37s /     2s
-[======================= 93% =================>    ] 20250530_20250705   37s /     2s
-[======================= 93% =================>    ] 20250611_20250623   37s /     2s
-[======================= 93% =================>    ] 20250611_20250705   37s /     2s
-[======================= 94% ==================>   ] 20250611_20250717   38s /     2s
-[======================= 94% ==================>   ] 20250623_20250705   38s /     2s
-[======================= 94% ==================>   ] 20250623_20250717   38s /     2s
-[======================= 95% ===================>  ] 20250623_20250729   38s /     2s
-[======================= 95% ===================>  ] 20250705_20250717   38s /     2s
-[======================= 95% ===================>  ] 20250705_20250729   38s /     2s
-[======================= 96% ===================>  ] 20250705_20250810   38s /     1s
-[======================= 96% ===================>  ] 20250717_20250729   38s /     1s
-[======================= 96% ===================>  ] 20250717_20250810   39s /     1s
-[======================= 96% ===================>  ] 20250717_20250822   39s /     1s
-[======================= 97% ===================>  ] 20250729_20250810   39s /     1s
-[======================= 97% ===================>  ] 20250729_20250822   39s /     1s
-[======================= 97% ===================>  ] 20250729_20250903   39s /     1s
-[======================= 98% ====================> ] 20250810_20250822   39s /     0s
-[======================= 98% ====================> ] 20250810_20250903   39s /     0s
-[======================= 98% ====================> ] 20250810_20250915   39s /     0s
-[==================================================] 20250822_20250903
-[==================================================] 20250822_20250915
-[==================================================] 20250822_20250927
-[==================================================] 20250903_20250915
-[==================================================] 20250903_20250927
-[==================================================] 20250915_20250927 
-create dataset /date             of <class 'numpy.bytes_'>    in size of (336, 2)
-create dataset /bperp            of <class 'numpy.float32'>   in size of (336,)
-create dataset /dropIfgram       of <class 'numpy.bool'>      in size of (336,)
-add extra metadata: {'PROJECT_NAME': 'mintpy_production'}
-Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/ifgramStack.h5
+[>                        2%                       ] 20211014_20211026    0s /     9s
+[>                        2%                       ] 20211014_20211107    0s /    13s
+[=>                       3%                       ] 20211014_20211119    0s /    11s
+[=>                       3%                       ] 20211026_20211107    0s /    14s
+[=>                       4%                       ] 20211026_20211119    0s /    12s
+[=>                       4%                       ] 20211026_20211201    0s /    14s
+[=>                       5%                       ] 20211107_20211119    0s /    12s
+[=>                       5%                       ] 20211107_20211201    0s /    14s
+[=>                       5%                       ] 20211107_20211213    0s /    15s
+[==>                      6%                       ] 20211119_20211201    0s /    14s
+[==>                      6%                       ] 20211119_20211213    0s /    15s
+[===>                     7%                       ] 20211201_20211213    1s /    14s
+[===>                     7%                       ] 20211201_20220106    1s /    14s
+[===>                     8%                       ] 20211213_20220106    1s /    13s
+[===>                     8%                       ] 20211213_20220118    1s /    14s
+[===>                     9%                       ] 20220106_20220118    1s /    13s
+[===>                     9%                       ] 20220106_20220130    1s /    14s
+[====>                   10%                       ] 20220106_20220211    1s /    13s
+[====>                   10%                       ] 20220118_20220130    1s /    14s
+[=====>                  11%                       ] 20220118_20220211    1s /    13s
+[=====>                  11%                       ] 20220118_20220223    1s /    13s
+[=====>                  11%                       ] 20220130_20220211    1s /    14s
+[=====>                  12%                       ] 20220130_20220223    1s /    13s
+[=====>                  12%                       ] 20220130_20220307    1s /    14s
+[=====>                  13%                       ] 20220211_20220223    2s /    13s
+[=====>                  13%                       ] 20220211_20220307    2s /    14s
+[======>                 14%                       ] 20220211_20220319    2s /    13s
+[======>                 14%                       ] 20220223_20220307    2s /    13s
+[=======>                15%                       ] 20220223_20220319    2s /    13s
+[=======>                15%                       ] 20220223_20220331    2s /    13s
+[=======>                16%                       ] 20220307_20220319    2s /    12s
+[=======>                16%                       ] 20220307_20220331    2s /    13s
+[=======>                16%                       ] 20220307_20220412    2s /    13s
+[=======>                17%                       ] 20220319_20220331    2s /    13s
+[=======>                17%                       ] 20220319_20220412    2s /    13s
+[========>               18%                       ] 20220331_20220412    2s /    12s
+[========>               18%                       ] 20220331_20220530    2s /    13s
+[=========>              19%                       ] 20220412_20220518    3s /    12s
+[=========>              19%                       ] 20220518_20220530    3s /    13s
+[=========>              20%                       ] 20220518_20220611    3s /    12s
+[=========>              20%                       ] 20220518_20220623    3s /    12s
+[=========>              21%                       ] 20220530_20220611    3s /    12s
+[=========>              21%                       ] 20220530_20220623    3s /    12s
+[=========>              21%                       ] 20220530_20220705    3s /    12s
+[==========>             22%                       ] 20220611_20220623    3s /    12s
+[==========>             22%                       ] 20220611_20220705    3s /    12s
+[===========>            23%                       ] 20220611_20220717    3s /    12s
+[===========>            23%                       ] 20220623_20220705    3s /    12s
+[===========>            24%                       ] 20220623_20220717    3s /    12s
+[===========>            24%                       ] 20220623_20220729    3s /    12s
+[===========>            25%                       ] 20220705_20220717    3s /    11s
+[===========>            25%                       ] 20220705_20220729    4s /    12s
+[============>           26%                       ] 20220705_20220810    4s /    11s
+[============>           26%                       ] 20220717_20220729    4s /    12s
+[============>           26%                       ] 20220717_20220810    4s /    12s
+[=============>          27%                       ] 20220729_20220810    4s /    11s
+[=============>          27%                       ] 20220729_20221126    4s /    11s
+[=============>          28%                       ] 20220810_20221126    4s /    11s
+[=============>          28%                       ] 20221126_20230101    4s /    11s
+[=============>          29%                       ] 20221126_20230125    4s /    11s
+[=============>          29%                       ] 20221220_20230101    4s /    11s
+[==============>         30%                       ] 20221220_20230125    4s /    11s
+[==============>         30%                       ] 20230101_20230125    4s /    11s
+[===============>        31%                       ] 20230101_20230501    4s /    11s
+[===============>        31%                       ] 20230125_20230218    5s /    11s
+[===============>        32%                       ] 20230218_20230314    5s /    10s
+[===============>        32%                       ] 20230314_20230407    5s /    11s
+[===============>        32%                       ] 20230407_20230501    5s /    11s
+[===============>        33%                       ] 20230407_20230513    5s /    10s
+[===============>        33%                       ] 20230501_20230513    5s /    10s
+[================>       34%                       ] 20230501_20230525    5s /    10s
+[================>       34%                       ] 20230501_20230606    5s /    10s
+[=================>      35%                       ] 20230513_20230525    5s /    10s
+[=================>      35%                       ] 20230513_20230606    5s /    10s
+[=================>      36%                       ] 20230513_20230618    5s /    10s
+[=================>      36%                       ] 20230525_20230606    5s /    10s
+[=================>      37%                       ] 20230525_20230618    5s /    10s
+[=================>      37%                       ] 20230525_20230630    6s /    10s
+[=================>      37%                       ] 20230606_20230618    6s /    10s
+[==================>     38%                       ] 20230606_20230630    6s /    10s
+[==================>     38%                       ] 20230606_20230712    6s /    10s
+[===================>    39%                       ] 20230618_20230630    6s /     9s
+[===================>    39%                       ] 20230618_20230712    6s /    10s
+[===================>    40%                       ] 20230618_20230724    6s /     9s
+[===================>    40%                       ] 20230630_20230712    6s /     9s
+[===================>    41%                       ] 20230630_20230724    6s /     9s
+[===================>    41%                       ] 20230712_20230724    6s /     9s
+[====================>   42%                       ] 20230712_20230805    6s /     9s
+[====================>   42%                       ] 20230712_20230817    6s /     9s
+[====================>   42%                       ] 20230724_20230805    6s /     9s
+[=====================>  43%                       ] 20230724_20230817    7s /     9s
+[=====================>  43%                       ] 20230724_20230829    7s /     9s
+[=====================>  44%                       ] 20230805_20230817    7s /     9s
+[=====================>  44%                       ] 20230805_20230829    7s /     9s
+[=====================>  45%                       ] 20230817_20230829    7s /     9s
+[=====================>  45%                       ] 20230817_20230922    7s /     9s
+[======================> 46%                       ] 20230829_20230922    7s /     8s
+[======================> 46%                       ] 20230829_20231227    7s /     8s
+[======================= 47%                       ] 20230922_20231016    7s /     8s
+[======================= 47%                       ] 20231016_20231109    7s /     8s
+[======================= 47%                       ] 20231109_20231203    7s /     8s
+[======================= 48%                       ] 20231203_20231227    7s /     8s
+[======================= 48%                       ] 20231203_20240108    8s /     8s
+[======================= 49%                       ] 20231227_20240108    8s /     8s
+[======================= 49%                       ] 20231227_20240120    8s /     8s
+[======================= 50%                       ] 20240108_20240120    8s /     8s
+[======================= 50%                       ] 20240108_20240308    8s /     8s
+[======================= 51%                       ] 20240120_20240225    8s /     8s
+[======================= 51%                       ] 20240225_20240308    8s /     8s
+[======================= 52%                       ] 20240225_20240320    8s /     7s
+[======================= 52%                       ] 20240225_20240401    8s /     7s
+[======================= 53%                       ] 20240308_20240320    8s /     7s
+[======================= 53%                       ] 20240308_20240401    8s /     7s
+[======================= 53%                       ] 20240320_20240401    8s /     7s
+[======================= 54%                       ] 20240320_20240425    8s /     7s
+[======================= 54%                       ] 20240401_20240425    8s /     7s
+[======================= 55%                       ] 20240401_20240519    9s /     7s
+[======================= 55%                       ] 20240425_20240519    9s /     7s
+[======================= 56%                       ] 20240425_20240531    9s /     7s
+[======================= 56%                       ] 20240519_20240531    9s /     7s
+[======================= 57%                       ] 20240519_20240916    9s /     7s
+[======================= 57%                       ] 20240531_20240718    9s /     7s
+[======================= 58% >                     ] 20240718_20240823    9s /     6s
+[======================= 58% >                     ] 20240823_20240904    9s /     6s
+[======================= 58% >                     ] 20240823_20240916    9s /     6s
+[======================= 59% =>                    ] 20240823_20240928    9s /     6s
+[======================= 59% =>                    ] 20240904_20240916    9s /     6s
+[======================= 60% =>                    ] 20240904_20240928    9s /     6s
+[======================= 60% =>                    ] 20240904_20241010    9s /     6s
+[======================= 61% =>                    ] 20240916_20241010   10s /     6s
+[======================= 61% =>                    ] 20240916_20241022   10s /     6s
+[======================= 62% ==>                   ] 20240928_20241022   10s /     6s
+[======================= 62% ==>                   ] 20241010_20241022   10s /     6s
+[======================= 63% ===>                  ] 20241010_20241103   10s /     6s
+[======================= 63% ===>                  ] 20241010_20241115   10s /     6s
+[======================= 63% ===>                  ] 20241022_20241103   10s /     6s
+[======================= 64% ===>                  ] 20241022_20241115   10s /     5s
+[======================= 64% ===>                  ] 20241022_20241127   10s /     6s
+[======================= 65% ===>                  ] 20241103_20241115   10s /     5s
+[======================= 65% ===>                  ] 20241103_20241127   10s /     5s
+[======================= 66% ====>                 ] 20241103_20241209   10s /     5s
+[======================= 66% ====>                 ] 20241115_20241127   10s /     5s
+[======================= 67% =====>                ] 20241115_20241209   11s /     5s
+[======================= 67% =====>                ] 20241115_20241221   11s /     5s
+[======================= 68% =====>                ] 20241127_20241209   11s /     5s
+[======================= 68% =====>                ] 20241127_20241221   11s /     5s
+[======================= 68% =====>                ] 20241127_20250102   11s /     5s
+[======================= 69% =====>                ] 20241209_20241221   11s /     5s
+[======================= 69% =====>                ] 20241209_20250102   11s /     5s
+[======================= 70% ======>               ] 20241209_20250114   11s /     4s
+[======================= 70% ======>               ] 20241221_20250102   11s /     4s
+[======================= 71% =======>              ] 20241221_20250114   11s /     4s
+[======================= 71% =======>              ] 20241221_20250126   11s /     4s
+[======================= 72% =======>              ] 20250102_20250114   11s /     4s
+[======================= 72% =======>              ] 20250102_20250126   11s /     4s
+[======================= 73% =======>              ] 20250102_20250207   11s /     4s
+[======================= 73% =======>              ] 20250114_20250126   12s /     4s
+[======================= 74% ========>             ] 20250114_20250207   12s /     4s
+[======================= 74% ========>             ] 20250114_20250219   12s /     4s
+[======================= 74% ========>             ] 20250126_20250207   12s /     4s
+[======================= 75% =========>            ] 20250126_20250219   12s /     4s
+[======================= 75% =========>            ] 20250126_20250303   12s /     4s
+[======================= 76% =========>            ] 20250207_20250219   12s /     3s
+[======================= 76% =========>            ] 20250207_20250303   12s /     3s
+[======================= 77% =========>            ] 20250207_20250315   12s /     3s
+[======================= 77% =========>            ] 20250219_20250303   12s /     3s
+[======================= 78% ==========>           ] 20250219_20250315   12s /     3s
+[======================= 78% ==========>           ] 20250219_20250327   12s /     3s
+[======================= 79% ===========>          ] 20250303_20250315   12s /     3s
+[======================= 79% ===========>          ] 20250303_20250327   13s /     3s
+[======================= 79% ===========>          ] 20250303_20250408   13s /     3s
+[======================= 80% ===========>          ] 20250315_20250327   13s /     3s
+[======================= 80% ===========>          ] 20250315_20250408   13s /     3s
+[======================= 81% ===========>          ] 20250315_20250420   13s /     3s
+[======================= 81% ===========>          ] 20250327_20250408   13s /     3s
+[======================= 82% ============>         ] 20250327_20250420   13s /     2s
+[======================= 82% ============>         ] 20250327_20250502   13s /     2s
+[======================= 83% =============>        ] 20250408_20250420   13s /     2s
+[======================= 83% =============>        ] 20250408_20250502   13s /     2s
+[======================= 84% =============>        ] 20250408_20250514   13s /     2s
+[======================= 84% =============>        ] 20250420_20250502   13s /     2s
+[======================= 84% =============>        ] 20250420_20250514   13s /     2s
+[======================= 85% =============>        ] 20250420_20250526   14s /     2s
+[======================= 85% =============>        ] 20250502_20250514   14s /     2s
+[======================= 86% ==============>       ] 20250502_20250526   14s /     2s
+[======================= 86% ==============>       ] 20250502_20250607   14s /     2s
+[======================= 87% ===============>      ] 20250514_20250526   14s /     2s
+[======================= 87% ===============>      ] 20250514_20250607   14s /     2s
+[======================= 88% ===============>      ] 20250514_20250619   14s /     1s
+[======================= 88% ===============>      ] 20250526_20250607   14s /     1s
+[======================= 89% ===============>      ] 20250526_20250619   14s /     1s
+[======================= 89% ===============>      ] 20250526_20250701   14s /     1s
+[======================= 89% ===============>      ] 20250607_20250619   14s /     1s
+[======================= 90% ================>     ] 20250607_20250701   14s /     1s
+[======================= 90% ================>     ] 20250607_20250713   14s /     1s
+[======================= 91% =================>    ] 20250619_20250701   15s /     1s
+[======================= 91% =================>    ] 20250619_20250713   15s /     1s
+[======================= 92% =================>    ] 20250619_20250725   15s /     1s
+[======================= 92% =================>    ] 20250701_20250713   15s /     1s
+[======================= 93% =================>    ] 20250701_20250725   15s /     1s
+[======================= 93% =================>    ] 20250701_20250806   15s /     1s
+[======================= 94% ==================>   ] 20250713_20250725   15s /     0s
+[======================= 94% ==================>   ] 20250713_20250806   15s /     0s
+[======================= 95% ===================>  ] 20250713_20250818   15s /     0s
+[======================= 95% ===================>  ] 20250725_20250806   15s /     0s
+[======================= 95% ===================>  ] 20250725_20250818   15s /     0s
+[======================= 96% ===================>  ] 20250725_20250830   15s /     0s
+[======================= 96% ===================>  ] 20250806_20250818   16s /     0s
+[======================= 97% ===================>  ] 20250806_20250830   16s /     0s
+[======================= 97% ===================>  ] 20250806_20250911   16s /     0s
+[======================= 98% ====================> ] 20250818_20250830   16s /     0s
+[======================= 98% ====================> ] 20250818_20250911   16s /     0s
+[==================================================] 20250818_20250923
+[==================================================] 20250830_20250911
+[==================================================] 20250830_20250923
+[==================================================] 20250911_20250923 
+create dataset /date             of <class 'numpy.bytes_'>    in size of (219, 2)
+create dataset /bperp            of <class 'numpy.float32'>   in size of (219,)
+create dataset /dropIfgram       of <class 'numpy.bool'>      in size of (219,)
+add extra metadata: {'PROJECT_NAME': 'mintpy_descending'}
+Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/ifgramStack.h5
 --------------------------------------------------
 searching ionosphere pairs info
 input data files:
@@ -1108,21 +757,21 @@ WARNING: No data files found for the required dataset: ['unwrapPhase']! Skip loa
 searching offset pairs info
 input data files:
 WARNING: No data files found for the required dataset: ['rangeOffset', 'azimuthOffset']! Skip loading for offset stack.
-time used: 01 mins 30.8 secs.
+time used: 00 mins 44.4 secs.
 
 No lookup table (longitude or rangeCoord) found in files.
 Input data seems to be geocoded. Lookup file not needed.
 Loaded dataset are processed by InSAR software: hyp3
 Loaded dataset are in GEO coordinates
-Interferogram Stack: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/ifgramStack.h5
-Geometry      File : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/production_work/inputs/geometryGeo.h5
+Interferogram Stack: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/ifgramStack.h5
+Geometry      File : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_work/inputs/geometryGeo.h5
 Lookup Table  File : None
 --------------------------------------------------
-updating metadata based on custom template file mintpy_production.txt for file: ifgramStack.h5
+updating metadata based on custom template file mintpy_descending.txt for file: ifgramStack.h5
 Go back to directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS
 
 ################################################
    Normal end of smallbaselineApp processing!
 ################################################
-Time used: 01 mins 30.9 secs
+Time used: 00 mins 44.5 secs
 
