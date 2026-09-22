@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-21T23:20:12.342376+00:00",
+  "generated_utc": "2026-09-22T00:06:44.752729+00:00",
   "phase": "G",
   "scope": "pilot ingestion test only - no inversion attempted",
   "rationale": "the pilot pairs are not a connected time series, so a full SBAS inversion is neither expected nor meaningful at this stage",
@@ -93,7 +93,7 @@
         3225440.0
       ]
     ],
-    "generated_utc": "2026-09-21T23:20:12.342376+00:00"
+    "generated_utc": "2026-09-22T00:06:44.752729+00:00"
   },
   "prep_hyp3": {
     "exit_code": 0,
@@ -154,7 +154,7 @@
     "searching offset pairs info",
     "input data files:",
     "WARNING: No data files found for the required dataset: ['rangeOffset', 'azimuthOffset']! Skip loading for offset stack.",
-    "time used: 00 mins 1.1 secs.",
+    "time used: 00 mins 0.1 secs.",
     "",
     "No lookup table (longitude or rangeCoord) found in files.",
     "Input data seems to be geocoded. Lookup file not needed.",
@@ -170,6 +170,6 @@
     "################################################",
     "   Normal end of smallbaselineApp processing!",
     "################################################",
-    "Time used: 00 mins 1.1 secs"
+    "Time used: 00 mins 0.1 secs"
   ]
 }

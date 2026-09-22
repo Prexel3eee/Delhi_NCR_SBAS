@@ -51,7 +51,7 @@ def main() -> int:
     water = load_json(QC_DIR / "water_mask_comparison.json")
     storage = load_json(QC_DIR / "storage_estimate.json")
     recon = load_json(QC_DIR / "ledger_reconciliation.json")
-    ingestion = load_json(MINTPY_DIR / "ingestion_report.json")
+    ingestion = load_json(MINTPY_DIR / "pilot_ingestion_report.json")
 
     configs = qc.get("configurations", [])
     ok = inventory[inventory["download_ok"].fillna(False).astype(bool)]
@@ -235,7 +235,7 @@ def main() -> int:
         f"prep_hyp3 exit={ingestion.get('prep_hyp3', {}).get('exit_code')} "
         f"rsc={ingestion.get('prep_hyp3', {}).get('rsc_files_created')}",
         "prep_hyp3 exit 0 with .rsc metadata written",
-        "mintpy/ingestion_report.json",
+        "mintpy/pilot_ingestion_report.json",
     )
     gate(
         "mintpy_ingestion_succeeded",
@@ -243,7 +243,7 @@ def main() -> int:
         {"exit": load.get("exit_code"), "interferograms": loaded.get("n_interferograms"),
          "dates": len(loaded.get("acquisition_dates", []))},
         f"load_data exit 0 with {EXPECTED_PAIRS} interferograms loaded",
-        "mintpy/ingestion_report.json",
+        "mintpy/pilot_ingestion_report.json",
     )
 
     # ---- storage ---------------------------------------------------------

@@ -1,6 +1,6 @@
 # Pilot Acceptance Report
 
-Generated: 2026-09-21T23:22:24.986699+00:00
+Generated: 2026-09-22T00:06:59.541560+00:00
 
 ## Verdict: **PILOT ACCEPTED**
 
@@ -25,8 +25,8 @@ Generated: 2026-09-21T23:22:24.986699+00:00
 | 13 | `water_mask_excludes_water_from_unwrapping` | PASS | {"water_masked_valid": 0.0, "water_unmasked_valid": 0.743416} | water pixels have 0 valid unwrapped phase when masked, > 0.5 when not | `qc/pilot/water_mask_comparison.json` |
 | 14 | `water_mask_does_not_remove_land` | PASS | {"land_masked_valid": 0.604778, "land_unmasked_valid": 0.604778} | land valid fraction unchanged by masking | `qc/pilot/water_mask_comparison.json` |
 | 15 | `water_mask_polarity_verified_against_asf_docs` | PASS | "0 = water, 1 = land (HyP3 product convention; opposite of ASF reference tiles)" | 0 = water, 1 = land per https://hyp3-docs.asf.alaska.edu/water_masking/ | `qc/pilot/water_mask_comparison.json` |
-| 16 | `mintpy_preparation_succeeded` | PASS | "prep_hyp3 exit=0 rsc=42" | prep_hyp3 exit 0 with .rsc metadata written | `mintpy/ingestion_report.json` |
-| 17 | `mintpy_ingestion_succeeded` | PASS | {"exit": 0, "interferograms": 6, "dates": 11} | load_data exit 0 with 6 interferograms loaded | `mintpy/ingestion_report.json` |
+| 16 | `mintpy_preparation_succeeded` | PASS | "prep_hyp3 exit=0 rsc=42" | prep_hyp3 exit 0 with .rsc metadata written | `mintpy/pilot_ingestion_report.json` |
+| 17 | `mintpy_ingestion_succeeded` | PASS | {"exit": 0, "interferograms": 6, "dates": 11} | load_data exit 0 with 6 interferograms loaded | `mintpy/pilot_ingestion_report.json` |
 | 18 | `storage_sufficient_for_production` | PASS | {"projected_grand_total_gb": 147.83, "free_disk_gb": 555} | projected total < 60% of 555 GB free | `qc/pilot/storage_estimate.json` |
 
 ## Pilot summary

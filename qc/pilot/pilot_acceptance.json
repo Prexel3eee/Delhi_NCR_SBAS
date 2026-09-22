@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-21T23:22:24.986699+00:00",
+  "generated_utc": "2026-09-22T00:06:59.541560+00:00",
   "phase": "G",
   "scope": "pilot only",
   "verdict": "PILOT ACCEPTED",
@@ -178,7 +178,7 @@
       "passed": true,
       "observed": "prep_hyp3 exit=0 rsc=42",
       "expected": "prep_hyp3 exit 0 with .rsc metadata written",
-      "source": "mintpy/ingestion_report.json"
+      "source": "mintpy/pilot_ingestion_report.json"
     },
     {
       "gate": "mintpy_ingestion_succeeded",
@@ -189,7 +189,7 @@
         "dates": 11
       },
       "expected": "load_data exit 0 with 6 interferograms loaded",
-      "source": "mintpy/ingestion_report.json"
+      "source": "mintpy/pilot_ingestion_report.json"
     },
     {
       "gate": "storage_sufficient_for_production",

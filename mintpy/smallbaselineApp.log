@@ -3,31 +3,18 @@
 # exit: 0
 
 MintPy version .0.4, date 2026-09-17
---RUN-at-2026-09-22 04:50:12.657524--
+--RUN-at-2026-09-22 05:36:45.542185--
 Current directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS
 Run routine processing with smallbaselineApp.py on steps: ['load_data']
 Remaining steps: ['modify_network', 'reference_point', 'quick_overview', 'correct_unwrap_error', 'invert_network', 'correct_LOD', 'correct_SET', 'correct_ionosphere', 'correct_troposphere', 'deramp', 'correct_topography', 'residual_RMS', 'reference_date', 'velocity', 'geocode', 'google_earth', 'hdfeos5']
 --------------------------------------------------
 Project name: mintpy_pilot
 Go to work directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work
-copy default template file /opt/homebrew/Caskroom/miniforge/base/envs/delhi-mintpy/lib/python3.11/site-packages/mintpy/defaults/smallbaselineApp.cfg to work directory
 read custom template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/mintpy_pilot.txt
 update default template based on input custom template
-    mintpy.load.processor: auto --> hyp3
-    mintpy.load.unwFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_unw_phase_clipped.tif
-    mintpy.load.corFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_corr_clipped.tif
-    mintpy.load.connCompFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_conncomp_clipped.tif
-    mintpy.load.demFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_dem_clipped.tif
-    mintpy.load.incAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_lv_theta_clipped.tif
-    mintpy.load.azAngleFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_lv_phi_clipped.tif
-    mintpy.load.waterMaskFile: auto --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/*_water_mask_clipped.tif
-    mintpy.network.coherenceBased: auto --> no
-    mintpy.troposphericDelay.method: auto --> no
-    mintpy.plot: auto --> no
+No new option value found, skip updating /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/smallbaselineApp.cfg
 copy mintpy_pilot.txt     to inputs   directory for backup.
-copy smallbaselineApp.cfg to inputs   directory for backup.
 copy mintpy_pilot.txt     to pic      directory for backup.
-copy smallbaselineApp.cfg to pic      directory for backup.
 read default template file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/smallbaselineApp.cfg
 
 
@@ -57,19 +44,7 @@ height          : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clip
 incidenceAngle  : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211205_20211229_VV_INT40_4CFE_lv_theta_clipped.tif
 azimuthAngle    : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211205_20211229_VV_INT40_4CFE_lv_phi_clipped.tif
 waterMask       : /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clipped/S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211205_20211229_VV_INT40_4CFE_water_mask_clipped.tif
---------------------------------------------------
-create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/geometryGeo.h5 with w mode
-create dataset /height             of <class 'numpy.float32'>   in size of (2411, 2943) with compression = lzf
-create dataset /incidenceAngle     of <class 'numpy.float32'>   in size of (2411, 2943) with compression = lzf
-    convert incidenceAngle  from Gamma (from horizontal in radian)  to MintPy (from vertical in degree) convention.
-create dataset /azimuthAngle       of <class 'numpy.float32'>   in size of (2411, 2943) with compression = lzf
-    convert azimuthAngle    from Gamma (from east in radian)  to MintPy (from north in degree) convention.
-create dataset /waterMask          of <class 'numpy.bool'>      in size of (2411, 2943) with compression = lzf
-prepare slantRangeDistance ...
-    geocoded input, use incidenceAngle from file: S1_027_000000s1n00-056011s2n04-000000s3n00_IW_20211205_20211229_VV_INT40_4CFE_lv_theta_clipped.tif
-    convert incidence angle from Gamma to MintPy convention.
-create dataset /slantRangeDistance of <class 'numpy.float32'>   in size of (2411, 2943) with compression = lzf
-Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/geometryGeo.h5
+All datasets exists in file geometryGeo.h5 with same size as required, no need to re-load.
 --------------------------------------------------
 searching interferogram pairs info
 input data files:
@@ -79,37 +54,7 @@ connectComponent: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_clip
 number of unwrapPhase     : 6
 number of coherence       : 6
 number of connectComponent: 6
---------------------------------------------------
-create HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/ifgramStack.h5 with w mode
-create dataset /unwrapPhase      of <class 'numpy.float32'>   in size of (6, 2411, 2943) with compression = None
-
-[=======>                17%                       ] 20211205_20211229    0s /     0s
-[===============>        33%                       ] 20250211_20250223    0s /     0s
-[======================= 50%                       ] 20250307_20250319    0s /     0s
-[======================= 67% =====>                ] 20250331_20250506    0s /     0s
-[======================= 83% =============>        ] 20250530_20250705    0s /     0s
-[==================================================] 20250623_20250705 
-create dataset /coherence        of <class 'numpy.float32'>   in size of (6, 2411, 2943) with compression = None
-
-[=======>                17%                       ] 20211205_20211229    0s /     0s
-[===============>        33%                       ] 20250211_20250223    0s /     0s
-[======================= 50%                       ] 20250307_20250319    0s /     0s
-[======================= 67% =====>                ] 20250331_20250506    0s /     0s
-[======================= 83% =============>        ] 20250530_20250705    0s /     0s
-[==================================================] 20250623_20250705 
-create dataset /connectComponent of <class 'numpy.int16'>     in size of (6, 2411, 2943) with compression = lzf
-
-[=======>                17%                       ] 20211205_20211229    0s /     0s
-[===============>        33%                       ] 20250211_20250223    0s /     0s
-[======================= 50%                       ] 20250307_20250319    0s /     0s
-[======================= 67% =====>                ] 20250331_20250506    0s /     0s
-[======================= 83% =============>        ] 20250530_20250705    0s /     0s
-[==================================================] 20250623_20250705 
-create dataset /date             of <class 'numpy.bytes_'>    in size of (6, 2)
-create dataset /bperp            of <class 'numpy.float32'>   in size of (6,)
-create dataset /dropIfgram       of <class 'numpy.bool'>      in size of (6,)
-add extra metadata: {'PROJECT_NAME': 'mintpy_pilot'}
-Finished writing to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/pilot_work/inputs/ifgramStack.h5
+All date12   exists in file ifgramStack.h5 with same size as required, no need to re-load.
 --------------------------------------------------
 searching ionosphere pairs info
 input data files:
@@ -118,7 +63,7 @@ WARNING: No data files found for the required dataset: ['unwrapPhase']! Skip loa
 searching offset pairs info
 input data files:
 WARNING: No data files found for the required dataset: ['rangeOffset', 'azimuthOffset']! Skip loading for offset stack.
-time used: 00 mins 1.1 secs.
+time used: 00 mins 0.1 secs.
 
 No lookup table (longitude or rangeCoord) found in files.
 Input data seems to be geocoded. Lookup file not needed.
@@ -134,5 +79,5 @@ Go back to directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS
 ################################################
    Normal end of smallbaselineApp processing!
 ################################################
-Time used: 00 mins 1.1 secs
+Time used: 00 mins 0.1 secs
 
