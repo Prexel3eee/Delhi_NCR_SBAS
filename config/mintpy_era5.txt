@@ -1,0 +1,44 @@
+## PRINCIPAL BRANCH - ERA5 tropospheric correction
+## Frozen decisions (config/scientific_decisions_v2.json):
+##   reference yx = 1378,1426  (lon 77.0950, lat 28.6426)
+##   network     = all 336 pairs, no curation
+##   unwrap      = disabled
+##   deramp      = DISABLED (broad subsidence gradients may be genuine signal)
+## ERA5 is the ONLY change relative to the RAW-336 baseline.
+
+mintpy.subset.yx = 748:2092,676:1880
+
+mintpy.network.keepMinSpanTree  = no
+mintpy.network.coherenceBased   = no
+mintpy.network.areaRatioBased   = no
+mintpy.network.minCoherence     = 0.0
+mintpy.network.minAreaRatio     = 0.0
+
+## frozen reference
+mintpy.reference.yx = 1378,1426
+
+## unwrap error stays disabled
+mintpy.unwrapError.method = no
+
+## ---- ERA5 tropospheric correction (the change under test) ----------------
+mintpy.troposphericDelay.method          = pyaps
+mintpy.troposphericDelay.weatherModel    = ERA5
+mintpy.troposphericDelay.weatherDir      = mintpy/weather
+mintpy.troposphericDelay.polyOrder       = 1
+mintpy.troposphericDelay.looks           = 8
+mintpy.troposphericDelay.minCorrelation  = 0
+
+## ---- DEM residual NOT yet: this branch isolates ERA5 ---------------------
+mintpy.deramp                = no
+mintpy.topographicResidual   = no
+mintpy.residualRMS.deramp    = no
+
+mintpy.networkInversion.weightFunc      = var
+mintpy.networkInversion.minRedundancy   = 1
+mintpy.networkInversion.maskDataset     = no
+mintpy.networkInversion.minNormVelocity = yes
+
+mintpy.plot = no
+mintpy.save.kmz = no
+mintpy.compute.cluster   = local
+mintpy.compute.numWorker = 6

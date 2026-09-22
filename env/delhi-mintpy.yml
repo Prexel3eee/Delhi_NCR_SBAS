@@ -293,5 +293,7 @@ dependencies:
   - zlib-ng=2.3.3
   - zstd=1.5.7
   - pip:
+      - cftime==1.6.5
       - dask==2026.8.0
       - distributed==2026.8.0
+      - netcdf4==1.7.4

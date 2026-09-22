@@ -1,0 +1,39 @@
+{
+  "freeze_id": "137a1926488329355965c05becc192b4440625aa7ceed074045b00dbcda1a762",
+  "created_utc": "2026-09-22T05:50:05.818185+00:00",
+  "approved_by": "project owner",
+  "decisions": {
+    "decision_id": "ERA5_then_DEM_residual_v2",
+    "reference": {
+      "lon": 77.095,
+      "lat": 28.6426,
+      "epsg": 32643,
+      "projected_x": 704775.66,
+      "projected_y": 3170184.88,
+      "yx_full_grid": [
+        1378,
+        1426
+      ],
+      "inside_aoi": true,
+      "mintpy_reference_yx": "1378,1426"
+    },
+    "network": {
+      "pairs": 336,
+      "curation": "none - all pairs retained"
+    },
+    "unwrap_error_correction": "disabled",
+    "deramp": "disabled in the principal branch",
+    "branch_order": [
+      "ERA5 tropospheric",
+      "pixel-wise DEM residual"
+    ]
+  },
+  "provenance": {
+    "input_freeze": "freeze/mintpy_input_v1",
+    "stack": "mintpy/production_work/inputs/ifgramStack.h5",
+    "reference_selection": "qc/sci/reference_sensitivity.json",
+    "network_audit": "qc/sci/network_comparison.json",
+    "unwrap_comparison": "qc/sci/unwrap_comparison.json"
+  },
+  "note": "All four decisions approved. The final deformation product is NOT declared; ERA5 and DEM-residual branches remain to be evaluated."
+}

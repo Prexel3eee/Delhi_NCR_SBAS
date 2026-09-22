@@ -15,6 +15,7 @@ cdsapi @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_cds
 certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1784717589373/work/certifi
 cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1788485256647/work
 cfgv @ file:///home/conda/feedstock_root/build_artifacts/cfgv_1763607870856/work
+cftime==1.6.5
 charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1786835581063/work
 ciso8601 @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_ciso8601_1756691799/work
 click @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_click_1788802215/work
@@ -70,6 +71,7 @@ multidict @ file:///Users/runner/miniforge3/conda-bld/multidict_1771610940314/wo
 multiurl @ file:///home/conda/feedstock_root/build_artifacts/multiurl_1781777264202/work
 munkres==1.1.4
 narwhals @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_narwhals_1788964134/work
+netCDF4==1.7.4
 networkx @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_networkx_1765215107/work
 nodeenv @ file:///home/conda/feedstock_root/build_artifacts/nodeenv_1766261093578/work
 numpy @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_numpy_1779169211/work/dist/numpy-2.4.6-cp311-cp311-macosx_11_0_arm64.whl#sha256=742a1415c368edb41b8083c16668d7cc24ca0178d58851909fbff1185e795bdf
