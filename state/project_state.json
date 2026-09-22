@@ -2,7 +2,7 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T10:43:04Z",
+  "updated_utc": "2026-09-22T19:13:14.035892+00:00",
   "phase": "PHASE_IIA_DESCENDING_DESIGN_COMPLETE",
   "next_phase": "PHASE_IIA_DESCENDING_SUBMISSION",
   "aoi_locked": true,
@@ -250,6 +250,25 @@
       "detail": "config/mintpy_baseline_raw.txt sets only mintpy.reference.minCoherence, not mintpy.reference.yx, so MintPy auto-selected (1384,1451). The frozen decision and the ERA5/DEM configs specify (1378,1426). Verified by finding the pixel whose timeseries is identically zero across all 119 dates.",
       "impact": "RAW-336 carries a constant +0.1362 mm/yr offset relative to the frozen decision. Spatial gradients and hotspot contrast are unaffected. The published RAW-vs-ERA5 branch comparison carried the same constant; reference-aligning moves its median from +0.013 to +0.149 mm/yr and its RMS from 0.521 to 0.549 mm/yr, changing no verdict.",
       "fix": "Documented in Phase I (report section 0.1) and pinned by tests/test_phase1_characterization.py. Fix at the next product revision by setting mintpy.reference.yx explicitly in every branch config. The frozen product was NOT modified."
+    },
+    {
+      "id": "INC-008",
+      "severity": "high",
+      "title": "Phase-I hotspot geojson held single-pixel fragments",
+      "detail": "scripts/32_hotspots.py broke after the first polygon from rasterio.features.shapes, so every polygon-based containment test in Phase II was vacuous. Corrected file issued; the containment conclusion holds once re-tested.",
+      "artefacts": [
+        "provenance/errata/INC-008.json",
+        "qc/sci/phase1/hotspots_corrected.geojson"
+      ]
+    },
+    {
+      "id": "INC-009",
+      "severity": "high",
+      "title": "Independently supported mapped area mis-stated as 3.17 km2",
+      "detail": "Value appeared in Phase III-A, Phase IV and the Phase V manuscript but traces to no script, table or artefact. Authoritative frozen value is 6.66 km2 (H001 + H004). Found by the Phase V-B numerical consistency gate.",
+      "artefacts": [
+        "provenance/errata/INC-009.json"
+      ]
     }
   ],
   "pilot_metrics": {
