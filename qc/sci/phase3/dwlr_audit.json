@@ -1,0 +1,333 @@
+{
+  "generated_utc": "2026-09-22T18:16:44.960891+00:00",
+  "seasonal_freeze_id": "db0636879f7566f9681be3b704f1ecef19270ca4363903ae4f4f54643528453e",
+  "seasonal_files": [
+    {
+      "file": "pre-monsoon_2022_data_for_website.pdf",
+      "season": "pre-monsoon",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "sha256": "e47585c8cb458add39388bcdf8437cd5e1da787dc18f4d38a42c5a171c42091b",
+      "bytes": 14609824,
+      "pages": 589,
+      "parsed_rows_aoi_states": 1919,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "august_2022_data_for_website.pdf",
+      "season": "august",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "sha256": "00b8e479b6617c8f033d6b83f143cdd58e8631bcce29fdf727cfa11bbeec2569",
+      "bytes": 13644751,
+      "pages": 576,
+      "parsed_rows_aoi_states": 1184,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "nov_2022_data_for_website.pdf",
+      "season": "november",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "sha256": "11337c3605df16a9e0e53291cb4f274120de22d98c784efad5b14423b3f4717b",
+      "bytes": 15030788,
+      "pages": 593,
+      "parsed_rows_aoi_states": 1966,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "jan_2023_data_for_website.pdf",
+      "season": "january",
+      "year": 2023,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "sha256": "1a892e86a787d4963b27916043de137c3a3ea19c994db70636d79933afcbf560",
+      "bytes": 14277039,
+      "pages": 619,
+      "parsed_rows_aoi_states": 1384,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    }
+  ],
+  "frozen_limitations": {
+    "temporal_coverage": "four seasonal observations spanning 2022-2023 only",
+    "spatial_coverage": "no monitoring station within 2 km of any hotspot",
+    "H001_nearest_station_km": 5.92,
+    "not_permitted_from_seasonal_data": [
+      "monthly groundwater coupling",
+      "groundwater trend estimation",
+      "hotspot-localized groundwater attribution",
+      "lag analysis requiring dense time series",
+      "causal claim linking groundwater decline to H001/H004",
+      "interpolation of four seasonal points into a monthly series"
+    ],
+    "permitted_use": [
+      "monitoring-network geometry",
+      "regional groundwater-level context",
+      "seasonal state comparison",
+      "spatial groundwater gradients at those four epochs",
+      "H004/H002/H003 coarse proximity context",
+      "identifying candidate stations for later high-frequency retrieval"
+    ]
+  },
+  "high_frequency_routes": [
+    {
+      "source": "India-WRIS (preferred DWLR route)",
+      "url": "https://indiawris.gov.in",
+      "observed": "curl code 000 - host unreachable",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "India-WRIS WRIS app",
+      "url": "https://indiawris.gov.in/wris",
+      "observed": "curl code 000 - host unreachable",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "WIMS / Ministry of Water Resources",
+      "url": "https://wims.mowr.gov.in",
+      "observed": "curl code 000 - host unreachable",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "CGWB groundwater data portal",
+      "url": "https://gwdata.cgwb.gov.in",
+      "observed": "HTTP 200 but every page is an HTML 'Maintenance Mode' notice; /api, /api/v1, /swagger/index.html, /api/groundwater, /api/WaterLevel all 404",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "CGWB main site",
+      "url": "https://cgwb.gov.in",
+      "observed": "HTTP 502 Bad Gateway on every path; www.cgwb.gov.in does not resolve (000)",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "NWIC (National Water Informatics Centre)",
+      "url": "https://nwic.gov.in",
+      "observed": "HTTP 200, but it is a landing page only; its data links point to India-WRIS (unreachable) and data.gov.in (key-gated). No downloadable groundwater product.",
+      "status": "NO DATA PRODUCT"
+    },
+    {
+      "source": "data.gov.in",
+      "url": "https://api.data.gov.in",
+      "observed": "Catalogue searchable; resource queries return HTTP 400 'Authorization field missing'. No API key available. Resources found are state/district ANNUAL aggregates, not station observations.",
+      "status": "CONTEXT ONLY / KEY-GATED"
+    },
+    {
+      "source": "Delhi Jal Board",
+      "url": "https://delhijalboard.delhi.gov.in",
+      "observed": "HTTP 200; no groundwater-level data endpoint located",
+      "status": "NO DATA PRODUCT"
+    },
+    {
+      "source": "Delhi state portal",
+      "url": "https://delhi.gov.in",
+      "observed": "HTTP 200; no station-level groundwater observation service located",
+      "status": "NO DATA PRODUCT"
+    },
+    {
+      "source": "National Hydrology Project",
+      "url": "https://nhp.mowr.gov.in",
+      "observed": "curl code 000 - unreachable",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "India-WRIS river network subdomain",
+      "url": "https://indiawris.gov.in/riverNetwork/",
+      "observed": "curl code 000 - unreachable",
+      "status": "ACCESS BLOCKED"
+    },
+    {
+      "source": "Internet Archive - CGWB DWLR files",
+      "url": "http://web.archive.org/cdx/search/cdx?url=cgwb.gov.in*",
+      "observed": "Searched for DWLR / telemetry / hourly / digital. The archive holds only DWLR photographs (2006) and DWLR tender documents (2022) - no observation data.",
+      "status": "NO DATA PRODUCT"
+    },
+    {
+      "source": "Flood Forecasting (india-water)",
+      "url": "https://ffs.india-water.gov.in",
+      "observed": "HTTP 200 but it is a flood-forecast service, not groundwater",
+      "status": "WRONG PRODUCT"
+    }
+  ],
+  "high_frequency_access": "ACCESS BLOCKED on every route tested",
+  "station_tiers": {
+    "H001": {
+      "nearest_km": 5.92,
+      "tier1_le2km": 0,
+      "tier2_2to5km": 0,
+      "tier3_5to10km": 28,
+      "tier4_10to20km": 146,
+      "best_stations": [
+        {
+          "site_name": "South West   DWARKA                                 Dwarka S",
+          "state": "Delhi",
+          "distance_km": 5.92,
+          "seasons": 1,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "South West   Dug Wellarka   Dug Wellarka Sec-23   Dug Wellar",
+          "state": "Delhi",
+          "distance_km": 5.92,
+          "seasons": 1,
+          "well_type": "Dug Well"
+        },
+        {
+          "site_name": "South West   Dug Wellarka   Dug Wellarka Sec-23 Dug Wellarka",
+          "state": "Delhi",
+          "distance_km": 5.92,
+          "seasons": 1,
+          "well_type": "Dug Well"
+        }
+      ]
+    },
+    "H004": {
+      "nearest_km": 3.798,
+      "tier1_le2km": 0,
+      "tier2_2to5km": 6,
+      "tier3_5to10km": 22,
+      "tier4_10to20km": 149,
+      "best_stations": [
+        {
+          "site_name": "South West   DWARKA                                 Dwarka S",
+          "state": "Delhi",
+          "distance_km": 3.798,
+          "seasons": 1,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "South West   Dug Wellarka   Dug Wellarka Sec-23   Dug Wellar",
+          "state": "Delhi",
+          "distance_km": 3.798,
+          "seasons": 1,
+          "well_type": "Dug Well"
+        },
+        {
+          "site_name": "South West   Dug Wellarka   Dug Wellarka Sec-23 Dug Wellarka",
+          "state": "Delhi",
+          "distance_km": 3.798,
+          "seasons": 1,
+          "well_type": "Dug Well"
+        }
+      ]
+    },
+    "H002": {
+      "nearest_km": 2.138,
+      "tier1_le2km": 0,
+      "tier2_2to5km": 6,
+      "tier3_5to10km": 45,
+      "tier4_10to20km": 111,
+      "best_stations": [
+        {
+          "site_name": "North        NARELA            Bawana             Bawana WTP",
+          "state": "Delhi",
+          "distance_km": 2.138,
+          "seasons": 1,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "North        Narela          Bawana              Bawana WTP",
+          "state": "Delhi",
+          "distance_km": 2.138,
+          "seasons": 2,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "North        NARELA            Bankner            Bankner Pz",
+          "state": "Delhi",
+          "distance_km": 4.023,
+          "seasons": 1,
+          "well_type": "Bore Well"
+        }
+      ]
+    },
+    "H003": {
+      "nearest_km": 3.476,
+      "tier1_le2km": 0,
+      "tier2_2to5km": 5,
+      "tier3_5to10km": 55,
+      "tier4_10to20km": 116,
+      "best_stations": [
+        {
+          "site_name": "North        NARELA            Bawana             Bawana WTP",
+          "state": "Delhi",
+          "distance_km": 3.476,
+          "seasons": 1,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "North        Narela          Bawana              Bawana WTP",
+          "state": "Delhi",
+          "distance_km": 3.476,
+          "seasons": 2,
+          "well_type": "unspecified"
+        },
+        {
+          "site_name": "North       ALIPUR         Alipur Garhi          Alipur Garh",
+          "state": "Delhi",
+          "distance_km": 4.273,
+          "seasons": 1,
+          "well_type": "Bore Well"
+        }
+      ]
+    }
+  },
+  "classification": "C",
+  "classification_text": "GROUNDWATER TEMPORAL TEST: STILL ACCESS-BLOCKED / INADEQUATE",
+  "reason": "No high-frequency route is reachable. The recovered seasonal dataset has no station within 2 km of any hotspot and H001 has none within 5 km, and it covers a single annual cycle (2022-2023) against a 2021-10 to 2025-09 study period. It is therefore neither sufficiently local nor sufficiently long to test H001/H004 temporally.",
+  "correlation_analysis_performed": false,
+  "official_request_package": {
+    "purpose": "Prepared, NOT submitted. No RTI has been filed.",
+    "requested_content": [
+      "station-level DWLR groundwater observations",
+      "Delhi-NCR and the districts intersecting the AOI",
+      "2021-10-01 to 2025-10-01",
+      "station coordinates (latitude, longitude)",
+      "station IDs",
+      "well depth and aquifer metadata where available",
+      "native observation timestamps (not resampled)",
+      "depth-to-water-level values with units"
+    ],
+    "requested_geography": {
+      "priority_1": "H001 (77.0813, 28.5212) - no station within 5 km today",
+      "priority_2": "H004 (77.0554, 28.5333)",
+      "priority_3_4": "H002 (77.0735, 28.8152), H003 (77.0810, 28.8033)",
+      "controls": "matched non-hotspot areas within the AOI",
+      "excluded": "H005 - unresolved cross-geometry contradiction"
+    },
+    "candidate_routes": [
+      "CGWB regional office",
+      "NWIC / WIMS",
+      "formal data request",
+      "RTI if necessary"
+    ],
+    "note": "RTI is listed as a possible route but has NOT been started."
+  }
+}

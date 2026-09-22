@@ -1,0 +1,81 @@
+{
+  "freeze_version": "cgwb_seasonal_v1",
+  "created_utc": "2026-09-22T18:16:44.955737+00:00",
+  "provenance_wording": "The source file is an archived copy of an official CGWB URL retrieved via the Internet Archive because the live CGWB host was unavailable at retrieval time.",
+  "not_a_live_download": true,
+  "files": [
+    {
+      "file": "pre-monsoon_2022_data_for_website.pdf",
+      "season": "pre-monsoon",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "sha256": "e47585c8cb458add39388bcdf8437cd5e1da787dc18f4d38a42c5a171c42091b",
+      "bytes": 14609824,
+      "pages": 589,
+      "parsed_rows_aoi_states": 1919,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "august_2022_data_for_website.pdf",
+      "season": "august",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "sha256": "00b8e479b6617c8f033d6b83f143cdd58e8631bcce29fdf727cfa11bbeec2569",
+      "bytes": 13644751,
+      "pages": 576,
+      "parsed_rows_aoi_states": 1184,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "nov_2022_data_for_website.pdf",
+      "season": "november",
+      "year": 2022,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "sha256": "11337c3605df16a9e0e53291cb4f274120de22d98c784efad5b14423b3f4717b",
+      "bytes": 15030788,
+      "pages": 593,
+      "parsed_rows_aoi_states": 1966,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    },
+    {
+      "file": "jan_2023_data_for_website.pdf",
+      "season": "january",
+      "year": 2023,
+      "official_cgwb_url": "https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "internet_archive_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "sha256": "1a892e86a787d4963b27916043de137c3a3ea19c994db70636d79933afcbf560",
+      "bytes": 14277039,
+      "pages": 619,
+      "parsed_rows_aoi_states": 1384,
+      "coordinate_coverage": "latitude and longitude present for every parsed row",
+      "known_schema_limitations": [
+        "no CGWB station code",
+        "season and year only, no exact measurement date",
+        "no aquifer or well-depth metadata",
+        "well type blank in some rows"
+      ]
+    }
+  ],
+  "freeze_id": "db0636879f7566f9681be3b704f1ecef19270ca4363903ae4f4f54643528453e"
+}
