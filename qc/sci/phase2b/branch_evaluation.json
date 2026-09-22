@@ -1,0 +1,157 @@
+{
+  "generated_utc": "2026-09-22T15:43:08.480232+00:00",
+  "branches_evaluated": [
+    "D0_RAW",
+    "D1_CONNCOMP"
+  ],
+  "branches_skipped": {
+    "D2_UNWRAP": "not run",
+    "D3_ERA5": "incomplete at evaluation time"
+  },
+  "branch_table": [
+    {
+      "branch": "descending_work",
+      "inverted_pixels": 4017547,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.2891,
+      "tc_p50": 0.4021,
+      "tc_p75": 0.4911,
+      "tc_ge_0.5": 882596,
+      "tc_ge_0.6": 76567,
+      "tc_ge_0.7": 11013,
+      "median_velocity_std": 5.2104,
+      "velocity_robust_scatter": 24.494,
+      "residual_rms": 0.5885,
+      "closure_burden_p90_abs_residue": 0.7631,
+      "highpass_energy": 10.0747,
+      "common_pixels": 854004,
+      "cross_pearson": 0.1752,
+      "cross_spearman": 0.2068,
+      "cross_plane_detrended": 0.1269,
+      "descending_scatter_common": 29.248,
+      "resid_elevation_corr": -0.0357,
+      "hotspots": {
+        "H001": {
+          "n": 3494,
+          "velocity": -84.73,
+          "tc": 0.5011,
+          "velocity_std": 4.944
+        },
+        "H002": {
+          "n": 8015,
+          "velocity": -30.49,
+          "tc": 0.4727,
+          "velocity_std": 5.771
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -21.89,
+          "tc": 0.469,
+          "velocity_std": 5.796
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -44.18,
+          "tc": 0.4902,
+          "velocity_std": 5.479
+        },
+        "H005": {
+          "n": 522,
+          "velocity": -35.51,
+          "tc": 0.4945,
+          "velocity_std": 5.108
+        }
+      }
+    },
+    {
+      "branch": "descending_d1_conncomp_work",
+      "inverted_pixels": 1658035,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.4734,
+      "tc_p50": 0.5147,
+      "tc_p75": 0.5619,
+      "tc_ge_0.5": 981096,
+      "tc_ge_0.6": 214521,
+      "tc_ge_0.7": 37855,
+      "median_velocity_std": 5.212,
+      "velocity_robust_scatter": 37.244,
+      "residual_rms": 0.599,
+      "closure_burden_p90_abs_residue": 0.7757,
+      "highpass_energy": 16.0239,
+      "common_pixels": 663999,
+      "cross_pearson": 0.2014,
+      "cross_spearman": 0.1781,
+      "cross_plane_detrended": 0.176,
+      "descending_scatter_common": 40.121,
+      "resid_elevation_corr": 0.0234,
+      "hotspots": {
+        "H001": {
+          "n": 3493,
+          "velocity": -85.64,
+          "tc": 0.5059,
+          "velocity_std": 4.936
+        },
+        "H002": {
+          "n": 8004,
+          "velocity": -30.01,
+          "tc": 0.4765,
+          "velocity_std": 5.809
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -21.4,
+          "tc": 0.4709,
+          "velocity_std": 5.788
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -44.19,
+          "tc": 0.4913,
+          "velocity_std": 5.485
+        },
+        "H005": {
+          "n": 521,
+          "velocity": -107.69,
+          "tc": 0.5309,
+          "velocity_std": 3.58
+        }
+      }
+    }
+  ],
+  "stop_rule": {
+    "descending_d1_conncomp_work": {
+      "metrics_improved_vs_D0": 3,
+      "metrics_compared": 7,
+      "detail": {
+        "tc_p50": true,
+        "tc_ge_0.5": true,
+        "tc_ge_0.7": true,
+        "median_velocity_std": false,
+        "velocity_robust_scatter": false,
+        "highpass_energy": false,
+        "residual_rms": false
+      },
+      "materially_improved": false
+    }
+  },
+  "promoted": [],
+  "descending_scientific_status": "NOT SUITABLE FOR QUANTITATIVE INDEPENDENT VALIDATION",
+  "coherence_velocity_curve_correlation": 0.8311231664228349,
+  "coherence_velocity_classification": "REPRODUCED ASSOCIATION",
+  "not_validated_deformation": true,
+  "decomposition_status": "INVALID - the descending input is not scientifically reliable; good matrix conditioning does not make a good component estimate",
+  "hotspot_status_unchanged": {
+    "H001": "PARTIALLY_SUPPORTED",
+    "H002": "NOT_RESOLVED",
+    "H003": "NOT_RESOLVED",
+    "H004": "NOT_RESOLVED",
+    "H005": "NOT_RESOLVED"
+  },
+  "no_causal_attribution": true
+}

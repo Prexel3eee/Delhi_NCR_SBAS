@@ -1,0 +1,102 @@
+{
+  "freeze_version": "descending_raw_v1",
+  "label": "DESCENDING_RAW_V1",
+  "freeze_id": "acdb209f443732f4f7c5f7f3f624fd63db1d7ad1c85b62bcd963ae5297130c26",
+  "created_utc": "2026-09-22T15:09:19.540802+00:00",
+  "acquisitions": 91,
+  "interferograms": 219,
+  "robustness_edges": 10,
+  "bridges": 0,
+  "articulation_points": 1,
+  "reference_yx": [
+    394,
+    2149
+  ],
+  "statement": "The Phase-IIA descending RAW solution exactly as produced. Retained even if a later branch is better.",
+  "artefacts": [
+    {
+      "path": "mintpy/descending_work/velocity.h5",
+      "sha256": "04e516d8f5b18d17f4459d54561302bba077bf47ee4733b8f045af311450ccd5",
+      "bytes": 139450648,
+      "mtime_ns": 1790088245140850547
+    },
+    {
+      "path": "mintpy/descending_work/timeseries.h5",
+      "sha256": "5600ed21b15b312c2fff48ae28d6f508a7c622a7a3bcdf49bd350fc89fde4df6",
+      "bytes": 2592578032,
+      "mtime_ns": 1790088240867033001
+    },
+    {
+      "path": "mintpy/descending_work/temporalCoherence.h5",
+      "sha256": "9e798081a027a1b9e1ac67e3a492ba451c0d14de88241b336215e7da6e4c3070",
+      "bytes": 27899560,
+      "mtime_ns": 1790088240908847100
+    },
+    {
+      "path": "mintpy/descending_work/maskTempCoh.h5",
+      "sha256": "ad0856e0aad4b24338acc898702bf9703a2be28364d5b21ac5fc72e08863cfcf",
+      "bytes": 6953752,
+      "mtime_ns": 1790088241066524707
+    },
+    {
+      "path": "mintpy/descending_work/maskConnComp.h5",
+      "sha256": "89147ec067e878de0f0bdaee80364ed090ab7baea99158feaf342dafe1af5381",
+      "bytes": 6946848,
+      "mtime_ns": 1790086889165996000
+    },
+    {
+      "path": "mintpy/descending_work/avgSpatialCoh.h5",
+      "sha256": "350985053a5e64c534434a8860b566792301320413b381e3f788464a202fa7cd",
+      "bytes": 27898968,
+      "mtime_ns": 1790086889165952000
+    },
+    {
+      "path": "mintpy/descending_work/numInvIfgram.h5",
+      "sha256": "3d7ab2a577c4e3d9be789597c805e3892efa8e546635bf80b32327139d39142f",
+      "bytes": 27899480,
+      "mtime_ns": 1790088240909074932
+    },
+    {
+      "path": "manifests/descending/sbas_pairs.csv",
+      "sha256": "ae71e18dddbae3c8b373db76a25a0e5ef41a57a009ccd47aa07e36d2e6233ed0",
+      "bytes": 100048,
+      "copied": true
+    },
+    {
+      "path": "manifests/descending/descending_jobs.csv",
+      "sha256": "ac2f0a49cccc693d9a8a521f4fb1248810122d0d426f107c985f45296e48cf4b",
+      "bytes": 46878,
+      "copied": true
+    },
+    {
+      "path": "qc/descending/network_audit.json",
+      "sha256": "45507e77e340953d794ceb6d626a19d2c16f285bb90f31052da7ab7ebe3c71b2",
+      "bytes": 3128,
+      "copied": true
+    },
+    {
+      "path": "qc/descending/descending_qc.json",
+      "sha256": "9cbafb76063edb797ded9774b5583f71b3c6ea659e39c0c57c597af08a4f2a20",
+      "bytes": 7367,
+      "copied": true
+    },
+    {
+      "path": "qc/sci/phase2/cross_validation.json",
+      "sha256": "1259f459b3da29b5a0249e4610ee17c7962da222df7cb409358ceb9e57620320",
+      "bytes": 9890,
+      "copied": true
+    },
+    {
+      "path": "qc/sci/phase2/decomposition.json",
+      "sha256": "9bb95e39d7ae2ddbb6861ea0a1091496dcefc83f940cce04f99b1e8c8e160009",
+      "bytes": 12596,
+      "copied": true
+    },
+    {
+      "path": "qc/sci/PHASE_IIA_GEODETIC_VALIDATION_REPORT.md",
+      "sha256": "47746d6e839458a972991646c365acbe63281112f0e2fe1c7d1dac1e1162f079",
+      "bytes": 17884,
+      "copied": true
+    }
+  ]
+}

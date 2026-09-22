@@ -1,0 +1,298 @@
+{
+  "generated_utc": "2026-09-22T14:54:52.068794+00:00",
+  "ascending": {
+    "freeze": "product_v1",
+    "orbit": 27,
+    "subswath": "IW2",
+    "reference_yx": [
+      1384,
+      1451
+    ],
+    "heading_deg": -12.585825751670313,
+    "incidence_deg": 39.2868,
+    "los_unit_vector_ENU": [
+      0.61799,
+      0.13798,
+      0.77399
+    ]
+  },
+  "descending": {
+    "orbit": 136,
+    "subswath": "IW1",
+    "reference_yx": [
+      394,
+      2149
+    ],
+    "heading_deg": -167.396217280969,
+    "incidence_deg": 33.7456,
+    "los_unit_vector_ENU": [
+      -0.54212,
+      0.12122,
+      0.83151
+    ]
+  },
+  "common_footprint": {
+    "aoi_pixels": 1226497,
+    "covered_by_both": 854069,
+    "both_at_quality": 113881,
+    "aoi_not_covered_by_descending": 0
+  },
+  "detection": {
+    "ascending_components": 5,
+    "descending_components": 0,
+    "threshold_mm_per_yr": 10.0,
+    "coherence_min": 0.8,
+    "min_area_km2": 0.4
+  },
+  "hotspots": [
+    {
+      "hotspot_id": "H001",
+      "ascending_area_km2": 5.5904,
+      "pixels_covered_by_descending": 3494,
+      "descending_coverage_fraction": 1.0,
+      "pixels_both_coherent": 0,
+      "ascending_velocity_median_mm_per_yr": -30.95,
+      "descending_velocity_median_mm_per_yr": -84.728,
+      "ascending_coherence_median": 0.9255,
+      "descending_coherence_median": 0.5011,
+      "descending_component_detected": false,
+      "descending_component_overlap_fraction": 0.0,
+      "iou_with_descending_component": 0.0,
+      "centroid_separation_km": null,
+      "sign_ascending": "negative",
+      "sign_descending": "negative",
+      "same_sign": true,
+      "consistent_with_pure_vertical": true,
+      "classification": "PARTIALLY_SUPPORTED",
+      "reason": "same sign in an independent geometry but the descending component is not detected at 274% of the ascending magnitude"
+    },
+    {
+      "hotspot_id": "H002",
+      "ascending_area_km2": 12.8256,
+      "pixels_covered_by_descending": 8016,
+      "descending_coverage_fraction": 1.0,
+      "pixels_both_coherent": 0,
+      "ascending_velocity_median_mm_per_yr": -13.586,
+      "descending_velocity_median_mm_per_yr": -30.483,
+      "ascending_coherence_median": 0.8634,
+      "descending_coherence_median": 0.4727,
+      "descending_component_detected": false,
+      "descending_component_overlap_fraction": 0.0,
+      "iou_with_descending_component": 0.0,
+      "centroid_separation_km": null,
+      "sign_ascending": "negative",
+      "sign_descending": "negative",
+      "same_sign": true,
+      "consistent_with_pure_vertical": true,
+      "classification": "NOT_RESOLVED",
+      "reason": "descending coherence is too low to test this hotspot (0.473)"
+    },
+    {
+      "hotspot_id": "H003",
+      "ascending_area_km2": 2.2544,
+      "pixels_covered_by_descending": 1409,
+      "descending_coverage_fraction": 1.0,
+      "pixels_both_coherent": 0,
+      "ascending_velocity_median_mm_per_yr": -12.867,
+      "descending_velocity_median_mm_per_yr": -21.885,
+      "ascending_coherence_median": 0.8604,
+      "descending_coherence_median": 0.4689,
+      "descending_component_detected": false,
+      "descending_component_overlap_fraction": 0.0,
+      "iou_with_descending_component": 0.0,
+      "centroid_separation_km": null,
+      "sign_ascending": "negative",
+      "sign_descending": "negative",
+      "same_sign": true,
+      "consistent_with_pure_vertical": true,
+      "classification": "NOT_RESOLVED",
+      "reason": "descending coherence is too low to test this hotspot (0.469)"
+    },
+    {
+      "hotspot_id": "H004",
+      "ascending_area_km2": 1.072,
+      "pixels_covered_by_descending": 670,
+      "descending_coverage_fraction": 1.0,
+      "pixels_both_coherent": 0,
+      "ascending_velocity_median_mm_per_yr": -14.31,
+      "descending_velocity_median_mm_per_yr": -44.181,
+      "ascending_coherence_median": 0.963,
+      "descending_coherence_median": 0.4902,
+      "descending_component_detected": false,
+      "descending_component_overlap_fraction": 0.0,
+      "iou_with_descending_component": 0.0,
+      "centroid_separation_km": null,
+      "sign_ascending": "negative",
+      "sign_descending": "negative",
+      "same_sign": true,
+      "consistent_with_pure_vertical": true,
+      "classification": "NOT_RESOLVED",
+      "reason": "descending coherence is too low to test this hotspot (0.490)"
+    },
+    {
+      "hotspot_id": "H005",
+      "ascending_area_km2": 0.8352,
+      "pixels_covered_by_descending": 522,
+      "descending_coverage_fraction": 1.0,
+      "pixels_both_coherent": 0,
+      "ascending_velocity_median_mm_per_yr": -14.209,
+      "descending_velocity_median_mm_per_yr": -35.514,
+      "ascending_coherence_median": 0.8653,
+      "descending_coherence_median": 0.4945,
+      "descending_component_detected": false,
+      "descending_component_overlap_fraction": 0.0,
+      "iou_with_descending_component": 0.0,
+      "centroid_separation_km": null,
+      "sign_ascending": "negative",
+      "sign_descending": "negative",
+      "same_sign": true,
+      "consistent_with_pure_vertical": true,
+      "classification": "NOT_RESOLVED",
+      "reason": "descending coherence is too low to test this hotspot (0.494)"
+    }
+  ],
+  "classification_counts": {
+    "NOT_RESOLVED": 4,
+    "PARTIALLY_SUPPORTED": 1
+  },
+  "coherence_velocity": {
+    "bins": [
+      {
+        "coherence_low": 0.5,
+        "coherence_high": 0.55,
+        "ascending_n": 71651,
+        "ascending_median_mm_per_yr": -17.059,
+        "ascending_fraction_below_minus10": 0.72376,
+        "descending_n": 186854,
+        "descending_median_mm_per_yr": -28.414,
+        "descending_fraction_below_minus10": 0.72891
+      },
+      {
+        "coherence_low": 0.55,
+        "coherence_high": 0.6,
+        "ascending_n": 63426,
+        "ascending_median_mm_per_yr": -13.994,
+        "ascending_fraction_below_minus10": 0.63506,
+        "descending_n": 61606,
+        "descending_median_mm_per_yr": -26.391,
+        "descending_fraction_below_minus10": 0.69242
+      },
+      {
+        "coherence_low": 0.6,
+        "coherence_high": 0.65,
+        "ascending_n": 61299,
+        "ascending_median_mm_per_yr": -10.723,
+        "ascending_fraction_below_minus10": 0.52503,
+        "descending_n": 8725,
+        "descending_median_mm_per_yr": -24.43,
+        "descending_fraction_below_minus10": 0.65444
+      },
+      {
+        "coherence_low": 0.65,
+        "coherence_high": 0.7,
+        "ascending_n": 61882,
+        "ascending_median_mm_per_yr": -7.702,
+        "ascending_fraction_below_minus10": 0.41555,
+        "descending_n": 515,
+        "descending_median_mm_per_yr": -23.927,
+        "descending_fraction_below_minus10": 0.61942
+      },
+      {
+        "coherence_low": 0.7,
+        "coherence_high": 0.75,
+        "ascending_n": 63481,
+        "ascending_median_mm_per_yr": -5.328,
+        "ascending_fraction_below_minus10": 0.31247,
+        "descending_n": 17,
+        "descending_median_mm_per_yr": 10.204,
+        "descending_fraction_below_minus10": 0.29412
+      },
+      {
+        "coherence_low": 0.75,
+        "coherence_high": 0.8,
+        "ascending_n": 70211,
+        "ascending_median_mm_per_yr": -3.768,
+        "ascending_fraction_below_minus10": 0.2217,
+        "descending_n": 2,
+        "descending_median_mm_per_yr": 22.855,
+        "descending_fraction_below_minus10": 0.0
+      },
+      {
+        "coherence_low": 0.8,
+        "coherence_high": 0.85,
+        "ascending_n": 82873,
+        "ascending_median_mm_per_yr": -2.815,
+        "ascending_fraction_below_minus10": 0.14949,
+        "descending_n": 0,
+        "descending_median_mm_per_yr": NaN,
+        "descending_fraction_below_minus10": NaN
+      },
+      {
+        "coherence_low": 0.85,
+        "coherence_high": 0.9,
+        "ascending_n": 109190,
+        "ascending_median_mm_per_yr": -1.787,
+        "ascending_fraction_below_minus10": 0.09477,
+        "descending_n": 0,
+        "descending_median_mm_per_yr": NaN,
+        "descending_fraction_below_minus10": NaN
+      },
+      {
+        "coherence_low": 0.9,
+        "coherence_high": 0.95,
+        "ascending_n": 167609,
+        "ascending_median_mm_per_yr": -0.382,
+        "ascending_fraction_below_minus10": 0.0233,
+        "descending_n": 0,
+        "descending_median_mm_per_yr": NaN,
+        "descending_fraction_below_minus10": NaN
+      },
+      {
+        "coherence_low": 0.95,
+        "coherence_high": 1.0,
+        "ascending_n": 181908,
+        "ascending_median_mm_per_yr": -0.289,
+        "ascending_fraction_below_minus10": 0.00816,
+        "descending_n": 0,
+        "descending_median_mm_per_yr": NaN,
+        "descending_fraction_below_minus10": NaN
+      }
+    ],
+    "curve_correlation": 0.8311231664228349
+  },
+  "temporal": {
+    "ascending_dates": 119,
+    "descending_dates": 91,
+    "shared_exact_dates": 0,
+    "shared_date_list": [],
+    "nearest_date_pairs_within_1d": [],
+    "n_nearest_date_pairs": 0,
+    "note": "The two tracks were acquired on different relative orbits and their acquisition calendars only partially overlap, so temporal comparison is restricted to the shared dates."
+  },
+  "decomposition": {
+    "matrix": [
+      [
+        0.77398604218002,
+        0.6179872403852762
+      ],
+      [
+        0.8315125544255987,
+        -0.5421195763432988
+      ]
+    ],
+    "condition_number": 1.3838,
+    "error_amplification": [
+      [
+        0.5807653683468175,
+        0.6620413704977703
+      ],
+      [
+        0.8907881508602439,
+        0.8291607765098025
+      ]
+    ],
+    "assumption": "north-south displacement is assumed ZERO. This is an assumption, not a measurement: two LOS observations cannot constrain three components. Sensitivity to it is reported in stage 9.",
+    "not_full_3d": true
+  },
+  "sign_rule": "same sign in both tracks is consistent with vertical motion; opposite sign is consistent with east-west motion. Neither is a proof."
+}

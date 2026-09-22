@@ -1,0 +1,396 @@
+{
+  "generated_utc": "2026-09-22T14:54:57.423853+00:00",
+  "preconditions_passed": true,
+  "geometry": {
+    "ascending": {
+      "heading_deg": -12.585825751670313,
+      "incidence_deg": 39.2868,
+      "los_unit_vector_ENU": [
+        0.617987,
+        0.137976,
+        0.773986
+      ],
+      "reference_yx": [
+        1384,
+        1451
+      ]
+    },
+    "descending": {
+      "heading_deg": -167.396217280969,
+      "incidence_deg": 33.7456,
+      "los_unit_vector_ENU": [
+        -0.54212,
+        0.121216,
+        0.831513
+      ],
+      "reference_yx": [
+        394,
+        2149
+      ]
+    }
+  },
+  "model": {
+    "equations": "d_LOS_asc = uU_asc*dU + uE_asc*dE + uN_asc*dN ; d_LOS_desc = uU_desc*dU + uE_desc*dE + uN_desc*dN",
+    "assumption": "dN = 0",
+    "assumption_is_measured": false,
+    "design_matrix": [
+      [
+        0.77398604218002,
+        0.6179872403852762
+      ],
+      [
+        0.8315125544255987,
+        -0.5421195763432988
+      ]
+    ],
+    "singular_values": [
+      1.1365291320889588,
+      0.8213226636977948
+    ],
+    "condition_number": 1.383779,
+    "inverse": [
+      [
+        0.5807653683468175,
+        0.6620413704977703
+      ],
+      [
+        0.8907881508602439,
+        -0.8291607765098025
+      ]
+    ],
+    "error_amplification_abs_inverse": [
+      [
+        0.5807653683468175,
+        0.6620413704977703
+      ],
+      [
+        0.8907881508602439,
+        0.8291607765098025
+      ]
+    ],
+    "not_full_3d": true,
+    "components_constrained": [
+      "vertical",
+      "east-west"
+    ],
+    "component_not_constrained": "north-south"
+  },
+  "hotspots": [
+    {
+      "hotspot_id": "H001",
+      "n_pixels": 3494,
+      "ascending_los_mm_per_yr": -30.95,
+      "descending_los_mm_per_yr": -84.728,
+      "ascending_los_uncertainty_mm_per_yr": 0.9594,
+      "descending_los_uncertainty_mm_per_yr": 4.944,
+      "vertical_mm_per_yr": -74.068,
+      "vertical_uncertainty_mm_per_yr": 3.32,
+      "east_west_mm_per_yr": 42.684,
+      "east_west_uncertainty_mm_per_yr": 4.188,
+      "vertical_cov_with_ew": -12.9416,
+      "vertical_amplification": 1.2428,
+      "ew_amplification": 1.7199,
+      "vertical_significant_at_2sigma": true,
+      "ew_significant_at_2sigma": true
+    },
+    {
+      "hotspot_id": "H002",
+      "n_pixels": 8015,
+      "ascending_los_mm_per_yr": -13.585,
+      "descending_los_mm_per_yr": -30.488,
+      "ascending_los_uncertainty_mm_per_yr": 1.2768,
+      "descending_los_uncertainty_mm_per_yr": 5.7709,
+      "vertical_mm_per_yr": -28.074,
+      "vertical_uncertainty_mm_per_yr": 3.892,
+      "east_west_mm_per_yr": 13.178,
+      "east_west_uncertainty_mm_per_yr": 4.918,
+      "vertical_cov_with_ew": -17.438,
+      "vertical_amplification": 1.2428,
+      "ew_amplification": 1.7199,
+      "vertical_significant_at_2sigma": true,
+      "ew_significant_at_2sigma": true
+    },
+    {
+      "hotspot_id": "H003",
+      "n_pixels": 1408,
+      "ascending_los_mm_per_yr": -12.866,
+      "descending_los_mm_per_yr": -21.89,
+      "ascending_los_uncertainty_mm_per_yr": 1.2506,
+      "descending_los_uncertainty_mm_per_yr": 5.7956,
+      "vertical_mm_per_yr": -21.964,
+      "vertical_uncertainty_mm_per_yr": 3.905,
+      "east_west_mm_per_yr": 6.69,
+      "east_west_uncertainty_mm_per_yr": 4.933,
+      "vertical_cov_with_ew": -17.629,
+      "vertical_amplification": 1.2428,
+      "ew_amplification": 1.7199,
+      "vertical_significant_at_2sigma": true,
+      "ew_significant_at_2sigma": false
+    },
+    {
+      "hotspot_id": "H004",
+      "n_pixels": 670,
+      "ascending_los_mm_per_yr": -14.31,
+      "descending_los_mm_per_yr": -44.181,
+      "ascending_los_uncertainty_mm_per_yr": 0.7268,
+      "descending_los_uncertainty_mm_per_yr": 5.4788,
+      "vertical_mm_per_yr": -37.56,
+      "vertical_uncertainty_mm_per_yr": 3.652,
+      "east_west_mm_per_yr": 23.886,
+      "east_west_uncertainty_mm_per_yr": 4.589,
+      "vertical_cov_with_ew": -16.2042,
+      "vertical_amplification": 1.2428,
+      "ew_amplification": 1.7199,
+      "vertical_significant_at_2sigma": true,
+      "ew_significant_at_2sigma": true
+    },
+    {
+      "hotspot_id": "H005",
+      "n_pixels": 522,
+      "ascending_los_mm_per_yr": -14.209,
+      "descending_los_mm_per_yr": -35.514,
+      "ascending_los_uncertainty_mm_per_yr": 1.4038,
+      "descending_los_uncertainty_mm_per_yr": 5.1079,
+      "vertical_mm_per_yr": -31.764,
+      "vertical_uncertainty_mm_per_yr": 3.479,
+      "east_west_mm_per_yr": 16.789,
+      "east_west_uncertainty_mm_per_yr": 4.416,
+      "vertical_cov_with_ew": -13.3025,
+      "vertical_amplification": 1.2428,
+      "ew_amplification": 1.7199,
+      "vertical_significant_at_2sigma": true,
+      "ew_significant_at_2sigma": true
+    }
+  ],
+  "north_south_sensitivity": {
+    "family_mm_per_yr": [
+      -5.0,
+      -2.0,
+      0.0,
+      2.0,
+      5.0
+    ],
+    "results": [
+      {
+        "hotspot_id": "H001",
+        "assumed_north_mm_per_yr": -5.0,
+        "vertical_mm_per_yr": -73.266,
+        "east_west_mm_per_yr": 42.796,
+        "vertical_change_from_zero_mm_per_yr": 0.802,
+        "ew_change_from_zero_mm_per_yr": 0.112
+      },
+      {
+        "hotspot_id": "H001",
+        "assumed_north_mm_per_yr": -2.0,
+        "vertical_mm_per_yr": -73.747,
+        "east_west_mm_per_yr": 42.728,
+        "vertical_change_from_zero_mm_per_yr": 0.321,
+        "ew_change_from_zero_mm_per_yr": 0.045
+      },
+      {
+        "hotspot_id": "H001",
+        "assumed_north_mm_per_yr": 0.0,
+        "vertical_mm_per_yr": -74.068,
+        "east_west_mm_per_yr": 42.684,
+        "vertical_change_from_zero_mm_per_yr": 0.0,
+        "ew_change_from_zero_mm_per_yr": 0.0
+      },
+      {
+        "hotspot_id": "H001",
+        "assumed_north_mm_per_yr": 2.0,
+        "vertical_mm_per_yr": -74.389,
+        "east_west_mm_per_yr": 42.639,
+        "vertical_change_from_zero_mm_per_yr": -0.321,
+        "ew_change_from_zero_mm_per_yr": -0.045
+      },
+      {
+        "hotspot_id": "H001",
+        "assumed_north_mm_per_yr": 5.0,
+        "vertical_mm_per_yr": -74.87,
+        "east_west_mm_per_yr": 42.572,
+        "vertical_change_from_zero_mm_per_yr": -0.802,
+        "ew_change_from_zero_mm_per_yr": -0.112
+      },
+      {
+        "hotspot_id": "H002",
+        "assumed_north_mm_per_yr": -5.0,
+        "vertical_mm_per_yr": -27.272,
+        "east_west_mm_per_yr": 13.29,
+        "vertical_change_from_zero_mm_per_yr": 0.802,
+        "ew_change_from_zero_mm_per_yr": 0.112
+      },
+      {
+        "hotspot_id": "H002",
+        "assumed_north_mm_per_yr": -2.0,
+        "vertical_mm_per_yr": -27.753,
+        "east_west_mm_per_yr": 13.223,
+        "vertical_change_from_zero_mm_per_yr": 0.321,
+        "ew_change_from_zero_mm_per_yr": 0.045
+      },
+      {
+        "hotspot_id": "H002",
+        "assumed_north_mm_per_yr": 0.0,
+        "vertical_mm_per_yr": -28.074,
+        "east_west_mm_per_yr": 13.178,
+        "vertical_change_from_zero_mm_per_yr": 0.0,
+        "ew_change_from_zero_mm_per_yr": 0.0
+      },
+      {
+        "hotspot_id": "H002",
+        "assumed_north_mm_per_yr": 2.0,
+        "vertical_mm_per_yr": -28.395,
+        "east_west_mm_per_yr": 13.133,
+        "vertical_change_from_zero_mm_per_yr": -0.321,
+        "ew_change_from_zero_mm_per_yr": -0.045
+      },
+      {
+        "hotspot_id": "H002",
+        "assumed_north_mm_per_yr": 5.0,
+        "vertical_mm_per_yr": -28.876,
+        "east_west_mm_per_yr": 13.066,
+        "vertical_change_from_zero_mm_per_yr": -0.802,
+        "ew_change_from_zero_mm_per_yr": -0.112
+      },
+      {
+        "hotspot_id": "H003",
+        "assumed_north_mm_per_yr": -5.0,
+        "vertical_mm_per_yr": -21.162,
+        "east_west_mm_per_yr": 6.802,
+        "vertical_change_from_zero_mm_per_yr": 0.802,
+        "ew_change_from_zero_mm_per_yr": 0.112
+      },
+      {
+        "hotspot_id": "H003",
+        "assumed_north_mm_per_yr": -2.0,
+        "vertical_mm_per_yr": -21.643,
+        "east_west_mm_per_yr": 6.735,
+        "vertical_change_from_zero_mm_per_yr": 0.321,
+        "ew_change_from_zero_mm_per_yr": 0.045
+      },
+      {
+        "hotspot_id": "H003",
+        "assumed_north_mm_per_yr": 0.0,
+        "vertical_mm_per_yr": -21.964,
+        "east_west_mm_per_yr": 6.69,
+        "vertical_change_from_zero_mm_per_yr": 0.0,
+        "ew_change_from_zero_mm_per_yr": 0.0
+      },
+      {
+        "hotspot_id": "H003",
+        "assumed_north_mm_per_yr": 2.0,
+        "vertical_mm_per_yr": -22.285,
+        "east_west_mm_per_yr": 6.645,
+        "vertical_change_from_zero_mm_per_yr": -0.321,
+        "ew_change_from_zero_mm_per_yr": -0.045
+      },
+      {
+        "hotspot_id": "H003",
+        "assumed_north_mm_per_yr": 5.0,
+        "vertical_mm_per_yr": -22.766,
+        "east_west_mm_per_yr": 6.578,
+        "vertical_change_from_zero_mm_per_yr": -0.802,
+        "ew_change_from_zero_mm_per_yr": -0.112
+      },
+      {
+        "hotspot_id": "H004",
+        "assumed_north_mm_per_yr": -5.0,
+        "vertical_mm_per_yr": -36.758,
+        "east_west_mm_per_yr": 23.998,
+        "vertical_change_from_zero_mm_per_yr": 0.802,
+        "ew_change_from_zero_mm_per_yr": 0.112
+      },
+      {
+        "hotspot_id": "H004",
+        "assumed_north_mm_per_yr": -2.0,
+        "vertical_mm_per_yr": -37.24,
+        "east_west_mm_per_yr": 23.931,
+        "vertical_change_from_zero_mm_per_yr": 0.321,
+        "ew_change_from_zero_mm_per_yr": 0.045
+      },
+      {
+        "hotspot_id": "H004",
+        "assumed_north_mm_per_yr": 0.0,
+        "vertical_mm_per_yr": -37.56,
+        "east_west_mm_per_yr": 23.886,
+        "vertical_change_from_zero_mm_per_yr": 0.0,
+        "ew_change_from_zero_mm_per_yr": 0.0
+      },
+      {
+        "hotspot_id": "H004",
+        "assumed_north_mm_per_yr": 2.0,
+        "vertical_mm_per_yr": -37.881,
+        "east_west_mm_per_yr": 23.842,
+        "vertical_change_from_zero_mm_per_yr": -0.321,
+        "ew_change_from_zero_mm_per_yr": -0.045
+      },
+      {
+        "hotspot_id": "H004",
+        "assumed_north_mm_per_yr": 5.0,
+        "vertical_mm_per_yr": -38.362,
+        "east_west_mm_per_yr": 23.774,
+        "vertical_change_from_zero_mm_per_yr": -0.802,
+        "ew_change_from_zero_mm_per_yr": -0.112
+      },
+      {
+        "hotspot_id": "H005",
+        "assumed_north_mm_per_yr": -5.0,
+        "vertical_mm_per_yr": -30.962,
+        "east_west_mm_per_yr": 16.901,
+        "vertical_change_from_zero_mm_per_yr": 0.802,
+        "ew_change_from_zero_mm_per_yr": 0.112
+      },
+      {
+        "hotspot_id": "H005",
+        "assumed_north_mm_per_yr": -2.0,
+        "vertical_mm_per_yr": -31.443,
+        "east_west_mm_per_yr": 16.834,
+        "vertical_change_from_zero_mm_per_yr": 0.321,
+        "ew_change_from_zero_mm_per_yr": 0.045
+      },
+      {
+        "hotspot_id": "H005",
+        "assumed_north_mm_per_yr": 0.0,
+        "vertical_mm_per_yr": -31.764,
+        "east_west_mm_per_yr": 16.789,
+        "vertical_change_from_zero_mm_per_yr": 0.0,
+        "ew_change_from_zero_mm_per_yr": 0.0
+      },
+      {
+        "hotspot_id": "H005",
+        "assumed_north_mm_per_yr": 2.0,
+        "vertical_mm_per_yr": -32.085,
+        "east_west_mm_per_yr": 16.744,
+        "vertical_change_from_zero_mm_per_yr": -0.321,
+        "ew_change_from_zero_mm_per_yr": -0.045
+      },
+      {
+        "hotspot_id": "H005",
+        "assumed_north_mm_per_yr": 5.0,
+        "vertical_mm_per_yr": -32.566,
+        "east_west_mm_per_yr": 16.677,
+        "vertical_change_from_zero_mm_per_yr": -0.802,
+        "ew_change_from_zero_mm_per_yr": -0.112
+      }
+    ],
+    "vertical_swing_mm_per_yr": {
+      "H001": 1.604,
+      "H002": 1.604,
+      "H003": 1.604,
+      "H004": 1.604,
+      "H005": 1.604
+    },
+    "interpretation": "If the vertical component changes materially under a modest north-south rate, it must not be called robust vertical motion."
+  },
+  "error_propagation": {
+    "method": "cov = A^-1 diag(sigma_LOS^2) A^-T, LOS errors treated as independent; the formal velocityStd is used and UNDERSTATES the true error because it excludes the reference systematic",
+    "caveat": "a large component with a large amplified uncertainty is not automatically a strong result"
+  },
+  "vocabulary": {
+    "subsidence_permitted": false,
+    "reason": "the determination requires downward vertical motion, uncertainty excluding zero, sign survival under the north-south sensitivity, independent spatial support and adequate quality in both geometries; it is adjudicated in the report from these numbers",
+    "permitted_terms": [
+      "relative LOS deformation",
+      "downward-compatible vertical signal"
+    ]
+  }
+}

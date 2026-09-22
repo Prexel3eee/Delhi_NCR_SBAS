@@ -1,0 +1,395 @@
+{
+  "generated_utc": "2026-09-22T15:08:55.328105+00:00",
+  "phase": "II-B diagnostics",
+  "no_new_data": true,
+  "ascending_product_modified": false,
+  "executed_inversion_settings": {
+    "mintpy.network.keepMinSpanTree": "no",
+    "mintpy.network.coherenceBased": "no",
+    "mintpy.network.areaRatioBased": "no",
+    "mintpy.network.minCoherence": "0.0",
+    "mintpy.network.minAreaRatio": "0.0",
+    "mintpy.reference.minCoherence": "0.85",
+    "mintpy.unwrapError.method": "no",
+    "mintpy.troposphericDelay.method": "no",
+    "mintpy.deramp": "no",
+    "mintpy.topographicResidual": "no",
+    "mintpy.residualRMS.deramp": "no",
+    "mintpy.networkInversion.weightFunc": "var",
+    "mintpy.networkInversion.minRedundancy": "1",
+    "mintpy.networkInversion.maskDataset": "no",
+    "mintpy.networkInversion.minNormVelocity": "yes",
+    "mintpy.residualRMS.maskFile": "no",
+    "mintpy.plot": "no"
+  },
+  "weighting_already_var": true,
+  "terminology_audit": {
+    "0.277": {
+      "metric": "IFG_SPATIAL_COHERENCE",
+      "quantity": "median over all 219 pairs of each pair's AOI-median coherence",
+      "value": 0.2767
+    },
+    "0.467": {
+      "metric": "TEMPORAL_COHERENCE",
+      "quantity": "p50 over inverted (velocityStd>0) pixels",
+      "value": 0.4021
+    },
+    "0.46-0.75": {
+      "metric": "IFG_SPATIAL_COHERENCE",
+      "quantity": "range across the 10 added robustness edges",
+      "value": [
+        0.2578,
+        0.2709
+      ]
+    },
+    "19 pixels above 0.7": {
+      "metric": "TEMPORAL_COHERENCE",
+      "quantity": "count of pixels with TC >= 0.7",
+      "value": 11013
+    }
+  },
+  "coherence_metric_ranges": {
+    "IFG_SPATIAL_COHERENCE_stack_median": 0.2767,
+    "TEMPORAL_COHERENCE_valid_p50": 0.4021,
+    "TEMPORAL_COHERENCE_valid_p90": 0.5409,
+    "TEMPORAL_COHERENCE_pixels_ge_0.7": 11013,
+    "AVG_SPATIAL_COHERENCE_valid_p50": 0.4504
+  },
+  "quality_conditioned_agreement": {
+    "temporal_coherence": {
+      "q1_0.011_0.388": {
+        "n": 170801,
+        "pearson": 0.1068,
+        "spearman": 0.1184,
+        "robust_rms_after_alignment": 21.769,
+        "plane_detrended_pearson": 0.0834,
+        "ascending_scatter": 14.25,
+        "descending_scatter": 19.307,
+        "offset_mm_per_yr": -25.454
+      },
+      "q2_0.388_0.449": {
+        "n": 170801,
+        "pearson": 0.1289,
+        "spearman": 0.1559,
+        "robust_rms_after_alignment": 27.062,
+        "plane_detrended_pearson": 0.0924,
+        "ascending_scatter": 9.152,
+        "descending_scatter": 27.896,
+        "offset_mm_per_yr": -33.902
+      },
+      "q3_0.449_0.484": {
+        "n": 170800,
+        "pearson": 0.1688,
+        "spearman": 0.1648,
+        "robust_rms_after_alignment": 28.92,
+        "plane_detrended_pearson": 0.1417,
+        "ascending_scatter": 7.057,
+        "descending_scatter": 30.294,
+        "offset_mm_per_yr": -30.822
+      },
+      "q4_0.484_0.519": {
+        "n": 170801,
+        "pearson": 0.1893,
+        "spearman": 0.1708,
+        "robust_rms_after_alignment": 30.37,
+        "plane_detrended_pearson": 0.1655,
+        "ascending_scatter": 6.685,
+        "descending_scatter": 31.65,
+        "offset_mm_per_yr": -28.846
+      },
+      "q5_0.519_0.720": {
+        "n": 170801,
+        "pearson": 0.2046,
+        "spearman": 0.1766,
+        "robust_rms_after_alignment": 32.91,
+        "plane_detrended_pearson": 0.1876,
+        "ascending_scatter": 6.745,
+        "descending_scatter": 33.678,
+        "offset_mm_per_yr": -26.408
+      }
+    },
+    "velocityStd": {
+      "q1_2.175_4.799": {
+        "n": 170801,
+        "pearson": 0.191,
+        "spearman": 0.1357,
+        "robust_rms_after_alignment": 27.454,
+        "plane_detrended_pearson": 0.1813,
+        "ascending_scatter": 8.426,
+        "descending_scatter": 27.591,
+        "offset_mm_per_yr": -51.79
+      },
+      "q2_4.799_5.405": {
+        "n": 170801,
+        "pearson": 0.1697,
+        "spearman": 0.1903,
+        "robust_rms_after_alignment": 26.228,
+        "plane_detrended_pearson": 0.115,
+        "ascending_scatter": 10.013,
+        "descending_scatter": 27.779,
+        "offset_mm_per_yr": -38.12
+      },
+      "q3_5.405_5.889": {
+        "n": 170800,
+        "pearson": 0.223,
+        "spearman": 0.2627,
+        "robust_rms_after_alignment": 24.589,
+        "plane_detrended_pearson": 0.1351,
+        "ascending_scatter": 11.399,
+        "descending_scatter": 26.057,
+        "offset_mm_per_yr": -31.009
+      },
+      "q4_5.889_6.429": {
+        "n": 170801,
+        "pearson": 0.2746,
+        "spearman": 0.318,
+        "robust_rms_after_alignment": 24.092,
+        "plane_detrended_pearson": 0.1553,
+        "ascending_scatter": 11.993,
+        "descending_scatter": 25.266,
+        "offset_mm_per_yr": -25.383
+      },
+      "q5_6.429_10.277": {
+        "n": 170801,
+        "pearson": 0.3013,
+        "spearman": 0.3356,
+        "robust_rms_after_alignment": 23.794,
+        "plane_detrended_pearson": 0.1523,
+        "ascending_scatter": 10.606,
+        "descending_scatter": 25.117,
+        "offset_mm_per_yr": -15.949
+      }
+    },
+    "avg_spatial_coherence": {
+      "q1_0.258_0.456": {
+        "n": 170801,
+        "pearson": 0.1277,
+        "spearman": 0.1273,
+        "robust_rms_after_alignment": 20.788,
+        "plane_detrended_pearson": 0.1044,
+        "ascending_scatter": 14.151,
+        "descending_scatter": 17.418,
+        "offset_mm_per_yr": -24.139
+      },
+      "q2_0.456_0.618": {
+        "n": 170801,
+        "pearson": 0.1213,
+        "spearman": 0.1242,
+        "robust_rms_after_alignment": 27.133,
+        "plane_detrended_pearson": 0.0812,
+        "ascending_scatter": 10.01,
+        "descending_scatter": 26.936,
+        "offset_mm_per_yr": -34.436
+      },
+      "q3_0.618_0.769": {
+        "n": 170800,
+        "pearson": 0.1432,
+        "spearman": 0.1256,
+        "robust_rms_after_alignment": 36.813,
+        "plane_detrended_pearson": 0.1168,
+        "ascending_scatter": 6.486,
+        "descending_scatter": 35.7,
+        "offset_mm_per_yr": -31.734
+      },
+      "q4_0.769_0.877": {
+        "n": 170801,
+        "pearson": 0.1812,
+        "spearman": 0.1563,
+        "robust_rms_after_alignment": 32.273,
+        "plane_detrended_pearson": 0.1445,
+        "ascending_scatter": 5.382,
+        "descending_scatter": 33.559,
+        "offset_mm_per_yr": -26.473
+      },
+      "q5_0.877_0.987": {
+        "n": 170801,
+        "pearson": 0.2406,
+        "spearman": 0.1932,
+        "robust_rms_after_alignment": 24.749,
+        "plane_detrended_pearson": 0.1998,
+        "ascending_scatter": 4.853,
+        "descending_scatter": 27.014,
+        "offset_mm_per_yr": -26.117
+      }
+    }
+  },
+  "progressive_quality_subsets": {
+    "TC>=0.4": {
+      "n": 661442,
+      "pearson": 0.1789,
+      "spearman": 0.1766,
+      "robust_rms_after_alignment": 30.001,
+      "plane_detrended_pearson": 0.1483,
+      "ascending_scatter": 7.373,
+      "descending_scatter": 31.216,
+      "offset_mm_per_yr": -30.148
+    },
+    "TC>=0.45": {
+      "n": 506854,
+      "pearson": 0.1899,
+      "spearman": 0.1735,
+      "robust_rms_after_alignment": 30.796,
+      "plane_detrended_pearson": 0.165,
+      "ascending_scatter": 6.833,
+      "descending_scatter": 31.977,
+      "offset_mm_per_yr": -28.808
+    },
+    "TC>=0.5": {
+      "n": 257394,
+      "pearson": 0.2016,
+      "spearman": 0.1744,
+      "robust_rms_after_alignment": 32.252,
+      "plane_detrended_pearson": 0.1828,
+      "ascending_scatter": 6.747,
+      "descending_scatter": 33.161,
+      "offset_mm_per_yr": -27.117
+    },
+    "TC>=0.55": {
+      "n": 70706,
+      "pearson": 0.2023,
+      "spearman": 0.1769,
+      "robust_rms_after_alignment": 34.241,
+      "plane_detrended_pearson": 0.1892,
+      "ascending_scatter": 6.8,
+      "descending_scatter": 34.511,
+      "offset_mm_per_yr": -25.522
+    },
+    "TC>=0.6": {
+      "n": 9185,
+      "pearson": 0.1835,
+      "spearman": 0.163,
+      "robust_rms_after_alignment": 36.008,
+      "plane_detrended_pearson": 0.175,
+      "ascending_scatter": 6.639,
+      "descending_scatter": 35.837,
+      "offset_mm_per_yr": -23.977
+    },
+    "TC>=0.65": {
+      "n": 515,
+      "pearson": 0.1388,
+      "spearman": 0.162,
+      "robust_rms_after_alignment": 40.215,
+      "plane_detrended_pearson": 0.1526,
+      "ascending_scatter": 6.589,
+      "descending_scatter": 39.378,
+      "offset_mm_per_yr": -22.971
+    },
+    "TC>=0.7": null
+  },
+  "connected_components": {
+    "inverted_pixels": 4017547,
+    "inside_connected": 750143,
+    "fraction_inside": 0.18672,
+    "outside_median_abs_velocity": 36.609,
+    "inside_median_abs_velocity": 27.779,
+    "outside_median_temporal_coherence": 0.356,
+    "inside_median_temporal_coherence": 0.4945
+  },
+  "residual_burden": {
+    "median_abs_residue_rad": 0.5835,
+    "p90_abs_residue_rad": 0.7631,
+    "note": "velocity.h5 `residue` is the per-pixel median residual phase; this is a residual burden, not a true phase-closure count"
+  },
+  "robustness_edges": [
+    {
+      "reference_date": "2022-03-31",
+      "secondary_date": "2022-05-30",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": 43.75,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2636,
+      "coherence_rank_of_219": 30,
+      "coherence_percentile": 13.7
+    },
+    {
+      "reference_date": "2022-07-29",
+      "secondary_date": "2022-11-26",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": 212.0,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2578,
+      "coherence_rank_of_219": 1,
+      "coherence_percentile": 0.5
+    },
+    {
+      "reference_date": "2022-08-10",
+      "secondary_date": "2022-11-26",
+      "temporal_baseline_days": 108,
+      "perpendicular_baseline_m": 213.0,
+      "role": "connect_components",
+      "ifg_spatial_coherence_median": 0.2594,
+      "coherence_rank_of_219": 4,
+      "coherence_percentile": 1.8
+    },
+    {
+      "reference_date": "2022-11-26",
+      "secondary_date": "2023-01-25",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": -152.75,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2684,
+      "coherence_rank_of_219": 69,
+      "coherence_percentile": 31.5
+    },
+    {
+      "reference_date": "2023-01-01",
+      "secondary_date": "2023-05-01",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": 50.5,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2659,
+      "coherence_rank_of_219": 47,
+      "coherence_percentile": 21.5
+    },
+    {
+      "reference_date": "2023-08-29",
+      "secondary_date": "2023-12-27",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": -46.0,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2605,
+      "coherence_rank_of_219": 8,
+      "coherence_percentile": 3.7
+    },
+    {
+      "reference_date": "2024-01-08",
+      "secondary_date": "2024-03-08",
+      "temporal_baseline_days": 60,
+      "perpendicular_baseline_m": -74.25,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2709,
+      "coherence_rank_of_219": 79,
+      "coherence_percentile": 36.1
+    },
+    {
+      "reference_date": "2024-04-01",
+      "secondary_date": "2024-05-19",
+      "temporal_baseline_days": 48,
+      "perpendicular_baseline_m": 190.75,
+      "role": "reduce_articulation",
+      "ifg_spatial_coherence_median": 0.2681,
+      "coherence_rank_of_219": 68,
+      "coherence_percentile": 31.1
+    },
+    {
+      "reference_date": "2024-05-19",
+      "secondary_date": "2024-09-16",
+      "temporal_baseline_days": 120,
+      "perpendicular_baseline_m": -122.5,
+      "role": "remove_bridge",
+      "ifg_spatial_coherence_median": 0.2586,
+      "coherence_rank_of_219": 2,
+      "coherence_percentile": 0.9
+    },
+    {
+      "reference_date": "2024-05-31",
+      "secondary_date": "2024-07-18",
+      "temporal_baseline_days": 48,
+      "perpendicular_baseline_m": -49.25,
+      "role": "connect_components",
+      "ifg_spatial_coherence_median": 0.2638,
+      "coherence_rank_of_219": 31,
+      "coherence_percentile": 14.2
+    }
+  ]
+}
