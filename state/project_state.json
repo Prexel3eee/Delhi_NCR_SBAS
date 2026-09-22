@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T15:10:00Z",
-  "phase": "BRANCHES_COMPLETE_AWAITING_DIRECTION",
-  "next_phase": "OWNER_REVIEW",
+  "updated_utc": "2026-09-22T09:33:47Z",
+  "phase": "V1_PRODUCT_FROZEN",
+  "next_phase": "V1_DELIVERED",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -134,15 +134,14 @@
   "pilot_passed": true,
   "production_approved": true,
   "production_submitted": true,
-  "mintpy_complete": false,
+  "mintpy_complete": true,
   "production_blocked_on": [
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Owner review of the branch report: no correction is beneficial on this stack.",
-    "Deramp remains a sensitivity experiment only.",
-    "No final deformation product declared.",
-    "Rotate the Earthdata and CDS credentials when convenient."
+    "No independent in-AOI geodetic reference exists for absolute validation; nearest adequately sampled GNSS station is 210 km away.",
+    "Absolute reference carries a documented 4.78 mm/yr systematic (sd 1.72) from reference selection.",
+    "Tropospheric delay is not corrected in the frozen v1 branch; ERA5 was tested and did not improve the product."
   ],
   "v1_freeze": {
     "frozen": true,
@@ -155,13 +154,19 @@
     "policy": "v1 accepts 119 acquisitions / 336 pairs; 2025-05-18 is permanently excluded and will not be re-queried for v1."
   },
   "regression_tests": {
-    "path": "tests/test_asf_client_regressions.py",
-    "count": 13,
+    "path": "tests/",
+    "count": 60,
     "covers": [
-      "mode1: asf_search raises ASFSearchError on valid windows",
-      "mode2: CMR POLARIZATION attribute filter silently omits a granule",
-      "mode3: stack() truncation and silent baseline reference substitution"
-    ]
+      "ASF/CMR silent failure modes (13)",
+      "v1 freeze invariants (7)",
+      "pilot idempotency (8)",
+      "pilot retrieval (11)",
+      "production retrieval (9)",
+      "MintPy prep selection (5)",
+      "correction validation, GNSS windowing and product-freeze integrity (17)"
+    ],
+    "delhi_mintpy": "60 passed, 1 skipped",
+    "delhi_hyp3": "47 passed, 2 skipped"
   },
   "environments": {
     "search_submission": {
@@ -229,6 +234,13 @@
       "fix": "Both comparison scripts now resolve branch products by reading FILE_PATH metadata instead of guessing filename patterns.",
       "corrected_result": "0.52 mm/yr RMS (median +0.01, max 5.1), not 15.49 mm/yr",
       "related": "The same class of mistake had already made the DEM branch look identical to ERA5 (false null)."
+    },
+    {
+      "id": "INC-006",
+      "title": "GNSS co-location disagreement was a window artefact, not step contamination",
+      "detail": "The first GNSS pass compared each station's full-record vertical trend and reported the co-located LCK3/LCK4 pair disagreeing by ~27 mm/yr, which was read as evidence of step contamination and used to argue GNSS was unusable. LCK3 ends 2023-12 and LCK4 ends 2026-09, so their full-record trends are not comparable. Evaluated over their 745 shared epochs they agree to 0.767 mm/yr.",
+      "impact": "The conclusion (GNSS cannot discriminate) survived, but for a different and more honest reason: coverage, not measurement quality. An earlier 'GNSS REFERENCE AVAILABLE' verdict based on a stations-passing-threshold count was also superseded.",
+      "fix": "scripts/29_gnss_verdict.py computes every rate difference on the maximal shared window and reports the co-location test against that window; tests/test_correction_validation.py pins the windowing requirement."
     }
   ],
   "pilot_metrics": {
@@ -503,5 +515,78 @@
     "era5_coverage_complete": true,
     "deramp": "disabled"
   },
-  "final_deformation_product_declared": false
+  "final_deformation_product_declared": true,
+  "correction_validation": {
+    "status": "COMPLETE",
+    "stage": "final correction-validation stage (GNSS/CORS + targeted stable-area diagnostics)",
+    "new_branches_run": false,
+    "gnss": {
+      "evidence": "qc/sci/gnss_suitability.json",
+      "outcome": "GNSS CANNOT DISCRIMINATE",
+      "stations_within_500km": 35,
+      "stations_downloaded": 23,
+      "stations_with_adequate_in_period_sampling_within_30km": 0,
+      "best_in_aoi_in_period_solutions": 14,
+      "nearest_station_with_adequate_sampling_km": 209.9,
+      "nearest_station_with_adequate_sampling": "DRDN",
+      "colocation_pair": "LCK3/LCK4 (0.01 km apart, 745 shared epochs)",
+      "colocation_disagreement_mm_per_yr": 0.767,
+      "reason": "no in-AOI station has adequate in-period sampling (best 14 daily solutions); the nearest adequately sampled station is 210 km away, so its rate convolves the real spatial gradient with any correction benefit",
+      "supersedes": "earlier 'GNSS REFERENCE AVAILABLE' verdict from a stations-passing-threshold count"
+    },
+    "diagnostics": {
+      "evidence": "qc/sci/correction_validation.json",
+      "tests": [
+        "velocity-field high-pass energy",
+        "stable-area velocity scatter",
+        "elevation-correlated residual",
+        "per-pixel temporal residual scatter"
+      ],
+      "temporal_coherence_min": 0.9,
+      "abs_velocity_max_mm_per_yr": 3.0,
+      "stable_mask_pixels": 256758,
+      "aoi_pixels": 1226497
+    },
+    "verdict": {
+      "promoted": [],
+      "principal_candidate": "RAW",
+      "ERA5": {
+        "tests_improved": 1,
+        "tests_total": 4,
+        "winning_test": "elevation-correlated residual (0.1497 -> 0.0332, 78% reduction)",
+        "verdict": "tested, not beneficial"
+      },
+      "ERA5+DEM": {
+        "tests_improved": 1,
+        "tests_total": 4,
+        "winning_test": "elevation-correlated residual (0.0332 -> 0.0847, worse than ERA5 alone)",
+        "verdict": "tested, not beneficial; worst branch on stable-area offset and scatter"
+      },
+      "policy": "promote only if at least 3 of 4 diagnostics improve"
+    }
+  },
+  "product_v1_freeze": {
+    "frozen": true,
+    "freeze_version": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+    "snapshot": "freeze/product_v1/ (read-only)",
+    "principal_branch": "RAW-336",
+    "statement": "RAW-336 is the authoritative v1 deformation solution.",
+    "pinned_products": 9,
+    "pinned_note": "Large products are hash-pinned in place (sha256 + bytes + mtime_ns), not copied, to avoid duplicating ~3.7 GB.",
+    "copied_artefacts": 12,
+    "pairs_retained": 336,
+    "pairs_excluded": 0,
+    "deramp": "disabled",
+    "reference_systematic_mm_per_yr": 4.78,
+    "verify_with": "python scripts/verify_product_v1.py",
+    "verification": "exit 0, 0 warnings",
+    "report": "qc/sci/CORRECTION_VALIDATION_REPORT.md",
+    "corrections_tested_not_beneficial": [
+      "ERA5 atmospheric delay",
+      "ERA5 + pixel-wise DEM residual",
+      "network unwrap correction (bridge + phase closure)"
+    ],
+    "scope_caveat": "v1 deformation solution, not a calibrated geodetic product. Not troposphere-corrected in the frozen branch; absolute reference carries the 4.78 mm/yr systematic. Validation against an independent in-AOI geodetic reference was not possible."
+  }
 }

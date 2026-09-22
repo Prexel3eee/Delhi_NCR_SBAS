@@ -1,0 +1,190 @@
+{
+  "freeze_version": "product_v1",
+  "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+  "created_utc": "2026-09-22T09:34:16.505206+00:00",
+  "principal_branch": "RAW-336",
+  "statement": "RAW-336 is the authoritative v1 deformation solution. ERA5 atmospheric correction and ERA5+DEM pixel-wise DEM-residual correction were both tested with targeted stable-area atmospheric/topographic diagnostics and are not beneficial; they are not applied. Spatial deramping is disabled.",
+  "corrections_tested_not_beneficial": [
+    {
+      "name": "ERA5 atmospheric delay",
+      "evidence": "qc/sci/correction_validation.json",
+      "result": "1 of 4 diagnostics improved; reduces elevation-correlated residual from 0.1497 to 0.0332 but roughens the velocity field and enlarges stable-area scatter"
+    },
+    {
+      "name": "ERA5 + pixel-wise DEM residual",
+      "evidence": "qc/sci/correction_validation.json",
+      "result": "1 of 4 diagnostics improved; worst branch on stable-area offset and scatter, and degrades the elevation-correlated residual relative to ERA5 alone (0.0332 -> 0.0847)"
+    },
+    {
+      "name": "network unwrap correction (bridge + phase closure)",
+      "evidence": "qc/sci/unwrap_comparison.json",
+      "result": "degrades fit: residual 4.593 -> 5.108 rad, 134 improved / 202 worsened"
+    }
+  ],
+  "validation": {
+    "gnss": {
+      "evidence": "qc/sci/gnss_suitability.json",
+      "outcome": "GNSS CANNOT DISCRIMINATE",
+      "reason": "no station within 30 km has >= 30 daily solutions inside the study period (best: 14); in-AOI records either end before 2021-10-06 or hold only episodic daily solutions; co-located receivers disagree by up to 0.77 mm/yr (median 0.77), implying an achievable vertical-rate accuracy of only 0.54 mm/yr against a 1.04 mm/yr branch difference; the nearest station with dense in-period sampling is 210 km away, so its rate convolves the real spatial gradient of the Indo-Gangetic/Himalayan vertical field with any correction benefit; a point rate at that distance is not comparable to an AOI-mean InSAR rate"
+    },
+    "diagnostics": "qc/sci/correction_validation.json",
+    "report": "qc/sci/CORRECTION_VALIDATION_REPORT.md"
+  },
+  "pinned_products": [
+    {
+      "path": "mintpy/baseline_raw_work/timeseries.h5",
+      "sha256": "c11c323d17c729ee08c128bdb27e3f147b99b42175f51d9cc0aea65c61e11633",
+      "bytes": 3438156224,
+      "mtime_ns": 1790051556939506987,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/velocity.h5",
+      "sha256": "73d1171cff5637f5251e40591ed65c39ba6575aad594962c406dde229f08cb22",
+      "bytes": 143340904,
+      "mtime_ns": 1790051561830850220,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/temporalCoherence.h5",
+      "sha256": "60494cf67177b4757771de029f84799770e70685454bbdbbd50bc6449db00af0",
+      "bytes": 28676856,
+      "mtime_ns": 1790051556969557577,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/maskTempCoh.h5",
+      "sha256": "62175733bd86d203f2597f801a4bb0334ed0e13a3b0682a93ce4f0cc27a64f70",
+      "bytes": 7146088,
+      "mtime_ns": 1790051557344188692,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/avgSpatialCoh.h5",
+      "sha256": "c3851d9eb56059c863f6399075871e5d4a8ade64e855c0f051252a99bb92c543",
+      "bytes": 28675848,
+      "mtime_ns": 1790049972510872000,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/maskConnComp.h5",
+      "sha256": "2b9febb530b3ad885733a00079eb16344254bd9c1565cfbd8b6bbebaa98b0083",
+      "bytes": 7138768,
+      "mtime_ns": 1790049972510911000,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/numInvIfgram.h5",
+      "sha256": "ab8a07fbac6236cba8d6dac21bef246b6912c82b40ce9a078654307904a2780d",
+      "bytes": 28676776,
+      "mtime_ns": 1790051556970737031,
+      "critical": true
+    },
+    {
+      "path": "mintpy/baseline_raw_work/avgPhaseVelocity.h5",
+      "sha256": "585230f10dfce27fe0fcdc3bbbd65be281baf663aad76e22173f36c26ef1ef0e",
+      "bytes": 28676136,
+      "mtime_ns": 1790049979972524972,
+      "critical": false
+    },
+    {
+      "path": "mintpy/baseline_raw_work/numTriNonzeroIntAmbiguity.h5",
+      "sha256": "2a935bd3b1683cd253b97bafb8abd784d3091a1dd108dbe3ae7e1fbda39c8fc3",
+      "bytes": 28676128,
+      "mtime_ns": 1790050010324652824,
+      "critical": false
+    }
+  ],
+  "pinned_note": "Hashed in place rather than copied: the products total several GB and duplicating them would consume storage without adding provenance.",
+  "copied_artefacts": [
+    {
+      "path": "config/scientific_decisions_v2.json",
+      "sha256": "4015bc74b2a33a7fe57140ee7ac45cc59c76b99bf9d813083f670f487f4ae963",
+      "bytes": 1244,
+      "critical": true
+    },
+    {
+      "path": "config/mintpy_baseline_raw.txt",
+      "sha256": "8772379fa2f79282ecd82e3768d7adc7b47e52cadb50a0eadc4c6715de70e014",
+      "bytes": 2735,
+      "critical": true
+    },
+    {
+      "path": "freeze/mintpy_input_v1/FREEZE.json",
+      "sha256": "bcc4389693dad6b893984d3bd2ddbd6e122bd8fcfcd599af4854070fb9958a77",
+      "bytes": 24170,
+      "critical": true
+    },
+    {
+      "path": "manifests/sbas_pairs.csv",
+      "sha256": "1a0c9a5a69dfbf1f3c390e5ed2d5a48748e1ac7dc93738627af810f158b2d3d8",
+      "bytes": 212324,
+      "critical": true
+    },
+    {
+      "path": "manifests/accepted_acquisitions.csv",
+      "sha256": "b5a9770ee5975a4142a3cc4f65795da89ae54a16e177d07a97d24fe6715b2a20",
+      "bytes": 40199,
+      "critical": true
+    },
+    {
+      "path": "qc/sci/correction_validation.json",
+      "sha256": "c0dae29aba6753047a6389e95420d6ac985a6abfe726dbd88e42a0c15d01096f",
+      "bytes": 2175,
+      "critical": true
+    },
+    {
+      "path": "qc/sci/branch_comparison.json",
+      "sha256": "97650fcf88884be858c94bee8524b26a65de46c9eb05e1d3058312f2811e41b8",
+      "bytes": 2676,
+      "critical": true
+    },
+    {
+      "path": "qc/sci/gnss_suitability.json",
+      "sha256": "c04d5e0f9a467262f887f4a4a40cd588fcfd1aac31fa24b0f40dd37441fd3154",
+      "bytes": 11542,
+      "critical": true
+    },
+    {
+      "path": "qc/sci/reference_sensitivity.json",
+      "sha256": "6bdb809c4a503eedfce64b89defeeef7e23331e94d54da75a223bf1554f3b384",
+      "bytes": 3743,
+      "critical": false
+    },
+    {
+      "path": "qc/sci/unwrap_comparison.json",
+      "sha256": "2fdf0cdac5e2f6acee0bf8513e126cac2dc1db4e677f7cf36833262fbbb68d72",
+      "bytes": 3543,
+      "critical": false
+    },
+    {
+      "path": "qc/sci/network_comparison.json",
+      "sha256": "5b29837b08a7480bcffb21ff9eef31b0df0aa2395f5cb6309375a73b2aede5d5",
+      "bytes": 6858,
+      "critical": false
+    },
+    {
+      "path": "qc/sci/era5_coverage.json",
+      "sha256": "dcb8e02d45623cda41dd9168aa025986497e26095c8bb88dd4f705d767004a6d",
+      "bytes": 1154,
+      "critical": false
+    }
+  ],
+  "reference_point": {
+    "lon": 77.095,
+    "lat": 28.6426,
+    "epsg": 32643,
+    "projected_x": 704775.66,
+    "projected_y": 3170184.88,
+    "yx_full_grid": [
+      1378,
+      1426
+    ],
+    "inside_aoi": true,
+    "mintpy_reference_yx": "1378,1426"
+  },
+  "reference_systematic_mm_per_yr": null,
+  "pairs_retained": 336,
+  "pairs_excluded": 0,
+  "deramp": "disabled"
+}

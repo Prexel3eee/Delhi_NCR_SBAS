@@ -1,0 +1,37 @@
+{
+  "generated_utc": "2026-09-22T09:28:40.888944+00:00",
+  "source": "Nevada Geodetic Laboratory daily GNSS solutions (IGS14)",
+  "aoi_centre_lonlat": [
+    77.095,
+    28.6426
+  ],
+  "study_period": [
+    "2021-10-06",
+    "2025-09-27"
+  ],
+  "radius_km_searched": 500.0,
+  "stations_within_radius": 35,
+  "stations_downloaded": 23,
+  "download_errors": {},
+  "usable_stations": 4,
+  "nearest_usable_station": {
+    "station": "IITK",
+    "distance_km": 388.8,
+    "catalogue_solutions": 1539,
+    "parsed_solutions": 1539,
+    "data_begin": "2022-01-26",
+    "data_end": "2026-09-05",
+    "study_period_n": 1200,
+    "study_period_span_years": 3.669,
+    "study_period_vertical_rate_mm_per_yr": 10.009,
+    "study_period_uncertainty_mm_per_yr": 0.458,
+    "full_record_vertical_rate_mm_per_yr": 11.874,
+    "usable": true
+  },
+  "criteria": {
+    "min_solutions": 100,
+    "min_span_years": 2.0
+  },
+  "outcome": "GNSS REFERENCE AVAILABLE",
+  "reason": "4 station(s) support a rate estimate over the study period. Compare against InSAR LOS converted to vertical via the local incidence angle."
+}

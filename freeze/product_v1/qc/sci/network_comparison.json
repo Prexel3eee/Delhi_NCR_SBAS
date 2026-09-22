@@ -1,0 +1,306 @@
+{
+  "generated_utc": "2026-09-22T04:42:11.041525+00:00",
+  "status": "PROPOSAL ONLY - nothing applied to the frozen input",
+  "alternative_strategy_acquisition_pruning": {
+    "pruned_acquisitions": [
+      "2023-03-30",
+      "2023-07-16",
+      "2023-08-09",
+      "2023-09-02",
+      "2023-07-04",
+      "2023-07-28",
+      "2023-06-22",
+      "2023-08-21"
+    ],
+    "n_pruned": 8,
+    "pairs": 282,
+    "dates": 111,
+    "accepted": false,
+    "summary": {
+      "nodes": 111,
+      "edges": 282,
+      "components": 2,
+      "component_sizes": [
+        60,
+        51
+      ],
+      "isolated_nodes": [],
+      "bridges": 0,
+      "articulation_points": 0,
+      "degree_min": 3,
+      "degree_mean": 5.0811,
+      "degree_median": 5.0,
+      "degree_max": 6,
+      "degree_distribution": {
+        "3": 14,
+        "4": 11,
+        "5": 38,
+        "6": 48
+      },
+      "acquisition_gaps": {
+        "12": 105,
+        "24": 4,
+        "96": 1
+      },
+      "max_gap_days": 96,
+      "criteria": {
+        "single_component": false,
+        "no_isolated_nodes": true,
+        "no_bridges": true,
+        "no_articulation_points": true,
+        "min_degree_at_least_3": true
+      },
+      "accepted": false
+    },
+    "rationale": "retaining a known-bad interferogram merely to keep a node in the graph is the wrong trade; dropping the under-supported acquisition is cleaner and leaves only QC-acceptable pairs"
+  },
+  "full": {
+    "nodes": 119,
+    "edges": 336,
+    "components": 1,
+    "component_sizes": [
+      119
+    ],
+    "isolated_nodes": [],
+    "bridges": 0,
+    "articulation_points": 0,
+    "degree_min": 3,
+    "degree_mean": 5.6471,
+    "degree_median": 6.0,
+    "degree_max": 6,
+    "degree_distribution": {
+      "3": 2,
+      "4": 4,
+      "5": 28,
+      "6": 85
+    },
+    "acquisition_gaps": {
+      "12": 115,
+      "24": 3
+    },
+    "max_gap_days": 24,
+    "criteria": {
+      "single_component": true,
+      "no_isolated_nodes": true,
+      "no_bridges": true,
+      "no_articulation_points": true,
+      "min_degree_at_least_3": true
+    },
+    "accepted": true
+  },
+  "curated": {
+    "nodes": 119,
+    "edges": 297,
+    "components": 1,
+    "component_sizes": [
+      119
+    ],
+    "isolated_nodes": [],
+    "bridges": 1,
+    "articulation_points": 2,
+    "degree_min": 1,
+    "degree_mean": 4.9916,
+    "degree_median": 5.0,
+    "degree_max": 6,
+    "degree_distribution": {
+      "1": 1,
+      "2": 3,
+      "3": 15,
+      "4": 11,
+      "5": 36,
+      "6": 53
+    },
+    "acquisition_gaps": {
+      "12": 115,
+      "24": 3
+    },
+    "max_gap_days": 24,
+    "criteria": {
+      "single_component": true,
+      "no_isolated_nodes": true,
+      "no_bridges": false,
+      "no_articulation_points": false,
+      "min_degree_at_least_3": false
+    },
+    "accepted": false
+  },
+  "removed_pairs": 39,
+  "removed_pair_ids": [
+    "20220615_20220721",
+    "20220627_20220709",
+    "20220709_20220721",
+    "20220721_20220802",
+    "20220802_20220814",
+    "20220814_20220826",
+    "20220814_20220907",
+    "20220907_20220919",
+    "20220919_20221001",
+    "20230222_20230330",
+    "20230318_20230330",
+    "20230330_20230411",
+    "20230330_20230423",
+    "20230517_20230529",
+    "20230529_20230622",
+    "20230529_20230704",
+    "20230622_20230704",
+    "20230622_20230716",
+    "20230704_20230716",
+    "20230716_20230728",
+    "20230728_20230902",
+    "20230809_20230821",
+    "20230809_20230902",
+    "20230809_20230914",
+    "20230821_20230902",
+    "20230902_20230914",
+    "20240429_20240523",
+    "20240511_20240523",
+    "20240722_20240803",
+    "20240803_20240815",
+    "20240815_20240827",
+    "20240827_20240908",
+    "20240908_20240920",
+    "20240920_20241002",
+    "20250705_20250717",
+    "20250729_20250810",
+    "20250810_20250822",
+    "20250822_20250903",
+    "20250903_20250915"
+  ],
+  "newly_isolated_acquisitions": [],
+  "largest_degree_losses": [
+    {
+      "date": "2023-03-30",
+      "full_degree": 6,
+      "curated_degree": 2
+    },
+    {
+      "date": "2023-09-02",
+      "full_degree": 6,
+      "curated_degree": 2
+    },
+    {
+      "date": "2022-07-21",
+      "full_degree": 6,
+      "curated_degree": 3
+    },
+    {
+      "date": "2022-08-14",
+      "full_degree": 6,
+      "curated_degree": 3
+    },
+    {
+      "date": "2023-05-29",
+      "full_degree": 6,
+      "curated_degree": 3
+    },
+    {
+      "date": "2023-06-22",
+      "full_degree": 6,
+      "curated_degree": 3
+    },
+    {
+      "date": "2023-07-04",
+      "full_degree": 6,
+      "curated_degree": 3
+    },
+    {
+      "date": "2023-07-16",
+      "full_degree": 5,
+      "curated_degree": 2
+    },
+    {
+      "date": "2023-08-09",
+      "full_degree": 4,
+      "curated_degree": 1
+    },
+    {
+      "date": "2022-07-09",
+      "full_degree": 6,
+      "curated_degree": 4
+    }
+  ],
+  "revised_proposal_to_restore_bridges": {
+    "restored_pairs": [
+      "20230809_20230902"
+    ],
+    "n_restored": 1,
+    "resulting_pairs": 298,
+    "resulting_summary": {
+      "nodes": 119,
+      "edges": 298,
+      "components": 1,
+      "component_sizes": [
+        119
+      ],
+      "isolated_nodes": [],
+      "bridges": 0,
+      "articulation_points": 0,
+      "degree_min": 2,
+      "degree_mean": 5.0084,
+      "degree_median": 5.0,
+      "degree_max": 6,
+      "degree_distribution": {
+        "2": 3,
+        "3": 16,
+        "4": 11,
+        "5": 36,
+        "6": 53
+      },
+      "acquisition_gaps": {
+        "12": 115,
+        "24": 3
+      },
+      "max_gap_days": 24,
+      "criteria": {
+        "single_component": true,
+        "no_isolated_nodes": true,
+        "no_bridges": true,
+        "no_articulation_points": true,
+        "min_degree_at_least_3": false
+      },
+      "accepted": false
+    }
+  },
+  "repair_targets": "minimise (components-1, isolated nodes, bridges, articulation points, max(0, 3 - min degree)) by restoring the fewest excluded pairs",
+  "decision": "curated network FAILS one or more graph criteria - revision required",
+  "final_proposal": {
+    "pairs": 298,
+    "pairs_removed": 38,
+    "accepted": false,
+    "summary": {
+      "nodes": 119,
+      "edges": 298,
+      "components": 1,
+      "component_sizes": [
+        119
+      ],
+      "isolated_nodes": [],
+      "bridges": 0,
+      "articulation_points": 0,
+      "degree_min": 2,
+      "degree_mean": 5.0084,
+      "degree_median": 5.0,
+      "degree_max": 6,
+      "degree_distribution": {
+        "2": 3,
+        "3": 16,
+        "4": 11,
+        "5": 36,
+        "6": 53
+      },
+      "acquisition_gaps": {
+        "12": 115,
+        "24": 3
+      },
+      "max_gap_days": 24,
+      "criteria": {
+        "single_component": true,
+        "no_isolated_nodes": true,
+        "no_bridges": true,
+        "no_articulation_points": true,
+        "min_degree_at_least_3": false
+      },
+      "accepted": false
+    }
+  }
+}

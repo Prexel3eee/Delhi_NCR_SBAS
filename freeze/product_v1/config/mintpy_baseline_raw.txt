@@ -1,0 +1,59 @@
+## Delhi-NCR SBAS - RAW-336 BASELINE diagnostic inversion
+##
+## Purpose: a deliberately UNCORRECTED baseline over all 336 interferograms.
+## Nothing is removed and nothing is corrected, so that any later exclusion or
+## correction can be judged against it.
+##
+## Frozen input: freeze/mintpy_input_v1 (336 pairs / 119 dates)
+##
+## Corrections deliberately disabled:
+##   unwrap error   no      (bridging / phase closure tested separately)
+##   troposphere    no      (ERA5 tested separately)
+##   deramp         no      (spatial ramp is a sensitivity experiment only;
+##                           broad subsidence gradients may be genuine signal)
+##   DEM residual   no      (tested separately)
+##   residual RMS deramp no (keep the residual diagnostic un-deramped too)
+##
+## Network is NOT modified: keepMinSpanTree is forced off, because MintPy
+## defaults it to YES and would silently drop interferograms not in the
+## minimum spanning tree. All 336 pairs must survive to the inversion.
+
+## ---- region ---------------------------------------------------------------
+## AOI bounding window on the shared target grid (rows, cols). QC statistics are
+## computed on the AOI *polygon*; the inversion runs on its bounding rectangle.
+mintpy.subset.yx = 748:2092,676:1880
+
+## ---- network: keep every pair --------------------------------------------
+mintpy.network.keepMinSpanTree  = no
+mintpy.network.coherenceBased   = no
+mintpy.network.areaRatioBased   = no
+mintpy.network.minCoherence     = 0.0
+mintpy.network.minAreaRatio     = 0.0
+
+## ---- reference: provisional ----------------------------------------------
+## Reference sensitivity is tested separately before the production reference
+## is frozen; this is only the baseline choice.
+mintpy.reference.minCoherence   = 0.85
+
+## ---- corrections: ALL OFF -------------------------------------------------
+mintpy.unwrapError.method              = no
+mintpy.troposphericDelay.method        = no
+mintpy.deramp                          = no
+mintpy.topographicResidual             = no
+mintpy.residualRMS.deramp              = no
+
+## ---- inversion ------------------------------------------------------------
+mintpy.networkInversion.weightFunc      = var
+mintpy.networkInversion.minRedundancy   = 1
+mintpy.networkInversion.maskDataset     = no
+mintpy.networkInversion.minNormVelocity = yes
+
+## ---- outputs --------------------------------------------------------------
+mintpy.plot                = no
+mintpy.save.kmz            = no
+mintpy.save.hdfEos5        = no
+
+## ---- compute --------------------------------------------------------------
+## dask local cluster: the inversion covers ~1.6M pixels x 336 interferograms.
+mintpy.compute.cluster   = local
+mintpy.compute.numWorker = 6

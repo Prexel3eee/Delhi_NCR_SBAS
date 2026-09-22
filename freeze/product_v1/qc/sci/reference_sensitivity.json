@@ -1,0 +1,87 @@
+{
+  "generated_utc": "2026-09-22T04:41:27.872625+00:00",
+  "branch": "baseline_raw (uncorrected, all 336 pairs)",
+  "methodology_warning": "Candidate selection deliberately does NOT use velocity. Selecting a reference because its velocity is near zero is circular: it forces the spread to zero and hides the true systematic. The spread reported here is therefore the honest reference-induced uncertainty. Absolute LOS velocity cannot be better constrained than this without independent stability information (GNSS, levelling, bedrock geology).",
+  "method": "The SBAS inversion is linear in the observations, so re-referencing shifts the whole velocity field by the new reference pixel's velocity and leaves the spatial pattern unchanged. Reference sensitivity therefore equals the spread of velocity among plausible stable reference candidates. Validated by a real re-run.",
+  "baseline_reference": {
+    "full_grid_yx": [
+      1384,
+      1451
+    ],
+    "window_yx": [
+      636,
+      775
+    ],
+    "velocity_m_per_yr": 0.0
+  },
+  "selection_criteria": {
+    "block_px": 60,
+    "min_temporal_coherence": 0.85,
+    "max_abs_velocity_m_per_yr": 0.006,
+    "min_block_pixels": 400,
+    "min_separation_px": 150
+  },
+  "blocks_scanned": 368,
+  "stable_blocks": 19,
+  "candidates": {
+    "R1": {
+      "lon": 77.09504,
+      "lat": 28.64256,
+      "reference_velocity_m_per_yr": -0.00014,
+      "shift_vs_baseline_mm_per_yr": -0.14,
+      "aoi_p05_after_shift_mm_per_yr": -34.09,
+      "aoi_p95_after_shift_mm_per_yr": 4.54
+    },
+    "R2": {
+      "lon": 77.16955,
+      "lat": 28.68469,
+      "reference_velocity_m_per_yr": 0.00014,
+      "shift_vs_baseline_mm_per_yr": 0.14,
+      "aoi_p05_after_shift_mm_per_yr": -34.37,
+      "aoi_p95_after_shift_mm_per_yr": 4.26
+    },
+    "R3": {
+      "lon": 77.02101,
+      "lat": 28.62202,
+      "reference_velocity_m_per_yr": -0.00295,
+      "shift_vs_baseline_mm_per_yr": -2.95,
+      "aoi_p05_after_shift_mm_per_yr": -31.28,
+      "aoi_p95_after_shift_mm_per_yr": 7.35
+    },
+    "R4": {
+      "lon": 77.26775,
+      "lat": 28.68308,
+      "reference_velocity_m_per_yr": -0.00032,
+      "shift_vs_baseline_mm_per_yr": -0.32,
+      "aoi_p05_after_shift_mm_per_yr": -33.91,
+      "aoi_p95_after_shift_mm_per_yr": 4.72
+    },
+    "R5": {
+      "lon": 77.2409,
+      "lat": 28.57526,
+      "reference_velocity_m_per_yr": 0.00183,
+      "shift_vs_baseline_mm_per_yr": 1.83,
+      "aoi_p05_after_shift_mm_per_yr": -36.06,
+      "aoi_p95_after_shift_mm_per_yr": 2.57
+    }
+  },
+  "sensitivity": {
+    "candidate_velocity_spread_mm_per_yr": 4.78,
+    "candidate_velocity_sd_mm_per_yr": 1.716,
+    "max_abs_candidate_velocity_mm_per_yr": 2.95,
+    "interpretation": "Systematic uncertainty in ABSOLUTE LOS velocity imposed on the entire AOI by the choice of reference, among candidate regions selected on coherence and spatial coherence alone.",
+    "how_to_reduce": "Only independent stability evidence (GNSS, levelling, exposed bedrock) can reduce this. Until then, treat the absolute velocity offset as uncertain at this level and interpret RELATIVE spatial gradients, which are unaffected by the reference choice."
+  },
+  "recommended_reference": {
+    "lon": 77.09504,
+    "lat": 28.64256,
+    "full_grid_yx": [
+      1378,
+      1426
+    ],
+    "median_temporal_coherence": 0.9905,
+    "median_velocity_m_per_yr": -0.00014,
+    "rationale": "highest temporal coherence with tight velocity uncertainty among spatially separated candidates. Velocity was deliberately excluded from selection to avoid circularity; geographic plausibility (bedrock / ridge vs floodplain) is for the owner to confirm."
+  },
+  "note": "Provisional. The production reference is NOT frozen until the owner reviews this."
+}

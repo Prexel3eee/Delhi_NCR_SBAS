@@ -1,0 +1,381 @@
+{
+  "generated_utc": "2026-09-22T09:31:19.826148+00:00",
+  "study_period": [
+    "2021-10-06",
+    "2025-09-27"
+  ],
+  "aoi_radius_km": 30.0,
+  "colocation_cap_km": 5.0,
+  "min_common_epochs": 30,
+  "coverage_within_aoi": {
+    "stations_inspected": [
+      {
+        "station": "DLHI",
+        "distance_km": 6.8,
+        "solutions_in_study_period": 0,
+        "record": "2021-09-12 .. 2021-09-18",
+        "first_in_study": null,
+        "last_in_study": null
+      },
+      {
+        "station": "GCP5",
+        "distance_km": 6.8,
+        "solutions_in_study_period": 4,
+        "record": "2025-09-08 .. 2025-09-13",
+        "first_in_study": "2025-09-08",
+        "last_in_study": "2025-09-13"
+      },
+      {
+        "station": "DELH",
+        "distance_km": 6.9,
+        "solutions_in_study_period": 14,
+        "record": "2023-09-10 .. 2025-09-13",
+        "first_in_study": "2023-09-10",
+        "last_in_study": "2025-09-13"
+      },
+      {
+        "station": "LIAA",
+        "distance_km": 7.5,
+        "solutions_in_study_period": 0,
+        "record": "2018-12-07 .. 2021-02-06",
+        "first_in_study": null,
+        "last_in_study": null
+      }
+    ],
+    "stations_with_adequate_in_period_sampling": [],
+    "best_in_period_solution_count": 14
+  },
+  "coverage_all_stations": [
+    {
+      "station": "DLHI",
+      "distance_km": 6.8,
+      "solutions_in_study_period": 0,
+      "record": "2021-09-12 .. 2021-09-18",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "GCP5",
+      "distance_km": 6.8,
+      "solutions_in_study_period": 4,
+      "record": "2025-09-08 .. 2025-09-13",
+      "first_in_study": "2025-09-08",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "DELH",
+      "distance_km": 6.9,
+      "solutions_in_study_period": 14,
+      "record": "2023-09-10 .. 2025-09-13",
+      "first_in_study": "2023-09-10",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "LIAA",
+      "distance_km": 7.5,
+      "solutions_in_study_period": 0,
+      "record": "2018-12-07 .. 2021-02-06",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "MAT4",
+      "distance_km": 142.9,
+      "solutions_in_study_period": 14,
+      "record": "2023-09-10 .. 2025-09-13",
+      "first_in_study": "2023-09-10",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "DEHD",
+      "distance_km": 208.8,
+      "solutions_in_study_period": 14,
+      "record": "2021-09-12 .. 2025-09-13",
+      "first_in_study": "2022-09-11",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "DEHR",
+      "distance_km": 208.8,
+      "solutions_in_study_period": 0,
+      "record": "2019-09-15 .. 2019-09-21",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "DRDN",
+      "distance_km": 209.9,
+      "solutions_in_study_period": 351,
+      "record": "2024-06-09 .. 2026-09-05",
+      "first_in_study": "2024-06-09",
+      "last_in_study": "2025-09-27"
+    },
+    {
+      "station": "RGDC",
+      "distance_km": 226.4,
+      "solutions_in_study_period": 9,
+      "record": "2019-09-15 .. 2025-09-13",
+      "first_in_study": "2023-09-10",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "GARH",
+      "distance_km": 232.3,
+      "solutions_in_study_period": 0,
+      "record": "2021-09-12 .. 2021-09-18",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "GCP1",
+      "distance_km": 232.3,
+      "solutions_in_study_period": 2,
+      "record": "2025-09-09 .. 2025-09-12",
+      "first_in_study": "2025-09-09",
+      "last_in_study": "2025-09-12"
+    },
+    {
+      "station": "CHD1",
+      "distance_km": 232.4,
+      "solutions_in_study_period": 14,
+      "record": "2023-09-10 .. 2025-09-13",
+      "first_in_study": "2023-09-10",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "SRID",
+      "distance_km": 307.9,
+      "solutions_in_study_period": 5,
+      "record": "2025-09-08 .. 2025-09-13",
+      "first_in_study": "2025-09-08",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "DNGD",
+      "distance_km": 340.3,
+      "solutions_in_study_period": 0,
+      "record": "2008-05-06 .. 2019-08-17",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "MUNS",
+      "distance_km": 343.3,
+      "solutions_in_study_period": 3,
+      "record": "2025-09-07 .. 2025-09-11",
+      "first_in_study": "2025-09-07",
+      "last_in_study": "2025-09-11"
+    },
+    {
+      "station": "GUR1",
+      "distance_km": 347.0,
+      "solutions_in_study_period": 14,
+      "record": "2023-09-10 .. 2025-09-13",
+      "first_in_study": "2023-09-10",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "GNTW",
+      "distance_km": 348.8,
+      "solutions_in_study_period": 0,
+      "record": "2008-04-30 .. 2015-09-28",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "DRCL",
+      "distance_km": 352.2,
+      "solutions_in_study_period": 0,
+      "record": "2008-03-13 .. 2015-02-04",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "KUL3",
+      "distance_km": 361.6,
+      "solutions_in_study_period": 5,
+      "record": "2025-09-07 .. 2025-09-13",
+      "first_in_study": "2025-09-07",
+      "last_in_study": "2025-09-13"
+    },
+    {
+      "station": "BIKA",
+      "distance_km": 381.5,
+      "solutions_in_study_period": 0,
+      "record": "2013-11-30 .. 2019-12-02",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "IITK",
+      "distance_km": 388.8,
+      "solutions_in_study_period": 1200,
+      "record": "2022-01-26 .. 2026-09-05",
+      "first_in_study": "2022-01-26",
+      "last_in_study": "2025-09-27"
+    },
+    {
+      "station": "BYNA",
+      "distance_km": 409.6,
+      "solutions_in_study_period": 0,
+      "record": "2009-04-18 .. 2012-06-28",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "LCK2",
+      "distance_km": 425.7,
+      "solutions_in_study_period": 0,
+      "record": "2011-10-11 .. 2014-07-24",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "LCK3",
+      "distance_km": 425.7,
+      "solutions_in_study_period": 748,
+      "record": "2014-09-17 .. 2023-12-11",
+      "first_in_study": "2021-10-06",
+      "last_in_study": "2023-12-11"
+    },
+    {
+      "station": "LCK4",
+      "distance_km": 425.7,
+      "solutions_in_study_period": 1325,
+      "record": "2014-09-17 .. 2026-09-05",
+      "first_in_study": "2021-10-06",
+      "last_in_study": "2025-09-27"
+    },
+    {
+      "station": "LCKI",
+      "distance_km": 425.7,
+      "solutions_in_study_period": 0,
+      "record": "2011-10-11 .. 2014-07-17",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "GOMT",
+      "distance_km": 433.3,
+      "solutions_in_study_period": 7,
+      "record": "2021-09-12 .. 2022-09-17",
+      "first_in_study": "2022-09-11",
+      "last_in_study": "2022-09-17"
+    },
+    {
+      "station": "CDW1",
+      "distance_km": 435.5,
+      "solutions_in_study_period": 5,
+      "record": "2025-09-07 .. 2025-09-12",
+      "first_in_study": "2025-09-07",
+      "last_in_study": "2025-09-12"
+    },
+    {
+      "station": "NEPA",
+      "distance_km": 441.8,
+      "solutions_in_study_period": 0,
+      "record": "1996-11-04 .. 1998-06-16",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "NPGJ",
+      "distance_km": 444.1,
+      "solutions_in_study_period": 113,
+      "record": "2007-05-19 .. 2022-02-06",
+      "first_in_study": "2021-10-06",
+      "last_in_study": "2022-02-06"
+    },
+    {
+      "station": "NEPJ",
+      "distance_km": 447.2,
+      "solutions_in_study_period": 0,
+      "record": "1998-06-17 .. 2000-12-02",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "BMCL",
+      "distance_km": 450.7,
+      "solutions_in_study_period": 0,
+      "record": "2007-03-18 .. 2016-06-26",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "SMKT",
+      "distance_km": 480.0,
+      "solutions_in_study_period": 0,
+      "record": "2008-05-16 .. 2016-07-20",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "SKOT",
+      "distance_km": 481.3,
+      "solutions_in_study_period": 0,
+      "record": "1996-11-11 .. 2000-12-05",
+      "first_in_study": null,
+      "last_in_study": null
+    },
+    {
+      "station": "JDPR",
+      "distance_km": 484.5,
+      "solutions_in_study_period": 1238,
+      "record": "2021-03-11 .. 2026-09-05",
+      "first_in_study": "2021-10-08",
+      "last_in_study": "2025-09-27"
+    }
+  ],
+  "colocation": {
+    "pairs": [
+      {
+        "station_a": "LCK3",
+        "station_b": "LCK4",
+        "separation_km": 0.011,
+        "common_epochs": 745,
+        "span_years": 2.179,
+        "rate_a_mm_per_yr": 2.47,
+        "rate_b_mm_per_yr": 3.237,
+        "rate_difference_mm_per_yr": -0.767,
+        "rate_difference_from_relative_series_mm_per_yr": -0.696,
+        "difference_sigma_mm_per_yr": 0.253
+      }
+    ],
+    "median_abs_disagreement_mm_per_yr": 0.767,
+    "max_abs_disagreement_mm_per_yr": 0.767,
+    "implied_achievable_accuracy_mm_per_yr": 0.5423509011700819
+  },
+  "discriminating_power": {
+    "branch_differences": [
+      {
+        "comparison": "ERA5_minus_RAW",
+        "rms_mm_per_yr": 0.521
+      },
+      {
+        "comparison": "ERA5+DEM_minus_RAW",
+        "rms_mm_per_yr": 1.036
+      },
+      {
+        "comparison": "ERA5+DEM_minus_ERA5",
+        "rms_mm_per_yr": 0.778
+      }
+    ],
+    "largest_branch_difference_mm_per_yr": 1.036,
+    "required_uncertainty_mm_per_yr_2sigma": 0.518,
+    "nearest_station_with_adequate_in_period_sampling_km": 209.9,
+    "nearest_station_with_adequate_in_period_sampling": {
+      "station": "DRDN",
+      "distance_km": 209.9,
+      "solutions_in_study_period": 351,
+      "record": "2024-06-09 .. 2026-09-05",
+      "first_in_study": "2024-06-09",
+      "last_in_study": "2025-09-27"
+    }
+  },
+  "colocation_note": "The co-located LCK3/LCK4 pair agrees well (well under 1 mm/yr) once both are evaluated over the SAME time window, so GNSS measurement quality is not the limitation. An earlier comparison that used each station's full record produced a spurious ~27 mm/yr difference: the two records end in 2023-12 and 2026-09 respectively, so their full-record trends are not comparable.",
+  "outcome": "GNSS CANNOT DISCRIMINATE",
+  "reason": "no station within 30 km has >= 30 daily solutions inside the study period (best: 14); in-AOI records either end before 2021-10-06 or hold only episodic daily solutions; co-located receivers disagree by up to 0.77 mm/yr (median 0.77), implying an achievable vertical-rate accuracy of only 0.54 mm/yr against a 1.04 mm/yr branch difference; the nearest station with dense in-period sampling is 210 km away, so its rate convolves the real spatial gradient of the Indo-Gangetic/Himalayan vertical field with any correction benefit; a point rate at that distance is not comparable to an AOI-mean InSAR rate",
+  "consequence": "No branch promotion or rejection is justified by GNSS. The correction decision rests on the targeted stable-area atmospheric/topographic diagnostics (correction_validation.json).",
+  "supersedes": "gnss_validation.json outcome field (stations-passing-threshold only)"
+}

@@ -1,0 +1,2 @@
+station_a,station_b,separation_km,common_epochs,span_years,rate_a_mm_per_yr,rate_b_mm_per_yr,rate_difference_mm_per_yr,rate_difference_from_relative_series_mm_per_yr,difference_sigma_mm_per_yr
+LCK3,LCK4,0.011,745,2.179,2.47,3.237,-0.767,-0.696,0.253

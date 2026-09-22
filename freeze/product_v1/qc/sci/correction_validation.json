@@ -1,0 +1,74 @@
+{
+  "generated_utc": "2026-09-22T09:31:02.510478+00:00",
+  "aoi_pixels": 1226497,
+  "tests": {
+    "A_velocity_highpass_energy_mm_per_yr": {
+      "RAW": 2.967,
+      "ERA5": 2.9864,
+      "ERA5+DEM": 3.0008
+    },
+    "B_stable_area": {
+      "RAW": {
+        "n_pixels": 256758,
+        "velocity_median_mm_per_yr": -0.0101,
+        "velocity_robust_std_mm_per_yr": 1.7945,
+        "velocity_p95_minus_p05_mm_per_yr": 5.0505
+      },
+      "ERA5": {
+        "n_pixels": 256758,
+        "velocity_median_mm_per_yr": 0.1649,
+        "velocity_robust_std_mm_per_yr": 1.8649,
+        "velocity_p95_minus_p05_mm_per_yr": 5.2863
+      },
+      "ERA5+DEM": {
+        "n_pixels": 256758,
+        "velocity_median_mm_per_yr": 0.4143,
+        "velocity_robust_std_mm_per_yr": 2.1233,
+        "velocity_p95_minus_p05_mm_per_yr": 6.0383
+      }
+    },
+    "C_topography_correlation_spearman": {
+      "RAW": 0.1497,
+      "ERA5": 0.0332,
+      "ERA5+DEM": 0.0847
+    },
+    "D_per_pixel_residual_scatter_rad": {
+      "RAW": 9.0987,
+      "ERA5": 9.1703,
+      "ERA5+DEM": 9.1964
+    }
+  },
+  "stable_mask_definition": {
+    "temporal_coherence_min": 0.9,
+    "abs_velocity_max_mm_per_yr": 3.0,
+    "note": "the mask is defined from the RAW branch so it is identical across branches"
+  },
+  "verdicts": {
+    "ERA5": {
+      "tests": {
+        "roughness": false,
+        "stable_scatter": false,
+        "topo_correlation": true,
+        "pixel_scatter": false
+      },
+      "n_tests_improved": 1,
+      "n_tests": 4,
+      "verdict": "no measurable improvement"
+    },
+    "ERA5+DEM": {
+      "tests": {
+        "roughness": false,
+        "stable_scatter": false,
+        "topo_correlation": true,
+        "pixel_scatter": false
+      },
+      "n_tests_improved": 1,
+      "n_tests": 4,
+      "verdict": "no measurable improvement"
+    }
+  },
+  "promotion_policy": "promote only if at least 3 of 4 tests show measurable improvement",
+  "promoted": [],
+  "principal_candidate": "RAW",
+  "caveat": "These tests favour smoother solutions; a correction that removed real signal would also score well, so the raw velocity agreement is reported alongside (see branch_comparison.json)."
+}

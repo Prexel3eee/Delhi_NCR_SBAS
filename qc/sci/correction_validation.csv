@@ -1,0 +1,4 @@
+branch,highpass_energy_mm_per_yr,stable_robust_std_mm_per_yr,topo_correlation,pixel_residual_scatter_rad
+RAW,2.967,1.7945,0.1497,9.0987
+ERA5,2.9864,1.8649,0.0332,9.1703
+ERA5+DEM,3.0008,2.1233,0.0847,9.1964

@@ -1,0 +1,140 @@
+{
+  "generated_utc": "2026-09-22T05:10:06.243722+00:00",
+  "branches": {
+    "raw": "mintpy/baseline_raw_work (unwrapError = no)",
+    "bridge_pc": "mintpy/bridge_pc_work (unwrapError = bridging+phase_closure)"
+  },
+  "aoi_pixels": 1226497,
+  "velocity_m_per_yr": {
+    "raw": {
+      "median": -0.004151,
+      "p05": -0.034235,
+      "p95": 0.004403,
+      "std": 0.012517
+    },
+    "bridge_pc": {
+      "median": -0.002491,
+      "p05": -0.032485,
+      "p95": 0.005619,
+      "std": 0.012293
+    }
+  },
+  "velocity_uncertainty_m_per_yr": {
+    "raw": {
+      "median": 0.001162,
+      "p05": 0.000422,
+      "p95": 0.001785,
+      "std": 0.000446
+    },
+    "bridge_pc": {
+      "median": 0.001474,
+      "p05": 0.000845,
+      "p95": 0.002271,
+      "std": 0.000463
+    }
+  },
+  "temporal_coherence": {
+    "raw": {
+      "median": 0.748842,
+      "p05": 0.317694,
+      "p95": 0.984883,
+      "std": 0.238555
+    },
+    "bridge_pc": {
+      "median": 0.740092,
+      "p05": 0.316175,
+      "p95": 0.966223,
+      "std": 0.233411
+    }
+  },
+  "difference_bridge_minus_raw": {
+    "velocity_median": 0.001383,
+    "velocity_p05": -4.9e-05,
+    "velocity_p95": 0.005223,
+    "velocity_rms": 0.002618,
+    "velocity_max_abs": 0.035774,
+    "temporal_coherence_median": -0.010475,
+    "fraction_of_aoi_coherence_improved": 0.198305
+  },
+  "per_ifg_residual_comparison": {
+    "raw": {
+      "median": 4.593,
+      "p95": 18.762
+    },
+    "bridge_pc": {
+      "median": 5.1076,
+      "p95": 19.5282
+    },
+    "n_improved": 134,
+    "n_worsened": 202,
+    "n_unchanged": 0,
+    "largest_improvements": [
+      {
+        "date12": "20230622_20230716",
+        "residual_rms_rad_raw": 20.1895,
+        "residual_rms_rad_bridge": 6.5646,
+        "delta": -13.624899999999998
+      },
+      {
+        "date12": "20220826_20220907",
+        "residual_rms_rad_raw": 13.7586,
+        "residual_rms_rad_bridge": 2.1423,
+        "delta": -11.616299999999999
+      },
+      {
+        "date12": "20240523_20240604",
+        "residual_rms_rad_raw": 14.7606,
+        "residual_rms_rad_bridge": 3.5731,
+        "delta": -11.1875
+      },
+      {
+        "date12": "20230517_20230529",
+        "residual_rms_rad_raw": 14.8455,
+        "residual_rms_rad_bridge": 3.7578,
+        "delta": -11.0877
+      },
+      {
+        "date12": "20230728_20230821",
+        "residual_rms_rad_raw": 14.3944,
+        "residual_rms_rad_bridge": 3.4186,
+        "delta": -10.9758
+      },
+      {
+        "date12": "20240417_20240523",
+        "residual_rms_rad_raw": 18.7011,
+        "residual_rms_rad_bridge": 8.0459,
+        "delta": -10.6552
+      },
+      {
+        "date12": "20230622_20230728",
+        "residual_rms_rad_raw": 16.6211,
+        "residual_rms_rad_bridge": 6.3477,
+        "delta": -10.273399999999999
+      },
+      {
+        "date12": "20230716_20230821",
+        "residual_rms_rad_raw": 13.2324,
+        "residual_rms_rad_bridge": 3.4431,
+        "delta": -9.7893
+      },
+      {
+        "date12": "20240616_20240722",
+        "residual_rms_rad_raw": 12.3742,
+        "residual_rms_rad_bridge": 2.6482,
+        "delta": -9.725999999999999
+      },
+      {
+        "date12": "20240429_20240523",
+        "residual_rms_rad_raw": 22.58,
+        "residual_rms_rad_bridge": 13.2943,
+        "delta": -9.285699999999999
+      }
+    ]
+  },
+  "verdict": {
+    "velocity_rms_change_mm_per_yr": 2.618,
+    "coherence_median_change": -0.0105,
+    "residual_median_change_rad": 0.5146,
+    "assessment": "unwrap correction materially changes the solution"
+  }
+}

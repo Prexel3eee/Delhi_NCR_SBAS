@@ -962,6 +962,133 @@ declared.**
 
 ---
 
+## 2026-09-22 — Final correction validation: RAW-336 frozen as the authoritative v1 product
+
+The owner directed one final validation stage — no new correction branches, GNSS/CORS
+where possible, plus targeted stable-area atmospheric/topographic diagnostics — with
+promotion only on demonstrated improvement, and otherwise RAW-336 frozen as v1.
+
+### GNSS/CORS assessment (`scripts/29_gnss_verdict.py`)
+
+Re-examined from the raw NGL `tenv3` files rather than reusing the earlier summary, and
+**the earlier verdict was wrong in both directions.**
+
+* An earlier pass reported `GNSS REFERENCE AVAILABLE` on the strength of four stations
+  passing a 100-solution / 2-year threshold. That is superseded: passing a sampling
+  threshold is not the same as being able to discriminate a sub-mm/yr branch difference.
+* The first co-location pass compared each station's **full-record** trend and reported the
+  co-located `LCK3`/`LCK4` pair (0.01 km apart) disagreeing by ~27 mm/yr, which was read as
+  step contamination. **That was an artefact.** `LCK3` ends 2023-12 and `LCK4` ends
+  2026-09, so their full-record trends are not comparable. Over their 745 **shared**
+  epochs they agree to **0.767 mm/yr**. GNSS measurement quality is not the limitation.
+
+The honest reason is coverage, and it is decisive:
+
+| Station | Distance | In-period daily solutions | Record |
+|---|---:|---:|---|
+| DLHI | 6.8 km | 0 | 2021-09-12 .. 2021-09-18 |
+| GCP5 | 6.8 km | 4 | 2025-09-08 .. 2025-09-13 |
+| DELH | 6.9 km | 14 | 2023-09-10 .. 2025-09-13 |
+| LIAA | 7.5 km | 0 | 2018-12-07 .. 2021-02-06 |
+
+No station within 30 km has 30 in-period solutions (best: 14). The nearest adequately
+sampled station anywhere is `DRDN`, **209.9 km** away. A point rate at that distance
+convolves the real spatial gradient of the Indo-Gangetic/Himalayan vertical field with any
+correction benefit, and is not comparable to an AOI-mean InSAR rate.
+
+**Outcome: `GNSS CANNOT DISCRIMINATE`.** No branch promotion or rejection is justified by
+GNSS; the decision rests on the diagnostics below.
+
+### Targeted diagnostics (`scripts/28_correction_validation.py`)
+
+Residual RMS is a blunt discriminator here — on an uncorrected baseline it is dominated by
+unmodelled atmosphere and orbit ramps, so a correction can worsen it while removing a real
+error. Four better-posed tests were used. The stable-area mask is derived from the RAW
+branch (temporal coherence ≥ 0.90, |velocity| ≤ 3 mm/yr, 256 758 of 1 226 497 AOI pixels)
+so it is identical across branches.
+
+| Diagnostic | RAW | ERA5 | ERA5+DEM | Prefer |
+|---|---:|---:|---:|---|
+| A. Velocity high-pass energy (mm/yr) | **2.967** | 2.986 | 3.001 | lower |
+| B. Stable-area velocity median (mm/yr) | **−0.010** | +0.165 | +0.414 | closer to 0 |
+| B. Stable-area robust scatter (mm/yr) | **1.794** | 1.865 | 2.123 | lower |
+| C. \|Spearman(residual, elevation)\| | 0.1497 | **0.0332** | 0.0847 | lower |
+| D. Per-pixel residual scatter (rad) | **9.099** | 9.170 | 9.196 | lower |
+
+**ERA5 does what an atmospheric correction should** — the elevation-correlated residual
+falls 78 % (0.1497 → 0.0332), the only diagnostic any correction wins. The error ERA5
+targets is genuinely present in the RAW solution.
+
+**But it does not improve the product.** It leaves the velocity field marginally rougher,
+the stable-area scatter slightly larger, and displaces the stable-area median from −0.010
+to +0.165 mm/yr — introducing a small non-zero offset where it should read zero. The
+atmospheric component is real but is not what limits this product.
+
+**The DEM-residual step is counterproductive.** It raises the elevation-correlated residual
+back to 0.0847 (worse than ERA5 alone) and is the worst branch on the other three,
+including the largest stable-area offset (+0.414 mm/yr) and scatter (2.123 mm/yr).
+
+These tests favour smoother solutions, so a correction that removed real signal would also
+score well. The independent velocity-agreement check guards against that: neither
+correction is a large-magnitude change (ERA5−RAW RMS 0.52 mm/yr; ERA5+DEM−RAW RMS
+1.04 mm/yr), so no branch is silently deleting a large deformation signal.
+
+**Promoted: none** (policy requires ≥ 3 of 4). Principal candidate: **RAW**.
+
+### v1 product frozen
+
+`RAW-336` is frozen as the authoritative v1 deformation solution.
+
+```text
+freeze_version   product_v1
+freeze_id        2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37
+snapshot         freeze/product_v1/  (read-only)
+principal        RAW-336
+pinned products  9  (hash-pinned in place: sha256 + bytes + mtime_ns)
+copied artefacts 12
+pairs            336 retained, 0 excluded
+deramp           disabled
+verify           python scripts/verify_product_v1.py   -> exit 0, 0 warnings
+report           qc/sci/CORRECTION_VALIDATION_REPORT.md
+```
+
+Large products are hash-pinned **in place** rather than copied — `timeseries.h5` alone is
+3.4 GB and duplicating it would consume storage without adding provenance.
+
+Documented as tested but not beneficial:
+
+* ERA5 atmospheric delay — 1 of 4 diagnostics improved.
+* ERA5 + pixel-wise DEM residual — 1 of 4; worst branch on stable-area offset and scatter.
+* Network unwrap correction (bridge + phase closure) — degrades fit, residual 4.593 → 5.108 rad.
+
+**Scope caveat.** This is a v1 deformation solution, not a calibrated geodetic product. It
+is not troposphere-corrected in the frozen branch, and its absolute reference carries the
+documented 4.78 mm/yr systematic (sd 1.72) from reference selection; relative spatial
+gradients are unaffected. Validation against an independent in-AOI geodetic reference was
+**not possible** with the available GNSS data.
+
+### INC-006
+
+The GNSS co-location "disagreement" was a window artefact, not step contamination. The
+conclusion (GNSS cannot discriminate) survived, but for a different and more honest reason:
+coverage, not measurement quality. `scripts/29_gnss_verdict.py` now computes every rate
+difference on the maximal shared window, and `tests/test_correction_validation.py` pins
+that requirement.
+
+### Tests
+
+`tests/test_correction_validation.py` adds 17 regression tests over three defect classes:
+GNSS rate comparison across unequal windows (including the `tenv3` `YYMMMDD` date format and
+header-resolved up component), the timeseries/interferogram grid-mismatch bug, and product
+freeze-id integrity. Full suite:
+
+```text
+delhi-mintpy   60 passed, 1 skipped
+delhi-hyp3     47 passed, 2 skipped
+```
+
+---
+
 ## Current status
 
 ```text
@@ -975,17 +1102,21 @@ Phase G  pilot QC and acceptance               COMPLETE (18/18 gates PASSED)
 Phase H  production submitted + retrieved      COMPLETE (336/336 SUCCEEDED, 1680 credits)
          production completion report          COMPLETE (corpus CLEAN)
 Phase I  MintPy production preparation         COMPLETE (336 ifgs / 119 dates loaded)
-Phase J  MintPy inversion and interpretation   NOT STARTED (awaiting instruction)
+Phase J  MintPy inversion and interpretation   COMPLETE (RAW-336 + 3 test branches)
+Phase K  correction validation                 COMPLETE (GNSS + 4 diagnostics; none promoted)
+Phase L  v1 deformation product frozen         COMPLETE (RAW-336, freeze_id 2a1304e3...)
 ```
 
-**No scientific inversion has been run.** The loaded network is verified to match the
-frozen v1 manifest exactly; the next step is the staged inversion (reference-area
-selection, network QC, atmospheric/residual corrections, then LOS displacement and
-velocity).
+**RAW-336 is the authoritative v1 deformation solution.** All 336 interferograms are
+retained — nothing recovered or inserted 2025-05-18, and the weak 36-day and monsoon pairs
+are kept. ERA5, ERA5+DEM and network unwrap correction were each tested and are not applied.
+Spatial deramping remains disabled in the principal branch, as broad subsidence gradients
+may be genuine signal.
 
-Nothing recovered or inserted 2025-05-18, and all 336 interferograms — including the weak
-36-day and monsoon pairs — are retained. Quality-based pair removal, if any, belongs in
-MintPy QC now that the production data exist.
+The v1 product carries two documented limitations: no tropospheric correction in the frozen
+branch, and a 4.78 mm/yr absolute-reference systematic. No independent in-AOI geodetic
+reference exists to bound it further.
+
 
 
 
