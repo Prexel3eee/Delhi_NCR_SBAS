@@ -1,16 +1,26 @@
 {
   "freeze_version": "publication_v1",
-  "freeze_id": "68a0b051ab9d4bb7708159e5819806b9966ee33f7ff031a24f58f2a4f8e56d2a",
-  "created_utc": "2026-09-22T18:55:25.504991+00:00",
+  "freeze_id": "57d95f6921fc11ce778baff4db8cae1442f40decd026406138fef5147b0219df",
+  "created_utc": "2026-09-22T19:08:11.247387+00:00",
   "final_evidence_freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88",
   "spine": "The spatial/mean-rate deformation observations at H001 and H004 are independently reproducible; the physical explanation is not.",
   "caveat": "Independent reproduction applies to the spatial and mean-rate characteristics, not to the detailed displacement histories; in particular, the ascending and descending H001 cumulative time series differ substantially.",
   "central_conclusion": "The principal result of this study is not a resolved deformation mechanism, but the separation of reproducible geodetic observations from unsupported interpretation. Two localized Delhi-NCR deformation features (H001 and H004) were independently reproduced across ascending and descending Sentinel-1 geometries at the spatial and mean-rate level, whereas two comparable ascending features were not reproduced and a fifth remained contradictory. Preregistered tests did not support groundwater-level variability, shallow soil texture, or urbanisation as explanations for this selectivity. The physical mechanism of the independently supported features therefore remains unresolved.",
   "artefacts": [
     {
+      "path": "manuscript/AUDIT_REPORT.json",
+      "sha256": "2a56b3c9077ba1a7673ed408a17be8ac5bb1c2f00939a57572848a713aa8ff0b",
+      "bytes": 16493
+    },
+    {
       "path": "manuscript/DATA_CODE_AVAILABILITY.md",
       "sha256": "7fcb8f321d52cab36784bc7c6d42de210b3f10c6c7545ec8f614ede77c97bf68",
       "bytes": 1663
+    },
+    {
+      "path": "manuscript/FIGURE_CAPTIONS.md",
+      "sha256": "6eff6938c4c920591f4428e1af704d3f25ce86cfbbbae2f8674d271cd2554854",
+      "bytes": 11694
     },
     {
       "path": "manuscript/FIGURE_PLAN.md",
@@ -18,9 +28,24 @@
       "bytes": 2508
     },
     {
+      "path": "manuscript/FIGURE_PROVENANCE.json",
+      "sha256": "1eb9de0a6789796e8bb95c1cb2abf412df6432994cb3390265cb3e1af13c63fd",
+      "bytes": 30990
+    },
+    {
       "path": "manuscript/MANUSCRIPT.md",
-      "sha256": "5e8c092b16cdab4d89090bd466420b7c2f812647f8605d0c37a8eb00d01a16fc",
-      "bytes": 14872
+      "sha256": "fe5c5a6eb17e055bc377350814cbee235c7dff1b8c542eb2841b4d273fac7c7d",
+      "bytes": 15768
+    },
+    {
+      "path": "manuscript/MANUSCRIPT_FINAL_JOURNAL_NEUTRAL.md",
+      "sha256": "a48e6424a588adc3e93074af3cb818bd92ee19e0c82ee972a1bcc4699118abbd",
+      "bytes": 16901
+    },
+    {
+      "path": "manuscript/REFERENCES.md",
+      "sha256": "e619c3eaba04b79280fe0070adbb3381e79186c620d1dfaf8a2850dabcb44225",
+      "bytes": 3529
     },
     {
       "path": "manuscript/REPRODUCIBILITY_APPENDIX.md",
@@ -28,9 +53,24 @@
       "bytes": 2517
     },
     {
+      "path": "manuscript/SUBMISSION_READINESS_REPORT.md",
+      "sha256": "5c3634d0b8f3504286ef0921f75d95856ebe973fd35f8edfdaebb28b8645cbcd",
+      "bytes": 3032
+    },
+    {
       "path": "manuscript/SUPPLEMENTARY_METHODS.md",
       "sha256": "8f19a393be182d155515d52b2e5eb324ff381a96f4c2ec045d4c54d0a2b88689",
       "bytes": 2762
+    },
+    {
+      "path": "manuscript/SUPPLEMENT_FINAL_JOURNAL_NEUTRAL.md",
+      "sha256": "beb9c2013042d5b01f4b988c76c9d3619a1400ceca5549605b60f733a917d9e2",
+      "bytes": 19836
+    },
+    {
+      "path": "manuscript/TITLE_CANDIDATES.md",
+      "sha256": "da388df5c97f291ca860089beda48d7912fa2670a29324f9c99e130794effd65",
+      "bytes": 2222
     },
     {
       "path": "qc/sci/phase4/final_hotspot_table.csv",
@@ -54,48 +94,128 @@
     },
     {
       "path": "qc/sci/phase4/figures/F01_study_design.png",
-      "sha256": "3fb3ac016dc51e73fed6ece891795a44e9f865610dfbe387e6b8261c396bd13a",
-      "bytes": 107023
+      "sha256": "6df742e3d43f4a22dfbf4fd61ce8a796b14fc3a12f38e90eb144880aa9baa446",
+      "bytes": 403617
     },
     {
       "path": "qc/sci/phase4/figures/F02_ascending_velocity.png",
-      "sha256": "f75b50760cf123db6bc5cc27a24d0c1106926e2e4dc58b061db45c21ed04ff66",
-      "bytes": 190928
+      "sha256": "5baa9f363dbc6cc6a71ed9911d3226daadfdcb06712d498e6850364cc485cb6e",
+      "bytes": 799650
     },
     {
       "path": "qc/sci/phase4/figures/F03_hotspot_classification.png",
-      "sha256": "f8cf9671daecfe649d1ac7cddb6c4093b8cbe5e7961502dea4e24233a9d24ef6",
-      "bytes": 36550
+      "sha256": "71899a0ceb0d7edadb5b2d9d451ce5e837f1f8adc2555993f5bbf0d8f29e314e",
+      "bytes": 206611
     },
     {
       "path": "qc/sci/phase4/figures/F04_cross_geometry_agreement.png",
-      "sha256": "8aa24d60bae6fdfe0f0fc83bc2aafa14db6eaaa59dba8393987bf107c8e5ddcc",
-      "bytes": 101161
+      "sha256": "91dcbfd3637991299d8aff6bc0717a5012caa08642c489401605225c8a9bdbf9",
+      "bytes": 377104
     },
     {
       "path": "qc/sci/phase4/figures/F05_supported_features.png",
-      "sha256": "eba9b770d7fcbb5c204465e07bffa49e59f6196ba66c09023bb713a64670048a",
-      "bytes": 85482
+      "sha256": "fcb92a6decac2eb30659887a7a9f81f2d4c79b5e2ad29b5541a6e50b042c2ace",
+      "bytes": 264950
     },
     {
       "path": "qc/sci/phase4/figures/F06_negative_controls.png",
-      "sha256": "cbe064f7e3ea9cb8879f6d42624eaf0a135bd39895019bf378af2375b521c913",
-      "bytes": 84405
+      "sha256": "f340344ba6a29b89911406f028fcfbe96989bd6a9b3eb86a28038bb779a7ab7a",
+      "bytes": 263929
     },
     {
       "path": "qc/sci/phase4/figures/F07_H005_contradiction.png",
-      "sha256": "d84c376f2962f8b58375c4bfa1d432f4e560ab3271dcd1c8af7ca4dab186e5ef",
-      "bytes": 38415
+      "sha256": "dbd13c44cf8c7b9e7a551b256306646743013e1f6e9e90fe9285b54010f9d1ef",
+      "bytes": 173540
     },
     {
       "path": "qc/sci/phase4/figures/F08_rate_vs_history.png",
-      "sha256": "8c1819c0bfbb96e2398e2a2640a1b7d36adb8d59417b374c82fb2a01094eb43b",
-      "bytes": 92385
+      "sha256": "8083aea4249d12cc328d1a5ff3889dac55cc11cd657e5d4060f1de3cdaf14293",
+      "bytes": 266848
+    },
+    {
+      "path": "qc/sci/phase4/figures/F09_groundwater_falsification.png",
+      "sha256": "116ead5ffa4de58ea2af3383863048469b37a8190fabac85d057c26b5eb6d03c",
+      "bytes": 540880
+    },
+    {
+      "path": "qc/sci/phase4/figures/F10_soil_texture.png",
+      "sha256": "44e5cd4b2c133965ff5eeb3438268f49418356e8c6af2eee70cf5d06085fee46",
+      "bytes": 458682
+    },
+    {
+      "path": "qc/sci/phase4/figures/F11_urban_intensity.png",
+      "sha256": "bd1316e561dd3da6d4c50908eba4ed15dcb8b94a2f957b591eff9013163983d5",
+      "bytes": 416079
     },
     {
       "path": "qc/sci/phase4/figures/F12_evidence_matrix.png",
-      "sha256": "189026d229ba3810f1116f37f19c5c3d30390ab01dff30170df00a074ea73bee",
-      "bytes": 64587
+      "sha256": "6989b75b65c863caf233e54aae56686025ec3f304fedc697874f07b8c879ac12",
+      "bytes": 285061
+    },
+    {
+      "path": "qc/sci/phase4/figures/F01_study_design.pdf",
+      "sha256": "f917a268c3f5b4e342f53218ab80ae51de525a35d6143fb614e7472223aa163f",
+      "bytes": 54814
+    },
+    {
+      "path": "qc/sci/phase4/figures/F02_ascending_velocity.pdf",
+      "sha256": "12def80274a7a6905e7a2a81381e96d44bdaab79f866660ee8527e5f7394dff7",
+      "bytes": 635531
+    },
+    {
+      "path": "qc/sci/phase4/figures/F03_hotspot_classification.pdf",
+      "sha256": "9cc2c787aee2d5140bc1b91148e38bc2de43ebe36b8f9cee8573efe433f6c2bc",
+      "bytes": 44595
+    },
+    {
+      "path": "qc/sci/phase4/figures/F04_cross_geometry_agreement.pdf",
+      "sha256": "34a1eb40150a7a97f4bd1417cbc708eae96c667f55043da850f2a6014e84be6c",
+      "bytes": 47398
+    },
+    {
+      "path": "qc/sci/phase4/figures/F05_supported_features.pdf",
+      "sha256": "11d2072a9b4c97983f45575c7bee16d00ed0db7f8355ad3d43e0b5a1ee6d2ead",
+      "bytes": 22089
+    },
+    {
+      "path": "qc/sci/phase4/figures/F06_negative_controls.pdf",
+      "sha256": "8166e4835cdd953f848e3c7da807c3a27768299443989c6acf13ee2a998ec033",
+      "bytes": 26074
+    },
+    {
+      "path": "qc/sci/phase4/figures/F07_H005_contradiction.pdf",
+      "sha256": "57457a3ea4572f70396290f4a5c241aaa1ebca276497ebd29efe891af93d097e",
+      "bytes": 19300
+    },
+    {
+      "path": "qc/sci/phase4/figures/F08_rate_vs_history.pdf",
+      "sha256": "777b458d6fe43ace464dc27e5218bb43f96e4fb0ad4823002d9d03b07d942f37",
+      "bytes": 27019
+    },
+    {
+      "path": "qc/sci/phase4/figures/F09_groundwater_falsification.pdf",
+      "sha256": "9d768502d8989bc211a5d161ca5c66ce2c782c9b068c515b6836d9e6cefb69ff",
+      "bytes": 30719
+    },
+    {
+      "path": "qc/sci/phase4/figures/F10_soil_texture.pdf",
+      "sha256": "9171b745cf986d1c99041f50d0437f82a3aa94c67367445d60a886f27f4a8834",
+      "bytes": 61481
+    },
+    {
+      "path": "qc/sci/phase4/figures/F11_urban_intensity.pdf",
+      "sha256": "560add4fa520c35d06bf666364b6e6bccf8472ba787b07034bc99ead08a8b89c",
+      "bytes": 62161
+    },
+    {
+      "path": "qc/sci/phase4/figures/F12_evidence_matrix.pdf",
+      "sha256": "cfc329cf2630b8adcbec9108566118d7298c7f0040c8400c63e7dca2135bc879",
+      "bytes": 49448
+    },
+    {
+      "path": "provenance/errata/INC-009.json",
+      "sha256": "1789450108f6f669f6ee2866a9be240512eba47f2b2075129339284a4581fb4a",
+      "bytes": 3245
     }
   ],
   "no_new_analysis": true

@@ -1,0 +1,471 @@
+{
+  "audit_version": "phase5b_audit_v1",
+  "generated_utc": "2026-09-22T19:08:11.046365+00:00",
+  "numeric_checks": 27,
+  "numeric_holds": 0,
+  "terminology_flags": 14,
+  "claim_flags": 16,
+  "claim_flags_high": 2,
+  "numeric": [
+    {
+      "audit": "numeric",
+      "check": "H001 ascending rate",
+      "frozen_value": -30.95,
+      "source": "final_hotspot_table.csv[H001].ascending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H001 descending rate",
+      "frozen_value": -36.02,
+      "source": "final_hotspot_table.csv[H001].descending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H004 ascending rate",
+      "frozen_value": -14.31,
+      "source": "final_hotspot_table.csv[H004].ascending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H004 descending rate",
+      "frozen_value": -12.46,
+      "source": "final_hotspot_table.csv[H004].descending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H002 ascending rate",
+      "frozen_value": -13.59,
+      "source": "final_hotspot_table.csv[H002].ascending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H002 descending rate",
+      "frozen_value": -1.15,
+      "source": "final_hotspot_table.csv[H002].descending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H003 ascending rate",
+      "frozen_value": -12.87,
+      "source": "final_hotspot_table.csv[H003].ascending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H003 descending rate",
+      "frozen_value": -0.75,
+      "source": "final_hotspot_table.csv[H003].descending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H005 ascending rate",
+      "frozen_value": -14.21,
+      "source": "final_hotspot_table.csv[H005].ascending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "H005 descending rate",
+      "frozen_value": 61.39,
+      "source": "final_hotspot_table.csv[H005].descending_rate_mm_per_yr",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "mapped area km2",
+      "frozen_value": 22.58,
+      "source": "freeze/phase1_observations/OBSERVATIONS.json mapped_area.value_km2",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "independently supported area km2",
+      "frozen_value": 6.66,
+      "source": "final_hotspot_table.csv H001.area_km2 + H004.area_km2  (== 6.66)",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "formal uncertainty",
+      "frozen_value": 0.866,
+      "source": "uncertainty_table.json measurement_statistical",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "reference systematic",
+      "frozen_value": 4.78,
+      "source": "uncertainty_table.json reference_systematic",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "processing sensitivity low",
+      "frozen_value": 0.521,
+      "source": "uncertainty_table.json processing_sensitivity",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "processing sensitivity high",
+      "frozen_value": 1.036,
+      "source": "uncertainty_table.json processing_sensitivity",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "non-stationarity low",
+      "frozen_value": 10.44,
+      "source": "uncertainty_table.json temporal_non_stationarity",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "non-stationarity high",
+      "frozen_value": 20.24,
+      "source": "uncertainty_table.json temporal_non_stationarity",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "cross-geometry D0",
+      "frozen_value": 0.1752,
+      "source": "uncertainty_table.json cross_geometry",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "cross-geometry D2",
+      "frozen_value": 0.3626,
+      "source": "uncertainty_table.json cross_geometry",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Groundwater temporal forcing",
+      "frozen_value": "NO EVIDENCE",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Shallow soil-texture susceptibility",
+      "frozen_value": "NO EVIDENCE",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Deep geological / aquifer-system susceptibility",
+      "frozen_value": "NOT ADEQUATELY TESTED",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Existing built intensity",
+      "frozen_value": "NO EVIDENCE",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Recent built-up expansion",
+      "frozen_value": "NO EVIDENCE",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Major infrastructure / construction",
+      "frozen_value": "NOT TESTABLE",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "audit": "numeric",
+      "check": "evidence state: Measurement artefact as sole explanation",
+      "frozen_value": "NOT SUPPORTED FOR H001/H004, but measurement limitations remain",
+      "source": "final_evidence_matrix.csv",
+      "status": "PASS",
+      "note": ""
+    }
+  ],
+  "terminology": [
+    {
+      "audit": "terminology",
+      "check": "22.6 km2 meaning",
+      "file": "MANUSCRIPT.md",
+      "line": 46,
+      "text": "22.6 km2 = robustly supported mapped deformation area under the",
+      "note": "must be glossed as an operating figure under the selected criterion"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT ADEQUATELY TESTED distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 121,
+      "text": "| Deep geological / aquifer-system susceptibility | **NOT ADEQUATELY TESTED** | GSI Bhukosh unreachable; the only usable dataset samples the upper ~2 m, not the compaction interval |",
+      "note": "must remain distinct from NO EVIDENCE"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT TESTABLE distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 124,
+      "text": "| Major infrastructure / construction | **NOT TESTABLE** | no authoritative dated construction dataset obtained |",
+      "note": "must remain distinct from a negative result"
+    },
+    {
+      "audit": "terminology",
+      "check": "NO EVIDENCE vs ruled out",
+      "file": "MANUSCRIPT.md",
+      "line": 131,
+      "text": "This is not \"groundwater has been ruled out\": aquifer metadata are absent, well depths and types unknown, H001 has ~78-day telemetry outages and only two stations, and LOS is not pure vertic",
+      "note": "NO EVIDENCE is not 'ruled out'"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT ADEQUATELY TESTED distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 137,
+      "text": "**Deep geological / aquifer-system susceptibility is NOT ADEQUATELY TESTED.** The authoritative source (GSI Bhukosh) was unreachable, and SoilGrids samples only the upper ~2 m, not the compa",
+      "note": "must remain distinct from NO EVIDENCE"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT TESTABLE distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 139,
+      "text": "### 4.3 Urbanisation \u2014 NO EVIDENCE; construction NOT TESTABLE",
+      "note": "must remain distinct from a negative result"
+    },
+    {
+      "audit": "terminology",
+      "check": "NO EVIDENCE vs ruled out",
+      "file": "MANUSCRIPT.md",
+      "line": 159,
+      "text": "`NO EVIDENCE`, `NOT ADEQUATELY TESTED` and `NOT TESTABLE` are distinct and are not collapsed. Only groundwater and shallow soil texture were actually tested against a suitable dataset. Deep ",
+      "note": "NO EVIDENCE is not 'ruled out'"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT ADEQUATELY TESTED distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 159,
+      "text": "`NO EVIDENCE`, `NOT ADEQUATELY TESTED` and `NOT TESTABLE` are distinct and are not collapsed. Only groundwater and shallow soil texture were actually tested against a suitable dataset. Deep ",
+      "note": "must remain distinct from NO EVIDENCE"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT TESTABLE distinct",
+      "file": "MANUSCRIPT.md",
+      "line": 159,
+      "text": "`NO EVIDENCE`, `NOT ADEQUATELY TESTED` and `NOT TESTABLE` are distinct and are not collapsed. Only groundwater and shallow soil texture were actually tested against a suitable dataset. Deep ",
+      "note": "must remain distinct from a negative result"
+    },
+    {
+      "audit": "terminology",
+      "check": "area meaning",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 39,
+      "text": "**Zones independently supported by the descending geometry (H001 and H004).** (A) Mean relative LOS rate by geometry; bars as in F3. (B) Ratio of descending to ascending magnitude; dashed li",
+      "note": "area statement must be scoped to hotspot level, not extrapolated"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT ADEQUATELY TESTED distinct",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 79,
+      "text": "**Shallow substrate texture \u2014 direction opposite to prediction.** Clay at 0\u20135 cm (A) and 100\u2013200 cm (B), and sand at 0\u20135 cm (C), by zone. Units are % by mass. Dashed line is the AOI-minus-zo",
+      "note": "must remain distinct from NO EVIDENCE"
+    },
+    {
+      "audit": "terminology",
+      "check": "NO EVIDENCE vs ruled out",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 95,
+      "text": "**Competing-hypothesis evidence matrix (frozen).** Evidence state assigned to each preregistered hypothesis. Swatches encode the category; the three categories are distinct and are never col",
+      "note": "NO EVIDENCE is not 'ruled out'"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT ADEQUATELY TESTED distinct",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 95,
+      "text": "**Competing-hypothesis evidence matrix (frozen).** Evidence state assigned to each preregistered hypothesis. Swatches encode the category; the three categories are distinct and are never col",
+      "note": "must remain distinct from NO EVIDENCE"
+    },
+    {
+      "audit": "terminology",
+      "check": "NOT TESTABLE distinct",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 95,
+      "text": "**Competing-hypothesis evidence matrix (frozen).** Evidence state assigned to each preregistered hypothesis. Swatches encode the category; the three categories are distinct and are never col",
+      "note": "must remain distinct from a negative result"
+    }
+  ],
+  "claims": [
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 5,
+      "term": "mechanism",
+      "context": "**Reproducible deformation, unresolved mechanism: ascending/descending Sentinel-1 SBAS-InSAR of Delhi-NCR with preregistered hypothesis te"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 15,
+      "term": "mechanism",
+      "context": "monstrate independently reproducible localized LOS deformation while leaving its physical mechanism unresolved."
+    },
+    {
+      "audit": "claim",
+      "severity": "HIGH",
+      "file": "MANUSCRIPT.md",
+      "line": 50,
+      "term": "validated",
+      "context": "This is an operating figure under a stated criterion, **not** a validated extent: deformation magnitude and temporal coherence are strongly associated in this stac"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 60,
+      "term": "MECHANISM",
+      "context": "01** | INDEPENDENTLY_SUPPORTED | 5.59 | -30.95 | -36.02 | SUPPORTED DEFORMATION FEATURE - MECHANISM UNRESOLVED |"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 61,
+      "term": "MECHANISM",
+      "context": "04** | INDEPENDENTLY_SUPPORTED | 1.07 | -14.31 | -12.46 | SUPPORTED DEFORMATION FEATURE - MECHANISM UNRESOLVED |"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 108,
+      "term": "absolute",
+      "context": "| Reference systematic | 4.78 mm/yr | offsets the **absolute** zero level only; spatial gradients and every zone contrast are invariant to it |"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 166,
+      "term": "absolute",
+      "context": "s every statistical interval quoted here; rates describe the observation period only. The absolute zero level additionally carries a 4.78 mm/yr reference systematic, and no independent in-"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 175,
+      "term": "mechanism",
+      "context": "The principal result of this study is not a resolved deformation mechanism, but the separation of reproducible geodetic observations from unsupported interpretation"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 175,
+      "term": "mechanism",
+      "context": "shallow soil texture, or urbanisation as explanations for this selectivity. The physical mechanism of the independently supported features therefore remains unresolved."
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 179,
+      "term": "mechanism",
+      "context": "No tested mechanism adequately explains the selective, independently supported H001/H004 deformation. This is"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "MANUSCRIPT.md",
+      "line": 179,
+      "term": "mechanism",
+      "context": "fficient to characterize selected deformation features and insufficient to identify their mechanism."
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "DATA_CODE_AVAILABILITY.md",
+      "line": 38,
+      "term": "absolute",
+      "context": "The published velocity fields are **relative LOS** quantities, not absolute"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "DATA_CODE_AVAILABILITY.md",
+      "line": 39,
+      "term": "absolute",
+      "context": "velocities and not vertical displacement. Users requiring absolute rates must"
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 15,
+      "term": "absolute",
+      "context": "displacement. The reference pixel carries a **4.78 mm yr\u207b\u00b9 systematic** that offsets the absolute zero level; spatial gradients are invariant to it. Formal measurement uncertainty is 0.87"
+    },
+    {
+      "audit": "claim",
+      "severity": "HIGH",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 39,
+      "term": "validated",
+      "context": "I zones independently supported at the zone level by the descending geometry. It is not a validated extent, is not extrapolated beyond these zones, and is not a vertical displacement rate."
+    },
+    {
+      "audit": "claim",
+      "severity": "LOW",
+      "file": "FIGURE_CAPTIONS.md",
+      "line": 71,
+      "term": "mechanism",
+      "context": "all permutation p \u2265 0.49). *Limitation:* this is **not** a refutation of groundwater as a mechanism. Aquifer metadata, well depths and screened intervals are unavailable, the H001 network h"
+    }
+  ]
+}

@@ -1,0 +1,631 @@
+{
+  "manifest_version": "figure_provenance_v1",
+  "generated_utc": "2026-09-22T19:08:10.861237+00:00",
+  "policy": {
+    "every_displayed_value_traces_to_frozen_source": true,
+    "unretained_samples_not_synthesised": true,
+    "manual_editing_of_scientific_values": false,
+    "cosmetic_vector_edits_permitted": "only if data geometry and labels are unchanged; none performed"
+  },
+  "figures": [
+    {
+      "figure_id": "F1",
+      "title": "Study design and independent acquisition geometry",
+      "caption": "**Study design and independent acquisition geometry.** (A) Frozen coverage geometry for the Delhi-NCR study area (1,962.4 km\u00b2, EPSG:32643). Blue denotes the four ascending burst footprints (relative orbit 27, IW2); orange denotes the four descending footprints (relative orbit 136, IW1); black is the AOI boundary. The red hatched area is the 28.0 % of the AOI not covered by the descending track \u2014 a western strip containing no classification zone. White circles mark the five zones (H001\u2013H005), which are small relative to the AOI. (B) Stack composition. The two stacks share no burst, interferogram, mask or acquisition list; no pair was selected because it intersected a zone. *Limitation:* descending coverage is partial, so the descending geometry cannot validate the entire ascending field.",
+      "sources": [
+        {
+          "path": "geometry/aoi.geojson",
+          "exists": true,
+          "sha256": "ddeeae475f696a98fbc18570020e3abc3ae206085f9839912620d780896bbf87",
+          "bytes": 716,
+          "freeze": "freeze/v1",
+          "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d"
+        },
+        {
+          "path": "geometry/selected_bursts.geojson",
+          "exists": true,
+          "sha256": "8107416934086209554db2c8fde029e5a3e7bade8709644b9b6c0deb1eeb598b",
+          "bytes": 5029,
+          "freeze": "freeze/v1",
+          "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d"
+        },
+        {
+          "path": "geometry/descending/selected_bursts.geojson",
+          "exists": true,
+          "sha256": "bb426265b6496823bbb56a9951fcb3825047bfd5ed476becc716507c67329002",
+          "bytes": 4751,
+          "freeze": "freeze/v1",
+          "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d"
+        },
+        {
+          "path": "geometry/descending/coverage_report.json",
+          "exists": true,
+          "sha256": "762c4c96561b4e6909b96cae2ab10a7413ecd7b8146e0c0daab2f6f757f76721",
+          "bytes": 5643,
+          "freeze": "freeze/v1",
+          "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d"
+        },
+        {
+          "path": "qc/sci/phase1/hotspots_corrected.geojson",
+          "exists": true,
+          "sha256": "8cf2a7e35d7795e83f2d7e089f7c316a8a84f8178d282028178d67dd9a34090b",
+          "bytes": 620996,
+          "freeze": "freeze/phase1_observations",
+          "freeze_id": "122781a4a81bd49eb4781c76"
+        }
+      ],
+      "source_freeze": [
+        "freeze/phase1_observations",
+        "freeze/v1"
+      ],
+      "variables_used": [
+        "AOI polygon",
+        "ascending burst footprints",
+        "descending burst footprints",
+        "zone polygons",
+        "descending coverage fraction"
+      ],
+      "transformations_applied": [
+        "reproject to EPSG:32643",
+        "geometric difference: AOI minus descending union"
+      ],
+      "statistics_displayed": [
+        "descending AOI coverage 72.0 %",
+        "uncovered area 28.0 %"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig1",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F01_study_design.png",
+          "sha256": "6df742e3d43f4a22dfbf4fd61ce8a796b14fc3a12f38e90eb144880aa9baa446",
+          "bytes": 403617
+        },
+        {
+          "path": "qc/sci/phase4/figures/F01_study_design.pdf",
+          "sha256": "f917a268c3f5b4e342f53218ab80ae51de525a35d6143fb614e7472223aa163f",
+          "bytes": 54814
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F2",
+      "title": "Ascending relative LOS velocity",
+      "caption": "**Ascending relative LOS velocity field (authoritative product, RAW-336).** (A) Mean relative line-of-sight velocity, all 336 interferograms retained, no pair excluded. Units are mm yr\u207b\u00b9. Warm colours indicate motion toward the satellite; blue indicates motion away. (B) Distribution of the same field on a log count scale; dashed line is the median. *Quality mask:* water-masked; non-inverted pixels excluded (validity defined by velocityStd > 0, not by finiteness, because MintPy fills the non-inverted region with zeros). *Uncertainty:* values are **relative** LOS rates, not vertical displacement. The reference pixel carries a **4.78 mm yr\u207b\u00b9 systematic** that offsets the absolute zero level; spatial gradients are invariant to it. Formal measurement uncertainty is 0.87 mm yr\u207b\u00b9; these terms are not combined.",
+      "sources": [
+        {
+          "path": "products/product_v1/los_velocity_mm_per_yr.tif",
+          "exists": true,
+          "sha256": "a46842d138727bfef7b5be0bab77f477c1fdadb656a1d233ed6c1940abd3ef38",
+          "bytes": 2387061,
+          "freeze": "freeze/product_v1",
+          "freeze_id": "2a1304e3521f1e176fba7e05"
+        }
+      ],
+      "source_freeze": [
+        "freeze/product_v1"
+      ],
+      "variables_used": [
+        "per-pixel mean relative LOS velocity"
+      ],
+      "transformations_applied": [
+        "raster mask applied",
+        "histogram binning"
+      ],
+      "statistics_displayed": [
+        "median velocity",
+        "distribution"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig2",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F02_ascending_velocity.png",
+          "sha256": "5baa9f363dbc6cc6a71ed9911d3226daadfdcb06712d498e6850364cc485cb6e",
+          "bytes": 799650
+        },
+        {
+          "path": "qc/sci/phase4/figures/F02_ascending_velocity.pdf",
+          "sha256": "12def80274a7a6905e7a2a81381e96d44bdaab79f866660ee8527e5f7394dff7",
+          "bytes": 635531
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F3",
+      "title": "Cross-geometry classification of the five zones",
+      "caption": "**Cross-geometry classification of the five zones.** Grouped mean relative LOS rates by zone and viewing geometry: ascending (solid blue) and descending (hatched orange). Units are mm yr\u207b\u00b9. The strip beneath the axis encodes the frozen cross-geometry status. *Sample definition:* mean rate over each zone's common-domain pixels (854,246 px). *Branches:* ascending = RAW-336; descending = unwrap-corrected candidate. *Limitation:* ascending and descending are separate LOS geometries and are never converted to vertical displacement here. H001/H004 are independently supported at the spatial and mean-rate level; H002/H003 are not reproduced; H005 is a cross-geometry contradiction.",
+      "sources": [
+        {
+          "path": "qc/sci/phase4/final_hotspot_table.csv",
+          "exists": true,
+          "sha256": "45647b730690b27e6ab3334908ca6ce0cf3b52df44f31ecc4109b32c4b480018",
+          "bytes": 1612,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "ascending_rate_mm_per_yr",
+        "descending_rate_mm_per_yr",
+        "cross_geometry_status"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "mean rate per zone per geometry"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig3",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F03_hotspot_classification.png",
+          "sha256": "71899a0ceb0d7edadb5b2d9d451ce5e837f1f8adc2555993f5bbf0d8f29e314e",
+          "bytes": 206611
+        },
+        {
+          "path": "qc/sci/phase4/figures/F03_hotspot_classification.pdf",
+          "sha256": "9cc2c787aee2d5140bc1b91148e38bc2de43ebe36b8f9cee8573efe433f6c2bc",
+          "bytes": 44595
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F4",
+      "title": "Cross-track agreement and the selectivity of reproduction",
+      "caption": "**Cross-track agreement and the selectivity of reproduction.** (A) Cross-track agreement between ascending and unwrap-corrected descending velocity, for the raw descending branch (D0) and the unwrap-corrected branch (D2). **These are retained aggregate agreement statistics over 854,321 shared-domain pixels \u2014 not a pixel-level scatter.** Paired per-pixel values were not retained in the frozen evidence set, so no scatter is shown and none has been synthesised. (B) Fraction of each ascending zone's area overlapped by a descending-detected component. *Quality mask:* common valid domain of both stacks. *Limitation:* agreement is moderate and spatially heterogeneous, not global; a plane-detrended coefficient is given because a long-wavelength offset remains between geometries.",
+      "sources": [
+        {
+          "path": "qc/sci/phase2b/revalidation_v2.json",
+          "exists": true,
+          "sha256": "21c823e0e07e4b449b9a5470869a6a94c65d8ad864782078852c3fdb1fafc978",
+          "bytes": 4055,
+          "freeze": "freeze/phase2b_closeout_v1",
+          "freeze_id": "16d36635a06d30182e0e5c84"
+        }
+      ],
+      "source_freeze": [
+        "freeze/phase2b_closeout_v1"
+      ],
+      "variables_used": [
+        "agreement_v1_phase2a.{pearson,spearman,plane_detrended}",
+        "agreement_v2.{pearson,spearman,plane_detrended}",
+        "hotspots[].overlap_fraction"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "aggregate cross-track agreement",
+        "zone overlap fraction"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": "aggregate retained statistics only; no pixel-level scatter, none synthesised",
+      "script": "scripts/73_phase5b_restyle.py::fig4",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F04_cross_geometry_agreement.png",
+          "sha256": "91dcbfd3637991299d8aff6bc0717a5012caa08642c489401605225c8a9bdbf9",
+          "bytes": 377104
+        },
+        {
+          "path": "qc/sci/phase4/figures/F04_cross_geometry_agreement.pdf",
+          "sha256": "34a1eb40150a7a97f4bd1417cbc708eae96c667f55043da850f2a6014e84be6c",
+          "bytes": 47398
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F5",
+      "title": "Zones independently supported by the descending geometry",
+      "caption": "**Zones independently supported by the descending geometry (H001 and H004).** (A) Mean relative LOS rate by geometry; bars as in F3. (B) Ratio of descending to ascending magnitude; dashed line is exact agreement. *Units:* mm yr\u207b\u00b9 (A), dimensionless ratio (B). *What is reproduced:* the spatial pattern, the mean rate and the amplitude ratio. *What is NOT reproduced:* the detailed displacement histories \u2014 see F8. *Area statement:* 6.66 km\u00b2 is the area of Phase-I zones independently supported at the zone level by the descending geometry. It is not a validated extent, is not extrapolated beyond these zones, and is not a vertical displacement rate.",
+      "sources": [
+        {
+          "path": "qc/sci/phase4/final_hotspot_table.csv",
+          "exists": true,
+          "sha256": "45647b730690b27e6ab3334908ca6ce0cf3b52df44f31ecc4109b32c4b480018",
+          "bytes": 1612,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "ascending_rate_mm_per_yr",
+        "descending_rate_mm_per_yr"
+      ],
+      "transformations_applied": [
+        "ratio of descending to ascending magnitude"
+      ],
+      "statistics_displayed": [
+        "magnitude ratios 1.16 / 0.87"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig5",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F05_supported_features.png",
+          "sha256": "fcb92a6decac2eb30659887a7a9f81f2d4c79b5e2ad29b5541a6e50b042c2ace",
+          "bytes": 264950
+        },
+        {
+          "path": "qc/sci/phase4/figures/F05_supported_features.pdf",
+          "sha256": "11d2072a9b4c97983f45575c7bee16d00ed0db7f8355ad3d43e0b5a1ee6d2ead",
+          "bytes": 22089
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F6",
+      "title": "H002 and H003 - negative controls",
+      "caption": "**H002 and H003 \u2014 negative controls.** Mean relative LOS rate by geometry for the two ascending zones that were not reproduced, alongside the one reproduced zone of comparable magnitude. Units are mm yr\u207b\u00b9. \"Matched-band contrast\" is the ascending contrast computed in a common temporal-coherence band. **H001 is omitted from this panel for plotting scale only:** at \u221230.9 / \u221236.0 mm yr\u207b\u00b9 it would compress the comparison shown here. It is reported in F5 and is not selectively excluded. *Quality:* the descending geometry is adequate at both controls (temporal coherence 0.900 and 0.886), so their absence is not a quality artefact. Any explanation acting across the affected terrain predicts all three zones similarly, and therefore fails on selectivity.",
+      "sources": [
+        {
+          "path": "qc/sci/phase4/final_hotspot_table.csv",
+          "exists": true,
+          "sha256": "45647b730690b27e6ab3334908ca6ce0cf3b52df44f31ecc4109b32c4b480018",
+          "bytes": 1612,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "ascending_rate_mm_per_yr",
+        "descending_rate_mm_per_yr"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "matched-band contrasts -12.13 / -11.60 / -10.93"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": "H001 omitted for plotting scale only; reported in F5",
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig6",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F06_negative_controls.png",
+          "sha256": "f340344ba6a29b89911406f028fcfbe96989bd6a9b3eb86a28038bb779a7ab7a",
+          "bytes": 263929
+        },
+        {
+          "path": "qc/sci/phase4/figures/F06_negative_controls.pdf",
+          "sha256": "8166e4835cdd953f848e3c7da807c3a27768299443989c6acf13ee2a998ec033",
+          "bytes": 26074
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F7",
+      "title": "H005 - unresolved cross-geometry contradiction",
+      "caption": "**H005 \u2014 unresolved cross-geometry contradiction.** Mean relative LOS rate by geometry. Units are mm yr\u207b\u00b9. *Sample definition:* common-domain pixels within the H005 polygon. The two geometries disagree in both sign and magnitude, so this is not a reproduction failure but an active contradiction. H005 is retained in the main text as an unresolved result. No explanation for the contradiction is offered, and none is claimed.",
+      "sources": [
+        {
+          "path": "qc/sci/phase4/final_hotspot_table.csv",
+          "exists": true,
+          "sha256": "45647b730690b27e6ab3334908ca6ce0cf3b52df44f31ecc4109b32c4b480018",
+          "bytes": 1612,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "ascending_rate_mm_per_yr",
+        "descending_rate_mm_per_yr"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "H005 rates -14.21 / +61.39"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig7",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F07_H005_contradiction.png",
+          "sha256": "dbd13c44cf8c7b9e7a551b256306646743013e1f6e9e90fe9285b54010f9d1ef",
+          "bytes": 173540
+        },
+        {
+          "path": "qc/sci/phase4/figures/F07_H005_contradiction.pdf",
+          "sha256": "57457a3ea4572f70396290f4a5c241aaa1ebca276497ebd29efe891af93d097e",
+          "bytes": 19300
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F8",
+      "title": "Cumulative totals and the scope of independent reproduction",
+      "caption": "**Cumulative totals and the scope of independent reproduction.** (A) Retained total cumulative LOS displacement over the full stack by geometry; units are mm. **Per-epoch cumulative series were not retained in the frozen evidence set and are NOT reconstructed.** (B) Which characteristics are and are not independently reproduced. *Key limitation:* independent reproduction extends to the **spatial and mean-rate** characteristics only. The ascending and descending H001 cumulative series differ substantially (ascending \u2212120.7 mm against descending +1.1 mm; detrended cross-geometry correlation r = 0.007). The descending series carries large opposing jumps.",
+      "sources": [
+        {
+          "path": "qc/sci/phase2c/hotspot_reconciliation.json",
+          "exists": true,
+          "sha256": "6c071bc248418b9ee90e08a44552feab9da8948869c3d67668e14a627447a944",
+          "bytes": 18343,
+          "freeze": "freeze/descending_v2_candidate",
+          "freeze_id": "ba99df90a6f15b3aaaf90fe30"
+        }
+      ],
+      "source_freeze": [
+        "freeze/descending_v2_candidate"
+      ],
+      "variables_used": [
+        "temporal.<zone>.ascending_total_mm",
+        "temporal.<zone>.descending_total_mm",
+        "temporal.H001.pearson_detrended"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "retained cumulative endpoint totals"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": "per-epoch series not retained; NOT reconstructed",
+      "script": "scripts/73_phase5b_restyle.py::fig8",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F08_rate_vs_history.png",
+          "sha256": "8083aea4249d12cc328d1a5ff3889dac55cc11cd657e5d4060f1de3cdaf14293",
+          "bytes": 266848
+        },
+        {
+          "path": "qc/sci/phase4/figures/F08_rate_vs_history.pdf",
+          "sha256": "777b458d6fe43ace464dc27e5218bb43f96e4fb0ad4823002d9d03b07d942f37",
+          "bytes": 27019
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F9",
+      "title": "Groundwater temporal forcing - lag and falsification diagnostic",
+      "caption": "**Groundwater temporal forcing \u2014 lag and falsification diagnostic.** (A) Spearman \u03c1 between the groundwater depth anomaly and the LOS series as a function of the lag applied to groundwater, per zone. Negative lags (grey field) are **falsification tests**, in which deformation leads groundwater; positive lags test the causal direction. (B) Mean |\u03c1| for forward against falsification lags. *Sample definition:* NWDP six-hourly depth-to-water telemetry, station-anomaly composited to daily medians; zones are H001, H004, H002 and H003 only \u2014 H005 has no groundwater composite and is absent. *Sign convention:* the protocol predicts a **negative** association (deeper groundwater \u2192 more negative LOS). *Significance:* circular block permutation, 90-day blocks; 0 of 16 forward-lag tests survive Benjamini\u2013Hochberg FDR q = 0.05 (all permutation p \u2265 0.49). *Limitation:* this is **not** a refutation of groundwater as a mechanism. Aquifer metadata, well depths and screened intervals are unavailable, the H001 network has ~78-day outages and only two stations, and LOS is not vertical displacement.",
+      "sources": [
+        {
+          "path": "qc/sci/phase3/groundwater_lag_results.csv",
+          "exists": true,
+          "sha256": "e5d59866f1400e6928262211b0bfec5302239d00c62c86329af3d2eae089f6d6",
+          "bytes": 1253,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        },
+        {
+          "path": "qc/sci/phase3/groundwater_control_comparison.csv",
+          "exists": true,
+          "sha256": "86c4b1cfcdc246041d3dce1251ebe090511c9a389b76e9fd438432bad0f364bf",
+          "bytes": 470,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "lag_days",
+        "spearman",
+        "p_block",
+        "role",
+        "mean_positive_rho",
+        "mean_negative_rho"
+      ],
+      "transformations_applied": [
+        "absolute value of mean rho for panel B"
+      ],
+      "statistics_displayed": [
+        "lag correlations",
+        "forward vs falsification |rho|"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/72_phase5b_figures.py::fig9",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F09_groundwater_falsification.png",
+          "sha256": "116ead5ffa4de58ea2af3383863048469b37a8190fabac85d057c26b5eb6d03c",
+          "bytes": 540880
+        },
+        {
+          "path": "qc/sci/phase4/figures/F09_groundwater_falsification.pdf",
+          "sha256": "9d768502d8989bc211a5d161ca5c66ce2c782c9b068c515b6836d9e6cefb69ff",
+          "bytes": 30719
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F10",
+      "title": "Shallow substrate texture",
+      "caption": "**Shallow substrate texture \u2014 direction opposite to prediction.** Clay at 0\u20135 cm (A) and 100\u2013200 cm (B), and sand at 0\u20135 cm (C), by zone. Units are % by mass. Dashed line is the AOI-minus-zones background. *Dataset:* SoilGrids v2.0 (ISRIC), 250 m, sampled on its native grid and never resampled to the 40 m InSAR grid. *Critical limitation:* this is a **shallow soil-texture surrogate**, not a geological map. It samples the upper ~2 m only and does not observe the compaction interval; lithology, formation and age are not identified. Deep geological / aquifer-system susceptibility is therefore **NOT ADEQUATELY TESTED**, not exonerated. H005 is shown for completeness and is not part of the supported/control contrast. The supported zones carry \u22125.0 percentage points less clay and +6.4 points more sand than the controls, opposite to the fine-sediment direction the hypothesis predicts.",
+      "sources": [
+        {
+          "path": "qc/sci/phase3/geology_hotspot_summary.csv",
+          "exists": true,
+          "sha256": "6758e168370762ea13a6dafc3286d5c59cb5190a86bc0d36e9f927c43b2813cd",
+          "bytes": 584,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "clay_0-5cm",
+        "clay_100-200cm",
+        "sand_0-5cm"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "zone mean texture percentages"
+      ],
+      "report_transcribed_constants": {
+        "background_clay_0-5cm": 22.76,
+        "background_clay_100-200cm": 24.64,
+        "background_sand_0-5cm": 43.92,
+        "source": "qc/sci/PHASE_IIIB_GEOLOGICAL_EVIDENCE_REPORT.md, section 3 substrate summary table (AOI minus all zones)"
+      },
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/72_phase5b_figures.py::fig10",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F10_soil_texture.png",
+          "sha256": "44e5cd4b2c133965ff5eeb3438268f49418356e8c6af2eee70cf5d06085fee46",
+          "bytes": 458682
+        },
+        {
+          "path": "qc/sci/phase4/figures/F10_soil_texture.pdf",
+          "sha256": "9171b745cf986d1c99041f50d0437f82a3aa94c67367445d60a886f27f4a8834",
+          "bytes": 61481
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F11",
+      "title": "Built intensity",
+      "caption": "**Built intensity \u2014 a shared setting that does not discriminate.** (A) Built fraction from ESA WorldCover 2021; (B) built surface from JRC GHSL GHS-BUILT-S E2020. Dashed lines are AOI-minus-zones backgrounds. *Sample definition:* polygons rasterised onto each **source** grid (10 m and ~93 m); no coarse product was resampled to 40 m. All four classification zones are heavily built (70\u201379 %) against a 33.7 % AOI background. That is a genuine shared characteristic and precisely why it fails as an explanation: it **describes the common urban setting but does not separate the supported zones from the controls**. H001 and H002 rank differently between the two products, so the discriminator is not robust. *Limitation:* GHSL 2020\u21922025 built-up change is exactly zero at H001\u2013H004, but post-2020 GHSL epochs are projections rather than observations, so this is an absence of detected change rather than a measured absence. No loading is estimated: height, footprint, construction type and foundation are unavailable.",
+      "sources": [
+        {
+          "path": "qc/sci/phase3/urban_hotspot_summary.csv",
+          "exists": true,
+          "sha256": "8f9209cec69e410b10d9cdedb3430fcd7bc98333aaa2e6d3dd83a51d77e82fda",
+          "bytes": 598,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "wc_builtfrac_2021",
+        "ghsl_2020",
+        "ghsl_change"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "zone built fraction and built surface"
+      ],
+      "report_transcribed_constants": {
+        "background_worldcover_built_pct": 33.74,
+        "background_ghsl_built_surface": 225.0,
+        "source": "qc/sci/PHASE_IIIC_URBAN_EVIDENCE_REPORT.md, section C U1 table (AOI minus zones)"
+      },
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/72_phase5b_figures.py::fig11",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F11_urban_intensity.png",
+          "sha256": "bd1316e561dd3da6d4c50908eba4ed15dcb8b94a2f957b591eff9013163983d5",
+          "bytes": 416079
+        },
+        {
+          "path": "qc/sci/phase4/figures/F11_urban_intensity.pdf",
+          "sha256": "560add4fa520c35d06bf666364b6e6bccf8472ba787b07034bc99ead08a8b89c",
+          "bytes": 62161
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    },
+    {
+      "figure_id": "F12",
+      "title": "Competing-hypothesis evidence matrix",
+      "caption": "**Competing-hypothesis evidence matrix (frozen).** Evidence state assigned to each preregistered hypothesis. Swatches encode the category; the three categories are distinct and are never collapsed. **NO EVIDENCE** = a suitable test was conducted and did not support the hypothesis. **NOT ADEQUATELY TESTED** = available evidence does not observe the relevant physical domain. **NOT TESTABLE** = the necessary dataset was unavailable. None of these is equivalent to \"ruled out\", and no composite score is formed across rows. Grades are reproduced verbatim from the frozen evidence matrix.",
+      "sources": [
+        {
+          "path": "qc/sci/phase4/final_evidence_matrix.csv",
+          "exists": true,
+          "sha256": "b622fe2abae16406d1a11136d1bcffd02236f8c4b6e72a71ae1f470dc763d00e",
+          "bytes": 1338,
+          "freeze": "freeze/final_evidence_v1",
+          "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88"
+        }
+      ],
+      "source_freeze": [
+        "freeze/final_evidence_v1"
+      ],
+      "variables_used": [
+        "hypothesis",
+        "evidence_state"
+      ],
+      "transformations_applied": [
+        "none"
+      ],
+      "statistics_displayed": [
+        "frozen evidence grades"
+      ],
+      "report_transcribed_constants": null,
+      "explicit_exclusion": null,
+      "explicit_restriction": null,
+      "script": "scripts/73_phase5b_restyle.py::fig12",
+      "outputs": [
+        {
+          "path": "qc/sci/phase4/figures/F12_evidence_matrix.png",
+          "sha256": "6989b75b65c863caf233e54aae56686025ec3f304fedc697874f07b8c879ac12",
+          "bytes": 285061
+        },
+        {
+          "path": "qc/sci/phase4/figures/F12_evidence_matrix.pdf",
+          "sha256": "cfc329cf2630b8adcbec9108566118d7298c7f0040c8400c63e7dca2135bc879",
+          "bytes": 49448
+        }
+      ],
+      "manually_edited": false,
+      "rendering": "fully scripted; no manual or vector-editor editing"
+    }
+  ]
+}

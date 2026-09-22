@@ -93,34 +93,40 @@ def build() -> int:
     a("")
     a("## Abstract")
     a("")
-    a(CENTRAL)
-    a("")
-    a(CAVEAT)
-    a("")
     a("A 119-acquisition ascending Sentinel-1 stack (relative orbit 27, IW2, 336 "
       "interferograms) and an independently constructed 91-acquisition descending stack "
       "(orbit 136, IW1, 219 interferograms) were processed with HyP3 and MintPy over a "
-      "1,962 km² area for 2021-10 to 2025-09. Five ascending deformation zones were "
-      "detected. Independent reproduction was assessed without any shared burst, pair or "
-      "mask. Four preregistered tests were then applied to candidate explanations — "
-      "groundwater-level variability, shallow soil texture, existing built intensity, and "
-      "recent built-up change — with two non-reproduced ascending zones (H002, H003) "
-      "carried throughout as negative controls. None of the tested explanations accounted "
-      "for the selectivity of the supported features, and the controls themselves "
-      "demonstrate that comparable ascending anomalies need not be physically "
-      "interpretable. A reproducible coherence–velocity association is reported without a "
-      "physical interpretation.")
+      "1,962 km² area of Delhi-NCR for 2021-10 to 2025-09. Five localized relative "
+      "line-of-sight deformation zones were detected in the ascending geometry.")
+    a("")
+    a("Independent reproduction was assessed without any shared burst, pair or mask. Two "
+      "zones (H001 and H004) were independently reproduced across both geometries at the "
+      "spatial and mean-rate level, whereas two comparable ascending zones (H002 and H003) "
+      "were not reproduced and a fifth (H005) remained contradictory between geometries.")
+    a("")
+    a("Four preregistered tests did not support groundwater-level variability, shallow soil "
+      "texture, existing built intensity, or recent built-up expansion as explanations for "
+      "this selectivity. The non-reproduced zones were carried throughout as negative "
+      "controls, and they demonstrate that a comparable ascending anomaly need not be "
+      "physically interpretable. A reproducible coherence–velocity association is reported "
+      "without a physical interpretation.")
+    a("")
+    a("Independent reproduction applies to the spatial and mean-rate characteristics only, "
+      "not to the detailed displacement histories; in particular, the ascending and "
+      "descending H001 cumulative time series differ substantially. These results "
+      "demonstrate independently reproducible localized LOS deformation while leaving its "
+      "physical mechanism unresolved.")
     a("")
     a("## 1. Introduction")
     a("")
     a("The Indo-Gangetic Plain hosts intense groundwater use and rapid urban growth, and "
-      "both are frequently invoked to explain InSAR-observed subsidence. The common "
+      "both are frequently invoked to explain InSAR-observed deformation. The common "
       "analytical pattern is to detect deformation, then attribute it. This study inverts "
       "that order: the geodetic result was frozen before interpretation, candidate "
       "explanations were preregistered with fixed lags, thresholds and significance "
       "procedures, and negative controls were carried from the start.")
     a("")
-    a("The design question is therefore not *\"what is causing the subsidence?\"* but "
+    a("The design question is therefore not *\"what is causing the deformation?\"* but "
       "*\"which of the observed features survive independent observation, and does any "
       "candidate explanation account for where they occur?\"*")
     a("")
@@ -163,7 +169,7 @@ def build() -> int:
     a("### 3.2 Independent descending reproduction")
     a("")
     a("The raw descending solution reproduced the ascending field poorly (Pearson 0.175). "
-      "Diagnostics localised the cause to unwrapping: 81.3 % of inverted pixels fell "
+      "Diagnostics localised the problem to unwrapping: 81.3 % of inverted pixels fell "
       "outside the retained connected set, and masking them worsened every velocity "
       "metric. Correcting the unwrapping (bridging + phase closure) improved **7 of 7** "
       "internal metrics — temporal coherence p75 0.49 → 0.83, pixels with TC ≥ 0.7 from "
@@ -186,7 +192,7 @@ def build() -> int:
       "series carrying large opposing jumps.")
     a("")
     a("```text")
-    a("3.17 km2 = area of Phase-I deformation zones independently supported at the")
+    a("6.66 km2 = area of Phase-I deformation zones independently supported at the")
     a("           hotspot level by the descending geometry   (H001 + H004)")
     a("```")
     a("")
@@ -208,13 +214,33 @@ def build() -> int:
     a("")
     a("### 3.5 Coherence–velocity association")
     a("")
-    a("A monotonic association between temporal coherence and LOS velocity is reproduced "
+    a("A monotonic association between temporal coherence and relative LOS velocity is reproduced "
       "across three processing states (ascending, descending raw, descending "
       "unwrap-corrected), with curve correlation r = +0.831 between geometries. It is "
       "reported as a **reproduced observational relationship** with **physical origin "
       "unresolved**. Candidate explanations — surface and scattering differences, "
       "deformation/decorrelation interaction, residual measurement effects — are not "
       "selected among without independent evidence.")
+    a("")
+    a("### 3.6 Uncertainty structure")
+    a("")
+    a("The uncertainty of these results is **not** expressible as a single ± value, and no "
+      "attempt is made to combine the terms. They are different kinds of quantity — "
+      "statistical, systematic, sensitivity and structural — and no valid probabilistic "
+      "model justifies summing them.")
+    a("")
+    a("| Term | Magnitude | Character |")
+    a("|---|---:|---|")
+    a("| Formal measurement uncertainty | 0.87 mm/yr | statistical fit error, median |")
+    a("| Reference systematic | 4.78 mm/yr | offsets the **absolute** zero level only; "
+      "spatial gradients and every zone contrast are invariant to it |")
+    a("| Processing sensitivity | 0.52–1.04 mm/yr | spread across tested correction branches |")
+    a("| Cross-geometry agreement | 0.175 → 0.363 | Pearson correlation, raw → unwrap-corrected |")
+    a("| Temporal non-stationarity | **10.4–20.2 mm/yr** | split-half difference |")
+    a("")
+    a("The last term dominates every statistical interval quoted in this paper. A single "
+      "rate for any zone is therefore a description of the observation period, not a "
+      "stationary property of that zone, and no rate here should be extrapolated in time.")
     a("")
     a("## 4. Hypothesis tests")
     a("")
@@ -275,7 +301,7 @@ def build() -> int:
     a("")
     a("### 5.2 Why the negative controls deserve prominence")
     a("")
-    a("H002 and H003 are the reason the study cannot be read as \"four subsidence zones "
+    a("H002 and H003 are the reason the study cannot be read as \"four deformation zones "
       "plus one anomaly\". They show that an ascending anomaly of ≈ −13 mm/yr, measured "
       "with adequate quality and sitting in comparable urban terrain, can fail to appear "
       "in an independent geometry. The natural inference — that not every ascending "
@@ -297,7 +323,9 @@ def build() -> int:
     a("")
     a("1. LOS is a projection; no decomposition is published and the Phase II-A component "
       "estimates were withdrawn as invalid.")
-    a("2. The absolute zero level carries a 4.78 mm/yr reference systematic, and no "
+    a("2. Temporal non-stationarity (10.4–20.2 mm/yr) dominates every statistical interval "
+      "quoted here; rates describe the observation period only. The absolute zero level "
+      "additionally carries a 4.78 mm/yr reference systematic, and no "
       "independent in-AOI geodetic reference exists — the nearest adequately sampled GNSS "
       "station is 209.9 km away.")
     a("3. H001/H004 displacement histories are not independently reproduced.")
@@ -540,7 +568,24 @@ supply an independent reference; the reference-selection systematic is
 """
     (OUT / "DATA_CODE_AVAILABILITY.md").write_text(D)
 
-    # ---------- freeze ----------
+    print("=" * 88)
+    print("PHASE V - MANUSCRIPT AND PUBLICATION PACKAGE")
+    print("=" * 88)
+    for p in sorted(OUT.rglob("*")):
+        if p.is_file():
+            print(f"     {p.relative_to(PROJECT_ROOT)}")
+    print(f"\n  SPINE: {SPINE}")
+    print("\n  NOTE: run --freeze LAST, after every Phase V-B output exists.")
+    return 0
+
+
+def build_freeze() -> int:
+    """Build the publication freeze.
+
+    Deliberately separate from build(): the manifest must cover the complete
+    package, so this runs after the figure, provenance, audit and finalize
+    steps have written their outputs.
+    """
     if FREEZE.exists():
         import shutil
         import subprocess
@@ -558,9 +603,15 @@ supply an independent reference; the reference-selection systematic is
                 "qc/sci/FINAL_SCIENTIFIC_EVIDENCE_REPORT.md"):
         p = PROJECT_ROOT / rel
         if p.exists():
-            arts.append({"path": rel, "sha256": sha256_of(p), "bytes": p.stat().st_size})
-    # publication figures: rendered in Phase V from frozen aggregates, not new analysis
-    for p in sorted((P4 / "figures").glob("F*.png")):
+            arts.append({"path": rel, "sha256": sha256_of(p),
+                         "bytes": p.stat().st_size})
+    # publication figures, raster and vector: rendered from frozen aggregates
+    for pat in ("F*.png", "F*.pdf"):
+        for p in sorted((P4 / "figures").glob(pat)):
+            arts.append({"path": str(p.relative_to(PROJECT_ROOT)),
+                         "sha256": sha256_of(p), "bytes": p.stat().st_size})
+    # the erratum raised during Phase V-B is part of the published record
+    for p in sorted((PROJECT_ROOT / "provenance" / "errata").glob("INC-009.*")):
         arts.append({"path": str(p.relative_to(PROJECT_ROOT)),
                      "sha256": sha256_of(p), "bytes": p.stat().st_size})
     fid = hashlib.sha256(json.dumps(
@@ -583,15 +634,13 @@ supply an independent reference; the reference-selection systematic is
     FREEZE.chmod(0o555)
 
     print("=" * 88)
-    print("PHASE V - MANUSCRIPT AND PUBLICATION PACKAGE")
+    print("PHASE V/V-B - PUBLICATION FREEZE")
     print("=" * 88)
-    for p in sorted(OUT.rglob("*")):
-        if p.is_file():
-            print(f"     {p.relative_to(PROJECT_ROOT)}")
-    print(f"\n  publication freeze_id: {fid}")
+    print(f"  publication freeze_id: {fid}")
     print(f"  derived from final evidence freeze: {FINAL_FREEZE}")
-    print(f"\n  SPINE: {SPINE}")
+    print(f"  artefacts            : {len(arts)}")
     return 0
+
 
 
 def verify() -> int:
@@ -616,8 +665,14 @@ def main() -> int:
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--build", action="store_true")
     g.add_argument("--verify", action="store_true")
+    g.add_argument("--freeze", action="store_true",
+                   help="build the publication freeze (run LAST)")
     a = ap.parse_args()
-    return verify() if a.verify else build()
+    if a.verify:
+        return verify()
+    if a.freeze:
+        return build_freeze()
+    return build()
 
 
 if __name__ == "__main__":

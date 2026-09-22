@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-09-23T00:00:00+00:00",
+  "erratum_id": "INC-009",
+  "severity": "SCIENTIFIC_VALUE_INCONSISTENCY",
+  "defect": "The independently supported mapped area of the H001 + H004 deformation zones was published as 3.17 km2 in the Phase III-A report, the Phase IV final synthesis report, and the Phase V manuscript. The authoritative frozen value is 6.66 km2.",
+  "root_cause": "The value 3.17 km2 first appears in qc/sci/PHASE_IIIA_CAUSAL_EVIDENCE_REPORT.md, a phase that introduced no new geodetic or geometric analysis and therefore had no basis on which to state an area. It has no traceable derivation in any script, frozen table or intermediate artefact. The Phase II-C hotspot reconciliation - the phase that actually computed zone geometry - states 6.66 km2, and that value is exactly derivable from the frozen zone areas.",
+  "authoritative_source": {
+    "report": "qc/sci/PHASE_IIC_HOTSPOT_RECONCILIATION_REPORT.md",
+    "statement": "Independently supported mapped area: 6.66 km2 (H001 + H004), reported separately from the ascending mapped area.",
+    "frozen_table": "qc/sci/phase4/final_hotspot_table.csv",
+    "derivation": "H001 area_km2 5.5904 + H004 area_km2 1.0720 = 6.6624 km2, from the frozen final hotspot table"
+  },
+  "why_3_17_is_wrong": [
+    "no script computes it",
+    "it is not present in any frozen table or JSON artefact",
+    "it does not equal H001+H004 area (6.66)",
+    "it does not equal H001+H004 area weighted by descending overlap fraction (6.12)",
+    "it does not equal the IoU-based intersection",
+    "the phase that introduced it performed no geometric computation"
+  ],
+  "discovered_by": "scripts/75_phase5b_audit.py, numerical consistency gate, Phase V-B",
+  "not_affected": [
+    "final_hotspot_table.csv and all frozen hotspot classifications",
+    "all hotspot rates and cross-geometry statuses",
+    "the 22.58 km2 ascending mapped area",
+    "the uncertainty table",
+    "every scientific conclusion in the final evidence synthesis"
+  ],
+  "affected": [
+    "qc/sci/PHASE_IIIA_CAUSAL_EVIDENCE_REPORT.md",
+    "qc/sci/FINAL_SCIENTIFIC_EVIDENCE_REPORT.md",
+    "manuscript/MANUSCRIPT.md",
+    "figure captions and figure annotations that restated the area"
+  ],
+  "correction": "All publication outputs now state 6.66 km2 with the hotspot-level scope, matching the authoritative frozen value. The upstream Phase III-A and Phase IV reports are retained unaltered as the append-only record and are superseded on this single value by this erratum.",
+  "corrected_value_km2": 6.66,
+  "superseded_value_km2": 3.17,
+  "scientific_consequence": "NONE on any conclusion. The corrected value strengthens rather than weakens the existing statement: the independently supported area is larger in relation to the criterion-derived ascending area (6.66 of 22.58 km2, 29.5 percent) than the superseded figure implied. No hotspot classification, evidence grade or mechanism statement changes.",
+  "regression_protection": "scripts/75_phase5b_audit.py numerical gate now asserts that every published area-like value matches a frozen source, and that the independently supported area equals the sum of the frozen H001 and H004 zone areas. A recurrence fails the submission-readiness gate."
+}

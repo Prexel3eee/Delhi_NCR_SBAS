@@ -1,6 +1,7 @@
-# Manuscript
 
 ## Title
+
+*(working title; see TITLE_CANDIDATES.md — no final title selected)*
 
 **Reproducible deformation, unresolved mechanism: ascending/descending Sentinel-1 SBAS-InSAR of Delhi-NCR with preregistered hypothesis testing**
 
@@ -178,3 +179,20 @@ Independent reproduction applies to the spatial and mean-rate characteristics, n
 
 No tested mechanism adequately explains the selective, independently supported H001/H004 deformation. This is not a claim that the deformation has no physical cause. It is the claim that the available evidence is sufficient to characterize selected deformation features and insufficient to identify their mechanism.
 
+
+## 8. Article table
+
+Table 1. Final classification of the five deformation zones.
+
+| Zone | Ascending rate (mm/yr) | Descending rate (mm/yr) | Cross-geometry classification | Time-history status | Mechanism status |
+|---|---:|---:|---|---|---|
+| H001 | -30.95 | -36.02 | independently supported | spatial/rate reproduced; detailed history NOT reproduced | mechanism unresolved |
+| H004 | -14.31 | -12.46 | independently supported | spatial/rate reproduced; detailed history NOT reproduced | mechanism unresolved |
+| H002 | -13.59 | -1.15 | not reproduced | not applicable | ascending feature not reproduced |
+| H003 | -12.87 | -0.75 | not reproduced | not applicable | ascending feature not reproduced |
+| H005 | -14.21 | +61.39 | unresolved contradiction | not applicable | unresolved cross-geometry contradiction |
+
+Rates are mean relative LOS over each zone's common-domain pixels (854,246 px).
+They are not vertical displacement rates. Detailed QC fields - temporal
+coherence, polygon areas, IoU, centroid offsets, uncertainty per zone - are in
+Supplementary Table S1.
