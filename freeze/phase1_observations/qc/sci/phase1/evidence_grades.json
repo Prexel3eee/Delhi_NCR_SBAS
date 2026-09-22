@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-22T10:17:38.161120+00:00",
+  "grades": {
+    "H001": {
+      "grade": "A",
+      "basis": "persists in 14/14 masks, coherence 0.925, |v| 30.9 mm/yr, field and series rates agree to 12%"
+    },
+    "H002": {
+      "grade": "B",
+      "basis": "persists in 11/14 masks, coherence 0.863, |v| 13.6 mm/yr"
+    },
+    "H003": {
+      "grade": "B",
+      "basis": "persists in 10/14 masks, coherence 0.860, |v| 12.9 mm/yr"
+    },
+    "H004": {
+      "grade": "B",
+      "basis": "persists in 10/14 masks, coherence 0.963, |v| 14.3 mm/yr"
+    },
+    "H005": {
+      "grade": "C",
+      "basis": "persists in only 8/14 masks; feature is mask-dependent and should not be carried forward unresolved"
+    }
+  },
+  "grade_definition": {
+    "A": "persistence >= 12/14, coherence >= 0.85, |v| >= 10 mm/yr, field and series rates agree within 20%",
+    "B": "persistence >= 9/14 and |v| >= 10 mm/yr",
+    "C": "mask-dependent; not resolvable at this stage"
+  },
+  "products": [
+    "elevation_m.tif",
+    "los_displacement_mm.tif",
+    "los_residue_rad.tif",
+    "los_velocity_mm_per_yr.tif",
+    "los_velocity_uncertainty_mm_per_yr.tif",
+    "quality_mask.tif",
+    "temporal_coherence.tif"
+  ]
+}

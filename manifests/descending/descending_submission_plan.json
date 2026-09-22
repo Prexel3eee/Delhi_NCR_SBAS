@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-09-22T10:42:52.496174+00:00",
+  "job_name_prefix": "delhi_ncr_sbas_d136_v1_val",
+  "flight_direction": "DESCENDING",
+  "relative_orbit": 136,
+  "subswath": "IW1",
+  "burst_count": 4,
+  "pairs": 219,
+  "to_submit": 219,
+  "credits_per_job": 5,
+  "expected_credits": 1095,
+  "looks": "10x2",
+  "apply_water_mask": true,
+  "added_pairs": [
+    "d136_20220331_20220530",
+    "d136_20220729_20221126",
+    "d136_20220810_20221126",
+    "d136_20221126_20230125",
+    "d136_20230101_20230501",
+    "d136_20230829_20231227",
+    "d136_20240108_20240308",
+    "d136_20240401_20240519",
+    "d136_20240519_20240916",
+    "d136_20240531_20240718"
+  ]
+}

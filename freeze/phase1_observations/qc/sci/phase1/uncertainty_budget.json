@@ -1,0 +1,232 @@
+{
+  "generated_utc": "2026-09-22T10:15:29.929064+00:00",
+  "source": {
+    "freeze": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37"
+  },
+  "terms": {
+    "formal_fit_uncertainty_mm_per_yr": {
+      "value": 0.8664,
+      "averages_down_with_pixels": true,
+      "supports": "relative contrast between neighbouring areas"
+    },
+    "short_wavelength_noise_mm_per_yr": {
+      "value": 1.1899,
+      "averages_down_with_pixels": true,
+      "supports": "detection of spatially coherent anomalies"
+    },
+    "common_mode_epoch_scatter_mm": {
+      "value": 3.5324,
+      "averages_down_with_pixels": false,
+      "supports": "sets the practical limit on resolving the SHAPE of a time series; a few mm per epoch persists at any averaging"
+    },
+    "reference_selection_systematic_mm_per_yr": {
+      "value": 4.78,
+      "sd": 1.716,
+      "averages_down_with_pixels": false,
+      "supports": "bounds the ABSOLUTE LOS offset only; relative spatial gradients and hotspot contrast are unaffected"
+    }
+  },
+  "combined_relative_uncertainty_mm_per_yr": 1.4719,
+  "combined_absolute_uncertainty_mm_per_yr": 5.0015,
+  "what_this_means": {
+    "relative_contrast_is_well_determined": "hotspot-minus-surroundings differences are supported at the ~1.5 mm/yr level",
+    "absolute_los_offset_is_not": "the whole AOI could shift by 4.78 mm/yr without changing anything the InSAR data themselves can check",
+    "time_series_shape_is_limited": "a ~3.5 mm common-mode scatter persists at every epoch regardless of how many pixels are averaged"
+  },
+  "hotspot_uncertainty": [
+    {
+      "hotspot_id": "H001",
+      "area_km2": 5.5904,
+      "n_pixels": 3494,
+      "los_velocity_field_median_mm_per_yr": -30.95,
+      "los_rate_from_series_mm_per_yr": -30.495,
+      "series_residual_rms_mm": 11.896,
+      "rate_first_half_mm_per_yr": -21.594,
+      "rate_second_half_mm_per_yr": -40.569,
+      "split_half_difference_mm_per_yr": -18.975,
+      "epoch_bootstrap_p2_5_mm_per_yr": -32.071,
+      "epoch_bootstrap_p97_5_mm_per_yr": -28.725,
+      "epoch_bootstrap_width_mm_per_yr": 3.345,
+      "temporal_coherence_median": 0.9255,
+      "formal_velocity_std_median_mm_per_yr": 0.9594
+    },
+    {
+      "hotspot_id": "H002",
+      "area_km2": 12.8256,
+      "n_pixels": 8016,
+      "los_velocity_field_median_mm_per_yr": -13.586,
+      "los_rate_from_series_mm_per_yr": -13.594,
+      "series_residual_rms_mm": 15.321,
+      "rate_first_half_mm_per_yr": -16.599,
+      "rate_second_half_mm_per_yr": 0.435,
+      "split_half_difference_mm_per_yr": 17.034,
+      "epoch_bootstrap_p2_5_mm_per_yr": -15.591,
+      "epoch_bootstrap_p97_5_mm_per_yr": -11.29,
+      "epoch_bootstrap_width_mm_per_yr": 4.301,
+      "temporal_coherence_median": 0.8634,
+      "formal_velocity_std_median_mm_per_yr": 1.2768
+    },
+    {
+      "hotspot_id": "H003",
+      "area_km2": 2.2544,
+      "n_pixels": 1409,
+      "los_velocity_field_median_mm_per_yr": -12.867,
+      "los_rate_from_series_mm_per_yr": -12.921,
+      "series_residual_rms_mm": 15.256,
+      "rate_first_half_mm_per_yr": -14.981,
+      "rate_second_half_mm_per_yr": 1.276,
+      "split_half_difference_mm_per_yr": 16.257,
+      "epoch_bootstrap_p2_5_mm_per_yr": -14.966,
+      "epoch_bootstrap_p97_5_mm_per_yr": -10.862,
+      "epoch_bootstrap_width_mm_per_yr": 4.104,
+      "temporal_coherence_median": 0.8604,
+      "formal_velocity_std_median_mm_per_yr": 1.2506
+    },
+    {
+      "hotspot_id": "H004",
+      "area_km2": 1.072,
+      "n_pixels": 670,
+      "los_velocity_field_median_mm_per_yr": -14.31,
+      "los_rate_from_series_mm_per_yr": -14.112,
+      "series_residual_rms_mm": 8.96,
+      "rate_first_half_mm_per_yr": -9.629,
+      "rate_second_half_mm_per_yr": -20.064,
+      "split_half_difference_mm_per_yr": -10.434,
+      "epoch_bootstrap_p2_5_mm_per_yr": -15.453,
+      "epoch_bootstrap_p97_5_mm_per_yr": -12.855,
+      "epoch_bootstrap_width_mm_per_yr": 2.599,
+      "temporal_coherence_median": 0.963,
+      "formal_velocity_std_median_mm_per_yr": 0.7268
+    },
+    {
+      "hotspot_id": "H005",
+      "area_km2": 0.8352,
+      "n_pixels": 522,
+      "los_velocity_field_median_mm_per_yr": -14.209,
+      "los_rate_from_series_mm_per_yr": -14.361,
+      "series_residual_rms_mm": 17.301,
+      "rate_first_half_mm_per_yr": -19.333,
+      "rate_second_half_mm_per_yr": 0.912,
+      "split_half_difference_mm_per_yr": 20.245,
+      "epoch_bootstrap_p2_5_mm_per_yr": -16.412,
+      "epoch_bootstrap_p97_5_mm_per_yr": -12.221,
+      "epoch_bootstrap_width_mm_per_yr": 4.19,
+      "temporal_coherence_median": 0.8653,
+      "formal_velocity_std_median_mm_per_yr": 1.4038
+    }
+  ],
+  "coherence_stratification": [
+    {
+      "coherence_low": 0.5,
+      "coherence_high": 0.55,
+      "n_pixels": 71643,
+      "median_mm_per_yr": -17.059,
+      "p05_mm_per_yr": -36.495,
+      "p95_mm_per_yr": 2.778,
+      "fraction_below_minus10": 0.72377,
+      "mean_elevation_m": 164.1,
+      "median_formal_std_mm_per_yr": 1.3618
+    },
+    {
+      "coherence_low": 0.55,
+      "coherence_high": 0.6,
+      "n_pixels": 63419,
+      "median_mm_per_yr": -13.992,
+      "p05_mm_per_yr": -32.901,
+      "p95_mm_per_yr": 4.815,
+      "fraction_below_minus10": 0.63503,
+      "mean_elevation_m": 166.2,
+      "median_formal_std_mm_per_yr": 1.3363
+    },
+    {
+      "coherence_low": 0.6,
+      "coherence_high": 0.65,
+      "n_pixels": 61297,
+      "median_mm_per_yr": -10.723,
+      "p05_mm_per_yr": -29.468,
+      "p95_mm_per_yr": 6.875,
+      "fraction_below_minus10": 0.52502,
+      "mean_elevation_m": 169.3,
+      "median_formal_std_mm_per_yr": 1.3165
+    },
+    {
+      "coherence_low": 0.65,
+      "coherence_high": 0.7,
+      "n_pixels": 61875,
+      "median_mm_per_yr": -7.701,
+      "p05_mm_per_yr": -26.068,
+      "p95_mm_per_yr": 7.728,
+      "fraction_below_minus10": 0.41552,
+      "mean_elevation_m": 172.6,
+      "median_formal_std_mm_per_yr": 1.2955
+    },
+    {
+      "coherence_low": 0.7,
+      "coherence_high": 0.75,
+      "n_pixels": 63475,
+      "median_mm_per_yr": -5.328,
+      "p05_mm_per_yr": -21.788,
+      "p95_mm_per_yr": 7.321,
+      "fraction_below_minus10": 0.31244,
+      "mean_elevation_m": 174.4,
+      "median_formal_std_mm_per_yr": 1.2485
+    },
+    {
+      "coherence_low": 0.75,
+      "coherence_high": 0.8,
+      "n_pixels": 70202,
+      "median_mm_per_yr": -3.769,
+      "p05_mm_per_yr": -17.824,
+      "p95_mm_per_yr": 6.657,
+      "fraction_below_minus10": 0.22172,
+      "mean_elevation_m": 175.0,
+      "median_formal_std_mm_per_yr": 1.1922
+    },
+    {
+      "coherence_low": 0.8,
+      "coherence_high": 0.85,
+      "n_pixels": 82860,
+      "median_mm_per_yr": -2.815,
+      "p05_mm_per_yr": -14.925,
+      "p95_mm_per_yr": 5.771,
+      "fraction_below_minus10": 0.14951,
+      "mean_elevation_m": 173.9,
+      "median_formal_std_mm_per_yr": 1.1245
+    },
+    {
+      "coherence_low": 0.85,
+      "coherence_high": 0.9,
+      "n_pixels": 109174,
+      "median_mm_per_yr": -1.787,
+      "p05_mm_per_yr": -12.518,
+      "p95_mm_per_yr": 4.936,
+      "fraction_below_minus10": 0.09478,
+      "mean_elevation_m": 172.6,
+      "median_formal_std_mm_per_yr": 1.0687
+    },
+    {
+      "coherence_low": 0.9,
+      "coherence_high": 0.95,
+      "n_pixels": 167583,
+      "median_mm_per_yr": -0.382,
+      "p05_mm_per_yr": -7.4,
+      "p95_mm_per_yr": 4.389,
+      "fraction_below_minus10": 0.02329,
+      "mean_elevation_m": 173.2,
+      "median_formal_std_mm_per_yr": 0.9851
+    },
+    {
+      "coherence_low": 0.95,
+      "coherence_high": 1.0,
+      "n_pixels": 181894,
+      "median_mm_per_yr": -0.289,
+      "p05_mm_per_yr": -4.341,
+      "p95_mm_per_yr": 2.726,
+      "fraction_below_minus10": 0.00816,
+      "mean_elevation_m": 169.2,
+      "median_formal_std_mm_per_yr": 0.6534
+    }
+  ],
+  "reference_rebasing_offset_mm_per_yr": 0.1362
+}

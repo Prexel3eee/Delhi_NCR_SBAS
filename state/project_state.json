@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T10:18:24Z",
-  "phase": "PHASE_I_CHARACTERIZATION_COMPLETE",
-  "next_phase": "INTERPRETATION_ATTRIBUTION",
+  "updated_utc": "2026-09-22T10:43:04Z",
+  "phase": "PHASE_IIA_DESCENDING_DESIGN_COMPLETE",
+  "next_phase": "PHASE_IIA_DESCENDING_SUBMISSION",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -789,6 +789,82 @@
       "no vertical rate (LOS projection)",
       "no absolute rate (reference-systematic bound)",
       "no validated total extent"
+    ]
+  },
+  "phase2": {
+    "stage": "design complete; submission NOT yet executed",
+    "inc007_erratum": "provenance/errata/INC-007.json (append-only). product_v1 unmodified.",
+    "phase1_observations_frozen": {
+      "path": "freeze/phase1_observations/",
+      "freeze_id": "122781a4a81bd49eb4781c7682cff7b378c97e593fe7d7ed1dd7994b387bede7",
+      "zones": 5,
+      "mapped_area_km2": 22.6
+    },
+    "descending": {
+      "relative_orbit": 136,
+      "subswath": "IW1",
+      "k": 4,
+      "full_burst_ids": [
+        "136_290874_IW1",
+        "136_290875_IW1",
+        "136_290876_IW1",
+        "136_290877_IW1"
+      ],
+      "aoi_coverage_fraction": 0.719693,
+      "aoi_fully_contained": false,
+      "structural_limitation": "descending path 136 is the only descending IW track over the AOI; its swath edge leaves 28.03% of the AOI (the western strip, lon < ~76.995 E) uncovered. No configuration of this orbit can cover it.",
+      "hotspots_contained": "5/5 (all Phase-I hotspot polygons 100% inside the IW1 footprint)",
+      "acquisitions": 91,
+      "pairs": 219,
+      "excluded_acquisitions": 1,
+      "dropped_unconnectable": [
+        "2024-04-13"
+      ],
+      "record_gaps_over_36d": [
+        {
+          "from": "2022-08-10",
+          "to": "2022-11-26",
+          "days": 108
+        },
+        {
+          "from": "2024-05-31",
+          "to": "2024-07-18",
+          "days": 48
+        }
+      ],
+      "network_audit": {
+        "components": 1,
+        "isolated": 0,
+        "min_degree": 2,
+        "median_degree": 5.0,
+        "bridges": 0,
+        "articulation_points": 1,
+        "acceptance_passed": true
+      },
+      "temporal_baseline_days_counts": {
+        "12": 69,
+        "24": 75,
+        "36": 65,
+        "48": 2,
+        "60": 3,
+        "108": 1,
+        "120": 4
+      },
+      "added_pairs_beyond_36d_rule": 10,
+      "estimated_credits": 1095,
+      "credits_remaining_before": 6250,
+      "submitted": false
+    },
+    "gnss_position": "GNSS CANNOT DISCRIMINATE CURRENT BRANCH DIFFERENCES - retained. DLHI/GCP5/DELH/LIAA not usable as local rate validators; DRDN not usable as an absolute calibration at 209.9 km separation.",
+    "not_started": [
+      "descending submission",
+      "download",
+      "MintPy",
+      "cross-validation",
+      "coherence-velocity comparison",
+      "temporal-mode validation",
+      "decomposition",
+      "PHASE_IIA_GEODETIC_VALIDATION_REPORT.md"
     ]
   }
 }

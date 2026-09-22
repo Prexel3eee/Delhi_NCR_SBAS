@@ -1,0 +1,12 @@
+{
+  "errata": [
+    {
+      "erratum_id": "INC-007",
+      "created_utc": "2026-09-22T10:26:49.450193+00:00",
+      "json": "provenance/errata/INC-007.json",
+      "markdown": "provenance/errata/INC-007.md",
+      "summary": "product_v1 is referenced to (1384,1451), not the intended (1378,1426)"
+    }
+  ],
+  "updated_utc": "2026-09-22T10:26:49.450193+00:00"
+}

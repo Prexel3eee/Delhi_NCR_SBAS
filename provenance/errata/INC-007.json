@@ -1,0 +1,101 @@
+{
+  "erratum_id": "INC-007",
+  "title": "AUTHORITATIVE PRODUCT REFERENCE differs from INTENDED SCIENTIFIC REFERENCE",
+  "created_utc": "2026-09-22T10:26:49.450193+00:00",
+  "append_only": true,
+  "product_modified": false,
+  "affects_freeze": "product_v1",
+  "affects_freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+  "authoritative_product_reference": {
+    "y": 1384,
+    "x": 1451,
+    "x_utm": 705760.0,
+    "y_utm": 3169960.0,
+    "lon": 77.105024,
+    "lat": 28.640415
+  },
+  "intended_scientific_reference": {
+    "y": 1378,
+    "x": 1426,
+    "x_utm": 704760.0,
+    "y_utm": 3170200.0,
+    "lon": 77.094843,
+    "lat": 28.642739
+  },
+  "separation_between_references_m": 1028.4,
+  "verification": {
+    "method": "the reference pixel is identically zero across every date",
+    "authoritative_timeseries_max_abs_m": 0.0,
+    "intended_timeseries_max_abs_m": 0.014792263507843018,
+    "conclusion": "the product is referenced to the authoritative pixel; the intended pixel is not the reference"
+  },
+  "measured_offset": {
+    "velocity_offset_mm_per_yr": 0.1362,
+    "sign_convention": "the authoritative product reads the intended reference pixel at this velocity, so re-basing adds it to every pixel to convert to the intended zero level",
+    "magnitude_relative_to_reference_systematic": 0.0285
+  },
+  "effect_on_branch_comparisons": {
+    "ERA5": {
+      "as_published_median_mm_per_yr": 0.0127,
+      "as_published_rms_mm_per_yr": 0.5206,
+      "reference_aligned_median_mm_per_yr": 0.1488,
+      "reference_aligned_rms_mm_per_yr": 0.5493,
+      "verdict_changed": false,
+      "note": "The reference mismatch contributes a constant term. Aligning shifts the median by the offset and leaves the RMS essentially unchanged, so no branch verdict is affected."
+    },
+    "ERA5+DEM": {
+      "as_published_median_mm_per_yr": -0.0492,
+      "as_published_rms_mm_per_yr": 1.0359,
+      "reference_aligned_median_mm_per_yr": 0.087,
+      "reference_aligned_rms_mm_per_yr": 1.0309,
+      "verdict_changed": false,
+      "note": "The reference mismatch contributes a constant term. Aligning shifts the median by the offset and leaves the RMS essentially unchanged, so no branch verdict is affected."
+    }
+  },
+  "effect_on_phase1_results": {
+    "spatial_gradients_unchanged": true,
+    "hotspot_contrasts_unchanged": true,
+    "hotspot_geometry_unchanged": true,
+    "hotspot_identification_unchanged": true,
+    "temporal_contrasts_unchanged": true,
+    "reason": "InSAR velocities are defined relative to a reference pixel. Changing the reference adds one constant to every pixel, so every difference between two pixels is invariant.",
+    "absolute_zero_level_affected": true,
+    "absolute_zero_level_uncertainty_mm_per_yr": 4.78
+  },
+  "reporting_requirement": "Every subsequent report must label velocity values as relative to either the AUTHORITATIVE PRODUCT REFERENCE (1384,1451) or the INTENDED SCIENTIFIC REFERENCE (1378,1426). The two must not be mixed silently. Phase I values are relative to the authoritative product reference.",
+  "remediation": "Fix at the next product revision by setting mintpy.reference.yx explicitly in EVERY branch config. `config/mintpy_era5.txt` and `config/mintpy_dem_residual.txt` already set it; `config/mintpy_baseline_raw.txt` does not.",
+  "affected_file_hashes": {
+    "config/mintpy_baseline_raw.txt": {
+      "sha256": "8772379fa2f79282ecd82e3768d7adc7b47e52cadb50a0eadc4c6715de70e014",
+      "bytes": 2735
+    },
+    "config/mintpy_era5.txt": {
+      "sha256": "06f9540f7a87e46011ccc97608ac588e1da7d356cf8aec9c2a0b7097149b795e",
+      "bytes": 1557
+    },
+    "config/mintpy_dem_residual.txt": {
+      "sha256": "21ae55be55a608f8fa78fd951ff30b3164b32837980356604d96b16cb855fed9",
+      "bytes": 1842
+    },
+    "config/scientific_decisions_v2.json": {
+      "sha256": "4015bc74b2a33a7fe57140ee7ac45cc59c76b99bf9d813083f670f487f4ae963",
+      "bytes": 1244
+    },
+    "freeze/product_v1/FREEZE.json": {
+      "sha256": "9338fa80c3553ef89925a997d681b2195fb5107454a1136f662d878ab847012f",
+      "bytes": 7291
+    },
+    "freeze/mintpy_input_v1/FREEZE.json": {
+      "sha256": "bcc4389693dad6b893984d3bd2ddbd6e122bd8fcfcd599af4854070fb9958a77",
+      "bytes": 24170
+    },
+    "qc/sci/phase1/deformation_map_summary.json": {
+      "sha256": "074fe2f9636e201c9210ab24e01bb2a520cee2062268dae9e6e85b051c08111c",
+      "bytes": 3747
+    },
+    "state/project_state.json": {
+      "sha256": "bb714e305d4e4d3b52b159f5ec50dc5cec9bd7ad6fe566cb57f0961a66a1db22",
+      "bytes": 27372
+    }
+  }
+}

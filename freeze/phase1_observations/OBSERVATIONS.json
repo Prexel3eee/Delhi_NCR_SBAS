@@ -1,0 +1,260 @@
+{
+  "freeze_version": "phase1_observations_v1",
+  "created_utc": "2026-09-22T10:27:10.825403+00:00",
+  "source_product": {
+    "freeze": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+    "principal_solution": "RAW-336",
+    "velocity_reference": "AUTHORITATIVE PRODUCT REFERENCE (y=1384, x=1451); see provenance/errata/INC-007.json"
+  },
+  "status": "OBSERVATIONS_ONLY - no mechanism is asserted anywhere in this file",
+  "deformation_zones": [
+    {
+      "zone_id": "H001",
+      "centroid_lon": 77.08126,
+      "centroid_lat": 28.52117,
+      "area_km2": 5.5904,
+      "los_velocity_median_mm_per_yr": -30.95,
+      "los_velocity_peak_mm_per_yr": -87.387,
+      "los_sign": "negative",
+      "temporal_coherence_median": 0.9255,
+      "cumulative_los_displacement_mm": -120.686,
+      "rate_from_series_mm_per_yr": -27.089,
+      "split_half_first_mm_per_yr": -21.594,
+      "split_half_second_mm_per_yr": -40.569,
+      "split_half_difference_mm_per_yr": -18.975,
+      "temporal_form": "approximately_linear",
+      "grade": "A",
+      "persistence_scenarios_survived": 14,
+      "persistence_scenarios_total": 14
+    },
+    {
+      "zone_id": "H002",
+      "centroid_lon": 77.07347,
+      "centroid_lat": 28.81522,
+      "area_km2": 12.8256,
+      "los_velocity_median_mm_per_yr": -13.586,
+      "los_velocity_peak_mm_per_yr": -31.542,
+      "los_sign": "negative",
+      "temporal_coherence_median": 0.8634,
+      "cumulative_los_displacement_mm": -47.981,
+      "rate_from_series_mm_per_yr": -14.417,
+      "split_half_first_mm_per_yr": -16.599,
+      "split_half_second_mm_per_yr": 0.435,
+      "split_half_difference_mm_per_yr": 17.034,
+      "temporal_form": "linear_with_seasonal",
+      "grade": "B",
+      "persistence_scenarios_survived": 11,
+      "persistence_scenarios_total": 14
+    },
+    {
+      "zone_id": "H003",
+      "centroid_lon": 77.08102,
+      "centroid_lat": 28.80333,
+      "area_km2": 2.2544,
+      "los_velocity_median_mm_per_yr": -12.867,
+      "los_velocity_peak_mm_per_yr": -29.805,
+      "los_sign": "negative",
+      "temporal_coherence_median": 0.8604,
+      "cumulative_los_displacement_mm": -46.784,
+      "rate_from_series_mm_per_yr": -14.075,
+      "split_half_first_mm_per_yr": -14.981,
+      "split_half_second_mm_per_yr": 1.276,
+      "split_half_difference_mm_per_yr": 16.257,
+      "temporal_form": "linear_with_seasonal",
+      "grade": "B",
+      "persistence_scenarios_survived": 10,
+      "persistence_scenarios_total": 14
+    },
+    {
+      "zone_id": "H004",
+      "centroid_lon": 77.05539,
+      "centroid_lat": 28.53326,
+      "area_km2": 1.072,
+      "los_velocity_median_mm_per_yr": -14.31,
+      "los_velocity_peak_mm_per_yr": -23.651,
+      "los_sign": "negative",
+      "temporal_coherence_median": 0.963,
+      "cumulative_los_displacement_mm": -59.59,
+      "rate_from_series_mm_per_yr": -12.549,
+      "split_half_first_mm_per_yr": -9.629,
+      "split_half_second_mm_per_yr": -20.064,
+      "split_half_difference_mm_per_yr": -10.435,
+      "temporal_form": "approximately_linear",
+      "grade": "B",
+      "persistence_scenarios_survived": 10,
+      "persistence_scenarios_total": 14
+    },
+    {
+      "zone_id": "H005",
+      "centroid_lon": 77.17352,
+      "centroid_lat": 28.82489,
+      "area_km2": 0.8352,
+      "los_velocity_median_mm_per_yr": -14.209,
+      "los_velocity_peak_mm_per_yr": -26.13,
+      "los_sign": "negative",
+      "temporal_coherence_median": 0.8653,
+      "cumulative_los_displacement_mm": -44.538,
+      "rate_from_series_mm_per_yr": -16.117,
+      "split_half_first_mm_per_yr": -19.333,
+      "split_half_second_mm_per_yr": 0.912,
+      "split_half_difference_mm_per_yr": 20.245,
+      "temporal_form": "approximately_linear",
+      "grade": "C",
+      "persistence_scenarios_survived": 8,
+      "persistence_scenarios_total": 14
+    }
+  ],
+  "zone_count": 5,
+  "mapped_area": {
+    "label": "robustly supported mapped deformation area under the selected quality criterion",
+    "value_km2": 22.58,
+    "quality_criterion": {
+      "absolute_velocity_threshold_mm_per_yr": 10.0,
+      "temporal_coherence_min": 0.8,
+      "minimum_area_km2": 0.4,
+      "connectivity": 8
+    },
+    "explicit_warning": "This is NOT the true deformation extent. Deformation magnitude and temporal coherence are strongly associated in this stack, so a coherence-based criterion systematically excludes part of the signal. The true extent is UNRESOLVED.",
+    "extent_sensitivity_km2": {
+      "threshold_5_coherence_0.7": 164.07,
+      "threshold_5_coherence_0.8": 74.58,
+      "threshold_5_coherence_0.9": 12.01,
+      "threshold_10_coherence_0.7": 49.47,
+      "threshold_10_coherence_0.8": 22.58,
+      "threshold_10_coherence_0.9": 4.48,
+      "threshold_15_coherence_0.7": 12.75,
+      "threshold_15_coherence_0.8": 5.13,
+      "threshold_15_coherence_0.9": 3.2
+    }
+  },
+  "observational_findings": {
+    "all_zones_negative_los": true,
+    "sign_convention": "negative LOS = ground moving away from the satellite along the line of sight; this is NOT a subsidence claim",
+    "H001_median_los_mm_per_yr": -30.95,
+    "supported_local_extremes_reach_mm_per_yr": -87.387,
+    "cumulative_los_range_mm": [
+      -120.69,
+      -44.54
+    ],
+    "rates_are_non_stationary": true,
+    "split_half_difference_range_mm_per_yr": [
+      10.435,
+      20.245
+    ],
+    "northern_group": {
+      "zones": [
+        "H002",
+        "H003",
+        "H005"
+      ],
+      "behaviour": "accumulate most displacement in the first half, then plateau"
+    },
+    "southern_group": {
+      "zones": [
+        "H001",
+        "H004"
+      ],
+      "behaviour": "faster in the second half"
+    },
+    "north_south_distinct_temporal_behaviour": true,
+    "within_group_mutual_correlation": {
+      "northern_r_range": [
+        0.82,
+        0.99
+      ],
+      "southern_r": 0.82,
+      "between_groups_r_range": [
+        -0.46,
+        -0.34
+      ],
+      "survives_change_of_detrend_order": true
+    },
+    "reference_choice_zero_level_range_mm_per_yr": 4.78,
+    "relative_contrast_uncertainty_mm_per_yr": 1.4719,
+    "absolute_zero_level_uncertainty_mm_per_yr": 5.0015,
+    "relative_contrast_materially_smaller_than_absolute": true,
+    "coherence_velocity_association": {
+      "present": true,
+      "description": "lower temporal coherence is associated with much stronger negative LOS velocity across the AOI",
+      "status": "UNRESOLVED - the highest-priority open question for Phase II"
+    },
+    "noise_floor_mm_per_yr": 1.1899
+  },
+  "not_established": [
+    "no mechanism",
+    "no vertical rate",
+    "no absolute rate",
+    "no validated total extent",
+    "no volume or storage change"
+  ],
+  "not_a_mechanism_statement": "Every entry above is a statement about the InSAR observations. Groundwater, tectonics, compaction, construction and metro loading, lithology and fault motion are untested hypotheses and appear nowhere in this freeze.",
+  "source_artefacts": [
+    {
+      "path": "qc/sci/phase1/hotspots.csv",
+      "sha256": "0239009916889a7c2dd71f43f08751188cc9b3c819da49e6a811fc652c3d9a84",
+      "bytes": 1790
+    },
+    {
+      "path": "qc/sci/phase1/hotspots.json",
+      "sha256": "094da39282987a01dbafb2dc8501f5b7ebe5285749364b7434874a5845414cf0",
+      "bytes": 6689
+    },
+    {
+      "path": "qc/sci/phase1/hotspot_persistence.json",
+      "sha256": "38a6dee1c667e7cff9e439d59d9339f45bf627f1faa0b20a8a6c14491523e6dd",
+      "bytes": 6346
+    },
+    {
+      "path": "qc/sci/phase1/hotspot_persistence.csv",
+      "sha256": "575f1ffb906b45a63f21147716b27dc033fe4ef444466bbfccc0748b9f94932d",
+      "bytes": 3946
+    },
+    {
+      "path": "qc/sci/phase1/hotspot_timeseries.json",
+      "sha256": "f4a579a628e7836e5d1c0660b2579309ad5e285f48b1f385dd94841cf0815c40",
+      "bytes": 4822
+    },
+    {
+      "path": "qc/sci/phase1/hotspot_timeseries_summary.csv",
+      "sha256": "7217832860129d913d4017c1db5f5a63a3a0c78cbe871570da0450a217d4eda6",
+      "bytes": 1212
+    },
+    {
+      "path": "qc/sci/phase1/hotspot_uncertainty.csv",
+      "sha256": "4ab8d07152d3e11c1565cb1c4dd0601dbfbb3b840c612cab15bdbbf1a5f73e36",
+      "bytes": 1197
+    },
+    {
+      "path": "qc/sci/phase1/uncertainty_budget.json",
+      "sha256": "30cb8ba3ae1609cb644de3d3fad9e8f00edd5d5356f9b2b9d3e7e0e3e3249884",
+      "bytes": 7869
+    },
+    {
+      "path": "qc/sci/phase1/oscillation_diagnostics.json",
+      "sha256": "e03c842fbd35d5609b50d62e4f85ed15cf80487bdbde560adc0154beba438aa4",
+      "bytes": 3522
+    },
+    {
+      "path": "qc/sci/phase1/coherence_stratification.csv",
+      "sha256": "7c97cd2a5ed2fd120e09737faa3b337ef7d865ca27f22105b83c75f184c3bac8",
+      "bytes": 723
+    },
+    {
+      "path": "qc/sci/phase1/deformation_map_summary.json",
+      "sha256": "074fe2f9636e201c9210ab24e01bb2a520cee2062268dae9e6e85b051c08111c",
+      "bytes": 3747
+    },
+    {
+      "path": "qc/sci/phase1/evidence_grades.json",
+      "sha256": "112135e68e7e158890433ef99b3f000284962f377a3b5a2de91551836f7058fe",
+      "bytes": 1212
+    },
+    {
+      "path": "qc/sci/PHASE1_REPORT.md",
+      "sha256": "086460400378efa07d9b7a3ec5152d5cf82ae9982b021dbe9dfe91186df99f15",
+      "bytes": 16148
+    }
+  ],
+  "freeze_id": "122781a4a81bd49eb4781c7682cff7b378c97e593fe7d7ed1dd7994b387bede7"
+}

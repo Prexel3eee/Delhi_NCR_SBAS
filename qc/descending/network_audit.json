@@ -1,0 +1,112 @@
+{
+  "generated_utc": "2026-09-22T10:41:53.504033+00:00",
+  "flight_direction": "DESCENDING",
+  "relative_orbit": 136,
+  "subswath": "IW1",
+  "k": 4,
+  "full_burst_ids": [
+    "136_290874_IW1",
+    "136_290875_IW1",
+    "136_290876_IW1",
+    "136_290877_IW1"
+  ],
+  "window": [
+    "2021-10-01T00:00:00Z",
+    "2025-10-01T00:00:00Z"
+  ],
+  "acquisitions": {
+    "common_accepted": 91,
+    "union_seen": 92,
+    "excluded": 0,
+    "dropped_unconnectable": [
+      "2024-04-13"
+    ],
+    "per_burst_counts": {
+      "136_290874_IW1": 92,
+      "136_290875_IW1": 92,
+      "136_290876_IW1": 92,
+      "136_290877_IW1": 92
+    },
+    "first": "2021-10-02",
+    "last": "2025-09-23"
+  },
+  "connectivity_decision": {
+    "standard_rule_max_temporal_days": 36,
+    "record_gaps_over_rule_days": [
+      {
+        "from": "2022-08-10",
+        "to": "2022-11-26",
+        "days": 108
+      },
+      {
+        "from": "2024-05-31",
+        "to": "2024-07-18",
+        "days": 48
+      }
+    ],
+    "approach": "keep the 36-day rule for the bulk of the network and add the minimal set of flagged bridge pairs needed to make the graph connected, rather than widening the rule for every pair",
+    "bridges_added": [],
+    "alternative_considered": "process the three epochs independently; rejected because each epoch carries its own reference level and they cannot be compared without assuming what the ground did across the gap",
+    "consequence": "the bridge pairs are the sole link between epochs, so the epoch-to-epoch offset depends on them; within-epoch temporal shape does not"
+  },
+  "network": {
+    "pairs": 219,
+    "bridge_pairs": 10,
+    "rules": {
+      "max_temporal_days": 36,
+      "max_perp_m": 250.0,
+      "join_method": "identity intersection across all bursts"
+    },
+    "temporal_baseline_days": {
+      "min": 12,
+      "median": 24.0,
+      "max": 120,
+      "counts": {
+        "12": 69,
+        "24": 75,
+        "36": 65,
+        "48": 2,
+        "60": 3,
+        "108": 1,
+        "120": 4
+      }
+    },
+    "perpendicular_baseline_m": {
+      "min": -224.5,
+      "median": -8.5,
+      "max": 237.75,
+      "max_abs": 241.0
+    },
+    "connected_components": [
+      91
+    ],
+    "n_components": 1,
+    "isolated_nodes": 0,
+    "min_degree": 2,
+    "max_degree": 6,
+    "median_degree": 5.0,
+    "bridges": [],
+    "n_bridges": 0,
+    "articulation_points": [
+      "2022-11-26"
+    ],
+    "n_articulation_points": 1
+  },
+  "fail_closed": {
+    "date_accepted_only_if_all_bursts_present": true,
+    "pair_built_only_if_key_in_all_bursts": true,
+    "positional_zip_used": false,
+    "hotspot_geometry_used_in_pair_selection": false,
+    "ascending_artefacts_read": false
+  },
+  "acceptance_rule": {
+    "one_connected_component": true,
+    "no_isolated_nodes": true,
+    "minimum_degree_at_least_2": true,
+    "zero_bridges": true,
+    "articulation_fraction_at_most_5pct": true,
+    "residual_articulation_fraction": 0.01099,
+    "note": "0 articulation points was not attainable; the remaining cut vertices are recorded individually so their influence can be tested."
+  },
+  "acceptance_passed": true
+}

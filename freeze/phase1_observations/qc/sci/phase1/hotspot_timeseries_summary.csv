@@ -1,0 +1,6 @@
+hotspot_id,area_km2,centroid_lon,centroid_lat,n_pixels,temporal_coherence_median,los_velocity_median_field_mm_per_yr,los_rate_from_series_mm_per_yr,los_rate_std_mm_per_yr,vertical_equivalent_rate_mm_per_yr,total_los_displacement_mm,annual_amplitude_mm,semiannual_amplitude_mm,linear_rms_mm,seasonal_rms_mm,step_rms_mm,best_step_date,best_step_mm,temporal_form,rms_reduction_seasonal,rms_reduction_step
+H001,5.5904,77.08126,28.52117,3494,0.9255,-30.95,-27.089,0.0736,-34.933,-120.686,2.73,1.541,12.545,13.328,10.96,20220919,15.57,approximately_linear,-0.0624,0.1264
+H002,12.8256,77.07347,28.81522,8016,0.8634,-13.586,-14.417,0.1822,-18.682,-47.981,7.457,6.579,15.38,13.574,14.282,20240604,21.609,linear_with_seasonal,0.1174,0.0714
+H003,2.2544,77.08102,28.80333,1409,0.8604,-12.867,-14.075,0.2207,-18.235,-46.784,6.519,6.38,15.315,13.43,14.309,20250506,22.483,linear_with_seasonal,0.1231,0.0657
+H004,1.072,77.05539,28.53326,670,0.963,-14.31,-12.549,0.1508,-16.151,-59.59,1.783,2.031,9.179,9.085,8.536,20220416,8.677,approximately_linear,0.0103,0.07
+H005,0.8352,77.17352,28.82489,522,0.8653,-14.209,-16.117,0.2358,-21.049,-44.538,3.354,5.751,17.431,16.699,16.048,20230330,-21.222,approximately_linear,0.0419,0.0793
