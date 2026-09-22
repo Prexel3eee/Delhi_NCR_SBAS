@@ -1,0 +1,122 @@
+{
+  "generated_utc": "2026-09-22T18:09:48.776622+00:00",
+  "gate": "CGWB static groundwater data recovery",
+  "files_obtained": [
+    {
+      "source_file": "pre-monsoon_2022_data_for_website.pdf",
+      "source_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "official_url": "https://cgwb.gov.in/sites/default/files/inline-files/pre-monsoon_2022_data_for_website.pdf",
+      "source_agency": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "retrieval_route": "Internet Archive copy of the official URL; the live host returned HTTP 502 at retrieval time",
+      "file_hash": "e47585c8cb458add39388bcdf8437cd5e1da787dc18f4d38a42c5a171c42091b",
+      "bytes": 14609824,
+      "coverage_years": [
+        2022
+      ],
+      "season": "pre-monsoon",
+      "row_count_national": null,
+      "row_count_in_aoi": 269,
+      "coordinate_available": true,
+      "station_id_available": false,
+      "measurement_available": true,
+      "usable_for_spatial_test": true,
+      "usable_for_temporal_test": true
+    },
+    {
+      "source_file": "august_2022_data_for_website.pdf",
+      "source_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "official_url": "https://cgwb.gov.in/sites/default/files/inline-files/august_2022_data_for_website.pdf",
+      "source_agency": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "retrieval_route": "Internet Archive copy of the official URL; the live host returned HTTP 502 at retrieval time",
+      "file_hash": "00b8e479b6617c8f033d6b83f143cdd58e8631bcce29fdf727cfa11bbeec2569",
+      "bytes": 13644751,
+      "coverage_years": [
+        2022
+      ],
+      "season": "august",
+      "row_count_national": null,
+      "row_count_in_aoi": 0,
+      "coordinate_available": true,
+      "station_id_available": false,
+      "measurement_available": true,
+      "usable_for_spatial_test": true,
+      "usable_for_temporal_test": true
+    },
+    {
+      "source_file": "nov_2022_data_for_website.pdf",
+      "source_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "official_url": "https://cgwb.gov.in/sites/default/files/inline-files/nov_2022_data_for_website.pdf",
+      "source_agency": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "retrieval_route": "Internet Archive copy of the official URL; the live host returned HTTP 502 at retrieval time",
+      "file_hash": "11337c3605df16a9e0e53291cb4f274120de22d98c784efad5b14423b3f4717b",
+      "bytes": 15030788,
+      "coverage_years": [
+        2022
+      ],
+      "season": "november",
+      "row_count_national": null,
+      "row_count_in_aoi": 263,
+      "coordinate_available": true,
+      "station_id_available": false,
+      "measurement_available": true,
+      "usable_for_spatial_test": true,
+      "usable_for_temporal_test": true
+    },
+    {
+      "source_file": "jan_2023_data_for_website.pdf",
+      "source_url": "https://web.archive.org/web/20241027131951if_/https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "official_url": "https://cgwb.gov.in/sites/default/files/inline-files/jan_2023_data_for_website.pdf",
+      "source_agency": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "retrieval_route": "Internet Archive copy of the official URL; the live host returned HTTP 502 at retrieval time",
+      "file_hash": "1a892e86a787d4963b27916043de137c3a3ea19c994db70636d79933afcbf560",
+      "bytes": 14277039,
+      "coverage_years": [
+        2023
+      ],
+      "season": "january",
+      "row_count_national": null,
+      "row_count_in_aoi": 167,
+      "coordinate_available": true,
+      "station_id_available": false,
+      "measurement_available": true,
+      "usable_for_spatial_test": true,
+      "usable_for_temporal_test": true
+    }
+  ],
+  "schema": {
+    "station_code": false,
+    "station_name": true,
+    "latitude": true,
+    "longitude": true,
+    "district": true,
+    "well_type": true,
+    "exact_measurement_date": false,
+    "season_and_year": true,
+    "depth_to_water_level": true,
+    "unit": "mbgl",
+    "aquifer_metadata": false,
+    "station_level": true,
+    "aggregated": false
+  },
+  "station_count_in_aoi": 612,
+  "stations_with_2plus_seasons": 87,
+  "stations_within_2km": 0,
+  "stations_within_5km": 15,
+  "stations_within_10km": 91,
+  "temporal_sampling": "4 seasonal observations per year (CGWB design)",
+  "seasons_obtained": [
+    "pre-monsoon 2022",
+    "august 2022",
+    "november 2022",
+    "january 2023"
+  ],
+  "study_period": [
+    "2021-10-01",
+    "2025-09-30"
+  ],
+  "study_period_coverage_complete": false,
+  "no_interpolation": true,
+  "high_frequency_dwlr": "ACCESS BLOCKED (India-WRIS / WIMS / gwdata portal)",
+  "classification": "PARTIALLY TESTABLE - SEASONAL SITE DATA ONLY",
+  "correlation_analysis_performed": false
+}
