@@ -1,0 +1,81 @@
+{
+  "generated_utc": "2026-09-22T03:44:23.345718+00:00",
+  "phase": "H",
+  "scope": "production retrieval; no scientific inversion performed",
+  "submission": {
+    "expected_pairs": 336,
+    "submitted_jobs": 336,
+    "succeeded": 336,
+    "failed": 0,
+    "expired": 0,
+    "running_or_pending": 0,
+    "terminal": 336
+  },
+  "credits": {
+    "authorised": 1680,
+    "consumed": 1680,
+    "per_job": 5,
+    "matches_authorisation": true
+  },
+  "duplicate_name_audit": {
+    "duplicates": {},
+    "clean": true
+  },
+  "inventory": {
+    "products_downloaded": 336,
+    "products_with_zip_sha256": 336,
+    "extracted_files_recorded": 4704,
+    "extracted_files_hashed": 2352,
+    "succeeded_but_not_downloaded": [],
+    "inventory_path": "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/manifests/production_product_inventory.csv",
+    "file_inventory_path": "/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/manifests/production_file_inventory.csv"
+  },
+  "storage": {
+    "zip_bytes": 41022176332,
+    "extracted_bytes": 42304497549,
+    "zip_gb": 41.02,
+    "extracted_gb": 42.3,
+    "total_gb": 83.33,
+    "mean_zip_mb": 122.09,
+    "mean_extracted_mb": 125.91
+  },
+  "failed_or_retried": {
+    "failed_jobs": []
+  },
+  "freeze": {
+    "exit_code": 0,
+    "ok": true,
+    "output_tail": []
+  },
+  "manifest_reconciliation": {
+    "expected_names": 336,
+    "submitted_names": 336,
+    "missing_jobs": [],
+    "unexpected_jobs": [],
+    "reconciled": true
+  },
+  "ledger_reconciliation": {
+    "generated_utc": "2026-09-22T03:44:11.089251+00:00",
+    "ledger_rows": 336,
+    "ledger_distinct_job_ids": 336,
+    "ledger_distinct_names": 336,
+    "remote_jobs": 336,
+    "in_ledger_not_remote": [],
+    "in_remote_not_ledger": [],
+    "duplicate_names": {},
+    "statuses": {
+      "SUCCEEDED": 336
+    },
+    "ledger_covers_remote": true,
+    "remote_covers_ledger": true
+  },
+  "pilot": {
+    "acceptance_verdict": "PILOT ACCEPTED",
+    "gates": "18/18"
+  },
+  "v1_exclusions": {
+    "2025-05-18": "DISCOVERY_INCONSISTENCY_FAIL_CLOSED - not recovered or inserted"
+  },
+  "corpus_clean": true,
+  "next_phase": "MintPy production preparation"
+}
