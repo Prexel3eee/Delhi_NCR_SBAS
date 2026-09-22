@@ -863,6 +863,70 @@ still open. Spatial deramping was not run; it remains a sensitivity experiment o
 
 ---
 
+## 2026-09-22 - ERA5 tropospheric branch (approved decision 4)
+
+All four owner decisions frozen in `config/scientific_decisions_v2.json`
+(`freeze_id 137a192648832935...`): reference lon 77.0950 / lat 28.6426 ->
+pixel **yx 1378,1426** (verified inside the AOI), all **336 pairs** retained,
+unwrap correction **disabled**, deramp **disabled**.
+
+### Credentials and a licence, not a bug
+
+CDS credentials were created at `~/.cdsapirc` (mode 600; no secret in the repo).
+The first probe returned **403 "required licences not accepted" - not 401**, which
+means the key authenticated and only the ERA5 licence was missing. That
+distinction is the difference between "fix the credential" and "click accept",
+so `scripts/23_run_era5_branch.py --test-cds` reports it explicitly. After the
+licence was accepted the probe downloaded a valid GRIB.
+
+Verified from `pyaps3/autoget.py:142` that **`reanalysis-era5-pressure-levels` is
+the only dataset PyAPS requests** (GRIB, read back with pygrib, which was already
+present), so a single licence sufficed.
+
+### ERA5 branch: complete, coverage verified
+
+```text
+runtime        139m26s
+GRIB files     119/119   (0 missing, 0 undersized)
+delay file     119 dates, exactly matching accepted_acquisitions
+AOI finite     1.000  (min across all 119 dates)
+```
+
+The branch also produced a large ERA5 delay cache that the next branch reuses
+(0 further downloads).
+
+### Two traps worth recording
+
+1. **MintPy names the corrected products with an ERA5 suffix.**
+   `velocityERA5.h5` / `timeseries_ERA5.h5` are the corrected outputs; the
+   unsuffixed `velocity.h5` in the ERA5 work dir is the **pre**-correction
+   inversion (verified 6.7 mm/yr RMS apart). Comparing against the unsuffixed
+   file would have silently compared RAW with itself.
+2. **The coverage gate must be AOI-restricted.** PyAPS leaves NaN outside the
+   ERA5 interpolation domain, so the *global* finite fraction is only 0.636 -
+   gating on that halted a branch that is in fact fully corrected where it
+   matters (0 NaN inside the AOI). The gate now measures the AOI and reports the
+   global figure as context only.
+
+### RAW vs ERA5
+
+```text
+velocity      raw -0.0042 -> era5 +0.0001 m/yr
+coherence      0.7488 -> 0.7470
+velocity diff  median +4.22 mm/yr, RMS 15.49 mm/yr, max |d| 94.7 mm/yr
+residual RMS   4.593 -> 4.670 rad;  140 pairs improved, 196 worsened
+```
+
+Delay magnitudes are physically sensible (AOI-median slant delay -3.44 to
+-2.95 m, median date-to-date step 42 mm, max 254 mm), so the correction is real
+rather than a numerical artefact. But like the unwrap branch it **materially
+changes the solution without improving the fit**, so its benefit is **not
+demonstrated**. That is a finding, not a failure - and it is exactly why the
+brief requires the corrections to be evaluated as separate branches against a
+RAW baseline.
+
+---
+
 ## Current status
 
 ```text

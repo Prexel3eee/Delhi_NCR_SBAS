@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T12:00:00Z",
-  "phase": "RAW336_DIAGNOSTICS_COMPLETE_AWAITING_DECISIONS",
-  "next_phase": "FREEZE_REFERENCE_AND_NETWORK_THEN_TROPO_DEM_BRANCHES",
+  "updated_utc": "2026-09-22T14:20:00Z",
+  "phase": "ERA5_COMPLETE_DEM_RESIDUAL_BRANCH_RUNNING",
+  "next_phase": "DEM_RESIDUAL_COMPARISON_THEN_REPORT",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,11 +139,11 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Owner decision: confirm or replace the recommended reference region.",
-    "Owner decision: confirm retaining all 336 pairs vs a curated network.",
-    "Owner decision: confirm leaving unwrap-error correction disabled.",
-    "Then authorise the ERA5 tropospheric branch, followed by the DEM-residual branch.",
-    "Rotate the Earthdata credentials when convenient (~/.netrc)."
+    "DEM-residual branch running (ERA5 cache reused, 0 re-downloads).",
+    "Then three-way comparison RAW vs ERA5 vs ERA5+DEM and report.",
+    "Deramp remains a sensitivity experiment only.",
+    "No final deformation product declared.",
+    "Rotate the Earthdata and CDS credentials when convenient."
   ],
   "v1_freeze": {
     "frozen": true,
@@ -405,5 +405,42 @@
       "DEM-residual branch",
       "spatial deramp (sensitivity only)"
     ]
+  },
+  "scientific_decisions_v2": {
+    "freeze_id": "137a1926488329355965c05becc192b4440625aa7ceed074045b00dbcda1a762",
+    "reference_yx": [
+      1378,
+      1426
+    ],
+    "reference_lonlat": [
+      77.095,
+      28.6426
+    ],
+    "network_pairs": 336,
+    "unwrap_correction": "disabled",
+    "deramp": "disabled"
+  },
+  "era5_branch": {
+    "status": "complete",
+    "runtime_minutes": 139.4,
+    "grib_files": 119,
+    "expected_dates": 119,
+    "missing": 0,
+    "aoi_finite_fraction_min": 1.0,
+    "coverage_verified": true,
+    "raw_vs_era5": {
+      "velocity_median_raw_m_per_yr": -0.0042,
+      "velocity_median_era5_m_per_yr": 0.0001,
+      "velocity_diff_median_mm_per_yr": 4.22,
+      "velocity_diff_rms_mm_per_yr": 15.49,
+      "velocity_diff_max_abs_mm_per_yr": 94.7,
+      "coherence_raw": 0.7488,
+      "coherence_era5": 0.747,
+      "residual_rms_raw_rad": 4.593,
+      "residual_rms_era5_rad": 4.67,
+      "pairs_improved": 140,
+      "pairs_worsened": 196
+    },
+    "assessment": "correction is real (physically sensible delays) but does not improve the fit; benefit not demonstrated"
   }
 }
