@@ -2,7 +2,7 @@
 
 Generated 2026-09-22 18:38 UTC.
 
-**Result: NO EVIDENCE — and the observable difference runs *opposite* to the susceptibility hypothesis.** The supported zones sit on **coarser** material (more sand, less clay) than both the controls and the background, where the hypothesis predicts finer, more compressible sediment. The difference is additionally **confounded with measurement quality**.
+**Result: NO EVIDENCE for the shallow soil-texture surrogate — and its observable difference runs *opposite* to the predicted fine-sediment direction. Deep geological / aquifer-system susceptibility is NOT ADEQUATELY TESTED.** The supported zones sit on **coarser** material (more sand, less clay) than both the controls and the background, where the hypothesis predicts finer, more compressible sediment. The difference is additionally **confounded with measurement quality**.
 
 No geological causation is declared. `PROVEN`, `CAUSE` and `CAUSED BY` are not used.
 
@@ -70,11 +70,30 @@ The protocol requires that a geological explanation gain support only if H001/H0
 * the sampled interval is the **top 2 m**, not the compaction unit;
 * **no second independent geological dataset** was obtainable, so cross-dataset consistency cannot be assessed.
 
-## 7. Evidence grade
+## 7. Evidence grade — split by what was actually testable
+
+The single grade below is the protocol grade. It must not be read as a statement
+about deep stratigraphy, because the only usable spatial dataset samples roughly
+the upper 2 m and cannot observe the tens-to-hundreds-of-metres interval relevant
+to aquifer-system compaction. The authoritative lithology, geomorphology and
+sediment-thickness datasets were unavailable. The interpretation is therefore
+split:
 
 ```text
-GEO EVIDENCE:  NO EVIDENCE
+GEO - overall hypothesis grade under the available evidence:
+    NO EVIDENCE
+
+SHALLOW SOIL-TEXTURE SURROGATE:
+    NO EVIDENCE
+    observed direction opposite to predicted fine-sediment susceptibility
+
+DEEP GEOLOGICAL / AQUIFER-SYSTEM SUSCEPTIBILITY:
+    NOT ADEQUATELY TESTED
 ```
+
+The distinction is load-bearing: **without it a future reader could take this
+report as evidence that deep alluvial stratigraphy is irrelevant to the observed
+deformation. It is not that. It is untested.**
 
 | Criterion | Assessment |
 |---|---|

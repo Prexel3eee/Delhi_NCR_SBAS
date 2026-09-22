@@ -1,0 +1,213 @@
+{
+  "generated_utc": "2026-09-22T18:46:11.334562+00:00",
+  "dataset_inventory": [
+    {
+      "dataset": "GHSL GHS-BUILT-S E2020 (built-up surface)",
+      "source": "JRC GHSL R2023A",
+      "epoch": 2020,
+      "native_resolution": "3 arc-sec (~93 m)",
+      "crs": "EPSG:4326",
+      "units": "m2 of built surface per cell",
+      "acquisition_period": "epoch 2020",
+      "tests": "U1 (2020) and U2 (2020->2025 change)"
+    },
+    {
+      "dataset": "GHSL GHS-BUILT-S E2025 (built-up surface)",
+      "source": "JRC GHSL R2023A",
+      "epoch": 2025,
+      "native_resolution": "3 arc-sec (~93 m)",
+      "crs": "EPSG:4326",
+      "units": "m2 of built surface per cell",
+      "acquisition_period": "epoch 2025",
+      "tests": "U1 (2020) and U2 (2020->2025 change)"
+    },
+    {
+      "dataset": "ESA WorldCover 2020 (land cover, 10 m)",
+      "source": "ESA / AWS Open Data",
+      "epoch": 2020,
+      "native_resolution": "0.3 arc-sec (~9 m)",
+      "crs": "EPSG:4326",
+      "units": "categorical; class 50 = built-up",
+      "acquisition_period": "year 2020",
+      "tests": "U1 cross-check"
+    },
+    {
+      "dataset": "ESA WorldCover 2021 (land cover, 10 m)",
+      "source": "ESA / AWS Open Data",
+      "epoch": 2021,
+      "native_resolution": "0.3 arc-sec (~9 m)",
+      "crs": "EPSG:4326",
+      "units": "categorical; class 50 = built-up",
+      "acquisition_period": "year 2021",
+      "tests": "U1 cross-check"
+    },
+    {
+      "dataset": "Major infrastructure / construction footprints",
+      "source": "no authoritative machine-readable source obtained",
+      "tests": "U3",
+      "status": "NOT OBTAINED",
+      "reason": "no official construction-project dataset with documented geometry and dates was located; per protocol, proximity alone would not be causal evidence and manually curated projects near H001/H004 are forbidden"
+    }
+  ],
+  "studied_interval": [
+    "2021-10",
+    "2025-10"
+  ],
+  "hotspot_summaries": [
+    {
+      "hotspot_id": "H001",
+      "role": "supported",
+      "ghsl_2020": 2896.0,
+      "ghsl_2020_n": 745,
+      "ghsl_2020_core": 3664.0,
+      "ghsl_2020_buf": 1662.0,
+      "ghsl_2025": 2896.0,
+      "ghsl_2025_n": 745,
+      "ghsl_2025_core": 3664.0,
+      "ghsl_2025_buf": 1706.0,
+      "wc_builtfrac_2020": 67.75,
+      "wc_builtfrac_2021": 70.57
+    },
+    {
+      "hotspot_id": "H002",
+      "role": "negative_control",
+      "ghsl_2020": 2563.0,
+      "ghsl_2020_n": 1669,
+      "ghsl_2020_core": null,
+      "ghsl_2020_buf": 1370.0,
+      "ghsl_2025": 2563.0,
+      "ghsl_2025_n": 1669,
+      "ghsl_2025_core": null,
+      "ghsl_2025_buf": 1415.0,
+      "wc_builtfrac_2020": 69.43,
+      "wc_builtfrac_2021": 73.69
+    },
+    {
+      "hotspot_id": "H003",
+      "role": "negative_control",
+      "ghsl_2020": 2094.5,
+      "ghsl_2020_n": 306,
+      "ghsl_2020_core": null,
+      "ghsl_2020_buf": 505.0,
+      "ghsl_2025": 2094.5,
+      "ghsl_2025_n": 306,
+      "ghsl_2025_core": null,
+      "ghsl_2025_buf": 598.0,
+      "wc_builtfrac_2020": 66.29,
+      "wc_builtfrac_2021": 69.99
+    },
+    {
+      "hotspot_id": "H004",
+      "role": "supported",
+      "ghsl_2020": 3143.0,
+      "ghsl_2020_n": 139,
+      "ghsl_2020_core": 3763.0,
+      "ghsl_2020_buf": 1302.0,
+      "ghsl_2025": 3143.0,
+      "ghsl_2025_n": 139,
+      "ghsl_2025_core": 3763.0,
+      "ghsl_2025_buf": 1335.0,
+      "wc_builtfrac_2020": 76.36,
+      "wc_builtfrac_2021": 79.02
+    },
+    {
+      "hotspot_id": "H005",
+      "role": "excluded",
+      "ghsl_2020": 1554.0,
+      "ghsl_2020_n": 111,
+      "ghsl_2020_core": null,
+      "ghsl_2020_buf": 297.5,
+      "ghsl_2025": 1568.0,
+      "ghsl_2025_n": 111,
+      "ghsl_2025_core": null,
+      "ghsl_2025_buf": 377.5,
+      "wc_builtfrac_2020": 49.83,
+      "wc_builtfrac_2021": 52.38
+    }
+  ],
+  "specificity": {
+    "ghsl_2020": {
+      "supported_median": 3019.5,
+      "control_median": 2328.75,
+      "background_median": 225.0,
+      "supported_minus_control": 690.75
+    },
+    "ghsl_2025": {
+      "supported_median": 3019.5,
+      "control_median": 2328.75,
+      "background_median": 334.0,
+      "supported_minus_control": 690.75
+    },
+    "wc_builtfrac_2021": {
+      "supported_median": 74.79,
+      "control_median": 71.84,
+      "background_median": 33.74,
+      "supported_minus_control": 2.95
+    },
+    "ghsl_change": {
+      "supported_median": 0.0,
+      "control_median": 0.0,
+      "background_median": null,
+      "supported_minus_control": 0.0
+    }
+  },
+  "coherence_confounding": {
+    "per_hotspot": [
+      {
+        "hotspot_id": "H001",
+        "role": "supported",
+        "median_temporal_coherence": 0.9255,
+        "median_velocity_std_mm_per_yr": 0.9594,
+        "valid_pixel_fraction": 0.00049,
+        "built_fraction_pct": 70.57,
+        "ghsl_2020": 2896.0
+      },
+      {
+        "hotspot_id": "H002",
+        "role": "negative_control",
+        "median_temporal_coherence": 0.8634,
+        "median_velocity_std_mm_per_yr": 1.2768,
+        "valid_pixel_fraction": 0.00113,
+        "built_fraction_pct": 73.69,
+        "ghsl_2020": 2563.0
+      },
+      {
+        "hotspot_id": "H003",
+        "role": "negative_control",
+        "median_temporal_coherence": 0.8604,
+        "median_velocity_std_mm_per_yr": 1.2506,
+        "valid_pixel_fraction": 0.0002,
+        "built_fraction_pct": 69.99,
+        "ghsl_2020": 2094.5
+      },
+      {
+        "hotspot_id": "H004",
+        "role": "supported",
+        "median_temporal_coherence": 0.963,
+        "median_velocity_std_mm_per_yr": 0.7268,
+        "valid_pixel_fraction": 9e-05,
+        "built_fraction_pct": 79.02,
+        "ghsl_2020": 3143.0
+      },
+      {
+        "hotspot_id": "H005",
+        "role": "excluded",
+        "median_temporal_coherence": 0.8653,
+        "median_velocity_std_mm_per_yr": 1.4038,
+        "valid_pixel_fraction": 7e-05,
+        "built_fraction_pct": 52.38,
+        "ghsl_2020": 1554.0
+      }
+    ],
+    "spearman_builtfrac_vs_coherence": 0.49999999999999994
+  },
+  "background": {
+    "ghsl_2020": 225.0,
+    "ghsl_2025": 334.0,
+    "wc_builtfrac_2020": 32.68262009948422,
+    "wc_builtfrac_2021": 33.739794628734195
+  },
+  "U3_status": "NOT TESTABLE - no authoritative construction dataset obtained",
+  "no_loading_calculation": true,
+  "no_causal_language": true
+}

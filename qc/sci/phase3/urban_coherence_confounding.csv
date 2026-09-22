@@ -1,0 +1,6 @@
+hotspot_id,role,median_temporal_coherence,median_velocity_std_mm_per_yr,valid_pixel_fraction,built_fraction_pct,ghsl_2020
+H001,supported,0.9255,0.9594,0.00049,70.57,2896.0
+H002,negative_control,0.8634,1.2768,0.00113,73.69,2563.0
+H003,negative_control,0.8604,1.2506,0.0002,69.99,2094.5
+H004,supported,0.963,0.7268,9e-05,79.02,3143.0
+H005,excluded,0.8653,1.4038,7e-05,52.38,1554.0

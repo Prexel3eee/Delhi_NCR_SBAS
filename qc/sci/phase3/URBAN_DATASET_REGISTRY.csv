@@ -1,0 +1,6 @@
+dataset,source,epoch,native_resolution,crs,units,acquisition_period,tests,status,reason
+GHSL GHS-BUILT-S E2020 (built-up surface),JRC GHSL R2023A,2020.0,3 arc-sec (~93 m),EPSG:4326,m2 of built surface per cell,epoch 2020,U1 (2020) and U2 (2020->2025 change),,
+GHSL GHS-BUILT-S E2025 (built-up surface),JRC GHSL R2023A,2025.0,3 arc-sec (~93 m),EPSG:4326,m2 of built surface per cell,epoch 2025,U1 (2020) and U2 (2020->2025 change),,
+"ESA WorldCover 2020 (land cover, 10 m)",ESA / AWS Open Data,2020.0,0.3 arc-sec (~9 m),EPSG:4326,categorical; class 50 = built-up,year 2020,U1 cross-check,,
+"ESA WorldCover 2021 (land cover, 10 m)",ESA / AWS Open Data,2021.0,0.3 arc-sec (~9 m),EPSG:4326,categorical; class 50 = built-up,year 2021,U1 cross-check,,
+Major infrastructure / construction footprints,no authoritative machine-readable source obtained,,,,,,U3,NOT OBTAINED,"no official construction-project dataset with documented geometry and dates was located; per protocol, proximity alone would not be causal evidence and manually curated projects near H001/H004 are forbidden"
