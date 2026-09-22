@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T06:25:00Z",
-  "phase": "PRODUCTION_SUBMITTED_RETRIEVAL_IN_PROGRESS",
-  "next_phase": "PRODUCTION_COMPLETION_REPORT",
+  "updated_utc": "2026-09-22T03:50:00Z",
+  "phase": "PRODUCTION_CORPUS_CLEAN_MINTPY_PREP_IN_PROGRESS",
+  "next_phase": "MINTPY_LOAD_DATA_THEN_INVERSION",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,9 +139,8 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Complete production retrieval (resumable; 72/336 done).",
-    "Run scripts/14_production_report.py once all products are downloaded.",
-    "MintPy production preparation only after 14 reports the corpus clean.",
+    "MintPy production preparation in progress (clip 336x7 layers, prep_hyp3, load_data).",
+    "Then staged inversion: load -> network check vs the 336-pair manifest -> raw time series.",
     "Rotate the Earthdata credentials when convenient (~/.netrc)."
   ],
   "v1_freeze": {
@@ -277,8 +276,54 @@
     "duplicate_name_audit": "clean (336 unique names, 336 unique job ids)",
     "ledger": "manifests/production_jobs.csv",
     "ledger_reconciliation": "remote=336 ledger=336, 0 orphans either direction",
-    "retrieval_status": "in_progress",
-    "products_downloaded": 72,
-    "products_remaining": 264
+    "retrieval_status": "COMPLETE",
+    "products_downloaded": 336,
+    "products_remaining": 0,
+    "corpus_clean": true,
+    "report": "qc/production/PRODUCTION_REPORT.md",
+    "storage": {
+      "zip_bytes": 41022176332,
+      "extracted_bytes": 42304497549,
+      "zip_gb": 41.02,
+      "extracted_gb": 42.3,
+      "total_gb": 83.33,
+      "mean_zip_mb": 122.09,
+      "mean_extracted_mb": 125.91,
+      "extracted_to_zip_ratio": 1.0313
+    },
+    "inventory_integrity": {
+      "product_rows": 336,
+      "download_ok": 336,
+      "unique_job_ids": 336,
+      "zip_sha256_present": 336,
+      "file_rows": 4704,
+      "files_hashed": 2352,
+      "files_per_product": 14,
+      "products_missing_a_layer": 0
+    },
+    "manifest_reconciliation": {
+      "expected": 336,
+      "submitted": 336,
+      "missing": 0,
+      "unexpected": 0
+    }
+  },
+  "mintpy_production": {
+    "status": "preparation_in_progress",
+    "scope": "production",
+    "common_overlap_bounds": [
+      647720.0,
+      3129040.0,
+      765280.0,
+      3225320.0
+    ],
+    "common_overlap_size_m": [
+      117560.0,
+      96280.0
+    ],
+    "crs": "EPSG:32643",
+    "pixel_size_m": 40,
+    "aoi_fully_inside_common_overlap": true,
+    "note": "products are NOT on identical grids (extents vary by up to ~2 km); all layers are clipped onto one shared target grid"
   }
 }
