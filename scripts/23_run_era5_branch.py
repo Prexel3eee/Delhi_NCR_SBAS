@@ -49,7 +49,7 @@ def check_prerequisites() -> bool:
         print(f"  [OK] template {TEMPLATE.name}")
 
     import importlib.metadata as md
-    for pkg in ("pyaps3", "cdsapi", "netCDF4"):
+    for pkg in ("pyaps3", "cdsapi", "netCDF4", "pygrib"):
         try:
             print(f"  [OK] {pkg} {md.version(pkg)}")
         except Exception:
@@ -85,6 +85,55 @@ def check_prerequisites() -> bool:
     return ok
 
 
+def test_cds_access() -> bool:
+    """Make one minimal request against the dataset pyaps3 actually uses.
+
+    A 403 "required licences not accepted" means the key is valid but the ERA5
+    licence has not been accepted for this account - a one-click action on the
+    CDS website. Authentication failures return 401, so the two are
+    distinguishable.
+    """
+    import cdsapi
+    import requests
+
+    # pyaps3/autoget.py requests reanalysis-era5-pressure-levels in GRIB format
+    print("CDS access probe (reanalysis-era5-pressure-levels, minimal request):")
+    try:
+        client = cdsapi.Client()
+        client.retrieve(
+            "reanalysis-era5-pressure-levels",
+            {
+                "product_type": "reanalysis",
+                "variable": ["temperature"],
+                "pressure_level": ["1000"],
+                "year": "2025", "month": "09", "day": "27", "time": "12:00",
+                "area": [29.0, 76.5, 28.0, 77.5],
+                "data_format": "grib",
+            },
+            "/tmp/cds_probe.grb",
+        )
+        size = Path("/tmp/cds_probe.grb").stat().st_size
+        print(f"  [OK] ERA5 access works - downloaded {size / 1024:.1f} KB")
+        return True
+    except requests.HTTPError as exc:
+        status = getattr(exc.response, "status_code", None)
+        body = (getattr(exc.response, "text", "") or "")[:400]
+        if status == 403 and "licence" in body.lower():
+            print("  [FAIL] 403 - the ERA5 licence has NOT been accepted for this account.")
+            print("         The API key itself is valid (a bad key returns 401).")
+            print("         Accept the licence here, then re-run:")
+            print("           https://cds.climate.copernicus.eu/datasets/"
+                  "reanalysis-era5-pressure-levels?tab=download#manage-licences")
+        elif status == 401:
+            print("  [FAIL] 401 - authentication rejected; the key in ~/.cdsapirc is wrong.")
+        else:
+            print(f"  [FAIL] HTTP {status}: {body}")
+        return False
+    except Exception as exc:  # noqa: BLE001
+        print(f"  [FAIL] {type(exc).__name__}: {str(exc)[:300]}")
+        return False
+
+
 def clone_inputs() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     (WORK / "inputs").mkdir(parents=True, exist_ok=True)
@@ -101,6 +150,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="prerequisites only")
     parser.add_argument("--no-run", action="store_true", help="set up but do not run")
+    parser.add_argument("--test-cds", action="store_true",
+                        help="probe CDS with a minimal ERA5 request (confirms licence)")
     args = parser.parse_args()
 
     print("=" * 88)
@@ -111,9 +162,16 @@ def main() -> int:
     if not check_prerequisites():
         print("\nBLOCKED: ERA5 cannot run without the prerequisites above.")
         return 1
-    if args.check:
-        print("\nPrerequisites OK.")
+    if args.check and not args.test_cds:
+        print("\nPrerequisites OK. Add --test-cds to probe the CDS licence.")
         return 0
+    if args.test_cds:
+        print()
+        if not test_cds_access():
+            return 1
+        print("\nCDS access confirmed.")
+        if args.check:
+            return 0
 
     WEATHER_DIR.mkdir(parents=True, exist_ok=True)
     print(f"\nSetting up {WORK.relative_to(PROJECT_ROOT)} ...")
