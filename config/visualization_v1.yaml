@@ -1,0 +1,183 @@
+# Visualization configuration for product_v1
+#
+# Presentation only. Nothing here changes a scientific value. Display ranges
+# are chosen from the measured distributions recorded in
+# product_v1/figures/VISUALIZATION_SCALE_REPORT.json.
+#
+# Palette rationale
+# -----------------
+# cmcrameri (Crameri et al. 2020) and cmocean (Thyng et al. 2016) provide
+# perceptually uniform, colour-vision-deficiency-aware palettes that degrade
+# monotonically to greyscale. They are used rather than categorical or
+# rainbow defaults because:
+#   * signed quantities need a perceptually uniform diverging ramp whose
+#     light neutral centre makes zero identifiable;
+#   * magnitude quantities need a ramp with monotonic lightness so the map
+#     survives greyscale printing and projector use;
+#   * rainbow/jet is non-uniform in perceptual space and fabricates structure.
+
+meta:
+  version: visualization_v1
+  source_freeze: product_v1
+  source_freeze_id: 2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37
+  crs: EPSG:32643
+  pixel_size_m: 40
+  nodata: -9999
+
+typography:
+  # a single type system for the whole family
+  family: DejaVu Sans
+  size_base: 7.0
+  size_title: 8.0
+  size_panel: 7.5
+  size_tick: 6.5
+  size_legend: 6.2
+  size_note: 5.8
+  size_colorbar: 6.5
+
+layout:
+  pub_width_in: 6.90          # double-column
+  pub_height_in: 6.10
+  quick_width_in: 8.20
+  quick_height_in: 7.20
+  panel_width_in: 3.35        # single-column, for the multi-panel
+  margin_in: 0.06
+  dpi_png: 600
+  dpi_quick: 150
+  background: "#FFFFFF"
+  # nodata is a neutral light grey: clearly separable from the near-white
+  # centre of the diverging ramp (which encodes zero), and from the AOI
+  # interior. Never used for any scientific value.
+  nodata_color: "#D6D6D6"
+  aoi_interior_color: "#FFFFFF"
+  aoi_edge_color: "#1A1A1A"
+  aoi_edge_width: 0.7
+  reference_marker: "star"
+  reference_color: "#111111"
+  reference_size: 7.0
+  hotspot_edge_color: "#111111"
+  hotspot_edge_width: 0.6
+
+# ---------------------------------------------------------------- rasters
+rasters:
+
+  los_velocity_mm_per_yr:
+    file: los_velocity_mm_per_yr.tif
+    label: "Relative LOS velocity"
+    unit: "mm yr$^{-1}$"
+    semantics: signed
+    palette: vik
+    zero_centred: true
+    # Display scale rule: full = symmetric about zero at |max|; robust =
+    # symmetric about zero at ceil(p99.5 of |v|) rounded to a round number.
+    # p99.5|v| = 21.92 mm/yr. Measured |max| = 87.39, driven by isolated
+    # pixels, and would render the real field invisible.
+    full_range: [-90, 90]
+    robust_range: [-20, 20]
+    primary: robust
+    clip_note: "robust range clips 0.63 % of valid pixels"
+    ok_labels_forbidden: ["vertical velocity", "subsidence rate", "ground vertical motion"]
+
+  los_displacement_mm:
+    file: los_displacement_mm.tif
+    label: "Cumulative relative LOS displacement"
+    unit: "mm"
+    semantics: signed
+    palette: vik
+    zero_centred: true
+    # p99.5|d| = 82.4 mm. |max| = 350.9 mm is a single-pixel outlier.
+    full_range: [-360, 360]
+    robust_range: [-80, 80]
+    primary: robust
+    clip_note: "robust range clips 0.52 % of valid pixels; |max| 350.9 mm is an isolated extreme"
+    ok_labels_forbidden: ["vertical displacement", "subsidence"]
+
+  temporal_coherence:
+    file: temporal_coherence.tif
+    label: "Temporal coherence"
+    unit: "1"
+    semantics: magnitude
+    palette: batlow
+    zero_centred: false
+    # The published raster is pre-masked at the tier-2 boundary (0.80), so a
+    # 0-1 ramp would compress every real value into its top fifth. Displaying
+    # 0.80-1.00 is the honest full range OF THIS PRODUCT and is annotated as
+    # such; it is not a stretch to the observed extremes.
+    full_range: [0.80, 1.00]
+    robust_range: [0.80, 1.00]
+    primary: robust
+    tier_thresholds: [0.90]
+    note: "raster is pre-masked at coherence 0.80; lower-coherence field shown separately from the frozen HDF5"
+
+  los_velocity_uncertainty_mm_per_yr:
+    file: los_velocity_uncertainty_mm_per_yr.tif
+    label: "Formal LOS velocity uncertainty (1$\\sigma$)"
+    unit: "mm yr$^{-1}$"
+    semantics: magnitude
+    palette: amp
+    zero_centred: false
+    # p99.5 = 1.61, max 2.24. Range selected to contain p99.5 with headroom.
+    full_range: [0.0, 2.25]
+    robust_range: [0.0, 1.80]
+    primary: robust
+    note: "formal inversion uncertainty only; excludes the reference systematic, branch sensitivity and calibration error"
+
+  los_residue_rad:
+    file: los_residue_rad.tif
+    label: "Median residual phase"
+    unit: "rad"
+    semantics: magnitude
+    palette: dense
+    zero_centred: false
+    # Measured: min 0.0000, max 0.3054, 0 % negative. This is a magnitude, not
+    # a signed or cyclic quantity, so a sequential ramp is correct and a
+    # cyclic palette would be misleading despite the radian units.
+    full_range: [0.0, 0.31]
+    robust_range: [0.0, 0.25]
+    primary: robust
+
+  elevation_m:
+    file: elevation_m.tif
+    label: "Elevation (Copernicus DEM)"
+    unit: "m"
+    semantics: terrain
+    palette: topo
+    zero_centred: false
+    full_range: [146, 254]
+    robust_range: [146, 254]
+    primary: robust
+    note: "context layer only, not a deformation product"
+
+  quality_mask:
+    file: quality_mask.tif
+    label: "Quality tier"
+    unit: "tier"
+    semantics: categorical_ordered
+    palette: null
+    categorical: true
+    # The raster stores tiers 1-4; nodata (0) IS tier 0 by construction.
+    classes:
+      1: {label: "Tier 1 - highest support  (coherence >= 0.90)", color: "#08306B"}
+      2: {label: "Tier 2 - high support     (coherence >= 0.80)", color: "#2171B5"}
+      3: {label: "Tier 3 - moderate support (coherence >= 0.70)", color: "#6BAED6"}
+      4: {label: "Tier 4 - permissive / caution",                  color: "#BDD7EE"}
+    excluded:
+      label: "Tier 0 - excluded"
+      color: "#D6D6D6"
+    note: "ordered categorical; a continuous colorbar is not used"
+
+  # Extended coherence field, read from the frozen HDF5 rather than the
+  # published masked raster, so that tiers 3-4 (0.70-0.80) are visible and
+  # the map does not imply that lower-coherence regions contain no signal.
+  temporal_coherence_extended:
+    file: "__hdf5__/temporalCoherence.h5"
+    label: "Temporal coherence (extended field)"
+    unit: "1"
+    semantics: magnitude
+    palette: batlow
+    zero_centred: false
+    full_range: [0.0, 1.0]
+    robust_range: [0.60, 1.00]
+    primary: robust
+    tier_thresholds: [0.70, 0.80, 0.90]
+    supplementary: true
