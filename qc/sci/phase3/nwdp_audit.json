@@ -1,0 +1,108 @@
+{
+  "generated_utc": "2026-09-22T18:20:38.265552+00:00",
+  "files_acquired": [
+    {
+      "key": "delhi_sw_gw",
+      "producer": "Delhi SW GW",
+      "dataset_title": "Ground Water Level (Telemetry - Hourly), Delhi Surface Water and Ground Water Departments",
+      "dataset_name": "ground-water-level-telemetry-hourly-delhi-surface-water-and-ground-water-departments",
+      "resource_name": "Ground Water Level Delhi_SW_GW Delhi (2021 - 2025) Telemetry Six Hourly",
+      "resource_id": "14c48913-600c-4e2c-9c77-8ef2e92e59e6",
+      "resource_url": "https://nwdp.nwic.gov.in/dataset/219ddbf0-4594-4f59-8dd4-39011a16579a/resource/14c48913-600c-4e2c-9c77-8ef2e92e59e6/download/gwl_tel_6_hourly_delhi_sw_gw_dl_2021_2025.csv",
+      "portal_update": "2026-09-22T00:32:14.179407",
+      "retrieval_utc": "2026-09-22T18:19:57Z",
+      "http_status": 200,
+      "bytes": 21062258,
+      "sha256": "46080222a2164bffdf8fe4d31aff3e13dd36a369bdf0fe55b738b741bf23c7a9",
+      "path": "data/external/nwdp/delhi_sw_gw_14c48913-600c-4e2c-9c77-8ef2e92e59e6.csv"
+    },
+    {
+      "key": "cgwb_delhi",
+      "producer": "CGWB",
+      "dataset_title": "Ground Water Level (Telemetry - Six Hourly), Central Ground Water Board (CGWB)",
+      "dataset_name": "ground-water-level-telemetry-daily-cgwb-as-assam",
+      "resource_name": "Ground Water Level CGWB Delhi (2021 - 2025) Telemetry Six Hourly",
+      "resource_id": "9d2e7887-084c-458c-a6c8-29a280de2b19",
+      "resource_url": "https://nwdp.nwic.gov.in/dataset/3782ba15-9b12-46a8-ae44-410b1f84020e/resource/9d2e7887-084c-458c-a6c8-29a280de2b19/download/gwl_tel_6_hourly_cgwb_dl_2021_2025.csv",
+      "portal_update": "2026-09-22T00:32:05.915870",
+      "retrieval_utc": "2026-09-22T18:20:04Z",
+      "http_status": 200,
+      "bytes": 33943422,
+      "sha256": "30ecd97e19a3380489ede7f848674e87c495e3fdfc8bc6296dc6f2789a49bea3",
+      "path": "data/external/nwdp/cgwb_delhi_9d2e7887-084c-458c-a6c8-29a280de2b19.csv"
+    }
+  ],
+  "actual_sampling": {
+    "median_hours": 6.0,
+    "mode_hours": 6.0,
+    "min_hours": 0.017,
+    "max_hours": 29015.0,
+    "source": "derived from timestamps, NOT from the page title"
+  },
+  "schema": {
+    "station_name": true,
+    "latitude": true,
+    "longitude": true,
+    "timestamp": true,
+    "groundwater_level": true,
+    "agency": true,
+    "administrative_hierarchy": true,
+    "explicit_station_code": false,
+    "well_depth_or_aquifer": false,
+    "time_column": "Data Acquisition Time",
+    "value_column": "Groundwater Level Telemetry 6 Hourly (meter)"
+  },
+  "station_count": 187,
+  "station_tiers": {
+    "H001": {
+      "nearest_km": 2.061,
+      "le1km": 0,
+      "le2km": 0,
+      "2to5km": 2,
+      "5to10km": 14,
+      "10to20km": 55
+    },
+    "H004": {
+      "nearest_km": 1.969,
+      "le1km": 0,
+      "le2km": 2,
+      "2to5km": 2,
+      "5to10km": 15,
+      "10to20km": 57
+    },
+    "H002": {
+      "nearest_km": 0.972,
+      "le1km": 1,
+      "le2km": 1,
+      "2to5km": 6,
+      "5to10km": 31,
+      "10to20km": 58
+    },
+    "H003": {
+      "nearest_km": 0.812,
+      "le1km": 1,
+      "le2km": 2,
+      "2to5km": 7,
+      "5to10km": 34,
+      "10to20km": 59
+    }
+  },
+  "h001_within_5km": true,
+  "cross_producer_duplication": {
+    "shared_station_names": 0,
+    "shared_coordinates": 0,
+    "delhi_sw_gw_stations": 96,
+    "cgwb_stations": 91,
+    "note": "station NAME is the only available identifier; no authoritative station code is present in either file, so identity could not be established beyond name and coordinate matching"
+  },
+  "quality_flags_summary": {
+    "stations": 187,
+    "with_negative_levels": 72,
+    "mostly_exact_zero": 67,
+    "mostly_constant": 67,
+    "with_large_step": 55,
+    "with_duplicate_timestamps": 0
+  },
+  "correlation_analysis_performed": false,
+  "classification_placeholder": "see report"
+}

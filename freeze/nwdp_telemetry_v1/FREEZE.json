@@ -1,0 +1,39 @@
+{
+  "freeze_version": "nwdp_telemetry_v1",
+  "freeze_id": "731040b8ebdf56e20832de2ef32c4b5056372a409c8039e298ee69179de2b4b5",
+  "created_utc": "2026-09-22T18:21:14.376274+00:00",
+  "portal": "https://nwdp.nwic.gov.in (CKAN)",
+  "files": [
+    {
+      "key": "delhi_sw_gw",
+      "producer": "Delhi SW GW",
+      "dataset_title": "Ground Water Level (Telemetry - Hourly), Delhi Surface Water and Ground Water Departments",
+      "dataset_name": "ground-water-level-telemetry-hourly-delhi-surface-water-and-ground-water-departments",
+      "resource_name": "Ground Water Level Delhi_SW_GW Delhi (2021 - 2025) Telemetry Six Hourly",
+      "resource_id": "14c48913-600c-4e2c-9c77-8ef2e92e59e6",
+      "resource_url": "https://nwdp.nwic.gov.in/dataset/219ddbf0-4594-4f59-8dd4-39011a16579a/resource/14c48913-600c-4e2c-9c77-8ef2e92e59e6/download/gwl_tel_6_hourly_delhi_sw_gw_dl_2021_2025.csv",
+      "portal_update": "2026-09-22T00:32:14.179407",
+      "retrieval_utc": "2026-09-22T18:19:57Z",
+      "http_status": 200,
+      "bytes": 21062258,
+      "sha256": "46080222a2164bffdf8fe4d31aff3e13dd36a369bdf0fe55b738b741bf23c7a9",
+      "path": "data/external/nwdp/delhi_sw_gw_14c48913-600c-4e2c-9c77-8ef2e92e59e6.csv"
+    },
+    {
+      "key": "cgwb_delhi",
+      "producer": "CGWB",
+      "dataset_title": "Ground Water Level (Telemetry - Six Hourly), Central Ground Water Board (CGWB)",
+      "dataset_name": "ground-water-level-telemetry-daily-cgwb-as-assam",
+      "resource_name": "Ground Water Level CGWB Delhi (2021 - 2025) Telemetry Six Hourly",
+      "resource_id": "9d2e7887-084c-458c-a6c8-29a280de2b19",
+      "resource_url": "https://nwdp.nwic.gov.in/dataset/3782ba15-9b12-46a8-ae44-410b1f84020e/resource/9d2e7887-084c-458c-a6c8-29a280de2b19/download/gwl_tel_6_hourly_cgwb_dl_2021_2025.csv",
+      "portal_update": "2026-09-22T00:32:05.915870",
+      "retrieval_utc": "2026-09-22T18:20:04Z",
+      "http_status": 200,
+      "bytes": 33943422,
+      "sha256": "30ecd97e19a3380489ede7f848674e87c495e3fdfc8bc6296dc6f2789a49bea3",
+      "path": "data/external/nwdp/cgwb_delhi_9d2e7887-084c-458c-a6c8-29a280de2b19.csv"
+    }
+  ],
+  "note": "Live official NWDP download. Not an archival copy."
+}
