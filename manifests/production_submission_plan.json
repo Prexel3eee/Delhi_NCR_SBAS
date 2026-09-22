@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-09-21T23:30:28.670901+00:00",
+  "job_name_prefix": "delhi_ncr_sbas_a27_v1_prod",
+  "looks": "10x2",
+  "apply_water_mask": true,
+  "batch_size": 40,
+  "expected_pairs": 336,
+  "expected_missing_jobs": 336,
+  "expected_credits": 1680,
+  "already_submitted": 0,
+  "duplicate_names": {}
+}

@@ -17,6 +17,6 @@ __pycache__/
 .DS_Store
 
 # derived MintPy rasters and HDF5 (regenerable from data/)
-mintpy/pilot_clipped/
-mintpy/pilot_work/
+mintpy/*_clipped/
+mintpy/*_work/
 mintpy/**/*.h5
