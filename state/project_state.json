@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T05:30:00Z",
-  "phase": "PILOT_ACCEPTED_AWAITING_PRODUCTION_APPROVAL",
-  "next_phase": "PRODUCTION_SUBMISSION_PENDING_APPROVAL",
+  "updated_utc": "2026-09-22T06:25:00Z",
+  "phase": "PRODUCTION_SUBMITTED_RETRIEVAL_IN_PROGRESS",
+  "next_phase": "PRODUCTION_COMPLETION_REPORT",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -132,16 +132,16 @@
   ],
   "pilot_submitted": true,
   "pilot_passed": true,
-  "production_approved": false,
-  "production_submitted": false,
+  "production_approved": true,
+  "production_submitted": true,
   "mintpy_complete": false,
   "production_blocked_on": [
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Await explicit owner approval before submitting the 336-pair production run.",
-    "Re-run python scripts/verify_freeze.py immediately before production.",
-    "Confirm the live HyP3 credit table immediately before production.",
+    "Complete production retrieval (resumable; 72/336 done).",
+    "Run scripts/14_production_report.py once all products are downloaded.",
+    "MintPy production preparation only after 14 reports the corpus clean.",
     "Rotate the Earthdata credentials when convenient (~/.netrc)."
   ],
   "v1_freeze": {
@@ -186,10 +186,9 @@
   },
   "credits": {
     "monthly_allocation": 8000,
-    "remaining": 7930,
+    "remaining": 6250,
     "pilot_spent": 70,
-    "production_estimated_10x2": 1680,
-    "sufficient_for_production": true
+    "production_spent": 1680
   },
   "incident_log": [
     {
@@ -249,5 +248,28 @@
     "apply_water_mask": true,
     "pairs": 336,
     "credits": 1680
-  }
+  },
+  "production": {
+    "authorised_credits": 1680,
+    "pairs": 336,
+    "looks": "10x2",
+    "apply_water_mask": true,
+    "k": 4,
+    "submitted": 336,
+    "succeeded": 336,
+    "failed": 0,
+    "expired": 0,
+    "batches": 9,
+    "batch_size": 40,
+    "credits_consumed": 1680,
+    "credits_before": 7930,
+    "credits_after": 6250,
+    "duplicate_name_audit": "clean (336 unique names, 336 unique job ids)",
+    "ledger": "manifests/production_jobs.csv",
+    "ledger_reconciliation": "remote=336 ledger=336, 0 orphans either direction",
+    "retrieval_status": "in_progress",
+    "products_downloaded": 72,
+    "products_remaining": 264
+  },
+  "incidents": []
 }

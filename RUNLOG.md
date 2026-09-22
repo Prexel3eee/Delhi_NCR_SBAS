@@ -595,6 +595,66 @@ and production at 10x2 needs 1680.
 
 ---
 
+## 2026-09-22 — Phase H: production submitted; retrieval survived an ASF outage
+
+**Production approved by the owner: 1680 credits authorised** for the frozen v1 network
+(119 acquisitions / 336 pairs), `INSAR_ISCE_MULTI_BURST`, K=4, `looks=10x2`,
+`apply_water_mask=True`. No frozen artefact was modified.
+
+### Pre-flight gates (all required to pass before any spend)
+
+```text
+[PASS] verify_freeze.py exit 0
+[PASS] test suite: 38 passed
+[PASS] 336 payloads validated (K=4, 10x2, water mask, temporal <= 36 d,
+       |B_perp| <= 250 m, 1:1 with the frozen pair manifest)
+[PASS] all payloads accepted by prepare_insar_isce_multi_burst_job
+
+EXPECTED MISSING JOBS: 336        EXPECTED CREDITS: 1680
+```
+
+### Submission — 336/336 in 9 batches of 40 (final batch 16)
+
+Every batch was verified before the next began:
+
+```text
+batch 1-8  reconcile remote=ledger, 0 orphans | duplicates clean | delta=200 (expected 200)
+batch 9    reconcile remote=336 ledger=336     | duplicates clean | delta=80  (expected 80)
+
+credits 7930 -> 6250 = 1680 consumed, exactly 5 x 336
+```
+
+Credit deltas were read from HyP3's own balance, not inferred from the table. Idempotency
+used **exact-name local matching only**; `find_jobs(name=<prefix>)` was never called.
+
+### INC-002 — the first retrieval run was killed by a transient ASF outage
+
+Part-way through retrieval, DNS for `hyp3-api.asf.alaska.edu` and
+`cumulus.asf.alaska.edu` stopped resolving while `urs.earthdata.nasa.gov` still did. Even
+authentication raised, and the run exited with a traceback after 47 of 336 products.
+
+```text
+impact         none permanent: the 47 downloaded products and their hashed
+               inventory were intact, and retrieval is resumable.
+root cause 1   connection and job listing were not retried, so a network blip
+               was fatal.
+root cause 2   the poll used hyp3.refresh(Batch), which issues one HTTP request
+               PER JOB - 336 requests per cycle - maximising exposure to a blip.
+fix            connect_hyp3() and fetch_jobs() retry with capped linear backoff
+               and raise a typed NetworkUnavailable; the batch is listed in a
+               single find_jobs(job_type=...) call; the initial connection WAITS
+               for the API (up to --max-outages polls) instead of failing fast;
+               transient failures inside the loop rebuild the session.
+tests          tests/test_production_retrieval.py (9 offline tests) pins all of
+               it, including that find_jobs is never called with name= and that
+               the batch is listed in exactly one call.
+```
+
+When connectivity returned, **all 336 jobs had reached SUCCEEDED** and the ledger
+reconciled with 0 orphans in either direction and no duplicate names.
+
+---
+
 ## Current status
 
 ```text
@@ -605,12 +665,15 @@ Phase E  cost estimated, pilot defined         COMPLETE (1680 credits at 10x2)
          v1 frozen, tests + MintPy env ready   COMPLETE (freeze_id cf2bdbfd...)
 Phase F  pilot submitted + retrieved           COMPLETE (14/14 SUCCEEDED, 70 credits)
 Phase G  pilot QC and acceptance               COMPLETE (18/18 gates PASSED)
-Phase H  production submission                 BLOCKED ON EXPLICIT OWNER APPROVAL
-Phase I  MintPy ingestion / inversion          NOT STARTED (pilot ingestion proven)
+Phase H  production submitted                  COMPLETE (336/336 submitted, 1680 credits)
+         production retrieval                  IN PROGRESS (resumable, hashed inventory)
+Phase I  production completion report          PENDING all products downloaded
+Phase J  MintPy production preparation         PENDING a clean corpus reconciliation
 ```
 
-**Awaiting approval** for the 336-pair production run at 10x2: 1680 credits (21 % of the
-monthly allocation) and ~148 GB of projected storage.
+**Production outcome so far:** 336 submitted, **336 SUCCEEDED, 0 failed, 0 expired**.
+Remaining work is download throughput only (~123 MB per product).
+
 
 
 
