@@ -655,6 +655,91 @@ reconciled with 0 orphans in either direction and no duplicate names.
 
 ---
 
+## 2026-09-22 — Phase I: production retrieval complete; MintPy production ingestion verified
+
+**Production retrieval: 336/336 downloaded.** All 336 jobs `SUCCEEDED` (0 failed, 0 expired).
+
+```text
+compressed   41.02 GB   (mean 122.09 MB/product)
+extracted    42.30 GB   (mean 125.91 MB/product, x1.0313)
+total        83.33 GB
+
+product inventory  336 rows, 336 download_ok, 336 unique job ids,
+                   all 336 carrying a 64-char ZIP sha256
+file inventory     4704 rows (exactly 14 files per product), 336 job ids,
+                   2352 hashed (336 x the 7 scientific layers)
+layers             all 336 products carry unw_phase, corr, conncomp, dem,
+                   lv_theta, lv_phi, water_mask; 0 products missing any
+reconciliation     336 expected job names = 336 ledger names, 0 missing, 0 unexpected
+                   every frozen pair has exactly one product
+duplicate names    none
+credits            1680 consumed / 1680 authorised
+freeze             verify_freeze.py exit 0
+```
+
+`qc/production/PRODUCTION_REPORT.md` records the corpus as **CLEAN**.
+
+### MintPy production preparation
+
+All 336 products (x7 layers = 2352 rasters) clipped onto **one shared target grid**,
+`prep_hyp3` metadata written, and MintPy ingestion run.
+
+```text
+common overlap   EPSG:32643, [647720, 3129040, 765280, 3225320], 117.6 x 96.3 km
+target grid      2939 x 2407 px @ 40 m - one grid for every layer of every pair
+AOI              fully inside the common overlap
+prep_hyp3        exit 0, 2352 .rsc files
+load_data        exit 0 -> production_work/inputs/ifgramStack.h5
+                 unwrapPhase (336, 2407, 2939), bperp (336,)
+```
+
+**Network reconciliation — MintPy load vs the frozen 336-pair manifest (brief section 24
+Stage 2):**
+
+```text
+MintPy pairs 336 | manifest pairs 336 | IDENTICAL PAIR SETS: True
+MintPy dates 119 | accepted acquisitions 119 | IDENTICAL DATE SETS: True
+2025-05-18 absent from the network (v1 policy)
+bperp 336 entries, all finite, range -247.8 to 235.3 m (gate <= 250 m)
+```
+
+> **Format trap worth recording.** MintPy stores dates as `YYYYMMDD` while the manifests
+> use `YYYY-MM-DD`, so a naive set comparison reports 336 pairs in each and **zero**
+> overlap — which reads like a catastrophic mismatch but is purely a formatting
+> difference. Normalising the format shows the networks are exactly identical. Without
+> this check the Stage 2 gate would have been misread as a failure.
+
+### INC-003 — production preparation died on an inventory schema mismatch
+
+The first production preparation run failed before clipping a single raster:
+
+```text
+KeyError: Index(['apply_water_mask'], dtype='str')
+```
+
+`13_download_production.py` writes a different inventory schema from
+`08_download_pilot.py`: the pilot recorded `apply_water_mask`, production did not, and
+`select_products()` deduplicated on that column unconditionally.
+
+```text
+fix    script 13 now records the column; select_products() derives it from the
+       HyP3 job name (the control carries a _nomask suffix) when absent, so a
+       schema drift between the pilot and production inventories cannot break
+       the pipeline again; the existing 336-row inventory was backfilled.
+tests  tests/test_mintpy_prep_selection.py (5 tests)
+```
+
+**Also fixed:** the retrieval outage hardening was regression-guarded in
+`tests/test_production_retrieval.py` (9 tests), and `importorskip` guards mean each
+environment collects what it can import.
+
+```text
+delhi-hyp3   47 passed, 1 skipped
+delhi-mintpy 43 passed, 1 skipped
+```
+
+---
+
 ## Current status
 
 ```text
@@ -663,16 +748,23 @@ Phase C  historical stack verified             COMPLETE (119 homogeneous acquisi
 Phase D  SBAS network audited                  COMPLETE (336 pairs, all criteria pass)
 Phase E  cost estimated, pilot defined         COMPLETE (1680 credits at 10x2)
          v1 frozen, tests + MintPy env ready   COMPLETE (freeze_id cf2bdbfd...)
-Phase F  pilot submitted + retrieved           COMPLETE (14/14 SUCCEEDED, 70 credits)
+Phase F  pilot submitted + retrieved           COMPLETE (14/14 SUCCEEDED)
 Phase G  pilot QC and acceptance               COMPLETE (18/18 gates PASSED)
-Phase H  production submitted                  COMPLETE (336/336 submitted, 1680 credits)
-         production retrieval                  IN PROGRESS (resumable, hashed inventory)
-Phase I  production completion report          PENDING all products downloaded
-Phase J  MintPy production preparation         PENDING a clean corpus reconciliation
+Phase H  production submitted + retrieved      COMPLETE (336/336 SUCCEEDED, 1680 credits)
+         production completion report          COMPLETE (corpus CLEAN)
+Phase I  MintPy production preparation         COMPLETE (336 ifgs / 119 dates loaded)
+Phase J  MintPy inversion and interpretation   NOT STARTED (awaiting instruction)
 ```
 
-**Production outcome so far:** 336 submitted, **336 SUCCEEDED, 0 failed, 0 expired**.
-Remaining work is download throughput only (~123 MB per product).
+**No scientific inversion has been run.** The loaded network is verified to match the
+frozen v1 manifest exactly; the next step is the staged inversion (reference-area
+selection, network QC, atmospheric/residual corrections, then LOS displacement and
+velocity).
+
+Nothing recovered or inserted 2025-05-18, and all 336 interferograms — including the weak
+36-day and monsoon pairs — are retained. Quality-based pair removal, if any, belongs in
+MintPy QC now that the production data exist.
+
 
 
 
