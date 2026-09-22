@@ -95,3 +95,50 @@ def test_reference_library_contains_every_citation_key(project_root):
     _, rows = _read_csv(project_root / "manuscript" / "LITERATURE_MATRIX.csv")
     bibliography = (project_root / "manuscript" / "REFERENCE_LIBRARY.bib").read_text()
     assert all("{" + row["citation_key"] + "," in bibliography for row in rows)
+
+
+def test_submission_front_matter_and_methods_architecture(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    assert manuscript.startswith(
+        "# Selective reproducibility of localized LOS deformation in Delhi-NCR "
+        "from ascending and descending Sentinel-1 InSAR"
+    )
+    required_headings = [
+        "## Abstract",
+        "## 1. Introduction",
+        "## 2. Data and methods",
+        "### 2.1 Study design and observation period",
+        "### 2.2 Ascending stack and time-series processing",
+        "### 2.3 Frozen observations and hotspot definition",
+        "### 2.4 Independent descending experiment",
+        "### 2.5 Cross-geometry comparison",
+        "### 2.6 Preregistered mechanism tests",
+        "### 2.7 Uncertainty and evidence states",
+    ]
+    assert all(heading in manuscript for heading in required_headings)
+
+
+def test_abstract_contains_required_design_and_outcomes(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    abstract = manuscript.split("## Abstract\n", 1)[1].split("## 1. Introduction", 1)[0]
+    assert 250 <= len(abstract.split()) <= 300
+    for phrase in (
+        "119 acquisitions",
+        "336 interferograms",
+        "91 acquisitions",
+        "219 interferograms",
+        "Five zones",
+        "H001 and H004",
+        "H002 and H003",
+        "H005",
+        "mean-rate",
+        "time histories",
+    ):
+        assert phrase in abstract
+
+
+def test_submission_uses_protected_measurement_language(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    assert "relative LOS" in manuscript
+    assert "measured vertical displacement" not in manuscript.lower()
+    assert "independently validated" not in manuscript.lower()
