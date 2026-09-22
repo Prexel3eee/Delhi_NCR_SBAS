@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-22T08:41:59.769145+00:00",
+  "expected_dates": 119,
+  "first_date": "20211006",
+  "last_date": "20250927",
+  "grib_files_present": 119,
+  "grib_missing_dates": [],
+  "grib_below_min_size": [],
+  "total_grib_bytes": 89160750,
+  "weather_dir": "mintpy/era5_work/mintpy/weather/ERA5",
+  "era5_delay_file": {
+    "exists": true,
+    "keys": [
+      "date",
+      "timeseries"
+    ],
+    "delay_dates": 119,
+    "delay_dates_match_expected": true,
+    "timeseries_shape": [
+      119,
+      2407,
+      2939
+    ],
+    "timeseries_dtype": "float32",
+    "timeseries_finite_fraction": 0.6358,
+    "timeseries_min": -3.6152,
+    "timeseries_median": -3.0985,
+    "timeseries_max": -2.8252,
+    "aoi_min_finite_fraction": 1.0,
+    "aoi_mean_finite_fraction": 1.0
+  },
+  "complete_coverage": true,
+  "delay_dates_match_expected": true,
+  "global_finite_fraction": 0.6358,
+  "aoi_min_finite_fraction": 1.0,
+  "aoi_coverage_ok": true,
+  "dates_with_incomplete_aoi_coverage": [],
+  "note": "coverage is gated on the AOI, not the full clipped grid; PyAPS leaves NaN outside the ERA5 interpolation domain, which does not affect the AOI"
+}

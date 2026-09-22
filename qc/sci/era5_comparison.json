@@ -1,0 +1,116 @@
+{
+  "generated_utc": "2026-09-22T08:42:04.378224+00:00",
+  "branches": {
+    "raw": "baseline_raw_work",
+    "era5": "era5_work"
+  },
+  "coverage_verified": true,
+  "velocity_m_per_yr": {
+    "raw": {
+      "median": -0.004151,
+      "p05": -0.034235,
+      "p95": 0.004403,
+      "std": 0.012517
+    },
+    "era5": {
+      "median": 0.000107,
+      "p05": -0.000372,
+      "p95": 0.000654,
+      "std": 0.000297
+    }
+  },
+  "velocity_uncertainty_m_per_yr": {
+    "raw": {
+      "median": 0.001162,
+      "p05": 0.000422,
+      "p95": 0.001785,
+      "std": 0.000446
+    },
+    "era5": {
+      "median": 0.000379,
+      "p05": 0.00012,
+      "p95": 0.000669,
+      "std": 0.000161
+    }
+  },
+  "temporal_coherence": {
+    "raw": {
+      "median": 0.748842,
+      "p05": 0.317694,
+      "p95": 0.984883,
+      "std": 0.238555
+    },
+    "era5": {
+      "median": 0.747026,
+      "p05": 0.317212,
+      "p95": 0.981397,
+      "std": 0.237538
+    }
+  },
+  "difference_era5_minus_raw": {
+    "velocity_median": 0.004225,
+    "velocity_p05": -0.004355,
+    "velocity_p95": 0.034654,
+    "velocity_rms": 0.015486,
+    "velocity_max_abs": 0.094727,
+    "temporal_coherence_median": -0.002079,
+    "fraction_of_aoi_coherence_improved": 0.310573
+  },
+  "per_ifg_residual_comparison": {
+    "raw_median_rad": 4.593,
+    "era5_median_rad": 4.67,
+    "n_improved": 140,
+    "n_worsened": 196,
+    "largest_improvements": [
+      {
+        "date12": "20230728_20230902",
+        "residual_rms_rad_raw": 43.9575,
+        "residual_rms_rad_era5": 40.854,
+        "delta": -3.103500000000004
+      },
+      {
+        "date12": "20230704_20230728",
+        "residual_rms_rad_raw": 15.0817,
+        "residual_rms_rad_era5": 11.9889,
+        "delta": -3.0928000000000004
+      },
+      {
+        "date12": "20240616_20240710",
+        "residual_rms_rad_raw": 6.8952,
+        "residual_rms_rad_era5": 4.8344,
+        "delta": -2.0608000000000004
+      },
+      {
+        "date12": "20240604_20240710",
+        "residual_rms_rad_raw": 4.6597,
+        "residual_rms_rad_era5": 2.837,
+        "delta": -1.8226999999999998
+      },
+      {
+        "date12": "20220627_20220709",
+        "residual_rms_rad_raw": 8.3851,
+        "residual_rms_rad_era5": 7.0236,
+        "delta": -1.3614999999999995
+      },
+      {
+        "date12": "20231008_20231020",
+        "residual_rms_rad_raw": 10.6065,
+        "residual_rms_rad_era5": 9.3427,
+        "delta": -1.2637999999999998
+      },
+      {
+        "date12": "20220203_20220311",
+        "residual_rms_rad_raw": 9.3896,
+        "residual_rms_rad_era5": 8.1665,
+        "delta": -1.2231000000000005
+      },
+      {
+        "date12": "20240722_20240815",
+        "residual_rms_rad_raw": 16.1469,
+        "residual_rms_rad_era5": 14.971,
+        "delta": -1.1758999999999986
+      }
+    ]
+  },
+  "note": "Deramping NOT applied. No deformation product declared."
+}
