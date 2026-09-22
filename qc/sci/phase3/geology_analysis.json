@@ -1,0 +1,261 @@
+{
+  "generated_utc": "2026-09-22T18:37:52.806348+00:00",
+  "datasets_obtained": [
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "clay",
+      "depth": "0-5cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/clay/clay_0-5cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    },
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "clay",
+      "depth": "100-200cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/clay/clay_100-200cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    },
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "sand",
+      "depth": "0-5cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/sand/sand_0-5cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    },
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "sand",
+      "depth": "100-200cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/sand/sand_100-200cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    },
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "silt",
+      "depth": "0-5cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/silt/silt_0-5cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    },
+    {
+      "source": "ISRIC SoilGrids v2.0 (latest)",
+      "property": "silt",
+      "depth": "100-200cm",
+      "resolution_m": 250.0,
+      "retrieval_url": "https://files.isric.org/soilgrids/latest/data/silt/silt_100-200cm_mean.vrt",
+      "access": "windowed remote read via GDAL /vsicurl",
+      "units": "g/kg (divide by 10 for %)",
+      "scientific_role": "SURROGATE for substrate texture; NOT a geological or geomorphological map",
+      "limitations": "250 m resolution; global machine-learning prediction, not a surveyed geological boundary; does not identify lithology, formation or age"
+    }
+  ],
+  "datasets_not_obtained": [
+    {
+      "source": "Geological Survey of India - Bhukosh",
+      "property": "geology / lithology",
+      "retrieval_url": "https://bhukosh.gsi.gov.in",
+      "error": "unreachable (curl code 000) at retrieval time",
+      "scientific_role": "would be the authoritative lithological source",
+      "limitations": "NOT OBTAINED - so no formation- or age-level statement is made"
+    },
+    {
+      "source": "NRSC / Bhuvan geomorphology",
+      "property": "geomorphology",
+      "retrieval_url": "https://bhuvan.nrsc.gov.in",
+      "error": "host reachable but no downloadable geomorphology layer located",
+      "scientific_role": "would give landform class",
+      "limitations": "NOT OBTAINED"
+    }
+  ],
+  "scale_compatibility": {
+    "soilgrids_pixel_m": 250,
+    "smallest_hotspot_km2": 0.84,
+    "largest_hotspot_km2": 12.83,
+    "statement": "hotspot-level summaries are defensible; within-hotspot gradients are not, because a small hotspot spans only ~13 SoilGrids pixels and is comparable to the product's own reported accuracy"
+  },
+  "hotspot_summaries": [
+    {
+      "hotspot_id": "H001",
+      "role": "supported",
+      "clay_0-5cm": 17.4,
+      "clay_0-5cm_n": 26,
+      "clay_100-200cm": 18.6,
+      "clay_100-200cm_n": 26,
+      "sand_0-5cm": 50.85,
+      "sand_0-5cm_n": 26,
+      "sand_100-200cm": 47.85,
+      "sand_100-200cm_n": 26,
+      "silt_0-5cm": 31.65,
+      "silt_0-5cm_n": 26,
+      "silt_100-200cm": 33.95,
+      "silt_100-200cm_n": 26,
+      "clay_0-5cm_core": 17.3,
+      "clay_0-5cm_buffered": 18.65
+    },
+    {
+      "hotspot_id": "H002",
+      "role": "negative_control",
+      "clay_0-5cm": 23.0,
+      "clay_0-5cm_n": 90,
+      "clay_100-200cm": 23.5,
+      "clay_100-200cm_n": 90,
+      "sand_0-5cm": 43.55,
+      "sand_0-5cm_n": 90,
+      "sand_100-200cm": 41.65,
+      "sand_100-200cm_n": 90,
+      "silt_0-5cm": 34.1,
+      "silt_0-5cm_n": 90,
+      "silt_100-200cm": 34.5,
+      "silt_100-200cm_n": 90,
+      "clay_0-5cm_core": null,
+      "clay_0-5cm_buffered": 23.3
+    },
+    {
+      "hotspot_id": "H003",
+      "role": "negative_control",
+      "clay_0-5cm": 24.1,
+      "clay_0-5cm_n": 17,
+      "clay_100-200cm": 23.8,
+      "clay_100-200cm_n": 17,
+      "sand_0-5cm": 43.2,
+      "sand_0-5cm_n": 17,
+      "sand_100-200cm": 42.0,
+      "sand_100-200cm_n": 17,
+      "silt_0-5cm": 33.8,
+      "silt_0-5cm_n": 17,
+      "silt_100-200cm": 34.4,
+      "silt_100-200cm_n": 17,
+      "clay_0-5cm_core": null,
+      "clay_0-5cm_buffered": 23.9
+    },
+    {
+      "hotspot_id": "H004",
+      "role": "supported",
+      "clay_0-5cm": 19.7,
+      "clay_0-5cm_n": 3,
+      "clay_100-200cm": 19.4,
+      "clay_100-200cm_n": 3,
+      "sand_0-5cm": 48.7,
+      "sand_0-5cm_n": 3,
+      "sand_100-200cm": 46.6,
+      "sand_100-200cm_n": 3,
+      "silt_0-5cm": 31.8,
+      "silt_0-5cm_n": 3,
+      "silt_100-200cm": 34.0,
+      "silt_100-200cm_n": 3,
+      "clay_0-5cm_core": null,
+      "clay_0-5cm_buffered": 19.65
+    },
+    {
+      "hotspot_id": "H005",
+      "role": "excluded",
+      "clay_0-5cm": 24.2,
+      "clay_0-5cm_n": 13,
+      "clay_100-200cm": 25.8,
+      "clay_100-200cm_n": 13,
+      "sand_0-5cm": 40.4,
+      "sand_0-5cm_n": 13,
+      "sand_100-200cm": 39.6,
+      "sand_100-200cm_n": 13,
+      "silt_0-5cm": 35.4,
+      "silt_0-5cm_n": 13,
+      "silt_100-200cm": 34.5,
+      "silt_100-200cm_n": 13,
+      "clay_0-5cm_core": null,
+      "clay_0-5cm_buffered": 24.1
+    }
+  ],
+  "specificity": {
+    "clay_0-5cm": {
+      "supported_median": 18.55,
+      "control_median": 23.55,
+      "background_median": 22.8,
+      "supported_minus_control": -5.0,
+      "separation_in_background_5_95_range": 0.649
+    },
+    "silt_0-5cm": {
+      "supported_median": 31.73,
+      "control_median": 33.95,
+      "background_median": 33.7,
+      "supported_minus_control": -2.23,
+      "separation_in_background_5_95_range": 0.337
+    },
+    "sand_0-5cm": {
+      "supported_median": 49.78,
+      "control_median": 43.38,
+      "background_median": 43.6,
+      "supported_minus_control": 6.4,
+      "separation_in_background_5_95_range": 0.577
+    },
+    "clay_100-200cm": {
+      "supported_median": 19.0,
+      "control_median": 23.65,
+      "background_median": 24.9,
+      "supported_minus_control": -4.65,
+      "separation_in_background_5_95_range": 0.567
+    }
+  },
+  "coherence_confounding": [
+    {
+      "hotspot_id": "H001",
+      "role": "supported",
+      "median_temporal_coherence": 0.9255,
+      "median_velocity_std": 0.9594,
+      "valid_pixel_density": 0.00049,
+      "clay_0_5cm": 17.4
+    },
+    {
+      "hotspot_id": "H002",
+      "role": "negative_control",
+      "median_temporal_coherence": 0.8634,
+      "median_velocity_std": 1.2768,
+      "valid_pixel_density": 0.00113,
+      "clay_0_5cm": 23.0
+    },
+    {
+      "hotspot_id": "H003",
+      "role": "negative_control",
+      "median_temporal_coherence": 0.8604,
+      "median_velocity_std": 1.2506,
+      "valid_pixel_density": 0.0002,
+      "clay_0_5cm": 24.1
+    },
+    {
+      "hotspot_id": "H004",
+      "role": "supported",
+      "median_temporal_coherence": 0.963,
+      "median_velocity_std": 0.7268,
+      "valid_pixel_density": 9e-05,
+      "clay_0_5cm": 19.7
+    },
+    {
+      "hotspot_id": "H005",
+      "role": "excluded",
+      "median_temporal_coherence": 0.8653,
+      "median_velocity_std": 1.4038,
+      "valid_pixel_density": 7e-05,
+      "clay_0_5cm": 24.2
+    }
+  ],
+  "grade": null,
+  "no_causation": true
+}

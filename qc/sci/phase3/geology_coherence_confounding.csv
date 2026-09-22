@@ -1,0 +1,6 @@
+hotspot_id,role,median_temporal_coherence,median_velocity_std,valid_pixel_density,clay_0_5cm
+H001,supported,0.9255,0.9594,0.00049,17.4
+H002,negative_control,0.8634,1.2768,0.00113,23.0
+H003,negative_control,0.8604,1.2506,0.0002,24.1
+H004,supported,0.963,0.7268,9e-05,19.7
+H005,excluded,0.8653,1.4038,7e-05,24.2
