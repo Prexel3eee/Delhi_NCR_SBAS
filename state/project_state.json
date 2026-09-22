@@ -213,6 +213,14 @@
       "verified": "After connectivity returned, all 336 jobs were SUCCEEDED and the ledger reconciled with 0 orphans in either direction."
     },
     {
+      "id": "INC-004",
+      "severity": "low",
+      "summary": "Parallel MintPy inversion died at dask cluster start: module numpy has no attribute bool8.",
+      "root_cause": "MintPy creates a bare LocalCluster(), which enables the dask dashboard; the dashboard imports bokeh, and this bokeh build still references np.bool8, removed in NumPy 2.x. Upgrading dask/distributed does not help - the reference is in bokeh, not dask.",
+      "fix": "scripts/run_mintpy.py restores the removed alias (a pure alias for np.bool_) before importing any MintPy CLI. No numerical behaviour changes.",
+      "verified": "Bare LocalCluster() starts; the baseline inversion then completed in 13m25s."
+    },
+    {
       "id": "INC-005",
       "severity": "medium",
       "summary": "First RAW-vs-ERA5 comparison used the wrong velocity file and reported a spurious 15.49 mm/yr RMS difference.",
