@@ -1,0 +1,115 @@
+{
+  "generated_utc": "2026-09-22T17:53:04.254453+00:00",
+  "aoi": {
+    "lon_min": 76.7853,
+    "lat_min": 28.3839,
+    "lon_max": 77.2838,
+    "lat_max": 28.8726
+  },
+  "study_period": {
+    "start": "2021-10-01",
+    "end": "2025-09-30"
+  },
+  "method_note": "Inclusion decisions were made from endpoint reconnaissance alone, before any explanatory value was computed. No dataset was selected or rejected on the basis of agreement with the InSAR pattern.",
+  "datasets": [
+    {
+      "dataset": "CGWB groundwater level time series (site level)",
+      "source": "India-WRIS / CGWB gwdata portal",
+      "endpoints_tried": [
+        "https://indiawris.gov.in",
+        "https://gwdata.cgwb.gov.in",
+        "https://www.cgwb.gov.in"
+      ],
+      "observed": "indiawris.gov.in unreachable (curl code 000); www.cgwb.gov.in unreachable; gwdata.cgwb.gov.in returns an HTML page titled 'Maintenance Mode' on every path tried (/api, /api/v1, /swagger/index.html, /api/groundwater, /api/WaterLevel all 404).",
+      "coverage": null,
+      "resolution": null,
+      "time_span": null,
+      "decision": "NOT OBTAINABLE",
+      "reason": "All three public routes are down or unreachable at the time of reconnaissance. No site-level piezometric time series for Delhi-NCR could be retrieved.",
+      "consequence": "HYPOTHESIS G (groundwater) cannot be tested with site data in this phase. This is the single largest limitation of Phase III-A."
+    },
+    {
+      "dataset": "data.gov.in CGWB groundwater resources",
+      "source": "data.gov.in API",
+      "endpoints_tried": [
+        "https://api.data.gov.in/lists",
+        "https://api.data.gov.in/resource/<id>"
+      ],
+      "observed": "Catalogue search works and returns CGWB resources, but every resource query returns HTTP 400 {'error': 'Authorization field missing'} - an API key is required.",
+      "coverage": "State/UT and district-level AGGREGATES (annual draft, recharge, assessment-unit categories, decadal fluctuation)",
+      "resolution": "state/district",
+      "time_span": "varies, mostly annual",
+      "decision": "NOT OBTAINABLE and NOT SUITABLE",
+      "reason": "Two independent grounds: (1) no API key is available in this environment; (2) even with a key, the accessible CGWB resources are state/district ANNUAL aggregates, not the station-level monthly time series the temporal analysis in section 8 requires. Annual district aggregates cannot resolve monthly seasonal timing at a hotspot."
+    },
+    {
+      "dataset": "ERA5 total precipitation (single levels)",
+      "source": "Copernicus Climate Data Store, via cdsapi",
+      "endpoints_tried": [
+        "https://cds.climate.copernicus.eu/api"
+      ],
+      "observed": "HTTP 202, cdsapi importable, ~/.cdsapirc present and already proven by the descending ERA5 retrieval (91 GRIBs downloaded).",
+      "coverage": "global, AOI subset [40, 70, 20, 80]",
+      "resolution": "0.25 deg (~28 km) native, monthly means requested",
+      "time_span": {
+        "start": "2021-10-01",
+        "end": "2025-09-30"
+      },
+      "decision": "INCLUDED",
+      "reason": "Reachable, credentials verified, directly addresses HYPOTHESIS H (hydrological/seasonal forcing) and the non-stationarity question."
+    },
+    {
+      "dataset": "GRACE / GRACE-FO mascon (GSFC RL06 v2.0)",
+      "source": "NASA GSFC",
+      "endpoints_tried": [
+        "https://earth.gsfc.nasa.gov/geo/data/grace-mascons"
+      ],
+      "observed": "HTTP 200; direct file href resolvable (gsfc.glb_.200204_202603_rl06v2.0_obp-ice6gd_halfdegree.nc).",
+      "coverage": "global",
+      "resolution": "0.5 deg (~55 km) mascon",
+      "time_span": "2002-04 to 2026-03",
+      "decision": "INCLUDED AS REGIONAL CONTEXT ONLY",
+      "reason": "Reachable. At ~55 km resolution it cannot resolve a 0.8-13 km2 hotspot, so it is admitted only as regional water-storage CONTEXT, never as a hotspot discriminator."
+    },
+    {
+      "dataset": "Aquifer type / alluvium thickness / lithology / geomorphology",
+      "source": "CGWB aquifer maps, GSI, Bhukosh",
+      "endpoints_tried": [
+        "https://bhukosh.gsi.gov.in",
+        "https://www.cgwb.gov.in"
+      ],
+      "observed": "Not reachable during reconnaissance.",
+      "coverage": null,
+      "resolution": null,
+      "time_span": null,
+      "decision": "NOT OBTAINABLE",
+      "reason": "No reachable source found in the time available. HYPOTHESIS GEO is therefore testable only INDIRECTLY, through proxies already in hand (elevation, and any land-cover class that carries a sedimentological meaning)."
+    },
+    {
+      "dataset": "Built-up / land cover (GHSL, ESA WorldCover)",
+      "source": "Copernicus Data Space, JRC GHSL",
+      "endpoints_tried": [
+        "https://dataspace.copernicus.eu"
+      ],
+      "observed": "HTTP 200, but no authenticated download was completed in this session.",
+      "coverage": null,
+      "resolution": null,
+      "time_span": null,
+      "decision": "NOT OBTAINED",
+      "reason": "Endpoint reachable but acquisition not completed. HYPOTHESIS U (urban loading) is therefore testable only through the coherence confounding test and existing geometry, not through an independent built-up raster."
+    }
+  ],
+  "summary": {
+    "obtainable": [
+      "ERA5 total precipitation (single levels)",
+      "GRACE / GRACE-FO mascon (GSFC RL06 v2.0)"
+    ],
+    "not_obtainable": [
+      "CGWB groundwater level time series (site level)",
+      "data.gov.in CGWB groundwater resources",
+      "Aquifer type / alluvium thickness / lithology / geomorphology",
+      "Built-up / land cover (GHSL, ESA WorldCover)"
+    ],
+    "priority_A_groundwater": "NOT OBTAINABLE - see consequences"
+  }
+}
