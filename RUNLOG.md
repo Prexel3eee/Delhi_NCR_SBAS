@@ -740,6 +740,129 @@ delhi-mintpy 43 passed, 1 skipped
 
 ---
 
+## 2026-09-22 - Scientific processing: RAW-336 diagnostics (stopping point)
+
+**Input frozen.** `mintpy_input_v1`: 336 pairs / 119 dates, hash-pinned
+(`freeze_id 0cbe4c4f...`), verified. The HyP3 corpus was not altered.
+
+Semantic trap recorded: MintPy's `dropIfgram` is **inverted relative to its name**
+(`get_date12_list(dropIfgram=True)` selects `dates[dropIfgram]`, i.e. the *used*
+ones). All 336 are `True`, so nothing had been removed - the required precondition
+for the baseline. The first check read it backwards and would have aborted.
+
+### AOI-centric QC table (all 336 pairs)
+
+| temporal baseline | n | median coherence | median largest component (AOI) |
+|---|---|---|---|
+| 12 d | 113 | 0.749 | 0.965 |
+| 24 d | 113 | 0.566 | 0.849 |
+| 36 d | 110 | 0.447 | 0.668 |
+
+AOI polygon = 1962 km², water 1.85%. Unwrapped-phase validity over the AOI is
+uniform at 0.9815 - the missing 1.85% is water, removed by design.
+
+### RAW-336 baseline inversion - nothing corrected, nothing removed
+
+unwrap error **no**, troposphere **no**, deramp **no**, DEM residual **no**.
+`keepMinSpanTree` forced **off** (MintPy defaults it to *yes* and would have
+silently dropped pairs). 13m25s with a dask local cluster.
+
+```text
+raw LOS velocity      median -0.0042 m/yr   p05 -0.0342   p95 +0.0044   std 0.0125
+velocity uncertainty  median  1.2 mm/yr
+temporal coherence    median  0.749        55% of AOI > 0.7
+per-ifg residual RMS  median  4.593 rad    p95 18.762
+```
+
+The velocity field is skewed negative (p05 ≈ -34 mm/yr vs p95 ≈ +4 mm/yr) - the LOS
+subsidence signature, but **relative to the reference pixel** and not yet a product.
+
+MintPy's `residual_RMS` step is skipped when every correction is off (it needs a
+residual file), so per-interferogram residuals were computed directly:
+`residual = unwrapPhase - (ts_sec - ts_ref)/phase2range`, with `phase2range =
+-λ/(4π)` from `mintpy/ifgram_inversion.py`. Validated by
+Spearman(residual RMS, coherence) = **-0.372**, negative as a correct model requires.
+
+### INC-004 - parallel inversion died at dask cluster start
+
+`RuntimeError: Cluster failed to start: module 'numpy' has no attribute 'bool8'`.
+MintPy creates a bare `LocalCluster()`, which enables the dask **dashboard**; that
+imports **bokeh**, and this bokeh build still references `np.bool8`, removed in
+NumPy 2.x. Upgrading dask/distributed does **not** help - the reference is in bokeh,
+not dask. `scripts/run_mintpy.py` restores the removed alias (a pure alias for
+`np.bool_`); no numerical behaviour changes.
+
+### Candidate bad pairs - thresholds had to be rebuilt
+
+A first cut used absolute thresholds and flagged **333 of 336** pairs, because an
+uncorrected baseline carries unmodelled atmosphere and orbit ramps that dominate
+the residual. A fixed 1 rad cut is meaningless here.
+
+Candidates are therefore **robust outliers within each temporal-baseline class**
+(median ± 3.5 × 1.4826 × MAD), which is also physically right: coherence falls
+systematically with temporal baseline, so judging a 36-day pair against 12-day
+pairs would flag the entire 36-day class.
+
+**Result: 39 of 336 (11.6%)**, clustering in **mid-2023**.
+
+### Unwrap-correction comparison (bridging + phase closure)
+
+Identical in every other respect; 23m33s.
+
+| metric | RAW | bridging+phase_closure |
+|---|---|---|
+| velocity median (m/yr) | -0.0042 | -0.0025 |
+| temporal coherence median | 0.7488 | 0.7401 |
+| per-ifg residual RMS median (rad) | 4.593 | **5.108** |
+| pairs improved / worsened | - | 134 / 202 |
+
+Velocity changes by 2.62 mm/yr RMS (max 35.8 mm/yr), so ambiguities really are
+being altered - but the fit **degrades**: residuals rise, only 134/336 pairs
+improve, and coherence falls. **Recommendation: leave unwrap correction disabled**
+in this configuration; it may need parameter tuning before reconsideration.
+
+### Reference sensitivity
+
+Candidates selected on coherence and velocity **uncertainty** only. Velocity was
+deliberately **excluded** from selection: choosing the reference because its
+velocity is near zero is circular and forces the spread to zero, hiding the real
+systematic. (An intermediate version did exactly that and produced a spurious
+0.27 mm/yr; it was corrected.)
+
+```text
+recommended reference  lon 77.0950, lat 28.6426  (tc 0.991, uncertainty std 0.23 mm/yr)
+candidate velocity spread  4.78 mm/yr   (sd 1.72)
+```
+
+That spread is the systematic uncertainty the reference imposes on **absolute** LOS
+velocity across the whole AOI - material for a study with tens-of-mm/yr signals.
+**Relative spatial gradients are unaffected**, so hotspot contrast is robust even
+though the absolute offset is not.
+
+### Network curation - naive exclusion REJECTED by the graph audit
+
+| network | pairs | components | bridges | articulation pts | min degree | accepted |
+|---|---|---|---|---|---|---|
+| FULL | 336 | 1 | 0 | 0 | 3 | yes |
+| CURATED naive | 297 | 1 | 1 | 2 | 1 | **no** |
+
+Removing all 39 candidates keeps the network connected but introduces a bridge, two
+articulation points, and drops 2023-08-09 from degree 4 to 1. Greedy repair
+(restoring the fewest pairs) reached 298 pairs and still failed. Pruning the 8
+under-supported mid-2023 acquisitions gave 282 pairs / 111 dates and also failed.
+
+The candidates cluster in mid-2023, so removing them strips redundancy exactly where
+the network is weakest. Combined with the unwrap result, the defensible position is
+**retain all 336 pairs**.
+
+### Not done (deliberately)
+
+No final deformation product. ERA5 tropospheric and DEM-residual branches are
+**not** run - they belong after the network and reference are frozen, and both are
+still open. Spatial deramping was not run; it remains a sensitivity experiment only.
+
+---
+
 ## Current status
 
 ```text

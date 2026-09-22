@@ -27,11 +27,11 @@ contourpy @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_contourp
 cvxopt==1.3.3
 cycler @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_cycler_1764466758/work
 cytoolz @ file:///Users/runner/miniforge3/conda-bld/cytoolz_1789704812175/work
-dask @ file:///home/conda/feedstock_root/build_artifacts/dask-core_1677707033352/work
+dask==2026.8.0
 dask-jobqueue @ file:///home/conda/feedstock_root/build_artifacts/dask-jobqueue_1724342200950/work
 dateparser @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_dateparser_1788443140/work
 distlib @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_distlib_1781320269/work
-distributed @ file:///home/conda/feedstock_root/build_artifacts/distributed_1677711074949/work
+distributed==2026.8.0
 donfig @ file:///home/conda/feedstock_root/build_artifacts/donfig_1734368700593/work
 ecmwf-datastores-client @ file:///home/conda/feedstock_root/build_artifacts/ecmwf-datastores-client_1785742577999/work
 exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1763918002538/work

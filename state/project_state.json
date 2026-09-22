@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T06:25:00Z",
-  "phase": "PRODUCTION_COMPLETE_MINTPY_LOADED_AWAITING_INVERSION",
-  "next_phase": "MINTPY_TIME_SERIES_INVERSION",
+  "updated_utc": "2026-09-22T12:00:00Z",
+  "phase": "RAW336_DIAGNOSTICS_COMPLETE_AWAITING_DECISIONS",
+  "next_phase": "FREEZE_REFERENCE_AND_NETWORK_THEN_TROPO_DEM_BRANCHES",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,8 +139,10 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "Stage 4 onwards: reference-area selection, network QC, atmospheric/residual corrections.",
-    "Run the SBAS inversion to produce LOS displacement, velocity and QC layers.",
+    "Owner decision: confirm or replace the recommended reference region.",
+    "Owner decision: confirm retaining all 336 pairs vs a curated network.",
+    "Owner decision: confirm leaving unwrap-error correction disabled.",
+    "Then authorise the ERA5 tropospheric branch, followed by the DEM-residual branch.",
     "Rotate the Earthdata credentials when convenient (~/.netrc)."
   ],
   "v1_freeze": {
@@ -355,5 +357,53 @@
       ]
     },
     "note": "MintPy stores dates as YYYYMMDD; manifests use YYYY-MM-DD. Normalising the format is required before comparing the loaded network to the manifest."
+  },
+  "scientific_processing": {
+    "input_freeze": "mintpy_input_v1 (336 pairs / 119 dates, hash-pinned, verified)",
+    "baseline_inversion": {
+      "corrections": {
+        "unwrap_error": "no",
+        "troposphere": "no",
+        "deramp": "no",
+        "dem_residual": "no"
+      },
+      "pairs_in_inversion": 336,
+      "runtime_minutes": 13.4,
+      "raw_los_velocity_m_per_yr": {
+        "median": -0.0042,
+        "p05": -0.0342,
+        "p95": 0.0044,
+        "std": 0.0125
+      },
+      "temporal_coherence_median": 0.7488,
+      "per_ifg_residual_rms_rad_median": 4.593
+    },
+    "candidate_bad_pairs": 39,
+    "unwrap_correction": {
+      "verdict": "degrades fit; keep disabled",
+      "pair_improved": 134,
+      "pairs_worsened": 202,
+      "residual_median_raw": 4.593,
+      "residual_median_bridge": 5.108
+    },
+    "reference_sensitivity_mm_per_yr": {
+      "spread": 4.78,
+      "sd": 1.72
+    },
+    "recommended_reference": {
+      "lon": 77.095,
+      "lat": 28.6426
+    },
+    "network_audit": {
+      "full_accepted": true,
+      "naive_curation_accepted": false,
+      "recommendation": "retain all 336 pairs"
+    },
+    "not_done": [
+      "final deformation product",
+      "ERA5 tropospheric branch",
+      "DEM-residual branch",
+      "spatial deramp (sensitivity only)"
+    ]
   }
 }

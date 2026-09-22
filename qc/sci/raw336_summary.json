@@ -1,0 +1,186 @@
+{
+  "generated_utc": "2026-09-22T05:10:37.283246+00:00",
+  "status": "stopping point - no final deformation product",
+  "frozen_input": "freeze/mintpy_input_v1",
+  "pairs": 336,
+  "dates": 119,
+  "baseline_velocity_m_per_yr": {
+    "n": 1226497,
+    "min": -0.0948,
+    "p05": -0.0342,
+    "p25": -0.0158,
+    "median": -0.0042,
+    "p75": 0.0,
+    "p95": 0.0044,
+    "max": 0.0435,
+    "mean": -0.0088,
+    "std": 0.0125
+  },
+  "temporal_coherence": {
+    "n": 1226497,
+    "min": 0.0,
+    "p05": 0.3177,
+    "p25": 0.5091,
+    "median": 0.7488,
+    "p75": 0.9156,
+    "p95": 0.9849,
+    "max": 1.0,
+    "mean": 0.6996,
+    "std": 0.2386
+  },
+  "candidate_bad_pairs": 39,
+  "unwrap_correction_verdict": {
+    "velocity_rms_change_mm_per_yr": 2.618,
+    "coherence_median_change": -0.0105,
+    "residual_median_change_rad": 0.5146,
+    "assessment": "unwrap correction materially changes the solution"
+  },
+  "reference_sensitivity_mm_per_yr": {
+    "candidate_velocity_spread_mm_per_yr": 4.78,
+    "candidate_velocity_sd_mm_per_yr": 1.716,
+    "max_abs_candidate_velocity_mm_per_yr": 2.95,
+    "interpretation": "Systematic uncertainty in ABSOLUTE LOS velocity imposed on the entire AOI by the choice of reference, among candidate regions selected on coherence and spatial coherence alone.",
+    "how_to_reduce": "Only independent stability evidence (GNSS, levelling, exposed bedrock) can reduce this. Until then, treat the absolute velocity offset as uncertain at this level and interpret RELATIVE spatial gradients, which are unaffected by the reference choice."
+  },
+  "recommended_reference": {
+    "lon": 77.09504,
+    "lat": 28.64256,
+    "full_grid_yx": [
+      1378,
+      1426
+    ],
+    "median_temporal_coherence": 0.9905,
+    "median_velocity_m_per_yr": -0.00014,
+    "rationale": "highest temporal coherence with tight velocity uncertainty among spatially separated candidates. Velocity was deliberately excluded from selection to avoid circularity; geographic plausibility (bedrock / ridge vs floodplain) is for the owner to confirm."
+  },
+  "network_full": {
+    "nodes": 119,
+    "edges": 336,
+    "components": 1,
+    "component_sizes": [
+      119
+    ],
+    "isolated_nodes": [],
+    "bridges": 0,
+    "articulation_points": 0,
+    "degree_min": 3,
+    "degree_mean": 5.6471,
+    "degree_median": 6.0,
+    "degree_max": 6,
+    "degree_distribution": {
+      "3": 2,
+      "4": 4,
+      "5": 28,
+      "6": 85
+    },
+    "acquisition_gaps": {
+      "12": 115,
+      "24": 3
+    },
+    "max_gap_days": 24,
+    "criteria": {
+      "single_component": true,
+      "no_isolated_nodes": true,
+      "no_bridges": true,
+      "no_articulation_points": true,
+      "min_degree_at_least_3": true
+    },
+    "accepted": true
+  },
+  "network_curated_naive": {
+    "nodes": 119,
+    "edges": 297,
+    "components": 1,
+    "component_sizes": [
+      119
+    ],
+    "isolated_nodes": [],
+    "bridges": 1,
+    "articulation_points": 2,
+    "degree_min": 1,
+    "degree_mean": 4.9916,
+    "degree_median": 5.0,
+    "degree_max": 6,
+    "degree_distribution": {
+      "1": 1,
+      "2": 3,
+      "3": 15,
+      "4": 11,
+      "5": 36,
+      "6": 53
+    },
+    "acquisition_gaps": {
+      "12": 115,
+      "24": 3
+    },
+    "max_gap_days": 24,
+    "criteria": {
+      "single_component": true,
+      "no_isolated_nodes": true,
+      "no_bridges": false,
+      "no_articulation_points": false,
+      "min_degree_at_least_3": false
+    },
+    "accepted": false
+  },
+  "network_curated_pruned": {
+    "pruned_acquisitions": [
+      "2023-03-30",
+      "2023-07-16",
+      "2023-08-09",
+      "2023-09-02",
+      "2023-07-04",
+      "2023-07-28",
+      "2023-06-22",
+      "2023-08-21"
+    ],
+    "n_pruned": 8,
+    "pairs": 282,
+    "dates": 111,
+    "accepted": false,
+    "summary": {
+      "nodes": 111,
+      "edges": 282,
+      "components": 2,
+      "component_sizes": [
+        60,
+        51
+      ],
+      "isolated_nodes": [],
+      "bridges": 0,
+      "articulation_points": 0,
+      "degree_min": 3,
+      "degree_mean": 5.0811,
+      "degree_median": 5.0,
+      "degree_max": 6,
+      "degree_distribution": {
+        "3": 14,
+        "4": 11,
+        "5": 38,
+        "6": 48
+      },
+      "acquisition_gaps": {
+        "12": 105,
+        "24": 4,
+        "96": 1
+      },
+      "max_gap_days": 96,
+      "criteria": {
+        "single_component": false,
+        "no_isolated_nodes": true,
+        "no_bridges": true,
+        "no_articulation_points": true,
+        "min_degree_at_least_3": true
+      },
+      "accepted": false
+    },
+    "rationale": "retaining a known-bad interferogram merely to keep a node in the graph is the wrong trade; dropping the under-supported acquisition is cleaner and leaves only QC-acceptable pairs"
+  },
+  "recommended_action": "retain all 336 pairs; freeze reference after owner review; keep unwrap correction disabled; then run ERA5 then DEM-residual",
+  "not_done": [
+    "final deformation product",
+    "ERA5 tropospheric branch",
+    "DEM-residual branch",
+    "spatial deramp (sensitivity only)"
+  ]
+}
