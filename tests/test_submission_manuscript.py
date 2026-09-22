@@ -142,3 +142,37 @@ def test_submission_uses_protected_measurement_language(submission, project_root
     assert "relative LOS" in manuscript
     assert "measured vertical displacement" not in manuscript.lower()
     assert "independently validated" not in manuscript.lower()
+
+
+def test_results_architecture_is_complete(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    required_headings = [
+        "### 3.1 Ascending field and frozen detections",
+        "### 3.2 Descending reliability and correction decision",
+        "### 3.3 Common-domain agreement",
+        "### 3.4 Independently supported zones: H001 and H004",
+        "### 3.5 Negative controls: H002 and H003",
+        "### 3.6 Unresolved contradiction: H005",
+        "### 3.7 Temporal behavior and uncertainty",
+        "### 3.8 Mechanism-test outcomes",
+    ]
+    assert all(heading in manuscript for heading in required_headings)
+
+
+def test_generated_hotspot_table_matches_frozen_rates(submission, project_root):
+    evidence = submission.load_frozen_evidence(project_root)
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    for hotspot, row in evidence.hotspots.items():
+        expected = (
+            f"| {hotspot} | {row.ascending_rate:+.2f} | "
+            f"{row.descending_rate:+.2f} | {row.area_km2:.2f} | {row.status} |"
+        )
+        assert expected in manuscript
+
+
+def test_results_reproduce_every_frozen_evidence_state(submission, project_root):
+    evidence = submission.load_frozen_evidence(project_root)
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    for state in evidence.evidence_states.values():
+        assert state in manuscript
+    assert "H005 was excluded from all causal-test samples" in manuscript
