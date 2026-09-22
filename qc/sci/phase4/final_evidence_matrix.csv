@@ -1,0 +1,8 @@
+hypothesis,evidence_state,basis
+Groundwater temporal forcing,NO EVIDENCE,preregistered test: trends opposite to prediction at H001/H004; controls carry the predicted sign; falsification lags equal or outperform forward lags; 0 of 16 positive-lag tests survive FDR q=0.05
+Shallow soil-texture susceptibility,NO EVIDENCE,"H001/H004 are coarser (more sand, less clay) than controls - opposite to the fine-sediment prediction; confounded with coherence (rho -0.600)"
+Deep geological / aquifer-system susceptibility,NOT ADEQUATELY TESTED,"GSI Bhukosh unreachable; the only usable dataset samples the upper ~2 m, not the compaction interval"
+Existing built intensity,NO EVIDENCE,"all four hotspots are 70-79% built against a 33.7% background, so it describes a shared setting and cannot explain selectivity; the two datasets disagree on H001's ranking"
+Recent built-up expansion,NO EVIDENCE,"GHSL 2020->2025 change exactly zero at all four hotspots; the 2025 epoch is a projection, not an observation"
+Major infrastructure / construction,NOT TESTABLE,no authoritative dated construction dataset obtained
+Measurement artefact as sole explanation,"NOT SUPPORTED FOR H001/H004, but measurement limitations remain",the hotspot spatial contrast survives coherence-band matching; the coherence-velocity association's origin is nonetheless unresolved

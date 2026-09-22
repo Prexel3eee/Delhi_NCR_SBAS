@@ -1,0 +1,214 @@
+{
+  "freeze_version": "final_evidence_v1",
+  "freeze_id": "db329cf47f4bef92a020056e608decbf95644463f8148570478128d2861c9e88",
+  "created_utc": "2026-09-22T18:49:38.941327+00:00",
+  "upstream_freezes": [
+    {
+      "freeze": "v1",
+      "path": "freeze/v1/FREEZE_v1.json",
+      "freeze_id": "cf2bdbfd4fa722dd0df9608afba13bf7cd9361a0897dea14ea70e724c8b1924d",
+      "status": "present",
+      "sha256": "c3e8f676a3e240f7f08b6b0a1896f7a5453744957cba43c29cd6ddeb5be0172f"
+    },
+    {
+      "freeze": "mintpy_input_v1",
+      "path": "freeze/mintpy_input_v1/FREEZE.json",
+      "freeze_id": "0cbe4c4f38b8a20f38b2cb71d135ec803f5e88797a6dbca2af8e393aea8261cf",
+      "status": "present",
+      "sha256": "bcc4389693dad6b893984d3bd2ddbd6e122bd8fcfcd599af4854070fb9958a77"
+    },
+    {
+      "freeze": "product_v1",
+      "path": "freeze/product_v1/FREEZE.json",
+      "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+      "status": "present",
+      "sha256": "9338fa80c3553ef89925a997d681b2195fb5107454a1136f662d878ab847012f"
+    },
+    {
+      "freeze": "phase1_observations",
+      "path": "freeze/phase1_observations/OBSERVATIONS.json",
+      "freeze_id": "122781a4a81bd49eb4781c7682cff7b378c97e593fe7d7ed1dd7994b387bede7",
+      "status": "present",
+      "sha256": "84dda429c48fcf9d2b15fc77dad77141ad45203e2744ab059c4d7dd138282bd9"
+    },
+    {
+      "freeze": "descending_network_v1",
+      "path": "freeze/descending_network_v1/FREEZE.json",
+      "freeze_id": "8f9eee9a6bdead7a6c8a80e45a32c8dfd7fd0c7b005fadadb342c486e827e93c",
+      "status": "present",
+      "sha256": "368a03bdb24e6e53f3dc74da3f3ccea64cd14eb01779f32716bdcc3eed620faa"
+    },
+    {
+      "freeze": "descending_raw_v1",
+      "path": "freeze/descending_raw_v1/FREEZE.json",
+      "freeze_id": "acdb209f443732f4f7c5f7f3f624fd63db1d7ad1c85b62bcd963ae5297130c26",
+      "status": "present",
+      "sha256": "6475fe349cb947da1acb1f9e0ada04eb092651c0b1660d88668d8d3451c78426"
+    },
+    {
+      "freeze": "phase2a_results",
+      "path": "freeze/phase2a_results/FREEZE.json",
+      "freeze_id": "09017dc3895f4c66ad68004934a634bf3ff22efe4a26ab2a2f5690b12b266126",
+      "status": "present",
+      "sha256": "952e516c5002dc346e8de4cae42d9c02254da846554015fa49dd5675a4a2f152"
+    },
+    {
+      "freeze": "phase2b_closeout_v1",
+      "path": "freeze/phase2b_closeout_v1/FREEZE.json",
+      "freeze_id": "16d36635a06d30182e0e5c8485c3f156bdd310e45429b2fe2b8d4105569d3891",
+      "status": "present",
+      "sha256": "2732f8c786ba20bedd7ed67174f3916694d06d046caeb2cc9836cf5e05723c28"
+    },
+    {
+      "freeze": "descending_v2_candidate",
+      "path": "freeze/descending_v2_candidate/FREEZE.json",
+      "freeze_id": "ba99df90a6f15b3aaaf90fe3042511ddef3e0f9864f03aab122a541b5d3d6d13",
+      "status": "present",
+      "sha256": "008892c95bfcfdef64e5bf01c0b0a4f6d3370204e77b82b0454095f46a4aed29"
+    },
+    {
+      "freeze": "cgwb_seasonal_v1",
+      "path": "freeze/cgwb_seasonal_v1/FREEZE.json",
+      "freeze_id": "db0636879f7566f9681be3b704f1ecef19270ca4363903ae4f4f54643528453e",
+      "status": "present",
+      "sha256": "8ff31274a40ab7141b471356a231192db6ea998bbcba59c497550a8ba078bcd8"
+    },
+    {
+      "freeze": "nwdp_telemetry_v1",
+      "path": "freeze/nwdp_telemetry_v1/FREEZE.json",
+      "freeze_id": "731040b8ebdf56e20832de2ef32c4b5056372a409c8039e298ee69179de2b4b5",
+      "status": "present",
+      "sha256": "0289d9eefe63acc5885113a2cc2493e27f276c8a814676221b3beb681a11ff86"
+    },
+    {
+      "freeze": "groundwater_protocol_v1",
+      "path": "freeze/groundwater_protocol_v1/GROUNDWATER_PROTOCOL_V1.json",
+      "freeze_id": "152fa51ca8b656d1bfab8b0e02660b486ab1f1049c81e00ac85c4fed576d445e",
+      "status": "present",
+      "sha256": "c5116e1ff7877aae98aca3527edaa2766ec8e0b9b6b52f5cd6cfac8bafca0c5a"
+    },
+    {
+      "freeze": "verifier:verify_freeze.py",
+      "status": "exit 0"
+    },
+    {
+      "freeze": "verifier:verify_mintpy_input_v1.py",
+      "status": "exit 0"
+    },
+    {
+      "freeze": "verifier:verify_product_v1.py",
+      "status": "exit 0"
+    },
+    {
+      "freeze": "verifier:verify_phase1_observations.py",
+      "status": "exit 0"
+    }
+  ],
+  "artefacts": [
+    {
+      "path": "qc/sci/phase4/final_hotspot_table.csv",
+      "sha256": "45647b730690b27e6ab3334908ca6ce0cf3b52df44f31ecc4109b32c4b480018",
+      "bytes": 1612
+    },
+    {
+      "path": "qc/sci/phase4/final_evidence_matrix.csv",
+      "sha256": "b622fe2abae16406d1a11136d1bcffd02236f8c4b6e72a71ae1f470dc763d00e",
+      "bytes": 1338
+    },
+    {
+      "path": "qc/sci/phase4/uncertainty_table.json",
+      "sha256": "771d4be0bed168eb0f990e1804560add2e62d1fb01e336d015b94d7a7ab781d1",
+      "bytes": 1519
+    },
+    {
+      "path": "qc/sci/PHASE_IIIA_CAUSAL_EVIDENCE_REPORT.md",
+      "sha256": "1a18a2005f58295753ade9010b15ba9d3807f69863bc9dc3f07cf49f63552a1d",
+      "bytes": 12072
+    },
+    {
+      "path": "qc/sci/PHASE_IIIA1_GROUNDWATER_RECOVERY_GATE.md",
+      "sha256": "0385383d3d0966a0f677e28c62ebd4950e459bc4c43405b6f12b38d280604d88",
+      "bytes": 5977
+    },
+    {
+      "path": "qc/sci/PHASE_IIIA2_DWLR_ACQUISITION_AUDIT.md",
+      "sha256": "405ddb3b0bf8e73b92922c9760f928fe829c2340937b3a1845140895513a219d",
+      "bytes": 10043
+    },
+    {
+      "path": "qc/sci/PHASE_IIIA3_NWDP_RECOVERY_AUDIT.md",
+      "sha256": "f110b6747defd4de0798da5757fd6d0e1b2554a1087bbd5866bf14786d6faac1",
+      "bytes": 8844
+    },
+    {
+      "path": "qc/sci/GROUNDWATER_TEMPORAL_ANALYSIS_REPORT.md",
+      "sha256": "c4e62b85b9e3e3fa03827ca8f7984d1e404de9b73309892e97bd379eb2f7c370",
+      "bytes": 10293
+    },
+    {
+      "path": "qc/sci/PHASE_IIIB_GEOLOGICAL_EVIDENCE_REPORT.md",
+      "sha256": "fdb480119056c3e597426fce71682deb7f00bf881e8ab82f359d86483c3c4e4a",
+      "bytes": 9179
+    },
+    {
+      "path": "qc/sci/PHASE_IIIC_URBAN_EVIDENCE_REPORT.md",
+      "sha256": "0e9ad41b9cb73b83f3b84e3889d9a06e76834a1990655fdbd73889caff7fa120",
+      "bytes": 9278
+    },
+    {
+      "path": "qc/sci/PHASE_IIA_GEODETIC_VALIDATION_REPORT.md",
+      "sha256": "47746d6e839458a972991646c365acbe63281112f0e2fe1c7d1dac1e1162f079",
+      "bytes": 17884
+    },
+    {
+      "path": "qc/sci/PHASE_IIB_DESCENDING_RELIABILITY_REPORT.md",
+      "sha256": "9017aa434e9e07aca32e6d933fe13a2b5830d487af0be5d0c5861e2f210523eb",
+      "bytes": 15502
+    },
+    {
+      "path": "qc/sci/PHASE_IIC_HOTSPOT_RECONCILIATION_REPORT.md",
+      "sha256": "934ea6f1b345e802c0573f9cba6e195561fb64471a14f645dc7d8562e7f8d994",
+      "bytes": 11466
+    },
+    {
+      "path": "qc/sci/PHASE1_REPORT.md",
+      "sha256": "086460400378efa07d9b7a3ec5152d5cf82ae9982b021dbe9dfe91186df99f15",
+      "bytes": 16148
+    },
+    {
+      "path": "qc/sci/phase2b/revalidation_v2.json",
+      "sha256": "21c823e0e07e4b449b9a5470869a6a94c65d8ad864782078852c3fdb1fafc978",
+      "bytes": 4055
+    },
+    {
+      "path": "qc/sci/phase3/groundwater_analysis.json",
+      "sha256": "52db89534f71cf1a9f9622b5210f96520e95fcbbae469a10213a17160e926368",
+      "bytes": 9818
+    },
+    {
+      "path": "qc/sci/phase3/geology_analysis.json",
+      "sha256": "a20804b558477032c880e9b3b504092096182a9b4f0eaf57a3942dcc52870fb8",
+      "bytes": 9200
+    },
+    {
+      "path": "qc/sci/phase3/urban_analysis.json",
+      "sha256": "5dda081001e2ca8ba642b8b29fde3a6cfd827c02bc3914643ca8ebe2eef0a293",
+      "bytes": 6287
+    }
+  ],
+  "principal_conclusion": "NO TESTED MECHANISM ADEQUATELY EXPLAINS THE SELECTIVE, INDEPENDENTLY SUPPORTED H001/H004 DEFORMATION.",
+  "not_claimed": [
+    "absolute ground velocity",
+    "pure vertical deformation",
+    "full 3-D displacement",
+    "validated total deformation extent",
+    "groundwater-induced compaction",
+    "geological control at aquifer depth",
+    "urban-loading deformation",
+    "infrastructure-induced deformation",
+    "causal explanation for H001/H004",
+    "physical interpretation of H005",
+    "independently reproduced H001/H004 displacement histories"
+  ],
+  "no_new_dataset_introduced": true
+}

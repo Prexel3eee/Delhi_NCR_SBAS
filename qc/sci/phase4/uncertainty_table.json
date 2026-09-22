@@ -1,0 +1,37 @@
+{
+  "measurement_statistical": {
+    "formal_velocity_uncertainty_mm_per_yr": {
+      "ascending_median": 0.866,
+      "descending_d2_median": "see Phase II-B"
+    },
+    "temporal_coherence": {
+      "ascending_p50": 0.757,
+      "descending_d2_p50": 0.4376
+    },
+    "note": "the formal fit uncertainty is NOT the error budget"
+  },
+  "reference_systematic": {
+    "zero_level_range_mm_per_yr": 4.78,
+    "reference_candidate_sd_mm_per_yr": 1.716,
+    "affects": "ABSOLUTE offset only; spatial gradients and hotspot contrast are invariant to the choice",
+    "inc007_offset_mm_per_yr": 0.1362
+  },
+  "processing_sensitivity": {
+    "era5_minus_raw_rms_mm_per_yr": 0.521,
+    "era5_dem_minus_raw_rms_mm_per_yr": 1.036,
+    "unwrap_correction": "changed the descending product materially (7/7 internal metrics) but is NOT applicable to the authoritative ascending product"
+  },
+  "cross_geometry": {
+    "global_pearson_d0": 0.1752,
+    "global_pearson_d2": 0.3626,
+    "per_hotspot": "H001 and H004 agree at the rate level; H002/H003 do not reproduce; H005 contradicts"
+  },
+  "temporal_non_stationarity": {
+    "split_half_difference_range_mm_per_yr": [
+      10.44,
+      20.24
+    ],
+    "note": "the dominant uncertainty in any single quoted rate; larger than every statistical interval"
+  },
+  "combination_policy": "These are NOT combined into a single +/- value. They are different kinds of quantity (statistical, systematic, sensitivity, structural) and no valid probabilistic model justifies summing them."
+}
