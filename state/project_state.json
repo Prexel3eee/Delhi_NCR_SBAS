@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T03:50:00Z",
-  "phase": "PRODUCTION_CORPUS_CLEAN_MINTPY_PREP_IN_PROGRESS",
-  "next_phase": "MINTPY_LOAD_DATA_THEN_INVERSION",
+  "updated_utc": "2026-09-22T06:25:00Z",
+  "phase": "PRODUCTION_COMPLETE_MINTPY_LOADED_AWAITING_INVERSION",
+  "next_phase": "MINTPY_TIME_SERIES_INVERSION",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,8 +139,8 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "MintPy production preparation in progress (clip 336x7 layers, prep_hyp3, load_data).",
-    "Then staged inversion: load -> network check vs the 336-pair manifest -> raw time series.",
+    "Stage 4 onwards: reference-area selection, network QC, atmospheric/residual corrections.",
+    "Run the SBAS inversion to produce LOS displacement, velocity and QC layers.",
     "Rotate the Earthdata credentials when convenient (~/.netrc)."
   ],
   "v1_freeze": {
@@ -309,8 +309,9 @@
     }
   },
   "mintpy_production": {
-    "status": "preparation_in_progress",
-    "scope": "production",
+    "status": "ingestion_verified",
+    "products_clipped": 336,
+    "rasters_clipped": 2352,
     "common_overlap_bounds": [
       647720.0,
       3129040.0,
@@ -321,9 +322,38 @@
       117560.0,
       96280.0
     ],
-    "crs": "EPSG:32643",
+    "target_grid_px": [
+      2939,
+      2407
+    ],
     "pixel_size_m": 40,
+    "crs": "EPSG:32643",
     "aoi_fully_inside_common_overlap": true,
-    "note": "products are NOT on identical grids (extents vary by up to ~2 km); all layers are clipped onto one shared target grid"
+    "prep_hyp3_exit": 0,
+    "rsc_files": 2352,
+    "load_data_exit": 0,
+    "ifgram_stack": "mintpy/production_work/inputs/ifgramStack.h5",
+    "interferograms_loaded": 336,
+    "acquisition_dates_loaded": 119,
+    "unwrap_phase_shape": [
+      336,
+      2407,
+      2939
+    ],
+    "network_reconciliation": {
+      "mintpy_pairs": 336,
+      "manifest_pairs": 336,
+      "identical_pair_sets": true,
+      "mintpy_dates": 119,
+      "accepted_acquisitions": 119,
+      "identical_date_sets": true,
+      "excluded_2025_05_18_absent": true,
+      "bperp_all_finite": true,
+      "bperp_range_m": [
+        -247.8,
+        235.3
+      ]
+    },
+    "note": "MintPy stores dates as YYYYMMDD; manifests use YYYY-MM-DD. Normalising the format is required before comparing the loaded network to the manifest."
   }
 }
