@@ -1,0 +1,6 @@
+hotspot_id,area_km2,n_pixels_x,los_velocity_field_median_mm_per_yr,los_rate_from_series_mm_per_yr,series_residual_rms_mm,rate_first_half_mm_per_yr,rate_second_half_mm_per_yr,split_half_difference_mm_per_yr,epoch_bootstrap_p2_5_mm_per_yr,epoch_bootstrap_p97_5_mm_per_yr,epoch_bootstrap_width_mm_per_yr,temporal_coherence_median,formal_velocity_std_median_mm_per_yr,n_pixels_y,field_median_mm_per_yr,pixel_bootstrap_p2_5_mm_per_yr,pixel_bootstrap_p97_5_mm_per_yr,field_iqr_mm_per_yr,formal_std_median_mm_per_yr
+H001,5.5904,3494,-30.95,-30.495,11.896,-21.594,-40.569,-18.975,-32.071,-28.725,3.345,0.9255,0.9594,3494,-30.95,-32.252,-29.838,36.121,0.9594
+H002,12.8256,8016,-13.586,-13.594,15.321,-16.599,0.435,17.034,-15.591,-11.29,4.301,0.8634,1.2768,8016,-13.586,-13.694,-13.504,3.983,1.2768
+H003,2.2544,1409,-12.867,-12.921,15.256,-14.981,1.276,16.257,-14.966,-10.862,4.104,0.8604,1.2506,1409,-12.867,-13.019,-12.701,3.509,1.2506
+H004,1.072,670,-14.31,-14.112,8.96,-9.629,-20.064,-10.434,-15.453,-12.855,2.599,0.963,0.7268,670,-14.31,-14.664,-14.017,5.274,0.7268
+H005,0.8352,522,-14.209,-14.361,17.301,-19.333,0.912,20.245,-16.412,-12.221,4.19,0.8653,1.4038,522,-14.209,-14.645,-13.896,4.909,1.4038

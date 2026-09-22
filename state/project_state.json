@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T09:33:47Z",
-  "phase": "V1_PRODUCT_FROZEN",
-  "next_phase": "V1_DELIVERED",
+  "updated_utc": "2026-09-22T10:18:24Z",
+  "phase": "PHASE_I_CHARACTERIZATION_COMPLETE",
+  "next_phase": "INTERPRETATION_ATTRIBUTION",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,9 +139,10 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "No independent in-AOI geodetic reference exists for absolute validation; nearest adequately sampled GNSS station is 210 km away.",
-    "Absolute reference carries a documented 4.78 mm/yr systematic (sd 1.72) from reference selection.",
-    "Tropospheric delay is not corrected in the frozen v1 branch; ERA5 was tested and did not improve the product."
+    "Coherence-velocity relationship must be adjudicated before any total-area or aggregate-volume statement.",
+    "North/south anti-correlated oscillation needs independent data before interpretation.",
+    "Reference-pixel mismatch (INC-007) to be fixed at the next product revision.",
+    "No independent in-AOI geodetic reference; absolute LOS uncertain at ~5 mm/yr."
   ],
   "v1_freeze": {
     "frozen": true,
@@ -155,7 +156,7 @@
   },
   "regression_tests": {
     "path": "tests/",
-    "count": 60,
+    "count": 74,
     "covers": [
       "ASF/CMR silent failure modes (13)",
       "v1 freeze invariants (7)",
@@ -163,10 +164,11 @@
       "pilot retrieval (11)",
       "production retrieval (9)",
       "MintPy prep selection (5)",
-      "correction validation, GNSS windowing and product-freeze integrity (17)"
+      "correction validation, GNSS windowing and product-freeze integrity (17)",
+      "Phase I tier assignment, date round-trip, INC-007 reference, grading (14)"
     ],
-    "delhi_mintpy": "60 passed, 1 skipped",
-    "delhi_hyp3": "47 passed, 2 skipped"
+    "delhi_mintpy": "74 passed, 1 skipped",
+    "delhi_hyp3": "47 passed, 3 skipped"
   },
   "environments": {
     "search_submission": {
@@ -241,6 +243,13 @@
       "detail": "The first GNSS pass compared each station's full-record vertical trend and reported the co-located LCK3/LCK4 pair disagreeing by ~27 mm/yr, which was read as evidence of step contamination and used to argue GNSS was unusable. LCK3 ends 2023-12 and LCK4 ends 2026-09, so their full-record trends are not comparable. Evaluated over their 745 shared epochs they agree to 0.767 mm/yr.",
       "impact": "The conclusion (GNSS cannot discriminate) survived, but for a different and more honest reason: coverage, not measurement quality. An earlier 'GNSS REFERENCE AVAILABLE' verdict based on a stations-passing-threshold count was also superseded.",
       "fix": "scripts/29_gnss_verdict.py computes every rate difference on the maximal shared window and reports the co-location test against that window; tests/test_correction_validation.py pins the windowing requirement."
+    },
+    {
+      "id": "INC-007",
+      "title": "Frozen product reference pixel differs from the frozen decision",
+      "detail": "config/mintpy_baseline_raw.txt sets only mintpy.reference.minCoherence, not mintpy.reference.yx, so MintPy auto-selected (1384,1451). The frozen decision and the ERA5/DEM configs specify (1378,1426). Verified by finding the pixel whose timeseries is identically zero across all 119 dates.",
+      "impact": "RAW-336 carries a constant +0.1362 mm/yr offset relative to the frozen decision. Spatial gradients and hotspot contrast are unaffected. The published RAW-vs-ERA5 branch comparison carried the same constant; reference-aligning moves its median from +0.013 to +0.149 mm/yr and its RMS from 0.521 to 0.549 mm/yr, changing no verdict.",
+      "fix": "Documented in Phase I (report section 0.1) and pinned by tests/test_phase1_characterization.py. Fix at the next product revision by setting mintpy.reference.yx explicitly in every branch config. The frozen product was NOT modified."
     }
   ],
   "pilot_metrics": {
@@ -588,5 +597,198 @@
       "network unwrap correction (bridge + phase closure)"
     ],
     "scope_caveat": "v1 deformation solution, not a calibrated geodetic product. Not troposphere-corrected in the frozen branch; absolute reference carries the 4.78 mm/yr systematic. Validation against an independent in-AOI geodetic reference was not possible."
+  },
+  "phase1_characterization": {
+    "status": "COMPLETE",
+    "source_freeze": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+    "solution_modified": false,
+    "freeze_verified_after": {
+      "verify_freeze": 0,
+      "verify_mintpy_input_v1": 0,
+      "verify_product_v1": 0,
+      "warnings": 0
+    },
+    "report": "qc/sci/PHASE1_REPORT.md",
+    "products": "products/product_v1/ (7 GeoTIFFs)",
+    "rasters": [
+      "los_velocity_mm_per_yr.tif",
+      "los_velocity_uncertainty_mm_per_yr.tif",
+      "los_displacement_mm.tif",
+      "temporal_coherence.tif",
+      "elevation_m.tif",
+      "los_residue_rad.tif",
+      "quality_mask.tif"
+    ],
+    "detection": {
+      "absolute_velocity_threshold_mm_per_yr": 10.0,
+      "coherence_min": 0.8,
+      "min_area_km2": 0.4,
+      "connectivity": 8
+    },
+    "primary_mask_pixels": 541511,
+    "aoi": {
+      "pixels": 1226497,
+      "land": 1203788,
+      "water_fraction": 0.0185
+    },
+    "los_velocity_primary_mask_mm_per_yr": {
+      "median": -0.73,
+      "mean": -1.6,
+      "std": 5.34,
+      "p01": -17.37,
+      "p05": -10.18,
+      "p25": -3.32,
+      "p75": 1.26,
+      "p95": 4.17,
+      "p99": 6.82,
+      "min": -87.39,
+      "max": 25.86
+    },
+    "hotspots": {
+      "count": 5,
+      "total_area_km2": 22.6,
+      "direction": "all away_from_satellite",
+      "H001": {
+        "area_km2": 5.59,
+        "los_mm_per_yr": -30.95,
+        "peak": -87.39,
+        "lon": 77.0813,
+        "lat": 28.5212,
+        "coherence": 0.925,
+        "persistence": "14/14",
+        "grade": "A"
+      },
+      "H002": {
+        "area_km2": 12.83,
+        "los_mm_per_yr": -13.59,
+        "lon": 77.0735,
+        "lat": 28.8152,
+        "coherence": 0.863,
+        "persistence": "11/14",
+        "grade": "B"
+      },
+      "H003": {
+        "area_km2": 2.25,
+        "los_mm_per_yr": -12.87,
+        "lon": 77.081,
+        "lat": 28.8033,
+        "coherence": 0.86,
+        "persistence": "10/14",
+        "grade": "B"
+      },
+      "H004": {
+        "area_km2": 1.07,
+        "los_mm_per_yr": -14.31,
+        "lon": 77.0554,
+        "lat": 28.5333,
+        "coherence": 0.963,
+        "persistence": "10/14",
+        "grade": "B"
+      },
+      "H005": {
+        "area_km2": 0.84,
+        "los_mm_per_yr": -14.21,
+        "lon": 77.1735,
+        "lat": 28.8249,
+        "coherence": 0.865,
+        "persistence": "8/14",
+        "grade": "C"
+      }
+    },
+    "extent_is_mask_dependent": {
+      "area_km2_at_threshold_10": {
+        "coherence_0.70": 49.5,
+        "coherence_0.80": 22.6,
+        "coherence_0.90": 4.5
+      },
+      "area_km2_at_threshold_5": {
+        "coherence_0.70": 164.1,
+        "coherence_0.80": 74.6,
+        "coherence_0.90": 12.0
+      },
+      "coherence_velocity_relationship": {
+        "coherence_0.50_0.55_median_mm_per_yr": -17.06,
+        "coherence_0.95_1.00_median_mm_per_yr": -0.29,
+        "fraction_below_minus10_low_band": 0.724,
+        "fraction_below_minus10_high_band": 0.0082,
+        "status": "UNRESOLVED - real faster deformation in low-coherence terrain vs coherent bias; requires independent data"
+      }
+    },
+    "temporal_findings": {
+      "not_stationary": true,
+      "split_half_rate_differences_mm_per_yr": {
+        "H001": -18.98,
+        "H002": 17.03,
+        "H003": 16.26,
+        "H004": -10.44,
+        "H005": 20.24
+      },
+      "northern_hotspots_plateau_in_second_half": [
+        "H002",
+        "H003",
+        "H005"
+      ],
+      "southern_hotspots_accelerate": [
+        "H001",
+        "H004"
+      ],
+      "temporal_forms": {
+        "approximately_linear": 3,
+        "linear_with_seasonal": 2
+      }
+    },
+    "oscillation": {
+      "stable_control_amplitude_mm": 12.36,
+      "hotspot_amplitude_ratio_range": [
+        2.75,
+        5.52
+      ],
+      "max_correlation_with_control": 0.44,
+      "predominantly_common_mode": false,
+      "groups": {
+        "northern": {
+          "hotspots": [
+            "H002",
+            "H003",
+            "H005"
+          ],
+          "mutual_r": [
+            0.82,
+            0.99
+          ]
+        },
+        "southern": {
+          "hotspots": [
+            "H001",
+            "H004"
+          ],
+          "mutual_r": [
+            0.82,
+            0.82
+          ]
+        },
+        "between_groups_r": [
+          -0.46,
+          -0.34
+        ]
+      },
+      "stable_across_detrend_orders": true
+    },
+    "uncertainty": {
+      "formal_fit_mm_per_yr": 0.866,
+      "short_wavelength_mm_per_yr": 1.19,
+      "common_mode_epoch_scatter_mm": 3.532,
+      "reference_systematic_mm_per_yr": 4.78,
+      "combined_relative_mm_per_yr": 1.47,
+      "combined_absolute_mm_per_yr": 5.0,
+      "dominant_term_in_a_quoted_rate": "non-stationarity of the signal (10-20 mm/yr), not measurement noise"
+    },
+    "not_established": [
+      "no mechanism",
+      "no vertical rate (LOS projection)",
+      "no absolute rate (reference-systematic bound)",
+      "no validated total extent"
+    ]
   }
 }

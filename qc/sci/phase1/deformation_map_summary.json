@@ -1,0 +1,164 @@
+{
+  "generated_utc": "2026-09-22T10:13:49.032958+00:00",
+  "source": {
+    "freeze": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37",
+    "principal_branch": "RAW-336",
+    "velocity_file": "mintpy/baseline_raw_work/velocity.h5",
+    "timeseries_file": "mintpy/baseline_raw_work/timeseries.h5"
+  },
+  "grid": {
+    "length": 2407,
+    "width": 2939,
+    "x_first": 647720.0,
+    "y_first": 3225320.0,
+    "x_step": 40.0,
+    "y_step": -40.0,
+    "epsg": 32643
+  },
+  "dates": {
+    "first": "20211006",
+    "last": "20250927",
+    "count": 119
+  },
+  "reference": {
+    "processing_ref_yx": [
+      1384,
+      1451
+    ],
+    "frozen_decision_yx": [
+      1378,
+      1426
+    ],
+    "mismatch": true,
+    "raw_velocity_at_frozen_pixel_mm_per_yr": 0.1362,
+    "note": "InSAR yields relative LOS values. Gradients are unaffected by this choice; the absolute offset is uncertain at the 4.78 mm/yr reference-selection systematic."
+  },
+  "counts": {
+    "aoi_pixels": 1226497,
+    "finite_in_aoi": 1226497,
+    "land_in_aoi": 1203788,
+    "water_in_aoi": 22709,
+    "land_fraction_of_aoi": 0.9815,
+    "water_fraction_of_aoi": 0.018515
+  },
+  "quality_tiers": {
+    "1": {
+      "threshold": 0.9,
+      "pixels": 349477
+    },
+    "2": {
+      "threshold": 0.8,
+      "pixels": 541511
+    },
+    "3": {
+      "threshold": 0.7,
+      "pixels": 675188
+    },
+    "4": {
+      "threshold": null,
+      "pixels": 1203788
+    }
+  },
+  "primary_tier": 2,
+  "primary_mask_pixels": 541511,
+  "noise_floor": {
+    "short_wavelength_robust_sigma_mm_per_yr": 1.1899,
+    "three_sigma_detection_limit_mm_per_yr": 3.5697,
+    "method": "3x3 boxcar high-pass over the primary mask; 1.4826*MAD"
+  },
+  "los_velocity_mm_per_yr_primary_mask": {
+    "n": 541511,
+    "median": -0.7256,
+    "mean": -1.5956,
+    "std": 5.3437,
+    "p01": -17.3675,
+    "p05": -10.1817,
+    "p25": -3.3187,
+    "p75": 1.2567,
+    "p95": 4.1746,
+    "p99": 6.8193,
+    "min": -87.3874,
+    "max": 25.8553
+  },
+  "los_velocity_mm_per_yr_all_land": {
+    "n": 1203788,
+    "median": -4.3997,
+    "mean": -8.9414,
+    "std": 12.5753,
+    "p01": -46.1801,
+    "p05": -34.3944,
+    "p25": -16.0457,
+    "p75": 0.0815,
+    "p95": 4.4531,
+    "p99": 9.5187,
+    "min": -94.756,
+    "max": 43.5435
+  },
+  "formal_uncertainty_mm_per_yr_primary_mask": {
+    "n": 541511,
+    "median": 0.8664,
+    "mean": 0.9012,
+    "std": 0.319,
+    "p01": 0.2532,
+    "p05": 0.4001,
+    "p25": 0.6712,
+    "p75": 1.1644,
+    "p95": 1.4071,
+    "p99": 1.5442,
+    "min": 0.0,
+    "max": 2.2415
+  },
+  "cumulative_displacement_mm_primary_mask": {
+    "n": 541511,
+    "median": -4.5262,
+    "mean": -6.6414,
+    "std": 20.6475,
+    "p01": -63.1258,
+    "p05": -36.8656,
+    "p25": -14.9921,
+    "p75": 5.0339,
+    "p95": 17.8495,
+    "p99": 26.5782,
+    "min": -350.8945,
+    "max": 88.206
+  },
+  "temporal_coherence_primary_mask": {
+    "n": 541511,
+    "median": 0.927,
+    "mean": 0.9176,
+    "std": 0.0545,
+    "p01": 0.8036,
+    "p05": 0.8173,
+    "p25": 0.8762,
+    "p75": 0.9634,
+    "p95": 0.9903,
+    "p99": 0.9932,
+    "min": 0.8,
+    "max": 1.0
+  },
+  "elevation_m_primary_mask": {
+    "n": 541511,
+    "median": 167.0,
+    "mean": 171.8743,
+    "std": 15.2851,
+    "p01": 154.0,
+    "p05": 157.0,
+    "p25": 162.0,
+    "p75": 176.0,
+    "p95": 209.0,
+    "p99": 222.0,
+    "min": 146.0,
+    "max": 254.0
+  },
+  "rasters": [
+    "los_velocity_mm_per_yr.tif",
+    "los_velocity_uncertainty_mm_per_yr.tif",
+    "los_displacement_mm.tif",
+    "temporal_coherence.tif",
+    "elevation_m.tif",
+    "los_residue_rad.tif",
+    "quality_mask.tif"
+  ],
+  "units_note": "All deformation values are LINE-OF-SIGHT and RELATIVE to the processing reference pixel."
+}

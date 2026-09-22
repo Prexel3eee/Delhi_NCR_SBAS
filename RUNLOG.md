@@ -1089,6 +1089,146 @@ delhi-hyp3     47 passed, 2 skipped
 
 ---
 
+## 2026-09-22 — Phase M (owner's PHASE I): final scientific results characterization
+
+Characterization only. The frozen `product_v1` solution was **not** modified: all three
+freeze verifiers exit 0 with 0 warnings after the phase, and the `freeze_id` is unchanged.
+
+### Provenance defect found (INC-007)
+
+`config/mintpy_baseline_raw.txt` sets only `mintpy.reference.minCoherence`, never
+`mintpy.reference.yx`, so MintPy **auto-selected** the reference at `(y=1384, x=1451)`.
+The frozen decision and the ERA5/DEM configs specify `(1378, 1426)`.
+
+Verified by finding the pixel whose `timeseries` is identically zero across all 119 dates:
+`(1384,1451)` is zero, `(1378,1426)` is not.
+
+**Impact:** the RAW product carries a constant **+0.1362 mm/yr** offset relative to the
+frozen decision. Re-basing shifts every pixel by the same constant, so **all spatial
+gradients and hotspot contrasts are unaffected** — the Phase I results below stand. The
+published RAW-vs-ERA5 branch comparison also carried that constant; reference-aligning
+moves its median from +0.013 to +0.149 mm/yr and its RMS from 0.521 to 0.549 mm/yr, which
+changes no verdict. Fix at the next product revision.
+
+### Deformation map (`scripts/31`)
+
+7 GeoTIFFs in `products/product_v1/` plus a 4-tier quality mask. AOI 1,226,497 px
+(98.15 % land, 1.85 % water), primary mask (temporal coherence ≥ 0.80) 541,511 px.
+
+```text
+LOS velocity (primary mask, mm/yr)
+  median -0.73   mean -1.60   std 5.34
+  p01 -17.37  p05 -10.18  p25 -3.32  p75 +1.26  p95 +4.17  p99 +6.82
+  min -87.39  max +25.86
+```
+
+Elevation spans only 146–256 m, which is why the DEM-residual correction had almost no
+topographic gradient to work with. Short-wavelength noise floor 1.19 mm/yr.
+
+### Hotspots (`scripts/32`–`33`)
+
+| ID | Area km² | Median LOS mm/yr | Peak mm/yr | Coherence | Longitude | Latitude | Grade |
+|---|---:|---:|---:|---:|---:|---:|---|
+| H001 | 5.59 | −30.95 | 87.4 | 0.925 | 77.0813 | 28.5212 | **A** |
+| H002 | 12.83 | −13.59 | 31.5 | 0.863 | 77.0735 | 28.8152 | B |
+| H003 | 2.25 | −12.87 | 29.8 | 0.860 | 77.0810 | 28.8033 | B |
+| H004 | 1.07 | −14.31 | 23.7 | 0.963 | 77.0554 | 28.5333 | B |
+| H005 | 0.84 | −14.21 | 26.1 | 0.865 | 77.1735 | 28.8249 | C |
+
+5 hotspots, 22.6 km², all in the **away-from-satellite** LOS sense. Cumulative LOS
+displacement over the record ranges from −44.5 mm (H005) to −120.7 mm (H001).
+
+### Extent is mask-dependent — a result, not a nuisance
+
+| \|v\| threshold | coh ≥ 0.70 | coh ≥ 0.80 | coh ≥ 0.90 |
+|---|---:|---:|---:|
+| 5 mm/yr | 164.1 | 74.6 | 12.0 |
+| 10 mm/yr | 49.5 | 22.6 | 4.5 |
+| 15 mm/yr | 12.8 | 5.1 | 3.2 |
+
+The AOI-wide coherence stratification is monotonic and steep:
+
+```text
+coherence 0.50-0.55   median -17.06 mm/yr   72.4 % of pixels beyond -10 mm/yr
+coherence 0.95-1.00   median  -0.29 mm/yr    0.8 % of pixels beyond -10 mm/yr
+```
+
+**A high-coherence mask selects against the deformation signal.** The conservative
+catalogue is therefore a *lower bound* on extent. Whether the low-coherence signal is real
+(faster deformation in built/vegetated terrain) or a coherent bias (unwrapping or
+atmosphere) is **not resolvable from these data**: the offset is ~14× the short-wavelength
+noise floor, so if it is an artefact it is a structured one, not scatter.
+
+### Temporal evolution — the signal is not stationary
+
+Every hotspot's rate differs between record halves, far beyond any statistical interval:
+
+| ID | First half mm/yr | Second half mm/yr | Difference |
+|---|---:|---:|---:|
+| H001 | −21.59 | −40.57 | −18.98 |
+| H002 | −16.60 | +0.43 | +17.03 |
+| H003 | −14.98 | +1.28 | +16.26 |
+| H004 | −9.63 | −20.06 | −10.44 |
+| H005 | −19.33 | +0.91 | +20.24 |
+
+The northern hotspots (H002/H003/H005) accumulate most displacement in the first half and
+then plateau; the southern ones (H001/H004) accelerate. **A single rate is a poor summary
+for any hotspot.**
+
+### Oscillations are localised in origin but regionally organised
+
+The stable-area control has a de-trended amplitude of 12.36 mm, so a real common-mode
+signal exists. Every hotspot oscillates 2.7–5.5× more and correlates only weakly with it
+(r ≤ 0.44) — so the oscillations are **not predominantly common-mode**. Cross-hotspot
+residuals split into two anti-correlated groups, and the grouping **survives a change from
+linear to quadratic de-trending**, so it reflects phase rather than long-term curvature:
+
+* Northern group — H002, H003, H005 (mutual r = +0.82 to +0.99)
+* Southern group — H001, H004 (mutual r = +0.82)
+* Between groups — r = −0.34 to −0.46
+
+A shared oscillation across hotspots ~30 km apart implies a regional spatial scale; the
+sign reversal implies a gradient in phase or sign. **Neither identifies a mechanism**, and
+no mechanism is claimed.
+
+### Persistence (`scripts/35`) and uncertainty (`scripts/34`)
+
+Across 14 mask scenarios (coherence 0.50–0.90, threshold 5–15 mm/yr, minimum area
+0.4–5.0 km²): H001 14/14, H002 11/14, H003 10/14, H004 10/14, H005 8/14.
+
+```text
+formal fit             0.87 mm/yr   averages down with pixels
+short-wavelength       1.19 mm/yr   averages down
+common mode            3.53 mm      does NOT average down
+reference systematic   4.78 mm/yr   does NOT average down
+  -> relative contrast supported at ~1.47 mm/yr
+  -> absolute LOS offset uncertain at ~5.00 mm/yr
+```
+
+The bootstrap intervals are narrow (sub-mm to a few mm/yr), yet split-half rates disagree
+by 10–20 mm/yr. **The dominant uncertainty in any quoted rate is non-stationarity of the
+signal itself, not measurement noise.**
+
+### Not established by the InSAR data alone
+
+No mechanism. No vertical rate (LOS is a projection; the vertical-equivalent column assumes
+purely vertical motion and no horizontal component was measured or excluded). No absolute
+rate. No validated total extent.
+
+### Tests
+
+`tests/test_phase1_characterization.py` adds 14 regression tests over four defect classes:
+quality-tier assignment (strictest must win; tier 0 must be excluded from the primary
+mask), the `YYYYMMDD` CSV round-trip, the INC-007 product reference (pinned by finding the
+identically-zero pixel), and the grading/persistence rules plus artefact self-consistency.
+
+```text
+delhi-mintpy   74 passed, 1 skipped
+delhi-hyp3     47 passed, 3 skipped
+```
+
+---
+
 ## Current status
 
 ```text
@@ -1105,17 +1245,29 @@ Phase I  MintPy production preparation         COMPLETE (336 ifgs / 119 dates lo
 Phase J  MintPy inversion and interpretation   COMPLETE (RAW-336 + 3 test branches)
 Phase K  correction validation                 COMPLETE (GNSS + 4 diagnostics; none promoted)
 Phase L  v1 deformation product frozen         COMPLETE (RAW-336, freeze_id 2a1304e3...)
+Phase M  results characterization (owner's     COMPLETE (5 hotspots, 22.6 km2, 1 grade A;
+         PHASE I)                                        freeze verified untouched)
 ```
 
-**RAW-336 is the authoritative v1 deformation solution.** All 336 interferograms are
-retained — nothing recovered or inserted 2025-05-18, and the weak 36-day and monsoon pairs
-are kept. ERA5, ERA5+DEM and network unwrap correction were each tested and are not applied.
-Spatial deramping remains disabled in the principal branch, as broad subsidence gradients
-may be genuine signal.
+**RAW-336 is the authoritative v1 deformation solution, and it is now characterized.** All
+336 interferograms are retained — nothing recovered or inserted 2025-05-18, and the weak
+36-day and monsoon pairs are kept. ERA5, ERA5+DEM and network unwrap correction were each
+tested and are not applied. Spatial deramping remains disabled in the principal branch, as
+broad subsidence gradients may be genuine signal.
 
-The v1 product carries two documented limitations: no tropospheric correction in the frozen
-branch, and a 4.78 mm/yr absolute-reference systematic. No independent in-AOI geodetic
-reference exists to bound it further.
+The characterization establishes five hotspots of relative LOS deformation, totalling
+22.6 km² at a conservative mask. It also establishes two things that constrain any later
+interpretation: the deformation is **not temporally stationary**, and the detected extent
+is **strongly mask-dependent** because coherence and velocity are systematically related.
+
+The v1 product carries three documented limitations: no tropospheric correction in the
+frozen branch, a 4.78 mm/yr absolute-reference systematic, and the INC-007 reference-pixel
+provenance mismatch (which affects the absolute offset only). No independent in-AOI
+geodetic reference exists to bound the absolute level further.
+
+**No causal mechanism is claimed anywhere in this phase.** Groundwater, tectonics,
+compaction, construction/metro loading, lithology and fault motion all remain untested
+hypotheses requiring independent datasets.
 
 
 

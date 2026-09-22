@@ -1,0 +1,205 @@
+{
+  "generated_utc": "2026-09-22T10:16:44.509363+00:00",
+  "source": {
+    "freeze": "product_v1",
+    "freeze_id": "2a1304e3521f1e176fba7e05814ae1e79ba5332d4be709c16ee17c9aefdedf37"
+  },
+  "scenarios": [
+    {
+      "name": "primary",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "strict_coh_0.90",
+      "coherence_min": 0.9,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "relaxed_coh_0.70",
+      "coherence_min": 0.7,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "relaxed_coh_0.60",
+      "coherence_min": 0.6,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "relaxed_coh_0.50",
+      "coherence_min": 0.5,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "no_coh_cut",
+      "coherence_min": 0.0,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "threshold_7.5",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 7.5,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "threshold_5",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 5.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "threshold_15",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 15.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "min_area_1.0",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 1.0
+    },
+    {
+      "name": "min_area_2.0",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 2.0
+    },
+    {
+      "name": "min_area_5.0",
+      "coherence_min": 0.8,
+      "threshold_mm_per_yr": 10.0,
+      "min_area_km2": 5.0
+    },
+    {
+      "name": "coh_0.70_thr_5",
+      "coherence_min": 0.7,
+      "threshold_mm_per_yr": 5.0,
+      "min_area_km2": 0.4
+    },
+    {
+      "name": "coh_0.90_thr_15",
+      "coherence_min": 0.9,
+      "threshold_mm_per_yr": 15.0,
+      "min_area_km2": 0.4
+    }
+  ],
+  "persistence": {
+    "H001": {
+      "scenarios_survived": 14,
+      "scenarios_total": 14,
+      "outcome": "robust"
+    },
+    "H002": {
+      "scenarios_survived": 11,
+      "scenarios_total": 14,
+      "outcome": "moderate"
+    },
+    "H003": {
+      "scenarios_survived": 10,
+      "scenarios_total": 14,
+      "outcome": "moderate"
+    },
+    "H004": {
+      "scenarios_survived": 10,
+      "scenarios_total": 14,
+      "outcome": "moderate"
+    },
+    "H005": {
+      "scenarios_survived": 8,
+      "scenarios_total": 14,
+      "outcome": "moderate"
+    }
+  },
+  "oscillation": {
+    "available": true,
+    "method": "remove a linear (and separately a quadratic) trend from each series, then correlate the residuals against an independent stable-area control and against each other",
+    "stable_control_amplitude_mm": 12.362,
+    "stable_control_amplitude_quadratic_mm": 12.64,
+    "per_hotspot": {
+      "H001": {
+        "detrended_amplitude_mm": 52.985,
+        "detrended_amplitude_quadratic_mm": 46.62,
+        "correlation_with_stable_control": 0.343,
+        "correlation_with_stable_control_quadratic": 0.2477,
+        "control_amplitude_mm": 12.362,
+        "control_amplitude_quadratic_mm": 12.64,
+        "amplitude_ratio_to_control": 4.286,
+        "amplitude_ratio_to_control_quadratic": 3.688
+      },
+      "H002": {
+        "detrended_amplitude_mm": 59.45,
+        "detrended_amplitude_quadratic_mm": 63.491,
+        "correlation_with_stable_control": 0.2605,
+        "correlation_with_stable_control_quadratic": 0.4008,
+        "control_amplitude_mm": 12.362,
+        "control_amplitude_quadratic_mm": 12.64,
+        "amplitude_ratio_to_control": 4.809,
+        "amplitude_ratio_to_control_quadratic": 5.023
+      },
+      "H003": {
+        "detrended_amplitude_mm": 60.762,
+        "detrended_amplitude_quadratic_mm": 66.919,
+        "correlation_with_stable_control": 0.2972,
+        "correlation_with_stable_control_quadratic": 0.4372,
+        "control_amplitude_mm": 12.362,
+        "control_amplitude_quadratic_mm": 12.64,
+        "amplitude_ratio_to_control": 4.915,
+        "amplitude_ratio_to_control_quadratic": 5.294
+      },
+      "H004": {
+        "detrended_amplitude_mm": 33.976,
+        "detrended_amplitude_quadratic_mm": 35.206,
+        "correlation_with_stable_control": 0.265,
+        "correlation_with_stable_control_quadratic": 0.1875,
+        "control_amplitude_mm": 12.362,
+        "control_amplitude_quadratic_mm": 12.64,
+        "amplitude_ratio_to_control": 2.748,
+        "amplitude_ratio_to_control_quadratic": 2.785
+      },
+      "H005": {
+        "detrended_amplitude_mm": 68.28,
+        "detrended_amplitude_quadratic_mm": 64.431,
+        "correlation_with_stable_control": 0.251,
+        "correlation_with_stable_control_quadratic": 0.3879,
+        "control_amplitude_mm": 12.362,
+        "control_amplitude_quadratic_mm": 12.64,
+        "amplitude_ratio_to_control": 5.523,
+        "amplitude_ratio_to_control_quadratic": 5.098
+      }
+    },
+    "cross_hotspot_correlation": {
+      "H001_vs_H002": -0.5342,
+      "H001_vs_H003": -0.4973,
+      "H001_vs_H004": 0.8398,
+      "H001_vs_H005": -0.5029,
+      "H002_vs_H003": 0.988,
+      "H002_vs_H004": -0.4112,
+      "H002_vs_H005": 0.8546,
+      "H003_vs_H004": -0.4019,
+      "H003_vs_H005": 0.8415,
+      "H004_vs_H005": -0.4419
+    },
+    "cross_hotspot_correlation_quadratic": {
+      "H001_vs_H002": -0.4618,
+      "H001_vs_H003": -0.4216,
+      "H001_vs_H004": 0.8221,
+      "H001_vs_H005": -0.4268,
+      "H002_vs_H003": 0.9866,
+      "H002_vs_H004": -0.344,
+      "H002_vs_H005": 0.8374,
+      "H003_vs_H004": -0.3355,
+      "H003_vs_H005": 0.8233,
+      "H004_vs_H005": -0.3792
+    },
+    "cross_hotspot_correlation_median": -0.4065,
+    "cross_hotspot_correlation_median_quadratic": -0.3397,
+    "interpretation": "A residual strongly correlated with the independently chosen stable area is common-mode: it moves the whole scene and is therefore not localised deformation. A residual confined to one hotspot is localised and requires a local explanation. The quadratic variant is the more specific seasonality test; if the grouping changes between the two, the linear correlation was partly measuring long-term shape rather than a shared oscillation."
+  }
+}
