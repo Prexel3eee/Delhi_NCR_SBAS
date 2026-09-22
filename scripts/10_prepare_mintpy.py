@@ -90,6 +90,15 @@ def configure_scope(scope: str) -> None:
         QC_DIR = PROJECT_ROOT / "qc" / "production"
         REPORT_STEM = "production"
         MASKED_ONLY = False  # every production product was submitted with the mask ON
+    elif scope == "descending":
+        # Phase II-A independent validation stack (path 136, IW1, K=4).
+        CLIP_DIR = MINTpy_DIR / "descending_clipped"
+        WORK_DIR = MINTpy_DIR / "descending_work"
+        TEMPLATE_PATH = MINTpy_DIR / "mintpy_descending.txt"
+        INVENTORY_PATH = MANIFEST_DIR / "descending" / "descending_product_inventory.csv"
+        QC_DIR = PROJECT_ROOT / "qc" / "descending"
+        REPORT_STEM = "descending"
+        MASKED_ONLY = False
     else:
         CLIP_DIR = MINTpy_DIR / "pilot_clipped"
         WORK_DIR = MINTpy_DIR / "pilot_work"
@@ -377,8 +386,10 @@ def main() -> int:
     QC_DIR.mkdir(parents=True, exist_ok=True)
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--scope", choices=("pilot", "production"), default="pilot",
-                        help="pilot (default) or the full 336-pair production corpus")
+    parser.add_argument("--scope", choices=("pilot", "production", "descending"),
+                        default="pilot",
+                        help="pilot (default), the 336-pair production corpus, or the "
+                             "Phase II-A descending validation stack")
     args = parser.parse_args()
     configure_scope(args.scope)
 

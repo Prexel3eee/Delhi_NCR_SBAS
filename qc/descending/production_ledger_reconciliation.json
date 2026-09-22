@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-09-22T11:14:59.984958+00:00",
+  "ledger_rows": 219,
+  "ledger_distinct_job_ids": 219,
+  "ledger_distinct_names": 219,
+  "remote_jobs": 219,
+  "in_ledger_not_remote": [],
+  "in_remote_not_ledger": [],
+  "duplicate_names": {},
+  "statuses": {
+    "SUCCEEDED": 219
+  },
+  "ledger_covers_remote": true,
+  "remote_covers_ledger": true
+}
