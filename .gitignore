@@ -20,3 +20,6 @@ __pycache__/
 mintpy/*_clipped/
 mintpy/*_work/
 mintpy/**/*.h5
+
+# mintpy_input_v1 small-file snapshot is tracked; the large stack is hash-pinned
+!freeze/mintpy_input_v1/**
