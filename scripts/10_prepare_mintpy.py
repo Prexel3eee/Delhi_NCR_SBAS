@@ -142,6 +142,11 @@ def select_products(inventory: pd.DataFrame) -> pd.DataFrame:
     In both scopes a duplicate job name keeps only one copy.
     """
     ok = inventory[inventory["download_ok"].fillna(False).astype(bool)].copy()
+    if "apply_water_mask" not in ok.columns:
+        # Tolerate an inventory that predates the column. The HyP3 job NAME
+        # already encodes the mask choice (the control carries a _nomask
+        # suffix), so derive it rather than failing on a schema mismatch.
+        ok["apply_water_mask"] = ~ok["job_name"].astype(str).str.endswith("_nomask")
     if MASKED_ONLY:
         ok = ok[ok["apply_water_mask"] == True]  # noqa: E712
     return (

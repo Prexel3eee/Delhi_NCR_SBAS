@@ -22,6 +22,8 @@ from pathlib import Path
 
 import pytest
 
+pytest.importorskip("hyp3_sdk", reason="script 13 imports hyp3_sdk at call time")
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = PROJECT_ROOT / "scripts" / "13_download_production.py"
 PREFIX = "delhi_ncr_sbas_a27_v1_prod"

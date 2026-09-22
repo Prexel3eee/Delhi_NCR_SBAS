@@ -191,6 +191,7 @@ def download_and_extract(job) -> tuple[dict, list[dict]]:
     record: dict = {
         "job_id": job.job_id, "job_name": job.name,
         "pair_id": job.name.replace(f"{JOB_NAME_PREFIX}_", ""),
+        "apply_water_mask": not job.name.endswith("_nomask"),
         "status": job.status_code,
         "downloaded_at": datetime.now(timezone.utc).isoformat(),
         "download_ok": False,
