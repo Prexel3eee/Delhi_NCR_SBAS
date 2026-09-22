@@ -176,3 +176,48 @@ def test_results_reproduce_every_frozen_evidence_state(submission, project_root)
     for state in evidence.evidence_states.values():
         assert state in manuscript
     assert "H005 was excluded from all causal-test samples" in manuscript
+
+
+def test_discussion_and_limitations_cover_approved_arguments(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    discussion_headings = [
+        "### 4.1 What H001/H004 reproduction establishes",
+        "### 4.2 Why rate support is not vertical or temporal validation",
+        "### 4.3 Negative controls as scientific evidence",
+        "### 4.4 H005 and the cost of unresolved contradiction",
+        "### 4.5 Comparison with prior Delhi-NCR studies",
+        "### 4.6 Why tested candidates fail causal selectivity",
+        "### 4.7 Remaining alternatives are not conclusions",
+        "### 4.8 Implications for urban InSAR inference",
+    ]
+    assert all(heading in manuscript for heading in discussion_headings)
+    assert manuscript.count("<!-- Claims: C") >= 8
+    for limitation in (
+        "Local geodetic reference",
+        "LOS projection",
+        "Partial descending coverage",
+        "Temporal mismatch",
+        "Coherence ambiguity",
+        "Aquifer-depth specificity",
+        "Construction chronology",
+        "H005 contradiction",
+    ):
+        assert f"**{limitation}.**" in manuscript
+
+
+def test_conclusion_is_supported_and_avoids_overclaiming(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    before, conclusion = manuscript.split("## 6. Conclusions", 1)
+    repeated_claims = [
+        "spatial and mean-rate level",
+        "H002 and H003 were not reproduced",
+        "H005 remained an unresolved cross-geometry contradiction",
+        "physical mechanism remains unresolved",
+    ]
+    assert all(claim in conclusion and claim in before for claim in repeated_claims)
+    for prohibited in (
+        "caused by groundwater",
+        "confirmed subsidence",
+        "validated vertical displacement",
+    ):
+        assert prohibited not in manuscript.lower()
