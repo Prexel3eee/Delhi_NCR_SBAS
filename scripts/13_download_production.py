@@ -73,28 +73,61 @@ def sha256_of(path: Path) -> str:
     return digest.hexdigest()
 
 
-def fetch_jobs(hyp3) -> list:
-    """Production multi-burst jobs. NOTE: state is read from status_code.
+class NetworkUnavailable(RuntimeError):
+    """The HyP3 API could not be reached after repeated attempts."""
 
-    `Job.succeeded` / `Job.failed` are methods, so they are always truthy when
-    used as attributes.
+
+def connect_hyp3(*, tries: int = 6, base_delay: int = 15):
+    """Construct an authenticated HyP3 client, retrying transient outages.
+
+    Authentication itself reaches ASF hosts (urs.earthdata.nasa.gov ->
+    cumulus.asf.alaska.edu), so a DNS outage raises *before* any job query runs.
+    That is what turned a transient outage into a hard crash on the first
+    retrieval attempt.
     """
-    try:
-        jobs = hyp3.find_jobs(job_type="INSAR_ISCE_MULTI_BURST")
-    except Exception as exc:  # noqa: BLE001
-        print(f"  WARNING: job_type query failed ({exc}); listing all jobs")
-        jobs = hyp3.find_jobs()
-    return [j for j in jobs if getattr(j, "name", None) and j.name.startswith(JOB_NAME_PREFIX)]
-
-
-def refresh(hyp3, jobs: list) -> list:
     import hyp3_sdk as sdk
 
-    try:
-        return list(hyp3.refresh(sdk.Batch(jobs)))
-    except Exception as exc:  # noqa: BLE001
-        print(f"  WARNING: refresh failed ({exc}); re-listing")
-        return fetch_jobs(hyp3)
+    last: Exception | None = None
+    for attempt in range(1, tries + 1):
+        try:
+            return sdk.HyP3()
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            if attempt < tries:
+                delay = min(base_delay * attempt, 120)
+                print(f"  connect failed (attempt {attempt}/{tries}): "
+                      f"{type(exc).__name__}; retrying in {delay}s")
+                time.sleep(delay)
+    raise NetworkUnavailable(f"could not authenticate: {type(last).__name__}: {last}")
+
+
+def fetch_jobs(hyp3, *, tries: int = 6, base_delay: int = 15) -> list:
+    """Production multi-burst jobs, with retries for transient network failure.
+
+    Two deliberate choices:
+
+    * State is read from `status_code`. `Job.succeeded` / `Job.failed` are
+      METHODS, so they are always truthy when used as attributes.
+    * The whole batch is listed with ONE call. `hyp3.refresh(Batch)` issues one
+      HTTP request PER JOB (336 requests per poll cycle here), which is both
+      slow and turns any transient DNS/network blip into a fatal error. A real
+      outage of that shape killed the first retrieval run part-way through.
+    """
+    last: Exception | None = None
+    for attempt in range(1, tries + 1):
+        for kwargs in ({"job_type": "INSAR_ISCE_MULTI_BURST"}, {}):
+            try:
+                jobs = hyp3.find_jobs(**kwargs)
+                return [j for j in jobs
+                        if getattr(j, "name", None) and j.name.startswith(JOB_NAME_PREFIX)]
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+        if attempt < tries:
+            delay = min(base_delay * attempt, 120)
+            print(f"  network error (attempt {attempt}/{tries}): "
+                  f"{type(last).__name__}; retrying in {delay}s")
+            time.sleep(delay)
+    raise NetworkUnavailable(f"{type(last).__name__}: {last}")
 
 
 def reconcile(hyp3, jobs: list) -> dict:
@@ -268,18 +301,36 @@ def main() -> int:
     parser.add_argument("--status", action="store_true")
     parser.add_argument("--interval", type=int, default=180)
     parser.add_argument("--max-wait", type=int, default=86400)
+    parser.add_argument("--max-outages", type=int, default=40,
+                        help="consecutive unreachable polls before giving up")
     args = parser.parse_args()
 
     for d in (MANIFEST_DIR, QC_DIR, ZIP_DIR, EXTRACT_DIR):
         d.mkdir(parents=True, exist_ok=True)
 
-    import hyp3_sdk as sdk
-
-    hyp3 = sdk.HyP3()
-    jobs = fetch_jobs(hyp3)
     print("=" * 88)
     print("PHASE H - PRODUCTION RETRIEVAL")
     print("=" * 88)
+
+    # Wait for connectivity rather than failing fast. The retrieval is fully
+    # resumable, so the correct behaviour during an ASF outage is to hold and
+    # pick up automatically when the API returns.
+    outage_count = 0
+    hyp3 = None
+    jobs: list = []
+    while True:
+        try:
+            hyp3 = connect_hyp3(tries=2, base_delay=10)
+            jobs = fetch_jobs(hyp3, tries=2)
+            break
+        except NetworkUnavailable as exc:
+            outage_count += 1
+            print(f"  OUTAGE {outage_count}/{args.max_outages}: {exc}")
+            if outage_count >= args.max_outages:
+                print("\nGiving up: ASF still unreachable. Progress is saved; re-run to resume.")
+                return 1
+            time.sleep(args.interval)
+
     print(f"\nproduction jobs on account: {len(jobs)}")
 
     rep = reconcile(hyp3, jobs)
@@ -302,6 +353,11 @@ def main() -> int:
     started = time.time()
     done = downloaded_ids()
     print(f"already downloaded: {len(done)}")
+
+    # A transient outage must not end the run: the retrieval is resumable, so we
+    # back off and keep trying. Only a long unbroken outage gives up.
+    consecutive_outages = 0
+    MAX_CONSECUTIVE_OUTAGES = args.max_outages
 
     while True:
         succeeded = [j for j in jobs if j.status_code == "SUCCEEDED"]
@@ -332,8 +388,24 @@ def main() -> int:
             print(f"\nTimed out with {len(pending)} pending.")
             break
         time.sleep(args.interval)
-        jobs = refresh(hyp3, jobs)
-        rep = reconcile(hyp3, jobs)
+        try:
+            jobs = fetch_jobs(hyp3)
+            rep = reconcile(hyp3, jobs)
+            consecutive_outages = 0
+        except NetworkUnavailable as exc:
+            consecutive_outages += 1
+            print(f"  OUTAGE {consecutive_outages}/{MAX_CONSECUTIVE_OUTAGES}: {exc}")
+            if consecutive_outages >= MAX_CONSECUTIVE_OUTAGES:
+                print("\nGiving up after repeated outages. Progress is saved; re-run to resume.")
+                break
+            # the session may have died too; rebuild it before the next cycle
+            try:
+                hyp3 = connect_hyp3(tries=2)
+                jobs = fetch_jobs(hyp3, tries=2)
+                rep = reconcile(hyp3, jobs)
+                consecutive_outages = 0
+            except NetworkUnavailable:
+                pass
 
     rep = reconcile(hyp3, jobs)
     inv = load_inventory()
