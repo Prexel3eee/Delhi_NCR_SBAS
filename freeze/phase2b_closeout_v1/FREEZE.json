@@ -1,0 +1,61 @@
+{
+  "freeze_version": "phase2b_closeout_v1",
+  "freeze_id": "16d36635a06d30182e0e5c8485c3f156bdd310e45429b2fe2b8d4105569d3891",
+  "created_utc": "2026-09-22T17:27:47.003347+00:00",
+  "descending_scientific_status": "CANDIDATE FOR REVALIDATION",
+  "d0_freeze_id": "acdb209f443732f4f7c5f7f3f624fd63db1d7ad1c85b62bcd963ae5297130c26",
+  "d1_verdict": "REJECTED (3/7 internal metrics; improved coherence by pixel selection while worsening robust scatter, high-pass energy and residual RMS)",
+  "d2_status": "EVALUATED",
+  "d3_verdict": "NOT MATERIAL (1/7 internal metrics; TEMPORAL_COHERENCE distribution identical to D0; descending failure is not tropospheric)",
+  "era5_coverage_gate": "PASSED by date identity at hour 01",
+  "protected": {
+    "H001": "PARTIALLY_SUPPORTED",
+    "H002": "NOT_RESOLVED",
+    "H003": "NOT_RESOLVED",
+    "H004": "NOT_RESOLVED",
+    "H005": "NOT_RESOLVED",
+    "coherence_velocity": "REPRODUCED ASSOCIATION",
+    "physical_origin": "UNRESOLVED",
+    "north_south_grouping": "NOT REPRODUCED",
+    "spatial_gradients": "NOT REPRODUCED",
+    "decomposition": "INVALID / UNPUBLISHED"
+  },
+  "no_causal_attribution": true,
+  "artefacts": [
+    {
+      "path": "qc/sci/PHASE_IIB_DESCENDING_RELIABILITY_REPORT.md",
+      "sha256": "2cf91bddee45f9160f5ec046475d8a0da16301233f65d4e3720d82bcc066676c",
+      "bytes": 8442
+    },
+    {
+      "path": "qc/sci/phase2b/era5_coverage_gate.json",
+      "sha256": "93902b9f020a345389ddfd6d34017d48ced97ee021b9de27a57adb28a15e5120",
+      "bytes": 4967
+    },
+    {
+      "path": "qc/sci/phase2b/closeout_evaluation.json",
+      "sha256": "973288a450a409406116f8f07b5a6043c274025010a5e40eb032d6bd8442dcdf",
+      "bytes": 8386
+    },
+    {
+      "path": "qc/sci/phase2b/branch_comparison.csv",
+      "sha256": "c84a5eb09102e59d27b17d3b200d1e338ed41dfffe8fd6b7e5ae9fea46605ba5",
+      "bytes": 2511
+    },
+    {
+      "path": "qc/sci/phase2b/diagnostics.json",
+      "sha256": "a6ccc3047f750736e4deeb4202f43c838191da22ab3511e9f5ae794140a6eca9",
+      "bytes": 12133
+    },
+    {
+      "path": "qc/sci/phase2b/robustness_edges.csv",
+      "sha256": "7cb23736bb79cc6342aa3f488baa8c24aea86ceffc17c208fe2836b8a59ffae9",
+      "bytes": 773
+    },
+    {
+      "path": "freeze/descending_raw_v1/FREEZE.json",
+      "sha256": "6475fe349cb947da1acb1f9e0ada04eb092651c0b1660d88668d8d3451c78426",
+      "bytes": 3380
+    }
+  ]
+}

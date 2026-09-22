@@ -1,0 +1,307 @@
+{
+  "generated_utc": "2026-09-22T17:27:28.172443+00:00",
+  "branches_evaluated": [
+    "D0_RAW",
+    "D1_CONNCOMP",
+    "D2_UNWRAP",
+    "D3_ERA5"
+  ],
+  "branches_skipped": {},
+  "branch_table": [
+    {
+      "branch": "descending_work",
+      "inverted_pixels": 4017547,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.2891,
+      "tc_p50": 0.4021,
+      "tc_p75": 0.4911,
+      "tc_ge_0.5": 882596,
+      "tc_ge_0.6": 76567,
+      "tc_ge_0.7": 11013,
+      "median_velocity_std": 5.2104,
+      "velocity_robust_scatter": 24.494,
+      "residual_rms": 0.5885,
+      "highpass_energy": 10.0747,
+      "common_pixels": 854004,
+      "cross_pearson": 0.1752,
+      "cross_spearman": 0.2068,
+      "cross_plane_detrended": 0.1269,
+      "descending_scatter_common": 29.248,
+      "stable_area_scatter": 29.728,
+      "resid_elevation_corr": -0.0357,
+      "hotspots": {
+        "H001": {
+          "n": 3494,
+          "velocity": -84.73,
+          "tc": 0.5011,
+          "velocity_std": 4.944
+        },
+        "H002": {
+          "n": 8015,
+          "velocity": -30.49,
+          "tc": 0.4727,
+          "velocity_std": 5.771
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -21.89,
+          "tc": 0.469,
+          "velocity_std": 5.796
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -44.18,
+          "tc": 0.4902,
+          "velocity_std": 5.479
+        },
+        "H005": {
+          "n": 522,
+          "velocity": -35.51,
+          "tc": 0.4945,
+          "velocity_std": 5.108
+        }
+      }
+    },
+    {
+      "branch": "descending_d1_conncomp_work",
+      "inverted_pixels": 1658035,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.4734,
+      "tc_p50": 0.5147,
+      "tc_p75": 0.5619,
+      "tc_ge_0.5": 981096,
+      "tc_ge_0.6": 214521,
+      "tc_ge_0.7": 37855,
+      "median_velocity_std": 5.212,
+      "velocity_robust_scatter": 37.244,
+      "residual_rms": 0.599,
+      "highpass_energy": 16.0239,
+      "common_pixels": 663999,
+      "cross_pearson": 0.2014,
+      "cross_spearman": 0.1781,
+      "cross_plane_detrended": 0.176,
+      "descending_scatter_common": 40.121,
+      "stable_area_scatter": 30.002,
+      "resid_elevation_corr": 0.0234,
+      "hotspots": {
+        "H001": {
+          "n": 3493,
+          "velocity": -85.64,
+          "tc": 0.5059,
+          "velocity_std": 4.936
+        },
+        "H002": {
+          "n": 8004,
+          "velocity": -30.01,
+          "tc": 0.4765,
+          "velocity_std": 5.809
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -21.4,
+          "tc": 0.4709,
+          "velocity_std": 5.788
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -44.19,
+          "tc": 0.4913,
+          "velocity_std": 5.485
+        },
+        "H005": {
+          "n": 521,
+          "velocity": -107.69,
+          "tc": 0.5309,
+          "velocity_std": 3.58
+        }
+      }
+    },
+    {
+      "branch": "descending_d2_unwrap_work",
+      "inverted_pixels": 4018774,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.2911,
+      "tc_p50": 0.4376,
+      "tc_p75": 0.8346,
+      "tc_ge_0.5": 1787340,
+      "tc_ge_0.6": 1542860,
+      "tc_ge_0.7": 1352660,
+      "median_velocity_std": 3.0703,
+      "velocity_robust_scatter": 24.434,
+      "residual_rms": 0.4569,
+      "highpass_energy": 5.916,
+      "common_pixels": 854004,
+      "cross_pearson": 0.3628,
+      "cross_spearman": 0.3465,
+      "cross_plane_detrended": 0.3461,
+      "descending_scatter_common": 23.842,
+      "stable_area_scatter": 5.516,
+      "resid_elevation_corr": -0.1945,
+      "hotspots": {
+        "H001": {
+          "n": 3494,
+          "velocity": -35.77,
+          "tc": 0.906,
+          "velocity_std": 1.767
+        },
+        "H002": {
+          "n": 8015,
+          "velocity": -0.91,
+          "tc": 0.8996,
+          "velocity_std": 1.621
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -0.5,
+          "tc": 0.8862,
+          "velocity_std": 1.569
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -12.22,
+          "tc": 0.9094,
+          "velocity_std": 1.797
+        },
+        "H005": {
+          "n": 522,
+          "velocity": 61.64,
+          "tc": 0.8507,
+          "velocity_std": 4.095
+        }
+      }
+    },
+    {
+      "branch": "descending_d3_era5_work",
+      "inverted_pixels": 4017547,
+      "reference_yx": [
+        394,
+        2149
+      ],
+      "tc_p25": 0.2891,
+      "tc_p50": 0.4021,
+      "tc_p75": 0.4911,
+      "tc_ge_0.5": 882596,
+      "tc_ge_0.6": 76567,
+      "tc_ge_0.7": 11013,
+      "median_velocity_std": 5.2773,
+      "velocity_robust_scatter": 24.44,
+      "residual_rms": 0.5959,
+      "highpass_energy": 10.0749,
+      "common_pixels": 854004,
+      "cross_pearson": 0.1724,
+      "cross_spearman": 0.203,
+      "cross_plane_detrended": 0.1274,
+      "descending_scatter_common": 29.209,
+      "stable_area_scatter": 29.691,
+      "resid_elevation_corr": -0.0124,
+      "hotspots": {
+        "H001": {
+          "n": 3494,
+          "velocity": -82.79,
+          "tc": 0.5011,
+          "velocity_std": 5.032
+        },
+        "H002": {
+          "n": 8015,
+          "velocity": -28.52,
+          "tc": 0.4727,
+          "velocity_std": 5.843
+        },
+        "H003": {
+          "n": 1408,
+          "velocity": -19.93,
+          "tc": 0.469,
+          "velocity_std": 5.894
+        },
+        "H004": {
+          "n": 670,
+          "velocity": -42.11,
+          "tc": 0.4902,
+          "velocity_std": 5.57
+        },
+        "H005": {
+          "n": 522,
+          "velocity": -33.91,
+          "tc": 0.4945,
+          "velocity_std": 5.179
+        }
+      }
+    }
+  ],
+  "stop_rule": {
+    "descending_d1_conncomp_work": {
+      "metrics_improved_vs_D0": 3,
+      "metrics_compared": 7,
+      "detail": {
+        "tc_p50": true,
+        "tc_ge_0.5": true,
+        "tc_ge_0.7": true,
+        "median_velocity_std": false,
+        "velocity_robust_scatter": false,
+        "highpass_energy": false,
+        "residual_rms": false
+      },
+      "materially_improved": false
+    },
+    "descending_d2_unwrap_work": {
+      "metrics_improved_vs_D0": 7,
+      "metrics_compared": 7,
+      "detail": {
+        "tc_p50": true,
+        "tc_ge_0.5": true,
+        "tc_ge_0.7": true,
+        "median_velocity_std": true,
+        "velocity_robust_scatter": true,
+        "highpass_energy": true,
+        "residual_rms": true
+      },
+      "materially_improved": true
+    },
+    "descending_d3_era5_work": {
+      "metrics_improved_vs_D0": 1,
+      "metrics_compared": 7,
+      "detail": {
+        "tc_p50": false,
+        "tc_ge_0.5": false,
+        "tc_ge_0.7": false,
+        "median_velocity_std": false,
+        "velocity_robust_scatter": true,
+        "highpass_energy": false,
+        "residual_rms": false
+      },
+      "materially_improved": false
+    }
+  },
+  "promoted": [
+    "descending_d2_unwrap_work"
+  ],
+  "descending_scientific_status": "CANDIDATE FOR REVALIDATION",
+  "procedure_amendment": "D2 was NOT EVALUATED. Connected-component fragmentation (81.33% of inverted pixels outside the retained set) was the dominant MEASURED issue and no closure-error evidence had justified an unwrap-correction branch. An unrun branch is recorded as NOT EVALUATED, never as rejected.",
+  "protected_conclusions": {
+    "H001": "PARTIALLY_SUPPORTED",
+    "H002": "NOT_RESOLVED",
+    "H003": "NOT_RESOLVED",
+    "H004": "NOT_RESOLVED",
+    "H005": "NOT_RESOLVED",
+    "coherence_velocity": "REPRODUCED ASSOCIATION",
+    "physical_origin": "UNRESOLVED",
+    "north_south_grouping": "NOT REPRODUCED",
+    "spatial_gradients": "NOT REPRODUCED",
+    "decomposition": "INVALID / UNPUBLISHED"
+  },
+  "disconnected_support_finding": {
+    "fraction_outside_connected_set": 0.8133,
+    "classification": "STRUCTURAL QUALITY PROBLEM IDENTIFIED; SIMPLE CONNECTED-COMPONENT MASKING NOT SUFFICIENT",
+    "not_inferred": "the disconnected pixels alone did NOT cause the descending failure - D1 masked them and the velocity field got worse"
+  },
+  "quality_conditioned_conclusion": "NO EVIDENCE THAT A SIMPLE QUALITY THRESHOLD RECOVERS THE ASCENDING SPATIAL FIELD (r rises only 0.107 -> 0.205). This is NOT a claim that TEMPORAL_COHERENCE is not a quality metric - that would be too broad."
+}

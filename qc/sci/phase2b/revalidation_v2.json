@@ -1,0 +1,189 @@
+{
+  "generated_utc": "2026-09-22T17:28:07.796966+00:00",
+  "source": "DESCENDING_PRODUCT_V2_CANDIDATE = mintpy/descending_d2_unwrap_work (bridging+phase_closure; no ERA5, no DEM residual, no deramp, no network change)",
+  "descending_reference_yx": [
+    394,
+    2149
+  ],
+  "geometry": {
+    "ascending_los_unit_ENU": [
+      0.61799,
+      0.13798,
+      0.77399
+    ],
+    "descending_v2_los_unit_ENU": [
+      -0.54212,
+      0.12122,
+      0.83151
+    ]
+  },
+  "agreement_v2": {
+    "n": 854321,
+    "pearson": 0.3626,
+    "spearman": 0.3464,
+    "plane_detrended": 0.3459,
+    "median_offset_mm_per_yr": 0.558,
+    "ascending_scatter": 10.635,
+    "descending_scatter": 23.85
+  },
+  "agreement_v1_phase2a": {
+    "pearson": 0.1752,
+    "spearman": 0.2068,
+    "plane_detrended": 0.1269,
+    "descending_scatter": 29.248
+  },
+  "improvement": {
+    "pearson": 0.1874,
+    "spearman": 0.1396,
+    "plane_detrended": 0.219
+  },
+  "hotspots": [
+    {
+      "hotspot_id": "H001",
+      "n": 3494,
+      "ascending_los": -30.95,
+      "descending_v2_los": -35.77,
+      "same_sign": true,
+      "magnitude_ratio": 1.156,
+      "descending_component_detected": true,
+      "overlap_fraction": 0.9545,
+      "ascending_tc": 0.9255,
+      "descending_v2_tc": 0.906
+    },
+    {
+      "hotspot_id": "H002",
+      "n": 8015,
+      "ascending_los": -13.58,
+      "descending_v2_los": -0.91,
+      "same_sign": true,
+      "magnitude_ratio": 0.067,
+      "descending_component_detected": true,
+      "overlap_fraction": 0.0337,
+      "ascending_tc": 0.8634,
+      "descending_v2_tc": 0.8996
+    },
+    {
+      "hotspot_id": "H003",
+      "n": 1408,
+      "ascending_los": -12.87,
+      "descending_v2_los": -0.5,
+      "same_sign": true,
+      "magnitude_ratio": 0.039,
+      "descending_component_detected": true,
+      "overlap_fraction": 0.0319,
+      "ascending_tc": 0.8605,
+      "descending_v2_tc": 0.8862
+    },
+    {
+      "hotspot_id": "H004",
+      "n": 670,
+      "ascending_los": -14.31,
+      "descending_v2_los": -12.22,
+      "same_sign": true,
+      "magnitude_ratio": 0.854,
+      "descending_component_detected": true,
+      "overlap_fraction": 0.7328,
+      "ascending_tc": 0.963,
+      "descending_v2_tc": 0.9094
+    },
+    {
+      "hotspot_id": "H005",
+      "n": 522,
+      "ascending_los": -14.21,
+      "descending_v2_los": 61.64,
+      "same_sign": false,
+      "magnitude_ratio": 4.338,
+      "descending_component_detected": true,
+      "overlap_fraction": 0.9713,
+      "ascending_tc": 0.8653,
+      "descending_v2_tc": 0.8507
+    }
+  ],
+  "coherence_velocity_curve": [
+    {
+      "low": 0.3,
+      "high": 0.35,
+      "n": 32434,
+      "median_v": -32.986
+    },
+    {
+      "low": 0.35,
+      "high": 0.4,
+      "n": 30813,
+      "median_v": -29.596
+    },
+    {
+      "low": 0.4,
+      "high": 0.45,
+      "n": 27698,
+      "median_v": -24.37
+    },
+    {
+      "low": 0.45,
+      "high": 0.5,
+      "n": 25801,
+      "median_v": -18.956
+    },
+    {
+      "low": 0.5,
+      "high": 0.55,
+      "n": 24790,
+      "median_v": -17.018
+    },
+    {
+      "low": 0.55,
+      "high": 0.6,
+      "n": 23922,
+      "median_v": -18.123
+    },
+    {
+      "low": 0.6,
+      "high": 0.65,
+      "n": 24225,
+      "median_v": -16.501
+    },
+    {
+      "low": 0.65,
+      "high": 0.7,
+      "n": 26263,
+      "median_v": -12.462
+    },
+    {
+      "low": 0.7,
+      "high": 0.75,
+      "n": 30925,
+      "median_v": -7.829
+    },
+    {
+      "low": 0.75,
+      "high": 0.8,
+      "n": 40166,
+      "median_v": -4.499
+    },
+    {
+      "low": 0.8,
+      "high": 0.85,
+      "n": 63926,
+      "median_v": -2.198
+    },
+    {
+      "low": 0.85,
+      "high": 0.9,
+      "n": 149989,
+      "median_v": -0.555
+    },
+    {
+      "low": 0.9,
+      "high": 0.95,
+      "n": 277211,
+      "median_v": -0.046
+    },
+    {
+      "low": 0.95,
+      "high": 1.0,
+      "n": 12205,
+      "median_v": 0.084
+    }
+  ],
+  "note": "This repeats ONLY the Phase-IIA comparisons, as authorised under Outcome B. The frozen Phase-IIA result set is unchanged."
+}

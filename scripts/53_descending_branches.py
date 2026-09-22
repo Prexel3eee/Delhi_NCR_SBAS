@@ -54,8 +54,7 @@ BRANCHES = {
     "D2": {
         "work": PROJECT_ROOT / "mintpy" / "descending_d2_unwrap_work",
         "overrides": {
-            "mintpy.unwrapError.method": "bridging + phase_closure",
-            "mintpy.unwrapError.yx": "",
+            "mintpy.unwrapError.method": "bridging+phase_closure",
         },
         "label": "unwrap-corrected (bridging + phase_closure)",
     },

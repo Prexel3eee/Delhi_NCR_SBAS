@@ -425,3 +425,695 @@ Retrying in 120 seconds
 {'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['05'], 'day': ['13'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
 2026-09-22 21:12:31,218 INFO Request ID is d30e3cf1-506e-49d2-8559-dcff518365cc
 2026-09-22 21:12:32,422 INFO status has been updated to accepted
+2026-09-22 21:15:31,135 INFO status has been updated to successful
+9ebe63c2b2d2c78d859a994ea98fdcf9.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]9ebe63c2b2d2c78d859a994ea98fdcf9.grib: 100%|██████████| 732k/732k [00:01<00:00, 472kB/s]                                                                                        Downloading 34 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230525_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['05'], 'day': ['25'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:15:35,540 INFO Request ID is 3a8b3981-760e-48f0-be07-81d2e5ae5d2a
+2026-09-22 21:15:35,847 INFO status has been updated to accepted
+2026-09-22 21:15:58,578 INFO status has been updated to successful
+d9f642605223b9311836c4346b9135b7.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]d9f642605223b9311836c4346b9135b7.grib: 100%|██████████| 732k/732k [00:01<00:00, 422kB/s]                                                                                        Downloading 35 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230606_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['06'], 'day': ['06'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:16:05,227 INFO Request ID is 04d87d22-2d2c-4b75-bb94-e54384e04af1
+2026-09-22 21:16:05,454 INFO status has been updated to accepted
+2026-09-22 21:16:30,118 INFO status has been updated to running
+2026-09-22 21:16:59,066 INFO status has been updated to successful
+a107f8711dd2fa5bfc38651e233b94b0.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]a107f8711dd2fa5bfc38651e233b94b0.grib: 100%|██████████| 732k/732k [00:01<00:00, 426kB/s]                                                                                        Downloading 36 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230618_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['06'], 'day': ['18'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:17:03,772 INFO Request ID is 1e187649-ffe2-469a-b11a-3e20d338423f
+2026-09-22 21:17:04,079 INFO status has been updated to accepted
+2026-09-22 21:17:26,496 INFO status has been updated to running
+2026-09-22 21:17:55,575 INFO status has been updated to successful
+3184d404e9e4495582ca4582e1d9c617.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]3184d404e9e4495582ca4582e1d9c617.grib: 100%|██████████| 732k/732k [00:01<00:00, 465kB/s]                                                                                        Downloading 37 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230630_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['06'], 'day': ['30'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:18:00,281 INFO Request ID is caad2588-86ac-4131-b527-738e91388ec9
+2026-09-22 21:18:00,592 INFO status has been updated to accepted
+2026-09-22 21:18:25,884 INFO status has been updated to running
+2026-09-22 21:18:54,880 INFO status has been updated to successful
+59526aa5ba845b44c5b6a56bdbd6839f.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]59526aa5ba845b44c5b6a56bdbd6839f.grib: 100%|██████████| 732k/732k [00:01<00:00, 433kB/s]                                                                                        Downloading 38 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230712_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['07'], 'day': ['12'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:18:59,834 INFO Request ID is a4b2ca91-9e67-4491-81e9-c7c059046db7
+2026-09-22 21:19:00,088 INFO status has been updated to accepted
+2026-09-22 21:19:14,730 INFO status has been updated to running
+2026-09-22 21:19:35,928 INFO status has been updated to successful
+982923d11d2760ffd27db3da7dbb448c.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]982923d11d2760ffd27db3da7dbb448c.grib: 100%|██████████| 732k/732k [00:01<00:00, 433kB/s]                                                                                        Downloading 39 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230724_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['07'], 'day': ['24'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:19:40,229 INFO Request ID is 93d804ca-8788-4f98-9141-583e4192fe41
+2026-09-22 21:19:40,534 INFO status has been updated to accepted
+2026-09-22 21:19:49,750 INFO status has been updated to running
+2026-09-22 21:20:03,062 INFO status has been updated to successful
+b3d8df78d951519cef5e11fb59397144.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]b3d8df78d951519cef5e11fb59397144.grib: 100%|██████████| 732k/732k [00:01<00:00, 434kB/s]                                                                                        Downloading 40 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230805_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['08'], 'day': ['05'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:20:07,671 INFO Request ID is c2db48d4-cae3-49cc-b57a-2d377398cd25
+2026-09-22 21:20:08,183 INFO status has been updated to accepted
+2026-09-22 21:20:27,026 INFO status has been updated to running
+2026-09-22 21:20:46,513 INFO status has been updated to successful
+98c2695f3434602ba5288efb9dc940e4.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]98c2695f3434602ba5288efb9dc940e4.grib: 100%|██████████| 732k/732k [00:01<00:00, 456kB/s]                                                                                        Downloading 41 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230817_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['08'], 'day': ['17'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:20:50,986 INFO Request ID is 3ed54b35-0486-4306-8920-c7a48cd095df
+2026-09-22 21:20:51,254 INFO status has been updated to accepted
+2026-09-22 21:21:07,984 INFO status has been updated to running
+2026-09-22 21:21:27,542 INFO status has been updated to successful
+c6b635d68f2a530547980b5060757f3c.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]c6b635d68f2a530547980b5060757f3c.grib: 100%|██████████| 732k/732k [00:01<00:00, 475kB/s]                                                                                        Downloading 42 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230829_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['08'], 'day': ['29'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:21:31,736 INFO Request ID is 9c23132f-f09f-4043-9210-a922720e79e1
+2026-09-22 21:21:31,956 INFO status has been updated to accepted
+2026-09-22 21:21:43,006 INFO status has been updated to running
+2026-09-22 21:21:56,215 INFO status has been updated to successful
+eeb32ca004b9cfc74324063d159c7ceb.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]eeb32ca004b9cfc74324063d159c7ceb.grib: 100%|██████████| 732k/732k [00:01<00:00, 475kB/s]                                                                                        Downloading 43 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20230922_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['09'], 'day': ['22'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:22:01,131 INFO Request ID is e77ff334-0b55-4d82-98e2-5c4c215b1188
+2026-09-22 21:22:01,344 INFO status has been updated to accepted
+2026-09-22 21:22:26,218 INFO status has been updated to running
+2026-09-22 21:22:55,246 INFO status has been updated to successful
+4c7d09d0f26997cd89a6a6a52054fda5.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]4c7d09d0f26997cd89a6a6a52054fda5.grib: 100%|██████████| 732k/732k [00:01<00:00, 423kB/s]                                                                                        Downloading 44 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20231016_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['10'], 'day': ['16'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:23:02,861 INFO Request ID is 6fa2b044-d5d2-4244-be68-935c281b89e6
+2026-09-22 21:23:03,082 INFO status has been updated to accepted
+2026-09-22 21:23:17,895 INFO status has been updated to running
+2026-09-22 21:23:37,319 INFO status has been updated to successful
+bfeb7ea2794203373ab83e330d6d0ce2.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]bfeb7ea2794203373ab83e330d6d0ce2.grib: 100%|██████████| 732k/732k [00:01<00:00, 426kB/s]                                                                                        Downloading 45 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20231109_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['11'], 'day': ['09'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:23:41,694 INFO Request ID is 30d1e337-e74f-4df2-81a3-56a63cd0dd3f
+2026-09-22 21:23:41,894 INFO status has been updated to accepted
+2026-09-22 21:24:04,522 INFO status has been updated to running
+2026-09-22 21:24:33,502 INFO status has been updated to successful
+e8dbe30adbcb5091a6eebdfc578507c8.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e8dbe30adbcb5091a6eebdfc578507c8.grib: 100%|██████████| 732k/732k [00:01<00:00, 400kB/s]                                                                                        Downloading 46 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20231203_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['12'], 'day': ['03'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:24:37,993 INFO Request ID is 549eacb0-02cf-4ec4-be69-db73f921ec8e
+2026-09-22 21:24:38,276 INFO status has been updated to accepted
+2026-09-22 21:24:52,660 INFO status has been updated to running
+2026-09-22 21:25:12,210 INFO status has been updated to successful
+bbc9fa40c33fac47faafeef4dce68ff3.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]bbc9fa40c33fac47faafeef4dce68ff3.grib: 100%|██████████| 732k/732k [00:01<00:00, 461kB/s]                                                                                        Downloading 47 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20231227_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2023'], 'month': ['12'], 'day': ['27'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:25:16,612 INFO Request ID is 2de21552-dc5c-462d-9932-a644e0ed7816
+2026-09-22 21:25:16,919 INFO status has been updated to accepted
+2026-09-22 21:25:39,240 INFO status has been updated to running
+2026-09-22 21:25:50,859 INFO status has been updated to successful
+4634c314fb974c3efabe723adf549b68.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]4634c314fb974c3efabe723adf549b68.grib: 100%|██████████| 732k/732k [00:01<00:00, 439kB/s]                                                                                        Downloading 48 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240108_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['01'], 'day': ['08'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:25:55,048 INFO Request ID is 03f4c5e7-1ff3-4cfe-b8f4-79e3d9652a7a
+2026-09-22 21:25:55,275 INFO status has been updated to accepted
+2026-09-22 21:27:12,639 INFO status has been updated to successful
+3f3ca5fcc65c7a233b7d5dc1ad9fc624.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]3f3ca5fcc65c7a233b7d5dc1ad9fc624.grib: 100%|██████████| 732k/732k [00:01<00:00, 447kB/s]                                                                                        Downloading 49 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240120_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['01'], 'day': ['20'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:27:16,800 INFO Request ID is 17c7f72a-0fd7-4068-89a9-020258850003
+2026-09-22 21:27:17,008 INFO status has been updated to accepted
+2026-09-22 21:27:39,164 INFO status has been updated to running
+2026-09-22 21:27:50,828 INFO status has been updated to successful
+2b5d4eb3ab80f083a255d4350fce500a.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]2b5d4eb3ab80f083a255d4350fce500a.grib: 100%|██████████| 732k/732k [00:01<00:00, 415kB/s]                                                                                        Downloading 50 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240225_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['02'], 'day': ['25'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:27:59,123 INFO Request ID is 9f0679e4-6d32-48ae-acae-c5a00e782d5e
+2026-09-22 21:27:59,349 INFO status has been updated to accepted
+2026-09-22 21:28:23,724 INFO status has been updated to running
+2026-09-22 21:28:52,654 INFO status has been updated to successful
+9ec8774ebb714a8cce4002ef5d422dc0.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]9ec8774ebb714a8cce4002ef5d422dc0.grib: 100%|██████████| 732k/732k [00:01<00:00, 446kB/s]                                                                                        Downloading 51 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240308_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['03'], 'day': ['08'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:28:57,225 INFO Request ID is 0726262f-3e47-4688-b90f-b260b5165e0a
+2026-09-22 21:28:57,448 INFO status has been updated to accepted
+2026-09-22 21:29:31,487 INFO status has been updated to running
+2026-09-22 21:29:49,333 INFO status has been updated to successful
+74bdb72bddf98aba071ae8f843264b3a.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]74bdb72bddf98aba071ae8f843264b3a.grib: 100%|██████████| 732k/732k [00:01<00:00, 463kB/s]                                                                                        Downloading 52 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240320_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['03'], 'day': ['20'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:30:03,075 INFO Request ID is 6d603801-72a3-420a-9868-c6ce3a33ec0d
+2026-09-22 21:30:03,947 INFO status has been updated to accepted
+2026-09-22 21:30:18,494 INFO status has been updated to running
+2026-09-22 21:30:38,662 INFO status has been updated to successful
+6e76fc9a30b142c38fd991392ab9186d.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]6e76fc9a30b142c38fd991392ab9186d.grib: 100%|██████████| 732k/732k [00:01<00:00, 457kB/s]                                                                                        Downloading 53 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240401_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['04'], 'day': ['01'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:30:42,920 INFO Request ID is 539deae6-f610-40f8-a174-df042676ac48
+2026-09-22 21:30:43,139 INFO status has been updated to accepted
+2026-09-22 21:31:05,677 INFO status has been updated to running
+2026-09-22 21:31:17,291 INFO status has been updated to successful
+83fcde55d7476823fb86165c4b2721b9.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]83fcde55d7476823fb86165c4b2721b9.grib: 100%|██████████| 732k/732k [00:01<00:00, 465kB/s]                                                                                        Downloading 54 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240425_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['04'], 'day': ['25'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:31:24,127 INFO Request ID is 9e2a0023-4771-42e7-8912-73e6e467d385
+2026-09-22 21:31:24,526 INFO status has been updated to accepted
+2026-09-22 21:31:46,962 INFO status has been updated to running
+2026-09-22 21:32:15,948 INFO status has been updated to successful
+e5eed7ab3ee055127e6f5113fd54e57b.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e5eed7ab3ee055127e6f5113fd54e57b.grib: 100%|██████████| 732k/732k [00:01<00:00, 453kB/s]                                                                                        Downloading 55 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240519_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['05'], 'day': ['19'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:32:20,242 INFO Request ID is 1799e1cd-969a-4457-86a1-71fa7616f45c
+2026-09-22 21:32:20,549 INFO status has been updated to accepted
+2026-09-22 21:32:44,717 INFO status has been updated to running
+2026-09-22 21:32:56,327 INFO status has been updated to successful
+d4bff9c2e2a538781b6640f468f9b0da.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]d4bff9c2e2a538781b6640f468f9b0da.grib: 100%|██████████| 732k/732k [00:01<00:00, 432kB/s]                                                                                        Downloading 56 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240531_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['05'], 'day': ['31'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:33:02,751 INFO Request ID is 5aea9948-c811-47bf-82e7-cf7da37b4b41
+2026-09-22 21:33:02,955 INFO status has been updated to accepted
+2026-09-22 21:33:25,041 INFO status has been updated to running
+2026-09-22 21:33:53,935 INFO status has been updated to successful
+9a9523020b863c0fe7c4173ab4d4dbb6.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]9a9523020b863c0fe7c4173ab4d4dbb6.grib: 100%|██████████| 732k/732k [00:01<00:00, 439kB/s]                                                                                        Downloading 57 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240718_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['07'], 'day': ['18'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:33:58,382 INFO Request ID is c6c0c2d9-9746-4265-a01f-3048f3e89cfc
+2026-09-22 21:33:58,665 INFO status has been updated to accepted
+2026-09-22 21:34:20,979 INFO status has been updated to running
+2026-09-22 21:34:49,860 INFO status has been updated to successful
+d600b1f542681ad5f43bbbeb8aaa97b3.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]d600b1f542681ad5f43bbbeb8aaa97b3.grib: 100%|██████████| 732k/732k [00:01<00:00, 455kB/s]                                                                                        Downloading 58 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240823_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['08'], 'day': ['23'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:34:56,110 INFO Request ID is b5ea739e-0e56-4802-bdab-7938db6b00cc
+2026-09-22 21:34:56,322 INFO status has been updated to accepted
+2026-09-22 21:35:18,988 INFO status has been updated to running
+2026-09-22 21:35:50,597 INFO status has been updated to successful
+1fc4b43f3022e5787c5744aad3deee7c.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]1fc4b43f3022e5787c5744aad3deee7c.grib: 100%|██████████| 732k/732k [00:01<00:00, 440kB/s]                                                                                        Downloading 59 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240904_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['09'], 'day': ['04'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:35:56,033 INFO Request ID is 5db2787b-5045-48da-bf2c-658ee46a7dbd
+2026-09-22 21:35:56,249 INFO status has been updated to accepted
+2026-09-22 21:37:53,675 INFO status has been updated to successful
+1f2d9243e8a6b6834b181920751904db.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]1f2d9243e8a6b6834b181920751904db.grib: 100%|██████████| 732k/732k [00:01<00:00, 486kB/s]                                                                                        Downloading 60 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240916_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['09'], 'day': ['16'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:38:00,848 INFO Request ID is edd64696-7c1a-4318-ae9c-1c3617736bfe
+2026-09-22 21:38:01,203 INFO status has been updated to accepted
+2026-09-22 21:38:17,738 INFO status has been updated to running
+2026-09-22 21:38:37,294 INFO status has been updated to successful
+6dcdd4448d8c2a702fdc134968a6d69d.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]6dcdd4448d8c2a702fdc134968a6d69d.grib: 100%|██████████| 732k/732k [00:01<00:00, 488kB/s]                                                                                        Downloading 61 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20240928_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['09'], 'day': ['28'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:38:43,707 INFO Request ID is dcea1949-3fec-4e4a-b81c-cb59ca973934
+2026-09-22 21:38:43,908 INFO status has been updated to accepted
+2026-09-22 21:38:59,213 INFO status has been updated to running
+2026-09-22 21:39:07,095 INFO status has been updated to successful
+5b4d5d820e1f2e1479403608504e7e78.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]5b4d5d820e1f2e1479403608504e7e78.grib: 100%|██████████| 732k/732k [00:01<00:00, 433kB/s]                                                                                        Downloading 62 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241010_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['10'], 'day': ['10'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:39:13,043 INFO Request ID is 9f523a12-39ff-4118-bad0-5f34a721dac6
+2026-09-22 21:39:13,247 INFO status has been updated to accepted
+2026-09-22 21:39:36,176 INFO status has been updated to running
+2026-09-22 21:39:48,259 INFO status has been updated to successful
+2d3e20203b5cd8081318e45023139db2.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]2d3e20203b5cd8081318e45023139db2.grib: 100%|██████████| 732k/732k [00:01<00:00, 470kB/s]                                                                                        Downloading 63 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241022_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['10'], 'day': ['22'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:39:54,505 INFO Request ID is c3088cdd-c11c-4ce6-8d4d-d7ff64b81db4
+2026-09-22 21:39:54,719 INFO status has been updated to accepted
+2026-09-22 21:40:18,058 INFO status has been updated to running
+2026-09-22 21:40:48,291 INFO status has been updated to successful
+520456f4ab9a34118fa831772a8963d4.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]520456f4ab9a34118fa831772a8963d4.grib: 100%|██████████| 732k/732k [00:01<00:00, 433kB/s]                                                                                        Downloading 64 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241103_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['11'], 'day': ['03'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:40:52,667 INFO Request ID is 9ed94b1b-5505-47f7-b7b1-8dc23899b7fe
+2026-09-22 21:40:52,882 INFO status has been updated to accepted
+2026-09-22 21:41:15,094 INFO status has been updated to running
+2026-09-22 21:41:44,074 INFO status has been updated to successful
+f2f7cddbf98509e56f88cc116b89b919.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]f2f7cddbf98509e56f88cc116b89b919.grib: 100%|██████████| 732k/732k [00:01<00:00, 435kB/s]                                                                                        Downloading 65 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241115_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['11'], 'day': ['15'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:41:48,284 INFO Request ID is 413a4c9e-aa31-4de2-99a6-aef26802e3fd
+2026-09-22 21:41:48,502 INFO status has been updated to accepted
+2026-09-22 21:42:12,072 INFO status has been updated to running
+2026-09-22 21:42:24,289 INFO status has been updated to successful
+583279b8e53d3e2ddc9ef066e98934f8.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]583279b8e53d3e2ddc9ef066e98934f8.grib: 100%|██████████| 732k/732k [00:01<00:00, 456kB/s]                                                                                        Downloading 66 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241127_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['11'], 'day': ['27'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:42:28,944 INFO Request ID is db2bb3b1-285a-4fbb-8fa7-3ae81de8fa80
+2026-09-22 21:42:29,152 INFO status has been updated to accepted
+2026-09-22 21:42:52,587 INFO status has been updated to running
+2026-09-22 21:43:21,651 INFO status has been updated to successful
+b8a1e24e0c0b0122d3d78856207c0f42.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]b8a1e24e0c0b0122d3d78856207c0f42.grib: 100%|██████████| 732k/732k [00:01<00:00, 465kB/s]                                                                                        Downloading 67 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241209_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['12'], 'day': ['09'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:43:25,758 INFO Request ID is 54fd1584-f7f9-4cf4-8b91-3b25aa1e3211
+2026-09-22 21:43:25,973 INFO status has been updated to accepted
+2026-09-22 21:43:53,714 INFO status has been updated to running
+2026-09-22 21:44:24,290 INFO status has been updated to successful
+e6b3f994dbaa6b267d7b450ff1e631bb.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e6b3f994dbaa6b267d7b450ff1e631bb.grib: 100%|██████████| 732k/732k [00:01<00:00, 396kB/s]                                                                                        Downloading 68 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20241221_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2024'], 'month': ['12'], 'day': ['21'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:44:31,192 INFO Request ID is fc1f62ba-8dec-4290-b03b-fb469c8cca6a
+2026-09-22 21:44:31,500 INFO status has been updated to accepted
+2026-09-22 21:44:46,142 INFO status has been updated to running
+2026-09-22 21:45:05,700 INFO status has been updated to successful
+db7cece1aade5fe78422da95ded3a330.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]db7cece1aade5fe78422da95ded3a330.grib: 100%|██████████| 732k/732k [00:01<00:00, 487kB/s]                                                                                        Downloading 69 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250102_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['01'], 'day': ['02'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:45:10,719 INFO Request ID is 8a986a95-bc92-42fa-8418-80e075554915
+2026-09-22 21:45:11,024 INFO status has been updated to accepted
+2026-09-22 21:45:28,741 INFO status has been updated to running
+2026-09-22 21:45:48,288 INFO status has been updated to successful
+e64aef9b783b3f385242480a3a85aedc.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e64aef9b783b3f385242480a3a85aedc.grib: 100%|██████████| 732k/732k [00:01<00:00, 413kB/s]                                                                                        Downloading 70 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250114_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['01'], 'day': ['14'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:45:56,799 INFO Request ID is 9db94daa-d4f7-4db3-9bd8-fed0b4f26427
+2026-09-22 21:45:57,209 INFO status has been updated to accepted
+2026-09-22 21:46:19,736 INFO status has been updated to running
+2026-09-22 21:46:32,946 INFO status has been updated to successful
+7b2008a036a10f165715272c0d1f35b.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]7b2008a036a10f165715272c0d1f35b.grib: 100%|██████████| 732k/732k [00:01<00:00, 414kB/s]                                                                                       Downloading 71 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250126_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['01'], 'day': ['26'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:46:38,019 INFO Request ID is a6cb7013-f9ae-4edd-995d-b0fa760e1cc0
+2026-09-22 21:46:42,674 INFO status has been updated to accepted
+2026-09-22 21:48:38,694 INFO status has been updated to successful
+63b03a29bf52594368c5f414e2a8c8c2.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]63b03a29bf52594368c5f414e2a8c8c2.grib: 100%|██████████| 732k/732k [00:01<00:00, 454kB/s]                                                                                        Downloading 72 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250207_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['02'], 'day': ['07'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:48:43,024 INFO Request ID is 3e3c90f3-6d14-4c92-b3a2-16d5961baa48
+2026-09-22 21:48:43,463 INFO status has been updated to accepted
+2026-09-22 21:49:17,429 INFO status has been updated to running
+2026-09-22 21:49:34,751 INFO status has been updated to successful
+e6b682fec5c8924f1130498113eb5931.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e6b682fec5c8924f1130498113eb5931.grib: 100%|██████████| 732k/732k [00:01<00:00, 465kB/s]                                                                                        Downloading 73 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250219_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['02'], 'day': ['19'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:49:40,461 INFO Request ID is 9d3a2a6f-457b-4ff6-ad92-ec195fd5b7ee
+2026-09-22 21:49:40,712 INFO status has been updated to accepted
+2026-09-22 21:49:55,101 INFO status has been updated to running
+2026-09-22 21:50:03,091 INFO status has been updated to successful
+4bb923ee52d866f1f395f8dd06ae25f0.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]4bb923ee52d866f1f395f8dd06ae25f0.grib: 100%|██████████| 732k/732k [00:01<00:00, 417kB/s]                                                                                        Downloading 74 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250303_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['03'], 'day': ['03'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:50:07,613 INFO Request ID is a97fdd58-ed84-4fe2-886c-2ec44c04bfd4
+2026-09-22 21:50:07,818 INFO status has been updated to accepted
+2026-09-22 21:51:25,297 INFO status has been updated to successful
+c1293151b19f26ee3f4832c4edac58ac.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]c1293151b19f26ee3f4832c4edac58ac.grib: 100%|██████████| 732k/732k [00:01<00:00, 459kB/s]                                                                                        Downloading 75 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250315_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['03'], 'day': ['15'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:51:29,982 INFO Request ID is cca36a1a-fbf2-4eb4-a7e9-1b8f39d97398
+2026-09-22 21:51:30,212 INFO status has been updated to accepted
+2026-09-22 21:51:39,242 INFO status has been updated to running
+2026-09-22 21:51:52,372 INFO status has been updated to successful
+9824e022076592df246ee73127290e22.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]9824e022076592df246ee73127290e22.grib: 100%|██████████| 732k/732k [00:01<00:00, 469kB/s]                                                                                        Downloading 76 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250327_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['03'], 'day': ['27'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:51:57,726 INFO Request ID is 4d1c98a8-652f-42c4-bc54-aea2e84cc4dc
+2026-09-22 21:51:57,934 INFO status has been updated to accepted
+2026-09-22 21:52:12,521 INFO status has been updated to running
+2026-09-22 21:52:32,284 INFO status has been updated to successful
+5d0dfe6143de4e5b01341b6939f002f7.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]5d0dfe6143de4e5b01341b6939f002f7.grib: 100%|██████████| 732k/732k [00:01<00:00, 424kB/s]                                                                                        Downloading 77 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250408_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['04'], 'day': ['08'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:52:37,299 INFO Request ID is e6c50705-54b5-4b42-8ff8-884e56251231
+2026-09-22 21:52:37,609 INFO status has been updated to accepted
+2026-09-22 21:53:02,719 INFO status has been updated to running
+2026-09-22 21:53:14,346 INFO status has been updated to successful
+52cedcb6bc76ee27da2c05bc33d651b3.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]52cedcb6bc76ee27da2c05bc33d651b3.grib: 100%|██████████| 732k/732k [00:02<00:00, 314kB/s]                                                                                        Downloading 78 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250420_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['04'], 'day': ['20'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:53:22,336 INFO Request ID is 0a01647b-c845-4819-8ed6-0c3ed95d5edd
+2026-09-22 21:53:22,563 INFO status has been updated to accepted
+2026-09-22 21:53:40,995 INFO status has been updated to running
+2026-09-22 21:54:02,090 INFO status has been updated to successful
+e7c2c5425fee6dc2c38c3f0f9e152fe5.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e7c2c5425fee6dc2c38c3f0f9e152fe5.grib: 100%|██████████| 732k/732k [00:01<00:00, 443kB/s]                                                                                        Downloading 79 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250502_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['05'], 'day': ['02'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:54:07,926 INFO Request ID is 8b3606bb-f762-4d15-86ad-a1c8b664e4c2
+2026-09-22 21:54:08,144 INFO status has been updated to accepted
+2026-09-22 21:54:30,660 INFO status has been updated to running
+2026-09-22 21:54:59,683 INFO status has been updated to successful
+f50ee9488a95cb765dd543584adc4df8.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]f50ee9488a95cb765dd543584adc4df8.grib: 100%|██████████| 732k/732k [00:01<00:00, 458kB/s]                                                                                        Downloading 80 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250514_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['05'], 'day': ['14'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:55:04,044 INFO Request ID is bf638b3c-0481-4c2c-a062-fbd25625e55a
+2026-09-22 21:55:04,304 INFO status has been updated to accepted
+2026-09-22 21:55:26,674 INFO status has been updated to running
+2026-09-22 21:55:55,653 INFO status has been updated to successful
+e59026abe812701227c58dd5a57e405f.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]e59026abe812701227c58dd5a57e405f.grib: 100%|██████████| 732k/732k [00:01<00:00, 402kB/s]                                                                                        Downloading 81 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250526_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['05'], 'day': ['26'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:56:01,695 INFO Request ID is ecab608c-8bc1-469b-b67a-4a11b2e72d4f
+2026-09-22 21:56:01,901 INFO status has been updated to accepted
+2026-09-22 21:56:17,253 INFO status has been updated to running
+2026-09-22 21:56:54,165 INFO status has been updated to successful
+50117232fbe3ad012f8c32751f8cd8a.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]50117232fbe3ad012f8c32751f8cd8a.grib: 100%|██████████| 732k/732k [00:01<00:00, 455kB/s]                                                                                       Downloading 82 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250607_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['06'], 'day': ['07'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:56:58,425 INFO Request ID is 6deac74a-96aa-4a97-9714-8b5c3d95c4f5
+2026-09-22 21:56:59,141 INFO status has been updated to accepted
+2026-09-22 21:57:24,368 INFO status has been updated to running
+2026-09-22 21:57:36,005 INFO status has been updated to successful
+25b4644afcff053b0668194af8174975.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]25b4644afcff053b0668194af8174975.grib: 100%|██████████| 732k/732k [00:01<00:00, 436kB/s]                                                                                        Downloading 83 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250619_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['06'], 'day': ['19'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:57:41,228 INFO Request ID is ea7e8ed3-6e1c-4e0c-84ca-c5f63a165d1c
+2026-09-22 21:57:41,535 INFO status has been updated to accepted
+2026-09-22 21:58:16,701 INFO status has been updated to running
+2026-09-22 21:58:34,002 INFO status has been updated to successful
+90438375c9c489c5917ae034559c3c0c.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]90438375c9c489c5917ae034559c3c0c.grib: 100%|██████████| 732k/732k [00:01<00:00, 476kB/s]                                                                                        Downloading 84 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250701_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['07'], 'day': ['01'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 21:58:38,009 INFO Request ID is 062fbe51-86a8-418e-b9e2-cedb05c896b2
+2026-09-22 21:58:38,209 INFO status has been updated to accepted
+2026-09-22 21:59:00,562 INFO status has been updated to running
+2026-09-22 21:59:55,370 INFO status has been updated to successful
+53f910708678a119fc9f9d8185c0afbe.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]53f910708678a119fc9f9d8185c0afbe.grib: 100%|██████████| 732k/732k [00:07<00:00, 96.2kB/s]                                                                                         Downloading 85 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250713_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['07'], 'day': ['13'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:00:05,857 INFO Request ID is ad979a5e-88d7-464d-82aa-8c5245b300d2
+2026-09-22 22:00:06,057 INFO status has been updated to accepted
+2026-09-22 22:00:28,262 INFO status has been updated to running
+2026-09-22 22:00:59,748 INFO status has been updated to successful
+b9553b9b428f6eb71fddc36c0356bbae.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]b9553b9b428f6eb71fddc36c0356bbae.grib: 100%|██████████| 732k/732k [00:01<00:00, 413kB/s]                                                                                        Downloading 86 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250725_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['07'], 'day': ['25'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:01:04,164 INFO Request ID is 12625027-f89e-4d56-b100-9b2f2a668791
+2026-09-22 22:01:04,392 INFO status has been updated to accepted
+2026-09-22 22:01:39,810 INFO status has been updated to running
+2026-09-22 22:01:57,124 INFO status has been updated to successful
+c2ad21978e966817fe302e957133afab.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]c2ad21978e966817fe302e957133afab.grib: 100%|██████████| 732k/732k [00:01<00:00, 385kB/s]                                                                                        Downloading 87 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250806_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['08'], 'day': ['06'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:02:02,160 INFO Request ID is 1e259329-632f-423c-a43c-0657b8c273ad
+2026-09-22 22:02:02,453 INFO status has been updated to accepted
+2026-09-22 22:02:36,809 INFO status has been updated to running
+2026-09-22 22:02:54,165 INFO status has been updated to successful
+c9edc71d324a3d0630090905805e81b8.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]c9edc71d324a3d0630090905805e81b8.grib: 100%|██████████| 732k/732k [00:01<00:00, 453kB/s]                                                                                        Downloading 88 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250818_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['08'], 'day': ['18'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:02:59,592 INFO Request ID is 708d11ad-9a32-44a7-8350-b5de8fe5e390
+2026-09-22 22:02:59,899 INFO status has been updated to accepted
+2026-09-22 22:03:22,575 INFO status has been updated to running
+2026-09-22 22:03:51,609 INFO status has been updated to successful
+456dba4de48e78dbb9590e383ecae26b.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]456dba4de48e78dbb9590e383ecae26b.grib: 100%|██████████| 732k/732k [00:01<00:00, 429kB/s]                                                                                        Downloading 89 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250830_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['08'], 'day': ['30'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:03:55,997 INFO Request ID is 5785b651-b1cc-4bba-a8b2-3b89bd56a990
+2026-09-22 22:03:56,219 INFO status has been updated to accepted
+2026-09-22 22:04:13,013 INFO status has been updated to running
+2026-09-22 22:04:32,495 INFO status has been updated to successful
+25957ca211a8425f088f5c561fae7af7.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]25957ca211a8425f088f5c561fae7af7.grib: 100%|██████████| 732k/732k [00:01<00:00, 469kB/s]                                                                                        Downloading 90 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250911_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['09'], 'day': ['11'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:04:36,554 INFO Request ID is 3b90fd10-d6f7-42b8-83ad-36dc6ce3fa55
+2026-09-22 22:04:36,765 INFO status has been updated to accepted
+2026-09-22 22:04:59,076 INFO status has been updated to running
+2026-09-22 22:05:27,997 INFO status has been updated to successful
+24f024411cc81a7787250fb9c246dc2d.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]24f024411cc81a7787250fb9c246dc2d.grib: 100%|██████████| 732k/732k [00:01<00:00, 472kB/s]                                                                                        Downloading 91 of 91: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/era5_work/mintpy/weather/ERA5/ERA5/ERA5_N20_N40_E70_E80_20250923_01.grb 
+{'product_type': ['reanalysis'], 'variable': ['geopotential', 'temperature', 'specific_humidity'], 'year': ['2025'], 'month': ['09'], 'day': ['23'], 'time': ['01:00'], 'pressure_level': ['1', '2', '3', '5', '7', '10', '20', '30', '50', '70', '100', '125', '150', '175', '200', '225', '250', '300', '350', '400', '450', '500', '550', '600', '650', '700', '750', '775', '800', '825', '850', '875', '900', '925', '950', '975', '1000'], 'data_format': 'grib', 'area': [40, 70, 20, 80]}
+2026-09-22 22:05:32,113 INFO Request ID is d763c0c6-d5ff-48ee-afc9-d12f05bfb463
+2026-09-22 22:05:32,324 INFO status has been updated to accepted
+2026-09-22 22:05:48,108 INFO status has been updated to running
+2026-09-22 22:06:07,530 INFO status has been updated to successful
+a1caf78bc044d1f6804f74a47fde24b4.grib:   0%|          | 0.00/732k [00:00<?, ?B/s]a1caf78bc044d1f6804f74a47fde24b4.grib: 100%|██████████| 732k/732k [00:01<00:00, 457kB/s]                                                                                        INFO: You are using the latest ECMWF platform for downloading datasets:  https://cds.climate.copernicus.eu/api
+INFO: You are using the latest ECMWF platform for downloading datasets:  https://cds.climate.copernicus.eu/api
+
+--------------------------------------------------------------------------------
+Calculate tropospheric delay and write to HDF5 file...
+update mode: ON
+output file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+1) output file either do NOT exist or is NOT newer than all GRIB files.
+run or skip: run
+open geometry file: geometryGeo.h5
+reading incidenceAngle  data from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/geometryGeo.h5 ...
+reading height          data from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/geometryGeo.h5 ...
+UTM coordinates detected, convert UTM into lat/lon
+--------------------------------------------------
+create HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5 with w mode
+create dataset  : date       of |S8                       in size of (91,)                with compression = None
+create dataset  : timeseries of <class 'numpy.float32'>   in size of (91, 2412, 2853)     with compression = None
+close  HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+--------------------------------------------------
+calculating absolute delay for each date using PyAPS (Jolivet et al., 2011; 2014) ...
+number of grib files used: 91
+[>                                                 ][>                        2%                       ] ERA5_N20_N40_E70_E80_20211014_01.grb    2s /    99s[=>                       3%                       ] ERA5_N20_N40_E70_E80_20211026_01.grb    2s /    95s[=>                       4%                       ] ERA5_N20_N40_E70_E80_20211107_01.grb    3s /    93s[=>                       5%                       ] ERA5_N20_N40_E70_E80_20211119_01.grb    4s /    92s[===>                     7%                       ] ERA5_N20_N40_E70_E80_20211201_01.grb    5s /    77s[===>                     8%                       ] ERA5_N20_N40_E70_E80_20211213_01.grb    6s /    77s[===>                     9%                       ] ERA5_N20_N40_E70_E80_20220106_01.grb    7s /    78s[====>                   10%                       ] ERA5_N20_N40_E70_E80_20220118_01.grb    8s /    78s[=====>                  11%                       ] ERA5_N20_N40_E70_E80_20220130_01.grb    9s /    78s[=====>                  12%                       ] ERA5_N20_N40_E70_E80_20220211_01.grb   10s /    78s[=====>                  13%                       ] ERA5_N20_N40_E70_E80_20220223_01.grb   11s /    78s[======>                 14%                       ] ERA5_N20_N40_E70_E80_20220307_01.grb   12s /    78s[=======>                15%                       ] ERA5_N20_N40_E70_E80_20220319_01.grb   13s /    77s[=======>                16%                       ] ERA5_N20_N40_E70_E80_20220331_01.grb   14s /    77s[========>               18%                       ] ERA5_N20_N40_E70_E80_20220412_01.grb   15s /    71s[=========>              19%                       ] ERA5_N20_N40_E70_E80_20220518_01.grb   16s /    70s[=========>              20%                       ] ERA5_N20_N40_E70_E80_20220530_01.grb   17s /    70s[=========>              21%                       ] ERA5_N20_N40_E70_E80_20220611_01.grb   18s /    69s[==========>             22%                       ] ERA5_N20_N40_E70_E80_20220623_01.grb   19s /    69s[===========>            23%                       ] ERA5_N20_N40_E70_E80_20220705_01.grb   20s /    68s[===========>            24%                       ] ERA5_N20_N40_E70_E80_20220717_01.grb   21s /    67s[===========>            25%                       ] ERA5_N20_N40_E70_E80_20220729_01.grb   22s /    67s[============>           26%                       ] ERA5_N20_N40_E70_E80_20220810_01.grb   23s /    66s[=============>          27%                       ] ERA5_N20_N40_E70_E80_20221126_01.grb   24s /    65s[=============>          29%                       ] ERA5_N20_N40_E70_E80_20221220_01.grb   25s /    62s[==============>         30%                       ] ERA5_N20_N40_E70_E80_20230101_01.grb   26s /    61s[===============>        31%                       ] ERA5_N20_N40_E70_E80_20230125_01.grb   27s /    60s[===============>        32%                       ] ERA5_N20_N40_E70_E80_20230218_01.grb   28s /    60s[===============>        33%                       ] ERA5_N20_N40_E70_E80_20230314_01.grb   29s /    59s[================>       34%                       ] ERA5_N20_N40_E70_E80_20230407_01.grb   30s /    58s[=================>      35%                       ] ERA5_N20_N40_E70_E80_20230501_01.grb   31s /    58s[=================>      36%                       ] ERA5_N20_N40_E70_E80_20230513_01.grb   32s /    57s[=================>      37%                       ] ERA5_N20_N40_E70_E80_20230525_01.grb   33s /    56s[==================>     38%                       ] ERA5_N20_N40_E70_E80_20230606_01.grb   34s /    55s[===================>    40%                       ] ERA5_N20_N40_E70_E80_20230618_01.grb   35s /    52s[===================>    41%                       ] ERA5_N20_N40_E70_E80_20230630_01.grb   36s /    51s[====================>   42%                       ] ERA5_N20_N40_E70_E80_20230712_01.grb   37s /    51s[=====================>  43%                       ] ERA5_N20_N40_E70_E80_20230724_01.grb   38s /    50s[=====================>  44%                       ] ERA5_N20_N40_E70_E80_20230805_01.grb   38s /    49s[=====================>  45%                       ] ERA5_N20_N40_E70_E80_20230817_01.grb   39s /    48s[======================> 46%                       ] ERA5_N20_N40_E70_E80_20230829_01.grb   40s /    48s[======================= 47%                       ] ERA5_N20_N40_E70_E80_20230922_01.grb   41s /    47s[======================= 48%                       ] ERA5_N20_N40_E70_E80_20231016_01.grb   42s /    46s[======================= 49%                       ] ERA5_N20_N40_E70_E80_20231109_01.grb   43s /    45s[======================= 51%                       ] ERA5_N20_N40_E70_E80_20231203_01.grb   44s /    43s[======================= 52%                       ] ERA5_N20_N40_E70_E80_20231227_01.grb   45s /    42s[======================= 53%                       ] ERA5_N20_N40_E70_E80_20240108_01.grb   46s /    41s[======================= 54%                       ] ERA5_N20_N40_E70_E80_20240120_01.grb   47s /    40s[======================= 55%                       ] ERA5_N20_N40_E70_E80_20240225_01.grb   48s /    40s[======================= 56%                       ] ERA5_N20_N40_E70_E80_20240308_01.grb   49s /    39s[======================= 57%                       ] ERA5_N20_N40_E70_E80_20240320_01.grb   50s /    38s[======================= 58% >                     ] ERA5_N20_N40_E70_E80_20240401_01.grb   51s /    37s[======================= 59% =>                    ] ERA5_N20_N40_E70_E80_20240425_01.grb   52s /    36s[======================= 60% =>                    ] ERA5_N20_N40_E70_E80_20240519_01.grb   53s /    35s[======================= 62% ==>                   ] ERA5_N20_N40_E70_E80_20240531_01.grb   54s /    33s[======================= 63% ===>                  ] ERA5_N20_N40_E70_E80_20240718_01.grb   55s /    32s[======================= 64% ===>                  ] ERA5_N20_N40_E70_E80_20240823_01.grb   56s /    31s[======================= 65% ===>                  ] ERA5_N20_N40_E70_E80_20240904_01.grb   57s /    31s[======================= 66% ====>                 ] ERA5_N20_N40_E70_E80_20240916_01.grb   58s /    30s[======================= 67% =====>                ] ERA5_N20_N40_E70_E80_20240928_01.grb   59s /    29s[======================= 68% =====>                ] ERA5_N20_N40_E70_E80_20241010_01.grb   60s /    28s[======================= 69% =====>                ] ERA5_N20_N40_E70_E80_20241022_01.grb   61s /    27s[======================= 70% ======>               ] ERA5_N20_N40_E70_E80_20241103_01.grb   62s /    26s[======================= 71% =======>              ] ERA5_N20_N40_E70_E80_20241115_01.grb   63s /    25s[======================= 73% =======>              ] ERA5_N20_N40_E70_E80_20241127_01.grb   64s /    23s[======================= 74% ========>             ] ERA5_N20_N40_E70_E80_20241209_01.grb   65s /    22s[======================= 75% =========>            ] ERA5_N20_N40_E70_E80_20241221_01.grb   66s /    22s[======================= 76% =========>            ] ERA5_N20_N40_E70_E80_20250102_01.grb   67s /    21s[======================= 77% =========>            ] ERA5_N20_N40_E70_E80_20250114_01.grb   68s /    20s[======================= 78% ==========>           ] ERA5_N20_N40_E70_E80_20250126_01.grb   69s /    19s[======================= 79% ===========>          ] ERA5_N20_N40_E70_E80_20250207_01.grb   70s /    18s[======================= 80% ===========>          ] ERA5_N20_N40_E70_E80_20250219_01.grb   71s /    17s[======================= 81% ===========>          ] ERA5_N20_N40_E70_E80_20250303_01.grb   72s /    16s[======================= 82% ============>         ] ERA5_N20_N40_E70_E80_20250315_01.grb   73s /    16s[======================= 84% =============>        ] ERA5_N20_N40_E70_E80_20250327_01.grb   74s /    14s[======================= 85% =============>        ] ERA5_N20_N40_E70_E80_20250408_01.grb   75s /    13s[======================= 86% ==============>       ] ERA5_N20_N40_E70_E80_20250420_01.grb   76s /    12s[======================= 87% ===============>      ] ERA5_N20_N40_E70_E80_20250502_01.grb   77s /    11s[======================= 88% ===============>      ] ERA5_N20_N40_E70_E80_20250514_01.grb   78s /    10s[======================= 89% ===============>      ] ERA5_N20_N40_E70_E80_20250526_01.grb   79s /     9s[======================= 90% ================>     ] ERA5_N20_N40_E70_E80_20250607_01.grb   80s /     8s[======================= 91% =================>    ] ERA5_N20_N40_E70_E80_20250619_01.grb   80s /     8s[======================= 92% =================>    ] ERA5_N20_N40_E70_E80_20250701_01.grb   81s /     7s[======================= 93% =================>    ] ERA5_N20_N40_E70_E80_20250713_01.grb   82s /     6s[======================= 95% ===================>  ] ERA5_N20_N40_E70_E80_20250725_01.grb   83s /     4s[======================= 96% ===================>  ] ERA5_N20_N40_E70_E80_20250806_01.grb   84s /     3s[======================= 97% ===================>  ] ERA5_N20_N40_E70_E80_20250818_01.grb   85s /     2s[======================= 98% ====================> ] ERA5_N20_N40_E70_E80_20250830_01.grb   86s /     1s[==================================================] ERA5_N20_N40_E70_E80_20250911_01.grb[==================================================] ERA5_N20_N40_E70_E80_20250923_01.grb 
+
+--------------------------------------------------------------------------------
+Applying tropospheric correction to displacement file...
+correcting delay via diff.py
+diff.py /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5 /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5 -o /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 --force
+/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5 - ['/Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5'] --> /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5
+the 1st input file is: timeseries
+--------------------------------------------------
+grab metadata from ref_file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+grab dataset structure from ref_file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+create HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 with w mode
+create dataset  : bperp      of float32                   in size of (91,)                with compression = None
+create dataset  : date       of |S8                       in size of (91,)                with compression = None
+create dataset  : timeseries of float32                   in size of (91, 2412, 2853)     with compression = None
+close  HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5
+split along y dimension (2412) into 4 boxes
+    with each box up to 603 in y dimension
+
+------- processing patch 1 out of 4 --------------
+box: [0, 0, 2853, 603]
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+* referencing data from ERA5.h5 to y/x: 394/2149
+* referencing data from ERA5.h5 to date: 20211002
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 in a mode
+writing dataset /timeseries                block: [0, 91, 0, 603, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5.
+
+------- processing patch 2 out of 4 --------------
+box: [0, 603, 2853, 1206]
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+* referencing data from ERA5.h5 to y/x: 394/2149
+* referencing data from ERA5.h5 to date: 20211002
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 in a mode
+writing dataset /timeseries                block: [0, 91, 603, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5.
+
+------- processing patch 3 out of 4 --------------
+box: [0, 1206, 2853, 1809]
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+* referencing data from ERA5.h5 to y/x: 394/2149
+* referencing data from ERA5.h5 to date: 20211002
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 in a mode
+writing dataset /timeseries                block: [0, 91, 1206, 1809, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5.
+
+------- processing patch 4 out of 4 --------------
+box: [0, 1809, 2853, 2412]
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5
+* referencing data from ERA5.h5 to y/x: 394/2149
+* referencing data from ERA5.h5 to date: 20211002
+read from file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 in a mode
+writing dataset /timeseries                block: [0, 91, 1809, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5.
+time used: 00 mins 3.9 secs
+
+
+******************** step - deramp ********************
+No phase ramp removal.
+
+
+******************** step - correct_topography ********************
+Input data seems to be geocoded. Lookup file not needed.
+No topographic residual correction.
+
+
+******************** step - residual_RMS ********************
+No residual phase file found! Skip residual RMS analysis.
+
+
+******************** step - reference_date ********************
+
+reference_date.py -t /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/smallbaselineApp.cfg /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries.h5 /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5
+input file reference_date.txt does not exist, skip this step
+time used: 00 mins 0.0 secs.
+
+
+******************** step - velocity ********************
+
+timeseries2velocity.py /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 -t /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/smallbaselineApp.cfg -o /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 --update
+read options from template file: smallbaselineApp.cfg
+update mode: ON
+1) output file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 already exists.
+2) output file is NOT newer than input file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5.
+run or skip: run.
+open timeseries file: timeseries_ERA5.h5
+exclude date: []
+--------------------------------------------------
+dates from input file: 91
+['20211002', '20211014', '20211026', '20211107', '20211119', '20211201', '20211213', '20220106', '20220118', '20220130', '20220211', '20220223', '20220307', '20220319', '20220331', '20220412', '20220518', '20220530', '20220611', '20220623', '20220705', '20220717', '20220729', '20220810', '20221126', '20221220', '20230101', '20230125', '20230218', '20230314', '20230407', '20230501', '20230513', '20230525', '20230606', '20230618', '20230630', '20230712', '20230724', '20230805', '20230817', '20230829', '20230922', '20231016', '20231109', '20231203', '20231227', '20240108', '20240120', '20240225', '20240308', '20240320', '20240401', '20240425', '20240519', '20240531', '20240718', '20240823', '20240904', '20240916', '20240928', '20241010', '20241022', '20241103', '20241115', '20241127', '20241209', '20241221', '20250102', '20250114', '20250126', '20250207', '20250219', '20250303', '20250315', '20250327', '20250408', '20250420', '20250502', '20250514', '20250526', '20250607', '20250619', '20250701', '20250713', '20250725', '20250806', '20250818', '20250830', '20250911', '20250923']
+--------------------------------------------------
+using all dates to calculate the time function
+--------------------------------------------------
+estimate deformation model with the following assumed time functions:
+    polynomial : 1
+    periodic   : []
+    stepDate   : []
+    polyline   : []
+    exp        : {}
+    log        : {}
+add/update the following configuration metadata:
+['startDate', 'endDate', 'excludeDate', 'polynomial', 'periodic', 'stepDate', 'exp', 'log', 'uncertaintyQuantification', 'timeSeriesCovFile', 'bootstrapCount']
+--------------------------------------------------
+create HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 with w mode
+create dataset  : intercept    of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : interceptStd of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : velocity     of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : velocityStd  of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : residue      of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+add /intercept    attribute: UNIT = m
+add /interceptStd attribute: UNIT = m
+add /velocity     attribute: UNIT = m/year
+add /velocityStd  attribute: UNIT = m/year
+add /residue      attribute: UNIT = m
+close  HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5
+split along y dimension (2412) into 2 boxes
+    with each box up to 1206 in y dimension
+
+------- processing patch 1 out of 2 --------------
+box width:  2853
+box length: 1206
+reading data from file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 ...
+skip pixels with zero/nan value in all acquisitions
+number of pixels to invert: 1963511 out of 3440718 (57.1%)
+estimating time functions via linalg.lstsq ...
+estimating time functions STD from time-series fitting residual ...
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /intercept                 block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /interceptStd              block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /velocity                  block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /velocityStd               block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /residue                   block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+
+------- processing patch 2 out of 2 --------------
+box width:  2853
+box length: 1206
+reading data from file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/timeseries_ERA5.h5 ...
+skip pixels with zero/nan value in all acquisitions
+number of pixels to invert: 2054037 out of 3440718 (59.7%)
+estimating time functions via linalg.lstsq ...
+estimating time functions STD from time-series fitting residual ...
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /intercept                 block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /interceptStd              block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /velocity                  block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /velocityStd               block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 in a mode
+writing dataset /residue                   block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5.
+time used: 00 mins 2.6 secs.
+
+timeseries2velocity.py /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5 -t /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/smallbaselineApp.cfg -o /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 --update --ref-date 20211002 --ref-yx 394 2149
+read options from template file: smallbaselineApp.cfg
+update mode: ON
+1) output file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 NOT found.
+run or skip: run.
+open timeseries file: ERA5.h5
+exclude date: []
+--------------------------------------------------
+dates from input file: 91
+['20211002', '20211014', '20211026', '20211107', '20211119', '20211201', '20211213', '20220106', '20220118', '20220130', '20220211', '20220223', '20220307', '20220319', '20220331', '20220412', '20220518', '20220530', '20220611', '20220623', '20220705', '20220717', '20220729', '20220810', '20221126', '20221220', '20230101', '20230125', '20230218', '20230314', '20230407', '20230501', '20230513', '20230525', '20230606', '20230618', '20230630', '20230712', '20230724', '20230805', '20230817', '20230829', '20230922', '20231016', '20231109', '20231203', '20231227', '20240108', '20240120', '20240225', '20240308', '20240320', '20240401', '20240425', '20240519', '20240531', '20240718', '20240823', '20240904', '20240916', '20240928', '20241010', '20241022', '20241103', '20241115', '20241127', '20241209', '20241221', '20250102', '20250114', '20250126', '20250207', '20250219', '20250303', '20250315', '20250327', '20250408', '20250420', '20250502', '20250514', '20250526', '20250607', '20250619', '20250701', '20250713', '20250725', '20250806', '20250818', '20250830', '20250911', '20250923']
+--------------------------------------------------
+using all dates to calculate the time function
+--------------------------------------------------
+estimate deformation model with the following assumed time functions:
+    polynomial : 1
+    periodic   : []
+    stepDate   : []
+    polyline   : []
+    exp        : {}
+    log        : {}
+add/update the following configuration metadata:
+['startDate', 'endDate', 'excludeDate', 'polynomial', 'periodic', 'stepDate', 'exp', 'log', 'uncertaintyQuantification', 'timeSeriesCovFile', 'bootstrapCount']
+--------------------------------------------------
+create HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 with w mode
+create dataset  : intercept    of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : interceptStd of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : velocity     of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : velocityStd  of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+create dataset  : residue      of <class 'numpy.float32'>   in size of (2412, 2853)         with compression = None
+add /intercept    attribute: UNIT = m
+add /interceptStd attribute: UNIT = m
+add /velocity     attribute: UNIT = m/year
+add /velocityStd  attribute: UNIT = m/year
+add /residue      attribute: UNIT = m
+close  HDF5 file: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5
+split along y dimension (2412) into 2 boxes
+    with each box up to 1206 in y dimension
+
+------- processing patch 1 out of 2 --------------
+box width:  2853
+box length: 1206
+reading data from file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5 ...
+referecing to date: 20211002
+referencing to point (y, x): (394, 2149)
+skip pixels with zero/nan value in all acquisitions
+/opt/homebrew/Caskroom/miniforge/base/envs/delhi-mintpy/lib/python3.11/site-packages/mintpy/timeseries2velocity.py:276: RuntimeWarning: Mean of empty slice
+  ts_stack = np.nanmean(ts_data, axis=0)
+number of pixels to invert: 2068949 out of 3440718 (60.1%)
+estimating time functions via linalg.lstsq ...
+estimating time functions STD from time-series fitting residual ...
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /intercept                 block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /interceptStd              block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /velocity                  block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /velocityStd               block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /residue                   block: [0, 1206, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+
+------- processing patch 2 out of 2 --------------
+box width:  2853
+box length: 1206
+reading data from file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/inputs/ERA5.h5 ...
+referecing to date: 20211002
+referencing to point (y, x): (394, 2149)
+skip pixels with zero/nan value in all acquisitions
+number of pixels to invert: 2174153 out of 3440718 (63.2%)
+estimating time functions via linalg.lstsq ...
+estimating time functions STD from time-series fitting residual ...
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /intercept                 block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /interceptStd              block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /velocity                  block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /velocityStd               block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+--------------------------------------------------
+open  HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5 in a mode
+writing dataset /residue                   block: [1206, 2412, 0, 2853]
+close HDF5 file /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocityERA5.h5.
+time used: 00 mins 3.2 secs.
+
+
+******************** step - geocode ********************
+dataset is geocoded, skip geocoding and continue.
+
+
+******************** step - google_earth ********************
+creating Google Earth KMZ file for geocoded velocity file: ...
+
+save_kmz.py /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.h5 -o /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.kmz
+data   coverage in y/x: (0, 0, 2853, 2412)
+subset coverage in y/x: (0, 0, 2853, 2412)
+update LENGTH, WIDTH, Y/XMAX
+update/add SUBSET_XMIN/YMIN/XMAX/YMAX: 0/0/2853/2412
+update Y/X_FIRST
+update REF_Y/X
+read mask from file: maskTempCoh.h5
+masking out pixels with zero value in file: None
+colormap: jet
+plotting data ...
+figure size : [16.7, 12.0]
+show reference point
+writing /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity_data.png with dpi=600
+writing /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity_cbar.png
+writing /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.kml
+remove /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.kml
+remove /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity_data.png
+remove /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity_cbar.png
+merged all files to /Users/vivekchaubey/Developer/Delhi_NCR_SBAS/mintpy/descending_d3_era5_work/velocity.kmz
+
+
+******************** step - hdfeos5 ********************
+save time-series to HDF-EOS5 format is OFF.
+Go back to directory: /Users/vivekchaubey/Developer/Delhi_NCR_SBAS
+
+################################################
+   Normal end of smallbaselineApp processing!
+################################################
+Time used: 90 mins 13.0 secs
+

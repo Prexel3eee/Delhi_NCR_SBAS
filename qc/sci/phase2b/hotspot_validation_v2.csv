@@ -1,0 +1,6 @@
+hotspot_id,n,ascending_los,descending_v2_los,same_sign,magnitude_ratio,descending_component_detected,overlap_fraction,ascending_tc,descending_v2_tc
+H001,3494,-30.95,-35.77,True,1.156,True,0.9545,0.9255,0.906
+H002,8015,-13.58,-0.91,True,0.067,True,0.0337,0.8634,0.8996
+H003,1408,-12.87,-0.5,True,0.039,True,0.0319,0.8605,0.8862
+H004,670,-14.31,-12.22,True,0.854,True,0.7328,0.963,0.9094
+H005,522,-14.21,61.64,False,4.338,True,0.9713,0.8653,0.8507
