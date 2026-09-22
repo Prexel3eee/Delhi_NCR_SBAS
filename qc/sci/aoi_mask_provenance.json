@@ -1,0 +1,30 @@
+{
+  "grid": {
+    "length": 2407,
+    "width": 2939,
+    "epsg": 32643,
+    "x_first": 647720.0,
+    "y_first": 3225320.0,
+    "x_step": 40.0,
+    "y_step": -40.0
+  },
+  "aoi_bounds_utm": [
+    674836.713,
+    3141689.387,
+    722859.551,
+    3195340.045
+  ],
+  "aoi_bounds_source_crs": "EPSG:4326",
+  "window_rows_cols": [
+    748,
+    2092,
+    676,
+    1880
+  ],
+  "window_px": 1618176,
+  "aoi_px": 1226497,
+  "aoi_fraction_of_window": 0.758,
+  "aoi_area_km2": 1962.4,
+  "water_fraction_of_aoi": 0.018515,
+  "water_mask_convention": "0 = water, 1 = land (HyP3 product convention)"
+}

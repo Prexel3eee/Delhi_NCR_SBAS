@@ -1,0 +1,188 @@
+{
+  "generated_utc": "2026-09-22T04:39:36.794768+00:00",
+  "branch": "baseline_raw (uncorrected, all 336 pairs)",
+  "corrections": {
+    "unwrap_error": "no",
+    "troposphere": "no",
+    "deramp": "no",
+    "dem_residual": "no"
+  },
+  "pairs_in_inversion": 336,
+  "aoi_pixels": 1226497,
+  "phase2range": -0.0044138253091923615,
+  "wavelength_m": 0.055465764662349676,
+  "reference_pixel_full_grid_yx": [
+    1384,
+    1451
+  ],
+  "raw_los_velocity_m_per_yr": {
+    "n": 1226497,
+    "min": -0.0948,
+    "p05": -0.0342,
+    "p25": -0.0158,
+    "median": -0.0042,
+    "p75": 0.0,
+    "p95": 0.0044,
+    "max": 0.0435,
+    "mean": -0.0088,
+    "std": 0.0125
+  },
+  "velocity_uncertainty_m_per_yr": {
+    "n": 1226497,
+    "min": 0.0,
+    "p05": 0.0004,
+    "p25": 0.0008,
+    "median": 0.0012,
+    "p75": 0.0014,
+    "p95": 0.0018,
+    "max": 0.0041,
+    "mean": 0.0011,
+    "std": 0.0004
+  },
+  "linear_fit_residue": {
+    "n": 1226497,
+    "min": 0.0,
+    "p05": 0.0575,
+    "p25": 0.1115,
+    "median": 0.1584,
+    "p75": 0.1926,
+    "p95": 0.2432,
+    "max": 0.5539,
+    "mean": 0.154,
+    "std": 0.0608
+  },
+  "temporal_coherence": {
+    "n": 1226497,
+    "min": 0.0,
+    "p05": 0.3177,
+    "p25": 0.5091,
+    "median": 0.7488,
+    "p75": 0.9156,
+    "p95": 0.9849,
+    "max": 1.0,
+    "mean": 0.6996,
+    "std": 0.2386
+  },
+  "phase_closure": {
+    "source_dataset": "mask",
+    "dtype": "float32",
+    "stats_over_aoi": {
+      "n": 1226497,
+      "min": 0.0,
+      "p05": 0.0,
+      "p25": 7.0,
+      "median": 24.0,
+      "p75": 66.0,
+      "p95": 107.0,
+      "max": 172.0,
+      "mean": 37.7009,
+      "std": 36.4539
+    }
+  },
+  "temporal_coherence_fractions": {
+    "frac_gt_0.5": 0.761135,
+    "frac_gt_0.6": 0.651003,
+    "frac_gt_0.7": 0.55057,
+    "frac_gt_0.8": 0.441567,
+    "frac_gt_0.9": 0.284972
+  },
+  "residual_rms_rad": {
+    "min": 0.3459,
+    "p25": 2.3746,
+    "median": 4.593,
+    "p75": 8.7395,
+    "p95": 18.762,
+    "max": 43.9575
+  },
+  "residual_model_validation": {
+    "spearman_residual_vs_coherence": -0.3716,
+    "expected": "negative (better coherence -> smaller residual)",
+    "interpretation": "consistent"
+  },
+  "robust_outlier_bounds_by_temporal_class": {
+    "k": 3.5,
+    "method": "median +/- k * 1.4826 * MAD computed within each temporal-baseline class",
+    "classes": {
+      "12": {
+        "n": 113,
+        "coherence_median": {
+          "median": 0.749,
+          "scale": 0.1741,
+          "lower": 0.1398,
+          "upper": 1.3582
+        },
+        "largest_component_frac_aoi": {
+          "median": 0.9646,
+          "scale": 0.0437,
+          "lower": 0.8115,
+          "upper": 1.1177
+        },
+        "residual_rms_rad": {
+          "median": 4.1426,
+          "scale": 3.5192,
+          "lower": -8.1748,
+          "upper": 16.46
+        }
+      },
+      "24": {
+        "n": 113,
+        "coherence_median": {
+          "median": 0.5661,
+          "scale": 0.2039,
+          "lower": -0.1474,
+          "upper": 1.2796
+        },
+        "largest_component_frac_aoi": {
+          "median": 0.8489,
+          "scale": 0.1609,
+          "lower": 0.2858,
+          "upper": 1.4119
+        },
+        "residual_rms_rad": {
+          "median": 4.3113,
+          "scale": 3.9837,
+          "lower": -9.6318,
+          "upper": 18.2544
+        }
+      },
+      "36": {
+        "n": 110,
+        "coherence_median": {
+          "median": 0.4467,
+          "scale": 0.1179,
+          "lower": 0.0342,
+          "upper": 0.8593
+        },
+        "largest_component_frac_aoi": {
+          "median": 0.6675,
+          "scale": 0.1857,
+          "lower": 0.0174,
+          "upper": 1.3176
+        },
+        "residual_rms_rad": {
+          "median": 5.1821,
+          "scale": 4.4908,
+          "lower": -10.5357,
+          "upper": 20.8999
+        }
+      }
+    }
+  },
+  "bad_pair_candidates": {
+    "criteria": "robust outliers of the network distribution: value beyond median +/- 3.5 * 1.4826 * MAD (see robust_outlier_bounds). Absolute thresholds are NOT used: an uncorrected baseline carries unmodelled atmosphere and orbit ramps, so a fixed cut is meaningless (a 1 rad threshold flagged 333 of 336 pairs).",
+    "stratified_by": "temporal_baseline_days",
+    "candidates_by_reason": {
+      "coherence_median": 0,
+      "largest connected component": 26,
+      "residual RMS": 17
+    },
+    "n_candidates": 39,
+    "pct_of_network": 11.61,
+    "by_temporal_baseline": {
+      "12": 28,
+      "24": 6,
+      "36": 5
+    },
+    "note": "PROPOSAL ONLY - nothing has been excluded; all 336 pairs remain in the baseline."
+  }
+}

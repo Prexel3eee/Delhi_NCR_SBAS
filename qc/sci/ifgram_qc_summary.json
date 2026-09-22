@@ -1,0 +1,82 @@
+{
+  "generated_utc": "2026-09-22T04:04:26.567032+00:00",
+  "scope": "RAW-336 baseline QC; nothing excluded",
+  "frozen_input": "freeze/mintpy_input_v1",
+  "interferograms": 336,
+  "aoi": {
+    "grid": {
+      "length": 2407,
+      "width": 2939,
+      "epsg": 32643,
+      "x_first": 647720.0,
+      "y_first": 3225320.0,
+      "x_step": 40.0,
+      "y_step": -40.0
+    },
+    "aoi_bounds_utm": [
+      674836.713,
+      3141689.387,
+      722859.551,
+      3195340.045
+    ],
+    "aoi_bounds_source_crs": "EPSG:4326",
+    "window_rows_cols": [
+      748,
+      2092,
+      676,
+      1880
+    ],
+    "window_px": 1618176,
+    "aoi_px": 1226497,
+    "aoi_fraction_of_window": 0.758,
+    "aoi_area_km2": 1962.4,
+    "water_fraction_of_aoi": 0.018515,
+    "water_mask_convention": "0 = water, 1 = land (HyP3 product convention)"
+  },
+  "coherence_thresholds": [
+    0.2,
+    0.3,
+    0.5
+  ],
+  "distributions": {
+    "unwrap_valid_frac_aoi": {
+      "min": 0.981373,
+      "median": 0.981491,
+      "max": 0.981638
+    },
+    "coherence_median": {
+      "min": 0.3223,
+      "p25": 0.417,
+      "median": 0.5464,
+      "p75": 0.7072,
+      "max": 0.9285
+    },
+    "components_in_aoi": {
+      "min": 1,
+      "median": 5,
+      "max": 16
+    },
+    "largest_component_frac_aoi": {
+      "min": 0.266162,
+      "median": 0.822635,
+      "max": 0.997517
+    }
+  },
+  "by_temporal_baseline": {
+    "12": {
+      "count": 113,
+      "median_coherence": 0.749,
+      "median_largest_component_frac": 0.964558
+    },
+    "24": {
+      "count": 113,
+      "median_coherence": 0.5661,
+      "median_largest_component_frac": 0.848881
+    },
+    "36": {
+      "count": 110,
+      "median_coherence": 0.4467,
+      "median_largest_component_frac": 0.667474
+    }
+  }
+}
