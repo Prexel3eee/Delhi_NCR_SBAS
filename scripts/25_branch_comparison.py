@@ -37,12 +37,34 @@ AOI_PATH = PROJECT_ROOT / "geometry" / "aoi.geojson"
 LAMBDA = 0.055465764662349676
 PHASE2RANGE = -LAMBDA / (4.0 * np.pi)
 
-# (label, work dir, velocity/ts filename prefix)
+# (label, work dir, name of the branch's FINAL timeseries)
+#
+# Filenames are NOT guessed. MintPy names derived products after the input they
+# came from, so the branch that ends with `correct_topography` writes
+# `timeseries_ERA5_demErr.h5` and a plain `velocity.h5`, while the ERA5-only
+# branch writes `velocityERA5.h5`. Assuming a filename pattern once already made
+# the DEM branch look identical to ERA5 - a false null produced by comparing the
+# DEM branch's own ERA5-only file against itself. Each branch therefore declares
+# its final timeseries, and the matching velocity file is located by reading
+# MintPy's FILE_PATH provenance metadata.
 BRANCHES = [
-    ("RAW", PROJECT_ROOT / "mintpy" / "baseline_raw_work", ""),
-    ("ERA5", PROJECT_ROOT / "mintpy" / "era5_work", "ERA5"),
-    ("ERA5+DEM", PROJECT_ROOT / "mintpy" / "dem_work", "ERA5"),
+    ("RAW", PROJECT_ROOT / "mintpy" / "baseline_raw_work", "timeseries.h5"),
+    ("ERA5", PROJECT_ROOT / "mintpy" / "era5_work", "timeseries_ERA5.h5"),
+    ("ERA5+DEM", PROJECT_ROOT / "mintpy" / "dem_work", "timeseries_ERA5_demErr.h5"),
 ]
+
+
+def resolve_velocity_file(work: Path, final_timeseries: str) -> Path | None:
+    """Find the velocity product derived from a given timeseries, via metadata."""
+    for path in sorted(work.glob("velocity*.h5")):
+        try:
+            with h5py.File(path, "r") as handle:
+                source = str(handle.attrs.get("FILE_PATH", ""))
+        except Exception:  # noqa: BLE001
+            continue
+        if source.endswith(final_timeseries):
+            return path
+    return None
 
 
 def grid_mask(stack: Path):
@@ -98,12 +120,12 @@ def main() -> int:
     print("BRANCH COMPARISON (AOI-restricted)")
     print("=" * 88)
 
-    for label, work, prefix in BRANCHES:
-        vel_path = work / f"velocity{prefix}.h5" if prefix else work / "velocity.h5"
-        ts_name = f"timeseries_{prefix}.h5" if prefix else "timeseries.h5"
-        if not vel_path.exists() or not (work / ts_name).exists():
-            print(f"\n  {label:10s} SKIPPED (missing {vel_path.name} or {ts_name})")
+    for label, work, ts_name in BRANCHES:
+        vel_path = resolve_velocity_file(work, ts_name)
+        if vel_path is None or not (work / ts_name).exists():
+            print(f"\n  {label:10s} SKIPPED (no velocity derived from {ts_name})")
             continue
+        print(f"\n  {label:10s} resolved {vel_path.name} <- {ts_name}")
         with h5py.File(vel_path, "r") as h:
             vel = h["velocity"][row0:row1, col0:col1].astype("float64")
             vstd = h["velocityStd"][row0:row1, col0:col1].astype("float64")
@@ -123,6 +145,7 @@ def main() -> int:
         results[label] = {
             "work_dir": str(work.relative_to(PROJECT_ROOT)),
             "velocity_file": vel_path.name,
+            "final_timeseries": ts_name,
             "velocity_m_per_yr": st(vel),
             "velocity_uncertainty_m_per_yr": {"median": st(vstd)["median"]},
             "temporal_coherence": st(tc),
@@ -135,16 +158,13 @@ def main() -> int:
     # pairwise differences
     labels = [l for l, _, _ in BRANCHES if l in results]
     pairwise = {}
+    resolved = {l: resolve_velocity_file(w, ts) for l, w, ts in BRANCHES}
     for i in range(len(labels)):
         for j in range(i + 1, len(labels)):
             a, b = labels[i], labels[j]
-            wa = next(w for l, w, p in BRANCHES if l == a)
-            wb = next(w for l, w, p in BRANCHES if l == b)
-            pa = next(p for l, w, p in BRANCHES if l == a)
-            pb = next(p for l, w, p in BRANCHES if l == b)
-            with h5py.File(wa / (f"velocity{pa}.h5" if pa else "velocity.h5"), "r") as h:
+            with h5py.File(resolved[a], "r") as h:
                 va = h["velocity"][row0:row1, col0:col1].astype("float64")
-            with h5py.File(wb / (f"velocity{pb}.h5" if pb else "velocity.h5"), "r") as h:
+            with h5py.File(resolved[b], "r") as h:
                 vb = h["velocity"][row0:row1, col0:col1].astype("float64")
             d = (vb - va)[mask]
             d = d[np.isfinite(d)]

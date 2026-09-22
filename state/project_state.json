@@ -2,9 +2,9 @@
   "project": "delhi_ncr_multiburst_sbas",
   "method": "SBAS-InSAR",
   "processor": "HyP3 INSAR_ISCE_MULTI_BURST + MintPy",
-  "updated_utc": "2026-09-22T14:20:00Z",
-  "phase": "ERA5_COMPLETE_DEM_RESIDUAL_BRANCH_RUNNING",
-  "next_phase": "DEM_RESIDUAL_COMPARISON_THEN_REPORT",
+  "updated_utc": "2026-09-22T15:10:00Z",
+  "phase": "BRANCHES_COMPLETE_AWAITING_DIRECTION",
+  "next_phase": "OWNER_REVIEW",
   "aoi_locked": true,
   "aoi_source": "geometry/aoi.geojson (sha256 ddeeae475f696a98..., matches handoff BUNDLE_MANIFEST.json)",
   "relative_orbit": 27,
@@ -139,8 +139,7 @@
     "explicit owner approval for 1680 credits at 10x2"
   ],
   "open_items": [
-    "DEM-residual branch running (ERA5 cache reused, 0 re-downloads).",
-    "Then three-way comparison RAW vs ERA5 vs ERA5+DEM and report.",
+    "Owner review of the branch report: no correction is beneficial on this stack.",
     "Deramp remains a sensitivity experiment only.",
     "No final deformation product declared.",
     "Rotate the Earthdata and CDS credentials when convenient."
@@ -212,6 +211,16 @@
       "fix": "connect_hyp3/fetch_jobs retry with capped linear backoff and raise a typed NetworkUnavailable; the batch is listed in a single find_jobs(job_type=...) call; the initial connection waits for the API; the loop rebuilds the session.",
       "tests_added": "tests/test_production_retrieval.py (9 offline tests)",
       "verified": "After connectivity returned, all 336 jobs were SUCCEEDED and the ledger reconciled with 0 orphans in either direction."
+    },
+    {
+      "id": "INC-005",
+      "severity": "medium",
+      "summary": "First RAW-vs-ERA5 comparison used the wrong velocity file and reported a spurious 15.49 mm/yr RMS difference.",
+      "root_cause": "MintPy's velocityERA5.h5 is not the ERA5-corrected velocity - its FILE_PATH provenance points at inputs/ERA5.h5 (the delay file). The corrected product is velocity.h5 derived from timeseries_ERA5.h5.",
+      "evidence": "direct least-squares fit to timeseries_ERA5.h5: velocity.h5 agrees to 0.0008 mm/yr, velocityERA5.h5 disagrees by 3.72 mm/yr",
+      "fix": "Both comparison scripts now resolve branch products by reading FILE_PATH metadata instead of guessing filename patterns.",
+      "corrected_result": "0.52 mm/yr RMS (median +0.01, max 5.1), not 15.49 mm/yr",
+      "related": "The same class of mistake had already made the DEM branch look identical to ERA5 (false null)."
     }
   ],
   "pilot_metrics": {
@@ -442,5 +451,49 @@
       "pairs_worsened": 196
     },
     "assessment": "correction is real (physically sensible delays) but does not improve the fit; benefit not demonstrated"
-  }
+  },
+  "branch_results": {
+    "RAW": {
+      "velocity_median_m_per_yr": -0.0042,
+      "coherence": 0.7488,
+      "residual_rms_rad": 4.593
+    },
+    "ERA5": {
+      "velocity_median_m_per_yr": -0.0041,
+      "coherence": 0.747,
+      "residual_rms_rad": 4.67
+    },
+    "ERA5+DEM": {
+      "velocity_median_m_per_yr": -0.0042,
+      "coherence": 0.747,
+      "residual_rms_rad": 4.6709
+    },
+    "pairwise": {
+      "ERA5_minus_RAW": {
+        "median_mm_per_yr": 0.01,
+        "rms_mm_per_yr": 0.52,
+        "max_mm_per_yr": 5.08,
+        "improved": 140,
+        "worsened": 196
+      },
+      "ERA5+DEM_minus_RAW": {
+        "median_mm_per_yr": -0.05,
+        "rms_mm_per_yr": 1.04,
+        "max_mm_per_yr": 5.03,
+        "improved": 131,
+        "worsened": 205
+      },
+      "ERA5+DEM_minus_ERA5": {
+        "median_mm_per_yr": -0.1,
+        "rms_mm_per_yr": 0.78,
+        "max_mm_per_yr": 3.47,
+        "improved": 142,
+        "worsened": 194
+      }
+    },
+    "verdict": "neither ERA5 nor pixel-wise DEM-residual correction improves the fit; both change velocity modestly (<= 1.04 mm/yr RMS)",
+    "era5_coverage_complete": true,
+    "deramp": "disabled"
+  },
+  "final_deformation_product_declared": false
 }

@@ -256,18 +256,31 @@ def main() -> int:
     mask, window = grid_mask(RAW / "inputs" / "ifgramStack.h5")
     row0, row1, col0, col1 = window
 
-    def load(work: Path, suffix: str = ""):
-        """Load a branch's velocity/coherence.
+    def resolve_velocity_file(work: Path, final_timeseries: str) -> Path:
+        """Locate the velocity product derived from a given timeseries.
 
-        MintPy writes the troposphere-corrected products with an ERA5 suffix
-        (`velocityERA5.h5`, `timeseries_ERA5.h5`); the unsuffixed `velocity.h5`
-        in the ERA5 work dir is the PRE-correction inversion and must not be
-        used for the corrected side of the comparison.
+        Do NOT guess from filenames. MintPy's `velocityERA5.h5` is NOT the
+        ERA5-corrected velocity: its FILE_PATH provenance points at inputs/ERA5.h5
+        (the delay file) and it disagrees with a direct fit to the corrected
+        timeseries by ~3.7 mm/yr. The corrected velocity is the plain
+        `velocity.h5` derived from `timeseries_ERA5.h5`. Resolution is therefore
+        done by reading FILE_PATH metadata, not by pattern.
         """
-        vel_path = work / f"velocity{suffix}.h5"
-        if not vel_path.exists():
-            print(f"FAIL: missing {vel_path}")
-            raise SystemExit(1)
+        for path in sorted(work.glob("velocity*.h5")):
+            try:
+                with h5py.File(path, "r") as h:
+                    source = str(h.attrs.get("FILE_PATH", ""))
+            except Exception:  # noqa: BLE001
+                continue
+            if source.endswith(final_timeseries):
+                return path
+        print(f"FAIL: no velocity derived from {final_timeseries} in {work}")
+        raise SystemExit(1)
+
+    def load(work: Path, final_timeseries: str):
+        """Load a branch's velocity/coherence, resolved by provenance metadata."""
+        vel_path = resolve_velocity_file(work, final_timeseries)
+        print(f"  {work.name}: {vel_path.name} <- {final_timeseries}")
         with h5py.File(vel_path, "r") as h:
             vel = h["velocity"][row0:row1, col0:col1].astype("float64")
             vstd = h["velocityStd"][row0:row1, col0:col1].astype("float64")
@@ -275,9 +288,8 @@ def main() -> int:
             tc = h["temporalCoherence"][row0:row1, col0:col1].astype("float64")
         return vel, vstd, tc
 
-    v_raw, s_raw, tc_raw = load(RAW, "")
-    v_e, s_e, tc_e = load(ERA5, "ERA5")
-    print("  using velocityERA5.h5 / timeseries_ERA5.h5 for the corrected branch")
+    v_raw, s_raw, tc_raw = load(RAW, "timeseries.h5")
+    v_e, s_e, tc_e = load(ERA5, "timeseries_ERA5.h5")
 
     def stats(a, m):
         x = a[m]
@@ -295,6 +307,7 @@ def main() -> int:
     dtc = dtc[np.isfinite(dtc)]
 
     residual = per_ifg_residuals(ERA5, window, mask, ts_name="timeseries_ERA5.h5")
+    print("  (corrected residuals use timeseries_ERA5.h5)")
     residual.to_csv(OUT_DIR / "per_ifg_residuals_era5.csv", index=False)
     raw_resid = pd.read_csv(OUT_DIR / "per_ifg_residuals.csv")
     merged = raw_resid[["index", "date12", "residual_rms_rad"]].merge(

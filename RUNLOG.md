@@ -908,22 +908,57 @@ The branch also produced a large ERA5 delay cache that the next branch reuses
    matters (0 NaN inside the AOI). The gate now measures the AOI and reports the
    global figure as context only.
 
-### RAW vs ERA5
+### CORRECTION - the first RAW-vs-ERA5 numbers were wrong
+
+The first comparison reported a **15.49 mm/yr RMS** velocity difference. That was
+incorrect. It used MintPy's `velocityERA5.h5`, which is **not** the ERA5-corrected
+velocity - its `FILE_PATH` provenance points at `inputs/ERA5.h5` (the delay file),
+and it disagrees with a direct least-squares fit to `timeseries_ERA5.h5` by
+**3.72 mm/yr**. The genuinely corrected product is the plain `velocity.h5` derived
+from `timeseries_ERA5.h5` (agreement with the direct fit: **0.0008 mm/yr**).
+
+The same class of mistake had already bitten this project once - assuming a filename
+pattern made the DEM branch look *identical* to ERA5, a false null. Both scripts now
+resolve products by reading `FILE_PATH` metadata instead of guessing names.
+
+**Corrected RAW-vs-ERA5 difference: 0.52 mm/yr RMS** (median +0.01, max 5.1).
+
+### RAW vs ERA5 (corrected)
 
 ```text
-velocity      raw -0.0042 -> era5 +0.0001 m/yr
+velocity      raw -0.0042 -> era5 -0.0041 m/yr
 coherence      0.7488 -> 0.7470
-velocity diff  median +4.22 mm/yr, RMS 15.49 mm/yr, max |d| 94.7 mm/yr
+velocity diff  median +0.01 mm/yr, RMS 0.52 mm/yr, max |d| 5.1 mm/yr
 residual RMS   4.593 -> 4.670 rad;  140 pairs improved, 196 worsened
 ```
 
 Delay magnitudes are physically sensible (AOI-median slant delay -3.44 to
 -2.95 m, median date-to-date step 42 mm, max 254 mm), so the correction is real
-rather than a numerical artefact. But like the unwrap branch it **materially
-changes the solution without improving the fit**, so its benefit is **not
-demonstrated**. That is a finding, not a failure - and it is exactly why the
-brief requires the corrections to be evaluated as separate branches against a
-RAW baseline.
+rather than a numerical artefact. But it **slightly degrades the fit** and barely
+moves the velocity field, so its benefit is **not demonstrated**.
+
+### Pixel-wise DEM-residual branch (ERA5 + DEM, deramp still off)
+
+17m14.6s; the ERA5 cache was reused so it needed 0 further downloads.
+Final product is `dem_work/velocity.h5` <- `timeseries_ERA5_demErr.h5`.
+
+```text
+RAW        velocity -0.0042 m/yr | coherence 0.7488 | residual RMS 4.5930 rad
+ERA5       velocity -0.0041 m/yr | coherence 0.7470 | residual RMS 4.6700 rad
+ERA5+DEM   velocity -0.0042 m/yr | coherence 0.7470 | residual RMS 4.6709 rad
+
+ERA5 minus RAW       median +0.01 mm/yr  RMS 0.52  max 5.08 | 140 improved / 196 worsened
+ERA5+DEM minus RAW   median -0.05 mm/yr  RMS 1.04  max 5.03 | 131 improved / 205 worsened
+ERA5+DEM minus ERA5  median -0.10 mm/yr  RMS 0.78  max 3.47 | 142 improved / 194 worsened
+```
+
+Neither correction improves the fit; both change the velocity field only modestly
+(<= 1.04 mm/yr RMS). Residual RMS is a blunt test on an uncorrected baseline,
+because those residuals are dominated by unmodelled atmosphere and orbit ramps -
+but it is the test the brief specifies, and it does not favour enabling either.
+
+**Deramping remains disabled** in every branch. **No deformation product is
+declared.**
 
 ---
 

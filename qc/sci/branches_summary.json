@@ -1,0 +1,99 @@
+{
+  "generated_utc": "2026-09-22T09:02:27.508535+00:00",
+  "era5_coverage_complete": true,
+  "branches": {
+    "RAW": {
+      "work_dir": "mintpy/baseline_raw_work",
+      "velocity_file": "velocity.h5",
+      "final_timeseries": "timeseries.h5",
+      "velocity_m_per_yr": {
+        "median": -0.004151,
+        "p05": -0.034235,
+        "p95": 0.004403,
+        "std": 0.012517
+      },
+      "velocity_uncertainty_m_per_yr": {
+        "median": 0.001162
+      },
+      "temporal_coherence": {
+        "median": 0.748842,
+        "p05": 0.317694,
+        "p95": 0.984883,
+        "std": 0.238555
+      },
+      "residual_rms_rad_median": 4.593
+    },
+    "ERA5": {
+      "work_dir": "mintpy/era5_work",
+      "velocity_file": "velocity.h5",
+      "final_timeseries": "timeseries_ERA5.h5",
+      "velocity_m_per_yr": {
+        "median": -0.004091,
+        "p05": -0.034347,
+        "p95": 0.004508,
+        "std": 0.012594
+      },
+      "velocity_uncertainty_m_per_yr": {
+        "median": 0.001164
+      },
+      "temporal_coherence": {
+        "median": 0.747026,
+        "p05": 0.317212,
+        "p95": 0.981397,
+        "std": 0.237538
+      },
+      "residual_rms_rad_median": 4.67
+    },
+    "ERA5+DEM": {
+      "work_dir": "mintpy/dem_work",
+      "velocity_file": "velocity.h5",
+      "final_timeseries": "timeseries_ERA5_demErr.h5",
+      "velocity_m_per_yr": {
+        "median": -0.004172,
+        "p05": -0.035444,
+        "p95": 0.005199,
+        "std": 0.013125
+      },
+      "velocity_uncertainty_m_per_yr": {
+        "median": 0.001142
+      },
+      "temporal_coherence": {
+        "median": 0.747026,
+        "p05": 0.317212,
+        "p95": 0.981397,
+        "std": 0.237538
+      },
+      "residual_rms_rad_median": 4.6709
+    }
+  },
+  "pairwise": {
+    "ERA5_minus_RAW": {
+      "median_mm_per_yr": 0.013,
+      "rms_mm_per_yr": 0.521,
+      "max_abs_mm_per_yr": 5.08,
+      "residual_improved": 140,
+      "residual_worsened": 196,
+      "residual_median_change_rad": 0.114
+    },
+    "ERA5+DEM_minus_RAW": {
+      "median_mm_per_yr": -0.049,
+      "rms_mm_per_yr": 1.036,
+      "max_abs_mm_per_yr": 5.03,
+      "residual_improved": 131,
+      "residual_worsened": 205,
+      "residual_median_change_rad": 0.1743
+    },
+    "ERA5+DEM_minus_ERA5": {
+      "median_mm_per_yr": -0.103,
+      "rms_mm_per_yr": 0.778,
+      "max_abs_mm_per_yr": 3.47,
+      "residual_improved": 142,
+      "residual_worsened": 194,
+      "residual_median_change_rad": 0.0198
+    }
+  },
+  "correction_issued": "The first RAW-vs-ERA5 comparison used velocityERA5.h5, which is not the ERA5-corrected velocity (provenance points at inputs/ERA5.h5). Corrected RMS difference: 0.52 mm/yr, not 15.49 mm/yr.",
+  "verdict": "neither ERA5 nor pixel-wise DEM-residual correction improves the fit on this stack; both change the velocity field modestly",
+  "deramp": "disabled",
+  "final_deformation_product_declared": false
+}

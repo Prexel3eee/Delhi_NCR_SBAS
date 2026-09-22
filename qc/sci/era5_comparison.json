@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-22T08:42:04.378224+00:00",
+  "generated_utc": "2026-09-22T09:02:05.189837+00:00",
   "branches": {
     "raw": "baseline_raw_work",
     "era5": "era5_work"
@@ -13,10 +13,10 @@
       "std": 0.012517
     },
     "era5": {
-      "median": 0.000107,
-      "p05": -0.000372,
-      "p95": 0.000654,
-      "std": 0.000297
+      "median": -0.004091,
+      "p05": -0.034347,
+      "p95": 0.004508,
+      "std": 0.012594
     }
   },
   "velocity_uncertainty_m_per_yr": {
@@ -27,10 +27,10 @@
       "std": 0.000446
     },
     "era5": {
-      "median": 0.000379,
-      "p05": 0.00012,
-      "p95": 0.000669,
-      "std": 0.000161
+      "median": 0.001164,
+      "p05": 0.000417,
+      "p95": 0.001766,
+      "std": 0.000438
     }
   },
   "temporal_coherence": {
@@ -48,11 +48,11 @@
     }
   },
   "difference_era5_minus_raw": {
-    "velocity_median": 0.004225,
-    "velocity_p05": -0.004355,
-    "velocity_p95": 0.034654,
-    "velocity_rms": 0.015486,
-    "velocity_max_abs": 0.094727,
+    "velocity_median": 1.3e-05,
+    "velocity_p05": -0.000775,
+    "velocity_p95": 0.000926,
+    "velocity_rms": 0.000521,
+    "velocity_max_abs": 0.005076,
     "temporal_coherence_median": -0.002079,
     "fraction_of_aoi_coherence_improved": 0.310573
   },
