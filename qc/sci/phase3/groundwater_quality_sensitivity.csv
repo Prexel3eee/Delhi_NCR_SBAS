@@ -1,0 +1,7 @@
+hotspot,mask,N,spearman,median_temporal_coherence
+H001,Q_PRIMARY,69,-0.1943,
+H001,Q_STRICT,69,-0.1871,
+H001,core,69,-0.1535,
+H004,Q_PRIMARY,83,0.0033,
+H004,Q_STRICT,83,0.0039,
+H004,core,83,0.0001,

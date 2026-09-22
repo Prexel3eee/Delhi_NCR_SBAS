@@ -1,0 +1,281 @@
+{
+  "protocol_version": "groundwater_protocol_v1",
+  "frozen_before_any_correlation": true,
+  "roles_frozen": {
+    "primary_positive": [
+      "H001",
+      "H004"
+    ],
+    "negative_geodetic_controls": [
+      "H002",
+      "H003"
+    ],
+    "excluded": {
+      "H005": "UNRESOLVED_CONTRADICTION - excluded from groundwater hypothesis testing"
+    },
+    "note": "roles must not be changed because of groundwater results"
+  },
+  "station_selection": {
+    "primary_max_distance_km": 5.0,
+    "secondary_sensitivity_band_km": [
+      5.0,
+      10.0
+    ],
+    "excluded_beyond_km": 10.0,
+    "distance_basis": "great-circle distance from station coordinates to the frozen Phase-I hotspot centroid",
+    "select": "ALL quality-passing stations within 5 km; no selection by trend, correlation, seasonal behaviour or visual similarity",
+    "unequal_station_counts": "expected and reported explicitly; sample size is not forced equal across hotspots",
+    "distance_weighting": "NOT used in the primary analysis; sensitivity only"
+  },
+  "station_qc_rules": {
+    "dead_sensor_exact_zero_fraction_gt": 0.5,
+    "dead_sensor_constant_fraction_gt": 0.9,
+    "insufficient_valid_days_lt": 365,
+    "insufficient_coverage_fraction_lt": 0.5,
+    "pass_with_gaps_longest_gap_days_gt": 30,
+    "classes": [
+      "PASS",
+      "PASS_WITH_GAPS",
+      "FAIL_DEAD_SENSOR",
+      "FAIL_INSUFFICIENT_RECORD",
+      "FAIL_OTHER"
+    ],
+    "no_automatic_repair": true,
+    "zeros_not_globally_assumed_impossible": "provider metadata does not establish a sentinel convention, so zeros are judged only through the frozen fraction rules",
+    "dead_stations_retained_in_inventory": true
+  },
+  "temporal_aggregation": {
+    "raw_preserved": "six-hourly observations kept unchanged and authoritative for provenance",
+    "canonical_input": "daily series",
+    "daily_statistic": "median of valid six-hourly observations that day",
+    "min_observations_per_day": 2,
+    "below_minimum": "daily value = missing",
+    "interpolation": "NONE - missing days stay missing"
+  },
+  "sign_convention": {
+    "source_variable": "depth to water level (mbgl)",
+    "larger_mbgl_means": "deeper groundwater table / decline relative to land surface",
+    "anomaly": "GW_DEPTH_ANOMALY(t) = depth_mbgl(t) - station_median_depth_mbgl",
+    "positive_anomaly": "deeper than the station median",
+    "negative_anomaly": "shallower than the station median",
+    "never_switch_silently": true
+  },
+  "station_datum_handling": {
+    "absolute_values_never_averaged_across_stations": true,
+    "primary_representation": "depth anomaly relative to that station's own record median",
+    "composite": "HOTSPOT_GW_COMPOSITE(t) = median of available station anomalies",
+    "station_weighting": "equal",
+    "distance_weighting": "sensitivity analysis only, never primary"
+  },
+  "composite_availability_rule": {
+    "min_fraction_of_stations_valid": 0.5,
+    "min_contributing_stations_when_eligible_ge_2": 2,
+    "single_station_hotspot": "reported explicitly as single-station evidence, not as a spatial composite"
+  },
+  "gap_handling": {
+    "interpolation_across_gaps": "FORBIDDEN",
+    "the_78_day_H001_outage_must_not_be_bridged": true,
+    "preserve_per_station": [
+      "missing_day_mask",
+      "longest_gap",
+      "valid_fraction",
+      "monthly_completeness"
+    ],
+    "insar_epoch_in_gap": "unavailable for that test; no extrapolation"
+  },
+  "insar_alignment": {
+    "series_used": "authoritative ASCENDING hotspot time series (product_v1 / RAW-336)",
+    "reason": "the ascending product remains the authoritative deformation solution; descending validates rate/spatial behaviour for H001/H004 but not their detailed displacement histories",
+    "descending_merged": false,
+    "window_days": 7,
+    "window_type": "centred on the InSAR acquisition date, t-3 to t+3",
+    "statistic": "median of the daily groundwater composite in that window",
+    "min_valid_daily_values_in_window": 4,
+    "otherwise": "groundwater value = missing for that epoch",
+    "nearest_neighbour_filling": "FORBIDDEN"
+  },
+  "test_A_long_term": {
+    "question": "does groundwater systematically deepen or recover over the study period in a way consistent with the broad deformation evolution",
+    "estimator": "Theil-Sen robust slope",
+    "windows": [
+      "full_record",
+      "first_half",
+      "second_half"
+    ],
+    "compare_against": [
+      "full-period InSAR rate",
+      "first-half InSAR rate",
+      "second-half InSAR rate"
+    ],
+    "seasonal_CGWB_snapshots_may_not_be_used_for_trend": true,
+    "matching_trends_do_not_imply_causation": true
+  },
+  "test_B_detrended": {
+    "question": "after removing long-term behaviour, do groundwater anomalies and relative LOS displacement covary temporally",
+    "groundwater_detrend": "robust linear trend removed (Theil-Sen intercept/slope)",
+    "insar_detrend": "robust linear trend removed (Theil-Sen intercept/slope)",
+    "high_order_polynomials": "FORBIDDEN",
+    "purpose": "evaluate seasonal / sub-annual coupling"
+  },
+  "lags": {
+    "primary_positive_days": [
+      0,
+      30,
+      60,
+      90
+    ],
+    "interpretation": "lag +30 means the groundwater state precedes the InSAR response by approximately 30 days",
+    "falsification_negative_days": [
+      -30,
+      -60,
+      -90
+    ],
+    "negative_lag_role": "falsification diagnostics only; may NOT be used to support the groundwater hypothesis",
+    "arbitrary_lag_search": "FORBIDDEN",
+    "per_hotspot_lag_optimisation": "FORBIDDEN"
+  },
+  "association_metrics": {
+    "primary": "Spearman rho",
+    "secondary": "Pearson r",
+    "always_report": [
+      "N matched InSAR epochs"
+    ],
+    "rationale": "neither groundwater nor InSAR residuals should be assumed Gaussian"
+  },
+  "significance": {
+    "method": "circular block permutation",
+    "block_days": 90,
+    "iid_p_values": "FORBIDDEN - both series are autocorrelated",
+    "iterations": 5000,
+    "random_seed": 20260922,
+    "report": [
+      "effect size",
+      "autocorrelation-aware significance"
+    ],
+    "p_value_replaces_effect_size": false
+  },
+  "multiple_testing": {
+    "family": "4 hotspots x 4 primary positive lags = 16 hotspot-composite tests",
+    "method": "Benjamini-Hochberg FDR",
+    "q": 0.05,
+    "station_level_results": "supporting / sensitivity evidence, NOT independent primary hypothesis tests",
+    "cherry_picking": "FORBIDDEN"
+  },
+  "expected_sign": {
+    "hypothesis": "groundwater-related compaction",
+    "deeper_groundwater": "positive GW_DEPTH_ANOMALY",
+    "relevant_deformation": "more negative LOS displacement",
+    "expected_association": "negative correlation between GW_DEPTH_ANOMALY and LOS displacement, i.e. deeper groundwater -> more negative LOS",
+    "forced": false,
+    "persistent_opposite_sign": "counter-evidence",
+    "caveat": "LOS is not a vertical-only measurement"
+  },
+  "positive_case_requirement": [
+    "multiple nearby stations behave consistently where available",
+    "hotspot composite shows the relationship",
+    "effect survives reasonable quality-mask choice",
+    "positive lags perform at least as well as negative/falsification lags",
+    "result is not driven by one short interval",
+    "temporal coverage is adequate"
+  ],
+  "mandatory_controls": {
+    "run_same_protocol_for": [
+      "H002",
+      "H003"
+    ],
+    "reason": "their ascending contrasts are similar to H004 but their rates are NOT reproduced in descending despite adequate descending quality; a groundwater mechanism becomes less selective if the controls behave equally strongly",
+    "comparison_is_required": "H001/H004 vs H002/H003, not merely per-hotspot tests"
+  },
+  "quality_mask_sensitivity": {
+    "insar_extractions": [
+      "Q_PRIMARY",
+      "Q_STRICT",
+      "hotspot_core"
+    ],
+    "hotspot_redesign": "FORBIDDEN",
+    "groundwater_series_unchanged": true,
+    "if_association_disappears_under_tightening": "classify as processing-sensitive"
+  },
+  "coherence_confounding": {
+    "record_per_hotspot": [
+      "median temporal coherence",
+      "strict-mask result",
+      "core result",
+      "processing sensitivity"
+    ],
+    "million_pixel_regressions": "FORBIDDEN",
+    "test": "does the groundwater association survive using only high-confidence / strict-quality InSAR pixels"
+  },
+  "outage_sensitivity": {
+    "applies_to": "H001 (long telemetry gaps)",
+    "procedure": "remove 30 days before and 30 days after each major gap, then repeat any apparently meaningful result",
+    "gap_filling": "FORBIDDEN"
+  },
+  "leave_one_station_out": {
+    "threshold_for_test": "hotspots with >= 3 eligible stations",
+    "for_H001_with_2_stations": "report both station results individually in addition to the composite",
+    "result_dependent_on_one_station": "labelled STATION-SENSITIVE"
+  },
+  "seasonal_cgwb_validation": {
+    "role": "coarse external context only",
+    "merge_with_NWDP": "FORBIDDEN",
+    "use_to_fill_gaps": "FORBIDDEN",
+    "networks_overlap": false,
+    "may_not_be_called": "station-level validation"
+  },
+  "evidence_grading": {
+    "scale": [
+      "NO EVIDENCE",
+      "WEAK",
+      "MODERATE",
+      "STRONG"
+    ],
+    "STRONG": [
+      "expected-direction association in H001 and/or H004",
+      "effect robust across stations/composite",
+      "positive-lag behaviour",
+      "autocorrelation-aware support",
+      "robustness to InSAR quality mask",
+      "groundwater behaviour more specific to supported zones than H002/H003",
+      "no major contradictory evidence"
+    ],
+    "MODERATE": "multiple lines consistent but one major limitation remains (sparse local network, large outage, control ambiguity, limited robustness)",
+    "WEAK": "some temporal/spatial consistency but small/unstable effect, station dependence, similar controls, ambiguous lag direction, or strong data limitations",
+    "NO_EVIDENCE": "no consistent preregistered association, or predominantly contradictory evidence",
+    "forbidden_language": [
+      "PROVEN",
+      "CAUSED BY",
+      "GROUNDWATER SUBSIDENCE"
+    ]
+  },
+  "interpretation_boundary": {
+    "even_a_STRONG_result_means": "strong evidence consistent with groundwater-related deformation",
+    "it_does_not_mean": "groundwater depletion caused the observed subsidence",
+    "why": [
+      "LOS is not a pure vertical measurement",
+      "H001/H004 temporal histories are not independently reproduced by descending",
+      "aquifer/geological metadata are missing",
+      "no direct compaction measurements exist"
+    ]
+  },
+  "created_utc": "2026-09-22T18:24:39.182232+00:00",
+  "input_hashes": {
+    "data/external/nwdp/cgwb_delhi_9d2e7887-084c-458c-a6c8-29a280de2b19.csv": "30ecd97e19a3380489ede7f848674e87c495e3fdfc8bc6296dc6f2789a49bea3",
+    "data/external/nwdp/delhi_sw_gw_14c48913-600c-4e2c-9c77-8ef2e92e59e6.csv": "46080222a2164bffdf8fe4d31aff3e13dd36a369bdf0fe55b738b741bf23c7a9",
+    "qc/sci/phase1/hotspots_corrected.geojson": "8cf2a7e35d7795e83f2d7e089f7c316a8a84f8178d282028178d67dd9a34090b",
+    "qc/sci/phase1/hotspots.csv": "0239009916889a7c2dd71f43f08751188cc9b3c819da49e6a811fc652c3d9a84",
+    "mintpy/baseline_raw_work/velocity.h5": "73d1171cff5637f5251e40591ed65c39ba6575aad594962c406dde229f08cb22",
+    "mintpy/baseline_raw_work/timeseries.h5": "c11c323d17c729ee08c128bdb27e3f147b99b42175f51d9cc0aea65c61e11633",
+    "mintpy/baseline_raw_work/temporalCoherence.h5": "60494cf67177b4757771de029f84799770e70685454bbdbbd50bc6449db00af0",
+    "qc/sci/phase3/nwdp_telemetry_station_registry.csv": "9c9f232b78ed6399e76bd1fa1ea7431047a4f011bc1f7a6a15448400eae9085c"
+  },
+  "environment": {
+    "python": "3.11.16",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "no_correlation_exists_yet": true,
+  "protocol_freeze_id": "152fa51ca8b656d1bfab8b0e02660b486ab1f1049c81e00ac85c4fed576d445e"
+}

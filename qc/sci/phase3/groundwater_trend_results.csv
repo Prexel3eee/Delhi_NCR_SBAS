@@ -1,0 +1,5 @@
+hotspot,gw_trend_m_per_yr,gw_trend_first_half,gw_trend_second_half,insar_rate_mm_per_yr,n_gw_days,n_insar_epochs
+H001,-4.0178,-0.1912,-0.529,-30.258,868,119
+H004,-0.6807,-2.7496,0.7508,-14.176,1035,119
+H002,0.046,0.0809,0.3389,-14.419,653,119
+H003,0.1469,0.0819,0.2336,-13.715,670,119

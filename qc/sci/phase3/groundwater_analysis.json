@@ -1,0 +1,448 @@
+{
+  "generated_utc": "2026-09-22T18:26:35.554193+00:00",
+  "protocol_freeze_id": "152fa51ca8b656d1bfab8b0e02660b486ab1f1049c81e00ac85c4fed576d445e",
+  "stations_eligible": 111,
+  "stations_selected_by_hotspot": {
+    "H001": 2,
+    "H004": 4,
+    "H002": 5,
+    "H003": 6
+  },
+  "trends": [
+    {
+      "hotspot": "H001",
+      "gw_trend_m_per_yr": -4.0178,
+      "gw_trend_first_half": -0.1912,
+      "gw_trend_second_half": -0.529,
+      "insar_rate_mm_per_yr": -30.258,
+      "n_gw_days": 868,
+      "n_insar_epochs": 119
+    },
+    {
+      "hotspot": "H004",
+      "gw_trend_m_per_yr": -0.6807,
+      "gw_trend_first_half": -2.7496,
+      "gw_trend_second_half": 0.7508,
+      "insar_rate_mm_per_yr": -14.176,
+      "n_gw_days": 1035,
+      "n_insar_epochs": 119
+    },
+    {
+      "hotspot": "H002",
+      "gw_trend_m_per_yr": 0.046,
+      "gw_trend_first_half": 0.0809,
+      "gw_trend_second_half": 0.3389,
+      "insar_rate_mm_per_yr": -14.419,
+      "n_gw_days": 653,
+      "n_insar_epochs": 119
+    },
+    {
+      "hotspot": "H003",
+      "gw_trend_m_per_yr": 0.1469,
+      "gw_trend_first_half": 0.0819,
+      "gw_trend_second_half": 0.2336,
+      "insar_rate_mm_per_yr": -13.715,
+      "n_gw_days": 670,
+      "n_insar_epochs": 119
+    }
+  ],
+  "lags": [
+    {
+      "hotspot": "H001",
+      "lag_days": 0,
+      "N": 69,
+      "spearman": -0.1943,
+      "pearson": -0.0725,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": 30,
+      "N": 72,
+      "spearman": -0.1038,
+      "pearson": -0.0093,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": 60,
+      "N": 70,
+      "spearman": -0.0414,
+      "pearson": 0.0251,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": 90,
+      "N": 73,
+      "spearman": -0.0379,
+      "pearson": 0.018,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": -30,
+      "N": 74,
+      "spearman": -0.2732,
+      "pearson": -0.2045,
+      "p_block": 0.5056,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": -60,
+      "N": 72,
+      "spearman": -0.4263,
+      "pearson": -0.2913,
+      "p_block": 0.5072,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H001",
+      "lag_days": -90,
+      "N": 74,
+      "spearman": -0.3063,
+      "pearson": -0.2594,
+      "p_block": 0.5012,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": 0,
+      "N": 83,
+      "spearman": 0.0033,
+      "pearson": -0.0828,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": 30,
+      "N": 84,
+      "spearman": -0.0223,
+      "pearson": -0.046,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": 60,
+      "N": 83,
+      "spearman": -0.1777,
+      "pearson": -0.178,
+      "p_block": 0.5168,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": 90,
+      "N": 84,
+      "spearman": -0.2722,
+      "pearson": -0.151,
+      "p_block": 0.496,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": -30,
+      "N": 84,
+      "spearman": -0.0717,
+      "pearson": -0.1325,
+      "p_block": 1.0,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": -60,
+      "N": 84,
+      "spearman": -0.1798,
+      "pearson": -0.2133,
+      "p_block": 1.0,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H004",
+      "lag_days": -90,
+      "N": 85,
+      "spearman": -0.2076,
+      "pearson": -0.13,
+      "p_block": 1.0,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": 0,
+      "N": 51,
+      "spearman": -0.1007,
+      "pearson": -0.1299,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": 30,
+      "N": 55,
+      "spearman": 0.1419,
+      "pearson": 0.1084,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": 60,
+      "N": 52,
+      "spearman": 0.2126,
+      "pearson": 0.251,
+      "p_block": 0.489,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": 90,
+      "N": 56,
+      "spearman": 0.0459,
+      "pearson": 0.1052,
+      "p_block": 1.0,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": -30,
+      "N": 56,
+      "spearman": -0.2504,
+      "pearson": -0.2839,
+      "p_block": 0.5048,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": -60,
+      "N": 53,
+      "spearman": -0.1059,
+      "pearson": -0.2674,
+      "p_block": 0.4986,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H002",
+      "lag_days": -90,
+      "N": 57,
+      "spearman": -0.0172,
+      "pearson": -0.0349,
+      "p_block": 1.0,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": 0,
+      "N": 54,
+      "spearman": 0.1247,
+      "pearson": 0.1129,
+      "p_block": 0.5012,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": 30,
+      "N": 54,
+      "spearman": 0.2386,
+      "pearson": 0.2258,
+      "p_block": 0.5048,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": 60,
+      "N": 55,
+      "spearman": 0.0947,
+      "pearson": 0.1287,
+      "p_block": 0.5066,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": 90,
+      "N": 55,
+      "spearman": -0.3656,
+      "pearson": -0.2198,
+      "p_block": 0.495,
+      "role": "positive"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": -30,
+      "N": 55,
+      "spearman": -0.0358,
+      "pearson": -0.0888,
+      "p_block": 0.4922,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": -60,
+      "N": 56,
+      "spearman": -0.1811,
+      "pearson": -0.3038,
+      "p_block": 0.5072,
+      "role": "falsification"
+    },
+    {
+      "hotspot": "H003",
+      "lag_days": -90,
+      "N": 56,
+      "spearman": 0.1751,
+      "pearson": 0.11,
+      "p_block": 0.4918,
+      "role": "falsification"
+    }
+  ],
+  "controls": [
+    {
+      "hotspot": "H001",
+      "role": "supported",
+      "n_stations": 2,
+      "gw_trend_m_per_yr": -4.0178,
+      "gw_seasonal_amplitude_m": 23.6481,
+      "best_positive_lag_rho": -0.0379,
+      "best_positive_lag": 90,
+      "best_negative_lag_rho": -0.2732,
+      "mean_positive_rho": -0.0944,
+      "mean_negative_rho": -0.3353,
+      "gw_days_available": 868
+    },
+    {
+      "hotspot": "H004",
+      "role": "supported",
+      "n_stations": 4,
+      "gw_trend_m_per_yr": -0.6807,
+      "gw_seasonal_amplitude_m": 1.1742,
+      "best_positive_lag_rho": 0.0033,
+      "best_positive_lag": 0,
+      "best_negative_lag_rho": -0.0717,
+      "mean_positive_rho": -0.1172,
+      "mean_negative_rho": -0.153,
+      "gw_days_available": 1035
+    },
+    {
+      "hotspot": "H002",
+      "role": "negative_control",
+      "n_stations": 5,
+      "gw_trend_m_per_yr": 0.046,
+      "gw_seasonal_amplitude_m": 1.015,
+      "best_positive_lag_rho": 0.2126,
+      "best_positive_lag": 60,
+      "best_negative_lag_rho": -0.0172,
+      "mean_positive_rho": 0.0749,
+      "mean_negative_rho": -0.1245,
+      "gw_days_available": 653
+    },
+    {
+      "hotspot": "H003",
+      "role": "negative_control",
+      "n_stations": 6,
+      "gw_trend_m_per_yr": 0.1469,
+      "gw_seasonal_amplitude_m": 0.9715,
+      "best_positive_lag_rho": 0.2386,
+      "best_positive_lag": 30,
+      "best_negative_lag_rho": 0.1751,
+      "mean_positive_rho": 0.0231,
+      "mean_negative_rho": -0.0139,
+      "gw_days_available": 670
+    }
+  ],
+  "quality_sensitivity": [
+    {
+      "hotspot": "H001",
+      "mask": "Q_PRIMARY",
+      "N": 69,
+      "spearman": -0.1943,
+      "median_temporal_coherence": null
+    },
+    {
+      "hotspot": "H001",
+      "mask": "Q_STRICT",
+      "N": 69,
+      "spearman": -0.1871,
+      "median_temporal_coherence": null
+    },
+    {
+      "hotspot": "H001",
+      "mask": "core",
+      "N": 69,
+      "spearman": -0.1535,
+      "median_temporal_coherence": null
+    },
+    {
+      "hotspot": "H004",
+      "mask": "Q_PRIMARY",
+      "N": 83,
+      "spearman": 0.0033,
+      "median_temporal_coherence": null
+    },
+    {
+      "hotspot": "H004",
+      "mask": "Q_STRICT",
+      "N": 83,
+      "spearman": 0.0039,
+      "median_temporal_coherence": null
+    },
+    {
+      "hotspot": "H004",
+      "mask": "core",
+      "N": 83,
+      "spearman": 0.0001,
+      "median_temporal_coherence": null
+    }
+  ],
+  "station_sensitivity": [
+    {
+      "hotspot": "H001",
+      "left_out": "delhi_sw_gw:New Delhi Mungeshpur Mungeshpur",
+      "remaining": 1,
+      "N": 71,
+      "spearman": -0.1949
+    },
+    {
+      "hotspot": "H001",
+      "left_out": "delhi_sw_gw:New Delhi Salahpur Salahpur",
+      "remaining": 1,
+      "N": 83,
+      "spearman": 0.2571
+    },
+    {
+      "hotspot": "H004",
+      "left_out": "delhi_sw_gw:New Delhi Mungeshpur Mungeshpur",
+      "remaining": 3,
+      "N": 84,
+      "spearman": -0.0541
+    },
+    {
+      "hotspot": "H004",
+      "left_out": "delhi_sw_gw:New Delhi Salahpur Salahpur",
+      "remaining": 3,
+      "N": 91,
+      "spearman": 0.1271
+    },
+    {
+      "hotspot": "H004",
+      "left_out": "cgwb_delhi:Delhi South West DWARKA Dwarka Sec-23,DDA Park Pz",
+      "remaining": 3,
+      "N": 92,
+      "spearman": 0.0983
+    },
+    {
+      "hotspot": "H004",
+      "left_out": "cgwb_delhi:Delhi South West KAPESHERA Chhawla Pz",
+      "remaining": 3,
+      "N": 92,
+      "spearman": -0.1159
+    }
+  ],
+  "fdr_q": 0.05,
+  "fdr_significant_positive_lag_tests": 0,
+  "no_causal_claim": true
+}

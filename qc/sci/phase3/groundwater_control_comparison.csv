@@ -1,0 +1,5 @@
+hotspot,role,n_stations,gw_trend_m_per_yr,gw_seasonal_amplitude_m,best_positive_lag_rho,best_positive_lag,best_negative_lag_rho,mean_positive_rho,mean_negative_rho,gw_days_available
+H001,supported,2,-4.0178,23.6481,-0.0379,90,-0.2732,-0.0944,-0.3353,868
+H004,supported,4,-0.6807,1.1742,0.0033,0,-0.0717,-0.1172,-0.153,1035
+H002,negative_control,5,0.046,1.015,0.2126,60,-0.0172,0.0749,-0.1245,653
+H003,negative_control,6,0.1469,0.9715,0.2386,30,0.1751,0.0231,-0.0139,670
