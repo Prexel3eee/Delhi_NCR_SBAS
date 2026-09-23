@@ -1,0 +1,24 @@
+{
+  "authors": ["Vishal Kumar Chaubey", "Harishankar Gangwar", "Suresh Kannujiya"],
+  "affiliation": "Indian Institute of Remote Sensing (IIRS), Indian Space Research Organisation (ISRO), Dehradun, Uttarakhand, India",
+  "corresponding_author": "Vishal Kumar Chaubey",
+  "corresponding_email": "vishal.chaubey17@outlook.com",
+  "credit_status": "PROPOSED; AWAITING CONFIRMATION BY ALL AUTHORS",
+  "credit": {
+    "Vishal Kumar Chaubey": "Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Visualization, Writing – original draft",
+    "Harishankar Gangwar": "Supervision, Methodology, Validation, Resources, Writing – review & editing",
+    "Suresh Kannujiya": "Supervision, Validation, Methodology, Writing – review & editing"
+  },
+  "funding_status": "PROPOSED; USE ONLY IF NO SPECIFIC FUNDING WAS RECEIVED",
+  "funding": "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.",
+  "acknowledgements": "The authors gratefully acknowledge Mr. Vivek Chaubey for his continued support during the course of this research.",
+  "competing_interests": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+  "ethics": "Ethical approval was not required for this study, as the research did not involve human participants, animals, or personally identifiable information.",
+  "target_journal": "ISPRS Open Journal of Photogrammetry and Remote Sensing",
+  "ai_status": "PROPOSED; AWAITING REVIEW AND APPROVAL BY ALL AUTHORS",
+  "ai_disclosure": "During the preparation of this manuscript, the authors used OpenAI Codex for literature organization, manuscript drafting and language refinement, consistency and evidence auditing, and assistance with manuscript and figure organization. Before submission, the authors will review and verify the scientific interpretation, analyses, results, conclusions, and final content, and will take full responsibility for the published work.",
+  "data_availability": "The datasets generated and/or analysed during the current study are available from the corresponding author upon reasonable request. Publicly available remote-sensing datasets can be obtained from their respective providers. The processing, verification, and manuscript-building code is available in the public project repository; source data and derived products are identified in Supplement S13. No dedicated dataset repository DOI is currently available.",
+  "data_access_status": "AWAITING CONFIRMATION OF WHAT DERIVED DATA CAN BE SHARED AND JOURNAL POLICY",
+  "data_repository_doi": null,
+  "exclusive_submission": "The authors confirm that the manuscript is original, has not been published previously, is not under consideration for publication elsewhere, and has been approved by all authors for submission to the selected journal."
+}

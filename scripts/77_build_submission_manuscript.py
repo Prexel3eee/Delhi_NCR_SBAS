@@ -30,9 +30,25 @@ HIGHLIGHTS = """# Highlights
 - Reproduction supports observations, not vertical motion or mechanism.
 """
 
-DATA_CODE_STATEMENT = """The processing, verification, hypothesis-testing, and manuscript-building code is organized in the project repository, and the frozen inputs and derived products are identified in Supplement S13. A public archival identifier for the submission dataset has not yet been assigned. Before submission, the human authors must either deposit the shareable data and code in a suitable repository and cite the persistent identifier here, or provide the journal with a specific explanation for any material that cannot be shared."""
+def load_author_declarations(root: Path = PROJECT_ROOT) -> dict:
+    return json.loads((root / "manuscript" / "AUTHOR_DECLARATIONS.json").read_text())
 
-AI_DISCLOSURE_DRAFT = """**AWAITING AUTHOR CONFIRMATION.** Draft statement: During the preparation of this work, the authors used OpenAI Codex to support literature organization, manuscript drafting, consistency auditing, and figure planning. The submitted version must be reviewed and edited by the human authors, who take full responsibility for its content."""
+
+def _author_block(declarations: dict) -> str:
+    authors = "; ".join(declarations["authors"])
+    return (
+        f"**Authors:** {authors}\n\n"
+        f"**Affiliation:** {declarations['affiliation']}\n\n"
+        f"**Corresponding author:** {declarations['corresponding_author']} "
+        f"({declarations['corresponding_email']})"
+    )
+
+
+def _contribution_block(declarations: dict) -> str:
+    lines = [f"**{declarations['credit_status']}.**"]
+    for author in declarations["authors"]:
+        lines.append(f"**{author}:** {declarations['credit'][author]}.")
+    return "\n\n".join(lines)
 
 INTRODUCTION = """Urban InSAR can reveal localized surface motion at a scale difficult to obtain from sparse ground networks, but interpretive confidence does not follow automatically from a coherent velocity map. Relative LOS estimates depend on viewing geometry and reference choice, and can retain atmospheric, unwrapping, decorrelation, and temporal-sampling effects. Even where a feature is geodetically credible, spatial coincidence with pumping, sediments, or construction does not isolate a physical cause. The central scientific problem is therefore both observational and causal: which features survive an independent measurement design, and which proposed explanations distinguish those features from credible negative controls [@ferretti2001; @berardino2002; @crosetto2016]?
 
@@ -442,9 +458,12 @@ The incidents are retained because they changed the reliability of the workflow,
 
 def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
     evidence = load_frozen_evidence(root)
+    declarations = load_author_declarations(root)
     manuscript = "\n".join(
         [
             f"# {TITLE}",
+            "",
+            _author_block(declarations),
             "",
             "## Abstract",
             "",
@@ -478,13 +497,33 @@ def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
             "",
             CONCLUSIONS,
             "",
+            "## Author contributions (CRediT)",
+            "",
+            _contribution_block(declarations),
+            "",
+            "## Funding",
+            "",
+            f"**{declarations['funding_status']}.** {declarations['funding']}",
+            "",
+            "## Acknowledgements",
+            "",
+            declarations["acknowledgements"],
+            "",
+            "## Declaration of competing interest",
+            "",
+            declarations["competing_interests"],
+            "",
+            "## Ethics statement",
+            "",
+            declarations["ethics"],
+            "",
             "## Data and code availability",
             "",
-            DATA_CODE_STATEMENT,
+            declarations["data_availability"],
             "",
             "## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process",
             "",
-            AI_DISCLOSURE_DRAFT,
+            f"**{declarations['ai_status']}.** {declarations['ai_disclosure']}",
             "",
         ]
     )

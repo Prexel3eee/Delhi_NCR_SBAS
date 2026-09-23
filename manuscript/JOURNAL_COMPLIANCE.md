@@ -1,35 +1,28 @@
-# IJAEO submission compliance
+# ISPRS Open Journal submission readiness
 
-Target: **International Journal of Applied Earth Observation and Geoinformation — Research paper**  
-Official guidance retrieved: **23 September 2026**  
-Primary source: https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors
+Target: **ISPRS Open Journal of Photogrammetry and Remote Sensing — research article**
 
-Only two statuses are used: `PASS` for requirements satisfied by the package, and `AWAITING AUTHOR CONFIRMATION` where an identity, declaration, repository decision, or submission authorization belongs to the human authors.
+Review date: **23 September 2026**
 
-| Requirement | Official requirement (paraphrased) and URL | Package location | Status | Action owner |
-|---|---|---|---|---|
-| Scope | Apply Earth-observation data to natural-resource or environmental questions, including data quality and spatial uncertainty. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Manuscript title, Abstract, Sections 2–5 | PASS | Research lead |
-| Article type | Original Research paper is accepted. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `JOURNAL_SELECTION.md`; cover letter | PASS | Research lead |
-| Complete length | Research papers normally contain no more than 8,000 words including abstract, tables, references, and appendices. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `SUBMISSION_MANUSCRIPT.md`; `REFERENCE_LIBRARY.bib`; captions registry | PASS | Research lead |
-| Title | Concise and informative; avoid abbreviations where possible. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Manuscript title | PASS | Research lead |
-| Abstract | Concise, factual, standalone, and no more than 250 words. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Manuscript Abstract | PASS | Research lead |
-| Keywords | Supply 1–7 English keywords. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Line below Abstract | PASS | Research lead |
-| Highlights | Submit 3–5 separate bullets, each no more than 85 characters. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `HIGHLIGHTS.md` | PASS | Research lead |
-| Section style | Number sections and subsections; do not number the Abstract. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Main manuscript Sections 1–6 | PASS | Research lead |
-| Main figures | Cite and sequentially number every image; submit separate files and captions. No numeric figure cap is stated. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Eight main callouts; `FIGURE_CLAIM_REGISTRY.csv`; PNG/PDF outputs; `FIGURE_CAPTIONS.md` | PASS | Research lead |
-| Tables | Use editable text, cite and number consecutively, add captions and notes, avoid vertical rules. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Three Markdown tables in main manuscript | PASS | Research lead |
-| Supplement | Cite supplementary files, submit them with the manuscript, and provide descriptive captions. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `SUBMISSION_SUPPLEMENT.md`; S1–S9 callouts; S12 captions | PASS | Research lead |
-| References | Every citation must resolve; include correct, complete metadata and DOI where available. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `REFERENCE_LIBRARY.bib`; audit citation gate | PASS | Research lead |
-| Data repository | Option C requires depositing, citing, and linking research data, or explaining why sharing is impossible. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Main Data and code availability; Supplement S13 | AWAITING AUTHOR CONFIRMATION | Corresponding author: supply repository DOI or approved restriction rationale |
-| Data statement | State data availability at submission. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Main Data and code availability | PASS | Research lead |
-| Author identities | Title page needs final author order, affiliations, postal addresses, and corresponding-author email. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `AUTHOR_INPUT_REQUIRED.md` | AWAITING AUTHOR CONFIRMATION | All authors |
-| CRediT | Corresponding author must provide contributor roles. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `AUTHOR_INPUT_REQUIRED.md` | AWAITING AUTHOR CONFIRMATION | All authors |
-| Funding and acknowledgements | Disclose funding and sponsor role; place acknowledgements before references. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `AUTHOR_INPUT_REQUIRED.md` | AWAITING AUTHOR CONFIRMATION | All authors |
-| Competing interests | Complete the publisher declaration and upload the generated Word file. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `AUTHOR_INPUT_REQUIRED.md` | AWAITING AUTHOR CONFIRMATION | All authors |
-| Declaration of generative AI | Declare substantive AI use in a dedicated section before references, naming tool and purpose and affirming author review. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Final section of main manuscript; confirmation field in `AUTHOR_INPUT_REQUIRED.md` | AWAITING AUTHOR CONFIRMATION | All authors: verify exact use and approve wording |
-| Exclusive submission | Work must not be under consideration elsewhere and publication must be approved by all authors. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | `COVER_LETTER.md` | AWAITING AUTHOR CONFIRMATION | All authors |
-| Graphical abstract | Encouraged, not required. https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/publish/guide-for-authors | Deliberately omitted from the required package; existing figures carry the scientific content | PASS | Research lead |
+Scope sources: [ISPRS publications overview](https://www.isprs.org/resources/papers/) and [ISPRS publication policy](https://www.isprs.org/documents/orangebook/app4.aspx).
+Journal guide: [live guide for authors](https://www.sciencedirect.com/journal/isprs-open-journal-of-photogrammetry-and-remote-sensing/publish/guide-for-authors); its full text was not retrievable through the available web channel and must be checked in the portal before submission.
 
-## Portal stop condition
+`PASS` means the present package contains the stated component. `AWAITING AUTHOR CONFIRMATION` means an author check or live journal requirement remains outstanding. A PASS here is not a claim of portal acceptance.
 
-Do not submit while any row remains `AWAITING AUTHOR CONFIRMATION`. The scientific package can pass its evidence audit independently of these author-owned items.
+| Requirement | Package evidence | Status | Remaining action |
+|---|---|---|---|
+| Journal scope | Applied remote sensing study with independently processed Sentinel-1 geometries; journal is an official ISPRS venue for scientific, technical, and application-oriented work. | PASS | Reconfirm article type in live portal. |
+| Author identities and contact | Three named authors, shared IIRS/ISRO affiliation, and corresponding-author email appear in the manuscript. | PASS | Confirm title-page styling and any additional contact fields. |
+| Research narrative | Abstract, Introduction, Methods, Results, Discussion, Limitations, and Conclusions are present. | PASS | Check live article structure and length rules. |
+| Figures and tables | Eight main figures, four supplementary figures, three main tables, captions, and provenance registry are present. | PASS | Check file format, resolution, and number limits in live guide. |
+| Abstract, keywords, highlights | 240-word abstract, six keywords, and five highlights are present. | PASS | Check the selected journal's exact numerical limits. |
+| CRediT | Proposed roles appear in the manuscript and `AUTHOR_DECLARATIONS.json`. | AWAITING AUTHOR CONFIRMATION | Obtain approval from all three authors. |
+| Funding | Proposed no-specific-grant statement appears in the manuscript. | AWAITING AUTHOR CONFIRMATION | Confirm no specific grant, institutional award, or project support was omitted. |
+| Acknowledgements | User-supplied acknowledgement appears in the manuscript. | PASS | Authors may revise wording. |
+| Competing interests and ethics | User-supplied declarations appear in the manuscript. | PASS | Confirm portal forms match the text. |
+| Declaration of generative AI | Draft names OpenAI Codex and its full manuscript-related uses. | AWAITING AUTHOR CONFIRMATION | All authors must confirm actual use and that they have reviewed and verified the final content. |
+| Data repository and code | Statement records public-provider inputs, code repository, data on reasonable request, and no dataset DOI. | AWAITING AUTHOR CONFIRMATION | Identify shareable derived data and any specific restriction; verify live journal data policy. |
+| Exclusive submission | Corresponding author supplied an explicit originality and all-author approval statement. | PASS | Reconfirm if circumstances change before submission. |
+| Publication model | ISPRS identifies the selected title as an open-access journal. | AWAITING AUTHOR CONFIRMATION | Verify current article charge or waiver with the journal. |
+
+The automated scientific audit is separate from these editorial and author checks. Do not submit until the pending statements and live guide have been reviewed.

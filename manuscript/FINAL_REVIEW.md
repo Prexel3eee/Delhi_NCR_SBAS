@@ -1,7 +1,7 @@
 # Final evidence and hostile manuscript review
 
 Review date: **23 September 2026**  
-Target: **International Journal of Applied Earth Observation and Geoinformation — Research paper**  
+Target at the time of this internal review: **International Journal of Applied Earth Observation and Geoinformation — Research paper**. The corresponding author subsequently requested an ISPRS venue; the submission target is now *ISPRS Open Journal of Photogrammetry and Remote Sensing*. The scientific evidence findings below remain applicable, while journal-specific formatting must be checked against its live guide.
 Reviewed package: manuscript, supplement, claim ledger, bibliography, 12-figure registry and provenance, three main tables, two supplementary tables, cover letter, journal compliance matrix, and submission audit.
 
 This is an **internal evidence review performed by the manuscript lead**, not an external independent peer review. Its checks are reproducible from the listed project records, but journal reviewers and the human authors remain independent decision-makers.
@@ -100,19 +100,6 @@ No other correctable major concern was found. The remaining scientific limits ca
 
 ## Author handoff
 
-The scientific package is complete. The authors need supply only the fields in `AUTHOR_INPUT_REQUIRED.md`:
+The corresponding author supplied author names and order, affiliation, contact, acknowledgements, competing-interest and ethics declarations, a data-on-request statement, and an explicit exclusive-submission confirmation. These are now recorded in `AUTHOR_DECLARATIONS.json`. The remaining human checks are the proposed CRediT roles, the conditional no-funding statement, the complete AI-use disclosure and final human verification, the scope of data that can actually be shared, and the selected ISPRS journal's live portal requirements. Details are in `AUTHOR_INPUT_REQUIRED.md`.
 
-1. Author names and order.
-2. Affiliations.
-3. Corresponding author and email.
-4. CRediT roles.
-5. Funding.
-6. Acknowledgements.
-7. Conflicts of interest.
-8. Ethics requirement.
-9. Confirmation of IJAEO as the selected journal.
-10. Approval or correction of the journal-specific AI disclosure.
-11. Data repository DOI or an approved explanation of sharing limits.
-12. Exclusive-submission approval from all authors.
-
-Once these are supplied, replace the marked placeholders, re-run the builder and submission audit, recheck the live IJAEO guide, and convert the editable source into the portal's accepted Word or LaTeX format. Do not submit from this package while the author status remains `AWAITING AUTHOR CONFIRMATION`.
+Re-run the builder and scientific audit after any declaration changes. This internal review is not an external peer-review endorsement or authorization to submit while the author status remains `AWAITING AUTHOR CONFIRMATION`.

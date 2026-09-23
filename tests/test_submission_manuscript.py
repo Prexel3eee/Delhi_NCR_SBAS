@@ -277,26 +277,22 @@ def test_supplementary_callouts_resolve(submission, project_root):
     assert callouts <= headings
 
 
-def test_author_input_boundary_contains_no_guessed_identity(project_root):
-    text = (project_root / "manuscript" / "AUTHOR_INPUT_REQUIRED.md").read_text()
-    placeholder = "Not supplied; must be confirmed by the human authors before submission."
-    fields = [
-        "Author names and order",
-        "Affiliations",
-        "Corresponding author and email",
-        "CRediT roles",
-        "Funding",
-        "Acknowledgements",
-        "Conflicts of interest",
-        "Ethics requirement",
-        "Selected journal",
-        "Journal-specific AI disclosure",
-        "Data repository DOI or sharing rationale",
-        "Exclusive-submission approval",
+def test_author_supplied_details_propagate_without_erasing_pending_checks(
+    submission, audit, project_root
+):
+    declarations = submission.load_author_declarations(project_root)
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    assert declarations["authors"] == [
+        "Vishal Kumar Chaubey", "Harishankar Gangwar", "Suresh Kannujiya"
     ]
-    assert all(f"**{field}:** {placeholder}" in text for field in fields)
-    assert text.count(placeholder) == len(fields)
-    assert "@" not in text
+    assert "vishal.chaubey17@outlook.com" in manuscript
+    assert "ISPRS Open Journal of Photogrammetry and Remote Sensing" == declarations["target_journal"]
+    assert declarations["funding_status"] in manuscript
+    assert declarations["credit_status"] in manuscript
+    assert declarations["ai_status"] in manuscript
+    assert "manuscript drafting" in declarations["ai_disclosure"]
+    assert declarations["data_repository_doi"] is None
+    assert audit.run_audit(project_root).author_status == "AWAITING AUTHOR CONFIRMATION"
 
 
 def test_figure_registry_links_provenance_and_claims(project_root):
@@ -390,24 +386,23 @@ def test_target_journal_abstract_keywords_and_highlights(submission, project_roo
     assert all(len(item) <= 85 for item in highlights)
 
 
-def test_journal_selection_uses_declared_weighting_and_official_sources(project_root):
+def test_journal_selection_uses_isprs_scope_and_source_boundary(project_root):
     selection = (project_root / "manuscript" / "JOURNAL_SELECTION.md").read_text()
     for journal in (
-        "International Journal of Applied Earth Observation and Geoinformation",
-        "Remote Sensing of Environment",
-        "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+        "ISPRS Open Journal of Photogrammetry and Remote Sensing",
+        "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "ISPRS International Journal of Geo-Information",
     ):
         assert journal in selection
-    for weight in ("40%", "25%", "15%", "10%"):
-        assert weight in selection
     assert "Selected target" in selection
-    assert "Retrieved 23 September 2026" in selection
-    assert selection.count("https://") >= 6
+    assert "Checked 23 September 2026" in selection
+    assert "could not be retrieved" in selection
+    assert selection.count("https://") >= 4
 
 
 def test_journal_compliance_has_only_actionable_statuses(project_root):
     compliance = (project_root / "manuscript" / "JOURNAL_COMPLIANCE.md").read_text()
-    assert "International Journal of Applied Earth Observation and Geoinformation" in compliance
+    assert "ISPRS Open Journal of Photogrammetry and Remote Sensing" in compliance
     assert "PASS" in compliance
     assert "AWAITING AUTHOR CONFIRMATION" in compliance
     assert "Declaration of generative AI" in compliance
@@ -418,11 +413,12 @@ def test_journal_compliance_has_only_actionable_statuses(project_root):
 
 def test_cover_letter_is_factual_and_preserves_author_boundary(project_root):
     letter = (project_root / "manuscript" / "COVER_LETTER.md").read_text()
-    assert "Research paper" in letter
+    assert "research article" in letter
     assert "Selective reproduction" in letter
     assert "exclusive submission" in letter.lower()
     assert "data and code" in letter.lower()
-    assert "AWAITING AUTHOR CONFIRMATION" in letter
+    assert "Vishal Kumar Chaubey" in letter
+    assert "proposed CRediT roles" in letter
     assert not re.search(r"\bfirst\b", letter, flags=re.IGNORECASE)
 
 

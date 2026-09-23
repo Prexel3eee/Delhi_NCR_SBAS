@@ -1,6 +1,6 @@
 # Submission readiness v2
 
-**Target journal:** International Journal of Applied Earth Observation and Geoinformation (Research paper)
+**Target journal:** ISPRS Open Journal of Photogrammetry and Remote Sensing (research article)
 
 **Scientific status:** PASS
 
@@ -24,16 +24,16 @@ The author-status boundary is administrative and does not weaken or override a f
 
 - **abstract_words:** 240
 - **claim_ledger_entries:** 23
-- **conservative_complete_submission_words:** 7659
+- **conservative_complete_submission_words:** 7838
 - **highlights:** 5
 - **keywords:** 6
 - **main_figures:** 8
 - **main_tables:** 3
-- **manuscript_words:** 5930
+- **manuscript_words:** 6109
 - **supplementary_figures:** 4
-- **target_journal:** International Journal of Applied Earth Observation and Geoinformation
+- **target_journal:** ISPRS Open Journal of Photogrammetry and Remote Sensing
 - **terminology_allowances:** 18
 
 ## Required human completion
 
-Complete `manuscript/AUTHOR_INPUT_REQUIRED.md` and journal-specific formatting only after all scientific gates pass.
+Review `manuscript/AUTHOR_INPUT_REQUIRED.md`, confirm pending declarations and data access, and verify the selected journal's live guide before submission.

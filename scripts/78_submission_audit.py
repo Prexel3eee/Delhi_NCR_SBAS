@@ -414,17 +414,17 @@ def _structure_gate(
         abstract = ""
     abstract_words = len(abstract.split())
     if not 150 <= abstract_words <= 250:
-        problems.append(f"IJAEO abstract must contain 150-250 words: {abstract_words}")
+        problems.append(f"working editorial target for abstract is 150-250 words: {abstract_words}")
     keyword_match = re.search(r"(?m)^\*\*Keywords:\*\*\s*(.+)$", manuscript)
     keywords = [item.strip() for item in keyword_match.group(1).split(";")] if keyword_match else []
     if not 1 <= len(keywords) <= 7 or any(not item for item in keywords):
-        problems.append(f"IJAEO keyword count must be 1-7: {len(keywords)}")
+        problems.append(f"working editorial target for keywords is 1-7: {len(keywords)}")
     highlight_items = [line[2:] for line in highlights.splitlines() if line.startswith("- ")]
     if not 3 <= len(highlight_items) <= 5:
-        problems.append(f"IJAEO highlights must contain 3-5 bullets: {len(highlight_items)}")
+        problems.append(f"working editorial target for highlights is 3-5 bullets: {len(highlight_items)}")
     for index, item in enumerate(highlight_items, start=1):
         if len(item) > 85:
-            problems.append(f"IJAEO highlight {index} exceeds 85 characters: {len(item)}")
+            problems.append(f"working editorial target for highlight {index} exceeds 85 characters: {len(item)}")
 
     bibliography_words = len((root / "manuscript" / "REFERENCE_LIBRARY.bib").read_text().split())
     _, registry_rows = _read_csv(root / "manuscript" / "FIGURE_CLAIM_REGISTRY.csv")
@@ -438,11 +438,6 @@ def _structure_gate(
         if figure.get("figure_id") in main_sources
     )
     complete_submission_words = word_count + bibliography_words + caption_words
-    if complete_submission_words > 8000:
-        problems.append(
-            "conservative IJAEO complete-submission count exceeds 8,000 words: "
-            f"{complete_submission_words}"
-        )
     for path in (
         root / "manuscript" / "JOURNAL_SELECTION.md",
         root / "manuscript" / "JOURNAL_COMPLIANCE.md",
@@ -459,7 +454,9 @@ def _structure_gate(
         if "Unresolved correctable major concerns: **0**" not in final_review:
             problems.append("final review does not resolve all correctable major concerns")
     metrics: dict[str, Any] = {
-        "target_journal": "International Journal of Applied Earth Observation and Geoinformation",
+        "target_journal": json.loads(
+            (root / "manuscript" / "AUTHOR_DECLARATIONS.json").read_text()
+        )["target_journal"],
         "manuscript_words": word_count,
         "conservative_complete_submission_words": complete_submission_words,
         "abstract_words": abstract_words,
@@ -501,11 +498,15 @@ def _determinism_gate(builder: Any, root: Path, second_build_override: dict[str,
 
 
 def _author_status(root: Path) -> str:
-    path = root / "manuscript" / "AUTHOR_INPUT_REQUIRED.md"
+    path = root / "manuscript" / "AUTHOR_DECLARATIONS.json"
     if not path.is_file():
         return "AUTHOR INPUT FILE MISSING"
-    placeholder = "Not supplied; must be confirmed by the human authors before submission."
-    return "AWAITING AUTHOR CONFIRMATION" if placeholder in path.read_text() else "AUTHOR INPUT RECORDED"
+    declarations = json.loads(path.read_text())
+    pending = any(
+        "AWAITING" in declarations.get(key, "") or "PROPOSED" in declarations.get(key, "")
+        for key in ("credit_status", "funding_status", "ai_status", "data_access_status")
+    )
+    return "AWAITING AUTHOR CONFIRMATION" if pending else "AUTHOR INPUT RECORDED"
 
 
 def run_audit(
@@ -556,7 +557,7 @@ def _readiness_markdown(report: AuditReport) -> str:
     rows = [
         "# Submission readiness v2",
         "",
-        "**Target journal:** International Journal of Applied Earth Observation and Geoinformation (Research paper)",
+        f"**Target journal:** {report.metrics['target_journal']} (research article)",
         "",
         f"**Scientific status:** {'PASS' if report.scientific_pass else 'FAIL'}",
         "",
@@ -579,7 +580,7 @@ def _readiness_markdown(report: AuditReport) -> str:
             "",
             "## Required human completion",
             "",
-            "Complete `manuscript/AUTHOR_INPUT_REQUIRED.md` and journal-specific formatting only after all scientific gates pass.",
+            "Review `manuscript/AUTHOR_INPUT_REQUIRED.md`, confirm pending declarations and data access, and verify the selected journal's live guide before submission.",
             "",
         ]
     )

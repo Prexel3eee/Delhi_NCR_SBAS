@@ -1,5 +1,11 @@
 # Selective reproduction of localized line-of-sight deformation in Delhi-NCR using independent Sentinel-1 geometries
 
+**Authors:** Vishal Kumar Chaubey; Harishankar Gangwar; Suresh Kannujiya
+
+**Affiliation:** Indian Institute of Remote Sensing (IIRS), Indian Space Research Organisation (ISRO), Dehradun, Uttarakhand, India
+
+**Corresponding author:** Vishal Kumar Chaubey (vishal.chaubey17@outlook.com)
+
 ## Abstract
 
 Urban interferometric synthetic-aperture radar interpretation requires separating repeatable geodetic structure from geometry-specific signals and plausible but untested causes. We evaluated this problem over Delhi-NCR using an ascending Sentinel-1 stack of 119 acquisitions and 336 interferograms and an independently constructed descending stack of 91 acquisitions and 219 interferograms. Both were processed as relative line-of-sight (LOS) time series, without shared bursts, pairs, masks, acquisition lists, or reference pixels. Five zones frozen from the ascending product were evaluated within the common valid domain. H001 and H004 were supported at the spatial and mean-rate level; ascending/descending mean relative LOS rates were -30.95/-36.02 and -14.31/-12.46 mm yr-1, respectively. H002 and H003 were not reproduced despite adequate descending quality, while H005 showed an unresolved sign-and-magnitude contradiction (-14.21 versus +61.39 mm yr-1). The supported zones total 6.66 km2, a polygon-area sum rather than a continuous validated footprint. Preregistered tests found no evidence that groundwater-level variability, shallow soil texture, existing built intensity, or detected recent built-up expansion explained supported-versus-control selectivity. Deep geological and aquifer-system susceptibility was not adequately tested, and major construction loading was not testable. Uncertainty was separated into statistical, reference-systematic, processing-sensitivity, temporal, and structural components. Cross-geometry support applied to spatial pattern and mean-rate behavior, not matching time histories; H001 cumulative series disagreed substantially. Thus, negative controls show that a coherent ascending anomaly need not survive an independent geometry, while surviving observations do not establish vertical displacement or mechanism. Selective reproduction provides the defensible basis for inference.
@@ -210,10 +216,36 @@ The preregistered groundwater, shallow-texture, existing-built-intensity, and de
 
 The negative controls are central to that conclusion. They show that an ascending anomaly of comparable magnitude and adequate local quality need not survive an independent geometry, and that a regional explanatory variable must account for differential outcomes rather than merely coexist with urban deformation. Retaining H002/H003 and the H005 contradiction therefore changes the scientific claim from detection plus plausible attribution to selective reproduction with explicit inference limits. That separation is the principal contribution of the study.
 
+## Author contributions (CRediT)
+
+**PROPOSED; AWAITING CONFIRMATION BY ALL AUTHORS.**
+
+**Vishal Kumar Chaubey:** Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Visualization, Writing – original draft.
+
+**Harishankar Gangwar:** Supervision, Methodology, Validation, Resources, Writing – review & editing.
+
+**Suresh Kannujiya:** Supervision, Validation, Methodology, Writing – review & editing.
+
+## Funding
+
+**PROPOSED; USE ONLY IF NO SPECIFIC FUNDING WAS RECEIVED.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
+
+## Acknowledgements
+
+The authors gratefully acknowledge Mr. Vivek Chaubey for his continued support during the course of this research.
+
+## Declaration of competing interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Ethics statement
+
+Ethical approval was not required for this study, as the research did not involve human participants, animals, or personally identifiable information.
+
 ## Data and code availability
 
-The processing, verification, hypothesis-testing, and manuscript-building code is organized in the project repository, and the frozen inputs and derived products are identified in Supplement S13. A public archival identifier for the submission dataset has not yet been assigned. Before submission, the human authors must either deposit the shareable data and code in a suitable repository and cite the persistent identifier here, or provide the journal with a specific explanation for any material that cannot be shared.
+The datasets generated and/or analysed during the current study are available from the corresponding author upon reasonable request. Publicly available remote-sensing datasets can be obtained from their respective providers. The processing, verification, and manuscript-building code is available in the public project repository; source data and derived products are identified in Supplement S13. No dedicated dataset repository DOI is currently available.
 
 ## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
-**AWAITING AUTHOR CONFIRMATION.** Draft statement: During the preparation of this work, the authors used OpenAI Codex to support literature organization, manuscript drafting, consistency auditing, and figure planning. The submitted version must be reviewed and edited by the human authors, who take full responsibility for its content.
+**PROPOSED; AWAITING REVIEW AND APPROVAL BY ALL AUTHORS.** During the preparation of this manuscript, the authors used OpenAI Codex for literature organization, manuscript drafting and language refinement, consistency and evidence auditing, and assistance with manuscript and figure organization. Before submission, the authors will review and verify the scientific interpretation, analyses, results, conclusions, and final content, and will take full responsibility for the published work.

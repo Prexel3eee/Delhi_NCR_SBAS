@@ -4,9 +4,9 @@
   "failed_gates": [],
   "author_status": "AWAITING AUTHOR CONFIRMATION",
   "metrics": {
-    "target_journal": "International Journal of Applied Earth Observation and Geoinformation",
-    "manuscript_words": 5930,
-    "conservative_complete_submission_words": 7659,
+    "target_journal": "ISPRS Open Journal of Photogrammetry and Remote Sensing",
+    "manuscript_words": 6109,
+    "conservative_complete_submission_words": 7838,
     "abstract_words": 240,
     "keywords": 6,
     "highlights": 5,
@@ -19,126 +19,126 @@
   "terminology_allowances": [
     {
       "term": "validated",
-      "line": "5",
+      "line": "11",
       "line_sha256": "39f6b2dd7553ba868f36f795103ab80ab239248ac27e8bff6de639e31de252be",
       "reason": "explicitly negates a continuous validated footprint",
       "claim_id": "C005;C006"
     },
     {
       "term": "vertical",
-      "line": "5",
+      "line": "11",
       "line_sha256": "555c9cdd7a027c6bb962d79fde28cb9905c6ffe2ea969f3927fd4d80a6b017de",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "19",
+      "line": "25",
       "line_sha256": "9340aebebe7ebb8a6dbf47c00576b2db68f285c149c03820cc35ea6e907d48b2",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "25",
+      "line": "31",
       "line_sha256": "31754ee8017683b407967c94623b7557c2f52377aed21beb611f18d4c21bda96",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "validated",
-      "line": "35",
+      "line": "41",
       "line_sha256": "a61818024e65d0819e11a9ae0f61de7df04d3553f7f99e20cb02cc3897128680",
       "reason": "explicitly negates a continuous validated footprint",
       "claim_id": "C005;C006"
     },
     {
       "term": "vertical",
-      "line": "75",
+      "line": "81",
       "line_sha256": "f05ae4fd28a30ee8ba1193e1b086f6a5499d868ced3dc5470bc04b18fa1fbd84",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "validated",
-      "line": "75",
+      "line": "81",
       "line_sha256": "df40a424ca503a3c8d57f808c605de35d126abeb18181308b87e3b5f83ad7fef",
       "reason": "explicitly negates a continuous validated footprint",
       "claim_id": "C005;C006"
     },
     {
       "term": "vertical",
-      "line": "89",
+      "line": "95",
       "line_sha256": "51e1728a01ff904b770864cdbd08840d40c1e62adcc338561ecc897277fff37d",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "93",
+      "line": "99",
       "line_sha256": "988e6c5dde5524b3558eccbd5efa500b0d3d507ddbe138fec587b3db1f518090",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "validated",
-      "line": "135",
+      "line": "141",
       "line_sha256": "7ebe39220dbf57a4b366d8c72b75903d4afd6202440b07c689ad62c0da6cd92b",
       "reason": "explicitly negates a continuous validated footprint",
       "claim_id": "C005;C006"
     },
     {
       "term": "vertical",
-      "line": "137",
+      "line": "143",
       "line_sha256": "9c183c8bf26584da3dd957e9a88c4ec3aec08888c06db29a5585b13cc8adc99d",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "137",
+      "line": "143",
       "line_sha256": "62232bc0f012f53bb14e55491155cd18ae15582bac7c7880ecfd283c673bc0bf",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "139",
+      "line": "145",
       "line_sha256": "5d2b5c40668268dafd415aa55fb250299c292636842528cf03273dbebfcc5a30",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "141",
+      "line": "147",
       "line_sha256": "399511d3cb82ea4ed9d9e3d3005d74f26f85a51c0d2327c6336cf024b63635cf",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "141",
+      "line": "147",
       "line_sha256": "fe64fe77a49e04aacd20a4d93c284e6afc67fc2df70789fab24ce1a1872fc3ec",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "183",
+      "line": "189",
       "line_sha256": "28456b7206712912f4798f28743ca9b0e5ccfa8d27fdf2890d5bf90ec49f7322",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "191",
+      "line": "197",
       "line_sha256": "a841ff8caecebba14bd26df9ac83a03f67575dddd0c94a2aca69c912310d1d47",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
     },
     {
       "term": "vertical",
-      "line": "207",
+      "line": "213",
       "line_sha256": "cf6d56b1a4a693a865e8a4958192c6796028b7e2014961118f5eadc1200843be",
       "reason": "bounds vertical inference or labels a diagnostic expectation",
       "claim_id": "C014;C021"
