@@ -291,6 +291,8 @@ def test_author_input_boundary_contains_no_guessed_identity(project_root):
         "Ethics requirement",
         "Selected journal",
         "Journal-specific AI disclosure",
+        "Data repository DOI or sharing rationale",
+        "Exclusive-submission approval",
     ]
     assert all(f"**{field}:** {placeholder}" in text for field in fields)
     assert text.count(placeholder) == len(fields)
@@ -422,3 +424,36 @@ def test_cover_letter_is_factual_and_preserves_author_boundary(project_root):
     assert "data and code" in letter.lower()
     assert "AWAITING AUTHOR CONFIRMATION" in letter
     assert not re.search(r"\bfirst\b", letter, flags=re.IGNORECASE)
+
+
+def test_main_tables_have_numbered_captions_and_text_callouts(submission, project_root):
+    manuscript = submission.build_submission(project_root)["manuscript"]
+    captions = (
+        "**Table 1. Cross-geometry outcomes for the five frozen zones.**",
+        "**Table 2. Uncertainty components retained as separate quantities.**",
+        "**Table 3. Preregistered mechanism-test outcomes and evidence states.**",
+    )
+    assert all(caption in manuscript for caption in captions)
+    for number in (1, 2, 3):
+        assert manuscript.count(f"Table {number}") >= 2
+
+
+def test_final_review_resolves_correctable_major_findings(project_root):
+    review = (project_root / "manuscript" / "FINAL_REVIEW.md").read_text()
+    for topic in (
+        "Circular hotspot definition",
+        "Shared-data leakage",
+        "Reference dependence",
+        "Temporal mismatch",
+        "Coherence confounding",
+        "Unsupported causation",
+        "Novelty overstatement",
+        "Contradictory literature",
+        "Citation-entailment review",
+        "Figure and table review",
+    ):
+        assert topic in review
+    assert "Unresolved fatal flaws: **0**" in review
+    assert "Unresolved correctable major concerns: **0**" in review
+    assert "| PARTIAL |" not in review
+    assert "| NONE |" not in review

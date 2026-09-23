@@ -72,7 +72,9 @@ The common valid domain contains 854,004 pixels, covers 1,366.406 km2 (69.63% of
 
 ### 3.4 Independently supported zones: H001 and H004
 
-H001 (5.59 km2) had mean ascending and descending relative LOS rates of -30.95 and -36.02 mm yr-1. Its magnitude ratio was 1.16, 1.6 standard deviations from the vertical-equivalent expectation, and median temporal coherence was 0.925 ascending and 0.906 descending. H004 (1.07 km2) had corresponding rates of -14.31 and -12.46 mm yr-1, a magnitude ratio of 0.87, the same 1.6-standard-deviation departure, and median coherence of 0.963 and 0.909. Each zone was spatially detected with the same LOS sign in the independently processed descending product and was classified `INDEPENDENTLY_SUPPORTED` at the spatial and mean-rate level (Figure F3) (Figure F4). Their combined 6.66 km2 is the sum of the original H001 and H004 polygon areas; it is not an extrapolated or continuous validated extent. Neither zone had an independently reproduced detailed displacement history, and both retain the interpretation `SUPPORTED DEFORMATION FEATURE - MECHANISM UNRESOLVED`.
+H001 (5.59 km2) had mean ascending and descending relative LOS rates of -30.95 and -36.02 mm yr-1. Its magnitude ratio was 1.16, 1.6 standard deviations from the vertical-equivalent expectation, and median temporal coherence was 0.925 ascending and 0.906 descending. H004 (1.07 km2) had corresponding rates of -14.31 and -12.46 mm yr-1, a magnitude ratio of 0.87, the same 1.6-standard-deviation departure, and median coherence of 0.963 and 0.909. Each zone was spatially detected with the same LOS sign in the independently processed descending product and was classified `INDEPENDENTLY_SUPPORTED` at the spatial and mean-rate level (Figure F3) (Figure F4). Their combined 6.66 km2 is the sum of the original H001 and H004 polygon areas; it is not an extrapolated or continuous validated extent. Neither zone had an independently reproduced detailed displacement history, and both retain the interpretation `SUPPORTED DEFORMATION FEATURE - MECHANISM UNRESOLVED`. Table 1 summarizes all five frozen cross-geometry outcomes.
+
+**Table 1. Cross-geometry outcomes for the five frozen zones.**
 
 | Zone | Ascending rate (mm/yr) | Descending rate (mm/yr) | Area (km2) | Status |
 |---|---:|---:|---:|---|
@@ -92,7 +94,9 @@ H005 (0.84 km2) did not merely fail to appear. Its ascending mean relative LOS r
 
 ### 3.7 Temporal behavior and uncertainty
 
-Mean-rate support did not imply temporal reproduction. H001 accumulated -120.7 mm in the retained ascending summary but +1.1 mm in the descending summary, whose series contained large opposing jumps; the detrended cross-geometry correlation was r = 0.007. H004 was likewise classified as having no reproduced detailed history. Per-epoch series absent from the frozen evidence were not reconstructed.
+Mean-rate support did not imply temporal reproduction. H001 accumulated -120.7 mm in the retained ascending summary but +1.1 mm in the descending summary, whose series contained large opposing jumps; the detrended cross-geometry correlation was r = 0.007. H004 was likewise classified as having no reproduced detailed history. Per-epoch series absent from the frozen evidence were not reconstructed. Table 2 keeps the heterogeneous uncertainty components separate.
+
+**Table 2. Uncertainty components retained as separate quantities.**
 
 | Uncertainty component | Frozen value | Consequence |
 |---|---:|---|
@@ -106,7 +110,9 @@ The components were not summed because they are not draws from a common probabil
 
 ### 3.8 Mechanism-test outcomes
 
-The mechanism results preserve the exact evidence states assigned in the frozen synthesis.
+The mechanism results preserve the exact evidence states assigned in the frozen synthesis (Table 3).
+
+**Table 3. Preregistered mechanism-test outcomes and evidence states.**
 
 | Hypothesis | Evidence state | Quantitative or procedural basis |
 |---|---|---|

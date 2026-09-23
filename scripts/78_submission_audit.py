@@ -390,6 +390,16 @@ def _structure_gate(
     table_count = len(re.findall(r"(?m)^\|---", manuscript))
     if not 2 <= table_count <= 3:
         problems.append(f"main manuscript table count outside 2-3: {table_count}")
+    table_captions = (
+        "**Table 1. Cross-geometry outcomes for the five frozen zones.**",
+        "**Table 2. Uncertainty components retained as separate quantities.**",
+        "**Table 3. Preregistered mechanism-test outcomes and evidence states.**",
+    )
+    for number, caption in enumerate(table_captions, start=1):
+        if caption not in manuscript:
+            problems.append(f"missing numbered table caption: Table {number}")
+        if manuscript.count(f"Table {number}") < 2:
+            problems.append(f"Table {number} lacks a prose callout")
     callouts = set(re.findall(r"Supplementary Section (S\d+)", manuscript))
     supplement_headings = set(re.findall(r"(?m)^## (S\d+)\.", supplement))
     expected_callouts = {f"S{number}" for number in range(1, 10)}
@@ -437,9 +447,17 @@ def _structure_gate(
         root / "manuscript" / "JOURNAL_SELECTION.md",
         root / "manuscript" / "JOURNAL_COMPLIANCE.md",
         root / "manuscript" / "COVER_LETTER.md",
+        root / "manuscript" / "FINAL_REVIEW.md",
     ):
         if not path.is_file():
             problems.append(f"missing journal package component: {path.name}")
+    final_review_path = root / "manuscript" / "FINAL_REVIEW.md"
+    if final_review_path.is_file():
+        final_review = final_review_path.read_text()
+        if "Unresolved fatal flaws: **0**" not in final_review:
+            problems.append("final review does not resolve all fatal flaws")
+        if "Unresolved correctable major concerns: **0**" not in final_review:
+            problems.append("final review does not resolve all correctable major concerns")
     metrics: dict[str, Any] = {
         "target_journal": "International Journal of Applied Earth Observation and Geoinformation",
         "manuscript_words": word_count,

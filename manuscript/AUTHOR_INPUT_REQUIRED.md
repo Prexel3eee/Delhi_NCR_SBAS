@@ -12,3 +12,5 @@ These fields are owned by the human authors and are intentionally not inferred f
 - **Ethics requirement:** Not supplied; must be confirmed by the human authors before submission.
 - **Selected journal:** Not supplied; must be confirmed by the human authors before submission.
 - **Journal-specific AI disclosure:** Not supplied; must be confirmed by the human authors before submission.
+- **Data repository DOI or sharing rationale:** Not supplied; must be confirmed by the human authors before submission.
+- **Exclusive-submission approval:** Not supplied; must be confirmed by the human authors before submission.
