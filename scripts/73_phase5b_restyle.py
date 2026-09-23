@@ -124,6 +124,27 @@ def fig1():
     for s in ax.spines.values():
         s.set_visible(False)
     ax.set_aspect("equal")
+    # Orientation and distance cues for the projected scientific map.
+    xmin, xmax = ax.get_xlim()
+    ymin, ymax = ax.get_ylim()
+    span_x, span_y = xmax - xmin, ymax - ymin
+    scale_m = 20_000
+    scale_x = xmin + 0.07 * span_x
+    scale_y = ymin + 0.07 * span_y
+    ax.plot([scale_x, scale_x + scale_m], [scale_y, scale_y], color="black",
+            lw=1.2, solid_capstyle="butt", zorder=8)
+    ax.plot([scale_x, scale_x], [scale_y - 0.008 * span_y, scale_y + 0.008 * span_y],
+            color="black", lw=0.7, zorder=8)
+    ax.plot([scale_x + scale_m, scale_x + scale_m],
+            [scale_y - 0.008 * span_y, scale_y + 0.008 * span_y],
+            color="black", lw=0.7, zorder=8)
+    ax.text(scale_x + scale_m / 2, scale_y + 0.018 * span_y, "20 km",
+            ha="center", va="bottom", fontsize=5.2, zorder=8)
+    ax.annotate("N", xy=(xmin + 0.91 * span_x, ymin + 0.91 * span_y),
+                xytext=(xmin + 0.91 * span_x, ymin + 0.79 * span_y),
+                ha="center", va="center", fontsize=5.8, weight="bold",
+                arrowprops=dict(arrowstyle="-|>", lw=0.7, color="black"),
+                zorder=8)
     ps.panel_label(ax, "A", dx=-0.02, dy=1.01)
     ax.set_title("Acquisition coverage and classification zones", fontsize=7.2)
 
@@ -178,7 +199,8 @@ def fig2():
         v[s.read_masks(1) == 0] = np.nan
 
     fig, axes = plt.subplots(1, 2, figsize=(ps.DOUBLE_COL, 2.9),
-                             gridspec_kw={"width_ratios": [1.3, 1]})
+                             gridspec_kw={"width_ratios": [1.22, 1],
+                                          "wspace": 0.38})
     ax = axes[0]
     im = ax.imshow(v, cmap="RdYlBu_r", vmin=-20, vmax=20)
     ax.grid(False)
@@ -224,7 +246,7 @@ def fig3(ht):
     ids = ps.MAIN_ORDER
     _grouped(ax, ht, ids)
     ax.set_ylim(-46, 76)
-    ax.legend(handles=ps.geom_legend(), loc="lower left", fontsize=5.8)
+    ax.legend(handles=ps.geom_legend(), loc="upper left", fontsize=5.8)
     # status strip drawn OUTSIDE the axes so the rate axis stays tight
     for i, h in enumerate(ids):
         s = ps.style_of(h)
@@ -305,7 +327,7 @@ def fig5(ht):
     fig, axes = plt.subplots(1, 2, figsize=(ps.DOUBLE_COL, 2.8),
                              gridspec_kw={"width_ratios": [1.35, 1]})
     _grouped(axes[0], ht, ["H001", "H004"])
-    axes[0].legend(handles=ps.geom_legend(), loc="lower left", fontsize=5.8)
+    axes[0].legend(handles=ps.geom_legend(), loc="upper left", fontsize=5.8)
     ps.panel_label(axes[0], "A", dx=-0.14, dy=1.01)
     axes[0].set_title("H001 + H004 — independently supported", fontsize=7.0)
 
@@ -504,10 +526,10 @@ def fig12():
             ax.text(0.655, y, state, fontsize=6.0, va="center")
 
     ax.text(0.0, -0.42,
-            "NO EVIDENCE = a suitable test was conducted and did not support the hypothesis   ·   "
-            "NOT ADEQUATELY TESTED = available evidence does not observe the relevant physical domain   ·   "
-            "NOT TESTABLE = the necessary dataset was unavailable.\nThese three categories are distinct and "
-            "are never collapsed, and none of them is equivalent to \"ruled out\".",
+            "NO EVIDENCE = a suitable test was conducted and did not support the hypothesis.\n"
+            "NOT ADEQUATELY TESTED = available evidence does not observe the relevant physical domain; "
+            "NOT TESTABLE = the necessary dataset was unavailable.\n"
+            "These categories are distinct, are never collapsed, and none is equivalent to \"ruled out\".",
             fontsize=5.6, va="top", color="#333333", linespacing=1.5)
     ax.set_title("F12  Competing-hypothesis evidence matrix (frozen)", fontsize=7.5,
                  y=1.02)

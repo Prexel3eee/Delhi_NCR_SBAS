@@ -1,6 +1,6 @@
 {
   "manifest_version": "figure_provenance_v1",
-  "generated_utc": "2026-09-22T19:08:10.861237+00:00",
+  "generated_utc": "2026-09-22T23:47:57.314044+00:00",
   "policy": {
     "every_displayed_value_traces_to_frozen_source": true,
     "unretained_samples_not_synthesised": true,
@@ -11,7 +11,7 @@
     {
       "figure_id": "F1",
       "title": "Study design and independent acquisition geometry",
-      "caption": "**Study design and independent acquisition geometry.** (A) Frozen coverage geometry for the Delhi-NCR study area (1,962.4 km\u00b2, EPSG:32643). Blue denotes the four ascending burst footprints (relative orbit 27, IW2); orange denotes the four descending footprints (relative orbit 136, IW1); black is the AOI boundary. The red hatched area is the 28.0 % of the AOI not covered by the descending track \u2014 a western strip containing no classification zone. White circles mark the five zones (H001\u2013H005), which are small relative to the AOI. (B) Stack composition. The two stacks share no burst, interferogram, mask or acquisition list; no pair was selected because it intersected a zone. *Limitation:* descending coverage is partial, so the descending geometry cannot validate the entire ascending field.",
+      "caption": "**Study design and independent acquisition geometry.** (A) Frozen coverage geometry for the Delhi-NCR study area (1,962.4 km\u00b2, EPSG:32643). Blue denotes the four ascending burst footprints (relative orbit 27, IW2); orange denotes the four descending footprints (relative orbit 136, IW1); black is the AOI boundary. The red hatched area is the 28.0 % of the AOI not covered by the descending track \u2014 a western strip containing no classification zone. White circles mark the five zones (H001\u2013H005), which are small relative to the AOI; north arrow and 20 km scale refer to the EPSG:32643 projection. (B) Stack composition. The two stacks share no burst, interferogram, mask or acquisition list; no pair was selected because it intersected a zone. *Limitation:* descending coverage is partial, so the descending geometry cannot validate the entire ascending field.",
       "sources": [
         {
           "path": "geometry/aoi.geojson",
@@ -80,13 +80,13 @@
       "outputs": [
         {
           "path": "qc/sci/phase4/figures/F01_study_design.png",
-          "sha256": "6df742e3d43f4a22dfbf4fd61ce8a796b14fc3a12f38e90eb144880aa9baa446",
-          "bytes": 403617
+          "sha256": "e8244903089980d32e20e0920f1cac004112996edb157645083914b2a7ff8788",
+          "bytes": 408952
         },
         {
           "path": "qc/sci/phase4/figures/F01_study_design.pdf",
-          "sha256": "f917a268c3f5b4e342f53218ab80ae51de525a35d6143fb614e7472223aa163f",
-          "bytes": 54814
+          "sha256": "12d7402bba9cf4a4172e1c4fa3b0bb3c972a701675ee6e6e5aafd8e88933cf13",
+          "bytes": 55221
         }
       ],
       "manually_edited": false,
@@ -95,7 +95,7 @@
     {
       "figure_id": "F2",
       "title": "Ascending relative LOS velocity",
-      "caption": "**Ascending relative LOS velocity field (authoritative product, RAW-336).** (A) Mean relative line-of-sight velocity, all 336 interferograms retained, no pair excluded. Units are mm yr\u207b\u00b9. Warm colours indicate motion toward the satellite; blue indicates motion away. (B) Distribution of the same field on a log count scale; dashed line is the median. *Quality mask:* water-masked; non-inverted pixels excluded (validity defined by velocityStd > 0, not by finiteness, because MintPy fills the non-inverted region with zeros). *Uncertainty:* values are **relative** LOS rates, not vertical displacement. The reference pixel carries a **4.78 mm yr\u207b\u00b9 systematic** that offsets the absolute zero level; spatial gradients are invariant to it. Formal measurement uncertainty is 0.87 mm yr\u207b\u00b9; these terms are not combined.",
+      "caption": "**Ascending relative LOS velocity field (authoritative product, RAW-336).** (A) Mean relative line-of-sight velocity, all 336 interferograms retained, no pair excluded. Units are mm yr\u207b\u00b9. Warm colours indicate motion toward the satellite; blue indicates motion away; the map display is saturated at \u00b120 mm yr\u207b\u00b9 while the underlying values are retained. (B) Distribution of the same field on a log count scale; dashed line is the median. *Quality mask:* water-masked; non-inverted pixels excluded (validity defined by velocityStd > 0, not by finiteness, because MintPy fills the non-inverted region with zeros). *Uncertainty:* values are **relative** LOS rates, not vertical displacement. The reference pixel carries a **4.78 mm yr\u207b\u00b9 systematic** that offsets the absolute zero level; spatial gradients are invariant to it. Formal measurement uncertainty is 0.87 mm yr\u207b\u00b9; these terms are not combined.",
       "sources": [
         {
           "path": "products/product_v1/los_velocity_mm_per_yr.tif",
@@ -127,13 +127,13 @@
       "outputs": [
         {
           "path": "qc/sci/phase4/figures/F02_ascending_velocity.png",
-          "sha256": "5baa9f363dbc6cc6a71ed9911d3226daadfdcb06712d498e6850364cc485cb6e",
-          "bytes": 799650
+          "sha256": "a60bbe980c02a1bb52721da5a7eeb9207548a058e0fba3d31dcdc9a8e8e39591",
+          "bytes": 705845
         },
         {
           "path": "qc/sci/phase4/figures/F02_ascending_velocity.pdf",
-          "sha256": "12def80274a7a6905e7a2a81381e96d44bdaab79f866660ee8527e5f7394dff7",
-          "bytes": 635531
+          "sha256": "ab417734c7c6de7e62ab3c4e39bbc08b6b28cd37bbd5c99eab59bebc116dcf54",
+          "bytes": 537339
         }
       ],
       "manually_edited": false,
@@ -142,7 +142,7 @@
     {
       "figure_id": "F3",
       "title": "Cross-geometry classification of the five zones",
-      "caption": "**Cross-geometry classification of the five zones.** Grouped mean relative LOS rates by zone and viewing geometry: ascending (solid blue) and descending (hatched orange). Units are mm yr\u207b\u00b9. The strip beneath the axis encodes the frozen cross-geometry status. *Sample definition:* mean rate over each zone's common-domain pixels (854,246 px). *Branches:* ascending = RAW-336; descending = unwrap-corrected candidate. *Limitation:* ascending and descending are separate LOS geometries and are never converted to vertical displacement here. H001/H004 are independently supported at the spatial and mean-rate level; H002/H003 are not reproduced; H005 is a cross-geometry contradiction.",
+      "caption": "**Cross-geometry classification of the five zones.** Grouped mean relative LOS rates by zone and viewing geometry: ascending (solid blue) and descending (hatched orange). Units are mm yr\u207b\u00b9. The strip beneath the axis encodes the frozen cross-geometry status. *Sample definition:* mean rate over each zone's pixels within the 854,004-pixel final common valid domain. *Branches:* ascending = RAW-336; descending = unwrap-corrected candidate. *Limitation:* ascending and descending are separate LOS geometries and are never converted to vertical displacement here. H001/H004 are independently supported at the spatial and mean-rate level; H002/H003 are not reproduced; H005 is a cross-geometry contradiction.",
       "sources": [
         {
           "path": "qc/sci/phase4/final_hotspot_table.csv",
@@ -174,13 +174,13 @@
       "outputs": [
         {
           "path": "qc/sci/phase4/figures/F03_hotspot_classification.png",
-          "sha256": "71899a0ceb0d7edadb5b2d9d451ce5e837f1f8adc2555993f5bbf0d8f29e314e",
-          "bytes": 206611
+          "sha256": "f7f0bbb45c19a19112931bab481becdc438bf7241d31e53b9ff0bac17edde1c9",
+          "bytes": 209360
         },
         {
           "path": "qc/sci/phase4/figures/F03_hotspot_classification.pdf",
-          "sha256": "9cc2c787aee2d5140bc1b91148e38bc2de43ebe36b8f9cee8573efe433f6c2bc",
-          "bytes": 44595
+          "sha256": "ef13270e3ea87e74d568afa9441d3d5fb2d129dc1596dc90622fdc9667bfe384",
+          "bytes": 44598
         }
       ],
       "manually_edited": false,
@@ -227,7 +227,7 @@
         },
         {
           "path": "qc/sci/phase4/figures/F04_cross_geometry_agreement.pdf",
-          "sha256": "34a1eb40150a7a97f4bd1417cbc708eae96c667f55043da850f2a6014e84be6c",
+          "sha256": "26a8f84d4680c5a3b841fe61248e8f698605eb47ebd6632ae646f5a94721c55e",
           "bytes": 47398
         }
       ],
@@ -268,12 +268,12 @@
       "outputs": [
         {
           "path": "qc/sci/phase4/figures/F05_supported_features.png",
-          "sha256": "fcb92a6decac2eb30659887a7a9f81f2d4c79b5e2ad29b5541a6e50b042c2ace",
-          "bytes": 264950
+          "sha256": "768fdade8f3708aea41ae54c376e3b953da548fd2996578c12c913c66a1e733b",
+          "bytes": 264704
         },
         {
           "path": "qc/sci/phase4/figures/F05_supported_features.pdf",
-          "sha256": "11d2072a9b4c97983f45575c7bee16d00ed0db7f8355ad3d43e0b5a1ee6d2ead",
+          "sha256": "e44a766564dae10b3fad30c3014e05fe8fc7084d90c8fb391e6b20a9e69ceaf6",
           "bytes": 22089
         }
       ],
@@ -319,7 +319,7 @@
         },
         {
           "path": "qc/sci/phase4/figures/F06_negative_controls.pdf",
-          "sha256": "8166e4835cdd953f848e3c7da807c3a27768299443989c6acf13ee2a998ec033",
+          "sha256": "6a8554a5faa2a234b8470ccdf134d92e795572602e5b8ebf2c6f69ad41fd5f2c",
           "bytes": 26074
         }
       ],
@@ -365,7 +365,7 @@
         },
         {
           "path": "qc/sci/phase4/figures/F07_H005_contradiction.pdf",
-          "sha256": "57457a3ea4572f70396290f4a5c241aaa1ebca276497ebd29efe891af93d097e",
+          "sha256": "9abb09b93f63f3d18e0ba7bb9b142af5eeb928109adbed0154a6279af72a8df8",
           "bytes": 19300
         }
       ],
@@ -412,7 +412,7 @@
         },
         {
           "path": "qc/sci/phase4/figures/F08_rate_vs_history.pdf",
-          "sha256": "777b458d6fe43ace464dc27e5218bb43f96e4fb0ad4823002d9d03b07d942f37",
+          "sha256": "0ccb8148f8c0f7e087d78bd4aabf69e824be303f4d79a9b7104e4cd6989f54b0",
           "bytes": 27019
         }
       ],
@@ -615,13 +615,13 @@
       "outputs": [
         {
           "path": "qc/sci/phase4/figures/F12_evidence_matrix.png",
-          "sha256": "6989b75b65c863caf233e54aae56686025ec3f304fedc697874f07b8c879ac12",
-          "bytes": 285061
+          "sha256": "9dde35f14ee071c340c420904e655851f3a0fc8374b0feaaa30d18cc6cd48383",
+          "bytes": 263090
         },
         {
           "path": "qc/sci/phase4/figures/F12_evidence_matrix.pdf",
-          "sha256": "cfc329cf2630b8adcbec9108566118d7298c7f0040c8400c63e7dca2135bc879",
-          "bytes": 49448
+          "sha256": "8e405c99cebaa28f85063dc192034f3b09137327999573ccaba562e70de0086c",
+          "bytes": 49417
         }
       ],
       "manually_edited": false,

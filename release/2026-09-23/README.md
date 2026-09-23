@@ -1,0 +1,7 @@
+# Delhi NCR research paper review release
+
+This release contains the complete main scientific manuscript, including its abstract, introduction, methods, results, discussion, limitations, conclusions, three tables, thirteen cited references, and eight main figures. The editable Word file and matching PDF were exported from `manuscript/SUBMISSION_MANUSCRIPT.md` without changing the frozen scientific results. The repository's `manuscript/SUBMISSION_SUPPLEMENT.md` and four supplementary figures remain part of the research package.
+
+The reader-facing release omits three conditional sections pending author confirmation: proposed CRediT contributions, the no-specific-funding statement, and the AI-use disclosure. Their proposed wording remains in the canonical source manuscript and `manuscript/AUTHOR_DECLARATIONS.json`; no missing details were invented. The authors should also confirm the practical scope of data sharing and check the selected journal's live submission requirements before portal submission. This is a complete paper for author review, **not a claim that submission has occurred or that external peer review or ground validation is complete**.
+
+Scientific inference remains bounded: H001/H004 are supported at the spatial and mean relative-LOS rate level; H002/H003 are not reproduced; H005 is contradictory. The supported-zone polygon-area sum is 6.66 km². No vertical-displacement or causal attribution is claimed.
