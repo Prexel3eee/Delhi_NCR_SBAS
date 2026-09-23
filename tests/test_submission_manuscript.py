@@ -13,6 +13,7 @@ import pytest
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = PROJECT_ROOT / "scripts" / "77_build_submission_manuscript.py"
+AUDIT_SCRIPT_PATH = PROJECT_ROOT / "scripts" / "78_submission_audit.py"
 LITERATURE_COLUMNS = [
     "paper_id", "citation_key", "region", "period", "sensor", "geometry",
     "method", "validation", "mechanism_claim", "limitation", "manuscript_use",
@@ -37,9 +38,24 @@ def load_submission_module():
     return module
 
 
+def load_audit_module():
+    spec = importlib.util.spec_from_file_location("submission_audit_under_test", AUDIT_SCRIPT_PATH)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"cannot load submission audit from {AUDIT_SCRIPT_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 @pytest.fixture(scope="module")
 def submission():
     return load_submission_module()
+
+
+@pytest.fixture(scope="module")
+def audit():
+    return load_audit_module()
 
 
 @pytest.fixture(scope="module")
@@ -308,3 +324,45 @@ def test_main_figure_callouts_follow_submission_registry(submission, project_roo
     main_ids = [row["submission_id"] for row in rows if row["placement"] == "main"]
     assert all(f"(Figure {figure_id})" in manuscript for figure_id in main_ids)
     assert all(manuscript.count(f"(Figure {figure_id})") == 1 for figure_id in main_ids)
+
+
+def test_audit_rejects_hotspot_value_mutation(audit, submission, project_root):
+    texts = submission.build_submission(project_root)
+    mutated = texts["manuscript"].replace("-30.95", "-31.95", 1)
+    report = audit.run_audit(project_root, manuscript_override=mutated)
+    assert not report.scientific_pass
+    assert "numerical_consistency" in report.failed_gates
+
+
+def test_audit_rejects_relative_los_changed_to_vertical(audit, submission, project_root):
+    texts = submission.build_submission(project_root)
+    mutated = texts["manuscript"].replace("relative LOS", "vertical displacement", 1)
+    report = audit.run_audit(project_root, manuscript_override=mutated)
+    assert not report.scientific_pass
+    assert "terminology" in report.failed_gates
+
+
+def test_audit_rejects_unknown_citation(audit, submission, project_root):
+    texts = submission.build_submission(project_root)
+    mutated = texts["manuscript"] + "\nUnsupported citation [@unknown2026].\n"
+    report = audit.run_audit(project_root, manuscript_override=mutated)
+    assert not report.scientific_pass
+    assert "citations" in report.failed_gates
+
+
+def test_audit_rejects_removed_negative_or_contradictory_zones(
+    audit, submission, project_root
+):
+    texts = submission.build_submission(project_root)
+    mutated = texts["manuscript"].replace("H002", "REMOVED").replace("H005", "REMOVED")
+    report = audit.run_audit(project_root, manuscript_override=mutated)
+    assert not report.scientific_pass
+    assert "numerical_consistency" in report.failed_gates
+
+
+def test_audit_rejects_nondeterministic_second_build(audit, submission, project_root):
+    texts = submission.build_submission(project_root)
+    second = {**texts, "manuscript": texts["manuscript"] + "\nBUILD DRIFT\n"}
+    report = audit.run_audit(project_root, second_build_override=second)
+    assert not report.scientific_pass
+    assert "determinism" in report.failed_gates
