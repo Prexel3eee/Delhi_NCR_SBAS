@@ -1,5 +1,7 @@
 # Submission readiness v2
 
+**Target journal:** International Journal of Applied Earth Observation and Geoinformation (Research paper)
+
 **Scientific status:** PASS
 
 **Author status:** AWAITING AUTHOR CONFIRMATION
@@ -20,11 +22,16 @@ The author-status boundary is administrative and does not weaken or override a f
 
 ## Metrics
 
+- **abstract_words:** 240
 - **claim_ledger_entries:** 23
+- **conservative_complete_submission_words:** 7616
+- **highlights:** 5
+- **keywords:** 6
 - **main_figures:** 8
 - **main_tables:** 3
-- **manuscript_words:** 5774
+- **manuscript_words:** 5887
 - **supplementary_figures:** 4
+- **target_journal:** International Journal of Applied Earth Observation and Geoinformation
 - **terminology_allowances:** 18
 
 ## Required human completion

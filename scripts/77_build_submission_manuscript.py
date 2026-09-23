@@ -13,11 +13,26 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 TITLE = (
-    "Selective reproducibility of localized LOS deformation in Delhi-NCR from "
-    "ascending and descending Sentinel-1 InSAR"
+    "Selective reproduction of localized line-of-sight deformation in Delhi-NCR "
+    "using independent Sentinel-1 geometries"
 )
 
-ABSTRACT = """Interpreting urban interferometric synthetic-aperture radar (InSAR) observations requires separating repeatable geodetic structure from geometry-specific signals and from plausible but untested causes. We evaluated this separation over Delhi-NCR using a 119 acquisitions ascending Sentinel-1 stack comprising 336 interferograms and an independently constructed descending stack of 91 acquisitions and 219 interferograms. Both were processed as relative line-of-sight (LOS) time series, with no burst, pair, mask, acquisition list, or reference pixel shared between geometries. Five zones defined and frozen from the ascending product were then evaluated within the common valid domain. H001 and H004 were supported across geometries at the spatial and mean-rate level: ascending/descending mean relative LOS rates were -30.95/-36.02 and -14.31/-12.46 mm yr-1, respectively. H002 and H003, despite comparable ascending magnitudes and adequate descending quality, were not reproduced; H005 instead showed an unresolved sign-and-magnitude contradiction (-14.21 versus +61.39 mm yr-1). The supported zones total 6.66 km2, a sum of frozen polygon areas rather than a continuous validated footprint. Preregistered tests found NO EVIDENCE that groundwater-level variability, shallow soil texture, existing built intensity, or detected recent built-up expansion explained the supported-versus-control selectivity. Deep geological and aquifer-system susceptibility was NOT ADEQUATELY TESTED, and major construction loading was NOT TESTABLE with the retained data. Statistical, reference-systematic, processing-sensitivity, temporal, and structural uncertainties were therefore reported separately. Crucially, cross-geometry support applies to spatial pattern and mean-rate behavior, not matching time histories: the H001 cumulative series disagree substantially. The negative controls show that a coherent ascending anomaly need not survive an independent geometry, while the surviving observations do not by themselves establish vertical displacement or mechanism. Selective reproduction, rather than post hoc attribution, provides the defensible basis for inference."""
+ABSTRACT = """Urban interferometric synthetic-aperture radar interpretation requires separating repeatable geodetic structure from geometry-specific signals and plausible but untested causes. We evaluated this problem over Delhi-NCR using an ascending Sentinel-1 stack of 119 acquisitions and 336 interferograms and an independently constructed descending stack of 91 acquisitions and 219 interferograms. Both were processed as relative line-of-sight (LOS) time series, without shared bursts, pairs, masks, acquisition lists, or reference pixels. Five zones frozen from the ascending product were evaluated within the common valid domain. H001 and H004 were supported at the spatial and mean-rate level; ascending/descending mean relative LOS rates were -30.95/-36.02 and -14.31/-12.46 mm yr-1, respectively. H002 and H003 were not reproduced despite adequate descending quality, while H005 showed an unresolved sign-and-magnitude contradiction (-14.21 versus +61.39 mm yr-1). The supported zones total 6.66 km2, a polygon-area sum rather than a continuous validated footprint. Preregistered tests found no evidence that groundwater-level variability, shallow soil texture, existing built intensity, or detected recent built-up expansion explained supported-versus-control selectivity. Deep geological and aquifer-system susceptibility was not adequately tested, and major construction loading was not testable. Uncertainty was separated into statistical, reference-systematic, processing-sensitivity, temporal, and structural components. Cross-geometry support applied to spatial pattern and mean-rate behavior, not matching time histories; H001 cumulative series disagreed substantially. Thus, negative controls show that a coherent ascending anomaly need not survive an independent geometry, while surviving observations do not establish vertical displacement or mechanism. Selective reproduction provides the defensible basis for inference."""
+
+KEYWORDS = "Sentinel-1; interferometry; deformation; reproducibility; Delhi-NCR; uncertainty"
+
+HIGHLIGHTS = """# Highlights
+
+- Independent Sentinel-1 geometries test five frozen Delhi-NCR zones.
+- H001 and H004 reproduce at spatial and mean-rate levels.
+- H002/H003 are negative controls; H005 remains contradictory.
+- Tested groundwater, soil, and urban proxies do not explain selectivity.
+- Reproduction supports observations, not vertical motion or mechanism.
+"""
+
+DATA_CODE_STATEMENT = """The processing, verification, hypothesis-testing, and manuscript-building code is organized in the project repository, and the frozen inputs and derived products are identified in Supplement S13. A public archival identifier for the submission dataset has not yet been assigned. Before submission, the human authors must either deposit the shareable data and code in a suitable repository and cite the persistent identifier here, or provide the journal with a specific explanation for any material that cannot be shared."""
+
+AI_DISCLOSURE_DRAFT = """**AWAITING AUTHOR CONFIRMATION.** Draft statement: During the preparation of this work, the authors used OpenAI Codex to support literature organization, manuscript drafting, consistency auditing, and figure planning. The submitted version must be reviewed and edited by the human authors, who take full responsibility for its content."""
 
 INTRODUCTION = """Urban InSAR can reveal localized surface motion at a scale difficult to obtain from sparse ground networks, but interpretive confidence does not follow automatically from a coherent velocity map. Relative LOS estimates depend on viewing geometry and reference choice, and can retain atmospheric, unwrapping, decorrelation, and temporal-sampling effects. Even where a feature is geodetically credible, spatial coincidence with pumping, sediments, or construction does not isolate a physical cause. The central scientific problem is therefore both observational and causal: which features survive an independent measurement design, and which proposed explanations distinguish those features from credible negative controls [@ferretti2001; @berardino2002; @crosetto2016]?
 
@@ -206,11 +221,12 @@ def load_frozen_evidence(root: Path = PROJECT_ROOT) -> FrozenEvidence:
     )
 
 
-def output_paths(root: Path = PROJECT_ROOT) -> tuple[Path, Path]:
+def output_paths(root: Path = PROJECT_ROOT) -> tuple[Path, Path, Path]:
     output = root / "manuscript"
     return (
         output / "SUBMISSION_MANUSCRIPT.md",
         output / "SUBMISSION_SUPPLEMENT.md",
+        output / "HIGHLIGHTS.md",
     )
 
 
@@ -430,6 +446,8 @@ def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
             "",
             ABSTRACT,
             "",
+            f"**Keywords:** {KEYWORDS}",
+            "",
             "## 1. Introduction",
             "",
             INTRODUCTION,
@@ -456,19 +474,28 @@ def build_submission(root: Path = PROJECT_ROOT) -> dict[str, str]:
             "",
             CONCLUSIONS,
             "",
+            "## Data and code availability",
+            "",
+            DATA_CODE_STATEMENT,
+            "",
+            "## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process",
+            "",
+            AI_DISCLOSURE_DRAFT,
+            "",
         ]
     )
     supplement = _supplement(root, evidence)
-    return {"manuscript": manuscript, "supplement": supplement}
+    return {"manuscript": manuscript, "supplement": supplement, "highlights": HIGHLIGHTS}
 
 
 def write_submission(root: Path = PROJECT_ROOT) -> list[Path]:
     texts = build_submission(root)
-    manuscript_path, supplement_path = output_paths(root)
+    manuscript_path, supplement_path, highlights_path = output_paths(root)
     manuscript_path.parent.mkdir(parents=True, exist_ok=True)
     manuscript_path.write_text(texts["manuscript"])
     supplement_path.write_text(texts["supplement"])
-    return [manuscript_path, supplement_path]
+    highlights_path.write_text(texts["highlights"])
+    return [manuscript_path, supplement_path, highlights_path]
 
 
 def main() -> int:

@@ -178,6 +178,7 @@ def _allowed_term(term: str, sentence: str) -> tuple[bool, str, str]:
             for phrase in (
                 "does not establish vertical",
                 "do not by themselves establish vertical",
+                "do not establish vertical",
                 "does not establish an absolute rate, vertical",
                 "not vertical",
                 "no vertical/east decomposition",
@@ -364,7 +365,12 @@ def _figure_gate(root: Path, manuscript: str, claim_ids: set[str]) -> tuple[Gate
     )
 
 
-def _structure_gate(manuscript: str, supplement: str) -> tuple[GateResult, dict[str, int]]:
+def _structure_gate(
+    root: Path,
+    manuscript: str,
+    supplement: str,
+    highlights: str,
+) -> tuple[GateResult, dict[str, Any]]:
     problems: list[str] = []
     required_main = [
         "## Abstract", "## 1. Introduction", "## 2. Data and methods", "## 3. Results",
@@ -391,7 +397,58 @@ def _structure_gate(manuscript: str, supplement: str) -> tuple[GateResult, dict[
         problems.append(f"supplement callouts differ from S1-S9: {sorted(callouts)}")
     if not callouts <= supplement_headings:
         problems.append("one or more supplement callouts do not resolve")
-    metrics = {"manuscript_words": word_count, "main_tables": table_count}
+
+    try:
+        abstract = manuscript.split("## Abstract\n", 1)[1].split("\n\n", 1)[0].strip()
+    except IndexError:
+        abstract = ""
+    abstract_words = len(abstract.split())
+    if not 150 <= abstract_words <= 250:
+        problems.append(f"IJAEO abstract must contain 150-250 words: {abstract_words}")
+    keyword_match = re.search(r"(?m)^\*\*Keywords:\*\*\s*(.+)$", manuscript)
+    keywords = [item.strip() for item in keyword_match.group(1).split(";")] if keyword_match else []
+    if not 1 <= len(keywords) <= 7 or any(not item for item in keywords):
+        problems.append(f"IJAEO keyword count must be 1-7: {len(keywords)}")
+    highlight_items = [line[2:] for line in highlights.splitlines() if line.startswith("- ")]
+    if not 3 <= len(highlight_items) <= 5:
+        problems.append(f"IJAEO highlights must contain 3-5 bullets: {len(highlight_items)}")
+    for index, item in enumerate(highlight_items, start=1):
+        if len(item) > 85:
+            problems.append(f"IJAEO highlight {index} exceeds 85 characters: {len(item)}")
+
+    bibliography_words = len((root / "manuscript" / "REFERENCE_LIBRARY.bib").read_text().split())
+    _, registry_rows = _read_csv(root / "manuscript" / "FIGURE_CLAIM_REGISTRY.csv")
+    main_sources = {
+        row["source_figure"] for row in registry_rows if row.get("placement") == "main"
+    }
+    provenance = json.loads((root / "manuscript" / "FIGURE_PROVENANCE.json").read_text())
+    caption_words = sum(
+        len(figure.get("caption", "").split())
+        for figure in provenance.get("figures", [])
+        if figure.get("figure_id") in main_sources
+    )
+    complete_submission_words = word_count + bibliography_words + caption_words
+    if complete_submission_words > 8000:
+        problems.append(
+            "conservative IJAEO complete-submission count exceeds 8,000 words: "
+            f"{complete_submission_words}"
+        )
+    for path in (
+        root / "manuscript" / "JOURNAL_SELECTION.md",
+        root / "manuscript" / "JOURNAL_COMPLIANCE.md",
+        root / "manuscript" / "COVER_LETTER.md",
+    ):
+        if not path.is_file():
+            problems.append(f"missing journal package component: {path.name}")
+    metrics: dict[str, Any] = {
+        "target_journal": "International Journal of Applied Earth Observation and Geoinformation",
+        "manuscript_words": word_count,
+        "conservative_complete_submission_words": complete_submission_words,
+        "abstract_words": abstract_words,
+        "keywords": len(keywords),
+        "highlights": len(highlight_items),
+        "main_tables": table_count,
+    }
     return _result("structure", problems, "required architecture, length, tables, and supplement links pass"), metrics
 
 
@@ -456,7 +513,9 @@ def run_audit(
     gates.append(_citation_gate(root, manuscript, supplement))
     figure_gate, figure_metrics = _figure_gate(root, manuscript, claim_ids)
     gates.append(figure_gate)
-    structure_gate, structure_metrics = _structure_gate(manuscript, supplement)
+    structure_gate, structure_metrics = _structure_gate(
+        root, manuscript, supplement, built.get("highlights", "")
+    )
     gates.append(structure_gate)
     gates.append(_reproducibility_gate(root, supplement, builder))
     gates.append(_determinism_gate(builder, root, second_build_override))
@@ -478,6 +537,8 @@ def run_audit(
 def _readiness_markdown(report: AuditReport) -> str:
     rows = [
         "# Submission readiness v2",
+        "",
+        "**Target journal:** International Journal of Applied Earth Observation and Geoinformation (Research paper)",
         "",
         f"**Scientific status:** {'PASS' if report.scientific_pass else 'FAIL'}",
         "",

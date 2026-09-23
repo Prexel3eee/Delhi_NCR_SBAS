@@ -121,8 +121,8 @@ def test_reference_library_contains_every_citation_key(project_root):
 def test_submission_front_matter_and_methods_architecture(submission, project_root):
     manuscript = submission.build_submission(project_root)["manuscript"]
     assert manuscript.startswith(
-        "# Selective reproducibility of localized LOS deformation in Delhi-NCR "
-        "from ascending and descending Sentinel-1 InSAR"
+        "# Selective reproduction of localized line-of-sight deformation in Delhi-NCR "
+        "using independent Sentinel-1 geometries"
     )
     required_headings = [
         "## Abstract",
@@ -142,7 +142,8 @@ def test_submission_front_matter_and_methods_architecture(submission, project_ro
 def test_abstract_contains_required_design_and_outcomes(submission, project_root):
     manuscript = submission.build_submission(project_root)["manuscript"]
     abstract = manuscript.split("## Abstract\n", 1)[1].split("## 1. Introduction", 1)[0]
-    assert 250 <= len(abstract.split()) <= 300
+    abstract = abstract.split("**Keywords:**", 1)[0]
+    assert 150 <= len(abstract.split()) <= 250
     for phrase in (
         "119 acquisitions",
         "336 interferograms",
@@ -366,3 +367,58 @@ def test_audit_rejects_nondeterministic_second_build(audit, submission, project_
     report = audit.run_audit(project_root, second_build_override=second)
     assert not report.scientific_pass
     assert "determinism" in report.failed_gates
+
+
+def test_target_journal_abstract_keywords_and_highlights(submission, project_root):
+    texts = submission.build_submission(project_root)
+    manuscript = texts["manuscript"]
+    abstract = manuscript.split("## Abstract\n", 1)[1].split("\n\n", 1)[0].strip()
+    assert 150 <= len(abstract.split()) <= 250
+
+    keyword_line = manuscript.split("**Keywords:**", 1)[1].splitlines()[0].strip()
+    keywords = [item.strip() for item in keyword_line.split(";")]
+    assert 1 <= len(keywords) <= 7
+
+    highlights = [
+        line.removeprefix("- ")
+        for line in texts["highlights"].splitlines()
+        if line.startswith("- ")
+    ]
+    assert 3 <= len(highlights) <= 5
+    assert all(len(item) <= 85 for item in highlights)
+
+
+def test_journal_selection_uses_declared_weighting_and_official_sources(project_root):
+    selection = (project_root / "manuscript" / "JOURNAL_SELECTION.md").read_text()
+    for journal in (
+        "International Journal of Applied Earth Observation and Geoinformation",
+        "Remote Sensing of Environment",
+        "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    ):
+        assert journal in selection
+    for weight in ("40%", "25%", "15%", "10%"):
+        assert weight in selection
+    assert "Selected target" in selection
+    assert "Retrieved 23 September 2026" in selection
+    assert selection.count("https://") >= 6
+
+
+def test_journal_compliance_has_only_actionable_statuses(project_root):
+    compliance = (project_root / "manuscript" / "JOURNAL_COMPLIANCE.md").read_text()
+    assert "International Journal of Applied Earth Observation and Geoinformation" in compliance
+    assert "PASS" in compliance
+    assert "AWAITING AUTHOR CONFIRMATION" in compliance
+    assert "Declaration of generative AI" in compliance
+    assert "Data repository" in compliance
+    statuses = re.findall(r"\| (PASS|AWAITING AUTHOR CONFIRMATION) \|", compliance)
+    assert len(statuses) >= 10
+
+
+def test_cover_letter_is_factual_and_preserves_author_boundary(project_root):
+    letter = (project_root / "manuscript" / "COVER_LETTER.md").read_text()
+    assert "Research paper" in letter
+    assert "Selective reproduction" in letter
+    assert "exclusive submission" in letter.lower()
+    assert "data and code" in letter.lower()
+    assert "AWAITING AUTHOR CONFIRMATION" in letter
+    assert not re.search(r"\bfirst\b", letter, flags=re.IGNORECASE)
